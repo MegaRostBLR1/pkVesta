@@ -1,0 +1,105 @@
+# =========================
+# Dependencies
+# =========================
+node_modules/
+
+# =========================
+# Build / Bundles
+# =========================
+dist/
+build/
+coverage/
+.cache/
+.parcel-cache/
+.tmp/
+temp/
+
+# =========================
+# Environment / Secrets
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Logs
+# =========================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# WebStorm / JetBrains
+# =========================
+.idea/
+*.iml
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# =========================
+# OS
+# =========================
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+.directory
+
+# =========================
+# Temporary / Backup files
+# =========================
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.old
+*~
+
+# =========================
+# TypeScript
+# =========================
+*.tsbuildinfo
+
+# =========================
+# ESLint cache
+# =========================
+.eslintcache
+
+# =========================
+# Prettier
+# =========================
+.prettier-cache
+
+# =========================
+# Testing
+# =========================
+.nyc_output/
+playwright-report/
+test-results/
+
+# =========================
+# Local development
+# =========================
+.local/
+.localhost/
+
+# =========================
+# AI / IDE-specific
+# =========================
+.gigaide/
