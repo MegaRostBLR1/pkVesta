@@ -1,5 +1,25 @@
 .app-header {
-  padding: 1rem 0;
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
+  background: #324C88;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  padding: 1.1111rem 2.2222rem;
+}
+
+.header__location,
+.nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6667rem;
+  color: #FFFFFF;
 }
