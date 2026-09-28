@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.1111rem 2.2222rem;
+    padding: 0 2.2222rem;
 }
 
 .header__location,
@@ -27,7 +27,9 @@
 .header__location-country,
 .header__location-money,
 .header__location-country-code {
+    padding: 1.1111rem 0;
     position: relative;
+    cursor: pointer;
 }
 
 .header__location-choice-country {
@@ -44,7 +46,7 @@
 
 .header__location-choice {
     position: absolute;
-    top: 1.7778rem;
+    top: 2.8889rem;
     left: -0.4444rem;
     display: flex;
     flex-direction: column;
@@ -86,6 +88,10 @@
     margin-left: 0.7778rem;
 }
 
+.nav-link {
+    padding: 1.1111rem 0;
+}
+
 .header__location-choice-region:not(:last-child),
 .header__location-choice-contact:not(:last-child) {
     margin-bottom: 0.2778rem;
@@ -125,7 +131,9 @@
 .nav-list__item--services,
 .nav-list__item--press,
 .header__contacts-phone {
+    padding: 1.1111rem 0;
     position: relative;
+    cursor: pointer;
 }
 
 .nav-list__nested-list {
@@ -166,7 +174,7 @@
 .nav-list__nested-list--services,
 .nav-list__nested-list--press {
     position: absolute;
-    top: 1.7778rem;
+    top: 2.8889rem;
     left: -0.4444rem;
     text-transform: none;
 }
@@ -188,7 +196,7 @@
 
 .header__contacts-choice {
     position: absolute;
-    top: 1.7778rem;
+    top: 2.8889rem;
     left: -0.4444rem;
     display: flex;
     flex-direction: column;
