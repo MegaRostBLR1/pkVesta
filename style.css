@@ -68,4 +68,6 @@ button {
   background: #324C88;
   color: #FFFFFF;
   width: 100%;
+  outline: none;
+  border: none;
 }
