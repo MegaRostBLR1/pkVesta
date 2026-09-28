@@ -1,21 +1,42 @@
-:root {
-  font-family: Arial, sans-serif;
-  color: #1f2937;
-  background: #f8fafc;
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: 'Onest-Bold';
+  font-weight: 700;
+  src: url('./static/fonts/Onest-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Onest-SemiBold';
+  font-weight: 600;
+  src: url('./static/fonts/Onest-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Onest-Regular';
+  font-weight: 400;
+  src: url('./static/fonts/Onest-Regular.woff2') format('woff2');
 }
 
 * {
+  margin: 0;
+  padding: 0;
   text-decoration: none;
   box-sizing: border-box;
 }
 
 html {
+  font-family: Onest-Regular, sans-serif;
+  font-weight: 400;
+  color: #4D4D4DCC;
+  background: #F5F8F7;
   min-width: 320px;
 }
 
 body {
-  margin: 0;
-  background: #f8fafc;
+  font-size: 18px;
 }
 
 .container {
@@ -23,16 +44,10 @@ body {
   margin: 0 auto;
 }
 
-.nav-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin: 0;
-  padding: 0;
+ul {
   list-style: none;
 }
 
-.nav-link {
-  color: inherit;
+a {
   text-decoration: none;
 }

@@ -13,51 +13,51 @@ const APP_CONFIG = {
   pages: {
     'page-1': {
       title: 'Страница 1',
-      html: './pages/page-1/index.html',
-      css: './pages/page-1/style.css',
-      js: './pages/page-1/script.js',
+      html: './components/pages/page-1/index.html',
+      css: './components/pages/page-1/style.css',
+      js: './components/pages/page-1/script.js',
       init: 'initPage1'
     },
     'page-2': {
       title: 'Страница 2',
-      html: './pages/page-2/index.html',
-      css: './pages/page-2/style.css',
-      js: './pages/page-2/script.js',
+      html: './components/pages/page-2/index.html',
+      css: './components/pages/page-2/style.css',
+      js: './components/pages/page-2/script.js',
       init: 'initPage2'
     },
     'page-3': {
       title: 'Страница 3',
-      html: './pages/page-3/index.html',
-      css: './pages/page-3/style.css',
-      js: './pages/page-3/script.js',
+      html: './components/pages/page-3/index.html',
+      css: './components/pages/page-3/style.css',
+      js: './components/pages/page-3/script.js',
       init: 'initPage3'
     },
     'page-4': {
       title: 'Страница 4',
-      html: './pages/page-4/index.html',
-      css: './pages/page-4/style.css',
-      js: './pages/page-4/script.js',
+      html: './components/pages/page-4/index.html',
+      css: './components/pages/page-4/style.css',
+      js: './components/pages/page-4/script.js',
       init: 'initPage4'
     },
     'page-5': {
       title: 'Страница 5',
-      html: './pages/page-5/index.html',
-      css: './pages/page-5/style.css',
-      js: './pages/page-5/script.js',
+      html: './components/pages/page-5/index.html',
+      css: './components/pages/page-5/style.css',
+      js: './components/pages/page-5/script.js',
       init: 'initPage5'
     },
     'page-6': {
       title: 'Страница 6',
-      html: './pages/page-6/index.html',
-      css: './pages/page-6/style.css',
-      js: './pages/page-6/script.js',
+      html: './components/pages/page-6/index.html',
+      css: './components/pages/page-6/style.css',
+      js: './components/pages/page-6/script.js',
       init: 'initPage6'
     },
     'page-7': {
       title: 'Страница 7',
-      html: './pages/page-7/index.html',
-      css: './pages/page-7/style.css',
-      js: './pages/page-7/script.js',
+      html: './components/pages/page-7/index.html',
+      css: './components/pages/page-7/style.css',
+      js: './components/pages/page-7/script.js',
       init: 'initPage7'
     }
   }
