@@ -363,3 +363,13 @@
 .header__contacts-choice {
     display: none;
 }
+
+.header__location-country:hover > .header__location-choice,
+.header__location-money:hover > .header__location-choice,
+.header__location-country-code:hover > .header__location-choice,
+.nav-list__item--product:hover > .nav-list__nested-list--product,
+.nav-list__item--services:hover > .nav-list__nested-list--services,
+.nav-list__item--press:hover > .nav-list__nested-list--press,
+.header__contacts-phone:hover > .header__contacts-choice {
+    display: flex;
+}
