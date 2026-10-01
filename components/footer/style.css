@@ -1,5 +1,121 @@
+/* Добавить в общие стили: */
+.white-text {
+  color: #ffffff;
+}
+
+a {
+  cursor: pointer;
+  color: inherit;
+}
+html {
+  font-size: 18px;
+}
+
+/* footer */
 .app-footer {
-  padding: 1rem 0;
-  background: #ffffff;
-  border-top: 1px solid #e5e7eb;
+  padding: 2.2222rem 0 3.3333rem;
+  background: #324c88;
+  color: #ffffff;
+  border-radius: 1.1667rem 1.1667rem 0 0;
+}
+
+.footer__container {
+  padding: 0 2.2222rem;
+}
+
+.footer__top-head {
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.0556rem solid #ffffff1a;
+}
+
+.footer__top-head-left {
+  background-color: red;
+  flex-basis: 31.85%;
+}
+.footer__logo img {
+  width: 10.5556rem;
+  border-radius: 0.5556rem;
+}
+
+.footer__top-head-right {
+  background-color: green;
+  flex-basis: 55.65%;
+  display: grid;
+  grid-template-columns: 49.9% 1fr;
+  column-gap: 2.6667rem;
+}
+
+.footer__top-body {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 63px;
+  border-bottom: 0.1111rem solid #ffffff1a;
+}
+
+.footer__about {
+  background-color: red;
+  flex-basis: 31.85%;
+  /* flex-basis: 32.5556rem; */
+  /* вопрос как задать ширину левых блоков, как % или как px(rem),
+  а правый как % будет? */
+}
+.footer__copyright-company {
+  margin-bottom: 2rem;
+  line-height: 1.5rem;
+}
+.footer__social-title {
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+.footer__social-list {
+  display: flex;
+  gap: 10px;
+}
+.footer__social-link img{
+  width: 56px;
+  height: 52px;
+}
+
+.footer__contacts {
+  background-color: green;
+  flex-basis: 55.65%;
+  display: grid;
+  grid-template-columns: 49.9% 1fr;
+  row-gap: 2rem;
+  column-gap: 2.6667rem;
+}
+
+.footer__contact {
+  display: flex;
+  font-style: normal;
+}
+.footer__contact-icon {
+  margin-right: 18px;
+  width: 2.2222rem;
+  flex-shrink: 0;
+}
+.footer__contact-icon img {
+  width: 100%;
+}
+
+.footer__contact-title {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.footer__contact-text {
+  line-height: 28px;
+  color: #ffffffcc;
+}
+.footer__contact-extra-text {
+  margin-top: 10px;
+  line-height: 28px;
+  color: #ffffffcc;
 }
