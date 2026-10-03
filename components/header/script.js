@@ -1,38 +1,42 @@
-(() => {
-    const choiceItems = document.querySelectorAll('.header__location-choice-item');
+function initHeaderLocationChoices() {
+    const header = document.querySelector('.app-header');
 
-    choiceItems.forEach((item) => {
-        item.addEventListener('click', () => {
-            const choice = item.closest('.header__location-choice');
+    if (!header) {
+        return;
+    }
 
-            if (!choice) {
-                return;
-            }
+    header.addEventListener('click', (event) => {
+        const item = event.target.closest('.header__location-choice-item');
 
-            choice.querySelectorAll('.header__location-choice-item--selected')
-                .forEach((selectedItem) => {
-                    selectedItem.classList.remove('header__location-choice-item--selected');
-                });
+        if (!item || !header.contains(item)) {
+            return;
+        }
 
-            item.classList.add('header__location-choice-item--selected');
+        const choice = item.closest('.header__location-choice');
 
-            const trigger = choice.parentElement;
-            const selectedText = item.querySelector('.header__location-choice-name')?.textContent.trim()
-                || item.querySelector('.header__location-choice-code')?.textContent.trim()
-                || item.querySelector('.header__location-choice-country')?.textContent.trim()
-                || item.textContent.trim();
+        if (!choice) {
+            return;
+        }
 
-            if (trigger) {
-                const arrow = trigger.querySelector('.arrow-svg');
-                const textNode = Array.from(trigger.childNodes)
-                    .find((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
+        choice.querySelector('.header__location-choice-item--selected')
+            ?.classList.remove('header__location-choice-item--selected');
 
-                if (textNode) {
-                    textNode.textContent = `\n                        ${selectedText}\n                        `;
-                } else if (arrow) {
-                    trigger.insertBefore(document.createTextNode(`\n                        ${selectedText}\n                        `), arrow);
-                }
-            }
-        });
+        item.classList.add('header__location-choice-item--selected');
+
+        const trigger = choice.parentElement;
+        const current = trigger?.querySelector('.header__location-current');
+
+        if (current) {
+            current.textContent = getHeaderChoiceLabel(item);
+        }
     });
-})();
+}
+
+function getHeaderChoiceLabel(item) {
+    return item.querySelector('.header__location-choice-name')?.textContent.trim()
+        || item.querySelector('.header__location-choice-code')?.textContent.trim()
+        || item.querySelector('.header__location-choice-country')?.textContent.trim()
+        || item.textContent.trim();
+}
+
+initHeaderLocationChoices();
