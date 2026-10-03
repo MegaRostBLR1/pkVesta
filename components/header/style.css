@@ -12,6 +12,9 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 2.2222rem;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-weight: 600;
+    font-size: 0.8889rem;
 }
 
 .header__location,
@@ -30,6 +33,9 @@
     padding: 1.1111rem 0;
     position: relative;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5556rem;
 }
 
 .header__location-choice-country {
@@ -44,9 +50,10 @@
     text-wrap: nowrap;
 }
 
-.header__location-choice {
+.header__location-choice,
+.header__contacts-choice {
     position: absolute;
-    top: 2.8889rem;
+    top: 3rem;
     left: -0.4444rem;
     display: flex;
     flex-direction: column;
@@ -55,6 +62,7 @@
     border-radius: 0.5556rem;
     text-transform: none;
     min-width: 12.0556rem;
+    z-index: 2;
 }
 
 .header__location-choice-title {
@@ -82,10 +90,6 @@
 
 .header__location-choice-icon {
     margin-right: 0.7778rem;
-}
-
-.header__location-choice-check {
-    margin-left: 0.7778rem;
 }
 
 .nav-link {
@@ -129,9 +133,15 @@
 
 .nav-list__item--product,
 .nav-list__item--services,
+.nav-list__item--objects,
 .nav-list__item--press,
+.nav-list__item--factory,
+.nav-list__item--prices,
+.nav-list__item--contacts,
 .header__contacts-phone {
-    padding: 1.1111rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5556rem;
     position: relative;
     cursor: pointer;
 }
@@ -164,6 +174,9 @@
 }
 
 .nav-list__nested-list-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 0.5556rem;
     margin-right: 0.7778rem;
     background: #FFFFFF;
@@ -174,9 +187,10 @@
 .nav-list__nested-list--services,
 .nav-list__nested-list--press {
     position: absolute;
-    top: 2.8889rem;
+    top: 3rem;
     left: -0.4444rem;
     text-transform: none;
+    z-index: 2;
 }
 
 .header__contacts {
@@ -196,7 +210,7 @@
 
 .header__contacts-choice {
     position: absolute;
-    top: 2.8889rem;
+    top: 1.8889rem;
     left: -0.4444rem;
     display: flex;
     flex-direction: column;
@@ -205,6 +219,7 @@
     border-radius: 0.5556rem;
     text-transform: none;
     min-width: 15.5556rem;
+    z-index: 2;
 }
 
 .header__contacts-choice-title {
@@ -281,12 +296,13 @@
 }
 
 .header-bottom__logo {
+    padding: 0.7778rem 0.8333rem;
     display: flex;
     align-items: center;
 }
 
 .header-bottom__logo-image {
-    display: block;
+    max-width: 7rem;
 }
 
 .header-bottom__solutions {
@@ -299,16 +315,26 @@
     font-weight: 600;
     font-size: 1rem;
     line-height: 126%;
-    gap: 0.5556rem;
     padding: 1.5556rem 1.7778rem;
     border-radius: 0.5556rem;
     background: #FFF500;
     color: #272629;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .header-bottom__search {
+    position: relative;
     flex: 1;
+}
+
+.search-svg {
+    position: absolute;
+    left: 1.6667rem;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .header-bottom__search-input {
