@@ -370,6 +370,8 @@
     border-radius: 0.8333rem;
     padding: 0.5rem 1.1111rem;
     gap: 0.5556rem;
+    color: inherit;
+    text-decoration: none;
 }
 
 .header-bottom__action-text {
