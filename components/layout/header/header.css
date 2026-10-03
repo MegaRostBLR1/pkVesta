@@ -317,18 +317,19 @@
 }
 
 .header-bottom__solutions-button {
-    font-family: 'Onest-SemiBold', sans-serif;
-    font-weight: 600;
     font-size: 1rem;
-    line-height: 126%;
     padding: 1.5556rem 1.7778rem;
     border-radius: 0.5556rem;
-    background: #FFF500;
-    color: #272629;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
     gap: 1rem;
+    color: #272629;
+}
+
+.header-bottom__solutions-button svg circle {
+    transition: fill 0.1s ease;
+}
+
+.header-bottom__solutions-button:hover svg circle {
+    fill: #324C88CC;
 }
 
 .header-bottom__search {

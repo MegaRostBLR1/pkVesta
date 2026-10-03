@@ -111,6 +111,7 @@ button {
   border: none;
   border-radius: 1.1111rem;
   cursor: pointer;
+  transition: color 0.1s ease, background-color 0.1s ease;
 }
 
 .main-btn {
