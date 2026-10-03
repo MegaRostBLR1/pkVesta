@@ -1,5 +1,195 @@
+/* Добавить в общие стили: */
+.white-text {
+  color: #ffffff;
+}
+
+a {
+  cursor: pointer;
+  color: inherit;
+}
+html {
+  font-size: 18px;
+}
+button {
+  background-color: transparent;
+  cursor: pointer;
+}
+/* стили для всех кнопок аккардин */
+.accordion__btn {
+  position: relative;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.accordion__btn::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 2px;
+}
+.accordion__btn::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+
+/* footer */
 .app-footer {
-  padding: 1rem 0;
-  background: #ffffff;
-  border-top: 1px solid #e5e7eb;
+  padding: 2.2222rem 0 3.3333rem;
+  background: #324c88;
+  color: #ffffff;
+  border-radius: 1.1667rem 1.1667rem 0 0;
+}
+
+.footer__container {
+  padding: 0 2.2222rem;
+}
+
+.footer__top-head {
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.0556rem solid #ffffff1a;
+}
+
+.footer__top-head-left {
+  background-color: red;
+  flex-basis: 31.85%;
+}
+.footer__logo img {
+  width: 10.5556rem;
+  border-radius: 0.5556rem;
+}
+
+.footer__top-head-right {
+  background-color: green;
+  flex-basis: 55.65%;
+  display: grid;
+  grid-template-columns: 49.9% 1fr;
+  column-gap: 2.6667rem;
+}
+
+.footer__top-body {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 63px;
+  border-bottom: 0.1111rem solid #ffffff1a;
+}
+
+.footer__about {
+  background-color: red;
+  flex-basis: 31.85%;
+}
+.footer__copyright-company {
+  margin-bottom: 2rem;
+  line-height: 1.5rem;
+}
+.footer__social-title {
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+.footer__social-list {
+  display: flex;
+  gap: 10px;
+}
+.footer__social-link img {
+  width: 56px;
+  height: 52px;
+}
+
+.footer__contacts {
+  background-color: green;
+  flex-basis: 55.65%;
+  display: grid;
+  grid-template-columns: 49.9% 1fr;
+  row-gap: 2rem;
+  column-gap: 2.6667rem;
+}
+
+.footer__contact {
+  display: flex;
+  font-style: normal;
+}
+.footer__contact-icon {
+  margin-right: 18px;
+  width: 2.2222rem;
+  flex-shrink: 0;
+}
+.footer__contact-icon img {
+  width: 100%;
+}
+.footer__contact-title {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.footer__contact-text {
+  line-height: 28px;
+  color: #ffffffcc;
+}
+.footer__contact-extra-text {
+  margin-top: 10px;
+  line-height: 28px;
+  color: #ffffffcc;
+}
+
+/* аккардион в футере */
+.footer__section {
+  padding: 36px 0;
+  border-bottom: 0.1111rem solid #ffffff1a;
+}
+
+.footer-accordion__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-accordion__title {
+  font-weight: 500;
+  font-size: 37px;
+  line-height: 47px;
+}
+
+.footer-accordion__btn {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #ffffff66;
+}
+.footer-accordion__btn::before {
+  background-color: #ffffff;
+}
+.footer-accordion__btn::after {
+  background-color: #ffffff;
+}
+.accordion.active .footer-accordion__btn::after {
+  transform: rotate(90deg);
+}
+
+.accordion__body {
+  display: none;
+}
+.accordion.active .accordion__body{
+  display: block;
+}
+
+.footer-accordion__nav-list {
+  padding-top: 36px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-accordion__nav-item {
+  width: 200px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 28px;
+  color: #FFFFFFCC;
 }
