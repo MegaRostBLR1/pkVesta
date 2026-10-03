@@ -6,24 +6,56 @@ html {
   font-family: 'Onest-Bold';
   font-weight: 700;
   src: url('./static/fonts/Onest-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Onest-SemiBold';
   font-weight: 600;
   src: url('./static/fonts/Onest-SemiBold.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Onest-Medium';
   font-weight: 500;
   src: url('./static/fonts/Onest-Medium.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Onest-Regular';
   font-weight: 400;
   src: url('./static/fonts/Onest-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Onest-Light';
+  font-weight: 300;
+  src: url('./static/fonts/Onest-Light.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato-Regular';
+  font-weight: 400;
+  src: url('./static/fonts/Lato-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter-Regular';
+  font-weight: 400;
+  src: url('./static/fonts/Inter-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
 }
 
 * {
