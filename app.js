@@ -1,64 +1,99 @@
 const APP_CONFIG = {
   header: {
-    html: './components/header/index.html',
-    css: './components/header/style.css',
-    js: './components/header/script.js'
+    html: './components/layout/header/header.html',
+    css: './components/layout/header/header.css',
+    js: './components/layout/header/header.js'
   },
   footer: {
-    html: './components/footer/index.html',
-    css: './components/footer/style.css',
-    js: './components/footer/script.js'
+    html: './components/layout/footer/footer.html',
+    css: './components/layout/footer/footer.css',
+    js: './components/layout/footer/footer.js'
   },
-  defaultPage: 'page-1',
+  defaultPage: 'home',
   pages: {
-    'page-1': {
-      title: 'Страница 1',
-      html: './components/pages/page-1/index.html',
-      css: './components/pages/page-1/style.css',
-      js: './components/pages/page-1/script.js',
-      init: 'initPage1'
+    'home': {
+      title: 'Главная',
+      html: './components/pages/home/home.html',
+      css: './components/pages/home/home.css',
+      js: './components/pages/home/home.js',
+      init: 'initHome'
     },
-    'page-2': {
-      title: 'Страница 2',
-      html: './components/pages/page-2/index.html',
-      css: './components/pages/page-2/style.css',
-      js: './components/pages/page-2/script.js',
-      init: 'initPage2'
+    'services': {
+      title: 'Услуги',
+      html: './components/pages/services/services.html',
+      css: './components/pages/services/services.css',
+      js: './components/pages/services/services.js',
+      init: 'initServices'
     },
-    'page-3': {
-      title: 'Страница 3',
-      html: './components/pages/page-3/index.html',
-      css: './components/pages/page-3/style.css',
-      js: './components/pages/page-3/script.js',
-      init: 'initPage3'
+    'objects': {
+      title: 'Объекты',
+      html: './components/pages/objects/objects.html',
+      css: './components/pages/objects/objects.css',
+      js: './components/pages/objects/objects.js',
+      init: 'initObjects'
     },
-    'page-4': {
-      title: 'Страница 4',
-      html: './components/pages/page-4/index.html',
-      css: './components/pages/page-4/style.css',
-      js: './components/pages/page-4/script.js',
-      init: 'initPage4'
+    'press-center': {
+      title: 'Пресс-центр',
+      html: './components/pages/press-center/press-center.html',
+      css: './components/pages/press-center/press-center.css',
+      js: './components/pages/press-center/press-center.js',
+      init: 'initPressCenter'
     },
-    'page-5': {
-      title: 'Страница 5',
-      html: './components/pages/page-5/index.html',
-      css: './components/pages/page-5/style.css',
-      js: './components/pages/page-5/script.js',
-      init: 'initPage5'
+    'news': {
+      title: 'Новости',
+      html: './components/pages/press-center/news/news.html',
+      css: './components/pages/press-center/news/news.css',
+      js: './components/pages/press-center/news/news.js',
+      init: 'initNews'
     },
-    'page-6': {
-      title: 'Страница 6',
-      html: './components/pages/page-6/index.html',
-      css: './components/pages/page-6/style.css',
-      js: './components/pages/page-6/script.js',
-      init: 'initPage6'
+    'news-item': {
+      title: 'Новость',
+      html: './components/pages/press-center/news-item/news-item.html',
+      css: './components/pages/press-center/news-item/news-item.css',
+      js: './components/pages/press-center/news-item/news-item.js',
+      init: 'initNewsItem'
     },
-    'page-7': {
-      title: 'Страница 7',
-      html: './components/pages/page-7/index.html',
-      css: './components/pages/page-7/style.css',
-      js: './components/pages/page-7/script.js',
-      init: 'initPage7'
+    'video': {
+      title: 'Видео',
+      html: './components/pages/press-center/video/video.html',
+      css: './components/pages/press-center/video/video.css',
+      js: './components/pages/press-center/video/video.js',
+      init: 'initVideo'
+    },
+    'faq': {
+      title: 'F.A.Q.',
+      html: './components/pages/press-center/faq/faq.html',
+      css: './components/pages/press-center/faq/faq.css',
+      js: './components/pages/press-center/faq/faq.js',
+      init: 'initFaq'
+    },
+    'articles': {
+      title: 'Статьи',
+      html: './components/pages/press-center/articles/articles.html',
+      css: './components/pages/press-center/articles/articles.css',
+      js: './components/pages/press-center/articles/articles.js',
+      init: 'initArticles'
+    },
+    'about': {
+      title: 'О компании',
+      html: './components/pages/about/about.html',
+      css: './components/pages/about/about.css',
+      js: './components/pages/about/about.js',
+      init: 'initAbout'
+    },
+    'prices': {
+      title: 'Цены',
+      html: './components/pages/prices/prices.html',
+      css: './components/pages/prices/prices.css',
+      js: './components/pages/prices/prices.js',
+      init: 'initPrices'
+    },
+    'contacts': {
+      title: 'Контакты',
+      html: './components/pages/contacts/contacts.html',
+      css: './components/pages/contacts/contacts.css',
+      js: './components/pages/contacts/contacts.js',
+      init: 'initContacts'
     }
   }
 };
