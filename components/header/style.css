@@ -407,3 +407,11 @@
 .header__contacts-phone:hover > .header__contacts-choice {
     display: flex;
 }
+
+.header__location-choice-item > svg {
+    display: none;
+}
+
+.header__location-choice-item--selected > svg {
+    display: block;
+}
