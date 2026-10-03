@@ -370,10 +370,6 @@
     gap: 0.5556rem;
 }
 
-.header-bottom__action-icon {
-    display: block;
-}
-
 .header-bottom__action-text {
     display: block;
     font-family: 'Onest-Medium', sans-serif;
