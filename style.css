@@ -15,6 +15,12 @@ html {
 }
 
 @font-face {
+  font-family: 'Onest-Medium';
+  font-weight: 500;
+  src: url('./static/fonts/Onest-Medium.woff2') format('woff2');
+}
+
+@font-face {
   font-family: 'Onest-Regular';
   font-weight: 400;
   src: url('./static/fonts/Onest-Regular.woff2') format('woff2');
@@ -33,10 +39,11 @@ html {
   color: #4D4D4DCC;
   background: #F5F8F7;
   min-width: 320px;
+  font-size: 18px;
 }
 
 body {
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 .container {
@@ -49,4 +56,20 @@ ul {
 
 a {
   text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-weight: 600;
+  line-height: 126%;
+  gap: 10px;
+  padding: 32px 40px;
+  border-radius: 20px;
+  background: #324C88;
+  color: #FFFFFF;
+  width: 100%;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
