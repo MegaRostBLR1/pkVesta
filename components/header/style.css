@@ -202,6 +202,10 @@
     color: #FFFFFF;
 }
 
+.header__contacts-phone {
+    padding: 1.1111rem 0;
+}
+
 .header__contacts-social {
     display: flex;
     align-items: center;
@@ -211,7 +215,7 @@
 
 .header__contacts-choice {
     position: absolute;
-    top: 1.8889rem;
+    top: 3rem;
     left: -0.4444rem;
     display: flex;
     flex-direction: column;
