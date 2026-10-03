@@ -1,13 +1,13 @@
 const APP_CONFIG = {
   header: {
-    html: './components/layout/header/index.html',
-    css: './components/layout/header/style.css',
-    js: './components/layout/header/script.js'
+    html: './components/layout/header/header.html',
+    css: './components/layout/header/header.css',
+    js: './components/layout/header/header.js'
   },
   footer: {
-    html: './components/layout/footer/index.html',
-    css: './components/layout/footer/style.css',
-    js: './components/layout/footer/script.js'
+    html: './components/layout/footer/footer.html',
+    css: './components/layout/footer/footer.css',
+    js: './components/layout/footer/footer.js'
   },
   defaultPage: 'home',
   pages: {

@@ -89,19 +89,87 @@ ul {
 a {
   text-decoration: none;
   cursor: pointer;
+  color: inherit;
+}
+
+.white-text {
+  color: #ffffff;
 }
 
 button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5556rem 2.6667rem;
   font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 1.1111rem;
   font-weight: 600;
-  line-height: 126%;
-  gap: 10px;
-  padding: 32px 40px;
-  border-radius: 20px;
-  background: #324C88;
+  line-height: 1.5556rem;
+  text-transform: uppercase;
   color: #FFFFFF;
-  width: 100%;
-  outline: none;
+  background: #324C88;
   border: none;
+  border-radius: 1.1111rem;
   cursor: pointer;
+}
+
+.main-btn {
+  color: #FFFFFF;
+  background: #324C88;
+}
+
+.main-btn:hover {
+  background: #324C88CC;
+}
+
+.main-btn:active {
+  background: #28427E;
+}
+
+.main-btn:disabled {
+  color: #28427E33;
+  background: #28427E33;
+  cursor: default;
+}
+
+.secondary-btn {
+  color: #324C88;
+  background: #FFF500;
+}
+
+.secondary-btn:hover {
+  color: #324C88CC;
+  background: #FFF500CC;
+}
+
+.secondary-btn:active {
+  color: #28427E;
+  background: #F5EB0A;
+}
+
+.secondary-btn:disabled {
+  color: #324C8833;
+  background: #F5EB0A33;
+  cursor: default;
+}
+
+.tertiary-btn {
+  color: #324C88;
+  background: #FFFFFF;
+}
+
+.tertiary-btn:hover {
+  color: #324C88CC;
+  background: #FFFFFF;
+}
+
+.tertiary-btn:active {
+  color: #28427E;
+  background: #FFFFFF;
+}
+
+.tertiary-btn:disabled {
+  color: #28427E33;
+  background: #FFFFFF33;
+  cursor: default;
 }
