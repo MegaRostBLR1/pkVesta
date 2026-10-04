@@ -174,3 +174,19 @@ button {
   background: #FFFFFF33;
   cursor: default;
 }
+
+@media screen and (max-width: 1300px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+footer {
+  display: none;
+}
