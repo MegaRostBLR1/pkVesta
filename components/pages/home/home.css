@@ -135,7 +135,7 @@
   height: 3.5556rem;
   align-items: center;
   justify-content: center;
-  border: 0.0556rem rgba(255, 255, 255, 0.5);
+  border: 0.0556rem solid rgba(255, 255, 255, 0.5);
   border-radius: 1.1111rem;
   transform: rotate(45deg);
 }
