@@ -1,3 +1,4 @@
+/* Home */
 .home {
   padding: 0.2778rem;
   background: #ffffff;
@@ -298,5 +299,216 @@
   .home__arrow svg {
     width: 2.2857rem;
     height: 2.2857rem;
+  }
+}
+
+
+/* Workflow */
+.workflow {
+  padding: 4.4444rem 0;
+}
+
+.workflow__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.2778rem;
+  border-radius: 0.5556rem;
+  padding: 0 2.7778rem;
+}
+
+.workflow__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.3333rem;
+  margin-bottom: 1.6667rem;
+  max-width: 68.9444rem;
+}
+
+.workflow__title {
+  font-size: 2.6667rem;
+  font-family: Onest-SemiBold, sans-serif;
+  font-weight: 600;
+  color: #4D4D4D;
+  text-align: center;
+}
+
+.workflow__subtitle {
+  text-align: center;
+  font-size: 1.3333rem;
+  font-family: Onest-Regular, sans-serif;
+  font-weight: 400;
+  color: #4D4D4DCC;
+}
+
+.workflow__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5556rem;
+}
+
+.workflow__card {
+  position: relative;
+  overflow: hidden; /* Обрезает края повернутого градиента */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.1111rem;
+  border-radius: 1.1111rem;
+  background-color: #FFFFFF;
+}
+
+.workflow__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: linear-gradient(
+          to right,
+          rgba(80, 80, 80, 0.04) 0%,
+          rgba(80, 80, 80, 0.04) 35%,
+          transparent 35%,
+          transparent 63%,
+          rgba(80, 80, 80, 0.04) 63%
+  );
+  transform-origin: left bottom;
+  transform: rotate(46deg) scale(2);
+}
+
+.workflow__card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.workflow__card-content {
+  margin-bottom: 1.6667rem;
+}
+
+.workflow__card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.3333rem;
+  border-bottom: 0.125rem solid #5050501A;
+
+}
+
+.workflow__card-title {
+  font-family: onest-SemiBold, sans-serif;
+  font-weight: 600;
+  font-size: 1.6667rem;
+  text-transform: uppercase;
+  color: #2C2C2CE5;
+
+}
+
+.workflow__card-body {
+  padding-top: 1.3333rem;
+}
+
+.workflow__card-text {
+  font-family: Onest-Regular, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
+  color: #4D4D4DCC;
+}
+
+.workflow__card-text span {
+  font-family: Onest-Bold, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 150%;
+  color: #505050;
+}
+
+.workflow__btn {
+  width: 100%;
+  text-align: center;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-weight: 600;
+  font-size: 0.9444rem;
+  text-transform: uppercase;
+  border-radius: 20px;
+  padding: 1.1667rem;
+  background: #EBEDF3;
+  color: #324C88;
+}
+
+@media screen and (max-width: 1440px) {
+  .workflow {
+    padding: 2.6667rem 0;
+  }
+
+  .workflow__container {
+    padding: 0 1.6667rem;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .workflow__title {
+    font-size: 1.875rem;
+  }
+
+  .workflow__subtitle {
+    font-size: 1.25rem;
+  }
+
+  .workflow__card-header svg {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .workflow__card-title {
+    font-size: 1.375rem;
+  }
+
+  .workflow__btn {
+    font-size: 1.0625rem;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .workflow {
+    padding: 2.5rem 0;
+  }
+
+  .workflow__title {
+    font-size: 1.875rem;
+  }
+
+  .workflow__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .workflow {
+    padding: 1.25rem 0;
+  }
+
+  .workflow__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow__container {
+    padding: 0 0.625rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .workflow__title {
+    font-size: 1.4286rem;
+  }
+
+  .workflow__subtitle {
+    font-size: 1.1429rem;
+  }
+
+  .workflow__card-header svg {
+    width: 1.7143rem;
+    height: 1.7143rem;
   }
 }
