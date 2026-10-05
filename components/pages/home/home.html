@@ -1,6 +1,206 @@
-<section class="home">
-  <div class="container">
-    <h1>Главная</h1>
-    <p>Тут будет главная страница</p>
-  </div>
+<section class="home" aria-labelledby="home-title">
+    <div class="home__hero">
+        <div class="home__content">
+            <div class="home__main flex-center">
+                <div class="home__category">
+                    <span class="home__category-icon" aria-hidden="true">
+                        <svg width="20" height="23" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 13C10.7954 13 11.5582 12.6841 12.1208 12.1216C12.6834 11.5592 12.9996 10.7963 13 10.0008C13 9.2049 12.6839 8.44165 12.1213 7.8789C11.5587 7.31615 10.7956 7 10 7C9.20435 7 8.44129 7.31615 7.87868 7.8789C7.31607 8.44165 7 9.2049 7 10.0008C7.0004 10.7963 7.31664 11.5592 7.87921 12.1216C8.44178 12.6841 9.20461 13 10 13Z" fill="none" stroke="#324C88" stroke-width="2" stroke-linecap="square"/>
+                            <path d="M19 9.99979C19 17.5001 11.5 22 10 22C8.5 22 1 17.5001 1 9.99979C1.00159 7.61234 1.9505 5.32323 3.63816 3.63561C5.32581 1.948 7.61409 0.999999 10 1C14.9695 1 19 5.03009 19 9.99979Z" fill="none" stroke="#324C88" stroke-width="2" stroke-linecap="square"/>
+                        </svg>
+                    </span>
+                    <span class="home__category-text">Быстровозводимые здания из&nbsp;легких металлоконструкций</span>
+                </div>
+
+                <div class="home__heading">
+                    <h1 class="home__title" id="home-title">
+                        Вы&nbsp;проектируете онлайн. Мы&nbsp;изготавливаем под&nbsp;заказ
+                    </h1>
+                    <p class="home__subtitle">
+                        Поставка зданий на&nbsp;рынки Евразии, Ближнего Востока, Африки и&nbsp;Латинской Америки
+                    </p>
+                </div>
+
+                <div class="home__actions" aria-label="Расчёт стоимости">
+                    <button class="home__button btn main-btn" type="button">Онлайн расчет</button>
+                    <button class="home__button btn tertiary-btn" type="button">Запросить расчет</button>
+                </div>
+            </div>
+
+            <div class="home__slider flex-center" aria-hidden="true">
+                <span class="home__arrow home__arrow--prev flex-center">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M25.687 27.148L18.5203 19.998L25.687 12.848L23.3203 10.4813L13.8203 19.998L23.3203 29.5147L25.687 27.148Z" fill="white"/>
+                    </svg>
+                </span>
+
+                <div class="home__pagination">
+                    <span class="home__dot home__dot--active"></span>
+                    <span class="home__dot"></span>
+                    <span class="home__dot"></span>
+                    <span class="home__dot"></span>
+                </div>
+
+                <span class="home__arrow home__arrow--next flex-center">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.313 12.852L21.4797 20.002L14.313 27.152L16.6797 29.5187L26.1797 20.002L16.6797 10.4854L14.313 12.852Z" fill="white"/>
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="workflow" aria-labelledby="workflow-title">
+    <div class="workflow__container">
+        <header class="workflow__header">
+            <h2 id="workflow-title" class="workflow__title">
+                Стальные здания: от&nbsp;идеи до&nbsp;реализации
+            </h2>
+            <p class="workflow__subtitle">
+                Выбирайте себе надежного международного поставщика на&nbsp;рынках Евразии, Ближнего Востока и&nbsp;Африки
+            </p>
+        </header>
+
+        <div class="workflow__grid">
+            <!-- Card 1 -->
+            <article class="workflow__card">
+                <div class="workflow__card-content">
+                    <div class="workflow__card-header">
+                        <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M40.5 47.2499V22.4999C40.5 21.9032 40.2629 21.3309 39.841 20.9089C39.419 20.4869 38.8467 20.2499 38.25 20.2499H15.75C15.1533 20.2499 14.581 20.4869 14.159 20.9089C13.7371 21.3309 13.5 21.9032 13.5 22.4999V47.2499M13.5 29.2499H40.5M13.5 38.2499H40.5M49.5 42.7499C49.5 43.9434 49.0259 45.088 48.182 45.9319C47.3381 46.7758 46.1935 47.2499 45 47.2499H9C7.80653 47.2499 6.66193 46.7758 5.81802 45.9319C4.97411 45.088 4.5 43.9434 4.5 42.7499V17.9999C4.4995 17.1525 4.73829 16.3222 5.18888 15.6045C5.63948 14.8868 6.28356 14.3109 7.047 13.9431L24.9345 5.00164C25.5733 4.67138 26.282 4.49902 27.0011 4.49902C27.7203 4.49902 28.4289 4.67138 29.0677 5.00164L46.9508 13.9431C47.7146 14.3106 48.3592 14.8863 48.8102 15.604C49.2612 16.3217 49.5003 17.1522 49.5 17.9999V42.7499Z" stroke="#414141" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h3 class="workflow__card-title">Проект</h3>
+                    </div>
+                    <div class="workflow__card-body">
+                        <p class="workflow__card-text">
+                            Даем возможность проектировать и рассчитывать здания <span>самому</span> в уникальном веб-сервисе <span>WebSteel</span> на рынках Евразии, Средней Азии, Африки и Ближнего Востока с учетом <span>технологических ограничений</span> завода. Применяем российские/американские нормы и ЕВРОКОД
+                        </p>
+                    </div>
+                </div>
+                <a href="#project-details" class="workflow__btn btn">Узнать больше</a>
+            </article>
+
+            <article class="workflow__card">
+                <div class="workflow__card-content">
+                    <div class="workflow__card-header">
+                        <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M27.0002 47.2499L16.8752 18.7244M31.5002 15.7499L35.4377 7.27419C35.5904 7.03253 35.8293 6.85803 36.106 6.78615C36.3826 6.71427 36.6763 6.7504 36.9273 6.88719L45.0002 11.2612M31.5002 15.7499L35.4377 24.2324C35.5904 24.4741 35.8293 24.6486 36.106 24.7205C36.3826 24.7923 36.6763 24.7562 36.9273 24.6194L45.0002 20.2454M31.5002 15.7499H18.0002M18.0002 15.7499C18.0002 18.2352 15.9855 20.2499 13.5002 20.2499C11.015 20.2499 9.00025 18.2352 9.00025 15.7499C9.00025 13.2647 11.015 11.2499 13.5002 11.2499C15.9855 11.2499 18.0002 13.2647 18.0002 15.7499ZM7.84375 47.2499H30.3438M11.2502 47.2499V19.6469" stroke="#505050" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h3 class="workflow__card-title">Изготовление</h3>
+                    </div>
+                    <div class="workflow__card-body">
+                        <p class="workflow__card-text">
+                            Наш ультрасовременный <span>автоматизированный</span> завод площадью 12 000 м² следует концепции <span>«безлюдного производства»</span>. Основные элементы высокотехнологичного стального каркаса (около 3 000 кв.м.) производятся обычно силами <span>двух операторов</span>
+                        </p>
+                    </div>
+                </div>
+                <a href="#manufacturing-details" class="workflow__btn btn">Узнать больше</a>
+            </article>
+
+            <article class="workflow__card">
+                <div class="workflow__card-content">
+                    <div class="workflow__card-header">
+                        <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M31.5011 42.75V15.75C31.5011 14.5565 31.027 13.4119 30.1831 12.568C29.3392 11.7241 28.1946 11.25 27.0011 11.25H20.2511M33.7511 42.75H20.2511M33.7511 42.75C33.7511 45.2353 35.7658 47.25 38.2511 47.25C40.7364 47.25 42.7511 45.2353 42.7511 42.75M33.7511 42.75C33.7511 40.2647 35.7658 38.25 38.2511 38.25C40.7364 38.25 42.7511 40.2647 42.7511 42.75M20.2511 42.75C20.2511 45.2353 18.2364 47.25 15.7511 47.25C13.2658 47.25 11.2511 45.2353 11.2511 42.75M20.2511 42.75C20.2511 40.2647 18.2364 38.25 15.7511 38.25C13.2658 38.25 11.2511 40.2647 11.2511 42.75M42.7511 42.75H47.2511C47.8479 42.75 48.4202 42.5129 48.8421 42.091C49.2641 41.669 49.5011 41.0967 49.5011 40.5V32.2875C49.4982 31.78 49.3237 31.2884 49.0061 30.8925L41.1761 21.105C40.9666 20.8398 40.7 20.6253 40.3962 20.4772C40.0924 20.3292 39.7591 20.2516 39.4211 20.25H31.5011M4.50112 29.25V40.5C4.50112 41.0967 4.73817 41.669 5.16013 42.091C5.58209 42.5129 6.15438 42.75 6.75112 42.75H11.2511M9.00112 6.75L4.83862 11.5875C4.67071 11.7411 4.55387 11.9424 4.50383 12.1644C4.45378 12.3864 4.47294 12.6184 4.55872 12.8292C4.6445 13.0399 4.79279 13.2194 4.98362 13.3433C5.17445 13.4673 5.39868 13.5298 5.62612 13.5225H10.4636C10.7089 13.4651 10.9666 13.4971 11.1903 13.6128C11.414 13.7285 11.5891 13.9203 11.6841 14.1536C11.779 14.3868 11.7876 14.6464 11.7082 14.8854C11.6288 15.1245 11.4668 15.3273 11.2511 15.4575L6.75112 20.295" stroke="#505050" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h3 class="workflow__card-title">Доставка</h3>
+                    </div>
+                    <div class="workflow__card-body">
+                        <p class="workflow__card-text">
+                            Мы поставляем здания в любую точку мира на базе <span>компактных</span> холодногнутых <span>оцинкованных профилей</span> (ЛСТК), которые на 30% <span>легче</span> и примерно на 50% <span>меньше по объёму</span> vs. каркасов из <span>черного металла</span>. Выходит более экономичная и быстрая доставка
+                        </p>
+                    </div>
+                </div>
+                <a href="#delivery-details" class="workflow__btn btn">Узнать больше</a>
+            </article>
+
+            <article class="workflow__card">
+                <div class="workflow__card-content">
+                    <div class="workflow__card-header">
+                        <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.75 40.5C6.15326 40.5 5.58097 40.7371 5.15901 41.159C4.73705 41.581 4.5 42.1533 4.5 42.75C4.5 44.5402 5.21116 46.2571 6.47703 47.523C7.7429 48.7888 9.45979 49.5 11.25 49.5H22.5C23.0967 49.5 23.669 49.2629 24.091 48.841C24.5129 48.419 24.75 47.8467 24.75 47.25V42.75C24.75 42.1533 24.5129 41.581 24.091 41.159C23.669 40.7371 23.0967 40.5 22.5 40.5H6.75ZM6.75 40.5L11.25 22.5M29.25 22.5H9C7.80653 22.5 6.66193 22.0259 5.81802 21.182C4.97411 20.3381 4.5 19.1935 4.5 18V9C4.5 7.80653 4.97411 6.66193 5.81802 5.81802C6.66193 4.97411 7.80653 4.5 9 4.5H29.25C29.8467 4.5 30.419 4.73705 30.841 5.15901C31.2629 5.58097 31.5 6.15326 31.5 6.75V20.25C31.5 20.8467 31.2629 21.419 30.841 21.841C30.419 22.2629 29.8467 22.5 29.25 22.5ZM29.25 22.5L27.4275 29.7945C27.306 30.2815 27.0253 30.7139 26.6298 31.0229C26.2343 31.3319 25.7469 31.4999 25.245 31.5H18M31.5 9H38.25C38.8467 9 39.419 9.23705 39.841 9.65901C40.2629 10.081 40.5 10.6533 40.5 11.25V15.75C40.5 16.3467 40.2629 16.919 39.841 17.341C39.419 17.7629 38.8467 18 38.25 18H31.5M40.5 13.5H49.5M15.75 40.5L20.25 22.5" stroke="#505050" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h3 class="workflow__card-title">Монтаж</h3>
+                    </div>
+                    <div class="workflow__card-body">
+                        <p class="workflow__card-text">
+                            Требуется обычно <span>4 человека</span> для сборки нашего стального каркаса из <span>ЛСТК</span>. Есть международные <span>партнеры</span>. Низкая зависимость от <span>человеческого фактора</span>. Только <span>100% болтовое соединение</span> без саморезов и заклепок
+                        </p>
+                    </div>
+                </div>
+                <a href="#assembly-details" class="workflow__btn btn">Узнать больше</a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="industries" aria-labelledby="industries-title">
+    <div class="industries__container">
+        <header class="industries__header">
+            <h3 id="industries-title" class="industries__title">Каталог отраслей</h3>
+            <div class="industries__tabs">
+                <button class="industries__tab-item industries__tab-item--active">Сельское хозяйство</button>
+                <div class="industries__tab-dot"></div>
+                <button class="industries__tab-item">Промышленнные</button>
+                <div class="industries__tab-dot"></div>
+                <button class="industries__tab-item">Коммерческие</button>
+                <div class="industries__tab-dot"></div>
+                <button class="industries__tab-item">Техника</button>
+                <div class="industries__tab-dot"></div>
+                <button class="industries__tab-item">Спортивные здания</button>
+                <div class="industries__tab-feature"></div>
+                <a href="#all-solutions" class="industries__all-link">Все решения</a>
+            </div>
+        </header>
+        <div class="industries__content">
+            <div class="industries__info-container">
+                <div class="industries__info">
+                    <div class="industries__main">
+                        <h2 class="industries__category-title">Сельское хозяйство</h2>
+                        <p class="industries__description">
+                            Быстровозводимые технологии строительства сельскохозяйственных зданий помогают сократить срок окупаемости и организовать бизнес максимально рентабельно
+                        </p>
+                    </div>
+
+                    <div class="industries__tags-group">
+                        <h3 class="industries__tags-title">Типы зданий</h3>
+                        <ul class="industries__tags">
+                            <li><a href="#" class="industries__tag">Ангар</a></li>
+                            <li><a href="#" class="industries__tag">Ферма</a></li>
+                            <li><a href="#" class="industries__tag">Ферма</a></li>
+                            <li><a href="#" class="industries__tag">Ферма</a></li>
+                            <li><a href="#" class="industries__tag">Ферма</a></li>
+                            <li><a href="#" class="industries__tag">Ферма</a></li>
+                            <li><a href="#" class="industries__tag">Ферма</a></li>
+                            <li><a href="#" class="industries__tag">Ферма</a></li>
+                            <li><a href="#" class="industries__tag">Ферма</a></li>
+                            <li><a href="#" class="industries__tag industries__tag--more">и др.</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <a href="#industry-details" class="industries__btn btn main-btn">Перейти в отрасль</a>
+            </div>
+            <div class="industries__pictures">
+                <div class="industries__media industries__media--small">
+                    <img
+                            src="/static/images/home/industries-small-img.png"
+                            alt="Поле с культурами"
+                            class="industries__image"
+                            loading="lazy"
+                    />
+                </div>
+                <div class="industries__media industries__media--large">
+                    <img
+                            src="/static/images/home/industries-big-img.png"
+                            alt="Склад сельскохозяйственной продукции"
+                            class="industries__image"
+                            loading="lazy"
+                    />
+                </div>
+            </div>
+
+        </div>
+    </div>
 </section>
