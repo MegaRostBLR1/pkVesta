@@ -10,7 +10,7 @@
   border-radius: 0.5556rem;
   background:
           linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-          url('https://www.figma.com/api/mcp/asset/de343d6a-66d3-4a70-a923-49b65c64dead/4597c.png')
+          url('/static/images/home/featured.png')
           center / cover no-repeat;
 }
 
@@ -110,7 +110,6 @@
 }
 
 .slider {
-
   gap: 1.3333rem;
   padding: 0.2778rem;
   border-radius: 1.1111rem;
@@ -694,18 +693,15 @@
   color: #2563eb;
 }
 
-/* --- Сетка проектов --- */
-.projects-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+.projects-content {
+  display: flex;
+  gap: 0.2778rem;
   margin-top: 1.1111rem;
 }
 
-/* --- Общие стили карточки --- */
 .project-card {
   position: relative;
-  border-radius: 12px;
+  border-radius: 0.5556rem;
   overflow: hidden;
   background-size: cover;
   background-position: center;
@@ -713,11 +709,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  min-height: 20rem;
+  background-image: url("/static/images/home/featured.png");
   padding: 20px;
-  min-height: 260px;
 }
 
-/* Затемнение фона для читаемости */
 .project-card::before {
   content: '';
   position: absolute;
@@ -731,134 +728,130 @@
   z-index: 2;
 }
 
-/* --- Главная большая карточка (Слева) --- */
 .project-card.featured {
-  min-height: 540px;
-  padding: 28px;
+  min-height: 46.6667rem;
+  padding: 2.5rem 3.6111rem;
+  background-image: url("/static/images/home/featured.png");
 }
 
 .featured .project-card-title {
-  font-size: 32px;
   text-align: center;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 10px;
 }
 
-/* --- Пакет тегов/характеристик --- */
+.project-card-dots {
+  gap: 0.6667rem;
+  margin-top: 1.3333rem;
+}
+
+.project-card-dot {
+  width: 0.4444rem;
+  height: 0.4444rem;
+  background: #D9D9D9;
+  border-radius: 0.5556rem;
+}
+
 .project-tags {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 16px;
+  gap: 0.8333rem;
+  margin-top: 1.3333rem;
 }
 
 .tag {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
+  gap: 0.6667rem;
+  padding: 0.1111rem 1.1111rem 0.1111rem 0.1111rem;
   background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-  font-size: 13px;
+  backdrop-filter: blur(48px);
+  box-shadow: 0 0 3.3333rem 0 #FFFFFF08 inset;
+  border-radius: 1.1111rem;
+  font-size: 1rem;
   font-weight: 500;
   color: #ffffff;
 }
 
-.tag.highlight-yellow {
-  background: #facc15;
-  color: #000;
-  font-weight: 700;
-  border: none;
+.play-container {
+  width: 11.1111rem;
+  height: 11.1111rem;
+  background: #FFFFFF1A;
+  transform: rotate(45deg);
+  border-radius: 0.5556rem;
 }
 
-/* --- Кнопка "Смотреть видео" / Play --- */
 .play-button-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: auto 0;
   cursor: pointer;
-  gap: 8px;
+  gap: 0.7778rem;
+  transform: rotate(-45deg);
 }
 
 .play-btn {
-  width: 52px;
-  height: 52px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
+  width: 2.6667rem;
+  height: 2.6667rem;
+  background: #FFFFFF;
+  border-radius: 1.1111rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.play-btn::after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 8px 0 8px 14px;
-  border-color: transparent transparent transparent #2563eb;
-  margin-left: 3px;
-}
-
-.play-button-wrapper:hover .play-btn {
-  transform: scale(1.1);
-  background: #ffffff;
-}
-
 .play-text {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
   text-transform: uppercase;
 }
 
-/* Маленькая кнопка play в углу для мини-карт */
-.play-btn-small {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 32px;
-  height: 32px;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+.play-small-container {
+  width: 2.7778rem;
+  height: 2.7778rem;
+  background: #FFFFFF1A;
+  transform: rotate(45deg);
+  border-radius: 0.5556rem;
+  margin-top: 0.5556rem;
 }
 
-.play-btn-small::after {
-  content: '';
-  border-style: solid;
-  border-width: 5px 0 5px 9px;
-  border-color: transparent transparent transparent #333;
-  margin-left: 2px;
+.play-button-small {
+  width: 1.5556rem;
+  height: 1.5556rem;
+  border-radius: 0.5556rem;
+  background: #FFFFFF;
+  padding-left: 0.1667rem;
+  transform: rotate(-45deg);
 }
 
-/* --- Правая под-сетка 2x2 --- */
 .sub-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: 0.2778rem;
+}
+
+.project-card__header {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .sub-grid .project-card-title {
-  font-size: 15px;
-  font-weight: 700;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 1.5556rem;
+  font-weight: 600;
   text-transform: uppercase;
   line-height: 1.3;
-  padding-right: 36px;
 }
 
-/* --- Адаптивность --- */
+.sub-grid-footer {
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
 @media (max-width: 992px) {
   .projects-grid {
     grid-template-columns: 1fr;
