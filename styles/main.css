@@ -92,11 +92,30 @@ a {
   color: inherit;
 }
 
+img {
+  width: 100%;
+}
+
 .white-text {
   color: #ffffff;
 }
 
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 button {
+  margin: 0;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+}
+
+.btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,10 +125,13 @@ button {
   font-weight: 600;
   line-height: 1.5556rem;
   text-transform: uppercase;
-  border: none;
   border-radius: 1.1111rem;
-  cursor: pointer;
   transition: color 0.1s ease, background-color 0.1s ease;
+}
+
+.btn:focus-visible {
+  outline: 0.1111rem solid #324C88;
+  outline-offset: 0.2222rem;
 }
 
 .main-btn {
@@ -128,7 +150,7 @@ button {
 .main-btn:disabled {
   color: #28427E33;
   background: #28427E33;
-  cursor: default;
+  cursor: not-allowed;
 }
 
 .secondary-btn {
@@ -149,7 +171,7 @@ button {
 .secondary-btn:disabled {
   color: #324C8833;
   background: #F5EB0A33;
-  cursor: default;
+  cursor: not-allowed;
 }
 
 .tertiary-btn {
@@ -170,7 +192,7 @@ button {
 .tertiary-btn:disabled {
   color: #28427E33;
   background: #FFFFFF33;
-  cursor: default;
+  cursor: not-allowed;
 }
 
 @media screen and (max-width: 1300px) {
@@ -183,8 +205,4 @@ button {
   html {
     font-size: 14px;
   }
-}
-
-footer {
-  display: none;
 }

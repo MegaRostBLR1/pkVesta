@@ -1,7 +1,7 @@
 <section class="home" aria-labelledby="home-title">
     <div class="home__hero">
         <div class="home__content">
-            <div class="home__main">
+            <div class="home__main flex-center">
                 <div class="home__category">
                     <span class="home__category-icon" aria-hidden="true">
                         <svg width="20" height="23" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,13 +22,13 @@
                 </div>
 
                 <div class="home__actions" aria-label="Расчёт стоимости">
-                    <button class="home__button main-btn" type="button">Онлайн расчет</button>
-                    <button class="home__button tertiary-btn" type="button">Запросить расчет</button>
+                    <button class="home__button btn main-btn" type="button">Онлайн расчет</button>
+                    <button class="home__button btn tertiary-btn" type="button">Запросить расчет</button>
                 </div>
             </div>
 
-            <div class="home__slider" aria-hidden="true">
-                <span class="home__arrow home__arrow--prev">
+            <div class="home__slider flex-center" aria-hidden="true">
+                <span class="home__arrow home__arrow--prev flex-center">
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M25.687 27.148L18.5203 19.998L25.687 12.848L23.3203 10.4813L13.8203 19.998L23.3203 29.5147L25.687 27.148Z" fill="white"/>
                     </svg>
@@ -41,7 +41,7 @@
                     <span class="home__dot"></span>
                 </div>
 
-                <span class="home__arrow home__arrow--next">
+                <span class="home__arrow home__arrow--next flex-center">
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M14.313 12.852L21.4797 20.002L14.313 27.152L16.6797 29.5187L26.1797 20.002L16.6797 10.4854L14.313 12.852Z" fill="white"/>
                     </svg>
@@ -78,7 +78,7 @@
                         </p>
                     </div>
                 </div>
-                <a href="#project-details" class="workflow__btn">Узнать больше</a>
+                <a href="#project-details" class="workflow__btn btn">Узнать больше</a>
             </article>
 
             <article class="workflow__card">
@@ -95,7 +95,7 @@
                         </p>
                     </div>
                 </div>
-                <a href="#manufacturing-details" class="workflow__btn">Узнать больше</a>
+                <a href="#manufacturing-details" class="workflow__btn btn">Узнать больше</a>
             </article>
 
             <article class="workflow__card">
@@ -112,7 +112,7 @@
                         </p>
                     </div>
                 </div>
-                <a href="#delivery-details" class="workflow__btn">Узнать больше</a>
+                <a href="#delivery-details" class="workflow__btn btn">Узнать больше</a>
             </article>
 
             <article class="workflow__card">
@@ -129,7 +129,7 @@
                         </p>
                     </div>
                 </div>
-                <a href="#assembly-details" class="workflow__btn">Узнать больше</a>
+                <a href="#assembly-details" class="workflow__btn btn">Узнать больше</a>
             </article>
         </div>
     </div>
@@ -154,47 +154,51 @@
             </div>
         </header>
         <div class="industries__content">
-            <div class="industries__info">
-                <div class="industries__main">
-                    <h2 class="industries__category-title">Сельское хозяйство</h2>
-                    <p class="industries__description">
-                        Быстровозводимые технологии строительства сельскохозяйственных зданий помогают сократить срок окупаемости и организовать бизнес максимально рентабельно.
-                    </p>
+            <div class="industries__info-container">
+                <div class="industries__info">
+                    <div class="industries__main">
+                        <h2 class="industries__category-title">Сельское хозяйство</h2>
+                        <p class="industries__description">
+                            Быстровозводимые технологии строительства сельскохозяйственных зданий помогают сократить срок окупаемости и организовать бизнес максимально рентабельно
+                        </p>
+                    </div>
+
+                    <div class="industries__tags-group">
+                        <h3 class="industries__tags-title">Типы зданий</h3>
+                        <ul class="industries__tags">
+                            <li><a href="#" class="industries__tag">Ангар</a></li>
+                            <li><a href="#" class="industries__tag">Ферма</a></li>
+                            <li><a href="#" class="industries__tag">Ферма</a></li>
+                            <li><a href="#" class="industries__tag">Ферма</a></li>
+                            <li><a href="#" class="industries__tag">Ферма</a></li>
+                            <li><a href="#" class="industries__tag">Ферма</a></li>
+                            <li><a href="#" class="industries__tag">Ферма</a></li>
+                            <li><a href="#" class="industries__tag">Ферма</a></li>
+                            <li><a href="#" class="industries__tag">Ферма</a></li>
+                            <li><a href="#" class="industries__tag industries__tag--more">и др.</a></li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="industries__tags-group">
-                    <h4 class="industries__tags-title">Типы зданий</h4>
-                    <ul class="industries__tags">
-                        <li><a href="#" class="industries__tag">Ангар</a></li>
-                        <li><a href="#" class="industries__tag">Ферма</a></li>
-                        <li><a href="#" class="industries__tag">Ферма</a></li>
-                        <li><a href="#" class="industries__tag">Ферма</a></li>
-                        <li><a href="#" class="industries__tag">Ферма</a></li>
-                        <li><a href="#" class="industries__tag">Ферма</a></li>
-                        <li><a href="#" class="industries__tag">Ферма</a></li>
-                        <li><a href="#" class="industries__tag">Ферма</a></li>
-                        <li><a href="#" class="industries__tag">Ферма</a></li>
-                        <li><a href="#" class="industries__tag industries__tag--more">и др.</a></li>
-                    </ul>
+                <a href="#industry-details" class="industries__btn btn main-btn">Перейти в отрасль</a>
+            </div>
+            <div class="industries__pictures">
+                <div class="industries__media industries__media--small">
+                    <img
+                            src="/static/images/home/industries-small-img.png"
+                            alt="Поле с культурами"
+                            class="industries__image"
+                            loading="lazy"
+                    />
                 </div>
-
-                <a href="#industry-details" class="industries__btn">Перейти в отрасль</a>
-            </div>
-            <div class="industries__media industries__media--small">
-                <img
-                        src="images/agri-field.jpg"
-                        alt="Поле с культурами"
-                        class="industries__image"
-                        loading="lazy"
-                />
-            </div>
-            <div class="industries__media industries__media--large">
-                <img
-                        src="images/agri-warehouse.jpg"
-                        alt="Склад сельскохозяйственной продукции"
-                        class="industries__image"
-                        loading="lazy"
-                />
+                <div class="industries__media industries__media--large">
+                    <img
+                            src="/static/images/home/industries-big-img.png"
+                            alt="Склад сельскохозяйственной продукции"
+                            class="industries__image"
+                            loading="lazy"
+                    />
+                </div>
             </div>
 
         </div>

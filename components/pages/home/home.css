@@ -26,10 +26,7 @@
 }
 
 .home__main {
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 1.5556rem;
 }
 
@@ -113,20 +110,18 @@
 }
 
 .home__slider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
   gap: 1.3333rem;
   padding: 0.2778rem;
   border-radius: 1.1111rem;
 }
 
 .home__arrow {
-  display: flex;
   width: 5rem;
   height: 5rem;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .home__arrow::before {
@@ -532,7 +527,8 @@
   border-bottom: 0.0556rem solid #4D4D4D33;
 }
 
-.industries__title {
+.industries__title,
+.industries__tags-title {
   font-family: 'Onest-SemiBold', sans-serif;
   font-weight: 600;
   font-size: 1.3333rem;
@@ -573,4 +569,87 @@
   font-size: 1rem;
   text-transform: uppercase;
   color: #324C88;
+}
+
+.industries__content {
+  display: flex;
+  padding-top: 1.3333rem;
+  justify-content: space-between;
+}
+
+.industries__info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.industries__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6667rem;
+}
+
+.industries__main {
+  max-width: 34.4444rem;
+}
+
+.industries__category-title {
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-weight: 600;
+  font-size: 2.6667rem;
+  text-transform: uppercase;
+  color: #505050;
+  margin-bottom: 0.5556rem;
+}
+
+.industries__description {
+  font-family: 'Onest-Regular', sans-serif;
+  font-weight: 400;
+  font-size: 1.1111rem;
+  line-height: 150%;
+  color: #4D4D4DCC;
+}
+
+.industries__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5556rem;
+  margin-top: 0.7778rem;
+  max-width: 28.9444rem;
+}
+
+.industries__tag {
+  display: flex;
+  padding: 0.4444rem 0.7778rem;
+  border-radius: 0.3333rem;
+  background: #324C880A;
+  font-family: 'Onest-Medium', sans-serif;
+  font-weight: 500;
+  font-size: 0.8889rem;
+  color: #324C88;
+}
+
+.industries__tag--more {
+  background: transparent;
+}
+
+.industries__btn {
+  text-align: center;
+  width: 14.4444rem;
+  padding: 1rem;
+  border-radius: 1.1111rem;
+}
+
+.industries__pictures {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.2778rem;
+}
+
+.industries__media--small {
+  max-width: 17.7778rem;
+}
+
+.industries__media--large {
+  max-width: 29.2222rem;
 }
