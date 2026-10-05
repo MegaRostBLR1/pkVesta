@@ -526,7 +526,7 @@
   gap: 1.1111rem;
 }
 
-.industries__tab-item {
+.industries__tab {
   padding: 0;
   background: transparent;
   color: #5D5D5D4D;
@@ -536,7 +536,7 @@
   text-transform: uppercase;
 }
 
-.industries__tab-item--active {
+.industries__tab--active {
   color: #5D5D5D;
 }
 
@@ -662,14 +662,14 @@
   padding: 0.2778rem;
 }
 
-.projects-container {
+.projects__container {
   background: #ffffff;
   border-radius: 16px;
   padding: 40px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-.projects-header {
+.projects__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -677,11 +677,11 @@
   border-bottom: 0.0556rem solid #4D4D4D33;
 }
 
-.projects-title {
+.projects__title {
   color: #505050;
 }
 
-.projects-link {
+.projects__link {
   font-family: 'Onest-SemiBold', sans-serif;
   font-weight: 600;
   font-size: 1rem;
@@ -689,11 +689,11 @@
   color: #324C88;
 }
 
-.projects-link:hover {
+.projects__link:hover {
   color: #2563eb;
 }
 
-.projects-grid {
+.projects__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.2778rem;
@@ -729,29 +729,29 @@
   z-index: 2;
 }
 
-.project-card.featured {
+.project-card--featured {
   min-height: 46.6667rem;
   padding: 2.5rem 3.6111rem;
   background-image: url("/static/images/home/featured.png");
 }
 
-.featured .project-card-title {
+.project-card--featured .project-card__title {
   text-align: center;
 }
 
-.project-card-dots {
+.project-card__dots {
   gap: 0.6667rem;
   margin-top: 1.3333rem;
 }
 
-.project-card-dot {
+.project-card__dot {
   width: 0.4444rem;
   height: 0.4444rem;
   background: #D9D9D9;
   border-radius: 0.5556rem;
 }
 
-.project-tags {
+.project-card__tags {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -840,7 +840,7 @@
   justify-content: space-between;
 }
 
-.sub-grid .project-card-title {
+.sub-grid .project-card__title {
   font-family: 'Onest-SemiBold', sans-serif;
   font-size: 1.5556rem;
   font-weight: 600;
@@ -854,10 +854,10 @@
 }
 
 @media (max-width: 992px) {
-  .projects-grid {
+  .projects__grid {
     grid-template-columns: 1fr;
   }
-  .project-card.featured {
+  .project-card--featured {
     min-height: 420px;
   }
 }
