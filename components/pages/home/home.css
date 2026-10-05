@@ -653,3 +653,10 @@
 .industries__media--large {
   max-width: 29.2222rem;
 }
+
+.industries__tab-feature {
+  width: 0.0556rem;
+  background: #DBDBDB;
+  height: 2.2222rem;
+  margin: 0 0.8889rem;
+}
