@@ -579,7 +579,6 @@
 }
 
 .industries__category-title {
-  text-transform: uppercase;
   color: #505050;
   margin-bottom: 0.5556rem;
 }
@@ -680,7 +679,6 @@
 }
 
 .projects-title {
-  text-transform: uppercase;
   color: #505050;
 }
 
