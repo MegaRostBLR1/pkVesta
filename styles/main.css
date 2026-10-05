@@ -200,6 +200,7 @@ h2 {
   font-family: 'Onest-SemiBold', sans-serif;
   font-size: 2.6667rem;
   font-weight: 600;
+  text-transform: uppercase;
 }
 
 @media screen and (max-width: 1300px) {
