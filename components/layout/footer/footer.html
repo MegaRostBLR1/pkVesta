@@ -2,12 +2,12 @@
   <div class="footer__top">
     <!-- 1 строка -->
     <div class="footer__top-head">
-      <div class="footer__top-head-left">
-        <a class="footer__logo" href="#">
-          <img src="/static/images/logo.png" alt="ПК Веста" />
-        </a>
+      <div class="footer-left-col">
+        <a class="footer__logo" href="#"
+          ><img src="/static/images/footer/footer-logo.svg" alt="ПК Веста"
+        /></a>
       </div>
-      <div class="footer__top-head-right">
+      <div class="footer-right-col footer__top-head-right">
         <div class="footer__legal-top">
           Система WebSteel® является объектом исключительных прав ООО
           ПК&nbsp;&laquo;ВЕСТА&raquo;
@@ -17,7 +17,7 @@
     </div>
     <!-- 2 строка -->
     <div class="footer__top-body">
-      <div class="footer__about">
+      <div class="footer-left-col">
         <p class="footer__copyright-company">
           &copy;&nbsp;Промышленная компания &laquo;Веста&raquo;&nbsp;&mdash;
           быстровозводимые здания из&nbsp;легких металлоконструкций для России,
@@ -30,36 +30,80 @@
           <ul class="footer__social-list">
             <li class="footer__social-item">
               <a class="footer__social-link" href="#" target="_blank">
-                <img src="components/footer/img/66936.png" alt="icon" />
+                <svg
+                  width="56"
+                  height="52"
+                  viewBox="0 0 56 52"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="55"
+                    height="51"
+                    rx="19.5"
+                    stroke="#465E94"
+                  />
+                  <rect
+                    x="18"
+                    y="16"
+                    width="20"
+                    height="20"
+                    fill="url(#pattern0_1857_26920)"
+                  />
+                  <defs>
+                    <pattern
+                      id="pattern0_1857_26920"
+                      patternContentUnits="objectBoundingBox"
+                      width="1"
+                      height="1"
+                    >
+                      <use
+                        xlink:href="#image0_1857_26920"
+                        transform="scale(0.0416667)"
+                      />
+                    </pattern>
+                    <image
+                      id="image0_1857_26920"
+                      width="24"
+                      height="24"
+                      preserveAspectRatio="none"
+                      xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAGKADAAQAAAABAAAAGAAAAADiNXWtAAAE+0lEQVRIDY1VDUyUdRh/3ve9b7hDOOAQEJH4UM5SDInYaLA2l5U2sxyFWEGMWQ0llNWqKWytHJRJqEkFM7UxdcvmckxNChPUIFwDjg9BBY7jkKODO+77o//zn8fujoN6bve+///7/z0f7/P8nudl4D+kpv9EuN42kzlq1mxU6QdirC4bFx2kmEmUxPfEiWPa96fu7l7KBLPY4df9javbdR1lA8Z7rxjsxjAAN/BYHjDk53Q7yd8FAlbgihYrbqeFKo8cWvdRUyBbAR2Ud1VVXNW2HjA5LRI+wwOWYQPpEpducLgc5AqwNiTlanZkVklZcuGwN9jHgdvtZos79je2aNt28Um0VqcNGIYBCSf21gm4tjqtIOVLNXmxW56vUL57xwPyCa28q/LYtYkb1DgHHJSnlEDByu1gIcoY7VIi5IRgdMwt/2m8ubllsi3Rg+V5Ft/cPbWruu94iYgAHSTHh9Z9AFtjNtFjGV8KtYMNIOUFeeAB7wKWD1rrlOLY3ZOnO9wd2elMup1D5HX99dCvVA0XzE5LMGEJjbokcee8kUz5Bvhbr4LhuRFa6PmDAAs+cTJiUscuc4WM/Xq0uZOm6Hd1V4HaNBGFLMHcb4vd7KOKdXhz1Q7KHp+DRTZIjGva9n2XBi8JWVJY5qauMx+NoyBjCP18VNXmCagjKcIU/B/Btxg1aZLuc7oM9oexc9HjZu3jPIajHMeC3tL95WPnYHcN3JruWuDYB+S3cbic0DPdl8uqZydjrU6LmCVpQBGS6E89OE8YYZpXEbJCyqGleTQPpws+y0G/YTiZDROFypE1QOJHwdcbMj6Ayu4v6B4vB9eWQ0ZYGnFqfISaP1p0wZGMPLRMylhwuuwe4x50MKHjubFf4NPeWvooXBgG322shvTQJ8DgmKNOcGRgF8+RN8W0+gv2DQnWxVpcFq2A4y9opGCeBOqHTsNnqjqqGyoIgXri5EniRG+fhRm7AeKD4uBIWhXkRD5NHXs3I9ZgZXCcliuvKrW0ae+8bXaaJd4zByMUcAJom+oAcgbZEU+BmBPBpqhnAFkVKZJD9fpPIDN8A21IZNgNguUIC1HXThLzrCL7e5r4gpul59unOrdjF/sLRmWwz0HxY6/Dx6l7/I999of76wmdG0FEZhcpsrNCuWcNbbScyKx6Hql6IMFopPwg+HboDFT2fBkIMv8sWhxF2WYj02C1LOly/ootg9RBUULe5RRpwm0b1juAoBOcR433zsLergMwbdMvQJEBB5+rjlKak+K6t8VtrkIQDfvnh39IWzStH5qcZpl3HfytYI90z/RB88RvgMEgOcbNk3Dy/llivI4+s7qs8Fr81sOliUUNqE9rQMbAS7UDDRf8R4S/A8/eTuiJQxEdYo2woEgACzGeG5F1cWdGzcu5DONAPB1Ad/5Rvepy+/Yp7rG5MT3+ggMR/2gcz5E5dreDNOP6H9/PKHxL+cg46rFXpq+E9M72P4dFdhAQRoZ3MSekswL3+A325jiuXeSbjFzHJiP1Gd8R98Lupqzj+UpGafMOiKfSjbyoMU/KCcgWLgrrWyFZ3qIQRbXEiOWdMxZLYreht3DUpM4hsymGpILF98TBSCg9GyGS96RKk5oSxKvOvLfmDZ23Yc+aKfpzX14YTyaKDgpvLUt+x+eD7QGdGL8oMc5oYhmWUch4wYIxy6humThUszehWOvBLHb/F/pNCjQOgJnoAAAAAElFTkSuQmCC"
+                    />
+                  </defs>
+                </svg>
+                <!-- <img src="/static/images/footer/social-ic.svg" alt="icon" /> -->
               </a>
             </li>
             <li class="footer__social-item">
               <a class="footer__social-link" href="#" target="_blank">
-                <img src="components/footer/img/66936.png" alt="icon" />
+                <img src="/static/images/footer/tg-ic.svg" alt="icon" />
               </a>
             </li>
             <li class="footer__social-item">
               <a class="footer__social-link" href="#" target="_blank">
-                <img src="components/footer/img/66936.png" alt="icon" />
+                <img src="/static/images/footer/social-ic.svg" alt="icon" />
               </a>
             </li>
             <li class="footer__social-item">
               <a class="footer__social-link" href="#" target="_blank">
-                <img src="components/footer/img/66936.png" alt="icon" />
+                <img src="/static/images/footer/social-ic.svg" alt="icon" />
               </a>
             </li>
             <li class="footer__social-item">
               <a class="footer__social-link" href="#" target="_blank">
-                <img src="components/footer/img/66936.png" alt="icon" />
+                <img src="/static/images/footer/social-ic.svg" alt="icon" />
               </a>
             </li>
           </ul>
         </div>
       </div>
-      <div class="footer__contacts">
+      <div class="footer-right-col footer__contacts">
         <address class="footer__contact">
           <div class="footer__contact-icon">
-            <img src="components/footer/img/66936.png" alt="icon" />
+            <img src="/static/images/footer/adress-ic.svg" alt="icon" />
           </div>
           <div class="footer__contact-info">
             <div class="footer__contact-title">Центральный офис:</div>
@@ -74,10 +118,10 @@
         </address>
         <address class="footer__contact">
           <div class="footer__contact-icon">
-            <img src="components/footer/img/66936.png" alt="icon" />
+            <img src="/static/images/footer/adress-ic.svg" alt="icon" />
           </div>
           <div class="footer__contact-info">
-            <div class="footer__contact-title">+7 (4872) 701-777</div>
+            <div class="footer__contact-title"><a href="tel:+74872701777">+7 (4872) 701-777</a></div>
             <div class="footer__contact-text">
               Быстровозводимые здания, сэндвич панели
             </div>
@@ -89,19 +133,19 @@
         </address>
         <address class="footer__contact">
           <div class="footer__contact-icon">
-            <img src="components/footer/img/66936.png" alt="icon" />
+            <img src="/static/images/footer/adress-ic.svg" alt="icon" />
           </div>
           <div class="footer__contact-info">
-            <div class="footer__contact-title">info@pkvesta.ru</div>
+            <div class="footer__contact-title"><a href="mailto:info@pkvesta.ru">info@pkvesta.ru</a></div>
             <div class="footer__contact-text">Наша почта для связи</div>
           </div>
         </address>
         <address class="footer__contact">
           <div class="footer__contact-icon">
-            <img src="components/footer/img/66936.png" alt="icon" />
+            <img src="/static/images/footer/adress-ic.svg" alt="icon" />
           </div>
           <div class="footer__contact-info">
-            <div class="footer__contact-title">+7 (910) 943-49-66</div>
+            <div class="footer__contact-title"><a href="tel:+79109434966">+7 (910) 943-49-66</a></div>
             <div class="footer__contact-text">
               Международные заказы (русский, английский. WhatsApp, Telegram,
               Wechat)
@@ -114,34 +158,36 @@
     <div class="footer__section footer-accordion accordion">
       <div class="footer-accordion__head accordion__head">
         <div class="footer-accordion__title">Завод</div>
-        <button class="footer-accordion__btn accordion__btn flex-center"></button>
+        <button
+          class="footer-accordion__btn accordion__btn"
+        ></button>
       </div>
       <div class="accordion__body">
         <nav class="footer-accordion__nav">
           <ul class="footer-accordion__nav-list">
             <li class="footer-accordion__nav-item">
               <a href="#" target="_blank" class="footer-accordion__nav-link"
-              >О нас</a
+                >О нас</a
               >
             </li>
             <li class="footer-accordion__nav-item">
               <a href="#" target="_blank" class="footer-accordion__nav-link"
-              >Новости</a
+                >Новости</a
               >
             </li>
             <li class="footer-accordion__nav-item">
               <a href="#" target="_blank" class="footer-accordion__nav-link"
-              >Пресса</a
+                >Пресса</a
               >
             </li>
             <li class="footer-accordion__nav-item">
               <a href="#" target="_blank" class="footer-accordion__nav-link"
-              >Каталог зданий</a
+                >Каталог зданий</a
               >
             </li>
             <li class="footer-accordion__nav-item">
               <a href="#" target="_blank" class="footer-accordion__nav-link"
-              >Наши объекты</a
+                >Наши объекты</a
               >
             </li>
           </ul>
@@ -151,32 +197,36 @@
     <div class="footer__section footer-accordion accordion">
       <div class="footer-accordion__head accordion__head">
         <div class="footer-accordion__title">Клиентам</div>
-        <button class="footer-accordion__btn accordion__btn flex-center"></button>
+        <button
+          class="footer-accordion__btn accordion__btn"
+        ></button>
       </div>
       <div class="accordion__body">
         <nav class="footer-accordion__nav">
           <ul class="footer-accordion__nav-list">
             <li class="footer-accordion__nav-item">
               <a href="#" target="_blank" class="footer-accordion__nav-link"
-              >Услуги</a
+                >Услуги</a
               >
             </li>
             <li class="footer-accordion__nav-item">
               <a href="#" target="_blank" class="footer-accordion__nav-link"
-              >Решения</a
+                >Решения</a
               >
             </li>
             <li class="footer-accordion__nav-item">
               <a href="#" target="_blank" class="footer-accordion__nav-link"
-              >Цены</a
+                >Цены</a
               >
             </li>
             <li class="footer-accordion__nav-item">
-              <a href="#" target="_blank" class="footer-accordion__nav-link">FAQ</a>
+              <a href="#" target="_blank" class="footer-accordion__nav-link"
+                >FAQ</a
+              >
             </li>
             <li class="footer-accordion__nav-item">
               <a href="#" target="_blank" class="footer-accordion__nav-link"
-              >Контакты</a
+                >Контакты</a
               >
             </li>
           </ul>
@@ -186,72 +236,82 @@
     <div class="footer__section footer-accordion accordion">
       <div class="footer-accordion__head accordion__head">
         <div class="footer-accordion__title">Партнерам</div>
-        <button class="footer-accordion__btn accordion__btn flex-center"></button>
+        <button
+          class="footer-accordion__btn accordion__btn"
+        ></button>
       </div>
       <div class="accordion__body">
         <nav class="footer-accordion__nav">
           <ul class="footer-accordion__nav-list">
             <li class="footer-accordion__nav-item">
               <a href="#" target="_blank" class="footer-accordion__nav-link"
-              >Lorem</a
+                >Lorem</a
               >
             </li>
             <li class="footer-accordion__nav-item">
               <a href="#" target="_blank" class="footer-accordion__nav-link"
-              >Lorem</a
+                >Lorem</a
               >
             </li>
             <li class="footer-accordion__nav-item">
               <a href="#" target="_blank" class="footer-accordion__nav-link"
-              >Lorem</a
+                >Lorem</a
               >
             </li>
             <li class="footer-accordion__nav-item">
               <a href="#" target="_blank" class="footer-accordion__nav-link"
-              >Lorem</a
+                >Lorem</a
               >
             </li>
             <li class="footer-accordion__nav-item">
               <a href="#" target="_blank" class="footer-accordion__nav-link"
-              >Lorem</a
+                >Lorem</a
               >
             </li>
           </ul>
         </nav>
       </div>
     </div>
+    <!-- нижняя строка -->
     <div class="footer__bottom">
       <div class="footer__subscribe">
         <div class="footer__subscribe-title">Подписаться на новости:</div>
-        <div class="footer__subscribe-btn-wrapper">
-          <button class="footer__subscribe-btn">подписаться</button>
-        </div>
+        <button type="button" class="footer__subscribe-btn">Подписаться</button>
         <div class="footer__subscribe-agreement">
           Настоящим подтверждаю своё согласие на обработку персональных данных,
-          ознакомлен и согласен с условиями - политики конфиденциальности.
+          ознакомлен и согласен с условиями - <a
+            class="footer__subscribe-agreement-link"
+            href="#"
+            >политики конфиденциальности</a
+          >.
         </div>
       </div>
-      <div class="footer__bottom-right">
-        <div class="smth-for-list">
-          <ul>
-            <li class="bottom-item">
-              <a href="#" class="bottom-link"
-              >Пользовательское соглашение Websteel</a
+      <div class="footer-right-col footer__bottom-right">
+        <nav class="footer__bottom-legal">
+          <ul class="footer__legal-list">
+            <li>
+              <a href="#" class="footer__legal-link"
+                >Пользовательское соглашение Websteel</a
               >
             </li>
-            <li class="bottom-item">
-              <a href="#" class="bottom-link">Карта сайта</a>
+            <li>
+              <a href="#" class="footer__legal-link">Карта сайта</a>
             </li>
-            <li class="bottom-item">
-              <a href="#" class="bottom-link">Политика конфиденциальности</a>
+            <li>
+              <a href="#" class="footer__legal-link"
+                >Политика конфиденциальности</a
+              >
             </li>
-            <li class="bottom-item">
-              <a href="#" class="bottom-link">Договор оферта</a>
+            <li>
+              <a href="#" class="footer__legal-link">Договор оферта</a>
             </li>
           </ul>
-        </div>
-        <div class="smth-for-RU-icon">
-          <img src="/static/images/logo.png" alt="">
+        </nav>
+        <div class="footer__badge">
+          <img
+            src="/static/images/footer/made-in-russia.svg"
+            alt="Сделано в России"
+          />
         </div>
       </div>
     </div>

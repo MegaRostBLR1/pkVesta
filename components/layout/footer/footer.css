@@ -1,20 +1,41 @@
-/* стили для всех кнопок аккардин */
+/* стили для всех кнопок аккордеон */
 .accordion__btn {
   position: relative;
   border-radius: 50%;
 }
-.accordion__btn::before {
-  content: "";
-  position: absolute;
-  width: 14px;
-  height: 2px;
-}
+
+.accordion__btn::before,
 .accordion__btn::after {
   content: "";
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.accordion__btn::before {
+  width: 14px;
+  height: 2px;
+}
+
+.accordion__btn::after {
   width: 2px;
   height: 14px;
   transition: transform 0.3s ease;
+}
+
+.accordion.active .accordion__btn::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.accordion__head {
+  cursor: pointer;
+}
+.accordion__body {
+  display: none;
+}
+.accordion.active .accordion__body {
+  display: block;
 }
 
 /* footer */
@@ -29,25 +50,28 @@
   padding: 0 2.2222rem;
 }
 
+.footer-left-col {
+  flex-basis: 31.85%;
+}
+.footer-right-col {
+  flex-basis: 55.65%;
+}
+
 .footer__top-head {
   padding-bottom: 2rem;
   display: flex;
   justify-content: space-between;
+  gap: 63px;
   border-bottom: 0.0556rem solid #ffffff1a;
 }
 
-.footer__top-head-left {
-  background-color: red;
-  flex-basis: 31.85%;
-}
 .footer__logo img {
+  display: block;
   width: 10.5556rem;
   border-radius: 0.5556rem;
 }
 
 .footer__top-head-right {
-  background-color: green;
-  flex-basis: 55.65%;
   display: grid;
   grid-template-columns: 49.9% 1fr;
   column-gap: 2.6667rem;
@@ -61,10 +85,6 @@
   border-bottom: 0.1111rem solid #ffffff1a;
 }
 
-.footer__about {
-  background-color: red;
-  flex-basis: 31.85%;
-}
 .footer__copyright-company {
   margin-bottom: 2rem;
   line-height: 1.5rem;
@@ -86,8 +106,6 @@
 }
 
 .footer__contacts {
-  background-color: green;
-  flex-basis: 55.65%;
   display: grid;
   grid-template-columns: 49.9% 1fr;
   row-gap: 2rem;
@@ -151,19 +169,9 @@
 .footer-accordion__btn::after {
   background-color: #ffffff;
 }
-.accordion.active .footer-accordion__btn::after {
-  transform: rotate(90deg);
-}
-
-.accordion__body {
-  display: none;
-}
-.accordion.active .accordion__body{
-  display: block;
-}
 
 .footer-accordion__nav-list {
-  padding-top: 36px;
+  margin-top: 36px;
   display: flex;
   justify-content: space-between;
 }
@@ -172,5 +180,60 @@
   font-weight: 500;
   font-size: 22px;
   line-height: 28px;
-  color: #FFFFFFCC;
+  color: #ffffffcc;
+}
+
+.footer__bottom {
+  padding-top: 36px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__subscribe {
+  max-width: 612px;
+  margin-right: 25px;
+}
+
+.footer__subscribe-title {
+  margin-bottom: 18px;
+  font-size: 22px;
+  line-height: 28px;
+}
+.footer__subscribe-btn {
+  margin-bottom: 18px;
+  padding: 21px 71px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  background-color: #ffffff1a;
+  border-radius: 10px;
+}
+.footer__subscribe-agreement {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffffcc;
+}
+
+.footer__subscribe-agreement-link {
+  text-decoration: underline;
+}
+
+.footer__bottom-right {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__badge {
+  width: 174px;
+}
+
+.footer__legal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
 }
