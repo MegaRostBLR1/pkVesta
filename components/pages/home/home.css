@@ -2025,18 +2025,24 @@
 }
 
 .home-contact-person__card {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 0.2222rem;
     padding: 2.2222rem;
     border-radius: 1.6667rem;
     background: #FFFFFF;
 }
 
+.home-contact-person__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0.2222rem;
+    padding: 0.2222rem;
+    border-radius: 0.7778rem;
+    background: #F5F8F7;
+}
+
 .home-contact-person__media,
 .home-contact-person__details {
     min-width: 0;
-    padding: 1.3333rem 1.3333rem 1.8333rem;
+    padding: 1.8333rem 1.3333rem;
     border-radius: 1rem;
     background: #FFFFFF;
 }
@@ -2206,7 +2212,7 @@
 
     .home-contact-person__media,
     .home-contact-person__details {
-        padding: 1.1111rem;
+        padding: 1.8333rem 1.1111rem;
     }
 
     .home-contact-person__intro {
@@ -2227,7 +2233,7 @@
 }
 
 @media screen and (max-width: 900px) {
-    .home-contact-person__card {
+    .home-contact-person__layout {
         grid-template-columns: 1fr;
     }
 
