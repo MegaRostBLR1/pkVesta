@@ -609,3 +609,106 @@
         </div>
     </div>
 </section>
+
+<section class="contact" aria-labelledby="contact-title">
+    <div class="contact__container">
+        <div class="contact__content">
+            <div class="contact__intro">
+                <div class="contact__heading">
+                    <p class="contact__eyebrow">Задать вопрос или заказать расчет</p>
+                    <h2 class="contact__title" id="contact-title">Оставьте заявку и мы ответим вам в ближайшее время</h2>
+                </div>
+                <p class="contact__description">Оставьте заявку и мы ответим вам в ближайшее время</p>
+            </div>
+
+            <form class="contact__form" action="#" method="post" enctype="multipart/form-data">
+                <div class="contact__fields">
+                    <div class="contact__row">
+                        <div class="contact__field">
+                            <label class="contact__label" for="contact-name">Имя</label>
+                            <input
+                                class="contact__input"
+                                id="contact-name"
+                                name="name"
+                                type="text"
+                                placeholder="Иван Петров"
+                                autocomplete="name"
+                            >
+                        </div>
+
+                        <div class="contact__field">
+                            <label class="contact__label" for="contact-email">E-mail</label>
+                            <input
+                                class="contact__input"
+                                id="contact-email"
+                                name="email"
+                                type="email"
+                                placeholder="ivan petrov@mail.ru"
+                                autocomplete="email"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="contact__field">
+                        <label class="contact__label" for="contact-phone">Телефон</label>
+                        <div class="contact__phone">
+                            <label class="contact__country" for="contact-country">
+                                <img class="contact__country-flag" src="/static/images/header/flags/rus.svg" alt="">
+                                <select class="contact__country-select" id="contact-country" name="country" aria-label="Код страны">
+                                    <option value="+7">+7</option>
+                                </select>
+                            </label>
+                            <input
+                                class="contact__input contact__phone-input"
+                                id="contact-phone"
+                                name="phone"
+                                type="tel"
+                                placeholder="999 123-45-24"
+                                autocomplete="tel"
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact__details">
+                    <div class="contact__field">
+                        <label class="contact__label" for="contact-comment">Комментарий</label>
+                        <textarea
+                            class="contact__input contact__textarea"
+                            id="contact-comment"
+                            name="comment"
+                            placeholder="Иван Петров"
+                        ></textarea>
+                    </div>
+
+                    <div class="contact__upload">
+                        <label class="contact__upload-button" for="contact-file">
+                            <span class="contact__upload-icon" aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 3.5H14.5L18 7V20.5H6V3.5Z" stroke="#324C88" stroke-width="1.5" stroke-linejoin="round"/>
+                                    <path d="M14 3.5V7.5H18" stroke="#324C88" stroke-width="1.5" stroke-linejoin="round"/>
+                                    <path d="M8.5 12H15.5M8.5 15H13" stroke="#324C88" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </span>
+                            <span>Выберитет файл</span>
+                        </label>
+                        <input class="contact__file" id="contact-file" name="file" type="file">
+                        <p class="contact__upload-hint">Прикрепите/перетащите файл, max 50 mb</p>
+                    </div>
+
+                    <div class="contact__actions">
+                        <button class="contact__submit btn main-btn" type="button">ОТправить</button>
+
+                        <label class="contact__consent">
+                            <input class="contact__checkbox" name="consent" type="checkbox">
+                            <span class="contact__checkbox-box" aria-hidden="true"></span>
+                            <span class="contact__consent-text">
+                                Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
