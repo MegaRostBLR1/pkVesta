@@ -2377,6 +2377,7 @@
 
 .home-news__item {
     min-width: 0;
+    min-height: 32.4444rem;
     padding: 0.5556rem 0.2222rem 0.2222rem;
     border-radius: 0.5556rem;
     background: rgba(255, 255, 255, 0.04);
