@@ -2877,7 +2877,6 @@
 
 /* Home FAQ */
 .home-faq {
-    padding: 0.2778rem;
     background: #F5F8F7;
 }
 
@@ -3002,10 +3001,6 @@
 }
 
 @media screen and (max-width: 700px) {
-    .home-faq {
-        padding: 0.2857rem;
-    }
-
     .home-faq__container {
         padding: 2rem 1rem;
     }
