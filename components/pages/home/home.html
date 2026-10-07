@@ -169,17 +169,19 @@
         <header class="industries__header">
             <h3 id="industries-title" class="industries__title">Каталог отраслей</h3>
             <div class="industries__tabs">
-                <button class="industries__tab industries__tab--active">Сельское хозяйство</button>
-                <div class="industries__tab-dot"></div>
-                <button class="industries__tab">Промышленные</button>
-                <div class="industries__tab-dot"></div>
-                <button class="industries__tab">Коммерческие</button>
-                <div class="industries__tab-dot"></div>
-                <button class="industries__tab">Техника</button>
-                <div class="industries__tab-dot"></div>
-                <button class="industries__tab">Спортивные здания</button>
+                <div class="industries__tab-nav flex-center">
+                    <button class="industries__tab industries__tab--active" id="tab-agriculture">Сельское хозяйство</button>
+                    <div class="industries__tab-dot"></div>
+                    <button class="industries__tab" id="tab-industrial">Промышленные</button>
+                    <div class="industries__tab-dot"></div>
+                    <button class="industries__tab" id="tab-commercial">Коммерческие</button>
+                    <div class="industries__tab-dot"></div>
+                    <button class="industries__tab" id="tab-equipment">Техника</button>
+                    <div class="industries__tab-dot"></div>
+                    <button class="industries__tab" id="tab-sports">Спортивные здания</button>
+                </div>
                 <div class="industries__tab-feature"></div>
-                <a href="#all-solutions" class="industries__all-link">Все решения</a>
+                <a href="#all-solutions" class="industries__all-link">Весь каталог</a>
             </div>
         </header>
 
@@ -358,7 +360,7 @@
             <div class="sub-grid">
                 <article class="project-card">
                     <div class="project-card__header">
-                        <h3 class="project-card__title">Школа, спорт зал<br>и столовая</h3>
+                        <h3 class="project-card__title">Школа, спорт зал<br>и&nbsp;столовая</h3>
                         <div class="play-small-container flex-center">
                             <div class="play-button-small flex-center">
                                 <svg width="8" height="9" viewBox="0 0 8 9" fill="none"
@@ -414,7 +416,7 @@
 
                 <article class="project-card">
                     <div class="project-card__header">
-                        <h3 class="project-card__title">Школа, спорт зал<br>и столовая</h3>
+                        <h3 class="project-card__title">Школа, спорт зал<br>и&nbsp;столовая</h3>
                         <div class="play-small-container flex-center">
                             <div class="play-button-small flex-center">
                                 <svg width="8" height="9" viewBox="0 0 8 9" fill="none"
@@ -470,7 +472,7 @@
 
                 <article class="project-card">
                     <div class="project-card__header">
-                        <h3 class="project-card__title">Школа, спорт зал<br>и столовая</h3>
+                        <h3 class="project-card__title">Школа, спорт зал<br>и&nbsp;столовая</h3>
                         <div class="play-small-container flex-center">
                             <div class="play-button-small flex-center">
                                 <svg width="8" height="9" viewBox="0 0 8 9" fill="none"
@@ -526,7 +528,7 @@
 
                 <article class="project-card">
                     <div class="project-card__header">
-                        <h3 class="project-card__title">Школа, спорт зал<br>и столовая</h3>
+                        <h3 class="project-card__title">Школа, спорт зал<br>и&nbsp;столовая</h3>
                         <div class="play-small-container flex-center">
                             <div class="play-button-small flex-center">
                                 <svg width="8" height="9" viewBox="0 0 8 9" fill="none"
@@ -615,11 +617,14 @@
     <div class="contact__container">
         <div class="contact__content">
             <div class="contact__intro">
-                <div class="contact__heading">
-                    <p class="contact__eyebrow">Задать вопрос или заказать расчет</p>
-                    <h2 class="contact__title" id="contact-title">Оставьте заявку и мы ответим вам в ближайшее время</h2>
+                <div class="contact__header">
+                    <div class="contact__heading">
+                        <p class="contact__eyebrow">Задать вопрос или заказать расчет</p>
+                        <h2 class="contact__title" id="contact-title">Оставьте заявку и мы ответим вам в ближайшее время</h2>
+                    </div>
+                    <p class="contact__description">Оставьте заявку и мы ответим вам в ближайшее время</p>
                 </div>
-                <p class="contact__description">Оставьте заявку и мы ответим вам в ближайшее время</p>
+                <img src="/static/images/home/Group.png" alt="">
             </div>
 
             <form class="contact__form" action="#" method="post" enctype="multipart/form-data">
