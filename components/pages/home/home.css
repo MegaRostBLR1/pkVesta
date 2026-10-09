@@ -465,7 +465,6 @@
     }
 
     .workflow__title {
-        font-size: 1.6667rem;
         line-height: 1.2667;
     }
 
@@ -514,7 +513,6 @@
     }
 
     .workflow__title {
-        font-size: 1.1111rem;
         line-height: 1.4;
     }
 
@@ -567,9 +565,15 @@
     gap: 1.1111rem;
     padding-bottom: 1.1111rem;
     border-bottom: 0.0556rem solid #4D4D4D33;
+}.industries__title {
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    color: #4D4D4D;
+    line-height: 1.7222rem;
 }
 
-.industries__title,
 .industries__tags-title {
     font-family: 'Onest-SemiBold', sans-serif;
     font-weight: 600;
@@ -736,13 +740,9 @@
         gap: 1.6667rem;
     }
 
-    .industries__title {
-        font-size: 1.875rem;
-    }
+    .industries__title {}
 
-    .industries__category-title {
-        font-size: 1.6667rem;
-    }
+    .industries__category-title {}
 
     .industries__tab,
     .industries__all-link {
@@ -805,7 +805,6 @@
 
 @media (max-width: 480px) {
     .industries__title {
-        font-size: 1.1111rem;
         line-height: 1.5556rem;
     }
 
@@ -825,8 +824,7 @@
 
     .industries__category-title {
         margin-bottom: 0.5556rem;
-        font-size: 1.2222rem;
-    }
+}
 
     .industries__description {
         font-size: 0.7778rem;
@@ -1283,7 +1281,7 @@
     max-width: 47.7778rem;
     color: #324C88;
     font-family: 'Onest-SemiBold', sans-serif;
-    font-size: 2.4444rem;
+
     font-weight: 600;
     line-height: 1.4;
     text-transform: uppercase;
@@ -1566,9 +1564,7 @@
         gap: 1.3333rem;
     }
 
-    .contact__title {
-        font-size: 1.8571rem;
-    }
+    .contact__title {}
 
     .contact__description {
         font-size: 1.1429rem;
@@ -1584,9 +1580,7 @@
 }
 
 @media screen and (max-width: 480px) {
-    .contact__title {
-        font-size: 1.5714rem;
-    }
+    .contact__title {}
 
     .contact__form {
         padding: 0.8571rem;
@@ -1649,7 +1643,7 @@
 
 .home-about__title {
     font-family: 'Onest-SemiBold', sans-serif;
-    font-size: 2.6667rem;
+
     font-weight: 600;
     line-height: 1.3333;
     text-transform: uppercase;
@@ -1826,7 +1820,7 @@
 
 .home-advantages__title {
     font-family: 'Onest-SemiBold', sans-serif;
-    font-size: 2.6667rem;
+
     font-weight: 600;
     line-height: 1.2;
     color: #4D4D4D;
@@ -2005,9 +1999,7 @@
         max-width: 28rem;
     }
 
-    .home-about__title {
-        font-size: 2.25rem;
-    }
+    .home-about__title {}
 
     .home-about__description {
         margin-top: 7rem;
@@ -2059,9 +2051,7 @@
         max-width: none;
     }
 
-    .home-about__title {
-        font-size: 2rem;
-    }
+    .home-about__title {}
 
     .home-about__description {
         order: 2;
@@ -2095,9 +2085,7 @@
         padding: 2.5rem 1rem 0.5rem;
     }
 
-    .home-advantages__title {
-        font-size: 2rem;
-    }
+    .home-advantages__title {}
 
     .home-advantages__subtitle {
         font-size: 1.1rem;
@@ -2137,7 +2125,6 @@
     }
 
     .home-about__title {
-        font-size: 1.5714rem;
         line-height: 1.35;
     }
 
@@ -2176,9 +2163,7 @@
         padding-top: 2rem;
     }
 
-    .home-advantages__title {
-        font-size: 1.5714rem;
-    }
+    .home-advantages__title {}
 
     .home-advantages__subtitle {
         font-size: 1rem;
@@ -2244,7 +2229,7 @@
     margin: 0;
     color: #FFFFFF;
     font-family: 'Onest-SemiBold', sans-serif;
-    font-size: 2.1111rem;
+
     font-weight: 600;
     line-height: 1.5263;
     text-transform: uppercase;
@@ -2308,7 +2293,6 @@
     }
 
     .online-calculation__title {
-        font-size: 1.8571rem;
         line-height: 1.35;
     }
 
@@ -2331,9 +2315,7 @@
         padding: 1.5rem 1rem;
     }
 
-    .online-calculation__title {
-        font-size: 1.5714rem;
-    }
+    .online-calculation__title {}
 }
 
 
@@ -2659,7 +2641,7 @@
     margin: 0;
     color: #4D4D4D;
     font-family: 'Onest-SemiBold', sans-serif;
-    font-size: 2.6667rem;
+
     font-weight: 600;
     line-height: 1.2708;
     text-transform: uppercase;
@@ -2829,9 +2811,7 @@
         padding-inline: 2rem;
     }
 
-    .home-news__title {
-        font-size: 2.25rem;
-    }
+    .home-news__title {}
 
     .home-news__grid {
         gap: 1.3333rem;
@@ -2876,9 +2856,7 @@
         gap: 1rem;
     }
 
-    .home-news__title {
-        font-size: 1.5714rem;
-    }
+    .home-news__title {}
 
     .home-news__link {
         padding-top: 0.2222rem;
@@ -2931,7 +2909,7 @@
     margin: 0;
     color: #4D4D4D;
     font-family: 'Onest-SemiBold', sans-serif;
-    font-size: 2.6667rem;
+
     font-weight: 600;
     line-height: 1.2708;
     text-align: center;
@@ -3116,9 +3094,7 @@
         gap: 4rem;
     }
 
-    .home-lstk__title {
-        font-size: 2.25rem;
-    }
+    .home-lstk__title {}
 }
 
 @media screen and (max-width: 1024px) {
@@ -3147,9 +3123,7 @@
         margin-bottom: 1.5rem;
     }
 
-    .home-lstk__title {
-        font-size: 1.5714rem;
-    }
+    .home-lstk__title {}
 
     .home-lstk__content {
         gap: 1.5rem;
@@ -3216,7 +3190,7 @@
     margin: 0;
     color: #4D4D4D;
     font-family: 'Onest-SemiBold', sans-serif;
-    font-size: 2.6667rem;
+
     font-weight: 600;
     line-height: 1.1667;
     text-align: center;
@@ -3301,9 +3275,7 @@
         padding: 2rem 1.3333rem;
     }
 
-    .home-faq__title {
-        font-size: 2.25rem;
-    }
+    .home-faq__title {}
 
     .home-faq__list {
         max-width: 100%;
@@ -3329,7 +3301,6 @@
     }
 
     .home-faq__title {
-        font-size: 1.5714rem;
         line-height: 1.2;
     }
 
@@ -3361,9 +3332,7 @@
         padding: 1.5rem 0.8571rem;
     }
 
-    .home-faq__title {
-        font-size: 1.4286rem;
-    }
+    .home-faq__title {}
 
     .home-faq__summary {
         padding: 0.8571rem;
