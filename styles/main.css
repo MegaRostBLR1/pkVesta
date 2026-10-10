@@ -79,6 +79,12 @@ body {
   margin: 0 auto;
 }
 
+.section__container {
+  padding: 2.2222rem;
+  border-radius: 0.5556rem;
+  background-color: #FFFFFF;
+}
+
 ul {
   list-style: none;
 }
@@ -198,16 +204,29 @@ h2 {
   font-size: 2.6667rem;
   font-weight: 600;
   text-transform: uppercase;
+  text-align: center;
 }
 
 @media screen and (max-width: 1300px) {
+  body {
+    font-size: 0.8889rem;
+  }
+
   h2 {
     font-size: 1.6667rem;
   }
 }
 
-@media screen and (max-width: 480px) {
-  h2 {
-    font-size: 1.1111rem;
+@media screen and (max-width: 680px) {
+  body {
+    font-size: 0.7778rem;
   }
+
+  h2 {
+    font-size: 1.2222rem;
+  }
+}
+
+footer {
+  display: none;
 }

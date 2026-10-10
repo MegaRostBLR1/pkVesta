@@ -425,7 +425,6 @@
 .workflow__card-text {
     font-family: Onest-Regular, sans-serif;
     font-weight: 400;
-    font-size: 1rem;
     line-height: 1.5;
     color: #4D4D4DCC;
 }
@@ -433,7 +432,6 @@
 .workflow__card-text span {
     font-family: Onest-Bold, sans-serif;
     font-weight: 700;
-    font-size: 1rem;
     line-height: 1.5;
     color: #505050;
 }
@@ -479,10 +477,6 @@
 
     .workflow__card-title {
         font-size: 1.2222rem;
-    }
-
-    .workflow__card-text {
-        font-size: 0.8889rem;
     }
 
     .workflow__btn {
@@ -536,7 +530,6 @@
     }
 
     .workflow__card-text {
-        font-size: 0.7778rem;
         line-height: 1.5714;
     }
 
@@ -968,7 +961,6 @@
     backdrop-filter: blur(48px);
     box-shadow: 0 0 3.3333rem 0 #FFFFFF08 inset;
     border-radius: 1.1111rem;
-    font-size: 0.8889rem;
     font-weight: 500;
     color: #ffffff;
 }
@@ -1061,6 +1053,7 @@
 .sub-grid .tag {
     padding: 0.1111rem 0.5556rem 0.1111rem 0.1111rem;
     border-radius: 0.5556rem;
+    font-size: 0.8889rem;
 }
 
 .sub-grid .highlight-yellow {
@@ -1116,23 +1109,8 @@
         display: none;
     }
 
-    .project-card__title {
-        font-size: 3rem;
-    }
-
-    .sub-grid .project-card__title {
-        font-size: 1.75rem;
-    }
-
     .highlight-yellow {
         font-size: 0.8889rem;
-    }
-}
-
-@media (max-width: 1300px) {
-    .tag,
-    .highlight-yellow {
-        font-size: 1rem;
     }
 }
 
@@ -1185,9 +1163,6 @@
     .project-card--featured {
         padding: 1.4286rem 0.7143rem;
     }
-    .project-card__title {
-        font-size: 1.5714rem;
-    }
 
     .project-card__dots {
         gap: 1.7143rem;
@@ -1213,7 +1188,7 @@
     }
 
     .sub-grid .project-card__title {
-        font-size: 1.5714rem;
+        font-size: 1.2222rem;
         max-width: 15.7143rem;
     }
 
