@@ -1,4 +1,4 @@
-/* Главный экран главной страницы. Фоновое изображение: ../../../static/images/home/home-hero.jpg */
+/* Главный экран главной страницы. Фоновое изображение: /static/images/home/home-hero.jpg */
 .home-hero {
     position: relative;
     display: flex;
@@ -15,7 +15,7 @@
     position: absolute;
     z-index: -2;
     inset: 0;
-    background-image: url("../../../static/images/home/featured.png");
+    background-image: url("/static/images/home/featured.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2119,7 +2119,7 @@
     position: absolute;
     z-index: -2;
     inset: 0;
-    background-image: url("../../../static/images/home/featured.png");
+    background-image: url("/static/images/home/featured.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -3197,7 +3197,7 @@
     z-index: -2;
     inset: 0;
     border-radius: inherit;
-    background: url("../../../static/images/home/home-about.png") center / cover no-repeat;
+    background: url("/static/images/home/home-about.png") center / cover no-repeat;
 }
 
 .home-about__hero::before {
