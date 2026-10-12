@@ -25,6 +25,13 @@ const APP_CONFIG = {
       js: './components/pages/services/services.js',
       init: 'initServices'
     },
+    'laser': {
+      title: 'Лазерная резка металла',
+      html: './components/pages/laser/laser.html',
+      css: './components/pages/laser/laser.css',
+      js: './components/pages/laser/laser.js',
+      init: 'initLaser'
+    },
     'objects': {
       title: 'Объекты',
       html: './components/pages/objects/objects.html',
@@ -234,7 +241,7 @@ function initNavigationRouting() {
     'Комплектующие для ворот': 'objects',
     'Оцинкованный профиль': 'objects',
     'Услуги': 'services',
-    'Лазерная резка': 'services',
+    'Лазерная резка': 'laser',
     'Лизинг зданий': 'services',
     'Консалтинг': 'services',
     'Проектирование': 'services',
