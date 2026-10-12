@@ -63,7 +63,7 @@
 }
 
 .footer__section {
-  border-top: 0.0556rem solid rgba(255, 255, 255, 0.2);
+  border-top: 0.0556rem solid #FFFFFF33;
   padding: 2rem 0;
 }
 .footer__section:first-child {

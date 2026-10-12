@@ -1,243 +1,222 @@
-<section class="services-intro" aria-labelledby="services-title">
-  <div class="services-intro__panel">
-    <div class="services-intro__content">
-      <nav class="services-intro__breadcrumbs" aria-label="Хлебные крошки">
-        <a class="services-intro__breadcrumb-link" href="#home">Главная</a>
-        <span class="services-intro__breadcrumb-separator" aria-hidden="true">-</span>
-        <span class="services-intro__breadcrumb-current" aria-current="page">Услуги</span>
+<section class="services" aria-labelledby="services-title">
+  <div class="services__panel section__container">
+    <div class="services__container container">
+      <nav class="services__breadcrumbs" aria-label="Хлебные крошки">
+        <a class="services__breadcrumb-link" href="#/home">Главная</a>
+        <span class="services__breadcrumb-separator" aria-hidden="true">-</span>
+        <span aria-current="page">Услуги</span>
       </nav>
 
-      <h1 class="services-intro__title" id="services-title">
-        <span class="services-intro__title-text">Услуги</span>
-        <span class="services-intro__title-count">(9)</span>
+      <h1 class="services__title" id="services-title">
+        <span class="services__title-text">Услуги</span>
+        <span class="services__count">(9)</span>
       </h1>
 
-      <div class="services-intro__filter" role="group" aria-label="Категории услуг">
-        <button class="services-intro__filter-item services-intro__filter-item--active" type="button" aria-pressed="true">Все</button>
-        <button class="services-intro__filter-item" type="button" aria-pressed="false">Резка металла</button>
-        <button class="services-intro__filter-item" type="button" aria-pressed="false">лизинг зданий</button>
-        <button class="services-intro__filter-item" type="button" aria-pressed="false">Консалтинг</button>
-        <button class="services-intro__filter-item" type="button" aria-pressed="false">Проектирование</button>
-        <button class="services-intro__filter-item" type="button" aria-pressed="false">изготовление</button>
-        <button class="services-intro__filter-item" type="button" aria-pressed="false">фундамент</button>
-        <button class="services-intro__filter-item" type="button" aria-pressed="false">Доставка</button>
-        <button class="services-intro__filter-item" type="button" aria-pressed="false">Монтаж</button>
-      </div>
+      <nav class="services__categories" aria-label="Категории услуг">
+        <button class="services__category is-active" type="button" aria-pressed="true" data-category="all">Все
+        </button>
+        <button class="services__category" type="button" aria-pressed="false" data-category="metal-cutting">
+          Резка металла
+        </button>
+        <button class="services__category" type="button" aria-pressed="false" data-category="building-leasing">
+          Лизинг зданий
+        </button>
+        <button class="services__category" type="button" aria-pressed="false" data-category="websteel">
+          WebSteel
+        </button>
+        <button class="services__category" type="button" aria-pressed="false" data-category="design">
+          Проектирование
+        </button>
+        <button class="services__category" type="button" aria-pressed="false" data-category="manufacturing">
+          Изготовление
+        </button>
+        <button class="services__category" type="button" aria-pressed="false" data-category="payment">Оплата
+        </button>
+        <button class="services__category" type="button" aria-pressed="false" data-category="foundation">
+          Фундамент
+        </button>
+        <button class="services__category" type="button" aria-pressed="false" data-category="installation">
+          Монтаж
+        </button>
+      </nav>
     </div>
   </div>
 </section>
 
-<section class="services" aria-label="Услуги">
-  <div class="services__panel">
-    <div class="services__grid">
-      <article class="services__card">
-        <div class="services__media">
-          <img class="services__image" src="./static/images/services/service-card.png" alt="">
-        </div>
-        <div class="services__content">
-          <div class="services__text">
-            <h2 class="services__card-title">Лазерная резка</h2>
-            <p class="services__description">Резка металла уникальных изделий под ключ для уникальных проектов</p>
+<section class="services-list" aria-label="Список услуг">
+  <div class="services-list__panel">
+    <div class="services-list__container">
+      <div class="services-list__grid">
+        <article class="service-card" data-category="metal-cutting">
+          <img class="service-card__image" src="/static/images/angar.png" alt=""
+               width="170" height="200" loading="lazy">
+          <div class="service-card__content">
+            <div class="service-card__text">
+              <h2 class="service-card__title">Лазерная резка</h2>
+              <p class="service-card__description">Резка металла уникальных изделий под ключ для
+                уникальных проектов</p>
+            </div>
+            <a class="btn main-btn service-card__button" href="#/services">Подробнее</a>
           </div>
-          <button class="services__button main-btn" type="button">Подробнее</button>
-        </div>
-      </article>
-
-      <article class="services__card">
-        <div class="services__media">
-          <img class="services__image" src="./static/images/services/service-card.png" alt="">
-        </div>
-        <div class="services__content">
-          <div class="services__text">
-            <h2 class="services__card-title">Лизинг зданий</h2>
-            <p class="services__description">Реализуйте проект под низкие % без необходимости ввода здания в эксплуатацию</p>
+        </article>
+        <article class="service-card" data-category="building-leasing">
+          <img class="service-card__image" src="/static/images/angar.png" alt=""
+               width="170" height="200" loading="lazy">
+          <div class="service-card__content">
+            <div class="service-card__text">
+              <h2 class="service-card__title">Лизинг зданий</h2>
+              <p class="service-card__description">Реализуйте проект под низкие % без необходимости ввода
+                здания в эксплуатацию</p>
+            </div>
+            <a class="btn main-btn service-card__button" href="#/services">Подробнее</a>
           </div>
-          <button class="services__button main-btn" type="button">Подробнее</button>
-        </div>
-      </article>
-
-      <article class="services__card">
-        <div class="services__media">
-          <img class="services__image" src="./static/images/services/service-card.png" alt="">
-        </div>
-        <div class="services__content">
-          <div class="services__text">
-            <h2 class="services__card-title">Консалтинг</h2>
-            <p class="services__description">Мы поделимся нашим опытом реализации уникальных проектов с 1991 г</p>
+        </article>
+        <article class="service-card" data-category="consulting">
+          <img class="service-card__image" src="/static/images/angar.png" alt=""
+               width="170" height="200" loading="lazy">
+          <div class="service-card__content">
+            <div class="service-card__text">
+              <h2 class="service-card__title">Консалтинг</h2>
+              <p class="service-card__description">Мы поделимся нашим опытом реализации уникальных
+                проектов с 1991 г</p>
+            </div>
+            <a class="btn main-btn service-card__button" href="#/services">Подробнее</a>
           </div>
-          <button class="services__button main-btn" type="button">Подробнее</button>
-        </div>
-      </article>
-
-      <article class="services__card">
-        <div class="services__media">
-          <img class="services__image" src="./static/images/services/service-card.png" alt="">
-        </div>
-        <div class="services__content">
-          <div class="services__text">
-            <h2 class="services__card-title">Проектирование</h2>
-            <p class="services__description">Учитываем ЕвроКод, Российские и Американские нормы для междунарожных рынков</p>
+        </article>
+        <article class="service-card" data-category="design">
+          <img class="service-card__image" src="/static/images/angar.png" alt=""
+               width="170" height="200" loading="lazy">
+          <div class="service-card__content">
+            <div class="service-card__text">
+              <h2 class="service-card__title">Проектирование</h2>
+              <p class="service-card__description">Учитываем ЕвроКод, Российские и Американские нормы для
+                международных рынков</p>
+            </div>
+            <a class="btn main-btn service-card__button" href="#/services">Подробнее</a>
           </div>
-          <button class="services__button main-btn" type="button">Подробнее</button>
-        </div>
-      </article>
-
-      <article class="services__card">
-        <div class="services__media">
-          <img class="services__image" src="./static/images/services/service-card.png" alt="">
-        </div>
-        <div class="services__content">
-          <div class="services__text">
-            <h2 class="services__card-title">Изготовление</h2>
-            <p class="services__description">Сделаем здание конструктор LEGO c высокой степенью заводской готовности в любую точку мира</p>
+        </article>
+        <article class="service-card" data-category="manufacturing">
+          <img class="service-card__image" src="/static/images/angar.png" alt=""
+               width="170" height="200" loading="lazy">
+          <div class="service-card__content">
+            <div class="service-card__text">
+              <h2 class="service-card__title">Изготовление</h2>
+              <p class="service-card__description">Сделаем здание-конструктор LEGO с высокой степенью
+                заводской готовности в любую точку мира</p>
+            </div>
+            <a class="btn main-btn service-card__button" href="#/services">Подробнее</a>
           </div>
-          <button class="services__button main-btn" type="button">Подробнее</button>
-        </div>
-      </article>
-
-      <article class="services__card">
-        <div class="services__media">
-          <img class="services__image" src="./static/images/services/service-card.png" alt="">
-        </div>
-        <div class="services__content">
-          <div class="services__text">
-            <h2 class="services__card-title">Фундамент</h2>
-            <p class="services__description">Наши партнеры возьмут на себя все земельные и фундаментные работы</p>
+        </article>
+        <article class="service-card" data-category="foundation">
+          <img class="service-card__image" src="/static/images/angar.png" alt=""
+               width="170" height="200" loading="lazy">
+          <div class="service-card__content">
+            <div class="service-card__text">
+              <h2 class="service-card__title">Фундамент</h2>
+              <p class="service-card__description">Наши партнеры возьмут на себя все земельные и
+                фундаментные работы</p>
+            </div>
+            <a class="btn main-btn service-card__button" href="#/services">Подробнее</a>
           </div>
-          <button class="services__button main-btn" type="button">Подробнее</button>
-        </div>
-      </article>
-
-      <article class="services__card">
-        <div class="services__media">
-          <img class="services__image" src="./static/images/services/service-card.png" alt="">
-        </div>
-        <div class="services__content">
-          <div class="services__text">
-            <h2 class="services__card-title">Доставка</h2>
-            <p class="services__description">Поставляем комплекты зданий на международные рынки в евро фурах и в 40ка футовых контейнерах</p>
+        </article>
+        <article class="service-card" data-category="delivery">
+          <img class="service-card__image" src="/static/images/angar.png" alt=""
+               width="170" height="200" loading="lazy">
+          <div class="service-card__content">
+            <div class="service-card__text">
+              <h2 class="service-card__title">Доставка</h2>
+              <p class="service-card__description">Поставляем комплекты зданий на международные рынки в
+                евро-фурах и 40-футовых контейнерах</p>
+            </div>
+            <a class="btn main-btn service-card__button" href="#/services">Подробнее</a>
           </div>
-          <button class="services__button main-btn" type="button">Подробнее</button>
-        </div>
-      </article>
-
-      <article class="services__card">
-        <div class="services__media">
-          <img class="services__image" src="./static/images/services/service-card.png" alt="">
-        </div>
-        <div class="services__content">
-          <div class="services__text">
-            <h2 class="services__card-title">Монтаж</h2>
-            <p class="services__description">Наши партнеры примум комплект здания и смонтируют его в короткие сроки</p>
+        </article>
+        <article class="service-card" data-category="installation">
+          <img class="service-card__image" src="/static/images/angar.png" alt=""
+               width="170" height="200" loading="lazy">
+          <div class="service-card__content">
+            <div class="service-card__text">
+              <h2 class="service-card__title">Монтаж</h2>
+              <p class="service-card__description">Наши партнеры примут комплект здания и смонтируют его в
+                короткие сроки</p>
+            </div>
+            <a class="btn main-btn service-card__button" href="#/services">Подробнее</a>
           </div>
-          <button class="services__button main-btn" type="button">Подробнее</button>
-        </div>
-      </article>
+        </article>
+      </div>
+      <button class="services-list__more" type="button" aria-expanded="false">Показать ещё</button>
     </div>
-
-    <button class="services__more" type="button" aria-expanded="false">Показать еще</button>
   </div>
 </section>
 
-<section class="contact" aria-labelledby="contact-title">
-  <div class="contact__container">
-    <div class="contact__content">
-      <div class="contact__intro">
-        <div class="contact__heading">
-          <p class="contact__eyebrow">Задать вопрос или заказать расчет</p>
-          <h2 class="contact__title" id="contact-title">Оставьте заявку и мы ответим вам в ближайшее время</h2>
+<section class="services-contact" aria-labelledby="services-contact-title">
+  <div class="services-contact__container">
+    <div class="services-contact__intro">
+      <div class="services-contact__heading">
+        <p class="services-contact__eyebrow">Задать вопрос или заказать расчет</p>
+        <h2 class="services-contact__title" id="services-contact-title">Оставьте заявку и мы ответим вам в
+          ближайшее время</h2>
+        <p class="services-contact__description">Оставьте заявку и мы ответим вам в ближайшее время</p>
+      </div>
+      <div class="services-contact__illustration" aria-hidden="true">
+        <img src=/static/images/application.png alt="">
+      </div>
+    </div>
+
+    <form class="services-contact__form" action="#" method="post" enctype="multipart/form-data">
+      <div class="services-contact__fields">
+        <div class="services-contact__field">
+          <label class="services-contact__label" for="services-contact-name">Имя</label>
+          <input class="services-contact__input" id="services-contact-name" name="name" type="text"
+                 placeholder="Иван Петров" autocomplete="name" required>
         </div>
-        <p class="contact__description">Оставьте заявку и мы ответим вам в ближайшее время</p>
+        <div class="services-contact__field">
+          <label class="services-contact__label" for="services-contact-email">E-mail</label>
+          <input class="services-contact__input" id="services-contact-email" name="email" type="email"
+                 placeholder="ivan.petrov@mail.ru" autocomplete="email" required>
+        </div>
+        <div class="services-contact__field services-contact__field--phone">
+          <label class="services-contact__label" for="services-contact-phone">Телефон</label>
+          <input class="services-contact__input" id="services-contact-phone" name="phone" type="tel"
+                 placeholder="+7 999 123-45-24" autocomplete="tel" required>
+        </div>
       </div>
 
-      <form class="contact__form" action="#" method="post" enctype="multipart/form-data">
-        <div class="contact__fields">
-          <div class="contact__row">
-            <div class="contact__field">
-              <label class="contact__label" for="contact-name">Имя</label>
-              <input
-                  class="contact__input"
-                  id="contact-name"
-                  name="name"
-                  type="text"
-                  placeholder="Иван Петров"
-                  autocomplete="name"
-              >
-            </div>
-
-            <div class="contact__field">
-              <label class="contact__label" for="contact-email">E-mail</label>
-              <input
-                  class="contact__input"
-                  id="contact-email"
-                  name="email"
-                  type="email"
-                  placeholder="ivan petrov@mail.ru"
-                  autocomplete="email"
-              >
-            </div>
-          </div>
-
-          <div class="contact__field">
-            <label class="contact__label" for="contact-phone">Телефон</label>
-            <div class="contact__phone">
-              <label class="contact__country" for="contact-country">
-                <img class="contact__country-flag" src="/static/images/header/flags/rus.svg" alt="">
-                <select class="contact__country-select" id="contact-country" name="country" aria-label="Код страны">
-                  <option value="+7">+7</option>
-                </select>
-              </label>
-              <input
-                  class="contact__input contact__phone-input"
-                  id="contact-phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="999 123-45-24"
-                  autocomplete="tel"
-              >
-            </div>
-          </div>
+      <div class="services-contact__form-bottom">
+        <div class="services-contact__field">
+          <label class="services-contact__label" for="services-contact-comment">Комментарий</label>
+          <textarea class="services-contact__input services-contact__textarea" id="services-contact-comment"
+                    name="comment" placeholder="Ваш комментарий"></textarea>
         </div>
 
-        <div class="contact__details">
-          <div class="contact__field">
-            <label class="contact__label" for="contact-comment">Комментарий</label>
-            <textarea
-                class="contact__input contact__textarea"
-                id="contact-comment"
-                name="comment"
-                placeholder="Иван Петров"
-            ></textarea>
-          </div>
-
-          <div class="contact__upload">
-            <label class="contact__upload-button" for="contact-file">
-                            <span class="contact__upload-icon" aria-hidden="true">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6 3.5H14.5L18 7V20.5H6V3.5Z" stroke="#324C88" stroke-width="1.5" stroke-linejoin="round"/>
-                                    <path d="M14 3.5V7.5H18" stroke="#324C88" stroke-width="1.5" stroke-linejoin="round"/>
-                                    <path d="M8.5 12H15.5M8.5 15H13" stroke="#324C88" stroke-width="1.5" stroke-linecap="round"/>
-                                </svg>
-                            </span>
-              <span>Выберитет файл</span>
-            </label>
-            <input class="contact__file" id="contact-file" name="file" type="file">
-            <p class="contact__upload-hint">Прикрепите/перетащите файл, max 50 mb</p>
-          </div>
-
-          <div class="contact__actions">
-            <button class="contact__submit btn main-btn" type="button">ОТправить</button>
-
-            <label class="contact__consent">
-              <input class="contact__checkbox" name="consent" type="checkbox">
-              <span class="contact__checkbox-box" aria-hidden="true"></span>
-              <span class="contact__consent-text">
-                                Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных
-                            </span>
-            </label>
-          </div>
+        <div class="services-contact__upload">
+          <label class="services-contact__upload-button" for="services-contact-file">
+            <span class="services-contact__file-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M14 22H10C6.229 22 4.343 22 3.172 20.828C2.001 19.656 2 17.771 2 14V10C2 6.229 2 4.343 3.172 3.172C4.344 2.001 6.239 2 10.03 2C10.636 2 11.121 2 11.53 2.017C11.5167 2.097 11.51 2.17833 11.51 2.261L11.5 5.095C11.5 6.192 11.5 7.162 11.605 7.943C11.719 8.79 11.98 9.637 12.672 10.329C13.362 11.019 14.21 11.281 15.057 11.395C15.838 11.5 16.808 11.5 17.905 11.5H21.957C22 12.034 22 12.69 22 13.563V14C22 17.771 22 19.657 20.828 20.828C19.656 21.999 17.771 22 14 22Z"
+                    fill-rule="evenodd" clip-rule="evenodd" fill="#324C88"/>
+                <path
+                    d="M19.352 7.61662L15.392 4.05362C14.265 3.03862 13.702 2.53062 13.009 2.26562L13 4.99962C13 7.35663 13 8.53562 13.732 9.26762C14.464 9.99962 15.643 9.99963 18 9.99963H21.58C21.218 9.29563 20.568 8.71163 19.352 7.61662Z"
+                    fill="#324C88"/>
+              </svg>
+            </span>
+            <span>Выберите файл</span>
+          </label>
+          <input class="services-contact__file-input" id="services-contact-file" name="attachment" type="file"
+                 aria-describedby="services-contact-file-help">
+          <p class="services-contact__upload-help" id="services-contact-file-help">Прикрепите/перетащите файл,
+            max 50 mb</p>
         </div>
-      </form>
-    </div>
+
+        <div class="services-contact__submit-group">
+          <button class="btn main-btn services-contact__submit" type="submit">Отправить</button>
+          <label class="services-contact__consent">
+            <input class="services-contact__checkbox" type="checkbox" name="personal-data-consent" required>
+            <span>Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных</span>
+          </label>
+        </div>
+      </div>
+    </form>
   </div>
 </section>

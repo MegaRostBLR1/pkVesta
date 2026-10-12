@@ -99,6 +99,17 @@ const APP_CONFIG = {
 };
 
 const loadedPageAssets = new Set();
+let renderRequestId = 0;
+
+const ROUTE_ALIASES = {
+  'page-1': 'objects',
+  'page-2': 'services',
+  'page-3': 'objects',
+  'page-4': 'press-center',
+  'page-5': 'about',
+  'page-6': 'prices',
+  'page-7': 'contacts'
+};
 
 async function loadHtml(url) {
   const response = await fetch(url);
@@ -155,21 +166,47 @@ function loadScript(url) {
 }
 
 function getPageName() {
-  return window.location.hash.replace(/^#\/?/, '') || APP_CONFIG.defaultPage;
+  const hashRoute = window.location.hash
+      .replace(/^#\/?/, '')
+      .split(/[?&]/, 1)[0]
+      .trim()
+      .toLowerCase();
+
+  const route = hashRoute || APP_CONFIG.defaultPage;
+
+  if (APP_CONFIG.pages[route]) {
+    return route;
+  }
+
+  return ROUTE_ALIASES[route] || APP_CONFIG.defaultPage;
 }
 
 async function renderPage(pageName) {
+  const requestId = ++renderRequestId;
   const page = APP_CONFIG.pages[pageName] || APP_CONFIG.pages[APP_CONFIG.defaultPage];
   const main = document.querySelector('#app-main');
+
+  if (!main) {
+    return;
+  }
 
   main.innerHTML = '<p class="loading">Загрузка страницы…</p>';
 
   try {
     const html = await loadHtml(page.html);
 
+    if (requestId !== renderRequestId) {
+      return;
+    }
+
     main.innerHTML = html;
     loadStylesheet(page.css);
     await loadScript(page.js);
+
+    if (requestId !== renderRequestId) {
+      return;
+    }
+
     document.title = `pkVesta — ${page.title}`;
 
     const init = window[page.init];
@@ -178,9 +215,54 @@ async function renderPage(pageName) {
       init();
     }
   } catch (error) {
+    if (requestId !== renderRequestId) {
+      return;
+    }
+
     console.error(error);
     main.innerHTML = '<p class="error">Не удалось загрузить страницу. Проверьте путь к файлам и запустите проект через локальный HTTP-сервер.</p>';
   }
+}
+
+
+function initNavigationRouting() {
+  const routeByLabel = {
+    'Продукция': 'objects',
+    'Быстровозводимые здания': 'objects',
+    'Легкие металлоконструкции': 'objects',
+    'Сэндвич панели': 'objects',
+    'Комплектующие для ворот': 'objects',
+    'Оцинкованный профиль': 'objects',
+    'Услуги': 'services',
+    'Лазерная резка': 'services',
+    'Лизинг зданий': 'services',
+    'Консалтинг': 'services',
+    'Проектирование': 'services',
+    'Изготовление': 'services',
+    'Фундамент': 'services',
+    'Доставка': 'services',
+    'Монтаж': 'services',
+    'Объекты': 'objects',
+    'Пресс-центр': 'press-center',
+    'Новости': 'news',
+    'Видео': 'video',
+    'F.A.Q.': 'faq',
+    'Telegram канал': 'press-center',
+    'Статьи': 'articles',
+    'Завод': 'about',
+    'Цены': 'prices',
+    'Контакты': 'contacts'
+  };
+
+  document.querySelectorAll('.app-header a.nav-link, .app-header a.nav-list__nested-list-link')
+      .forEach((link) => {
+        const label = link.textContent.trim().replace(/\s+/g, ' ');
+        const route = routeByLabel[label];
+
+        if (route) {
+          link.href = `#/${route}`;
+        }
+      });
 }
 
 async function initApp() {
@@ -196,6 +278,7 @@ async function initApp() {
     console.error(error);
   }
 
+  initNavigationRouting();
   await renderPage(getPageName());
 }
 
