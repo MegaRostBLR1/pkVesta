@@ -27,9 +27,9 @@ const APP_CONFIG = {
     },
     'laser': {
       title: 'Лазерная резка металла',
-      html: './components/pages/laser/laser.html',
-      css: './components/pages/laser/laser.css',
-      js: './components/pages/laser/laser.js',
+      html: './components/pages/services/laser/laser.html',
+      css: './components/pages/services/laser/laser.css',
+      js: './components/pages/services/laser/laser.js',
       init: 'initLaser'
     },
     'objects': {
