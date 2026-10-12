@@ -1,0 +1,67 @@
+/* Страница лазерной резки металла */
+.laser {
+  padding: 32px 0 64px;
+}
+
+.laser__container {
+  width: 100%;
+}
+
+.laser__breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.laser__breadcrumb-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.laser__breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+.laser__intro {
+  max-width: 900px;
+  margin-bottom: 48px;
+}
+
+.laser__title {
+  margin: 0 0 20px;
+}
+
+.laser__description,
+.laser__text {
+  max-width: 760px;
+  margin: 0;
+}
+
+.laser__content {
+  max-width: 900px;
+  margin-bottom: 32px;
+}
+
+.laser__subtitle {
+  margin: 0 0 16px;
+}
+
+.laser__button {
+  display: inline-flex;
+}
+
+@media screen and (max-width: 680px) {
+  .laser {
+    padding: 24px 0 40px;
+  }
+
+  .laser__breadcrumbs {
+    margin-bottom: 24px;
+  }
+
+  .laser__intro {
+    margin-bottom: 32px;
+  }
+}
