@@ -165,11 +165,3 @@ function initHome() {
     }
 }
 
-const industriesStylesheet = './components/pages/home/home-industries.css';
-if (!document.querySelector('link[data-page-style="' + industriesStylesheet + '"]')) {
-    const stylesheet = document.createElement('link');
-    stylesheet.rel = 'stylesheet';
-    stylesheet.href = industriesStylesheet;
-    stylesheet.dataset.pageStyle = industriesStylesheet;
-    document.head.append(stylesheet);
-}
