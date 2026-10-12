@@ -1,4 +1,4 @@
-/* Главный экран главной страницы. Фоновое изображение: /static/images/home/home-hero.jpg */
+/* Главный экран главной страницы. Фоновое изображение: ../../../static/images/home/featured.png */
 .home-hero {
     position: relative;
     display: flex;
