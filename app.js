@@ -9,7 +9,7 @@ const APP_CONFIG = {
     css: './components/layout/footer/footer.css',
     js: './components/layout/footer/footer.js'
   },
-  defaultPage: 'home',
+  defaultPage: 'calculator',
   pages: {
     'home': {
       title: 'Главная',
@@ -94,6 +94,13 @@ const APP_CONFIG = {
       css: './components/pages/contacts/contacts.css',
       js: './components/pages/contacts/contacts.js',
       init: 'initContacts'
+    },
+    'calculator': {
+      title: 'Онлайн калькулятор зданий',
+      html: './components/pages/calculator/calculator.html',
+      css: './components/pages/calculator/calculator.css',
+      js: './components/pages/calculator/calculator.js',
+      init: 'initCalculator'
     }
   }
 };
