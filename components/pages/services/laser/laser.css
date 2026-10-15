@@ -1,67 +1,2243 @@
-/* Страница лазерной резки металла */
+/* Страница услуги: лазерная резка металла */
 .laser {
-  padding: 32px 0 64px;
-}
-
-.laser__container {
-  width: 100%;
+  padding-bottom: 2.2222rem;
 }
 
 .laser__breadcrumbs {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 1.1111rem;
+  width: calc(100% - 0.5556rem);
+  max-width: 106.1111rem;
+  min-height: 3.4444rem;
+  margin: 0 auto;
+  padding: 0 0.2778rem;
+  color: #4d4d4d;
+  font-size: 1.1111rem;
+  line-height: 1.4444rem;
 }
 
 .laser__breadcrumb-link {
   color: inherit;
-  text-decoration: none;
+  transition: color 0.15s ease;
 }
 
 .laser__breadcrumb-link:hover {
-  text-decoration: underline;
+  color: #324c88;
+}
+
+.laser__breadcrumb-separator {
+  color: #979a9b;
+}
+
+.laser__hero {
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 0.5556rem);
+  min-height: 46.6111rem;
+  margin: 0 auto;
+  padding: 2.2222rem;
+  overflow: clip;
+  border-radius: 1.1111rem;
+  color: #ffffff;
+  text-align: center;
+  background-color: #25313a;
+  background-image: linear-gradient(#00000080, #00000080), url('../../../../static/images/home/home-advantages-factory.png');
+  background-position: center;
+  background-size: cover;
+}
+
+.laser__hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 72.2222rem;
+  margin: 0 auto;
 }
 
 .laser__intro {
-  max-width: 900px;
-  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7778rem;
+  width: 100%;
 }
 
 .laser__title {
-  margin: 0 0 20px;
+  max-width: 100%;
+  margin: 0;
+  color: #ffffff;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 3.5556rem;
+  font-weight: 600;
+  line-height: 5.2222rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-.laser__description,
-.laser__text {
-  max-width: 760px;
+.laser__description {
+  width: 100%;
+  max-width: 55.7222rem;
+  margin: 0;
+  color: #ffffff;
+  font-family: 'Onest-Medium', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4444rem;
+  text-align: center;
+}
+
+.laser__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.7778rem;
   margin: 0;
 }
 
-.laser__content {
-  max-width: 900px;
-  margin-bottom: 32px;
+.laser__action.btn {
+  min-height: 0;
+  padding: 1.7778rem 2.2222rem;
+  border-radius: 1.1111rem;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 1.1111rem;
+  font-weight: 600;
+  line-height: 1.26;
+  white-space: nowrap;
 }
 
-.laser__subtitle {
-  margin: 0 0 16px;
+.laser__price-link {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 15.7135rem;
+  height: 15.7135rem;
+  color: #ffffff;
+  text-align: center;
 }
 
-.laser__button {
-  display: inline-flex;
+.laser__price-link:focus-visible {
+  outline: 0.1111rem solid #ffffff;
+  outline-offset: 0.2222rem;
+  border-radius: 0.5556rem;
+}
+
+.laser__price-diamond {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 11.1111rem;
+  height: 11.1111rem;
+  border-radius: 0.5556rem;
+  background: #ffffff1a;
+  transform: rotate(45deg);
+}
+
+.laser__price-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 0.5556rem;
+  transform: rotate(-45deg);
+}
+
+.laser__price-icon {
+  display: flex;
+  flex: 0 0 2.6667rem;
+  align-items: center;
+  justify-content: center;
+  width: 2.6667rem;
+  height: 2.6667rem;
+  border-radius: 1.1111rem;
+  color: #324c88;
+  background: #ffffff;
+}
+
+.laser__price-icon svg {
+  display: block;
+  width: 1.3333rem;
+  height: 1.3333rem;
+  fill: currentColor;
+}
+
+.laser__price-icon path {
+  stroke: none;
+}
+
+.laser__price-label {
+  display: block;
+  width: 9.8333rem;
+  margin-top: 0.6667rem;
+  color: #ffffff;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4444rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 1600px) {
+  .laser__hero {
+    min-height: 55.5556rem;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .laser__breadcrumbs {
+    gap: 0.7778rem;
+    font-size: 0.8889rem;
+    line-height: 1.5;
+  }
+
+  .laser__hero {
+    min-height: 40rem;
+    padding: 2.2222rem 1.6667rem;
+  }
+
+  .laser__hero-content {
+    gap: 1.7778rem;
+  }
+
+  .laser__title {
+    font-size: 2.4444rem;
+    line-height: 1.3;
+  }
+
+  .laser__description {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .laser__action.btn {
+    padding: 1.3333rem 1.7778rem;
+    font-size: 0.8889rem;
+  }
+
+  .laser__price-link {
+    width: 13.3333rem;
+    height: 13.3333rem;
+  }
+
+  .laser__price-diamond {
+    width: 9.4444rem;
+    height: 9.4444rem;
+  }
+
+  .laser__price-label {
+    font-size: 0.8889rem;
+    line-height: 1.3333rem;
+  }
+}
+
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+  .laser__breadcrumbs {
+    gap: 1.1111rem;
+    min-height: 3.4444rem;
+    font-size: 0.8889rem;
+    line-height: 1.4444rem;
+  }
+
+  .laser__hero {
+    min-height: 41.1111rem;
+    padding: 2.2222rem 1.6667rem;
+  }
+
+  .laser__hero-content {
+    gap: 2rem;
+    max-width: 33.8333rem;
+  }
+
+  .laser__intro {
+    gap: 0.7778rem;
+  }
+
+  .laser__title {
+    font-size: 2.2222rem;
+    line-height: 2.6667rem;
+    white-space: nowrap;
+  }
+
+  .laser__description {
+    max-width: 100%;
+    font-size: 0.8889rem;
+    line-height: 1.3333rem;
+  }
+
+  .laser__actions {
+    gap: 0.7778rem;
+  }
+
+  .laser__action.btn {
+    padding: 1.4444rem 1.7778rem;
+    font-size: 1rem;
+  }
+
+  .laser__price-link {
+    width: 15.7135rem;
+    height: 15.7135rem;
+  }
+
+  .laser__price-diamond {
+    width: 11.1111rem;
+    height: 11.1111rem;
+  }
+
+  .laser__price-label {
+    width: 9.8333rem;
+    font-size: 1rem;
+    line-height: 1.4444rem;
+  }
 }
 
 @media screen and (max-width: 680px) {
   .laser {
-    padding: 24px 0 40px;
+    padding-bottom: 1.1111rem;
   }
 
   .laser__breadcrumbs {
-    margin-bottom: 24px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 0.5556rem;
+    width: 100%;
+    min-height: 0;
+    padding: 1rem 0;
+    font-size: 0.7778rem;
+    line-height: 1.2857;
+    white-space: nowrap;
+  }
+
+  .laser__hero {
+    height: 41.1111rem;
+    min-height: 41.1111rem;
+    padding: 1.1111rem 0.5rem;
+    border-radius: 1.1111rem;
+    background-position: center;
+  }
+
+  .laser__hero-content {
+    gap: 2rem;
+    max-width: 18.3889rem;
   }
 
   .laser__intro {
-    margin-bottom: 32px;
+    gap: 0.7778rem;
+  }
+
+  .laser__title {
+    font-family: 'Onest-Medium', sans-serif;
+    font-size: 1.3333rem;
+    font-weight: 500;
+    line-height: 1.3333;
+    white-space: nowrap;
+  }
+
+  .laser__description {
+    max-width: 100%;
+    font-size: 0.7778rem;
+    line-height: 1.2222rem;
+  }
+
+  .laser__actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7778rem;
+    width: auto;
+  }
+
+  .laser__action.btn {
+    width: auto;
+    min-height: 0;
+    padding: 1.4444rem 1.7778rem;
+    border-radius: 1.1111rem;
+    font-size: 1rem;
+    line-height: 1.26;
+  }
+
+  .laser__price-link {
+    width: 11rem;
+    height: 11rem;
+  }
+
+  .laser__price-diamond {
+    width: 7.7778rem;
+    height: 7.7778rem;
+    border-radius: 0.5556rem;
+  }
+
+  .laser__price-content {
+    padding-top: 0.5556rem;
+  }
+
+  .laser__price-icon {
+    flex-basis: 2rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5556rem;
+  }
+
+  .laser__price-icon svg {
+    width: 1.3333rem;
+    height: 1.3333rem;
+  }
+
+  .laser__price-label {
+    width: 9.8333rem;
+    margin-top: 0.4444rem;
+    font-size: 0.6667rem;
+    line-height: 1.4444rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .laser__breadcrumb-link {
+    transition: none;
+  }
+}
+
+
+/* Этапы работы — Figma node 1857:33415, desktop 1920 px. */
+.laser-process {
+  width: calc(100% - 20px);
+  margin: 0 auto 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.laser-process__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  width: 100%;
+  padding: 48px 40px;
+  border-radius: 20px;
+}
+
+.laser-process__header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.laser-process__title {
+  margin: 0;
+  color: #4d4d4d;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.laser-process__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.laser-process__card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  min-height: 240px;
+  padding: 36px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #ebedf3;
+}
+
+.laser-process__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+  min-height: 168px;
+  position: relative;
+  z-index: 1;
+}
+
+.laser-process__card-title {
+  margin: 0;
+  color: #324c88;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.laser-process__description {
+  max-width: 544px;
+  margin: 0;
+  color: #1e3874;
+  font-family: 'Onest-Regular', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.laser-process__number {
+  position: absolute;
+  top: 8px;
+  right: 36px;
+  color: #324c8833;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 120px;
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* At 1440 px the Figma frame keeps the same card geometry as the 1920 px layout. */
+
+/* Адаптация блока «Этапы работы» под Figma 1024 px.
+   На 1440 и 1920 px сохраняется базовая desktop-композиция. */
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+  .laser-process__panel {
+    gap: 36px;
+    padding: 48px 40px;
+  }
+
+  .laser-process__title {
+    font-size: 48px;
+    line-height: normal;
+  }
+
+  .laser-process__card {
+    height: 200px;
+    min-height: 200px;
+    padding: 24px;
+  }
+
+  .laser-process__content {
+    min-height: 152px;
+  }
+
+  .laser-process__card-title {
+    font-size: 24px;
+    line-height: 1.6;
+  }
+
+  .laser-process__description {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .laser-process__number {
+    right: 20px;
+    font-size: 100px;
+    line-height: 1.5;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .laser-process {
+    width: calc(100% - 20px);
+    padding: 0;
+  }
+
+  .laser-process__panel {
+    gap: 18px;
+    padding: 20px 10px;
+    border-radius: 20px;
+  }
+
+  .laser-process__title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .laser-process__list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .laser-process__card {
+    height: 160px;
+    min-height: 160px;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .laser-process__content {
+    gap: 0;
+    min-height: 0;
+    height: 100%;
+    justify-content: space-between;
+    max-width: 210px;
+  }
+
+  .laser-process__card-title {
+    max-width: 100%;
+    font-size: 18px;
+    line-height: 1.6;
+    white-space: nowrap;
+  }
+
+  .laser-process__description {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .laser-process__number {
+    top: auto;
+    right: 18px;
+    bottom: 18px;
+    font-size: 50px;
+    line-height: 1.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .laser-process * {
+    scroll-behavior: auto;
+  }
+}
+
+/* Сырьё и готовые изделия — Figma 1857:37050. */
+.laser-materials {
+  width: calc(100% - 1.1111rem);
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 1.1111rem;
+  background: #f5f8f7;
+}
+
+.laser-materials__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.3889rem;
+  width: 100%;
+  padding: 3.5556rem 2.2222rem;
+  border-radius: 1.1111rem;
+  background: #f5f8f7;
+}
+
+.laser-materials__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.3333rem;
+  width: 100%;
+}
+
+.laser-materials__title {
+  width: 100%;
+  margin: 0;
+  color: #4d4d4d;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 2.6667rem;
+  font-weight: 600;
+  line-height: 1.3333;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.laser-materials__tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1111rem;
+  padding: 0.2222rem 0.2222rem 0.2222rem 1rem;
+}
+
+.laser-materials__tab {
+  color: #5d5d5d;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 1.1111rem;
+  font-weight: 600;
+  line-height: 1.6;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.laser-materials__tab--inactive {
+  color: #5d5d5d4d;
+}
+
+.laser-materials__tab-separator {
+  flex: 0 0 0.2222rem;
+  width: 0.2222rem;
+  height: 0.2222rem;
+  border-radius: 50%;
+  background: #5d5d5d;
+}
+
+.laser-materials__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 39.4444rem;
+  align-items: start;
+  gap: 7.7778rem;
+  width: 100%;
+}
+
+.laser-materials__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4444rem;
+  min-width: 0;
+  padding-top: 0.0556rem;
+}
+
+.laser-materials__item {
+  min-width: 0;
+}
+
+.laser-materials__item-heading {
+  margin: 0;
+}
+
+.laser-materials__toggle {
+  display: flex;
+  align-items: center;
+  gap: 1.3333rem;
+  width: 100%;
+  min-width: 0;
+  padding: 0 0 1.1111rem;
+  color: #4d4d4d;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 1.1111rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.laser-materials__toggle:focus-visible,
+.laser-materials__zoom:focus-visible {
+  outline: 0.1111rem solid #324c88;
+  outline-offset: 0.2222rem;
+}
+
+.laser-materials__toggle-icon {
+  display: flex;
+  flex: 0 0 2.2222rem;
+  align-items: center;
+  justify-content: center;
+  width: 2.2222rem;
+  height: 2.2222rem;
+  border-radius: 50%;
+  background: #fff500;
+}
+
+.laser-materials__toggle-icon img {
+  display: block;
+  width: 1.3333rem;
+  height: 1.3333rem;
+  object-fit: contain;
+}
+
+.laser-materials__divider {
+  width: 100%;
+  height: 0.0556rem;
+  background: #0000000d;
+}
+
+.laser-materials__description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0 0 1.1111rem 3.5556rem;
+}
+
+.laser-materials__description[hidden] {
+  display: none;
+}
+
+.laser-materials__description p {
+  margin: 0;
+  color: #4d4d4dcc;
+  font-family: 'Onest-Regular', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.laser-materials__more.btn {
+  min-height: 0;
+  padding: 1rem 1.6667rem;
+  border-radius: 0.5556rem;
+  font-size: 0.8333rem;
+  line-height: 1.6;
+}
+
+.laser-materials__visual {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  width: 100%;
+  aspect-ratio: 710 / 691;
+  margin: 0;
+  padding: 0.2222rem;
+  overflow: hidden;
+  border-radius: 1.6667rem;
+  background: #ffffff;
+}
+
+.laser-materials__visual--tablet {
+  display: none;
+}
+
+.laser-materials__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.6667rem;
+  object-fit: cover;
+}
+
+.laser-materials__zoom {
+  position: absolute;
+  right: 0.5556rem;
+  bottom: 0.5556rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5556rem;
+  height: 3.5556rem;
+  padding: 0.1111rem;
+  overflow: hidden;
+  border-radius: 0.5556rem;
+  background: #ffffff0a;
+  backdrop-filter: blur(1.3333rem);
+  box-shadow: inset 0 0 3.3333rem #ffffff08;
+}
+
+.laser-materials__zoom img {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 1300px) {
+  .laser-materials__panel {
+    padding: 2.2222rem 1.3333rem;
+  }
+
+  .laser-materials__title {
+    font-size: 1.6667rem;
+  }
+
+  .laser-materials__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+    gap: 2.2222rem;
+  }
+
+  .laser-materials__toggle {
+    gap: 0.8889rem;
+    font-size: 0.9444rem;
+  }
+
+  .laser-materials__description {
+    padding-left: 2.8889rem;
+  }
+}
+
+/* Tablet frame 1024 px — Figma 1857:37050. */
+@media screen and (min-width: 761px) and (max-width: 1100px) {
+  .laser-materials__panel {
+    align-items: stretch;
+    gap: 25px;
+    padding: 40px;
+    border-radius: 20px;
+  }
+
+  .laser-materials__header {
+    gap: 14px;
+  }
+
+  .laser-materials__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .laser-materials__tabs {
+    gap: 20px;
+    padding: 4px 4px 4px 18px;
+  }
+
+  .laser-materials__tab {
+    font-size: 18px;
+    line-height: 28.8px;
+  }
+
+  .laser-materials__tab-separator {
+    flex-basis: 4px;
+    width: 4px;
+    height: 4px;
+  }
+
+  .laser-materials__layout {
+    display: block;
+    width: 100%;
+  }
+
+  .laser-materials__list {
+    gap: 26px;
+    padding-top: 0;
+  }
+
+  .laser-materials__item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .laser-materials__toggle {
+    align-items: center;
+    gap: 24px;
+    padding: 0;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .laser-materials__toggle-icon {
+    flex-basis: 30px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .laser-materials__toggle-icon img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .laser-materials__item:nth-child(2) .laser-materials__toggle-icon img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .laser-materials__description {
+    gap: 14px;
+    padding: 0 0 0 54px;
+  }
+
+  .laser-materials__description p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .laser-materials__more.btn {
+    min-height: 48px;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 22.4px;
+  }
+
+  .laser-materials__visual--desktop {
+    display: none;
+  }
+
+  .laser-materials__visual--tablet {
+    display: flex;
+    flex: 0 0 auto;
+    height: 480px;
+    aspect-ratio: auto;
+    padding: 4px;
+    border-radius: 30px;
+  }
+
+  .laser-materials__image {
+    border-radius: 26px;
+  }
+
+  .laser-materials__zoom {
+    right: 10px;
+    bottom: 10px;
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+  }
+
+  .laser-materials__zoom img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .laser-materials {
+    width: calc(100% - 0.7778rem);
+    padding: 0;
+  }
+
+  .laser-materials__panel {
+    gap: 1.5556rem;
+    padding: 1.6667rem 0.7778rem;
+    border-radius: 0.5556rem;
+  }
+
+  .laser-materials__header {
+    gap: 0.8889rem;
+  }
+
+  .laser-materials__title {
+    font-size: 1.2222rem;
+    line-height: 1.5;
+  }
+
+  .laser-materials__tabs {
+    gap: 0.6667rem;
+    padding-left: 0.4444rem;
+  }
+
+  .laser-materials__tab {
+    font-size: 0.7778rem;
+  }
+
+  .laser-materials__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.3333rem;
+  }
+
+  .laser-materials__list {
+    gap: 0.8889rem;
+  }
+
+  .laser-materials__item {
+    gap: 0.6667rem;
+  }
+
+  .laser-materials__toggle {
+    gap: 0.7778rem;
+    padding-bottom: 0.7778rem;
+    font-size: 0.8333rem;
+  }
+
+  .laser-materials__toggle-icon {
+    flex-basis: 1.7778rem;
+    width: 1.7778rem;
+    height: 1.7778rem;
+  }
+
+  .laser-materials__toggle-icon img {
+    width: 1.1111rem;
+    height: 1.1111rem;
+  }
+
+  .laser-materials__description {
+    gap: 0.7778rem;
+    padding: 0 0 0.7778rem 2.5556rem;
+  }
+
+  .laser-materials__description p {
+    font-size: 0.7778rem;
+  }
+
+  .laser-materials__more.btn {
+    padding: 0.6667rem 1rem;
+    font-size: 0.7222rem;
+  }
+
+  .laser-materials__visual {
+    border-radius: 1.1111rem;
+  }
+
+  .laser-materials__visual--tablet {
+    height: auto;
+    aspect-ratio: 710 / 480;
+  }
+
+  .laser-materials__image {
+    border-radius: 1.1111rem;
+  }
+
+  .laser-materials__zoom {
+    width: 2.7778rem;
+    height: 2.7778rem;
+  }
+
+  .laser-materials__zoom img {
+    width: 1.6667rem;
+    height: 1.6667rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .laser-materials__toggle {
+    transition: none;
+  }
+}
+
+
+/* Mobile frame 360 px — Figma 1857:38832. Overrides are scoped to this section. */
+@media screen and (max-width: 480px) {
+  .laser-materials {
+    width: calc(100% - 20px);
+    margin: 0 auto;
+    padding: 0 0 10px;
+    border-radius: 20px;
+  }
+
+  .laser-materials__panel {
+    align-items: stretch;
+    gap: 25px;
+    padding: 20px 0 0;
+    border-radius: 20px;
+  }
+
+  .laser-materials__header {
+    gap: 14px;
+    padding: 0 10px;
+  }
+
+  .laser-materials__title {
+    font-size: 20px;
+    line-height: 28px;
+    overflow-wrap: normal;
+  }
+
+  .laser-materials__tabs {
+    gap: 20px;
+    padding: 4px;
+  }
+
+  .laser-materials__tab {
+    font-size: 14px;
+    line-height: 22.4px;
+  }
+
+  .laser-materials__tab-separator {
+    flex-basis: 4px;
+    width: 4px;
+    height: 4px;
+  }
+
+  .laser-materials__layout {
+    display: block;
+    width: 100%;
+  }
+
+  .laser-materials__list {
+    gap: 26px;
+    padding: 0 10px;
+  }
+
+  .laser-materials__item {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .laser-materials__toggle {
+    align-items: flex-start;
+    gap: 24px;
+    padding: 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .laser-materials__toggle-icon {
+    flex-basis: 30px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .laser-materials__toggle-icon img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .laser-materials__item:nth-child(2) .laser-materials__toggle-icon img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .laser-materials__description {
+    gap: 14px;
+    padding: 0 0 0 54px;
+  }
+
+  .laser-materials__description p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .laser-materials__more.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 22.4px;
+  }
+
+  .laser-materials__visual--desktop {
+    display: none;
+  }
+
+  .laser-materials__visual--tablet {
+    display: flex;
+    flex: 0 0 auto;
+    width: 100%;
+    height: 265px;
+    aspect-ratio: auto;
+    padding: 4px;
+    border-radius: 30px;
+  }
+
+  .laser-materials__image {
+    min-width: 0;
+    border-radius: 26px;
+  }
+
+  .laser-materials__zoom {
+    right: 10px;
+    bottom: 10px;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 10px;
+  }
+
+  .laser-materials__zoom img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+
+/* Секция «Ультросовременное оборудование», Figma 1857:35386.
+   Единая fluid-геометрия для desktop 1440 и 1920 px. */
+.laser-equipment {
+  margin: 0 0.2778rem 0.2778rem;
+  padding: 0.5556rem;
+  border-radius: 2.2222rem;
+  background: #F5F8F7;
+}
+
+.laser-equipment__frame {
+  width: 100%;
+  border-radius: 1.6667rem;
+  background: #FFFFFF;
+}
+
+.laser-equipment__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4.4444rem;
+  width: 100%;
+  min-width: 0;
+  padding: 0.4444rem 2.2222rem 4.4444rem;
+  border-radius: 1.1667rem;
+  background: #FFFFFF;
+}
+
+.laser-equipment__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 1.6667rem;
+  padding-bottom: 0;
+}
+
+.laser-equipment__divider {
+  width: 100%;
+  height: 1px;
+  background: #F5F8F7;
+}
+
+.laser-equipment__title {
+  margin: 0;
+  color: #4D4D4D;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 2.6667rem;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.laser-equipment__visual {
+  width: 100%;
+  max-width: 100rem;
+  aspect-ratio: 36 / 17;
+  margin: 0;
+}
+
+.laser-equipment__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Figma node 1857:37116 — точная адаптация блока для ширины 1024 px.
+   Базовые правила выше обслуживают desktop 1440/1920 px. */
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+  .laser-equipment__panel {
+    gap: 80px;
+    padding: 40px;
+  }
+
+  .laser-equipment__header {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .laser-equipment__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .laser-equipment__visual {
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .laser-equipment {
+    padding: 0.2778rem;
+    border-radius: 1.1111rem;
+  }
+
+  .laser-equipment__frame {
+    border-radius: 0.8333rem;
+  }
+
+  .laser-equipment__panel {
+    gap: 20px;
+    padding: 20px 10px;
+    border-radius: 0.8333rem;
+  }
+
+  .laser-equipment__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    width: 100%;
+  }
+
+  .laser-equipment__header {
+    padding: 0;
+  }
+
+  .laser-equipment__title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+
+/* Секция «Работать с нами», Figma 1857:35402. Общая fluid-геометрия для desktop 1440/1920 px. */
+.laser-work-with-us {
+  padding: 0 0.2778rem 0.2778rem;
+  border-radius: 1.1111rem;
+  background: #F5F8F7;
+}
+
+.laser-work-with-us__frame {
+  width: 100%;
+  border-radius: 0.5556rem;
+  background: #FFFFFF;
+}
+
+.laser-work-with-us__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.6667rem;
+  width: 100%;
+  min-width: 0;
+  padding: 4.4444rem 2.7778rem 0.2778rem;
+  border-radius: 1.1111rem;
+  background: #FFFFFF;
+}
+
+.laser-work-with-us__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5556rem;
+  width: 100%;
+  text-align: center;
+}
+
+.laser-work-with-us__title {
+  margin: 0;
+  color: #4D4D4D;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 2.6667rem;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.laser-work-with-us__subtitle {
+  max-width: 100%;
+  margin: 0;
+  color: #4D4D4DCC;
+  font-family: 'Onest-Regular', sans-serif;
+  font-size: 1.3333rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.laser-work-with-us__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6667rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.laser-work-with-us__cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5556rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.laser-work-with-us__card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6667rem;
+  min-width: 0;
+  padding: 1.1111rem;
+  border-radius: 1.1111rem;
+  background: #FFFFFF;
+}
+
+.laser-work-with-us__card-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5556rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.laser-work-with-us__eyebrow {
+  margin: 0;
+  color: #505050;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.laser-work-with-us__card-title {
+  margin: 0;
+  color: #505050;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 1.6667rem;
+  font-weight: 600;
+  line-height: 1.6;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.laser-work-with-us__card-description {
+  width: 100%;
+  margin: 0;
+  color: #4D4D4DCC;
+  font-family: 'Onest-Regular', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.laser-work-with-us__card-image {
+  width: 100%;
+  aspect-ratio: 1046 / 455;
+  overflow: hidden;
+  border-radius: 0.5556rem;
+  background: #F5F8F7;
+}
+
+.laser-work-with-us__card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.laser-work-with-us__carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.3333rem;
+  min-height: 5.0283rem;
+}
+
+.laser-work-with-us__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 3.5556rem;
+  width: 3.5556rem;
+  height: 3.5556rem;
+  padding: 0.5556rem;
+  border: 0.0556rem solid #4D4D4D33;
+  border-radius: 1.1111rem;
+  color: #4D4D4D;
+  background: #FFFFFF;
+}
+
+.laser-work-with-us__arrow svg {
+  display: block;
+  width: 2.2222rem;
+  height: 2.2222rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.laser-work-with-us__arrow:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.laser-work-with-us__pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.2222rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.laser-work-with-us__pagination li {
+  flex: 0 0 0.5556rem;
+  width: 0.5556rem;
+  height: 0.5556rem;
+  border-radius: 1.6667rem;
+  background: #324C8833;
+}
+
+.laser-work-with-us__pagination li.is-active {
+  background: #324C88;
+}
+
+.laser-work-with-us__visually-hidden {
+  position: absolute;
+  width: 0.0556rem;
+  height: 0.0556rem;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+  .laser-work-with-us__panel {
+    gap: 30px;
+    padding: 40px 40px 5px;
+  }
+
+  .laser-work-with-us__title {
+    font-size: 24px;
+    line-height: 1.3333;
+  }
+
+  .laser-work-with-us__subtitle {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  .laser-work-with-us__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .laser-work-with-us__card {
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .laser-work-with-us__eyebrow {
+    font-size: 16px;
+  }
+
+  .laser-work-with-us__card-title {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .laser-work-with-us__card-description {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .laser-work-with-us {
+    padding: 5px 5px 5px;
+    border-radius: 10px;
+  }
+
+  .laser-work-with-us__panel {
+    gap: 18px;
+    padding: 20px 10px 5px;
+    border-radius: 10px;
+  }
+
+  .laser-work-with-us__header {
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .laser-work-with-us__title {
+    font-size: 20px;
+    line-height: 28px;
+    white-space: nowrap;
+  }
+
+  .laser-work-with-us__subtitle {
+    font-size: 14px;
+    line-height: normal;
+  }
+
+  .laser-work-with-us__content {
+    gap: 30px;
+  }
+
+  .laser-work-with-us__cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .laser-work-with-us__card {
+    gap: 30px;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .laser-work-with-us__card-copy {
+    gap: 10px;
+  }
+
+  .laser-work-with-us__eyebrow {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .laser-work-with-us__card-title {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .laser-work-with-us__card-description {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .laser-work-with-us__card-image {
+    border-radius: 0;
+  }
+
+  .laser-work-with-us__carousel {
+    gap: 24px;
+    min-height: 68px;
+  }
+
+  .laser-work-with-us__arrow {
+    flex-basis: 48px;
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+    border-radius: 20px;
+  }
+
+  .laser-work-with-us__arrow svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
+/* Преимущества лазерной резки */
+.laser-benefits {
+  padding: 0 0.5556rem 0.5556rem;
+  background: #F5F8F7;
+}
+
+.laser-benefits__panel {
+  width: 100%;
+  padding: 3.5556rem 2.2222rem;
+  border-radius: 1.6667rem;
+  background: #FFFFFF;
+}
+
+.laser-benefits__header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 1.3889rem;
+}
+
+.laser-benefits__title {
+  max-width: 100%;
+  margin: 0;
+  color: #4D4D4D;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 2.6667rem;
+  font-weight: 600;
+  line-height: 1.3333;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.laser-benefits__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 39.4444rem);
+  align-items: start;
+  gap: 7.7778rem;
+  width: 100%;
+  max-width: 83.7778rem;
+  margin: 0 auto;
+}
+
+.laser-benefits__accordion {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding-top: 0.5556rem;
+}
+
+.laser-benefits__item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1111rem;
+  min-width: 0;
+}
+
+.laser-benefits__item-divider {
+  flex: 0 0 1px;
+  width: 100%;
+  height: 1px;
+  background: #0000000D;
+}
+
+.laser-benefits__item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.laser-benefits__item-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1.3333rem;
+  width: 100%;
+  min-width: 0;
+  text-align: left;
+}
+
+.laser-benefits__toggle-icon {
+  display: flex;
+  flex: 0 0 2.2222rem;
+  align-items: center;
+  justify-content: center;
+  width: 2.2222rem;
+  height: 2.2222rem;
+  border-radius: 50%;
+  background: #FFF500;
+}
+
+.laser-benefits__toggle-icon img {
+  display: block;
+  width: 1.3333rem;
+  height: 1.3333rem;
+  object-fit: contain;
+}
+
+.laser-benefits__item-title {
+  min-width: 0;
+  color: #4D4D4D;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 1.1111rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.laser-benefits__item-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-left: 3.5556rem;
+}
+
+.laser-benefits__item-content[hidden] {
+  display: none;
+}
+
+.laser-benefits__description {
+  width: 100%;
+  margin: 0;
+  color: #4D4D4DCC;
+  font-family: 'Onest-Regular', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.laser-benefits__more.btn {
+  min-height: 0;
+  padding: 1rem 1.6667rem;
+  border-radius: 0.5556rem;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 0.8333rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.laser-benefits__visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 710 / 691;
+  margin: 0;
+  padding: 0.2222rem;
+  overflow: hidden;
+  border-radius: 1.6667rem;
+  background: #FFFFFF;
+}
+
+.laser-benefits__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.4444rem;
+  object-fit: cover;
+}
+
+.laser-benefits__zoom {
+  position: absolute;
+  right: 0.5556rem;
+  bottom: 0.5556rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5556rem;
+  height: 3.5556rem;
+  border: 1px solid #FFFFFF0A;
+  border-radius: 0.5556rem;
+  background: #FFFFFF0A;
+  box-shadow: inset 0 0 3.3333rem #FFFFFF08;
+  backdrop-filter: blur(1.3333rem);
+}
+
+.laser-benefits__zoom img {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
+.laser-benefits__item-toggle:focus-visible,
+.laser-benefits__zoom:focus-visible,
+.laser-benefits__more:focus-visible {
+  outline: 0.1111rem solid #324C88;
+  outline-offset: 0.2222rem;
+}
+
+@media screen and (max-width: 1600px) {
+  .laser-benefits__panel {
+    padding: 3.5556rem 2.2222rem;
+  }
+
+  .laser-benefits__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 33.8889rem);
+    gap: 2.2222rem;
+    max-width: 100%;
+  }
+
+  .laser-benefits__title {
+    font-size: 2.6667rem;
+    line-height: 1.3333;
+  }
+
+  .laser-benefits__visual {
+    aspect-ratio: 610 / 594;
+  }
+}
+
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+  .laser-benefits {
+    padding: 0 0.5556rem 0.5556rem;
+    border-radius: 0.5556rem;
+  }
+
+  .laser-benefits__panel {
+    padding: 2.2222rem;
+    border-radius: 0.5556rem;
+  }
+
+  .laser-benefits__header {
+    margin-bottom: 2.2222rem;
+  }
+
+  .laser-benefits__title {
+    font-size: 1.3333rem;
+    line-height: 1.7778rem;
+  }
+
+  .laser-benefits__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1.6667rem;
+  }
+
+  .laser-benefits__accordion {
+    padding-top: 0;
+  }
+
+  .laser-benefits__item {
+    gap: 1.1111rem;
+  }
+
+  .laser-benefits__item-body {
+    gap: 1rem;
+  }
+
+  .laser-benefits__item-toggle {
+    gap: 1.1111rem;
+  }
+
+  .laser-benefits__toggle-icon {
+    flex-basis: 2.6667rem;
+    width: 2.6667rem;
+    height: 2.6667rem;
+  }
+
+  .laser-benefits__item-title {
+    font-size: 1rem;
+  }
+
+  .laser-benefits__item-content {
+    padding-left: 3.7778rem;
+  }
+
+  .laser-benefits__description {
+    font-size: 0.8889rem;
+  }
+
+  .laser-benefits__visual {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .laser-benefits {
+    padding: 0 0.2778rem 0.2778rem;
+  }
+
+  .laser-benefits__panel {
+    padding: 1.1111rem 0.5556rem;
+    border-radius: 0.8333rem;
+  }
+
+  .laser-benefits__header {
+    margin-bottom: 1.1111rem;
+  }
+
+  .laser-benefits__title {
+    font-size: 1.1111rem;
+    line-height: 1.5556rem;
+  }
+
+  .laser-benefits__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.1111rem;
+  }
+
+  .laser-benefits__accordion {
+    padding-top: 0;
+  }
+
+  .laser-benefits__item {
+    gap: 0.7778rem;
+  }
+
+  .laser-benefits__item-body {
+    gap: 0.7778rem;
+  }
+
+  .laser-benefits__item-toggle {
+    gap: 0.7778rem;
+  }
+
+  .laser-benefits__toggle-icon {
+    flex-basis: 2rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .laser-benefits__toggle-icon img {
+    width: 1.1111rem;
+    height: 1.1111rem;
+  }
+
+  .laser-benefits__item-title {
+    font-size: 0.8889rem;
+    line-height: 1.4;
+  }
+
+  .laser-benefits__item-content {
+    gap: 0.7778rem;
+    padding-left: 2.7778rem;
+  }
+
+  .laser-benefits__description {
+    font-size: 0.7778rem;
+    line-height: 1.5;
+  }
+
+  .laser-benefits__more.btn {
+    padding: 0.6667rem 1.1111rem;
+    font-size: 0.7778rem;
+  }
+
+  .laser-benefits__visual {
+    aspect-ratio: 710 / 430;
+    border-radius: 0.8333rem;
+  }
+
+  .laser-benefits__image {
+    border-radius: 0.6667rem;
+  }
+
+  .laser-benefits__zoom {
+    right: 0.5556rem;
+    bottom: 0.5556rem;
+    width: 2.6667rem;
+    height: 2.6667rem;
+  }
+
+  .laser-benefits__zoom img {
+    width: 1.5556rem;
+    height: 1.5556rem;
+  }
+}
+
+/* Figma 1024 px: раскрытый пункт содержит изображение под описанием. */
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+  .laser-benefits__panel {
+    padding: 40px;
+    border-radius: 30px;
+  }
+
+  .laser-benefits__header {
+    margin-bottom: 40px;
+  }
+
+  .laser-benefits__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .laser-benefits__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    max-width: 100%;
+  }
+
+  .laser-benefits__accordion {
+    width: 100%;
+  }
+
+  .laser-benefits__item-content {
+    padding-left: 54px;
+  }
+
+  .laser-benefits__item-title {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .laser-benefits__description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .laser-benefits__visual--desktop {
+    display: none;
+  }
+
+  .laser-benefits__visual--tablet {
+    display: block;
+    width: 100%;
+    aspect-ratio: auto;
+    height: 480px;
+    margin-top: 0;
+    padding: 4px;
+    border-radius: 30px;
+  }
+
+  .laser-benefits__visual--tablet .laser-benefits__image {
+    border-radius: 30px;
+  }
+
+  .laser-benefits__visual--tablet .laser-benefits__zoom {
+    right: 10px;
+    bottom: 10px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .laser-benefits__visual--tablet .laser-benefits__zoom img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media screen and (min-width: 1101px) {
+  .laser-benefits__visual--tablet {
+    display: none;
+  }
+}
+
+
+/* Figma 360 px: преимущества лазерной резки. */
+@media screen and (max-width: 680px) {
+  .laser-benefits {
+    padding: 10px;
+  }
+
+  .laser-benefits__panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 20px 10px;
+    border-radius: 30px;
+  }
+
+  .laser-benefits__header {
+    margin-bottom: 0;
+  }
+
+  .laser-benefits__title {
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+  }
+
+  .laser-benefits__layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .laser-benefits__accordion {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .laser-benefits__item {
+    gap: 20px;
+  }
+
+  .laser-benefits__item-body {
+    gap: 14px;
+  }
+
+  .laser-benefits__item-toggle {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .laser-benefits__toggle-icon {
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .laser-benefits__toggle-icon img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .laser-benefits__item-title {
+    padding-top: 1px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .laser-benefits__item-content {
+    gap: 14px;
+    padding-left: 44px;
+  }
+
+  .laser-benefits__description {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .laser-benefits__more.btn {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .laser-benefits__visual--desktop {
+    display: none;
+  }
+
+  .laser-benefits__visual--tablet {
+    display: block;
+    width: calc(100% + 44px);
+    aspect-ratio: 340 / 330;
+    height: auto;
+    margin-left: -44px;
+    padding: 4px;
+    border-radius: 30px;
+  }
+
+  .laser-benefits__visual--tablet .laser-benefits__image {
+    border-radius: 26px;
+  }
+
+  .laser-benefits__visual--tablet .laser-benefits__zoom {
+    right: 10px;
+    bottom: 10px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .laser-benefits__visual--tablet .laser-benefits__zoom img {
+    width: 28px;
+    height: 28px;
   }
 }
