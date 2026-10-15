@@ -1,0 +1,116 @@
+/* Страница «Почему PK Vesta» для быстровозводимых зданий. */
+.buildings-subpage {
+  padding: 0 0.5556rem 2.2222rem;
+}
+
+.buildings-subpage__inner {
+  width: 100%;
+  max-width: 106.1111rem;
+  margin: 0 auto;
+}
+
+.buildings-subpage__breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5556rem;
+  padding: 1.1111rem 0;
+  color: #4d4d4d;
+  font-size: 0.8889rem;
+}
+
+.buildings-subpage__breadcrumbs a {
+  color: inherit;
+}
+
+.buildings-subpage__breadcrumbs a:hover {
+  color: #324c88;
+}
+
+.buildings-subpage__header {
+  padding: 2.2222rem;
+  border-radius: 0.5556rem;
+  background: #25313a;
+  color: #ffffff;
+}
+
+.buildings-subpage__eyebrow {
+  margin: 0 0 0.7778rem;
+  color: #fff500;
+  font-size: 1rem;
+}
+
+.buildings-subpage__title {
+  margin: 0;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 2.6667rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.buildings-subpage__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4444rem;
+  margin-top: 1.1111rem;
+}
+
+.buildings-subpage__tabs a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.6667rem;
+  padding: 0.6667rem 1rem;
+  border-radius: 0.5556rem;
+  color: #4d4d4d;
+  background: #f5f8f7;
+  text-decoration: none;
+}
+
+.buildings-subpage__tabs a[aria-current="page"] {
+  background: #fff500;
+}
+
+.buildings-subpage__tabs a:focus-visible,
+.buildings-subpage__breadcrumbs a:focus-visible {
+  outline: 0.1111rem solid #324c88;
+  outline-offset: 0.1111rem;
+}
+
+.buildings-subpage__content {
+  min-height: 12rem;
+  margin-top: 1.1111rem;
+  padding: 2.2222rem;
+  border-radius: 0.5556rem;
+  background: #f5f8f7;
+}
+
+.buildings-subpage__placeholder {
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 680px) {
+  .buildings-subpage__header,
+  .buildings-subpage__content {
+    padding: 1.3333rem;
+  }
+
+  .buildings-subpage__title {
+    font-size: 2rem;
+  }
+
+  .buildings-subpage__tabs a {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .buildings-subpage__title {
+    font-size: 1.6667rem;
+  }
+
+  .buildings-subpage__tabs a {
+    width: 100%;
+  }
+}
