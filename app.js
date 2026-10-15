@@ -62,16 +62,16 @@ const APP_CONFIG = {
     },
     'buildings-prices': {
       title: 'Цены',
-      html: './components/pages/buildings/prices/prices.html',
-      css: './components/pages/buildings/prices/prices.css',
-      js: './components/pages/buildings/prices/prices.js',
+      html: './components/pages/buildings/buildings-prices/buildings-prices.html',
+      css: './components/pages/buildings/buildings-prices/buildings-prices.css',
+      js: './components/pages/buildings/buildings-prices/buildings-prices.js',
       init: 'initBuildingsPrices'
     },
     'buildings-faq': {
       title: 'Вопросы',
-      html: './components/pages/buildings/faq/faq.html',
-      css: './components/pages/buildings/faq/faq.css',
-      js: './components/pages/buildings/faq/faq.js',
+      html: './components/pages/buildings/buildings-faq/buildings-faq.html',
+      css: './components/pages/buildings/buildings-faq/buildings-faq.css',
+      js: './components/pages/buildings/buildings-faq/buildings-faq.js',
       init: 'initBuildingsFaq'
     },
     'objects': {
