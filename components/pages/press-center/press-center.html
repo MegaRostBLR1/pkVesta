@@ -1,6 +1,22 @@
-<section class="press-center">
-  <div class="container">
-    <h1>Пресс-центр</h1>
-    <p>Базовый HTML-контент пресс-центра. Здесь будет размещён основной интерфейс.</p>
+<section class="press-center" aria-labelledby="press-center-title">
+  <div class="press-center__container">
+    <div class="press-center__content">
+      <nav class="press-center__breadcrumbs" aria-label="Хлебные крошки">
+        <a class="press-center__breadcrumb" href="#/home">Главная</a>
+        <span class="press-center__breadcrumb-separator" aria-hidden="true">-</span>
+        <span class="press-center__breadcrumb-current" aria-current="page">Пресс-центр</span>
+      </nav>
+
+      <h1 class="press-center__title" id="press-center-title">Пресс-центр</h1>
+
+      <nav class="press-center__categories" aria-label="Категории пресс-центра">
+        <a class="press-center__category is-active" href="#/press-center" aria-current="page">Все</a>
+        <a class="press-center__category" href="#/news">Новости</a>
+        <a class="press-center__category" href="#/about">О заводе</a>
+        <a class="press-center__category" href="#/video">Видео</a>
+        <a class="press-center__category" href="#/articles">Статьи</a>
+        <a class="press-center__category" href="#/faq">F.A.Q.</a>
+      </nav>
+    </div>
   </div>
 </section>

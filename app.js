@@ -39,6 +39,13 @@ const APP_CONFIG = {
       js: './components/pages/buildings/buildings.js',
       init: 'initBuildings'
     },
+    'buildings-directory': {
+      title: 'Каталог зданий',
+      html: './components/pages/buildings/buildings-directory/buildings-directory.html',
+      css: './components/pages/buildings/buildings-directory/buildings-directory.css',
+      js: './components/pages/buildings/buildings-directory/buildings-directory.js',
+      init: 'initBuildingsDirectory'
+    },
     'buildings-characteristics': {
       title: 'Характеристики быстровозводимых зданий',
       html: './components/pages/buildings/characteristics/characteristics.html',
@@ -80,6 +87,27 @@ const APP_CONFIG = {
       css: './components/pages/objects/objects.css',
       js: './components/pages/objects/objects.js',
       init: 'initObjects'
+    },
+    'object-detail': {
+      title: 'Объект',
+      html: './components/pages/objects/object-detail/object-detail.html',
+      css: './components/pages/objects/object-detail/object-detail.css',
+      js: './components/pages/objects/object-detail/object-detail.js',
+      init: 'initObjectDetail'
+    },
+    'object-characteristics': {
+      title: 'Характеристики объекта',
+      html: './components/pages/objects/object-characteristics/object-characteristics.html',
+      css: './components/pages/objects/object-characteristics/object-characteristics.css',
+      js: './components/pages/objects/object-characteristics/object-characteristics.js',
+      init: 'initObjectCharacteristics'
+    },
+    'object-parameters': {
+      title: 'Параметры объекта',
+      html: './components/pages/objects/object-parameters/object-parameters.html',
+      css: './components/pages/objects/object-parameters/object-parameters.css',
+      js: './components/pages/objects/object-parameters/object-parameters.js',
+      init: 'initObjectParameters'
     },
     'press-center': {
       title: 'Пресс-центр',

@@ -1,24 +1,667 @@
-<section class="buildings-subpage buildings-subpage--prices" aria-labelledby="buildings-prices-title">
-  <div class="buildings-subpage__inner">
-    <nav class="buildings-subpage__breadcrumbs" aria-label="Хлебные крошки">
-      <a href="#/buildings">Быстровозводимые здания</a>
-      <span aria-hidden="true">/</span>
-      <span aria-current="page">Цены</span>
-    </nav>
-    <header class="buildings-subpage__header">
-      <p class="buildings-subpage__eyebrow">Сельское хозяйство</p>
-      <h1 class="buildings-subpage__title" id="buildings-prices-title">Цены</h1>
-    </header>
-    <nav class="buildings-subpage__tabs" aria-label="Разделы агрокомплексов">
-      <a href="#/buildings">Описание</a>
-      <a href="#/buildings-characteristics">Характеристики</a>
-      <a href="#/buildings-why-pk-vesta" >Почему PK Vesta</a>
-      <a href="#/buildings-comparison" >Сравнение</a>
-      <a href="#/buildings-prices" aria-current="page">Цены</a>
-      <a href="#/buildings-faq" >Вопросы</a>
-    </nav>
-    <div class="buildings-subpage__content">
-      <p class="buildings-subpage__placeholder">Раздел подготовлен для наполнения содержанием.</p>
+<section class="buildings" aria-label="Быстровозводимые здания">
+  <div class="buildings__agro" aria-labelledby="buildings-agro-title">
+    <div class="buildings__agro-inner">
+      <div class="buildings__agro-content">
+        <div class="buildings__agro-intro">
+          <div class="buildings__agro-heading">
+            <p class="buildings__agro-category">Сельское хозяйство</p>
+            <h2 class="buildings__agro-title" id="buildings-agro-title">Быстровозводимые агрокомплексы</h2>
+          </div>
+          <p class="buildings__agro-description">Cистема считает металлоемкость каркаса на базе 3 базовых
+            строительных норм: 1- Росс. нормы (СНИПы), 2 - ЕВРОКОД и 3 - Американские нормы</p>
+        </div>
+        <div class="buildings__agro-actions">
+          <a class="btn secondary-btn buildings__agro-action" href="#/contacts">Рассчитать онлайн</a>
+          <a class="btn main-btn buildings__agro-action" href="#/contacts">Запросить расчет</a>
+        </div>
+      </div>
+      <img class="buildings__agro-illustration"
+           src="https://www.figma.com/api/mcp/asset/415da788-d0b6-45c9-a3da-0d775649c1fd.png" alt=""
+           aria-hidden="true" width="994" height="1043" loading="lazy">
+      <nav class="buildings__agro-tabs" aria-label="Разделы агрокомплексов" id="buildings-agro-tab-list">
+        <a class="buildings__agro-tab" href="#buildings"
+           aria-current="page">Описание</a>
+        <a class="buildings__agro-tab" href="#/buildings-characteristics">Характеристики</a>
+        <a class="buildings__agro-tab" href="#/buildings-why-pk-vesta">Почему PK Vesta</a>
+        <a class="buildings__agro-tab" href="#/buildings-comparison">Сравнение</a>
+        <a class="buildings__agro-tab is-active" href="#/buildings-prices">Цены</a>
+        <a class="buildings__agro-tab" href="#/buildings-faq">Вопросы</a>
+        <button class="buildings__agro-tabs-toggle" type="button" aria-label="Открыть разделы агрокомплекса"
+                aria-expanded="false" aria-controls="buildings-agro-tab-list">
+          <img src="https://www.figma.com/api/mcp/asset/e788bb81-b932-4832-876d-2bfb1f8b1584/32372.svg" alt=""
+               aria-hidden="true" width="24" height="24">
+        </button>
+      </nav>
     </div>
   </div>
+</section>
+
+<section class="prices" aria-labelledby="prices-title">
+  <div class="prices__panel">
+    <div class="prices__content">
+      <div class="prices__filters-modal" id="prices-filters-modal" aria-hidden="true">
+        <div class="prices__filters-backdrop" data-prices-filters-close></div>
+        <section class="prices__filters-dialog" role="dialog" aria-modal="true" aria-labelledby="prices-filters-title" tabindex="-1">
+          <header class="prices__filters-header">
+            <h2 class="prices__filters-title" id="prices-filters-title">Параметры</h2>
+            <button class="prices__filters-close" type="button" aria-label="Закрыть параметры" data-prices-filters-close>
+              <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+          </header>
+          <form class="prices__filters" aria-label="Параметры здания">
+            <div class="prices__filter-group">
+              <fieldset class="prices__fieldset">
+                <legend>Регион:</legend>
+                <div class="prices__segmented" data-segmented="region">
+                  <button class="prices__option is-active" type="button" aria-pressed="true">Россия</button>
+                  <button class="prices__option" type="button" aria-pressed="false">СНГ</button>
+                  <button class="prices__option" type="button" aria-pressed="false">Африка и Ближний Восток</button>
+                </div>
+              </fieldset>
+              <fieldset class="prices__fieldset">
+                <legend>Кровля:</legend>
+                <div class="prices__segmented" data-segmented="roof">
+                  <button class="prices__option is-active" type="button" aria-pressed="true">Двухскатная</button>
+                  <button class="prices__option" type="button" aria-pressed="false">Плоская</button>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="prices__dimensions">
+              <label class="prices__dimension">
+                <span>Ширина:</span>
+                <select name="width" aria-label="Ширина здания">
+                  <option>12 м</option><option>18 м</option><option>24 м</option><option>30 м</option>
+                </select>
+              </label>
+              <label class="prices__dimension">
+                <span>Высота:</span>
+                <select name="height" aria-label="Высота здания">
+                  <option>4 м</option><option>5 м</option><option>6 м</option><option>7 м</option>
+                </select>
+              </label>
+            </div>
+          </form>
+          <footer class="prices__filters-footer">
+            <button class="prices__filters-back" type="button" data-prices-filters-close>Назад</button>
+          </footer>
+        </section>
+      </div>
+
+      <div class="prices__mobile-summary">
+        <p class="prices__mobile-summary-title">С 20% НДС. Поставка — EXW.</p>
+        <div class="prices__mobile-summary-item">
+          <p>Сроки проектирования и изготовления, мес</p>
+          <small>(разделы проекта — КМ, ОК (стадия Р, монтажные схемы и технический паспорт)</small>
+        </div>
+        <div class="prices__mobile-summary-item">
+          <p>Несущий каркас, RUB</p>
+          <small>(Этаж-1, кран-балки — нет, тип конструкции — двухскатная с 1 пролётом)</small>
+        </div>
+      </div>
+
+      <button class="prices__parameters-toggle" type="button" aria-expanded="false" aria-haspopup="dialog" aria-controls="prices-filters-modal">
+        <span>Параметры</span>
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M7 12h10m-7 5h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+
+      <div class="prices__table-wrap">
+        <table class="prices__table">
+          <colgroup><col class="prices__label-column"><col span="6"></colgroup>
+          <thead>
+          <tr>
+            <th scope="col">Виды работ</th>
+            <th scope="colgroup" colspan="6">Длина, м / с шагом колонн 6 м</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="prices__subheading">
+            <th scope="row">С 20% НДС. Поставка — EXW.</th>
+            <td>30</td><td>36</td><td>42</td><td>48</td><td>54</td><td>60</td>
+          </tr>
+          <tr>
+            <th scope="row">
+              <span>Сроки проектирования и изготовления, мес</span>
+              <small>(разделы проекта — КМ, ОК (стадия Р, монтажные схемы и технический паспорт)</small>
+            </th>
+            <td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+          </tr>
+          <tr>
+            <th scope="row">
+              <span>Несущий каркас, RUB</span>
+              <small>(Этаж-1, кран-балки — нет, тип конструкции — двухскатная с 1 пролётом)</small>
+            </th>
+            <td>891 588 RUB</td><td>1 133 396 RUB</td><td>1 290 252 RUB</td><td>1 290 252 RUB</td><td>1 290 252 RUB</td><td>1 290 252 RUB</td>
+          </tr>
+          </tbody>
+          <tfoot>
+          <tr>
+            <th scope="row">Итого от:</th>
+            <td>891 588 RUB</td><td>1 133 396 RUB</td><td>1 290 252 RUB</td><td>1 290 252 RUB</td><td>1 290 252 RUB</td><td>1 290 252 RUB</td>
+          </tr>
+          </tfoot>
+        </table>
+
+        <div class="prices__mobile-table" aria-label="Цена для длины 1 метр">
+          <div class="prices__mobile-table-heading" aria-hidden="true">
+            <span>Длина, м</span>
+            <span>Цена, RUB</span>
+          </div>
+          <div class="prices__mobile-table-row">
+            <span>1</span>
+            <span>891 588</span>
+          </div>
+          <div class="prices__mobile-table-row">
+            <span>1</span>
+            <span>891 588</span>
+          </div>
+          <div class="prices__mobile-table-row">
+            <span>1</span>
+            <span>891 588</span>
+          </div>
+          <div class="prices__mobile-table-row">
+            <span>1</span>
+            <span>891 588</span>
+          </div>
+          <div class="prices__mobile-table-row">
+            <span>1</span>
+            <span>891 588</span>
+          </div>
+          <div class="prices__mobile-table-row">
+            <span>1</span>
+            <span>891 588</span>
+          </div>
+          <div class="prices__mobile-table-row">
+            <span>1</span>
+            <span>891 588</span>
+          </div>
+          <div class="prices__mobile-table-row">
+            <span>1</span>
+            <span>891 588</span>
+          </div>
+          <div class="prices__mobile-table-row">
+            <span>1</span>
+            <span>891 588</span>
+          </div>
+          <div class="prices__mobile-table-row prices__mobile-table-total">
+            <span>Итого от:</span>
+            <span>891 588 ₽</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="buildings-advantages" aria-labelledby="buildings-advantages-title">
+  <div class="buildings-advantages__inner">
+    <header class="buildings-advantages__header">
+      <h2 class="buildings-advantages__title" id="buildings-advantages-title">Преимущества</h2>
+      <p class="buildings-advantages__subtitle">Выберите надежного международного поставщика стальных зданий</p>
+    </header>
+    <div class="buildings-advantages__content">
+      <div class="buildings-advantages__services">
+        <ul class="buildings-advantages__list" aria-label="Этапы работы">
+          <li class="buildings-advantages__item is-active" data-advantage-index="0">
+                        <span class="buildings-advantages__icon" aria-hidden="true"><img
+                            src="https://www.figma.com/api/mcp/asset/e7b8d697-23d4-4410-9ded-f5532da9a8ea/5ee85.svg"
+                            alt="" width="36" height="36"></span>
+            <span class="buildings-advantages__label">Проектирование</span>
+          </li>
+          <li class="buildings-advantages__item" data-advantage-index="1">
+                        <span class="buildings-advantages__icon" aria-hidden="true"><img
+                            src="https://www.figma.com/api/mcp/asset/e7b8d697-23d4-4410-9ded-f5532da9a8ea/81908.svg"
+                            alt="" width="24" height="24"></span>
+            <span class="buildings-advantages__label">Изготовление</span>
+          </li>
+          <li class="buildings-advantages__item" data-advantage-index="2">
+                        <span class="buildings-advantages__icon" aria-hidden="true"><img
+                            src="https://www.figma.com/api/mcp/asset/e7b8d697-23d4-4410-9ded-f5532da9a8ea/5ee85.svg"
+                            alt="" width="36" height="36"></span>
+            <span class="buildings-advantages__label">Монтаж</span>
+          </li>
+          <li class="buildings-advantages__item" data-advantage-index="3">
+                        <span class="buildings-advantages__icon" aria-hidden="true"><img
+                            src="https://www.figma.com/api/mcp/asset/e7b8d697-23d4-4410-9ded-f5532da9a8ea/5ee85.svg"
+                            alt="" width="36" height="36"></span>
+            <span class="buildings-advantages__label">Антикоррозионная защита</span>
+          </li>
+          <li class="buildings-advantages__item buildings-advantages__item--responsive"
+              data-advantage-index="4">
+                        <span class="buildings-advantages__icon" aria-hidden="true"><img
+                            src="https://www.figma.com/api/mcp/asset/e7b8d697-23d4-4410-9ded-f5532da9a8ea/81908.svg"
+                            alt="" width="24" height="24"></span>
+            <span class="buildings-advantages__label">Болты</span>
+          </li>
+          <li class="buildings-advantages__item buildings-advantages__item--responsive"
+              data-advantage-index="5">
+                        <span class="buildings-advantages__icon" aria-hidden="true"><img
+                            src="https://www.figma.com/api/mcp/asset/e7b8d697-23d4-4410-9ded-f5532da9a8ea/81908.svg"
+                            alt="" width="24" height="24"></span>
+            <span class="buildings-advantages__label">Базы колонн</span>
+          </li>
+          <li class="buildings-advantages__item buildings-advantages__item--responsive"
+              data-advantage-index="6">
+                        <span class="buildings-advantages__icon" aria-hidden="true"><img
+                            src="https://www.figma.com/api/mcp/asset/e7b8d697-23d4-4410-9ded-f5532da9a8ea/81908.svg"
+                            alt="" width="24" height="24"></span>
+            <span class="buildings-advantages__label">Уголки</span>
+          </li>
+        </ul>
+        <nav class="buildings-advantages__pagination" aria-label="Навигация по этапам">
+          <button class="buildings-advantages__arrow buildings-advantages__arrow--prev" type="button"
+                  aria-label="Предыдущий этап" disabled>
+            <img src="https://www.figma.com/api/mcp/asset/e7b8d697-23d4-4410-9ded-f5532da9a8ea/53189.svg"
+                 alt="" width="40" height="40">
+          </button>
+          <button class="buildings-advantages__arrow buildings-advantages__arrow--next" type="button"
+                  aria-label="Следующий этап">
+            <img src="https://www.figma.com/api/mcp/asset/e7b8d697-23d4-4410-9ded-f5532da9a8ea/b3de5.svg"
+                 alt="" width="40" height="40">
+          </button>
+        </nav>
+      </div>
+      <div class="buildings-advantages__visual">
+        <img src="https://www.figma.com/api/mcp/asset/8d94a3e3-65b6-457e-baa9-6293146a2f71.png" alt=""
+             width="684" height="950" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="buildings-production" aria-labelledby="buildings-production-title">
+  <div class="buildings-production__panel">
+    <div class="buildings-production__content">
+      <header class="buildings-production__header">
+        <h2 class="buildings-production__title" id="buildings-production-title">Процесс производства</h2>
+        <p class="buildings-production__subtitle">Выберите надежного международного поставщика стальных зданий</p>
+      </header>
+
+      <div class="buildings-production__gallery">
+        <figure class="buildings-production__main-image">
+          <img
+              src="https://www.figma.com/api/mcp/asset/59076374-ebf5-4f53-8798-11812e3c7de0/c0db3.png"
+              alt="Производство стальных строительных конструкций"
+              width="1400"
+              height="787"
+              loading="lazy">
+        </figure>
+        <div class="buildings-production__side-images" aria-label="Дополнительные фотографии производства">
+          <figure class="buildings-production__side-image">
+            <img
+                src="https://www.figma.com/api/mcp/asset/59076374-ebf5-4f53-8798-11812e3c7de0/c0db3.png"
+                alt=""
+                width="328"
+                height="257"
+                loading="lazy">
+          </figure>
+          <figure class="buildings-production__side-image">
+            <img
+                src="https://www.figma.com/api/mcp/asset/59076374-ebf5-4f53-8798-11812e3c7de0/c0db3.png"
+                alt=""
+                width="328"
+                height="257"
+                loading="lazy">
+          </figure>
+          <figure class="buildings-production__side-image">
+            <img
+                src="https://www.figma.com/api/mcp/asset/59076374-ebf5-4f53-8798-11812e3c7de0/c0db3.png"
+                alt=""
+                width="328"
+                height="257"
+                loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="buildings-production__facts">
+      <article class="buildings-production__fact">
+        <h3 class="buildings-production__fact-title">Ключевой факт 1</h3>
+        <p class="buildings-production__fact-description">Двухскатные, односкатные, пристройки и плоские кровли (однопролетные и многопролетные)</p>
+      </article>
+      <article class="buildings-production__fact">
+        <h3 class="buildings-production__fact-title">Ключевой факт 2</h3>
+        <p class="buildings-production__fact-description">Двухскатные, односкатные, пристройки и плоские кровли (однопролетные и многопролетные)</p>
+      </article>
+      <article class="buildings-production__fact">
+        <h3 class="buildings-production__fact-title">Ключевой факт 3</h3>
+        <p class="buildings-production__fact-description">Двухскатные, односкатные, пристройки и плоские кровли (однопролетные и многопролетные)</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="services-contact" aria-labelledby="services-contact-title">
+  <div class="services-contact__container">
+    <div class="services-contact__intro">
+      <div class="services-contact__heading">
+        <p class="services-contact__eyebrow">Задать вопрос или заказать расчет</p>
+        <h2 class="services-contact__title" id="services-contact-title">Оставьте заявку и мы ответим вам в
+          ближайшее время</h2>
+        <p class="services-contact__description">Оставьте заявку и мы ответим вам в ближайшее время</p>
+      </div>
+      <div class="services-contact__illustration" aria-hidden="true">
+        <img src=./static/images/application.png alt="">
+      </div>
+    </div>
+
+    <form class="services-contact__form" action="#" method="post" enctype="multipart/form-data">
+      <div class="services-contact__fields">
+        <div class="services-contact__field">
+          <label class="services-contact__label" for="services-contact-name">Имя</label>
+          <input class="services-contact__input" id="services-contact-name" name="name" type="text"
+                 placeholder="Иван Петров" autocomplete="name" required>
+        </div>
+        <div class="services-contact__field">
+          <label class="services-contact__label" for="services-contact-email">E-mail</label>
+          <input class="services-contact__input" id="services-contact-email" name="email" type="email"
+                 placeholder="ivan.petrov@mail.ru" autocomplete="email" required>
+        </div>
+        <div class="services-contact__field services-contact__field--phone">
+          <label class="services-contact__label" for="services-contact-phone">Телефон</label>
+          <input class="services-contact__input" id="services-contact-phone" name="phone" type="tel"
+                 placeholder="+7 999 123-45-24" autocomplete="tel" required>
+        </div>
+      </div>
+
+      <div class="services-contact__form-bottom">
+        <div class="services-contact__field">
+          <label class="services-contact__label" for="services-contact-comment">Комментарий</label>
+          <textarea class="services-contact__input services-contact__textarea" id="services-contact-comment"
+                    name="comment" placeholder="Ваш комментарий"></textarea>
+        </div>
+
+        <div class="services-contact__upload">
+          <label class="services-contact__upload-button" for="services-contact-file">
+            <span class="services-contact__file-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M14 22H10C6.229 22 4.343 22 3.172 20.828C2.001 19.656 2 17.771 2 14V10C2 6.229 2 4.343 3.172 3.172C4.344 2.001 6.239 2 10.03 2C10.636 2 11.121 2 11.53 2.017C11.5167 2.097 11.51 2.17833 11.51 2.261L11.5 5.095C11.5 6.192 11.5 7.162 11.605 7.943C11.719 8.79 11.98 9.637 12.672 10.329C13.362 11.019 14.21 11.281 15.057 11.395C15.838 11.5 16.808 11.5 17.905 11.5H21.957C22 12.034 22 12.69 22 13.563V14C22 17.771 22 19.657 20.828 20.828C19.656 21.999 17.771 22 14 22Z"
+                    fill-rule="evenodd" clip-rule="evenodd" fill="#324C88"/>
+                <path
+                    d="M19.352 7.61662L15.392 4.05362C14.265 3.03862 13.702 2.53062 13.009 2.26562L13 4.99962C13 7.35663 13 8.53562 13.732 9.26762C14.464 9.99962 15.643 9.99963 18 9.99963H21.58C21.218 9.29563 20.568 8.71163 19.352 7.61662Z"
+                    fill="#324C88"/>
+              </svg>
+            </span>
+            <span>Выберите файл</span>
+          </label>
+          <input class="services-contact__file-input" id="services-contact-file" name="attachment" type="file"
+                 aria-describedby="services-contact-file-help">
+          <p class="services-contact__upload-help" id="services-contact-file-help">Прикрепите/перетащите файл,
+            max 50 mb</p>
+        </div>
+
+        <div class="services-contact__submit-group">
+          <button class="btn main-btn services-contact__submit" type="submit">Отправить</button>
+          <label class="services-contact__consent">
+            <input class="services-contact__checkbox" type="checkbox" name="personal-data-consent" required>
+            <span>Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных</span>
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="buildings-catalog" aria-labelledby="buildings-catalog-title">
+  <div class="buildings-catalog__panel">
+    <header class="buildings-catalog__header">
+      <h2 class="buildings-catalog__title" id="buildings-catalog-title">Каталог отраслей</h2>
+      <nav class="buildings-catalog__filters" aria-label="Категории каталога отраслей">
+        <a class="buildings-catalog__filter is-active" href="#buildings-catalog-agro" aria-current="page">Сельское
+          хозяйство</a>
+        <a class="buildings-catalog__filter" href="#buildings-catalog-commercial">Коммерческая</a>
+        <a class="buildings-catalog__filter" href="#buildings-catalog-general">Общие здания</a>
+        <a class="buildings-catalog__filter" href="#buildings-catalog-equipment">Техника</a>
+        <a class="buildings-catalog__filter" href="#buildings-catalog-industry">Промышленность</a>
+        <a class="buildings-catalog__filter" href="#buildings-catalog-sport">Спортивная</a>
+      </nav>
+    </header>
+    <div class="buildings-catalog__cards" id="buildings-catalog-agro">
+      <a class="buildings-catalog__card" href="#buildings-agro-description">
+        <span class="buildings-catalog__image-wrap">
+          <img class="buildings-catalog__image"
+               src="https://www.figma.com/api/mcp/asset/1a7ff761-31fa-4d07-bcf4-2c5c0f70bfde/f28bb.png" alt=""
+               width="320" height="312" loading="lazy">
+          <img class="buildings-catalog__image-overlay"
+               src="https://www.figma.com/api/mcp/asset/1a7ff761-31fa-4d07-bcf4-2c5c0f70bfde/e520f.png" alt=""
+               width="320" height="312" loading="lazy">
+        </span>
+        <span class="buildings-catalog__caption">Агрокомплексы</span>
+      </a>
+      <a class="buildings-catalog__card" href="#buildings-catalog-aquafarm">
+        <span class="buildings-catalog__image-wrap">
+          <img class="buildings-catalog__image"
+               src="https://www.figma.com/api/mcp/asset/1a7ff761-31fa-4d07-bcf4-2c5c0f70bfde/c3d69.png" alt=""
+               width="320" height="312" loading="lazy">
+        </span>
+        <span class="buildings-catalog__caption">Акваферма</span>
+      </a>
+      <a class="buildings-catalog__card" href="#buildings-catalog-winefarm">
+        <span class="buildings-catalog__image-wrap">
+          <img class="buildings-catalog__image"
+               src="https://www.figma.com/api/mcp/asset/1a7ff761-31fa-4d07-bcf4-2c5c0f70bfde/393b7.png" alt=""
+               width="320" height="312" loading="lazy">
+        </span>
+        <span class="buildings-catalog__caption">Вино ферма</span>
+      </a>
+      <a class="buildings-catalog__card" href="#buildings-catalog-mushroomfarm">
+        <span class="buildings-catalog__image-wrap">
+          <img class="buildings-catalog__image"
+               src="https://www.figma.com/api/mcp/asset/1a7ff761-31fa-4d07-bcf4-2c5c0f70bfde/28b0b.png" alt=""
+               width="320" height="312" loading="lazy">
+        </span>
+        <span class="buildings-catalog__caption">Грибные фермы</span>
+      </a>
+    </div>
+    <div class="buildings-catalog__controls" aria-label="Навигация по карточкам каталога">
+      <button class="buildings-catalog__arrow buildings-catalog__arrow--prev" type="button"
+              aria-label="Предыдущая страница каталога" disabled>
+        <img src="https://www.figma.com/api/mcp/asset/1a7ff761-31fa-4d07-bcf4-2c5c0f70bfde/1b874.svg" alt=""
+             aria-hidden="true" width="40" height="40">
+      </button>
+      <div class="buildings-catalog__pagination" aria-label="Страница 1 из 4">
+        <span class="is-active"></span><span></span><span></span><span></span>
+      </div>
+      <button class="buildings-catalog__arrow buildings-catalog__arrow--next" type="button"
+              aria-label="Следующая страница каталога">
+        <img src="https://www.figma.com/api/mcp/asset/1a7ff761-31fa-4d07-bcf4-2c5c0f70bfde/a5120.svg" alt=""
+             aria-hidden="true" width="40" height="40">
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="home-projects" aria-labelledby="home-projects__title">
+  <div class="home-projects__panel">
+    <header class="home-projects__header">
+      <div class="home-projects__heading-row">
+        <h2 class="home-projects__title" id="home-projects__title">Выполненные проекты</h2>
+        <a class="home-projects__all-link" href="#/objects">Все проекты</a>
+      </div>
+    </header>
+
+    <div class="home-projects__divider" aria-hidden="true"></div>
+
+    <div class="home-projects__layout">
+      <article class="home-projects__featured project-card project-card--featured">
+        <div class="project-card__background" aria-hidden="true"></div>
+        <div class="project-card__featured-content">
+          <div class="project-card__top">
+            <h3 class="project-card__title project-card__title--featured">Склад</h3>
+            <div class="project-card__pagination project-card__pagination--featured" aria-label="Слайд 1 из 3">
+              <span class="is-active"></span><span></span><span></span>
+            </div>
+            <ul class="project-card__metadata project-card__metadata--featured" aria-label="Информация о проекте">
+              <li class="project-card__tag">
+                <span class="project-card__tag-icon project-card__tag-icon--industry" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="M4 20V9l8-5 8 5v11H4Z"/><path d="M8 20v-6h8v6M8 10h.01M12 10h.01M16 10h.01"/></svg>
+                </span>
+                <span>Кондитерская фабрика</span>
+              </li>
+              <li class="project-card__tag">
+                <span class="project-card__tag-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="M4 7h16v13H4zM8 4v6M16 4v6M4 11h16M8 15h2M14 15h2"/></svg>
+                </span>
+                <span>24ш х 62д х 6в</span>
+              </li>
+              <li class="project-card__tag">
+                <span class="project-card__tag-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+                </span>
+                <span>ЛСТК</span>
+              </li>
+              <li class="project-card__tag">
+                <span class="project-card__tag-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>
+                </span>
+                <span>2019</span>
+              </li>
+              <li class="project-card__tag">
+                <span class="project-card__tag-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+                </span>
+                <span>г. Венев, Россия</span>
+              </li>
+              <li class="project-card__tag project-card__tag--id">
+                <span class="project-card__tag-icon project-card__tag-icon--id" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8" cy="11" r="2"/><path d="M5 16c.8-2 5.2-2 6 0M13 10h5M13 14h5"/></svg>
+                </span>
+                <span>35354545</span>
+              </li>
+            </ul>
+            <div class="project-card__divider" aria-hidden="true"></div>
+          </div>
+
+          <div class="project-card__video" aria-hidden="true">
+            <span class="project-card__play">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="m9 6 10 6-10 6V6Z"/></svg>
+            </span>
+            <span class="project-card__video-label">Смотреть видео</span>
+          </div>
+
+          <nav class="home-hero__slider" aria-label="Навигация по слайдам">
+            <button class="home-hero__arrow home-hero__arrow--prev" type="button" aria-label="Предыдущий слайд" disabled>
+              <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M24 8 12 20l12 12"></path></svg>
+            </button>
+            <div class="home-hero__pagination" aria-label="Слайд 1 из 4">
+              <span class="home-hero__dot is-active" aria-hidden="true"></span>
+              <span class="home-hero__dot" aria-hidden="true"></span>
+              <span class="home-hero__dot" aria-hidden="true"></span>
+              <span class="home-hero__dot" aria-hidden="true"></span>
+            </div>
+            <button class="home-hero__arrow home-hero__arrow--next" type="button" aria-label="Следующий слайд" disabled>
+              <svg viewBox="0 0 40 40" aria-hidden="true"><path d="m16 8 12 12-12 12"></path></svg>
+            </button>
+          </nav>
+        </div>
+      </article>
+
+      <div class="home-projects__secondary">
+        <div class="home-projects__cards">
+          <article class="project-card project-card--compact">
+            <div class="project-card__background" aria-hidden="true"></div>
+            <div class="project-card__compact-header">
+              <h3 class="project-card__title">Школа, спорт зал<br>и столовая</h3>
+              <span class="project-card__play project-card__play--compact" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="m9 6 10 6-10 6V6Z"/></svg></span>
+            </div>
+            <ul class="project-card__metadata project-card__metadata--compact" aria-label="Информация о проекте">
+              <li class="project-card__tag"><span class="project-card__tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 7h16v13H4zM8 4v6M16 4v6M4 11h16"/></svg></span><span>24ш х 62д х 6в</span></li>
+              <li class="project-card__tag"><span class="project-card__tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><span>ЛСТК</span></li>
+              <li class="project-card__tag"><span class="project-card__tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><span>2019</span></li>
+              <li class="project-card__tag"><span class="project-card__tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg></span><span>г. Венев, Россия</span></li>
+            </ul>
+            <p class="project-card__id">ID проекта: 34345334</p>
+          </article>
+
+          <article class="project-card project-card--compact">
+            <div class="project-card__background" aria-hidden="true"></div>
+            <div class="project-card__compact-header">
+              <h3 class="project-card__title">Школа, спорт зал<br>и столовая</h3>
+              <span class="project-card__play project-card__play--compact" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="m9 6 10 6-10 6V6Z"/></svg></span>
+            </div>
+            <ul class="project-card__metadata project-card__metadata--compact" aria-label="Информация о проекте">
+              <li class="project-card__tag"><span class="project-card__tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 7h16v13H4zM8 4v6M16 4v6M4 11h16"/></svg></span><span>24ш х 62д х 6в</span></li>
+              <li class="project-card__tag"><span class="project-card__tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><span>ЛСТК</span></li>
+              <li class="project-card__tag"><span class="project-card__tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><span>2019</span></li>
+              <li class="project-card__tag"><span class="project-card__tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg></span><span>г. Венев, Россия</span></li>
+            </ul>
+            <p class="project-card__id">ID проекта: 34345334</p>
+          </article>
+
+          <article class="project-card project-card--compact project-card--hidden-at-1440">
+            <div class="project-card__background" aria-hidden="true"></div>
+            <div class="project-card__compact-header">
+              <h3 class="project-card__title">Школа, спорт зал<br>и столовая</h3>
+              <span class="project-card__play project-card__play--compact" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="m9 6 10 6-10 6V6Z"/></svg></span>
+            </div>
+            <ul class="project-card__metadata project-card__metadata--compact" aria-label="Информация о проекте">
+              <li class="project-card__tag"><span class="project-card__tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 7h16v13H4zM8 4v6M16 4v6M4 11h16"/></svg></span><span>24ш х 62д х 6в</span></li>
+              <li class="project-card__tag"><span class="project-card__tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><span>ЛСТК</span></li>
+              <li class="project-card__tag"><span class="project-card__tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><span>2019</span></li>
+              <li class="project-card__tag"><span class="project-card__tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg></span><span>г. Венев, Россия</span></li>
+            </ul>
+            <p class="project-card__id">ID проекта: 34345334</p>
+          </article>
+
+          <article class="project-card project-card--compact project-card--hidden-at-1440">
+            <div class="project-card__background" aria-hidden="true"></div>
+            <div class="project-card__compact-header">
+              <h3 class="project-card__title">Школа, спорт зал<br>и столовая</h3>
+              <span class="project-card__play project-card__play--compact" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="m9 6 10 6-10 6V6Z"/></svg></span>
+            </div>
+            <ul class="project-card__metadata project-card__metadata--compact" aria-label="Информация о проекте">
+              <li class="project-card__tag"><span class="project-card__tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 7h16v13H4zM8 4v6M16 4v6M4 11h16"/></svg></span><span>24ш х 62д х 6в</span></li>
+              <li class="project-card__tag"><span class="project-card__tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><span>ЛСТК</span></li>
+              <li class="project-card__tag"><span class="project-card__tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><span>2019</span></li>
+              <li class="project-card__tag"><span class="project-card__tag-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg></span><span>г. Венев, Россия</span></li>
+            </ul>
+            <p class="project-card__id">ID проекта: 34345334</p>
+          </article>
+        </div>
+        <nav class="home-hero__slider" aria-label="Навигация по слайдам">
+          <button class="home-hero__arrow home-hero__arrow--prev" type="button" aria-label="Предыдущий слайд" disabled>
+            <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M24 8 12 20l12 12"></path></svg>
+          </button>
+          <div class="home-hero__pagination" aria-label="Слайд 1 из 4">
+            <span class="home-hero__dot is-active" aria-hidden="true"></span>
+            <span class="home-hero__dot" aria-hidden="true"></span>
+            <span class="home-hero__dot" aria-hidden="true"></span>
+            <span class="home-hero__dot" aria-hidden="true"></span>
+          </div>
+          <button class="home-hero__arrow home-hero__arrow--next" type="button" aria-label="Следующий слайд" disabled>
+            <svg viewBox="0 0 40 40" aria-hidden="true"><path d="m16 8 12 12-12 12"></path></svg>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="home-contact-person" aria-labelledby="home-contact-person__title">
+  <div class="home-contact-person__panel"><div class="home-contact-person__layout">
+    <div class="home-contact-person__photo"><img src="./static/images/home/denis-kulakov.png" alt="Денис Кулаков, заместитель генерального директора по развитию ПК Веста" width="900" height="940" loading="lazy"></div>
+    <div class="home-contact-person__details">
+      <header class="home-contact-person__person"><h2 class="home-contact-person__name" id="home-contact-person__title">Кулаков Денис</h2><p class="home-contact-person__position">Заместитель генерального директора по развитию ПК Веста</p></header>
+      <div class="home-contact-person__contacts">
+        <div class="home-contact-person__contact-group">
+          <div class="home-contact-person__contact"><h3 class="home-contact-person__label">Телефоны:</h3>
+            <div class="home-contact-person__phone-row"><a class="home-contact-person__value" href="tel:+79109434966">+7 (910) 943-49-66</a><span class="home-contact-person__note">(с 8:00 до 19:00 по МСК)</span></div>
+            <div class="home-contact-person__phone-row"><a class="home-contact-person__value" href="tel:+79109434966">+7 (910) 943-49-66</a><span class="home-contact-person__note">(с 8:00 до 19:00 по МСК)</span></div>
+          </div>
+          <div class="home-contact-person__contact"><h3 class="home-contact-person__label">E-mail:</h3><a class="home-contact-person__value" href="mailto:denis@pkvesta.ru">denis@pkvesta.ru</a></div>
+        </div>
+        <div class="home-contact-person__contact-group">
+          <div class="home-contact-person__contact"><h3 class="home-contact-person__label">Социальные сети:</h3><div class="home-contact-person__socials">
+            <a class="home-contact-person__social" href="#home-contact-person" aria-label="Социальная сеть 1"><img src="./static/images/home/social-1.png" alt="" width="20" height="20"></a>
+            <a class="home-contact-person__social" href="#home-contact-person" aria-label="Социальная сеть 2"><img src="./static/images/home/social-2.png" alt="" width="20" height="20"></a>
+            <a class="home-contact-person__social" href="#home-contact-person" aria-label="Социальная сеть 3"><img src="./static/images/home/social-3.png" alt="" width="20" height="20"></a>
+          </div></div>
+          <div class="home-contact-person__contact"><h3 class="home-contact-person__label">Языки:</h3><p class="home-contact-person__value">Русский и английский</p></div>
+        </div>
+      </div>
+      <a class="home-contact-person__button btn main-btn" href="mailto:denis@pkvesta.ru">Написать</a>
+    </div>
+  </div></div>
 </section>

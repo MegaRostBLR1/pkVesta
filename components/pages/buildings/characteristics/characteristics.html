@@ -22,10 +22,10 @@
         <a class="buildings__agro-tab" href="#buildings"
            aria-current="page">Описание</a>
         <a class="buildings__agro-tab is-active" href="#/buildings-characteristics">Характеристики</a>
-        <a class="buildings__agro-tab" href="#buildings-agro-benefits">Почему PK Vesta</a>
-        <a class="buildings__agro-tab" href="#buildings-agro-comparison">Сравнение</a>
-        <a class="buildings__agro-tab" href="#buildings-agro-prices">Цены</a>
-        <a class="buildings__agro-tab" href="#buildings-agro-faq">Вопросы</a>
+        <a class="buildings__agro-tab" href="#/buildings-why-pk-vesta">Почему PK Vesta</a>
+        <a class="buildings__agro-tab" href="#/buildings-comparison">Сравнение</a>
+        <a class="buildings__agro-tab" href="#/buildings-prices">Цены</a>
+        <a class="buildings__agro-tab" href="#/buildings-faq">Вопросы</a>
         <button class="buildings__agro-tabs-toggle" type="button" aria-label="Открыть разделы агрокомплекса"
                 aria-expanded="false" aria-controls="buildings-agro-tab-list">
           <img src="https://www.figma.com/api/mcp/asset/e788bb81-b932-4832-876d-2bfb1f8b1584/32372.svg" alt=""
@@ -188,36 +188,36 @@
       <div class="buildings-production__gallery">
         <figure class="buildings-production__main-image">
           <img
-            src="https://www.figma.com/api/mcp/asset/59076374-ebf5-4f53-8798-11812e3c7de0/c0db3.png"
-            alt="Производство стальных строительных конструкций"
-            width="1400"
-            height="787"
-            loading="lazy">
+              src="https://www.figma.com/api/mcp/asset/59076374-ebf5-4f53-8798-11812e3c7de0/c0db3.png"
+              alt="Производство стальных строительных конструкций"
+              width="1400"
+              height="787"
+              loading="lazy">
         </figure>
         <div class="buildings-production__side-images" aria-label="Дополнительные фотографии производства">
           <figure class="buildings-production__side-image">
             <img
-              src="https://www.figma.com/api/mcp/asset/59076374-ebf5-4f53-8798-11812e3c7de0/c0db3.png"
-              alt=""
-              width="328"
-              height="257"
-              loading="lazy">
+                src="https://www.figma.com/api/mcp/asset/59076374-ebf5-4f53-8798-11812e3c7de0/c0db3.png"
+                alt=""
+                width="328"
+                height="257"
+                loading="lazy">
           </figure>
           <figure class="buildings-production__side-image">
             <img
-              src="https://www.figma.com/api/mcp/asset/59076374-ebf5-4f53-8798-11812e3c7de0/c0db3.png"
-              alt=""
-              width="328"
-              height="257"
-              loading="lazy">
+                src="https://www.figma.com/api/mcp/asset/59076374-ebf5-4f53-8798-11812e3c7de0/c0db3.png"
+                alt=""
+                width="328"
+                height="257"
+                loading="lazy">
           </figure>
           <figure class="buildings-production__side-image">
             <img
-              src="https://www.figma.com/api/mcp/asset/59076374-ebf5-4f53-8798-11812e3c7de0/c0db3.png"
-              alt=""
-              width="328"
-              height="257"
-              loading="lazy">
+                src="https://www.figma.com/api/mcp/asset/59076374-ebf5-4f53-8798-11812e3c7de0/c0db3.png"
+                alt=""
+                width="328"
+                height="257"
+                loading="lazy">
           </figure>
         </div>
       </div>
@@ -309,6 +309,75 @@
         </div>
       </div>
     </form>
+  </div>
+</section>
+
+<section class="buildings-catalog" aria-labelledby="buildings-catalog-title">
+  <div class="buildings-catalog__panel">
+    <header class="buildings-catalog__header">
+      <h2 class="buildings-catalog__title" id="buildings-catalog-title">Каталог отраслей</h2>
+      <nav class="buildings-catalog__filters" aria-label="Категории каталога отраслей">
+        <a class="buildings-catalog__filter is-active" href="#buildings-catalog-agro" aria-current="page">Сельское
+          хозяйство</a>
+        <a class="buildings-catalog__filter" href="#buildings-catalog-commercial">Коммерческая</a>
+        <a class="buildings-catalog__filter" href="#buildings-catalog-general">Общие здания</a>
+        <a class="buildings-catalog__filter" href="#buildings-catalog-equipment">Техника</a>
+        <a class="buildings-catalog__filter" href="#buildings-catalog-industry">Промышленность</a>
+        <a class="buildings-catalog__filter" href="#buildings-catalog-sport">Спортивная</a>
+      </nav>
+    </header>
+    <div class="buildings-catalog__cards" id="buildings-catalog-agro">
+      <a class="buildings-catalog__card" href="#buildings-agro-description">
+        <span class="buildings-catalog__image-wrap">
+          <img class="buildings-catalog__image"
+               src="https://www.figma.com/api/mcp/asset/1a7ff761-31fa-4d07-bcf4-2c5c0f70bfde/f28bb.png" alt=""
+               width="320" height="312" loading="lazy">
+          <img class="buildings-catalog__image-overlay"
+               src="https://www.figma.com/api/mcp/asset/1a7ff761-31fa-4d07-bcf4-2c5c0f70bfde/e520f.png" alt=""
+               width="320" height="312" loading="lazy">
+        </span>
+        <span class="buildings-catalog__caption">Агрокомплексы</span>
+      </a>
+      <a class="buildings-catalog__card" href="#buildings-catalog-aquafarm">
+        <span class="buildings-catalog__image-wrap">
+          <img class="buildings-catalog__image"
+               src="https://www.figma.com/api/mcp/asset/1a7ff761-31fa-4d07-bcf4-2c5c0f70bfde/c3d69.png" alt=""
+               width="320" height="312" loading="lazy">
+        </span>
+        <span class="buildings-catalog__caption">Акваферма</span>
+      </a>
+      <a class="buildings-catalog__card" href="#buildings-catalog-winefarm">
+        <span class="buildings-catalog__image-wrap">
+          <img class="buildings-catalog__image"
+               src="https://www.figma.com/api/mcp/asset/1a7ff761-31fa-4d07-bcf4-2c5c0f70bfde/393b7.png" alt=""
+               width="320" height="312" loading="lazy">
+        </span>
+        <span class="buildings-catalog__caption">Вино ферма</span>
+      </a>
+      <a class="buildings-catalog__card" href="#buildings-catalog-mushroomfarm">
+        <span class="buildings-catalog__image-wrap">
+          <img class="buildings-catalog__image"
+               src="https://www.figma.com/api/mcp/asset/1a7ff761-31fa-4d07-bcf4-2c5c0f70bfde/28b0b.png" alt=""
+               width="320" height="312" loading="lazy">
+        </span>
+        <span class="buildings-catalog__caption">Грибные фермы</span>
+      </a>
+    </div>
+    <div class="buildings-catalog__controls" aria-label="Навигация по карточкам каталога">
+      <button class="buildings-catalog__arrow buildings-catalog__arrow--prev" type="button"
+              aria-label="Предыдущая страница каталога" disabled>
+        <img src="https://www.figma.com/api/mcp/asset/1a7ff761-31fa-4d07-bcf4-2c5c0f70bfde/1b874.svg" alt=""
+             aria-hidden="true" width="40" height="40">
+      </button>
+      <div class="buildings-catalog__pagination" aria-label="Страница 1 из 4">
+        <span class="is-active"></span><span></span><span></span><span></span>
+      </div>
+      <button class="buildings-catalog__arrow buildings-catalog__arrow--next" type="button"
+              aria-label="Следующая страница каталога">
+        <img src="https://www.figma.com/api/mcp/asset/1a7ff761-31fa-4d07-bcf4-2c5c0f70bfde/a5120.svg" alt=""
+             aria-hidden="true" width="40" height="40">
+      </button>
+    </div>
   </div>
 </section>
 

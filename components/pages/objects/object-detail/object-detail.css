@@ -1,0 +1,1638 @@
+.object-detail {
+  width: 100%;
+  min-width: 0;
+  padding: 0 5px 5px;
+  color: #4D4D4D;
+}
+
+.object-detail__breadcrumbs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  min-height: 62px;
+  padding: 18px 10px;
+  color: #4D4D4D;
+  font-family: "Onest-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+}
+
+.object-detail__breadcrumb-link {
+  color: inherit;
+  transition: color 0.15s ease;
+}
+
+.object-detail__breadcrumb-link:hover {
+  color: #324C88;
+}
+
+.object-detail__breadcrumb-link:focus-visible,
+.object-detail__video-link:focus-visible,
+.object-detail__project-id:focus-visible {
+  outline: 2px solid #324C88;
+  outline-offset: 4px;
+}
+
+.object-detail__breadcrumb-separator {
+  color: #979A9B;
+}
+
+.object-detail__hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 839px;
+  padding: 40px 20px 40px 60px;
+  overflow: clip;
+  border-radius: 10px;
+  color: #FFFFFF;
+  background-color: #25313A;
+  background-image: linear-gradient(#00000080, #00000080), url("../../../../static/images/home/home-advantages-factory.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.object-detail__hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  width: 100%;
+  max-width: 1278px;
+  margin: 0 auto;
+}
+
+.object-detail__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.object-detail__title {
+  width: 100%;
+  margin: 0;
+  color: #FFFFFF;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 94px;
+  text-align: center;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.object-detail__project-id {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 100%;
+  padding: 2px 20px 2px 2px;
+  overflow: hidden;
+  border-radius: 10px;
+  color: #FFFFFF;
+  background: #FFFFFF0A;
+  box-shadow: inset 0 0 60px #FFFFFF08;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.object-detail__project-id-label {
+  display: flex;
+  flex: 0 0 48px;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  color: #354E8A;
+  background: #FFF500;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.object-detail__project-id-value {
+  font-family: "Onest-Medium", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  white-space: nowrap;
+}
+
+.object-detail__video-link {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 282.843px;
+  height: 282.843px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.object-detail__video-diamond {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  background: #FFFFFF1A;
+  transform: rotate(45deg);
+}
+
+.object-detail__video-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  transform: rotate(-45deg);
+}
+
+.object-detail__video-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 20px;
+  color: #324C88;
+  background: #FFFFFF;
+}
+
+.object-detail__video-icon svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.object-detail__video-label {
+  color: #FFFFFF;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 1100px) {
+  .object-detail__breadcrumbs {
+    gap: 20px;
+    font-size: 16px;
+  }
+
+  .object-detail__hero {
+    min-height: 839px;
+    padding: 40px 20px 40px 60px;
+  }
+
+  .object-detail__hero-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 246px;
+  }
+
+  .object-detail__intro {
+    flex: 1 1 0;
+    min-width: 0;
+    gap: 24px;
+  }
+
+  .object-detail__title {
+    font-size: 48px;
+    line-height: 64px;
+  }
+
+  .object-detail__video-link {
+    width: 282.843px;
+    height: 282.843px;
+  }
+
+  .object-detail__video-diamond {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .object-detail {
+    padding: 0 5px 5px;
+  }
+
+  .object-detail__breadcrumbs {
+    gap: 8px;
+    min-height: 0;
+    padding: 18px 8px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .object-detail__hero {
+    min-height: 620px;
+    padding: 36px 18px;
+    border-radius: 10px;
+  }
+
+  .object-detail__hero-content {
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .object-detail__intro {
+    gap: 18px;
+  }
+
+  .object-detail__title {
+    font-size: 30px;
+    line-height: 1.3;
+  }
+
+  .object-detail__project-id {
+    gap: 10px;
+    padding-right: 14px;
+  }
+
+  .object-detail__project-id-label {
+    flex-basis: 42px;
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+
+  .object-detail__project-id-value {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .object-detail__video-link {
+    width: 200px;
+    height: 200px;
+  }
+
+  .object-detail__video-diamond {
+    width: 140px;
+    height: 140px;
+  }
+
+  .object-detail__video-content {
+    gap: 12px;
+  }
+
+  .object-detail__video-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 14px;
+  }
+
+  .object-detail__video-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .object-detail__video-label {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .object-detail__hero {
+    min-height: 560px;
+    padding: 28px 12px;
+  }
+
+  .object-detail__title {
+    font-size: 25px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .object-detail__breadcrumb-link {
+    transition: none;
+  }
+}
+
+
+/* Mobile layout aligned with Figma frame 1857:107339 (360 px). */
+@media screen and (max-width: 680px) {
+  .object-detail__breadcrumbs {
+    gap: 10px;
+    padding: 24px 8px;
+    font-size: 14px;
+    line-height: normal;
+  }
+
+  .object-detail__hero {
+    min-height: 480px;
+    padding: 40px 20px;
+  }
+
+  .object-detail__hero-content {
+    gap: 24px;
+  }
+
+  .object-detail__intro {
+    gap: 24px;
+  }
+
+  .object-detail__title {
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 36px;
+  }
+
+  .object-detail__project-id {
+    gap: 12px;
+    padding: 2px 20px 2px 2px;
+  }
+
+  .object-detail__project-id-label {
+    flex-basis: 48px;
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+  }
+
+  .object-detail__project-id-value {
+    font-size: 14px;
+    line-height: 26px;
+  }
+
+  .object-detail__video-link {
+    width: 198px;
+    height: 198px;
+  }
+
+  .object-detail__video-diamond {
+    width: 140px;
+    height: 140px;
+    border-radius: 10px;
+  }
+
+  .object-detail__video-content {
+    gap: 12px;
+  }
+
+  .object-detail__video-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  .object-detail__video-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .object-detail__video-label {
+    font-size: 12px;
+    line-height: 26px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .object-detail__hero {
+    min-height: 480px;
+    padding: 40px 20px;
+  }
+
+  .object-detail__title {
+    font-size: 18px;
+  }
+}
+
+/* Object overview — Figma node 1857:104495 */
+.object-detail__overview {
+  width: 100%;
+  margin-top: 10px;
+  padding: 40px;
+  border-radius: 10px;
+  background: #FFFFFF;
+}
+
+.object-detail__overview-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 20px 62px 0;
+}
+
+.object-detail__overview-title {
+  width: 100%;
+  margin: 0;
+  color: #4D4D4D;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.object-detail__tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 100%;
+  padding: 4px;
+  border-radius: 10px;
+  background: #F5F8F7;
+}
+
+.object-detail__tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  color: #5D5D5D;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color 0.15s ease;
+}
+
+.object-detail__tab:hover,
+.object-detail__tab:focus-visible {
+  background: #FFFFFF;
+}
+
+.object-detail__tab.is-active {
+  background: #FFF505;
+}
+
+.object-detail__tab:focus-visible,
+.object-detail__read-more:focus-visible {
+  outline: 2px solid #324C88;
+  outline-offset: 3px;
+}
+
+.object-detail__overview-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(77, 77, 77, 0.2);
+}
+
+.object-detail__facts {
+  display: grid;
+  grid-template-columns: 200px max-content 200px 200px;
+  align-items: stretch;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+  margin: 0;
+}
+
+.object-detail__fact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-width: 0;
+  padding: 18px 20px;
+  border: 1px solid rgba(77, 77, 77, 0.1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: inset 0 0 60px rgba(255, 255, 255, 0.03);
+  text-align: center;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.object-detail__fact-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #5D5D5D;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+  overflow-wrap: anywhere;
+}
+
+.object-detail__fact-icon {
+  display: flex;
+  flex: 0 0 48px;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: #FFF500;
+}
+
+.object-detail__fact-icon svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: #4D4D4D;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.object-detail__fact-value {
+  margin: 0;
+  color: #5D5D5D;
+  font-family: "Onest-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  overflow-wrap: anywhere;
+}
+
+.object-detail__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.object-detail__description-text {
+  width: 100%;
+  max-width: 852px;
+  margin: 0;
+  color: #5D5D5D;
+  font-family: "Onest-Regular", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.object-detail__read-more {
+  color: #324C88;
+  font-family: "Onest-Medium", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+}
+
+@media screen and (min-width: 1101px) and (max-width: 1600px) {
+  /* Figma frame 1857:104669 (1440 px): preserve desktop typography and spacing. */
+  .object-detail__overview {
+    padding: 40px;
+  }
+
+  .object-detail__overview-inner {
+    gap: 30px;
+    padding: 20px 12px 0;
+  }
+
+  .object-detail__overview-title {
+    font-size: 48px;
+    line-height: 1.5;
+  }
+
+  .object-detail__tab {
+    min-height: 54px;
+    padding: 14px 18px;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .object-detail__facts {
+    grid-template-columns: repeat(4, 200px);
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .object-detail__fact {
+    gap: 20px;
+    padding: 18px 20px;
+  }
+
+  .object-detail__fact-label {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .object-detail__fact-value {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .object-detail__description {
+    gap: 30px;
+  }
+
+  .object-detail__description-text,
+  .object-detail__read-more {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .object-detail__overview {
+    padding: 30px 24px;
+  }
+
+  .object-detail__overview-inner {
+    gap: 24px;
+    padding: 10px 0 0;
+  }
+
+  .object-detail__overview-title {
+    font-size: 38px;
+    line-height: 1.35;
+  }
+
+  .object-detail__facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .object-detail__overview {
+    padding: 24px 16px;
+  }
+
+  .object-detail__overview-inner {
+    gap: 22px;
+  }
+
+  .object-detail__overview-title {
+    font-size: 26px;
+    line-height: 1.35;
+  }
+
+  .object-detail__tabs {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .object-detail__tab {
+    flex: 1 1 100%;
+    min-height: 46px;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .object-detail__facts {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .object-detail__fact {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 16px;
+    text-align: left;
+  }
+
+  .object-detail__fact-label {
+    flex: 1 1 auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .object-detail__fact-value {
+    flex: 0 1 auto;
+    font-size: 15px;
+    text-align: right;
+  }
+
+  .object-detail__description-text,
+  .object-detail__read-more {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .object-detail__tab {
+    transition: none;
+  }
+}
+
+
+/* Figma 1857:105359 — точная адаптация блока обзора для фрейма 1024 × 640. */
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+  .object-detail__overview {
+    padding: 40px;
+  }
+
+  .object-detail__overview-inner {
+    gap: 30px;
+    padding: 20px 28px 0;
+  }
+
+  .object-detail__overview-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .object-detail__tabs {
+    flex-wrap: nowrap;
+    gap: 4px;
+    padding: 4px;
+  }
+
+  .object-detail__tab {
+    flex: 0 0 auto;
+    min-height: 54px;
+    padding: 14px 18px;
+    font-size: 16px;
+    line-height: 26px;
+    white-space: nowrap;
+  }
+
+  .object-detail__facts {
+    grid-template-columns: 200px 231px 200px 200px;
+    justify-content: center;
+    gap: 18px;
+    width: 100%;
+  }
+
+  .object-detail__fact {
+    gap: 20px;
+    padding: 18px 20px;
+  }
+
+  .object-detail__fact-label {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .object-detail__fact-value {
+    font-size: 16px;
+    line-height: 26px;
+    white-space: nowrap;
+  }
+
+  .object-detail__description {
+    gap: 30px;
+  }
+
+  .object-detail__description-text {
+    max-width: 852px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .object-detail__read-more {
+    font-size: 22px;
+    line-height: 31px;
+  }
+}
+
+
+/* Figma 1857:107373 — overview mobile layout at 360 px. */
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+  .object-detail__overview {
+    padding: 30px 24px;
+  }
+
+  .object-detail__overview-inner {
+    padding: 10px 0 0;
+  }
+
+  .object-detail__facts {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .object-detail__fact {
+    padding: 18px 8px;
+    gap: 20px;
+  }
+
+  .object-detail__fact-label {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .object-detail__fact-value {
+    font-size: 14px;
+    line-height: 22px;
+    white-space: normal;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .object-detail__overview {
+    margin-top: 0;
+    padding: 20px 14px;
+    border-radius: 10px;
+  }
+
+  .object-detail__overview-inner {
+    gap: 30px;
+    padding: 20px 0 0;
+  }
+
+  .object-detail__overview-title {
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+    overflow-wrap: break-word;
+  }
+
+  .object-detail__tabs {
+    display: flex;
+    flex: 0 0 auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-self: center;
+    gap: 4px;
+    width: 320px;
+    max-width: 100%;
+    padding: 4px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-radius: 10px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .object-detail__tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .object-detail__tab {
+    flex: 0 0 auto;
+    min-height: 48px;
+    padding: 12px 18px;
+    border-radius: 14px;
+    font-size: 14px;
+    line-height: 22px;
+    white-space: nowrap;
+  }
+
+  .object-detail__facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .object-detail__fact {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    min-width: 0;
+    padding: 18px 8px;
+    text-align: center;
+  }
+
+  .object-detail__fact-label {
+    flex: 0 1 auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .object-detail__fact-icon {
+    flex-basis: 48px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .object-detail__fact-value {
+    flex: 0 1 auto;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+  }
+
+  .object-detail__description {
+    gap: 30px;
+  }
+
+  .object-detail__description-text {
+    max-width: none;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+  }
+
+  .object-detail__read-more {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .object-detail__tabs,
+  .object-detail__tab {
+    scroll-behavior: auto;
+    transition: none;
+  }
+}
+
+
+/* Customer review — Figma node 1857:104551 */
+.object-detail__review {
+  width: 100%;
+  margin-top: 0.5556rem;
+  padding: 0.5556rem;
+  border-radius: 0.5556rem;
+  background: #F5F8F7;
+}
+
+.object-detail__review-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  padding: 3.5556rem 2.2222rem;
+  border-radius: 1.1111rem;
+  background: #FFFFFF;
+}
+
+.object-detail__review-title {
+  width: 100%;
+  max-width: 52.5rem;
+  margin: 0;
+  color: #4D4D4D;
+  font-family: "Onest-Medium", sans-serif;
+  font-size: 2.6667rem;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.object-detail__review-content {
+  display: grid;
+  grid-template-columns: 22.2222rem minmax(0, 1fr);
+  align-items: stretch;
+  gap: 4rem;
+  width: 100%;
+  max-width: 94.4444rem;
+}
+
+.object-detail__review-photo {
+  min-width: 0;
+  min-height: 31.1111rem;
+  padding: 0.4444rem;
+  border-radius: 1.6667rem;
+  background: #FFFFFF;
+}
+
+.object-detail__review-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 30.2222rem;
+  border-radius: 1.6667rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.object-detail__review-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  min-width: 0;
+  padding: 0;
+}
+
+.object-detail__review-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  min-width: 0;
+}
+
+.object-detail__review-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.3333rem;
+  min-width: 0;
+  width: 100%;
+}
+
+.object-detail__review-quote {
+  display: block;
+  height: 3.8889rem;
+  color: #4D4D4D;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 5.3333rem;
+  font-weight: 600;
+  line-height: 0.8;
+}
+
+.object-detail__review-text {
+  width: 100%;
+  max-width: 42.2778rem;
+  max-height: 6.4em;
+  margin: 0;
+  overflow: hidden;
+  color: #5D5D5D;
+  font-family: "Onest-Regular", sans-serif;
+  font-size: 1.3333rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.object-detail__review-text.is-expanded {
+  max-height: none;
+  overflow: visible;
+}
+
+.object-detail__review-more {
+  padding: 0;
+  border: 0;
+  color: #324C88;
+  background: transparent;
+  font-family: "Onest-Medium", sans-serif;
+  font-size: 1.2222rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+}
+
+.object-detail__review-more:focus-visible,
+.object-detail__review-arrow:focus-visible {
+  outline: 0.1111rem solid #324C88;
+  outline-offset: 0.2222rem;
+}
+
+.object-detail__review-author {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.object-detail__review-name,
+.object-detail__review-position {
+  margin: 0;
+  color: #4D4D4D;
+  font-family: "Onest-Bold", sans-serif;
+  font-size: 1.3333rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.object-detail__review-position {
+  color: #5D5D5D;
+  font-family: "Onest-Regular", sans-serif;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.object-detail__review-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.3333rem;
+  width: 100%;
+}
+
+.object-detail__review-arrow {
+  display: flex;
+  flex: 0 0 3.5556rem;
+  align-items: center;
+  justify-content: center;
+  width: 3.5556rem;
+  height: 3.5556rem;
+  padding: 0;
+  border: 0.0556rem solid rgba(77, 77, 77, 0.2);
+  border-radius: 1.1111rem;
+  color: #4D4D4D;
+  background: transparent;
+  cursor: pointer;
+}
+
+.object-detail__review-arrow:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
+.object-detail__review-arrow svg {
+  display: block;
+  width: 2.2222rem;
+  height: 2.2222rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.object-detail__review-pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.2222rem;
+}
+
+.object-detail__review-pagination span {
+  display: block;
+  width: 0.5556rem;
+  height: 0.5556rem;
+  border-radius: 50%;
+  background: rgba(50, 76, 136, 0.2);
+}
+
+.object-detail__review-pagination span.is-active {
+  background: #324C88;
+}
+
+@media screen and (max-width: 1100px) {
+  .object-detail__review-inner {
+    padding: 48px 28px;
+  }
+
+  .object-detail__review-content {
+    grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.25fr);
+    gap: 36px;
+  }
+
+  .object-detail__review-photo,
+  .object-detail__review-image {
+    min-height: 440px;
+  }
+
+  .object-detail__review-title {
+    font-size: 38px;
+  }
+
+  .object-detail__review-text {
+    font-size: 20px;
+  }
+
+  .object-detail__review-name,
+  .object-detail__review-position {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .object-detail__review {
+    padding: 0;
+    margin-top: 10px;
+  }
+
+  .object-detail__review-inner {
+    gap: 24px;
+    padding: 32px 16px;
+    border-radius: 10px;
+  }
+
+  .object-detail__review-title {
+    font-size: 22px;
+    line-height: 1.35;
+  }
+
+  .object-detail__review-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .object-detail__review-photo {
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+    padding: 6px;
+    border-radius: 20px;
+  }
+
+  .object-detail__review-image {
+    min-height: 0;
+    border-radius: 16px;
+  }
+
+  .object-detail__review-details {
+    gap: 28px;
+  }
+
+  .object-detail__review-main {
+    gap: 24px;
+  }
+
+  .object-detail__review-copy {
+    gap: 16px;
+  }
+
+  .object-detail__review-quote {
+    height: 48px;
+    font-size: 72px;
+  }
+
+  .object-detail__review-text {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .object-detail__review-more {
+    font-size: 16px;
+  }
+
+  .object-detail__review-author {
+    gap: 10px;
+  }
+
+  .object-detail__review-name,
+  .object-detail__review-position {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .object-detail__review-navigation {
+    gap: 16px;
+  }
+
+  .object-detail__review-arrow {
+    flex-basis: 48px;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+  }
+
+  .object-detail__review-arrow svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+
+/* Figma 1857:104725 — shared review layout for 1920px and 1440px frames. */
+@media screen and (min-width: 1101px) and (max-width: 1600px) {
+  .object-detail__review-inner {
+    padding: 3.5556rem 2.2222rem;
+  }
+
+  .object-detail__review-title {
+    font-size: 2.6667rem;
+  }
+
+  .object-detail__review-content {
+    grid-template-columns: minmax(0, 22.2222rem) minmax(0, 1fr);
+    column-gap: 4rem;
+  }
+
+  .object-detail__review-photo {
+    min-height: 31.1111rem;
+  }
+
+  .object-detail__review-details {
+    min-width: 0;
+  }
+
+  .object-detail__review-text {
+    max-width: 100%;
+  }
+
+  .object-detail__review-navigation {
+    max-width: 100%;
+  }
+}
+
+
+/* Figma 1857:105417 — customer review at 1024px.
+   The desktop rules remain unchanged; this override restores the tablet frame geometry. */
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+  .object-detail__review {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .object-detail__review-inner {
+    align-items: center;
+    gap: 36px;
+    padding: 40px;
+    border-radius: 20px;
+  }
+
+  .object-detail__review-title {
+    max-width: 945px;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+  }
+
+  .object-detail__review-content {
+    grid-template-columns: 341px minmax(0, 1fr);
+    align-items: start;
+    column-gap: 72px;
+    width: 100%;
+    max-width: none;
+  }
+
+  .object-detail__review-photo {
+    width: 341px;
+    height: 345px;
+    min-height: 345px;
+    padding: 8px;
+    border-radius: 30px;
+  }
+
+  .object-detail__review-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    border-radius: 30px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .object-detail__review-details {
+    justify-content: flex-start;
+    gap: 36px;
+    min-width: 0;
+    padding: 0;
+  }
+
+  .object-detail__review-main {
+    gap: 36px;
+  }
+
+  .object-detail__review-copy {
+    gap: 24px;
+  }
+
+  .object-detail__review-quote {
+    height: 70px;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 96px;
+    font-weight: 600;
+    line-height: 0.8;
+  }
+
+  .object-detail__review-text {
+    width: 100%;
+    max-width: none;
+    max-height: 6.4em;
+    font-family: "Onest-Regular", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .object-detail__review-more {
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .object-detail__review-author {
+    gap: 18px;
+  }
+
+  .object-detail__review-name {
+    font-family: "Onest-Bold", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .object-detail__review-position {
+    font-family: "Onest-Regular", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .object-detail__review-navigation {
+    justify-content: flex-start;
+    gap: 24px;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .object-detail__review-arrow {
+    position: relative;
+    display: flex;
+    flex: 0 0 90.51px;
+    align-items: center;
+    justify-content: center;
+    width: 90.51px;
+    height: 90.51px;
+    border: 0;
+    border-radius: 0;
+    opacity: 1;
+    overflow: visible;
+  }
+
+  .object-detail__review-arrow::before {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border: 1px solid rgba(77, 77, 77, 0.2);
+    border-radius: 20px;
+    content: "";
+    transform: rotate(45deg);
+  }
+
+  .object-detail__review-arrow svg {
+    position: relative;
+    width: 40px;
+    height: 40px;
+  }
+
+  .object-detail__review-pagination {
+    gap: 4px;
+  }
+
+  .object-detail__review-pagination span {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+
+/* Figma 1857:107455 — mobile customer review (360px). */
+@media screen and (max-width: 680px) {
+  .object-detail__review {
+    margin-top: 10px;
+    padding: 0 5px 5px;
+    border-radius: 10px;
+    background: #F5F8F7;
+  }
+
+  .object-detail__review-inner {
+    align-items: center;
+    gap: 24px;
+    padding: 24px 14px;
+    border-radius: 20px;
+    background: #FFFFFF;
+  }
+
+  .object-detail__review-title {
+    max-width: 100%;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+    text-align: center;
+  }
+
+  .object-detail__review-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .object-detail__review-photo {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 253px;
+    min-height: 0;
+    padding: 8px;
+    border-radius: 30px;
+    background: #FFFFFF;
+  }
+
+  .object-detail__review-image {
+    display: block;
+    width: 100%;
+    height: 237px;
+    min-height: 0;
+    border-radius: 30px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .object-detail__review-details {
+    justify-content: flex-start;
+    gap: 36px;
+    min-width: 0;
+    padding: 0;
+  }
+
+  .object-detail__review-main {
+    gap: 36px;
+  }
+
+  .object-detail__review-copy {
+    gap: 14px;
+  }
+
+  .object-detail__review-quote {
+    height: 34px;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 72px;
+  }
+
+  .object-detail__review-text {
+    width: 100%;
+    max-width: none;
+    max-height: 6.4em;
+    font-family: "Onest-Regular", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+
+  .object-detail__review-more {
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+  }
+
+  .object-detail__review-author {
+    gap: 18px;
+  }
+
+  .object-detail__review-name {
+    font-family: "Onest-Bold", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    text-transform: uppercase;
+  }
+
+  .object-detail__review-position {
+    font-family: "Onest-Regular", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+  }
+
+  .object-detail__review-navigation {
+    justify-content: flex-start;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .object-detail__review-arrow {
+    position: relative;
+    flex: 0 0 67.882px;
+    width: 67.882px;
+    height: 67.882px;
+    border: 0;
+    border-radius: 0;
+    opacity: 1;
+    overflow: visible;
+  }
+
+  .object-detail__review-arrow::before {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(77, 77, 77, 0.2);
+    border-radius: 20px;
+    content: "";
+    transform: rotate(45deg);
+  }
+
+  .object-detail__review-arrow svg {
+    position: relative;
+    width: 30px;
+    height: 30px;
+  }
+
+  .object-detail__review-pagination {
+    flex: 0 0 auto;
+    gap: 4px;
+  }
+
+  .object-detail__review-pagination span {
+    width: 10px;
+    height: 10px;
+  }
+}

@@ -1,13 +1,15 @@
 <div class="container footer__container">
   <!-- 1 СТРОКА -->
   <div class="footer__row footer__row--top footer__section">
-    <div class="footer__logo">
-      <a class="footer__logo-link" href="#"><img src="./static/images/footer/footer-logo.svg" alt="ПК Веста" /></a>
+    <div class="footer__top-main">
+      <div class="footer__logo">
+        <a class="footer__logo-link" href="#"><img src="./static/images/footer/footer-logo.svg" alt="ПК Веста" /></a>
+      </div>
+      <p class="footer__legal-top">
+        Система WebSteel® является объектом исключительных прав ООО ПК&nbsp;&laquo;ВЕСТА&raquo;
+      </p>
     </div>
-    <div class="footer__legal-top">
-      Система WebSteel® является объектом исключительных прав ООО ПК&nbsp;&laquo;ВЕСТА&raquo;
-    </div>
-    <div class="footer__copyright-system">WebSteel Copyrights</div>
+    <p class="footer__copyright-system">WebSteel Copyrights</p>
   </div>
   <!-- 2 СТРОКА -->
   <div class="footer__row footer__row--contacts footer__section">
@@ -102,10 +104,10 @@
     </div>
   </div>
   <!-- АККОРДЕОНЫ -->
-  <div class="accordion footer__section">
+  <div class="accordion footer__section active">
     <div class="footer-accordion__head accordion__head">
       <div class="footer-accordion__title">Завод</div>
-      <button class="footer-accordion__btn accordion__btn"></button>
+      <button class="footer-accordion__btn accordion__btn" type="button" aria-label="Свернуть раздел «Завод»" aria-expanded="true"></button>
     </div>
     <div class="accordion__body">
       <nav class="footer-accordion__nav">
@@ -194,7 +196,7 @@
       </div>
     </div>
     <nav class="footer__bottom-legal">
-      <ul class="footer__legal-list flex-col">
+      <ul class="footer__legal-list">
         <li>
           <a href="#" class="footer__legal-link">Пользовательское соглашение Websteel</a>
         </li>
