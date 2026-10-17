@@ -9,6 +9,13 @@ function initNews() {
     let previousFocus = null;
     const selected = { months: '', years: '' };
 
+    document.querySelectorAll('.press-news__card').forEach((card) => {
+        card.addEventListener('click', (event) => {
+            if (event.target.closest('a, button, input, select, textarea, [role="button"], [role="link"]')) return;
+            window.location.hash = '/news-item';
+        });
+    });
+
     const closeMenus = (exceptButton = null) => {
         filterButtons.forEach((button) => {
             if (button === exceptButton) return;
