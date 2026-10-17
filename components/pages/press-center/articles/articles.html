@@ -1,5 +1,92 @@
-<section class="press-page">
-  <div class="container">
-    <h1>Статьи</h1>
+<section class="articles" aria-labelledby="articles-title">
+  <div class="articles__container">
+    <nav class="articles__breadcrumbs" aria-label="Хлебные крошки">
+      <a class="articles__breadcrumb" href="#/home">Главная</a>
+      <span class="articles__breadcrumb-separator" aria-hidden="true">-</span>
+      <a class="articles__breadcrumb" href="#/press-center">Пресс-центр</a>
+      <span class="articles__breadcrumb-separator" aria-hidden="true">-</span>
+      <span class="articles__breadcrumb-current" aria-current="page">Статьи</span>
+    </nav>
+
+    <h1 class="articles__title" id="articles-title">
+      <span>Статьи</span>
+      <span class="articles__count">(2000)</span>
+    </h1>
+
+    <nav class="articles__categories" aria-label="Категории пресс-центра">
+      <a class="articles__category" href="#/press-center">Все</a>
+      <a class="articles__category" href="#/news">Новости</a>
+      <a class="articles__category" href="#/video">Видео</a>
+      <a class="articles__category is-active" href="#/articles" aria-current="page">Статьи</a>
+      <a class="articles__category" href="#/faq">F.A.Q</a>
+    </nav>
+  </div>
+</section>
+<section class="articles-results" aria-label="Список статей">
+  <div class="articles-results__container">
+    <div class="articles__list" aria-label="Статьи">
+
+      <article class="articles__card">
+        <div class="articles__card-content">
+          <div class="articles__card-main">
+            <time class="articles__card-date" datetime="2026-01-27">27.01.2026</time>
+            <div class="articles__card-copy">
+              <h2 class="articles__card-heading">Роль автоматизации и BIM-технологий в проектировании и строительстве ЛСТК</h2>
+              <p class="articles__card-description">Автоматизация и BIM-технологии играют ключевую роль в проектировании и строительстве из ЛСТК. Они существенно улучшают результативность и качество выполнения. Одним из главных плюсов следует считать использование станков с ЧПУ.</p>
+            </div>
+          </div>
+          <ul class="articles__card-tags" aria-label="Темы статьи">
+            <li class="articles__card-tag">бизнес</li>
+            <li class="articles__card-tag">технологии</li>
+          </ul>
+        </div>
+        <div class="articles__card-media" aria-hidden="true">
+          <img src="https://www.figma.com/api/mcp/asset/e4bd9e47-c0fe-4e79-9801-4f66f9ebb761/b6ddc.png" alt="" loading="lazy">
+          <img src="https://www.figma.com/api/mcp/asset/e4bd9e47-c0fe-4e79-9801-4f66f9ebb761/47cbb.png" alt="" loading="lazy">
+        </div>
+      </article>
+
+      <article class="articles__card">
+        <div class="articles__card-content">
+          <div class="articles__card-main">
+            <time class="articles__card-date" datetime="2026-01-27">27.01.2026</time>
+            <div class="articles__card-copy">
+              <h2 class="articles__card-heading">Роль автоматизации и BIM-технологий в проектировании и строительстве ЛСТК</h2>
+              <p class="articles__card-description">Автоматизация и BIM-технологии играют ключевую роль в проектировании и строительстве из ЛСТК. Они существенно улучшают результативность и качество выполнения. Одним из главных плюсов следует считать использование станков с ЧПУ.</p>
+            </div>
+          </div>
+          <ul class="articles__card-tags" aria-label="Темы статьи">
+            <li class="articles__card-tag">бизнес</li>
+            <li class="articles__card-tag">технологии</li>
+          </ul>
+        </div>
+        <div class="articles__card-media" aria-hidden="true">
+          <img src="https://www.figma.com/api/mcp/asset/e4bd9e47-c0fe-4e79-9801-4f66f9ebb761/b6ddc.png" alt="" loading="lazy">
+          <img src="https://www.figma.com/api/mcp/asset/e4bd9e47-c0fe-4e79-9801-4f66f9ebb761/47cbb.png" alt="" loading="lazy">
+        </div>
+      </article>
+
+      <article class="articles__card">
+        <div class="articles__card-content">
+          <div class="articles__card-main">
+            <time class="articles__card-date" datetime="2026-01-27">27.01.2026</time>
+            <div class="articles__card-copy">
+              <h2 class="articles__card-heading">Роль автоматизации и BIM-технологий в проектировании и строительстве ЛСТК</h2>
+              <p class="articles__card-description">Автоматизация и BIM-технологии играют ключевую роль в проектировании и строительстве из ЛСТК. Они существенно улучшают результативность и качество выполнения. Одним из главных плюсов следует считать использование станков с ЧПУ.</p>
+            </div>
+          </div>
+          <ul class="articles__card-tags" aria-label="Темы статьи">
+            <li class="articles__card-tag">бизнес</li>
+            <li class="articles__card-tag">технологии</li>
+          </ul>
+        </div>
+        <div class="articles__card-media" aria-hidden="true">
+          <img src="https://www.figma.com/api/mcp/asset/e4bd9e47-c0fe-4e79-9801-4f66f9ebb761/b6ddc.png" alt="" loading="lazy">
+          <img src="https://www.figma.com/api/mcp/asset/e4bd9e47-c0fe-4e79-9801-4f66f9ebb761/47cbb.png" alt="" loading="lazy">
+        </div>
+      </article>
+    </div>
+    <button class="articles__load-more" type="button">Показать еще</button>
+
   </div>
 </section>

@@ -405,3 +405,957 @@
     white-space: normal;
   }
 }
+
+
+/* Текст новости — Figma 1857:111798 (desktop 1920px). */
+.news-article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  padding: 40px 110px;
+  border-radius: 30px;
+  background: #fff;
+}
+
+.news-article__gallery {
+  position: relative;
+  flex: 0 0 auto;
+  width: 1278px;
+  max-width: 100%;
+  aspect-ratio: 1278 / 800;
+  overflow: hidden;
+  border-radius: 20px;
+  isolation: isolate;
+}
+
+.news-article__image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.news-article__image--back {
+  z-index: -2;
+}
+
+.news-article__image--front {
+  z-index: -1;
+}
+
+.news-article__gallery-overlay {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  border-radius: inherit;
+  background: rgb(50 76 136 / 30%);
+  pointer-events: none;
+}
+
+.news-article__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  width: 1260px;
+  max-width: 100%;
+}
+
+.news-article__lead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  padding: 22px;
+  border-radius: 10px;
+  background: #f1f6ff;
+}
+
+.news-article__lead-accent {
+  flex: 0 0 3px;
+  width: 3px;
+  height: 102px;
+  border-radius: 10px;
+  background: #324c88;
+}
+
+.news-article__lead-text {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  color: #4d4d4d;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 36px;
+  overflow-wrap: anywhere;
+}
+
+.news-article__columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 25px;
+  width: 100%;
+  color: rgb(77 77 77 / 90%);
+  font-family: 'Onest-Regular', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.news-article__column {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  min-width: 0;
+}
+
+.news-article__column p {
+  margin: 0;
+}
+
+.news-article__column--emphasis strong {
+  color: #4d4d4d;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-weight: 600;
+}
+
+.news-article__more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 0;
+  color: #324c88;
+  font-family: 'Onest-Medium', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.news-article__more img {
+  display: block;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transform: rotate(180deg);
+}
+
+.news-article__more:focus-visible {
+  outline: 2px solid #324c88;
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 1300px) {
+  .news-article {
+    gap: 24px;
+    padding: 30px;
+  }
+
+  .news-article__gallery {
+    width: 100%;
+  }
+
+  .news-article__body {
+    gap: 24px;
+  }
+
+  .news-article__columns {
+    gap: 20px;
+    font-size: 18px;
+  }
+
+  .news-article__lead-text {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .news-article {
+    gap: 20px;
+    padding: 24px 16px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .news-article__gallery {
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+  }
+
+  .news-article__lead {
+    align-items: stretch;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .news-article__lead-accent {
+    flex-basis: 3px;
+    height: auto;
+  }
+
+  .news-article__lead-text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .news-article__body {
+    gap: 20px;
+  }
+
+  .news-article__columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .news-article__column {
+    gap: 16px;
+  }
+
+  .news-article__more {
+    align-self: center;
+    gap: 10px;
+    font-size: 18px;
+  }
+}
+
+
+/* Figma 1857:111934 — desktop 1440px.
+   At 1920px, retain the composition from Figma 1857:111798. */
+@media screen and (min-width: 1301px) and (max-width: 1600px) {
+  .news-article {
+    gap: 30px;
+    padding: 40px 81px;
+  }
+
+  .news-article__gallery {
+    width: 1278px;
+    height: 700px;
+    aspect-ratio: auto;
+  }
+
+  .news-article__body {
+    width: 1260px;
+    gap: 30px;
+  }
+
+  .news-article__lead {
+    align-items: center;
+    gap: 20px;
+    padding: 22px;
+  }
+
+  .news-article__lead-accent {
+    height: 102px;
+  }
+
+  .news-article__lead-text {
+    font-size: 20px;
+    line-height: 36px;
+  }
+
+  .news-article__columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .news-article__column {
+    gap: 25px;
+  }
+}
+
+
+/* Figma 1857:112143 — tablet layout at 1024px.
+   Desktop layouts (1440/1920px) remain governed by the rules above. */
+@media screen and (min-width: 681px) and (max-width: 1300px) {
+  .news-article {
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+  }
+
+  .news-article__gallery {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 500px;
+    aspect-ratio: auto;
+    border-radius: 20px;
+  }
+
+  .news-article__body {
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .news-article__lead {
+    align-items: center;
+    gap: 20px;
+    padding: 16px 18px;
+  }
+
+  .news-article__lead-accent {
+    flex-basis: 3px;
+    width: 3px;
+    height: 102px;
+  }
+
+  .news-article__lead-text {
+    font-size: 18px;
+    line-height: 36px;
+  }
+
+  .news-article__columns {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 25px;
+    width: 100%;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .news-article__column {
+    gap: 25px;
+    width: 100%;
+  }
+
+  .news-article__more {
+    gap: 14px;
+    font-size: 20px;
+  }
+}
+
+
+/* Figma 1857:112319 — article block at 360px.
+   Desktop (1920/1440) and tablet (1024) layouts remain unchanged. */
+@media screen and (max-width: 680px) {
+  .news-article {
+    align-items: center;
+    gap: 14px;
+    padding: 10px;
+    border-radius: 0 0 30px 30px;
+  }
+
+  .news-article__gallery {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 220px;
+    aspect-ratio: auto;
+    border-radius: 20px;
+  }
+
+  .news-article__body {
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .news-article__lead {
+    align-items: center;
+    gap: 20px;
+    padding: 16px 18px;
+    border-radius: 10px;
+  }
+
+  .news-article__lead-accent {
+    flex: 0 0 3px;
+    width: 3px;
+    height: 102px;
+  }
+
+  .news-article__lead-text {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .news-article__columns {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .news-article__column {
+    gap: 14px;
+    width: 100%;
+  }
+
+  .news-article__more {
+    align-self: center;
+    gap: 14px;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
+
+/* Фотогалерея — Figma node 1857:111812, desktop 1920px. */
+.news-gallery__more {
+  display: none;
+}
+.news-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 40px 110px;
+  border-radius: 30px;
+  background: #fff;
+}
+
+.news-gallery__container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 30px;
+  width: 1278px;
+  max-width: 100%;
+}
+
+.news-gallery__title {
+  margin: 0;
+  color: #4d4d4d;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 56px;
+  letter-spacing: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.news-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.news-gallery__item {
+  position: relative;
+  min-width: 0;
+  aspect-ratio: 409 / 230;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 30px;
+  isolation: isolate;
+}
+
+.news-gallery__image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.news-gallery__image--base {
+  z-index: -2;
+}
+
+.news-gallery__image--overlay {
+  z-index: -1;
+}
+
+.news-gallery__zoom {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 2px;
+  border: 0;
+  border-radius: 10px;
+  background: rgb(255 255 255 / 4%);
+  box-shadow: inset 0 0 60px rgb(255 255 255 / 3%), inset 0 2px 4px rgb(255 255 255 / 9%);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+  cursor: pointer;
+}
+
+.news-gallery__zoom img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.news-gallery__zoom:focus-visible,
+.news-gallery__arrow:focus-visible {
+  outline: 2px solid #324c88;
+  outline-offset: 3px;
+}
+
+.news-gallery__controls {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-width: 100%;
+  padding: 0 0 0 0;
+}
+
+.news-gallery__arrow {
+  display: flex;
+  flex: 0 0 90px;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  padding: 13px;
+  border: 0;
+  border-radius: 20px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.news-gallery__arrow img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.news-gallery__arrow--previous img {
+  transform: rotate(90deg);
+}
+
+.news-gallery__arrow--next img {
+  transform: rotate(-90deg);
+}
+
+.news-gallery__pagination {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.news-gallery__dot {
+  display: block;
+  flex: 0 0 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgb(50 76 136 / 20%);
+}
+
+.news-gallery__dot--active {
+  background: #324c88;
+}
+
+@media screen and (min-width: 1301px) and (max-width: 1600px) {
+  .news-gallery {
+    padding-right: 80px;
+    padding-left: 80px;
+  }
+
+  .news-gallery__container {
+    width: 1278px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .news-gallery {
+    padding: 40px;
+  }
+
+  .news-gallery__container {
+    width: 100%;
+  }
+
+  .news-gallery__title {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .news-gallery__grid {
+    gap: 16px;
+  }
+
+  .news-gallery__item {
+    border-radius: 20px;
+  }
+
+  .news-gallery__zoom {
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .news-gallery__controls {
+    gap: 10px;
+  }
+
+  .news-gallery__arrow {
+    flex-basis: 64px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .news-gallery__arrow img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media screen and (min-width: 681px) and (max-width: 1300px) {
+  .news-gallery__container {
+    gap: 30px;
+  }
+
+  .news-gallery__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .news-gallery__grid {
+    gap: 10px;
+  }
+
+  .news-gallery__item {
+    border-radius: 30px;
+  }
+
+  .news-gallery__zoom {
+    right: 19px;
+    bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .news-gallery {
+    padding: 30px 16px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .news-gallery__container {
+    gap: 20px;
+  }
+
+  .news-gallery__title {
+    font-size: 24px;
+    line-height: 1.35;
+  }
+
+  .news-gallery__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .news-gallery__item {
+    border-radius: 12px;
+  }
+
+  .news-gallery__zoom {
+    right: 8px;
+    bottom: 8px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .news-gallery__zoom img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .news-gallery__controls {
+    gap: 4px;
+  }
+
+  .news-gallery__arrow {
+    flex-basis: 36px;
+    width: 36px;
+    height: 36px;
+    padding: 4px;
+    border-radius: 10px;
+  }
+
+  .news-gallery__arrow img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .news-gallery__pagination {
+    gap: 3px;
+  }
+
+  .news-gallery__dot {
+    flex-basis: 6px;
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* Figma 1857:112334 — mobile gallery, frame 360px. */
+@media screen and (max-width: 680px) {
+  .news-gallery {
+    padding: 20px 10px;
+    border-radius: 30px;
+  }
+
+  .news-gallery__container {
+    gap: 20px;
+    width: 100%;
+  }
+
+  .news-gallery__title {
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+  }
+
+  .news-gallery__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .news-gallery__item--additional {
+    display: none;
+  }
+
+  .news-gallery__more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    gap: 14px;
+    color: #324c88;
+    font-family: 'Onest-Medium', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .news-gallery__more:focus-visible {
+    outline: 2px solid #324c88;
+    outline-offset: 5px;
+    border-radius: 4px;
+  }
+
+  .news-gallery__item {
+    aspect-ratio: 16 / 9;
+    border-radius: 30px;
+  }
+
+  .news-gallery__zoom {
+    right: 10px;
+    bottom: 10px;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+  }
+
+  .news-gallery__zoom img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .news-gallery__controls {
+    gap: 10px;
+  }
+
+  .news-gallery__arrow {
+    flex-basis: 48px;
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+  }
+
+  .news-gallery__arrow img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .news-gallery__pagination {
+    gap: 4px;
+  }
+
+  .news-gallery__dot {
+    flex-basis: 8px;
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news-gallery__zoom,
+  .news-gallery__arrow {
+    scroll-behavior: auto;
+  }
+}
+
+/* Навигация между новостями — Figma 1857:111872 */
+.news-navigation {
+  display: flex;
+  align-items: stretch;
+  gap: 5px;
+  width: 100%;
+}
+
+.news-navigation__card {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 40px;
+  border-radius: 30px;
+  background: #fff;
+  text-align: center;
+}
+
+.news-navigation__label {
+  margin: 0 0 30px;
+  color: #324c88;
+  font-family: 'Onest-Medium', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0;
+}
+
+.news-navigation__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  max-width: 800px;
+  color: inherit;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.news-navigation__title {
+  display: block;
+  width: 100%;
+  color: #4d4d4d;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 44px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.news-navigation__description {
+  display: block;
+  width: 100%;
+  color: rgba(77, 77, 77, 0.7);
+  font-family: 'Onest-Medium', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.news-navigation__link:hover .news-navigation__title {
+  color: #324c88;
+}
+
+.news-navigation__link:focus-visible {
+  outline: 2px solid #324c88;
+  outline-offset: 6px;
+  border-radius: 2px;
+}
+
+/* Figma 1857:112218 — tablet frame 1024px.
+   Keep desktop proportions above this range and switch only the typography
+   and vertical rhythm required by the tablet composition. */
+@media screen and (min-width: 681px) and (max-width: 1300px) {
+  .news-navigation__card {
+    padding: 20px 40px;
+  }
+
+  .news-navigation__label {
+    margin-bottom: 18px;
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  .news-navigation__link {
+    gap: 10px;
+    max-width: none;
+  }
+
+  .news-navigation__title {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .news-navigation__description {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+
+/* Figma 1857:112374 — mobile news navigation, frame 360px. */
+@media screen and (max-width: 680px) {
+  .news-navigation {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 5px;
+  }
+
+  .news-navigation__card {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 16px 10px;
+    border-radius: 30px;
+  }
+
+  .news-navigation__label {
+    margin: 0 0 14px;
+    font-size: 12px;
+    line-height: 10px;
+    white-space: nowrap;
+  }
+
+  .news-navigation__link {
+    gap: 10px;
+    max-width: none;
+    overflow-wrap: anywhere;
+  }
+
+  .news-navigation__title {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .news-navigation__description {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+/* Figma 1857:112009 — навигация между новостями, frame 1440px.
+   На 1920px сохраняется ограничение ширины текста из исходного desktop-макета. */
+@media screen and (min-width: 1301px) and (max-width: 1600px) {
+  .news-navigation__link {
+    max-width: none;
+  }
+}
