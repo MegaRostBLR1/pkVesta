@@ -1,15 +1,17 @@
 <section class="calculator-hero">
-  <div class="calculator-hero__container">
+  <div class="calculator-hero__container flex-col-ac">
     <div class="calculator-hero__content flex-center">
-      <h1 class="calculator-hero__title">
-        Онлайн система
-        <span class="main-color">WebSteel</span>
-      </h1>
-      <p class="calculator-hero__descr">
-        Единый онлайн сервис/площадка для клиентов, партнеров и&nbsp;производителей зданий в&nbsp;Евразии, Ближнем
-        Востоке и&nbsp;Африке. 3D-проектирование, учет снеговых/ветровых нагрузок с&nbsp;сейсмичностью, расчет
-        актуальных цен и&nbsp;генерация бесплатного коммерческого предложения с&nbsp;эскизами.
-      </p>
+      <header class="calculator-hero__header flex-col-ac">
+        <h1 class="calculator-hero__title">
+          Онлайн система
+          <span class="main-color">WebSteel</span>
+        </h1>
+        <p class="calculator-hero__descr">
+          Единый онлайн сервис/площадка для клиентов, партнеров и&nbsp;производителей зданий в&nbsp;Евразии, Ближнем
+          Востоке и&nbsp;Африке. 3D-проектирование, учет снеговых/ветровых нагрузок с&nbsp;сейсмичностью, расчет
+          актуальных цен и&nbsp;генерация бесплатного коммерческого предложения с&nbsp;эскизами.
+        </p>
+      </header>
       <div class="calculator-hero__buttons flex-center">
         <a class="btn main-btn" href="#services-contact-form">Заказать демонстрацию</a>
         <a class="btn secondary-btn" href="#">Онлайн расчет зданий</a>
@@ -60,32 +62,21 @@
       </details>
     </div>
     <div class="calculator-hero__image-wrapper">
-      <img
-        src="/static/images/calculator/hero-1920.jpg"
-        srcset="
-          /static/images/calculator/hero-360.jpg   340w,
-          /static/images/calculator/hero-1440.jpg 1220w,
-          /static/images/calculator/hero-1920.jpg 1700w
-        "
-        sizes="(max-width: 640px) 340px,
-         (max-width: 1440px) 1220px,
-         1700px"
-        alt="Строящееся здание"
-        width="1700"
-        height="800"
-        class="calculator-hero__image" />
+      <img src="/static/images/calculator/hero-1920.jpg" class="calculator-hero__image" />
     </div>
   </div>
 </section>
 
 <section class="calculator-value section__container">
   <div class="calculator-value__container flex-center">
-    <div class="calculator-value__content">
-      <h2 class="calculator-value__title">Клиент&nbsp;&mdash; это дизайнер в&nbsp;Websteel</h2>
-      <p class="calculator-value__descr">
-        Система позволяет клиенту проектировать и рассчитывать здания в режиме онлайн во многих странах с учетом
-        технологических возможностей завода или партнеров
-      </p>
+    <div class="calculator-value__content flex-col-ac">
+      <header class="calculator-value__header flex-col-ac">
+        <h2 class="calculator-value__title">Клиент&nbsp;&mdash; это дизайнер в&nbsp;Websteel</h2>
+        <p class="calculator-value__descr">
+          Система позволяет клиенту проектировать и рассчитывать здания в режиме онлайн во многих странах с учетом
+          технологических возможностей завода или партнеров
+        </p>
+      </header>
       <div class="calculator-value__buttons">
         <a class="btn main-btn" href="#">Начать проектировать</a>
         <a class="btn tertiary-btn" href="#services-contact-form">Заказать демо</a>
@@ -99,14 +90,14 @@
 
 <section class="calculator-steps">
   <div class="calculator-steps__container flex-col-ac">
-    <h2 class="calculator-steps__title">ОТ&nbsp;дизайна до&nbsp;расчета&nbsp;&mdash; за&nbsp;2&nbsp;минуты!</h2>
-    <p class="calculator-steps__descr">
-      Потратьте 5&nbsp;минут на&nbsp;простые шаги без звонков на&nbsp;завод и&nbsp;партнерами, имея на&nbsp;руках
-      мобильное устройство с&nbsp;доступом в&nbsp;Интернет
-    </p>
-
+    <header class="calculator-steps__header flex-col-ac">
+      <h2 class="calculator-steps__title">ОТ&nbsp;дизайна до&nbsp;расчета&nbsp;&mdash; за&nbsp;2&nbsp;минуты!</h2>
+      <p class="calculator-steps__descr">
+        Потратьте 5&nbsp;минут на&nbsp;простые шаги без звонков на&nbsp;завод и&nbsp;партнерами, имея на&nbsp;руках
+        мобильное устройство с&nbsp;доступом в&nbsp;Интернет
+      </p>
+    </header>
     <div class="steps-container">
-      <!-- Карточка 1 -->
       <article class="step-card flex-col-ac">
         <div class="step-card__icon-wrapper">
           <img src="/static/images/calculator/ic-step-1.svg" alt="Шаг 1" />
@@ -117,8 +108,6 @@
           <p class="step-card__desc">Учет базовых нагрузок</p>
         </div>
       </article>
-
-      <!-- Карточка 2 -->
       <article class="step-card flex-col-ac">
         <div class="step-card__icon-wrapper">
           <img src="/static/images/calculator/ic-step-2.svg" alt="Шаг 2" />
@@ -129,8 +118,6 @@
           <p class="step-card__desc">Геометрия здания сильно влияет на&nbsp;расчетную модель</p>
         </div>
       </article>
-
-      <!-- Карточка 3 -->
       <article class="step-card flex-col-ac">
         <div class="step-card__icon-wrapper">
           <img src="/static/images/calculator/ic-step-3.svg" alt="Шаг 3" />
@@ -141,8 +128,6 @@
           <p class="step-card__desc">Выберите наиболее практичные и&nbsp;красивые конструкции</p>
         </div>
       </article>
-
-      <!-- Карточка 4 -->
       <article class="step-card flex-col-ac">
         <div class="step-card__icon-wrapper">
           <img src="/static/images/calculator/ic-step-4.svg" alt="Шаг 4" />
@@ -153,8 +138,6 @@
           <p class="step-card__desc">Свой дизайн проект с&nbsp;бесплатными эскизами</p>
         </div>
       </article>
-
-      <!-- Карточка 5 -->
       <article class="step-card flex-col-ac">
         <div class="step-card__icon-wrapper">
           <img src="/static/images/calculator/ic-step-5.svg" alt="Шаг 5" />
@@ -213,41 +196,55 @@
   </div>
 </section>
 
-<section class="calculator-smth" aria-labelledby="home-agro__title">
+<section class="calculator-features" aria-labelledby="home-agro__title">
   <div class="home-agro__panel">
+    <nav class="calculator-features__tabs">
+      <a
+        href="#"
+        class="calculator-features__tabs-item calculator-features__tabs--active"
+        role="tab"
+        aria-selected="true">
+        Для клиентов
+      </a>
+      <a href="#" class="calculator-features__tabs-item" role="tab" aria-selected="false">Для партнеров</a>
+    </nav>
     <header class="home-agro__header flex-col-ac">
-      <h2 class="home-agro__title" id="home-agro__title">Вы проектируете. <br>завод делает здание под заказ</h2>
-      <p class="calculator-smth__desc">
-        Применяются самые последние информационные технологии в визуализации и рассчетной части системы
+      <h2 class="home-agro__title" id="home-agro__title">
+        Вы проектируете.
+        <br />
+        завод делает здание под заказ
+      </h2>
+      <p class="calculator-features__descr">
+        Применяются самые последние информационные технологии в&nbsp;визуализации и&nbsp;рассчетной&nbsp;части системы
       </p>
     </header>
 
     <div class="home-agro__layout">
-      <div class="calculator-smth__buildings-list calculator__visual">
-        <figure class="calculator-smth__buildings-item buildings-item">
-          <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание">
-          <figcaption class="buildings-item__descr">
+      <div class="calculator-features__buildings-list calculator__visual">
+        <figure class="buildings-item flex-col-ac">
+          <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание" />
+          <figcaption class="buildings-item__descr flex-col-ac">
             <span class="buildings-item__title">склады</span>
             <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
           </figcaption>
         </figure>
-        <figure class="calculator-smth__buildings-item buildings-item">
-          <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание">
-          <figcaption class="buildings-item__descr">
+        <figure class="buildings-item flex-col-ac">
+          <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание" />
+          <figcaption class="buildings-item__descr flex-col-ac">
             <span class="buildings-item__title">склады</span>
             <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
           </figcaption>
         </figure>
-        <figure class="calculator-smth__buildings-item buildings-item">
-          <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание">
-          <figcaption class="buildings-item__descr">
+        <figure class="buildings-item flex-col-ac">
+          <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание" />
+          <figcaption class="buildings-item__descr flex-col-ac">
             <span class="buildings-item__title">склады</span>
             <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
           </figcaption>
         </figure>
-        <figure class="calculator-smth__buildings-item buildings-item">
-          <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание">
-          <figcaption class="buildings-item__descr">
+        <figure class="buildings-item flex-col-ac">
+          <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание" />
+          <figcaption class="buildings-item__descr flex-col-ac">
             <span class="buildings-item__title">склады</span>
             <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
           </figcaption>
@@ -292,40 +289,40 @@
           <div class="home-agro__item-content" id="home-agro__manufacturer">
             <div class="home-agro__item-copy">
               <p>
-                В системе базовые районированные карты в Евразии, Африке и Ближнем Востоке - оцифрованы на базе нормативных нагрузок (снег, ветер и сейсмика) для дальнейшего расчета металлоемкости каркаса
+                В системе базовые районированные карты в Евразии, Африке и Ближнем Востоке - оцифрованы на базе
+                нормативных нагрузок (снег, ветер и сейсмика) для дальнейшего расчета металлоемкости каркаса
               </p>
             </div>
-              <div class="calculator-smth__buildings-list calculator__tablet-visual">
-                <figure class="calculator-smth__buildings-item buildings-item">
-                  <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание">
-                  <figcaption class="buildings-item__descr">
-                    <span class="buildings-item__title">склады</span>
-                    <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
-                  </figcaption>
-                </figure>
-                <figure class="calculator-smth__buildings-item buildings-item">
-                  <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание">
-                  <figcaption class="buildings-item__descr">
-                    <span class="buildings-item__title">склады</span>
-                    <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
-                  </figcaption>
-                </figure>
-                <figure class="calculator-smth__buildings-item buildings-item">
-                  <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание">
-                  <figcaption class="buildings-item__descr">
-                    <span class="buildings-item__title">склады</span>
-                    <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
-                  </figcaption>
-                </figure>
-                <figure class="calculator-smth__buildings-item buildings-item">
-                  <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание">
-                  <figcaption class="buildings-item__descr">
-                    <span class="buildings-item__title">склады</span>
-                    <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
-                  </figcaption>
-                </figure>
-              </div>
-            
+            <div class="calculator-features__buildings-list calculator__tablet-visual">
+              <figure class="buildings-item flex-col-ac">
+                <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание" />
+                <figcaption class="buildings-item__descr flex-col-ac">
+                  <span class="buildings-item__title">склады</span>
+                  <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
+                </figcaption>
+              </figure>
+              <figure class="buildings-item flex-col-ac">
+                <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание" />
+                <figcaption class="buildings-item__descr flex-col-ac">
+                  <span class="buildings-item__title">склады</span>
+                  <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
+                </figcaption>
+              </figure>
+              <figure class="buildings-item flex-col-ac">
+                <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание" />
+                <figcaption class="buildings-item__descr flex-col-ac">
+                  <span class="buildings-item__title">склады</span>
+                  <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
+                </figcaption>
+              </figure>
+              <figure class="buildings-item flex-col-ac">
+                <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание" />
+                <figcaption class="buildings-item__descr flex-col-ac">
+                  <span class="buildings-item__title">склады</span>
+                  <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
+                </figcaption>
+              </figure>
+            </div>
           </div>
         </div>
 
@@ -456,55 +453,18 @@
 <section class="comparison">
   <div class="comparison__container">
     <h2 class="comparison__title">Сравнение онлайн систем</h2>
-    <!-- Тумблер -->
-    <div class="comparison__toggle-wrapper">
-      <label class="toggle">
-        <input checked type="checkbox" id="comparison-toggle" class="toggle__input" />
-        <span class="toggle__switch"></span>
-        <span class="toggle__text">Показывать только различия</span>
-      </label>
-    </div>
-    <!-- Таблица -->
-    <div class="comparison__table">
-      <div class="comparison__nav">
-        <button class="comparison__nav-arr comparison__nav-arr--prev" aria-label="Назад">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M25.687 27.149L18.5203 19.999L25.687 12.849L23.3203 10.4823L13.8203 19.999L23.3203 29.5156L25.687 27.149Z"
-              fill="#4D4D4D" />
-          </svg>
-        </button>
-        <div class="comparison__slider-wrapper">
-          <div class="system-card">
-            <div class="system-card__name">WEBSTEEL V1</div>
-            <div class="system-card__year">
-              Год:
-              <b class="main-color">2011</b>
-            </div>
-          </div>
-          <div class="system-card">
-            <div class="system-card__name">WEBSTEEL V2</div>
-            <div class="system-card__year">
-              Год:
-              <b class="main-color">2015</b>
-            </div>
-          </div>
-          <div class="system-card">
-            <div class="system-card__name">WEBSTEEL V3 (PRO)</div>
-            <div class="system-card__year">
-              Год:
-              <b class="main-color">2020-2025</b>
-            </div>
-          </div>
-        </div>
-        <button class="comparison__nav-arr comparison__nav-arr--next" aria-label="Вперед">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M14.3208 12.8511L21.4875 20.0011L14.3208 27.1511L16.6875 29.5177L26.1875 20.0011L16.6875 10.4844L14.3208 12.8511Z"
-              fill="#4D4D4D" />
-          </svg>
-        </button>
-        <div class="comparison__slider-controls-mob">
+    <div class="comparison__content flex-col-ac">
+      <!-- Тумблер -->
+      <div class="comparison__toggle-wrapper">
+        <label class="toggle">
+          <input checked type="checkbox" id="comparison-toggle" class="toggle__input" />
+          <span class="toggle__switch"></span>
+          <span class="toggle__text">Показывать только различия</span>
+        </label>
+      </div>
+      <!-- Таблица -->
+      <div class="comparison__table">
+        <div class="comparison__nav">
           <button class="comparison__nav-arr comparison__nav-arr--prev" aria-label="Назад">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -512,11 +472,28 @@
                 fill="#4D4D4D" />
             </svg>
           </button>
-          <div class="slider-controls__dots">
-            <button class="slider-controls__dot slider-controls__dot--active" aria-label="Слайд 1"></button>
-            <button class="slider-controls__dot" aria-label="Слайд 2"></button>
-            <button class="slider-controls__dot" aria-label="Слайд 3"></button>
-            <button class="slider-controls__dot" aria-label="Слайд 4"></button>
+          <div class="comparison__slider-wrapper">
+            <div class="system-card flex-col-ac">
+              <div class="system-card__name">WEBSTEEL V1</div>
+              <div class="system-card__year">
+                Год:
+                <b class="main-color">2011</b>
+              </div>
+            </div>
+            <div class="system-card flex-col-ac">
+              <div class="system-card__name">WEBSTEEL V2</div>
+              <div class="system-card__year">
+                Год:
+                <b class="main-color">2015</b>
+              </div>
+            </div>
+            <div class="system-card flex-col-ac">
+              <div class="system-card__name">WEBSTEEL V3 (PRO)</div>
+              <div class="system-card__year">
+                Год:
+                <b class="main-color">2020-2025</b>
+              </div>
+            </div>
           </div>
           <button class="comparison__nav-arr comparison__nav-arr--next" aria-label="Вперед">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -525,234 +502,256 @@
                 fill="#4D4D4D" />
             </svg>
           </button>
+          <div class="comparison__slider-controls-mob">
+            <button class="comparison__nav-arr comparison__nav-arr--prev" aria-label="Назад">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M25.687 27.149L18.5203 19.999L25.687 12.849L23.3203 10.4823L13.8203 19.999L23.3203 29.5156L25.687 27.149Z"
+                  fill="#4D4D4D" />
+              </svg>
+            </button>
+            <div class="slider-controls__dots">
+              <button class="slider-controls__dot slider-controls__dot--active" aria-label="Слайд 1"></button>
+              <button class="slider-controls__dot" aria-label="Слайд 2"></button>
+              <button class="slider-controls__dot" aria-label="Слайд 3"></button>
+              <button class="slider-controls__dot" aria-label="Слайд 4"></button>
+            </div>
+            <button class="comparison__nav-arr comparison__nav-arr--next" aria-label="Вперед">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14.3208 12.8511L21.4875 20.0011L14.3208 27.1511L16.6875 29.5177L26.1875 20.0011L16.6875 10.4844L14.3208 12.8511Z"
+                  fill="#4D4D4D" />
+              </svg>
+            </button>
+          </div>
         </div>
-      </div>
-      <!-- Первая закрытая строка -->
-      <div class="comparison__row">
-        <div class="comparison__row-header">
-          <div class="comparison__row-title">Описание</div>
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
-              fill="#4D4D4D" />
-          </svg>
-        </div>
-        <div class="comparison__row-body flex-col"></div>
-      </div>
-      <!-- Строка с текстом -->
-      <div class="comparison__row comparison__row--open">
-        <div class="comparison__row-header">
-          <span class="comparison__row-title">Платные услуги</span>
-          <button class="comparison__row-btn">
+        <!-- Первая закрытая строка -->
+        <div class="comparison__row">
+          <div class="comparison__row-header">
+            <div class="comparison__row-title">Описание</div>
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
                 fill="#4D4D4D" />
             </svg>
-          </button>
+          </div>
+          <div class="comparison__row-body flex-col"></div>
         </div>
-        <div class="comparison__row-body flex-col">
-          <div class="comparison__row-content row-content row-content--without-title">
-            <div class="comparison__slider-wrapper row-content__value-wrapper">
-              <div class="row-content__value">
-                <p class="value--big-text">
-                  Первый бесплатный запатентованный наиболее продаваемый по качеству визуализатор нежилых зданий
-                </p>
-              </div>
-              <div class="row-content__value">
-                <p class="value--big-text">
-                  Первый бесплатный запатентованный наиболее продаваемый по качеству визуализатор нежилых зданий
-                </p>
-              </div>
-              <div class="row-content__value">
-                <p class="value--big-text">
-                  Первый бесплатный запатентованный наиболее продаваемый по качеству визуализатор нежилых зданий
-                </p>
+        <!-- Строка с текстом -->
+        <div class="comparison__row comparison__row--open">
+          <div class="comparison__row-header">
+            <span class="comparison__row-title">Платные услуги</span>
+            <button class="comparison__row-btn">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
+                  fill="#4D4D4D" />
+              </svg>
+            </button>
+          </div>
+          <div class="comparison__row-body flex-col">
+            <div class="comparison__row-content row-content row-content--without-title">
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <p class="value--big-text">
+                    Первый бесплатный запатентованный наиболее продаваемый по качеству визуализатор нежилых зданий
+                  </p>
+                </div>
+                <div class="row-content__value">
+                  <p class="value--big-text">
+                    Первый бесплатный запатентованный наиболее продаваемый по качеству визуализатор нежилых зданий
+                  </p>
+                </div>
+                <div class="row-content__value">
+                  <p class="value--big-text">
+                    Первый бесплатный запатентованный наиболее продаваемый по качеству визуализатор нежилых зданий
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- Строка с точками -->
-      <div class="comparison__row comparison__row--open">
-        <div class="comparison__row-header">
-          <div class="comparison__row-title">Учет технологических</div>
-          <button class="comparison__row-btn">
+        <!-- Строка с точками -->
+        <div class="comparison__row comparison__row--open">
+          <div class="comparison__row-header">
+            <div class="comparison__row-title">Учет технологических</div>
+            <button class="comparison__row-btn">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
+                  fill="#4D4D4D" />
+              </svg>
+            </button>
+          </div>
+          <div class="comparison__row-body flex-col">
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Платные услуги</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+              </div>
+            </div>
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Платные услуги</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+              </div>
+            </div>
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Платные услуги</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Строка с цифрами -->
+        <div class="comparison__row comparison__row--open">
+          <div class="comparison__row-header">
+            <span class="comparison__row-title">Учет технологических</span>
+            <button class="comparison__row-btn">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
+                  fill="#4D4D4D" />
+              </svg>
+            </button>
+          </div>
+          <div class="comparison__row-body flex-col">
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Платные услуги</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="value--text">12</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">12</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">12</span>
+                </div>
+              </div>
+            </div>
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Платные услуги</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="value--text">12</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">12</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">12</span>
+                </div>
+              </div>
+            </div>
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Платные услуги</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="value--text">12</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">12</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">12</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Закрытые строки -->
+        <div class="comparison__row">
+          <div class="comparison__row-header">
+            <div class="comparison__row-title">Учет технологических</div>
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
                 fill="#4D4D4D" />
             </svg>
-          </button>
+          </div>
+          <div class="comparison__row-body flex-col"></div>
         </div>
-        <div class="comparison__row-body flex-col">
-          <div class="comparison__row-content row-content">
-            <div class="row-content__title">Платные услуги</div>
-            <div class="comparison__slider-wrapper row-content__value-wrapper">
-              <div class="row-content__value">
-                <span class="dot dot--empty"></span>
-              </div>
-              <div class="row-content__value">
-                <span class="dot dot--empty"></span>
-              </div>
-              <div class="row-content__value">
-                <span class="dot dot--filled"></span>
-              </div>
-            </div>
-          </div>
-          <div class="comparison__row-content row-content">
-            <div class="row-content__title">Платные услуги</div>
-            <div class="comparison__slider-wrapper row-content__value-wrapper">
-              <div class="row-content__value">
-                <span class="dot dot--empty"></span>
-              </div>
-              <div class="row-content__value">
-                <span class="dot dot--filled"></span>
-              </div>
-              <div class="row-content__value">
-                <span class="dot dot--filled"></span>
-              </div>
-            </div>
-          </div>
-          <div class="comparison__row-content row-content">
-            <div class="row-content__title">Платные услуги</div>
-            <div class="comparison__slider-wrapper row-content__value-wrapper">
-              <div class="row-content__value">
-                <span class="dot dot--filled"></span>
-              </div>
-              <div class="row-content__value">
-                <span class="dot dot--filled"></span>
-              </div>
-              <div class="row-content__value">
-                <span class="dot dot--filled"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Строка с цифрами -->
-      <div class="comparison__row comparison__row--open">
-        <div class="comparison__row-header">
-          <span class="comparison__row-title">Учет технологических</span>
-          <button class="comparison__row-btn">
+        <div class="comparison__row">
+          <div class="comparison__row-header">
+            <div class="comparison__row-title">Онлайн личный</div>
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
                 fill="#4D4D4D" />
             </svg>
-          </button>
-        </div>
-        <div class="comparison__row-body flex-col">
-          <div class="comparison__row-content row-content">
-            <div class="row-content__title">Платные услуги</div>
-            <div class="comparison__slider-wrapper row-content__value-wrapper">
-              <div class="row-content__value">
-                <span class="value--text">12</span>
-              </div>
-              <div class="row-content__value">
-                <span class="value--text">12</span>
-              </div>
-              <div class="row-content__value">
-                <span class="value--text">12</span>
-              </div>
-            </div>
           </div>
-          <div class="comparison__row-content row-content">
-            <div class="row-content__title">Платные услуги</div>
-            <div class="comparison__slider-wrapper row-content__value-wrapper">
-              <div class="row-content__value">
-                <span class="value--text">12</span>
-              </div>
-              <div class="row-content__value">
-                <span class="value--text">12</span>
-              </div>
-              <div class="row-content__value">
-                <span class="value--text">12</span>
-              </div>
-            </div>
+          <div class="comparison__row-body flex-col"></div>
+        </div>
+        <div class="comparison__row">
+          <div class="comparison__row-header">
+            <div class="comparison__row-title">модуль визуализации</div>
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
+                fill="#4D4D4D" />
+            </svg>
           </div>
-          <div class="comparison__row-content row-content">
-            <div class="row-content__title">Платные услуги</div>
-            <div class="comparison__slider-wrapper row-content__value-wrapper">
-              <div class="row-content__value">
-                <span class="value--text">12</span>
-              </div>
-              <div class="row-content__value">
-                <span class="value--text">12</span>
-              </div>
-              <div class="row-content__value">
-                <span class="value--text">12</span>
-              </div>
-            </div>
+          <div class="comparison__row-body flex-col"></div>
+        </div>
+        <div class="comparison__row">
+          <div class="comparison__row-header">
+            <div class="comparison__row-title">Модуль генерации</div>
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
+                fill="#4D4D4D" />
+            </svg>
           </div>
+          <div class="comparison__row-body flex-col"></div>
+        </div>
+        <div class="comparison__row">
+          <div class="comparison__row-header">
+            <div class="comparison__row-title">модуль оцифровки</div>
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
+                fill="#4D4D4D" />
+            </svg>
+          </div>
+          <div class="comparison__row-body flex-col"></div>
         </div>
       </div>
-      <!-- Закрытые строки -->
-      <div class="comparison__row">
-        <div class="comparison__row-header">
-          <div class="comparison__row-title">Учет технологических</div>
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
-              fill="#4D4D4D" />
-          </svg>
-        </div>
-        <div class="comparison__row-body flex-col"></div>
+      <div class="comparison__btn-wrapper">
+        <button class="comparison__btn btn main-btn">Показать еще</button>
       </div>
-      <div class="comparison__row">
-        <div class="comparison__row-header">
-          <div class="comparison__row-title">Онлайн личный</div>
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
-              fill="#4D4D4D" />
-          </svg>
-        </div>
-        <div class="comparison__row-body flex-col"></div>
-      </div>
-      <div class="comparison__row">
-        <div class="comparison__row-header">
-          <div class="comparison__row-title">модуль визуализации</div>
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
-              fill="#4D4D4D" />
-          </svg>
-        </div>
-        <div class="comparison__row-body flex-col"></div>
-      </div>
-      <div class="comparison__row">
-        <div class="comparison__row-header">
-          <div class="comparison__row-title">Модуль генерации</div>
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
-              fill="#4D4D4D" />
-          </svg>
-        </div>
-        <div class="comparison__row-body flex-col"></div>
-      </div>
-      <div class="comparison__row">
-        <div class="comparison__row-header">
-          <div class="comparison__row-title">модуль оцифровки</div>
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
-              fill="#4D4D4D" />
-          </svg>
-        </div>
-        <div class="comparison__row-body flex-col"></div>
-      </div>
-    </div>
-    <div class="comparison__btn-wrapper">
-      <button class="comparison__btn btn main-btn">Показать еще</button>
     </div>
   </div>
 </section>
 
 <section class="building-frame">
   <div class="building-frame__img-wrapper">
-    <img src="/static/images/calculator/building frame.jpg" alt="" />
+    <img src="/static/images/calculator/building frame.jpg" alt="Каркас" />
   </div>
 </section>
 
