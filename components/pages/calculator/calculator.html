@@ -1,15 +1,18 @@
 <section class="calculator-hero">
   <div class="calculator-hero__container">
     <div class="calculator-hero__content flex-center">
-      <h1 class="calculator-hero__title">Онлайн система <span class="main-color">WebSteel</span></h1>
+      <h1 class="calculator-hero__title">
+        Онлайн система
+        <span class="main-color">WebSteel</span>
+      </h1>
       <p class="calculator-hero__descr">
         Единый онлайн сервис/площадка для клиентов, партнеров и&nbsp;производителей зданий в&nbsp;Евразии, Ближнем
         Востоке и&nbsp;Африке. 3D-проектирование, учет снеговых/ветровых нагрузок с&nbsp;сейсмичностью, расчет
         актуальных цен и&nbsp;генерация бесплатного коммерческого предложения с&nbsp;эскизами.
       </p>
       <div class="calculator-hero__buttons flex-center">
-        <button class="btn main-btn">Заказать демонстрацию</button>
-        <button class="btn secondary-btn">Онлайн расчет зданий</button>
+        <a class="btn main-btn" href="#services-contact-form">Заказать демонстрацию</a>
+        <a class="btn secondary-btn" href="#">Онлайн расчет зданий</a>
       </div>
       <details class="calculator-hero__tooltip tooltip-demo flex-col-ac">
         <summary class="tooltip-demo__trigger tertiary-btn flex-center">
@@ -84,8 +87,8 @@
         технологических возможностей завода или партнеров
       </p>
       <div class="calculator-value__buttons">
-        <a class="btn main-btn">Начать проектировать</a>
-        <a class="btn tertiary-btn">Заказать демо</a>
+        <a class="btn main-btn" href="#">Начать проектировать</a>
+        <a class="btn tertiary-btn" href="#services-contact-form">Заказать демо</a>
       </div>
     </div>
     <div class="calculator-value__image">
@@ -210,25 +213,46 @@
   </div>
 </section>
 
-<section class="home-agro" aria-labelledby="home-agro__title">
+<section class="calculator-smth" aria-labelledby="home-agro__title">
   <div class="home-agro__panel">
-    <header class="home-agro__header">
-      <h2 class="home-agro__title" id="home-agro__title">Название блока</h2>
+    <header class="home-agro__header flex-col-ac">
+      <h2 class="home-agro__title" id="home-agro__title">Вы проектируете. <br>завод делает здание под заказ</h2>
+      <p class="calculator-smth__desc">
+        Применяются самые последние информационные технологии в визуализации и рассчетной части системы
+      </p>
     </header>
 
     <div class="home-agro__layout">
-      <figure class="home-agro__visual">
-        <img
-          class="home-agro__image"
-          src="./static/images/home/home-lstk.png"
-          alt="Стальной каркас быстровозводимого здания" />
-        <button class="home-agro__zoom" type="button" aria-label="Увеличить изображение" aria-expanded="false">
-          <svg viewBox="0 0 36 36" aria-hidden="true" focusable="false">
-            <circle cx="15.5" cy="15.5" r="9.5"></circle>
-            <path d="m22.5 22.5 7 7"></path>
-          </svg>
-        </button>
-      </figure>
+      <div class="calculator-smth__buildings-list calculator__visual">
+        <figure class="calculator-smth__buildings-item buildings-item">
+          <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание">
+          <figcaption class="buildings-item__descr">
+            <span class="buildings-item__title">склады</span>
+            <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
+          </figcaption>
+        </figure>
+        <figure class="calculator-smth__buildings-item buildings-item">
+          <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание">
+          <figcaption class="buildings-item__descr">
+            <span class="buildings-item__title">склады</span>
+            <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
+          </figcaption>
+        </figure>
+        <figure class="calculator-smth__buildings-item buildings-item">
+          <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание">
+          <figcaption class="buildings-item__descr">
+            <span class="buildings-item__title">склады</span>
+            <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
+          </figcaption>
+        </figure>
+        <figure class="calculator-smth__buildings-item buildings-item">
+          <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание">
+          <figcaption class="buildings-item__descr">
+            <span class="buildings-item__title">склады</span>
+            <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
+          </figcaption>
+        </figure>
+      </div>
 
       <div class="home-agro__accordion">
         <div class="home-agro__item">
@@ -268,31 +292,40 @@
           <div class="home-agro__item-content" id="home-agro__manufacturer">
             <div class="home-agro__item-copy">
               <p>
-                Использование технологии быстровозводимых стальных каркасов из сэндвич панелей широко применяется при
-                возведении зданий разного назначения:
+                В системе базовые районированные карты в Евразии, Африке и Ближнем Востоке - оцифрованы на базе нормативных нагрузок (снег, ветер и сейсмика) для дальнейшего расчета металлоемкости каркаса
               </p>
-              <ul>
-                <li>Коммерческих;</li>
-                <li>Промышленных;</li>
-                <li>Сельскохозяйственных;</li>
-                <li>Общественных;</li>
-                <li>Технических;</li>
-                <li>Спортивных</li>
-              </ul>
             </div>
-            <figure class="home-agro__tablet-visual">
-              <img
-                class="home-agro__image"
-                src="./static/images/home/home-lstk.png"
-                alt="Стальной каркас быстровозводимого здания"
-                loading="lazy" />
-              <button class="home-agro__zoom" type="button" aria-label="Увеличить изображение" aria-expanded="false">
-                <svg viewBox="0 0 36 36" aria-hidden="true" focusable="false">
-                  <circle cx="15.5" cy="15.5" r="9.5"></circle>
-                  <path d="m22.5 22.5 7 7"></path>
-                </svg>
-              </button>
-            </figure>
+              <div class="calculator-smth__buildings-list calculator__tablet-visual">
+                <figure class="calculator-smth__buildings-item buildings-item">
+                  <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание">
+                  <figcaption class="buildings-item__descr">
+                    <span class="buildings-item__title">склады</span>
+                    <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
+                  </figcaption>
+                </figure>
+                <figure class="calculator-smth__buildings-item buildings-item">
+                  <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание">
+                  <figcaption class="buildings-item__descr">
+                    <span class="buildings-item__title">склады</span>
+                    <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
+                  </figcaption>
+                </figure>
+                <figure class="calculator-smth__buildings-item buildings-item">
+                  <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание">
+                  <figcaption class="buildings-item__descr">
+                    <span class="buildings-item__title">склады</span>
+                    <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
+                  </figcaption>
+                </figure>
+                <figure class="calculator-smth__buildings-item buildings-item">
+                  <img class="buildings-item__image" src="/static/images/calculator/building.png" alt="Здание">
+                  <figcaption class="buildings-item__descr">
+                    <span class="buildings-item__title">склады</span>
+                    <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
+                  </figcaption>
+                </figure>
+              </div>
+            
           </div>
         </div>
 
@@ -306,6 +339,86 @@
             </button>
           </h3>
           <div class="home-agro__item-content" id="home-agro__benefits" hidden>
+            <p>
+              Стальной каркас позволяет организовать внутреннее пространство без лишних несущих перегородок. Это
+              упрощает размещение оборудования, техники и технологических зон.
+            </p>
+            <p>
+              Планировку можно заранее адаптировать под производственные процессы и предусмотренные проектом нагрузки,
+              чтобы эффективнее использовать площадь здания.
+            </p>
+          </div>
+        </div>
+        <div class="home-agro__item">
+          <h3 class="home-agro__item-heading">
+            <button class="home-agro__toggle" type="button" aria-expanded="false" aria-controls="home-agro__benefits">
+              <span class="home-agro__toggle-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+              </span>
+              <span>Почему 100% свободная планировка внутри здания</span>
+            </button>
+          </h3>
+          <div class="home-agro__item-content" id="home-agro__benefits2" hidden>
+            <p>
+              Стальной каркас позволяет организовать внутреннее пространство без лишних несущих перегородок. Это
+              упрощает размещение оборудования, техники и технологических зон.
+            </p>
+            <p>
+              Планировку можно заранее адаптировать под производственные процессы и предусмотренные проектом нагрузки,
+              чтобы эффективнее использовать площадь здания.
+            </p>
+          </div>
+        </div>
+        <div class="home-agro__item">
+          <h3 class="home-agro__item-heading">
+            <button class="home-agro__toggle" type="button" aria-expanded="false" aria-controls="home-agro__benefits">
+              <span class="home-agro__toggle-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+              </span>
+              <span>Почему 100% свободная планировка внутри здания</span>
+            </button>
+          </h3>
+          <div class="home-agro__item-content" id="home-agro__benefits3" hidden>
+            <p>
+              Стальной каркас позволяет организовать внутреннее пространство без лишних несущих перегородок. Это
+              упрощает размещение оборудования, техники и технологических зон.
+            </p>
+            <p>
+              Планировку можно заранее адаптировать под производственные процессы и предусмотренные проектом нагрузки,
+              чтобы эффективнее использовать площадь здания.
+            </p>
+          </div>
+        </div>
+        <div class="home-agro__item">
+          <h3 class="home-agro__item-heading">
+            <button class="home-agro__toggle" type="button" aria-expanded="false" aria-controls="home-agro__benefits">
+              <span class="home-agro__toggle-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+              </span>
+              <span>Почему 100% свободная планировка внутри здания</span>
+            </button>
+          </h3>
+          <div class="home-agro__item-content" id="home-agro__benefits4" hidden>
+            <p>
+              Стальной каркас позволяет организовать внутреннее пространство без лишних несущих перегородок. Это
+              упрощает размещение оборудования, техники и технологических зон.
+            </p>
+            <p>
+              Планировку можно заранее адаптировать под производственные процессы и предусмотренные проектом нагрузки,
+              чтобы эффективнее использовать площадь здания.
+            </p>
+          </div>
+        </div>
+        <div class="home-agro__item">
+          <h3 class="home-agro__item-heading">
+            <button class="home-agro__toggle" type="button" aria-expanded="false" aria-controls="home-agro__benefits">
+              <span class="home-agro__toggle-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+              </span>
+              <span>Почему 100% свободная планировка внутри здания</span>
+            </button>
+          </h3>
+          <div class="home-agro__item-content" id="home-agro__benefits5" hidden>
             <p>
               Стальной каркас позволяет организовать внутреннее пространство без лишних несущих перегородок. Это
               упрощает размещение оборудования, техники и технологических зон.
@@ -332,9 +445,9 @@
         class="prices-calculation__button"
         href="https://www.websteel.pkvesta.ru/Home/StepOne"
         target="_blank"
-        rel="noopener noreferrer"
-        >Рассчитать здание</a
-      >
+        rel="noopener noreferrer">
+        Рассчитать здание
+      </a>
     </div>
     <img class="prices-calculation-img" src="./static/images/prices-calculation.png" alt="" />
   </div>
@@ -364,15 +477,24 @@
         <div class="comparison__slider-wrapper">
           <div class="system-card">
             <div class="system-card__name">WEBSTEEL V1</div>
-            <div class="system-card__year">Год: <b class="main-color">2011</b></div>
+            <div class="system-card__year">
+              Год:
+              <b class="main-color">2011</b>
+            </div>
           </div>
           <div class="system-card">
             <div class="system-card__name">WEBSTEEL V2</div>
-            <div class="system-card__year">Год: <b class="main-color">2015</b></div>
+            <div class="system-card__year">
+              Год:
+              <b class="main-color">2015</b>
+            </div>
           </div>
           <div class="system-card">
             <div class="system-card__name">WEBSTEEL V3 (PRO)</div>
-            <div class="system-card__year">Год: <b class="main-color">2020-2025</b></div>
+            <div class="system-card__year">
+              Год:
+              <b class="main-color">2020-2025</b>
+            </div>
           </div>
         </div>
         <button class="comparison__nav-arr comparison__nav-arr--next" aria-label="Вперед">
@@ -648,8 +770,8 @@
       <div class="calculator-support__contact flex-col">
         <a href="" class="calculator-support__contact-tel flex-center">
           <img src="/static/images/calculator/ic-tel.svg" alt="Телефон" />
-          +7 (800) 333-37-41</a
-        >
+          +7 (800) 333-37-41
+        </a>
         <span class="calculator-support__contact-tip">Мини-подсказка</span>
       </div>
     </div>
@@ -733,7 +855,7 @@
             <span class="home-faq__question">Сколько изготовлено и смонтировано быстровозводимых зданий и где?</span>
             <span class="home-faq__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false"><path d="M12 5v14M5 12h14"></path></svg>
-          </span>
+            </span>
           </button>
         </h3>
         <div class="home-faq__answer" id="home-faq__answer-2" hidden>
@@ -751,8 +873,9 @@
         <h3 class="home-faq__heading">
           <button class="home-faq__toggle" type="button" aria-expanded="false" aria-controls="home-faq__answer-3">
             <span class="home-faq__question">Сколько уже существует компания ПК Веста?</span>
-            <span class="home-faq__icon" aria-hidden="true"
-              ><svg viewBox="0 0 24 24" focusable="false"><path d="M12 5v14M5 12h14"></path></svg></span>
+            <span class="home-faq__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 5v14M5 12h14"></path></svg>
+            </span>
           </button>
         </h3>
         <div class="home-faq__answer" id="home-faq__answer-3" hidden>
@@ -765,63 +888,112 @@
     </div>
   </div>
 </section>
-<section class="home-contact-person" aria-labelledby="home-contact-person__title">
-  <div class="home-contact-person__panel">
-    <div class="home-contact-person__layout">
-      <div class="home-contact-person__photo">
-        <img
-          src="./static/images/home/denis-kulakov.png"
-          alt="Денис Кулаков, заместитель генерального директора по развитию ПК Веста"
-          width="900"
-          height="940"
-          loading="lazy" />
+<section class="services-contact" aria-labelledby="services-contact-title">
+  <div class="services-contact__container">
+    <div class="services-contact__intro">
+      <div class="services-contact__heading">
+        <p class="services-contact__eyebrow">Задать вопрос или заказать расчет</p>
+        <h2 class="services-contact__title" id="services-contact-title">
+          Оставьте заявку и мы ответим вам в ближайшее время
+        </h2>
+        <p class="services-contact__description">Оставьте заявку и мы ответим вам в ближайшее время</p>
       </div>
-      <div class="home-contact-person__details">
-        <header class="home-contact-person__person">
-          <h2 class="home-contact-person__name" id="home-contact-person__title">Кулаков Денис</h2>
-          <p class="home-contact-person__position">Заместитель генерального директора по развитию ПК Веста</p>
-        </header>
-        <div class="home-contact-person__contacts">
-          <div class="home-contact-person__contact-group">
-            <div class="home-contact-person__contact">
-              <h3 class="home-contact-person__label">Телефоны:</h3>
-              <div class="home-contact-person__phone-row">
-                <a class="home-contact-person__value" href="tel:+79109434966">+7 (910) 943-49-66</a
-                ><span class="home-contact-person__note">(с 8:00 до 19:00 по МСК)</span>
-              </div>
-              <div class="home-contact-person__phone-row">
-                <a class="home-contact-person__value" href="tel:+79109434966">+7 (910) 943-49-66</a
-                ><span class="home-contact-person__note">(с 8:00 до 19:00 по МСК)</span>
-              </div>
-            </div>
-            <div class="home-contact-person__contact">
-              <h3 class="home-contact-person__label">E-mail:</h3>
-              <a class="home-contact-person__value" href="mailto:denis@pkvesta.ru">denis@pkvesta.ru</a>
-            </div>
-          </div>
-          <div class="home-contact-person__contact-group">
-            <div class="home-contact-person__contact">
-              <h3 class="home-contact-person__label">Социальные сети:</h3>
-              <div class="home-contact-person__socials">
-                <a class="home-contact-person__social" href="#home-contact-person" aria-label="Социальная сеть 1"
-                  ><img src="./static/images/home/social-1.png" alt="" width="20" height="20"
-                /></a>
-                <a class="home-contact-person__social" href="#home-contact-person" aria-label="Социальная сеть 2"
-                  ><img src="./static/images/home/social-2.png" alt="" width="20" height="20"
-                /></a>
-                <a class="home-contact-person__social" href="#home-contact-person" aria-label="Социальная сеть 3"
-                  ><img src="./static/images/home/social-3.png" alt="" width="20" height="20"
-                /></a>
-              </div>
-            </div>
-            <div class="home-contact-person__contact">
-              <h3 class="home-contact-person__label">Языки:</h3>
-              <p class="home-contact-person__value">Русский и английский</p>
-            </div>
-          </div>
-        </div>
-        <a class="home-contact-person__button btn main-btn" href="mailto:denis@pkvesta.ru">Написать</a>
+      <div class="services-contact__illustration" aria-hidden="true">
+        <img src="./static/images/application.png alt=" />
       </div>
     </div>
+
+    <form
+      class="services-contact__form"
+      id="services-contact-form"
+      action="#"
+      method="post"
+      enctype="multipart/form-data">
+      <div class="services-contact__fields">
+        <div class="services-contact__field">
+          <label class="services-contact__label" for="services-contact-name">Имя</label>
+          <input
+            class="services-contact__input"
+            id="services-contact-name"
+            name="name"
+            type="text"
+            placeholder="Иван Петров"
+            autocomplete="name"
+            required />
+        </div>
+        <div class="services-contact__field">
+          <label class="services-contact__label" for="services-contact-email">E-mail</label>
+          <input
+            class="services-contact__input"
+            id="services-contact-email"
+            name="email"
+            type="email"
+            placeholder="ivan.petrov@mail.ru"
+            autocomplete="email"
+            required />
+        </div>
+        <div class="services-contact__field services-contact__field--phone">
+          <label class="services-contact__label" for="services-contact-phone">Телефон</label>
+          <input
+            class="services-contact__input"
+            id="services-contact-phone"
+            name="phone"
+            type="tel"
+            placeholder="+7 999 123-45-24"
+            autocomplete="tel"
+            required />
+        </div>
+      </div>
+
+      <div class="services-contact__form-bottom">
+        <div class="services-contact__field">
+          <label class="services-contact__label" for="services-contact-comment">Комментарий</label>
+          <textarea
+            class="services-contact__input services-contact__textarea"
+            id="services-contact-comment"
+            name="comment"
+            placeholder="Ваш комментарий"></textarea>
+        </div>
+
+        <div class="services-contact__upload">
+          <label class="services-contact__upload-button" for="services-contact-file">
+            <span class="services-contact__file-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14 22H10C6.229 22 4.343 22 3.172 20.828C2.001 19.656 2 17.771 2 14V10C2 6.229 2 4.343 3.172 3.172C4.344 2.001 6.239 2 10.03 2C10.636 2 11.121 2 11.53 2.017C11.5167 2.097 11.51 2.17833 11.51 2.261L11.5 5.095C11.5 6.192 11.5 7.162 11.605 7.943C11.719 8.79 11.98 9.637 12.672 10.329C13.362 11.019 14.21 11.281 15.057 11.395C15.838 11.5 16.808 11.5 17.905 11.5H21.957C22 12.034 22 12.69 22 13.563V14C22 17.771 22 19.657 20.828 20.828C19.656 21.999 17.771 22 14 22Z"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  fill="#324C88" />
+                <path
+                  d="M19.352 7.61662L15.392 4.05362C14.265 3.03862 13.702 2.53062 13.009 2.26562L13 4.99962C13 7.35663 13 8.53562 13.732 9.26762C14.464 9.99962 15.643 9.99963 18 9.99963H21.58C21.218 9.29563 20.568 8.71163 19.352 7.61662Z"
+                  fill="#324C88" />
+              </svg>
+            </span>
+            <span>Выберите файл</span>
+          </label>
+          <input
+            class="services-contact__file-input"
+            id="services-contact-file"
+            name="attachment"
+            type="file"
+            aria-describedby="services-contact-file-help" />
+          <p class="services-contact__upload-help" id="services-contact-file-help">
+            Прикрепите/перетащите файл, max 50 mb
+          </p>
+        </div>
+
+        <div class="services-contact__submit-group">
+          <button class="btn main-btn services-contact__submit" type="submit">Отправить</button>
+          <label class="services-contact__consent">
+            <input class="services-contact__checkbox" type="checkbox" name="personal-data-consent" required />
+            <span>
+              Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с
+              Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей,
+              определенных в Согласии на обработку персональных данных
+            </span>
+          </label>
+        </div>
+      </div>
+    </form>
   </div>
 </section>

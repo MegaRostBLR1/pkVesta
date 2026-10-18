@@ -9,7 +9,7 @@ const APP_CONFIG = {
     css: './components/layout/footer/footer.css',
     js: './components/layout/footer/footer.js'
   },
-  defaultPage: 'calculator',
+  defaultPage: 'objects',
   pages: {
     'home': {
       title: 'Главная',
