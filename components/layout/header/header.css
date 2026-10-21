@@ -1951,3 +1951,14 @@
         display: block;
     }
 }
+
+
+@media screen and (min-width: 761px) and (max-width: 1300px) {
+    .app-header::before {
+        min-height: 52px;
+    }
+
+    .app-header .header-burger {
+        top: -38px;
+    }
+}
