@@ -1014,15 +1014,16 @@
         min-width: 100px;
         background: #324C881A;
     }
-}
 
-@media screen and (min-width: 1521px) {
-    .header-bottom__search {
+
+.header-bottom__search {
         flex: 0 1 988px;
         width: 988px;
         min-width: 0;
     }
 }
+
+
 
 /* Tablet header: Figma frame 1024 px. Keep desktop layout at 1440/1920
    and switch to the compact header only within the tablet range. */
@@ -1641,6 +1642,12 @@
     .header-bottom__search-input {
         transition: none;
     }
+
+
+.app-header-component .header-burger,
+    .app-header-component .header__nav {
+        transition: none;
+    }
 }
 
 @media screen and (max-width: 1300px) {
@@ -1800,99 +1807,9 @@
         outline-offset: 4px;
         border-radius: 4px;
     }
-}
-
-@media screen and (max-width: 900px) {
-    .app-header-component.is-menu-open .header__contacts {
-        gap: 18px;
-        padding: 24px 10px;
-    }
-
-    .app-header-component.is-menu-open .header__contacts-choice {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 24px;
-    }
-
-    .app-header-component.is-menu-open .header__contacts-choice-title {
-        padding-bottom: 10px;
-        font-size: 13px;
-    }
-
-    .app-header-component.is-menu-open .header__contacts-choice-list {
-        gap: 12px;
-        padding-top: 10px;
-    }
-
-    .app-header-component.is-menu-open .header__contacts-choice-icon {
-        flex-basis: 24px;
-        width: 24px;
-        height: 24px;
-        padding: 4px;
-        margin-right: 6px;
-    }
-
-    .app-header-component.is-menu-open .header__contacts-choice-phone,
-    .app-header-component.is-menu-open .header__contacts-choice-email {
-        font-size: 11px;
-    }
-
-    .app-header-component.is-menu-open .header__contacts-choice-description {
-        font-size: 10px;
-        line-height: 1.35;
-    }
-
-    .app-header-component.is-menu-open .header__location {
-        grid-row: 4;
-        padding: 12px 10px 18px;
-    }
-}
-
-@media screen and (max-width: 760px) {
-    .app-header-component.is-menu-open .header__nav {
-        grid-row: 2;
-    }
-
-    .app-header-component.is-menu-open .header__contacts {
-        grid-row: 3;
-    }
-
-    .app-header-component.is-menu-open .header__location {
-        grid-row: 4;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .app-header-component .header-burger,
-    .app-header-component .header__nav {
-        transition: none;
-    }
-}
 
 
-/* Final layout refinements for the opened tablet menu. */
-@media screen and (min-width: 901px) and (max-width: 1300px) {
-    .app-header-component.is-menu-open .header__contacts {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    .app-header-component.is-menu-open .header__contacts-phone {
-        width: 100%;
-        min-width: 0;
-    }
-
-    .app-header-component.is-menu-open .header__contacts-choice {
-        width: 100%;
-    }
-
-    .app-header-component.is-menu-open .header__contacts-social {
-        grid-column: 1;
-        align-self: start;
-    }
-}
-
-@media screen and (max-width: 1300px) {
-    .app-header-component.is-menu-open .header__nav > .nav-list {
+.app-header-component.is-menu-open .header__nav > .nav-list {
         background: #FFFFFF;
         border-radius: 0 0 20px 20px;
     }
@@ -1954,6 +1871,92 @@
         display: none;
     }
 }
+
+@media screen and (max-width: 900px) {
+    .app-header-component.is-menu-open .header__contacts {
+        gap: 18px;
+        padding: 24px 10px;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice-title {
+        padding-bottom: 10px;
+        font-size: 13px;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice-list {
+        gap: 12px;
+        padding-top: 10px;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice-icon {
+        flex-basis: 24px;
+        width: 24px;
+        height: 24px;
+        padding: 4px;
+        margin-right: 6px;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice-phone,
+    .app-header-component.is-menu-open .header__contacts-choice-email {
+        font-size: 11px;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice-description {
+        font-size: 10px;
+        line-height: 1.35;
+    }
+
+    .app-header-component.is-menu-open .header__location {
+        grid-row: 4;
+        padding: 12px 10px 18px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .app-header-component.is-menu-open .header__nav {
+        grid-row: 2;
+    }
+
+    .app-header-component.is-menu-open .header__contacts {
+        grid-row: 3;
+    }
+
+    .app-header-component.is-menu-open .header__location {
+        grid-row: 4;
+    }
+}
+
+
+
+
+/* Final layout refinements for the opened tablet menu. */
+@media screen and (min-width: 901px) and (max-width: 1300px) {
+    .app-header-component.is-menu-open .header__contacts {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .app-header-component.is-menu-open .header__contacts-phone {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice {
+        width: 100%;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-social {
+        grid-column: 1;
+        align-self: start;
+    }
+}
+
+
 
 @media screen and (min-width: 761px) and (max-width: 1300px) {
     .app-header-component::before {
