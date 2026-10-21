@@ -15,7 +15,7 @@ const APP_CONFIG = {
     js: './components/layout/popups/main-modal/main-modal.js',
     init: 'initMainModal'
   },
-  defaultPage: 'calculator',
+  defaultPage: 'home',
   pages: {
     'home': {
       title: 'Главная',
