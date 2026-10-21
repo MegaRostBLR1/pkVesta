@@ -1,5 +1,3 @@
-/* Header component styles. */
-
 .app-header-component {
     background: #324C88;
 }
@@ -567,10 +565,7 @@
     .header-top {
         height: 3.125rem;
     }
-    .header-burger {
-        top: -2.9rem;
-        font-size: 0.875rem;
-    }
+
     .header-bottom__logo-image {
         width: 7.875rem;
     }
