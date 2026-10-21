@@ -1,5 +1,5 @@
 function initHeaderLocationChoices() {
-    const header = document.querySelector('.app-header');
+    const header = document.querySelector('.app-header-component');
 
     if (!header) {
         return;
@@ -40,7 +40,7 @@ function getHeaderChoiceLabel(item) {
 }
 
 function initHeaderMobileMenu() {
-    const header = document.querySelector('.app-header');
+    const header = document.querySelector('.app-header-component');
     const trigger = header?.querySelector('.header-burger');
     const navigation = header?.querySelector('.header__nav');
 
