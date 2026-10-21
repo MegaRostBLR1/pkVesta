@@ -186,16 +186,22 @@ function initObjects() {
         });
     }
 
+    const mapSection = root.querySelector('.objects-map');
+    const catalog = root.querySelector('.objects-catalog');
+
     viewControls.forEach((control) => {
         control.addEventListener('click', () => {
             const selectedView = control.dataset.objectsView;
+            const showCards = selectedView === 'cards';
 
             viewControls.forEach((item) => {
                 const isActive = item.dataset.objectsView === selectedView;
-
                 item.classList.toggle('is-active', isActive);
                 item.setAttribute('aria-pressed', String(isActive));
             });
+
+            if (mapSection) mapSection.classList.toggle('is-cards-view', showCards);
+            if (catalog) catalog.hidden = !showCards;
         });
     });
 
