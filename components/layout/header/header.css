@@ -1868,3 +1868,86 @@
         transition: none;
     }
 }
+
+
+/* Final layout refinements for the opened tablet menu. */
+@media screen and (min-width: 901px) and (max-width: 1300px) {
+    .app-header.is-menu-open .header__contacts {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .app-header.is-menu-open .header__contacts-phone {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .app-header.is-menu-open .header__contacts-choice {
+        width: 100%;
+    }
+
+    .app-header.is-menu-open .header__contacts-social {
+        grid-column: 1;
+        align-self: start;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .app-header.is-menu-open .header__nav > .nav-list {
+        background: #FFFFFF;
+        border-radius: 20px;
+    }
+
+    .app-header.is-menu-open .nav-list__item:last-child {
+        border-bottom: 0;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .app-header.is-menu-open .header__location-country,
+    .app-header.is-menu-open .header__location-money,
+    .app-header.is-menu-open .header__location-country-code {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
+        padding: 0;
+        color: #FFFFFF;
+        font-size: 12px;
+    }
+
+    .app-header.is-menu-open .header__location-current {
+        flex: 0 0 100%;
+        color: #FFFFFFB2;
+        font-family: 'Onest-Regular', sans-serif;
+        font-size: 11px;
+        text-transform: none;
+    }
+
+    .app-header.is-menu-open .header__location-country > .arrow-svg,
+    .app-header.is-menu-open .header__location-money > .arrow-svg,
+    .app-header.is-menu-open .header__location-country-code > .arrow-svg {
+        display: none;
+    }
+
+    .app-header.is-menu-open .header__location-choice-country {
+        min-width: 0;
+        color: #FFFFFF;
+        font-size: 11px;
+        white-space: normal;
+        text-wrap: wrap;
+    }
+
+    .app-header.is-menu-open .header__location-choice-name {
+        white-space: normal;
+    }
+
+    .app-header.is-menu-open .header__location-choice-item > svg {
+        display: none;
+        flex: 0 0 auto;
+    }
+
+    .app-header.is-menu-open .header__location-choice-item--selected > svg {
+        display: block;
+    }
+}
