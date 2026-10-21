@@ -54,15 +54,21 @@ function initHeaderMobileMenu() {
     trigger.setAttribute('aria-controls', navigation.id);
     trigger.setAttribute('aria-expanded', String(header.classList.contains('is-menu-open')));
 
+    const setMenuOpen = (isOpen) => {
+        header.classList.toggle('is-menu-open', isOpen);
+        document.documentElement.classList.toggle('is-header-menu-open', isOpen);
+        trigger.setAttribute('aria-expanded', String(isOpen));
+    };
+
     const closeMenu = () => {
-        header.classList.remove('is-menu-open');
-        trigger.setAttribute('aria-expanded', 'false');
+        setMenuOpen(false);
     };
 
     const toggleMenu = () => {
-        const isOpen = header.classList.toggle('is-menu-open');
-        trigger.setAttribute('aria-expanded', String(isOpen));
+        setMenuOpen(!header.classList.contains('is-menu-open'));
     };
+
+    setMenuOpen(header.classList.contains('is-menu-open'));
 
     trigger.addEventListener('click', toggleMenu);
 
