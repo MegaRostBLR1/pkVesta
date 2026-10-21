@@ -514,7 +514,6 @@
     .app-header {
         display: grid;
         grid-template-columns: minmax(0, 1fr);
-        background: #FFFFFF;
     }
     .app-header::before {
         content: "";
