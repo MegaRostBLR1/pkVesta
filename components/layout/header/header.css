@@ -414,6 +414,13 @@
 
 }
 @media screen and (max-width: 1300px) {
+    .app-header {
+        position: fixed;
+        z-index: 100;
+        width: 100%;
+        height: 100dvh;
+        overflow: auto;
+    }
 
     .header-top {
         height: 2.7778rem;
@@ -452,9 +459,15 @@
         display: contents;
     }
     .header__location,
-    .header__contacts {
+    .header__contacts,
+    .header__contacts .arrow-svg {
         display: none;
     }
+
+    .header__tel-number {
+        display: none;
+    }
+
     .header__nav {
         display: block;
         grid-column: 1;
