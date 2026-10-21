@@ -1969,3 +1969,14 @@
         display: none;
     }
 }
+
+/* Keep the opened tablet menu rows separate between 761px and 900px. */
+@media screen and (min-width: 761px) and (max-width: 900px) {
+    .app-header.is-menu-open .header__contacts {
+        grid-row: 4;
+    }
+
+    .app-header.is-menu-open .header__location {
+        grid-row: 5;
+    }
+}
