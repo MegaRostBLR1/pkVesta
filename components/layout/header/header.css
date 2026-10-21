@@ -1015,8 +1015,7 @@
         background: #324C881A;
     }
 
-
-.header-bottom__search {
+    .header-bottom__search {
         flex: 0 1 988px;
         width: 988px;
         min-width: 0;
@@ -1643,8 +1642,7 @@
         transition: none;
     }
 
-
-.app-header-component .header-burger,
+    .app-header-component .header-burger,
     .app-header-component .header__nav {
         transition: none;
     }
@@ -1808,8 +1806,7 @@
         border-radius: 4px;
     }
 
-
-.app-header-component.is-menu-open .header__nav > .nav-list {
+    .app-header-component.is-menu-open .header__nav > .nav-list {
         background: #FFFFFF;
         border-radius: 0 0 20px 20px;
     }
@@ -1931,9 +1928,6 @@
     }
 }
 
-
-
-
 /* Final layout refinements for the opened tablet menu. */
 @media screen and (min-width: 901px) and (max-width: 1300px) {
     .app-header-component.is-menu-open .header__contacts {
@@ -1956,15 +1950,11 @@
     }
 }
 
-
-
 @media screen and (min-width: 761px) and (max-width: 1300px) {
     .app-header-component::before {
         min-height: 52px;
     }
 }
-
-
 
 @media screen and (min-width: 761px) and (max-width: 900px) {
     .app-header-component.is-menu-open .header__contacts {
