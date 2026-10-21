@@ -1962,3 +1962,10 @@
         top: -38px;
     }
 }
+
+
+@media screen and (max-width: 1300px) {
+    .app-header.is-menu-open .nav-list__nested-list {
+        display: none;
+    }
+}
