@@ -1,0 +1,90 @@
+<button class="main-modal-btn" id="openMainModalBtn" aria-label="Задать вопрос">?</button>
+
+<div class="modal-overlay" id="mainModalOverlay">
+  <div class="main-modal" role="dialog" aria-modal="true">
+    <div class="main-modal__header">
+      <div class="main-modal__header-top">
+        <span class="main-modal__title">Задать вопрос или заказать расчет</span>
+        <button type="button" class="main-modal__close" id="mainModalCloseBtn" aria-label="Закрыть">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M9.6 28.5L7.5 26.4L15.9 18L7.5 9.6L9.6 7.5L18 15.9L26.4 7.5L28.5 9.6L20.1 18L28.5 26.4L26.4 28.5L18 20.1L9.6 28.5Z"
+              fill="currentColor" />
+          </svg>
+        </button>
+      </div>
+      <p class="main-modal__descr">Оставьте ваши данные. И мы вам перезвоним в рабочее время</p>
+    </div>
+
+    <form class="main-modal__form" id="mainModalForm" action="#" method="post" enctype="multipart/form-data">
+      <div class="main-modal__form-group">
+        <input
+          type="text"
+          class="main-modal__input"
+          id="mainModalName"
+          name="name"
+          placeholder="Контактное лицо*"
+          required />
+        <input
+          type="email"
+          class="main-modal__input main-modal__form-group--half"
+          id="mainModalEmail"
+          name="email"
+          placeholder="Email" />
+        <div class="main-modal__phone-wrapper main-modal__form-group--half">
+          <details class="main-modal__phone-dropdown">
+            <summary class="main-modal__phone-prefix">
+              <img class="main-modal__flag" src="/static/images/header/flags/rus.svg" alt="Русский флаг" />
+              +7
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.5 5.25L7 8.75L10.5 5.25" stroke-linecap="round" stroke-linejoin="round" stroke="#4D4D4D" />
+              </svg>
+            </summary>
+            <!-- То, что выпадает -->
+            <ul class="main-modal__dropdown-list">
+              <li data-code="+7" data-img="/static/images/header/flags/rus.svg">
+                <img class="main-modal__flag" src="/static/images/header/flags/rus.svg" alt="Русский флаг" />
+                +7
+              </li>
+              <li data-code="+375" data-img="/static/images/header/flags/blr.svg">
+                <img class="main-modal__flag" src="/static/images/header/flags/blr.svg" alt="Белорусский флаг" />
+                +375
+              </li>
+            </ul>
+          </details>
+          <input
+            type="tel"
+            class="main-modal__input main-modal__input--phone"
+            id="mainModalPhone"
+            name="phone"
+            placeholder="Телефон" />
+        </div>
+      </div>
+
+      <div class="main-modal__hints flex-col">
+        <p class="main-modal__hint">* - Обязательные для заполнения поля</p>
+        <p class="main-modal__hint">** - Обязательно одно из двух полей - "Телефон" или "E-mail"</p>
+      </div>
+
+      <div class="captcha">
+        <input type="checkbox" id="notRobot" class="checkbox" />
+        <label for="notRobot" class="captcha-label">Я не робот</label>
+        <div class="captcha-logo">
+          <img src="/static/images/popups/recaptcha-icon.svg" alt="reCAPTCHA" width="24" height="24" />
+        </div>
+      </div>
+
+      <button type="submit" class="main-modal__submit main-btn btn">Отправить</button>
+
+      <label class="main-modal__agreement">
+        <input type="checkbox" required class="main-modal__checkbox" />
+        <span class="main-modal__agreement-text">
+          Нажимая кнопку &laquo;Отправить&raquo;, я&nbsp;даю свое согласие на&nbsp;обработку моих персональных данных,
+          в&nbsp;соответствии с&nbsp;Федеральным законом от&nbsp;27.07.2006 года &#8470;&nbsp;152-ФЗ
+          &laquo;О&nbsp;персональных данных&raquo;, на&nbsp;условиях и&nbsp;для целей, определенных в&nbsp;Согласии
+          на&nbsp;обработку персональных данных
+        </span>
+      </label>
+    </form>
+  </div>
+</div>

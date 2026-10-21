@@ -9,6 +9,12 @@ const APP_CONFIG = {
     css: './components/layout/footer/footer.css',
     js: './components/layout/footer/footer.js'
   },
+  modal: {
+    html: './components/layout/popups/main-modal/main-modal.html',
+    css: './components/layout/popups/main-modal/main-modal.css',
+    js: './components/layout/popups/main-modal/main-modal.js',
+    init: 'initMainModal'
+  },
   defaultPage: 'calculator',
   pages: {
     'home': {
@@ -352,12 +358,22 @@ function initNavigationRouting() {
 async function initApp() {
   const header = document.querySelector('#app-header');
   const footer = document.querySelector('#app-footer');
+  const mainModal = document.querySelector('#app-main-modal');
 
   try {
     await Promise.all([
       loadComponent(header, APP_CONFIG.header),
-      loadComponent(footer, APP_CONFIG.footer)
+      loadComponent(footer, APP_CONFIG.footer),
+      mainModal ? loadComponent(mainModal, APP_CONFIG.modal) : Promise.resolve()
     ]);
+
+    if (mainModal && APP_CONFIG.modal.init) {
+      const initFunc = window[APP_CONFIG.modal.init];
+      if (typeof initFunc === 'function') {
+        initFunc();
+      }
+    }
+
   } catch (error) {
     console.error(error);
   }
