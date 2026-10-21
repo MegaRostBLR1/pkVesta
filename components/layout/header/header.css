@@ -1875,7 +1875,7 @@ html.is-header-menu-open body {
     }
 
     .app-header-component.is-menu-open .nav-list__nested-list {
-        display: none;
+        display: flex;
     }
 }
 
