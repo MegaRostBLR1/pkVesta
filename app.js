@@ -10,14 +10,14 @@ const APP_CONFIG = {
     js: './components/layout/footer/footer.js'
   },
   cookies: {
-    html: './components/popupiks/cookies/cookies.html',
-    css: './components/popupiks/cookies/cookies.css',
-    js: './components/popupiks/cookies/cookies.js'
+    html: './components/layout/popups/cookies/cookies.html',
+    css: './components/layout/popups/cookies/cookies.css',
+    js: './components/layout/popups/cookies/cookies.js'
   },
   subscribe: {
-    html: './components/popupiks/subscribe/subscribe.html',
-    css: './components/popupiks/subscribe/subscribe.css',
-    js: './components/popupiks/subscribe/subscribe.js'
+    html: './components/layout/popups/subscribe/subscribe.html',
+    css: './components/layout/popups/subscribe/subscribe.css',
+    js: './components/layout/popups/subscribe/subscribe.js'
   },
   modal: {
     html: './components/layout/popups/main-modal/main-modal.html',
