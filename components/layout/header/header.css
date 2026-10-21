@@ -1640,9 +1640,6 @@
     }
 }
 
-
-
-/* Responsive menu state: match Figma frame 1885:48032 (1024px). */
 @media screen and (max-width: 1300px) {
     .app-header-component:not(.is-menu-open) .header__nav,
     .app-header-component:not(.is-menu-open) .header__contacts,
@@ -1895,7 +1892,7 @@
 @media screen and (max-width: 1300px) {
     .app-header-component.is-menu-open .header__nav > .nav-list {
         background: #FFFFFF;
-        border-radius: 20px;
+        border-radius: 0 0 20px 20px;
     }
 
     .app-header-component.is-menu-open .nav-list__item:last-child {
@@ -1952,17 +1949,11 @@
     }
 }
 
-
 @media screen and (min-width: 761px) and (max-width: 1300px) {
     .app-header-component::before {
         min-height: 52px;
     }
-
-    .app-header-component .header-burger {
-        top: -38px;
-    }
 }
-
 
 @media screen and (max-width: 1300px) {
     .app-header-component.is-menu-open .nav-list__nested-list {
@@ -1970,7 +1961,6 @@
     }
 }
 
-/* Keep the opened tablet menu rows separate between 761px and 900px. */
 @media screen and (min-width: 761px) and (max-width: 900px) {
     .app-header-component.is-menu-open .header__contacts {
         grid-row: 4;
