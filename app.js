@@ -19,6 +19,12 @@ const APP_CONFIG = {
     css: './components/popupiks/subscribe/subscribe.css',
     js: './components/popupiks/subscribe/subscribe.js'
   },
+  modal: {
+    html: './components/layout/popups/main-modal/main-modal.html',
+    css: './components/layout/popups/main-modal/main-modal.css',
+    js: './components/layout/popups/main-modal/main-modal.js',
+    init: 'initMainModal'
+  },
   defaultPage: 'home',
   pages: {
     'home': {
@@ -393,14 +399,24 @@ async function initApp() {
   const footer = document.querySelector('#app-footer');
   const cookies = document.querySelector('#app-cookies');
   const subscribe = document.querySelector('#app-subscribe');
+  const mainModal = document.querySelector('#app-main-modal');
 
   try {
     await Promise.all([
       loadComponent(header, APP_CONFIG.header),
       loadComponent(footer, APP_CONFIG.footer),
       loadComponent(cookies, APP_CONFIG.cookies),
-      loadComponent(subscribe, APP_CONFIG.subscribe)
+      loadComponent(subscribe, APP_CONFIG.subscribe),
+      mainModal ? loadComponent(mainModal, APP_CONFIG.modal) : Promise.resolve()
     ]);
+
+    if (mainModal && APP_CONFIG.modal.init) {
+      const initMainModal = window[APP_CONFIG.modal.init];
+
+      if (typeof initMainModal === 'function') {
+        initMainModal();
+      }
+    }
   } catch (error) {
     console.error(error);
   }
