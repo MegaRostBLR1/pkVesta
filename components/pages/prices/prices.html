@@ -10,161 +10,228 @@
       <h1 class="prices__title" id="prices-title">Цены на типовые здания</h1>
 
       <aside class="prices__notice" aria-label="Важная информация">
-        <p><strong>ВАЖНО!</strong> Все цены на здания являются ориентировочными и даны для предварительного знакомства с примерным бюджетом на строительство вашего здания. Слишком много факторов влияет на уровень цен (сочетание климатических зон, размеры здания, плавающие цены на металл, материалы, стоимость рабочей силы в разных странах, шаг рам, наличие геоизыскательных работ, нестандартные нагрузки на стены и кровлю и т.д.)</p>
-        <p class="prices__notice-extra">Для более точного расчета используйте онлайн систему <a href="https://www.websteel.pkvesta.ru/Home/StepOne" target="_blank" rel="noopener noreferrer">WebSteel®</a> (онлайн учет стоимости и наличия материалов на складе завода, расчетной схемы и проектных решений) или делайте детальный запрос на российский завод ПК Веста.</p>
+        <p>
+          <strong>ВАЖНО!</strong>
+          Все цены на здания являются ориентировочными и даны для предварительного знакомства с примерным бюджетом на
+          строительство вашего здания. Слишком много факторов влияет на уровень цен (сочетание климатических зон,
+          размеры здания, плавающие цены на металл, материалы, стоимость рабочей силы в разных странах, шаг рам, наличие
+          геоизыскательных работ, нестандартные нагрузки на стены и кровлю и т.д.)
+        </p>
+        <p class="prices__notice-extra">
+          Для более точного расчета используйте онлайн систему
+          <a href="https://www.websteel.pkvesta.ru/Home/StepOne" target="_blank" rel="noopener noreferrer">WebSteel®</a>
+          (онлайн учет стоимости и наличия материалов на складе завода, расчетной схемы и проектных решений) или делайте
+          детальный запрос на российский завод ПК Веста.
+        </p>
         <button class="prices__notice-toggle" type="button" aria-expanded="false">
           <span>Показать еще</span>
-          <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="m7 10 5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="m7 10 5 5 5-5"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
         </button>
       </aside>
 
-      <div class="prices__filters-modal" id="prices-filters-modal" aria-hidden="true">
-        <div class="prices__filters-backdrop" data-prices-filters-close></div>
-        <section class="prices__filters-dialog" role="dialog" aria-modal="true" aria-labelledby="prices-filters-title" tabindex="-1">
-          <header class="prices__filters-header">
-            <h2 class="prices__filters-title" id="prices-filters-title">Параметры</h2>
-            <button class="prices__filters-close" type="button" aria-label="Закрыть параметры" data-prices-filters-close>
-              <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </button>
-          </header>
-          <form class="prices__filters" aria-label="Параметры здания">
-            <div class="prices__filter-group">
-              <fieldset class="prices__fieldset">
-                <legend>Регион:</legend>
-                <div class="prices__segmented" data-segmented="region">
-                  <button class="prices__option is-active" type="button" aria-pressed="true">Россия</button>
-                  <button class="prices__option" type="button" aria-pressed="false">СНГ</button>
-                  <button class="prices__option" type="button" aria-pressed="false">Африка и Ближний Восток</button>
-                </div>
-              </fieldset>
-              <fieldset class="prices__fieldset">
-                <legend>Кровля:</legend>
-                <div class="prices__segmented" data-segmented="roof">
-                  <button class="prices__option is-active" type="button" aria-pressed="true">Двухскатная</button>
-                  <button class="prices__option" type="button" aria-pressed="false">Плоская</button>
-                </div>
-              </fieldset>
-            </div>
+      <div class="pices__table-container flex-col">
+        <div class="prices__filters-modal" id="prices-filters-modal" aria-hidden="true">
+          <div class="prices__filters-backdrop" data-prices-filters-close></div>
+          <section
+            class="prices__filters-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="prices-filters-title"
+            tabindex="-1">
+            <header class="prices__filters-header">
+              <h2 class="prices__filters-title" id="prices-filters-title">Параметры</h2>
+              <button
+                class="prices__filters-close"
+                type="button"
+                aria-label="Закрыть параметры"
+                data-prices-filters-close>
+                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </button>
+            </header>
+            <form class="prices__filters" aria-label="Параметры здания">
+              <div class="prices__filter-group">
+                <fieldset class="prices__fieldset">
+                  <legend>Регион:</legend>
+                  <div class="prices__segmented" data-segmented="region">
+                    <button class="prices__option is-active" type="button" aria-pressed="true">Россия</button>
+                    <button class="prices__option" type="button" aria-pressed="false">СНГ</button>
+                    <button class="prices__option" type="button" aria-pressed="false">Африка и Ближний Восток</button>
+                  </div>
+                </fieldset>
+                <fieldset class="prices__fieldset">
+                  <legend>Кровля:</legend>
+                  <div class="prices__segmented" data-segmented="roof">
+                    <button class="prices__option is-active" type="button" aria-pressed="true">Двухскатная</button>
+                    <button class="prices__option" type="button" aria-pressed="false">Плоская</button>
+                  </div>
+                </fieldset>
+              </div>
 
-            <div class="prices__dimensions">
-              <label class="prices__dimension">
-                <span>Ширина:</span>
-                <select name="width" aria-label="Ширина здания">
-                  <option>12 м</option><option>18 м</option><option>24 м</option><option>30 м</option>
-                </select>
-              </label>
-              <label class="prices__dimension">
-                <span>Высота:</span>
-                <select name="height" aria-label="Высота здания">
-                  <option>4 м</option><option>5 м</option><option>6 м</option><option>7 м</option>
-                </select>
-              </label>
-            </div>
-          </form>
-          <footer class="prices__filters-footer">
-            <button class="prices__filters-back" type="button" data-prices-filters-close>Назад</button>
-          </footer>
-        </section>
-      </div>
-
-      <div class="prices__mobile-summary">
-        <p class="prices__mobile-summary-title">С 20% НДС. Поставка — EXW.</p>
-        <div class="prices__mobile-summary-item">
-          <p>Сроки проектирования и изготовления, мес</p>
-          <small>(разделы проекта — КМ, ОК (стадия Р, монтажные схемы и технический паспорт)</small>
+              <div class="prices__dimensions">
+                <label class="prices__dimension">
+                  <span>Ширина:</span>
+                  <select name="width" aria-label="Ширина здания">
+                    <option>12 м</option>
+                    <option>18 м</option>
+                    <option>24 м</option>
+                    <option>30 м</option>
+                  </select>
+                </label>
+                <label class="prices__dimension">
+                  <span>Высота:</span>
+                  <select name="height" aria-label="Высота здания">
+                    <option>4 м</option>
+                    <option>5 м</option>
+                    <option>6 м</option>
+                    <option>7 м</option>
+                  </select>
+                </label>
+              </div>
+            </form>
+            <footer class="prices__filters-footer">
+              <button class="prices__filters-back" type="button" data-prices-filters-close>Назад</button>
+            </footer>
+          </section>
         </div>
-        <div class="prices__mobile-summary-item">
-          <p>Несущий каркас, RUB</p>
-          <small>(Этаж-1, кран-балки — нет, тип конструкции — двухскатная с 1 пролётом)</small>
+
+        <div class="prices__mobile-summary">
+          <p class="prices__mobile-summary-title">С 20% НДС. Поставка — EXW.</p>
+          <div class="prices__mobile-summary-item">
+            <p>Сроки проектирования и изготовления, мес</p>
+            <small>(разделы проекта — КМ, ОК (стадия Р, монтажные схемы и технический паспорт)</small>
+          </div>
+          <div class="prices__mobile-summary-item">
+            <p>Несущий каркас, RUB</p>
+            <small>(Этаж-1, кран-балки — нет, тип конструкции — двухскатная с 1 пролётом)</small>
+          </div>
         </div>
-      </div>
 
-      <button class="prices__parameters-toggle" type="button" aria-expanded="false" aria-haspopup="dialog" aria-controls="prices-filters-modal">
-        <span>Параметры</span>
-        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M7 12h10m-7 5h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-      </button>
+        <button
+          class="prices__parameters-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          aria-controls="prices-filters-modal">
+          <span>Параметры</span>
+          <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M4 7h16M7 12h10m-7 5h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+        </button>
 
-      <div class="prices__table-wrap">
-        <table class="prices__table">
-          <colgroup><col class="prices__label-column"><col span="6"></colgroup>
-          <thead>
-          <tr>
-            <th scope="col">Виды работ</th>
-            <th scope="colgroup" colspan="6">Длина, м / с шагом колонн 6 м</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr class="prices__subheading">
-            <th scope="row">С 20% НДС. Поставка — EXW.</th>
-            <td>30</td><td>36</td><td>42</td><td>48</td><td>54</td><td>60</td>
-          </tr>
-          <tr>
-            <th scope="row">
-              <span>Сроки проектирования и изготовления, мес</span>
-              <small>(разделы проекта — КМ, ОК (стадия Р, монтажные схемы и технический паспорт)</small>
-            </th>
-            <td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
-          </tr>
-          <tr>
-            <th scope="row">
-              <span>Несущий каркас, RUB</span>
-              <small>(Этаж-1, кран-балки — нет, тип конструкции — двухскатная с 1 пролётом)</small>
-            </th>
-            <td>891 588 RUB</td><td>1 133 396 RUB</td><td>1 290 252 RUB</td><td>1 290 252 RUB</td><td>1 290 252 RUB</td><td>1 290 252 RUB</td>
-          </tr>
-          </tbody>
-          <tfoot>
-          <tr>
-            <th scope="row">Итого от:</th>
-            <td>891 588 RUB</td><td>1 133 396 RUB</td><td>1 290 252 RUB</td><td>1 290 252 RUB</td><td>1 290 252 RUB</td><td>1 290 252 RUB</td>
-          </tr>
-          </tfoot>
-        </table>
+        <div class="prices__table-wrap">
+          <table class="prices__table">
+            <colgroup>
+              <col class="prices__label-column" />
+              <col span="6" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">Виды работ</th>
+                <th scope="colgroup" colspan="6">Длина, м / с шагом колонн 6 м</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="prices__subheading">
+                <th scope="row">С 20% НДС. Поставка — EXW.</th>
+                <td>30</td>
+                <td>36</td>
+                <td>42</td>
+                <td>48</td>
+                <td>54</td>
+                <td>60</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <span>Сроки проектирования и изготовления, мес</span>
+                  <small>(разделы проекта — КМ, ОК (стадия Р, монтажные схемы и технический паспорт)</small>
+                </th>
+                <td>2.5</td>
+                <td>2.5</td>
+                <td>2.5</td>
+                <td>2.5</td>
+                <td>2.5</td>
+                <td>2.5</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <span>Несущий каркас, RUB</span>
+                  <small>(Этаж-1, кран-балки — нет, тип конструкции — двухскатная с 1 пролётом)</small>
+                </th>
+                <td>891 588 RUB</td>
+                <td>1 133 396 RUB</td>
+                <td>1 290 252 RUB</td>
+                <td>1 290 252 RUB</td>
+                <td>1 290 252 RUB</td>
+                <td>1 290 252 RUB</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row">Итого от:</th>
+                <td>891 588 RUB</td>
+                <td>1 133 396 RUB</td>
+                <td>1 290 252 RUB</td>
+                <td>1 290 252 RUB</td>
+                <td>1 290 252 RUB</td>
+                <td>1 290 252 RUB</td>
+              </tr>
+            </tfoot>
+          </table>
 
-        <div class="prices__mobile-table" aria-label="Цена для длины 1 метр">
-          <div class="prices__mobile-table-heading" aria-hidden="true">
-            <span>Длина, м</span>
-            <span>Цена, RUB</span>
-          </div>
-          <div class="prices__mobile-table-row">
-            <span>1</span>
-            <span>891 588</span>
-          </div>
-          <div class="prices__mobile-table-row">
-            <span>1</span>
-            <span>891 588</span>
-          </div>
-          <div class="prices__mobile-table-row">
-            <span>1</span>
-            <span>891 588</span>
-          </div>
-          <div class="prices__mobile-table-row">
-            <span>1</span>
-            <span>891 588</span>
-          </div>
-          <div class="prices__mobile-table-row">
-            <span>1</span>
-            <span>891 588</span>
-          </div>
-          <div class="prices__mobile-table-row">
-            <span>1</span>
-            <span>891 588</span>
-          </div>
-          <div class="prices__mobile-table-row">
-            <span>1</span>
-            <span>891 588</span>
-          </div>
-          <div class="prices__mobile-table-row">
-            <span>1</span>
-            <span>891 588</span>
-          </div>
-          <div class="prices__mobile-table-row">
-            <span>1</span>
-            <span>891 588</span>
-          </div>
-          <div class="prices__mobile-table-row prices__mobile-table-total">
-            <span>Итого от:</span>
-            <span>891 588 ₽</span>
+          <div class="prices__mobile-table" aria-label="Цена для длины 1 метр">
+            <div class="prices__mobile-table-heading" aria-hidden="true">
+              <span>Длина, м</span>
+              <span>Цена, RUB</span>
+            </div>
+            <div class="prices__mobile-table-row">
+              <span>1</span>
+              <span>891 588</span>
+            </div>
+            <div class="prices__mobile-table-row">
+              <span>1</span>
+              <span>891 588</span>
+            </div>
+            <div class="prices__mobile-table-row">
+              <span>1</span>
+              <span>891 588</span>
+            </div>
+            <div class="prices__mobile-table-row">
+              <span>1</span>
+              <span>891 588</span>
+            </div>
+            <div class="prices__mobile-table-row">
+              <span>1</span>
+              <span>891 588</span>
+            </div>
+            <div class="prices__mobile-table-row">
+              <span>1</span>
+              <span>891 588</span>
+            </div>
+            <div class="prices__mobile-table-row">
+              <span>1</span>
+              <span>891 588</span>
+            </div>
+            <div class="prices__mobile-table-row">
+              <span>1</span>
+              <span>891 588</span>
+            </div>
+            <div class="prices__mobile-table-row">
+              <span>1</span>
+              <span>891 588</span>
+            </div>
+            <div class="prices__mobile-table-row prices__mobile-table-total">
+              <span>Итого от:</span>
+              <span>891 588 ₽</span>
+            </div>
           </div>
         </div>
       </div>
@@ -173,55 +240,313 @@
 </section>
 
 <section class="prices-tech" aria-labelledby="prices-tech-title">
-  <div class="prices-tech__inner">
+  <div class="prices-tech__inner flex-col">
     <header class="prices-tech__header">
-      <h2 class="prices-tech__title" id="prices-tech-title">Вы проектируете.<br>Завод делает здание под заказ</h2>
-      <p class="prices-tech__subtitle">Применяются самые последние информационные технологии в визуализации и расчетной части системы</p>
+      <h2 class="prices-tech__title" id="prices-tech-title">
+        Вы проектируете.
+        <br />
+        Завод делает здание под заказ
+      </h2>
+      <p class="prices-tech__subtitle">
+        Применяются самые последние информационные технологии в визуализации и расчетной части системы
+      </p>
     </header>
 
-    <div class="prices-tech__layout">
+    <!-- Новый аккордеон -->
+    <div class="cards-accordion">
+      <div class="cards-accordion__list accodion--desk-visual">
+        <figure class="cards-accordion__item flex-col-ac">
+          <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+          <figcaption class="cards-accordion__descr flex-col-ac">
+            <span class="cards-accordion__title">склады</span>
+            <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+          </figcaption>
+        </figure>
+        <figure class="cards-accordion__item flex-col-ac">
+          <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+          <figcaption class="cards-accordion__descr flex-col-ac">
+            <span class="cards-accordion__title">склады</span>
+            <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+          </figcaption>
+        </figure>
+        <figure class="cards-accordion__item flex-col-ac">
+          <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+          <figcaption class="cards-accordion__descr flex-col-ac">
+            <span class="cards-accordion__title">склады</span>
+            <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+          </figcaption>
+        </figure>
+        <figure class="cards-accordion__item flex-col-ac">
+          <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+          <figcaption class="cards-accordion__descr flex-col-ac">
+            <span class="cards-accordion__title">склады</span>
+            <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="cards-accordion__accordion-list flex-col">
+        <div class="cards-accordion__accordion-item is-open">
+          <h3 class="cards-accordion__accordion-heading">
+            <button
+              class="cards-accordion__accordion-toggle"
+              type="button"
+              aria-expanded="true"
+              aria-controls="home-agro__features">
+              <span class="cards-accordion__accordion-toggle-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M5 12h14"></path></svg>
+              </span>
+              <span>Технология “SMART LOADS CHOICE” (SLC)</span>
+            </button>
+          </h3>
+          <div class="cards-accordion__accordion-body" id="home-agro__features">
+            <div class="cards-accordion__accordion-text flex-col">
+              <p>
+                В системе базовые районированные карты в Евразии, Африке и Ближнем Востоке оцифрованы на базе
+                нормативных нагрузок (снег, ветер и сейсмика) для дальнейшего расчета металлоемкос.
+              </p>
+            </div>
+            <div class="cards-accordion__list accordion--tablet-visual">
+              <figure class="cards-accordion__item flex-col-ac">
+                <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+                <figcaption class="cards-accordion__descr flex-col-ac">
+                  <span class="cards-accordion__title">склады</span>
+                  <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+                </figcaption>
+              </figure>
+              <figure class="cards-accordion__item flex-col-ac">
+                <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+                <figcaption class="cards-accordion__descr flex-col-ac">
+                  <span class="cards-accordion__title">склады</span>
+                  <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+                </figcaption>
+              </figure>
+              <figure class="cards-accordion__item flex-col-ac">
+                <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+                <figcaption class="cards-accordion__descr flex-col-ac">
+                  <span class="cards-accordion__title">склады</span>
+                  <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+                </figcaption>
+              </figure>
+              <figure class="cards-accordion__item flex-col-ac">
+                <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+                <figcaption class="cards-accordion__descr flex-col-ac">
+                  <span class="cards-accordion__title">склады</span>
+                  <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="cards-accordion__accordion-item">
+          <h3 class="cards-accordion__accordion-heading">
+            <button
+              class="cards-accordion__accordion-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="home-agro__manufacturer">
+              <span class="cards-accordion__accordion-toggle-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+              </span>
+              <span>Технология “SMART TECHNOLOGY CHOICE” (StC)</span>
+            </button>
+          </h3>
+          <div class="cards-accordion__accordion-body" id="home-agro__manufacturer" hidden>
+            <div class="cards-accordion__accordion-text flex-col">
+              <p>Подбор технологических решений с учетом параметров здания и требований проекта.</p>
+            </div>
+            <div class="cards-accordion__list accordion--tablet-visual">
+              <figure class="cards-accordion__item flex-col-ac">
+                <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+                <figcaption class="cards-accordion__descr flex-col-ac">
+                  <span class="cards-accordion__title">склады</span>
+                  <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+                </figcaption>
+              </figure>
+              <figure class="cards-accordion__item flex-col-ac">
+                <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+                <figcaption class="cards-accordion__descr flex-col-ac">
+                  <span class="cards-accordion__title">склады</span>
+                  <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+                </figcaption>
+              </figure>
+              <figure class="cards-accordion__item flex-col-ac">
+                <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+                <figcaption class="cards-accordion__descr flex-col-ac">
+                  <span class="cards-accordion__title">склады</span>
+                  <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+                </figcaption>
+              </figure>
+              <figure class="cards-accordion__item flex-col-ac">
+                <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+                <figcaption class="cards-accordion__descr flex-col-ac">
+                  <span class="cards-accordion__title">склады</span>
+                  <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="cards-accordion__accordion-item">
+          <h3 class="cards-accordion__accordion-heading">
+            <button
+              class="cards-accordion__accordion-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="home-agro__benefits">
+              <span class="cards-accordion__accordion-toggle-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+              </span>
+              <span>Технология “SMART METAL CALCULATION” (SmC)</span>
+            </button>
+          </h3>
+          <div class="cards-accordion__accordion-body" id="home-agro__benefits" hidden>
+            <div class="cards-accordion__accordion-text flex-col">
+              <p>Расчет металлоемкости каркаса на основе параметров здания и действующих нагрузок.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cards-accordion__accordion-item">
+          <h3 class="cards-accordion__accordion-heading">
+            <button
+              class="cards-accordion__accordion-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="home-agro__benefits">
+              <span class="cards-accordion__accordion-toggle-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+              </span>
+              <span>Технология “SMART INSTANT VISUALIZATION” (Siv)</span>
+            </button>
+          </h3>
+          <div class="cards-accordion__accordion-body" id="home-agro__benefits2" hidden>
+            <div class="cards-accordion__accordion-text flex-col">
+              <p>Визуализация проектных решений для наглядной оценки будущего здания.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cards-accordion__accordion-item">
+          <h3 class="cards-accordion__accordion-heading">
+            <button
+              class="cards-accordion__accordion-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="home-agro__benefits">
+              <span class="cards-accordion__accordion-toggle-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+              </span>
+              <span>Технология “SMART DOCUMENT GENERATION” (SDG)</span>
+            </button>
+          </h3>
+          <div class="cards-accordion__accordion-body" id="home-agro__benefits3" hidden>
+            <div class="cards-accordion__accordion-text flex-col">
+              <p>Формирование проектной документации на основе расчетных данных.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cards-accordion__accordion-item">
+          <h3 class="cards-accordion__accordion-heading">
+            <button
+              class="cards-accordion__accordion-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="home-agro__benefits">
+              <span class="cards-accordion__accordion-toggle-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+              </span>
+              <span>Концепция “SMART TECHNO DESIGN” (StD)</span>
+            </button>
+          </h3>
+          <div class="cards-accordion__accordion-body" id="home-agro__benefits4" hidden>
+            <div class="cards-accordion__accordion-text flex-col">
+              <p>Комплексный подход к разработке технологичного и экономически обоснованного проекта.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cards-accordion__accordion-item">
+          <h3 class="cards-accordion__accordion-heading">
+            <button
+              class="cards-accordion__accordion-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="home-agro__benefits">
+              <span class="cards-accordion__accordion-toggle-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+              </span>
+              <span>Технология “INSPIRING SMART SOLUTION” (ISS)</span>
+            </button>
+          </h3>
+          <div class="cards-accordion__accordion-body" id="home-agro__benefits5" hidden>
+            <div class="cards-accordion__accordion-text flex-col">
+              <p>Поиск рациональных решений для индивидуальных задач заказчика.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Аккардеон старый -->
+    <!-- <div class="prices-tech__layout">
       <div class="prices-tech__buildings" aria-label="Типы зданий">
         <article class="prices-tech__building">
-          <img src="./static/images/homik.png" alt="" loading="lazy">
-          <h3 class="flex-center">Склады</h3><p>от 5 000 руб./кв.м.</p>
+          <img src="./static/images/homik.png" alt="" loading="lazy" />
+          <h3 class="flex-center">Склады</h3>
+          <p>от 5 000 руб./кв.м.</p>
         </article>
         <article class="prices-tech__building">
-          <img src="./static/images/homik.png" alt="" loading="lazy">
-          <h3 class="flex-center">Производственные здания</h3><p>от 5 000 руб./кв.м.</p>
+          <img src="./static/images/homik.png" alt="" loading="lazy" />
+          <h3 class="flex-center">Производственные здания</h3>
+          <p>от 5 000 руб./кв.м.</p>
         </article>
         <article class="prices-tech__building">
-          <img src="./static/images/homik.png" alt="" loading="lazy">
-          <h3 class="flex-center">Ангары</h3><p>от 5 000 руб./кв.м.</p>
+          <img src="./static/images/homik.png" alt="" loading="lazy" />
+          <h3 class="flex-center">Ангары</h3>
+          <p>от 5 000 руб./кв.м.</p>
         </article>
         <article class="prices-tech__building">
-          <img src="./static/images/homik.png" alt="" loading="lazy">
-          <h3 class="flex-center">Сельскохозяйственные здания</h3><p>от 5 000 руб./кв.м.</p>
+          <img src="./static/images/homik.png" alt="" loading="lazy" />
+          <h3 class="flex-center">Сельскохозяйственные здания</h3>
+          <p>от 5 000 руб./кв.м.</p>
         </article>
       </div>
 
       <div class="prices-tech__list" data-prices-tech-accordion>
         <article class="prices-tech__item is-open">
-          <h3 class="prices-tech__item-heading"><button type="button" aria-expanded="true"><span class="prices-tech__icon" aria-hidden="true">−</span><span>Технология “SMART LOADS CHOICE” (SLC)</span></button></h3>
+          <h3 class="prices-tech__item-heading">
+            <button type="button" aria-expanded="true">
+              <span class="prices-tech__icon" aria-hidden="true">−</span>
+              <span class="prices-tech__item-head">Технология “SMART LOADS CHOICE” (SLC)</span>
+            </button>
+          </h3>
           <div class="prices-tech__description">
-            <p>В системе базовые районированные карты в Евразии, Африке и Ближнем Востоке оцифрованы на базе нормативных нагрузок (снег, ветер и сейсмика) для дальнейшего расчета металлоемкости каркаса.</p>
+            <p>
+              В системе базовые районированные карты в Евразии, Африке и Ближнем Востоке оцифрованы на базе нормативных
+              нагрузок (снег, ветер и сейсмика) для дальнейшего расчета металлоемкости каркаса.
+            </p>
             <div class="prices-tech__buildings prices-tech__buildings--responsive" aria-label="Типы зданий">
               <article class="prices-tech__building">
-                <img src="./static/images/homik.png" alt="" loading="lazy">
+                <img src="./static/images/homik.png" alt="" loading="lazy" />
                 <h3 class="flex-center">Склады</h3>
                 <p>от 5 000 руб./кв.м.</p>
               </article>
               <article class="prices-tech__building">
-                <img src="./static/images/homik.png" alt="" loading="lazy">
+                <img src="./static/images/homik.png" alt="" loading="lazy" />
                 <h3 class="flex-center">Производственные здания</h3>
                 <p>от 5 000 руб./кв.м.</p>
               </article>
               <article class="prices-tech__building prices-tech__building--compact-hidden">
-                <img src="./static/images/homik.png" alt="" loading="lazy">
+                <img src="./static/images/homik.png" alt="" loading="lazy" />
                 <h3 class="flex-center">Ангары</h3>
                 <p>от 5 000 руб./кв.м.</p>
               </article>
               <article class="prices-tech__building prices-tech__building--compact-hidden">
-                <img src="./static/images/homik.png" alt="" loading="lazy">
+                <img src="./static/images/homik.png" alt="" loading="lazy" />
                 <h3 class="flex-center">Сельскохозяйственные здания</h3>
                 <p>от 5 000 руб./кв.м.</p>
               </article>
@@ -229,31 +554,73 @@
           </div>
         </article>
         <article class="prices-tech__item">
-          <h3 class="prices-tech__item-heading"><button type="button" aria-expanded="false"><span class="prices-tech__icon" aria-hidden="true">+</span><span>Технология “SMART TECHNOLOGY CHOICE” (StC)</span></button></h3>
-          <div class="prices-tech__description" hidden><p>Подбор технологических решений с учетом параметров здания и требований проекта.</p></div>
+          <h3 class="prices-tech__item-heading">
+            <button type="button" aria-expanded="false">
+              <span class="prices-tech__icon" aria-hidden="true">+</span>
+              <span class="prices-tech__item-head">Технология “SMART TECHNOLOGY CHOICE” (StC)</span>
+            </button>
+          </h3>
+          <div class="prices-tech__description" hidden>
+            <p>Подбор технологических решений с учетом параметров здания и требований проекта.</p>
+          </div>
         </article>
         <article class="prices-tech__item">
-          <h3 class="prices-tech__item-heading"><button type="button" aria-expanded="false"><span class="prices-tech__icon" aria-hidden="true">+</span><span>Технология “SMART METAL CALCULATION” (SmC)</span></button></h3>
-          <div class="prices-tech__description" hidden><p>Расчет металлоемкости каркаса на основе параметров здания и действующих нагрузок.</p></div>
+          <h3 class="prices-tech__item-heading">
+            <button type="button" aria-expanded="false">
+              <span class="prices-tech__icon" aria-hidden="true">+</span>
+              <span class="prices-tech__item-head">Технология “SMART METAL CALCULATION” (SmC)</span>
+            </button>
+          </h3>
+          <div class="prices-tech__description" hidden>
+            <p>Расчет металлоемкости каркаса на основе параметров здания и действующих нагрузок.</p>
+          </div>
         </article>
         <article class="prices-tech__item">
-          <h3 class="prices-tech__item-heading"><button type="button" aria-expanded="false"><span class="prices-tech__icon" aria-hidden="true">+</span><span>Технология “SMART INSTANT VISUALIZATION” (Siv)</span></button></h3>
-          <div class="prices-tech__description" hidden><p>Визуализация проектных решений для наглядной оценки будущего здания.</p></div>
+          <h3 class="prices-tech__item-heading">
+            <button type="button" aria-expanded="false">
+              <span class="prices-tech__icon" aria-hidden="true">+</span>
+              <span class="prices-tech__item-head">Технология “SMART INSTANT VISUALIZATION” (Siv)</span>
+            </button>
+          </h3>
+          <div class="prices-tech__description" hidden>
+            <p>Визуализация проектных решений для наглядной оценки будущего здания.</p>
+          </div>
         </article>
         <article class="prices-tech__item">
-          <h3 class="prices-tech__item-heading"><button type="button" aria-expanded="false"><span class="prices-tech__icon" aria-hidden="true">+</span><span>Технология “SMART DOCUMENT GENERATION” (SDG)</span></button></h3>
-          <div class="prices-tech__description" hidden><p>Формирование проектной документации на основе расчетных данных.</p></div>
+          <h3 class="prices-tech__item-heading">
+            <button type="button" aria-expanded="false">
+              <span class="prices-tech__icon" aria-hidden="true">+</span>
+              <span class="prices-tech__item-head">Технология “SMART DOCUMENT GENERATION” (SDG)</span>
+            </button>
+          </h3>
+          <div class="prices-tech__description" hidden>
+            <p>Формирование проектной документации на основе расчетных данных.</p>
+          </div>
         </article>
         <article class="prices-tech__item">
-          <h3 class="prices-tech__item-heading"><button type="button" aria-expanded="false"><span class="prices-tech__icon" aria-hidden="true">+</span><span>Концепция “SMART TECHNO DESIGN” (StD)</span></button></h3>
-          <div class="prices-tech__description" hidden><p>Комплексный подход к разработке технологичного и экономически обоснованного проекта.</p></div>
+          <h3 class="prices-tech__item-heading">
+            <button type="button" aria-expanded="false">
+              <span class="prices-tech__icon" aria-hidden="true">+</span>
+              <span class="prices-tech__item-head">Концепция “SMART TECHNO DESIGN” (StD)</span>
+            </button>
+          </h3>
+          <div class="prices-tech__description" hidden>
+            <p>Комплексный подход к разработке технологичного и экономически обоснованного проекта.</p>
+          </div>
         </article>
         <article class="prices-tech__item">
-          <h3 class="prices-tech__item-heading"><button type="button" aria-expanded="false"><span class="prices-tech__icon" aria-hidden="true">+</span><span>Технология “INSPIRING SMART SOLUTION” (ISS)</span></button></h3>
-          <div class="prices-tech__description" hidden><p>Поиск рациональных решений для индивидуальных задач заказчика.</p></div>
+          <h3 class="prices-tech__item-heading">
+            <button type="button" aria-expanded="false">
+              <span class="prices-tech__icon" aria-hidden="true">+</span>
+              <span class="prices-tech__item-head">Технология “INSPIRING SMART SOLUTION” (ISS)</span>
+            </button>
+          </h3>
+          <div class="prices-tech__description" hidden>
+            <p>Поиск рациональных решений для индивидуальных задач заказчика.</p>
+          </div>
         </article>
       </div>
-    </div>
+    </div> -->
   </div>
 </section>
 
@@ -264,9 +631,15 @@
         <h2 class="prices-calculation__title" id="prices-calculation-title">Бесплатный онлайн расчет</h2>
         <p class="prices-calculation__subtitle">Потратьте 5 минут на ваше здание индивидуальное здание</p>
       </div>
-      <a class="prices-calculation__button" href="https://www.websteel.pkvesta.ru/Home/StepOne" target="_blank" rel="noopener noreferrer">Рассчитать здание</a>
+      <a
+        class="prices-calculation__button"
+        href="https://www.websteel.pkvesta.ru/Home/StepOne"
+        target="_blank"
+        rel="noopener noreferrer">
+        Рассчитать здание
+      </a>
     </div>
-    <img class="prices-calculation-img" src="./static/images/prices-calculation.png" alt="">
+    <img class="prices-calculation-img" src="./static/images/prices-calculation.png" alt="" />
   </div>
 </section>
 
@@ -275,8 +648,9 @@
     <div class="services-contact__intro">
       <div class="services-contact__heading">
         <p class="services-contact__eyebrow">Задать вопрос или заказать расчет</p>
-        <h2 class="services-contact__title" id="services-contact-title">Оставьте заявку и мы ответим вам в
-          ближайшее время</h2>
+        <h3 class="services-contact__title" id="services-contact-title">
+          Оставьте заявку и&nbsp;мы&nbsp;ответим вам&nbsp;в&nbsp;ближайшее время
+        </h3>
         <p class="services-contact__description">Оставьте заявку и мы ответим вам в ближайшее время</p>
       </div>
       <div class="services-contact__illustration" aria-hidden="true">
@@ -288,57 +662,102 @@
       <div class="services-contact__fields">
         <div class="services-contact__field">
           <label class="services-contact__label" for="services-contact-name">Имя</label>
-          <input class="services-contact__input" id="services-contact-name" name="name" type="text"
-                 placeholder="Иван Петров" autocomplete="name" required>
+          <input
+            class="services-contact__input"
+            id="services-contact-name"
+            name="name"
+            type="text"
+            placeholder="Иван Петров"
+            autocomplete="name"
+            required />
         </div>
         <div class="services-contact__field">
           <label class="services-contact__label" for="services-contact-email">E-mail</label>
-          <input class="services-contact__input" id="services-contact-email" name="email" type="email"
-                 placeholder="ivan.petrov@mail.ru" autocomplete="email" required>
+          <input
+            class="services-contact__input"
+            id="services-contact-email"
+            name="email"
+            type="email"
+            placeholder="ivan.petrov@mail.ru"
+            autocomplete="email"
+            required />
         </div>
         <div class="services-contact__field services-contact__field--phone">
           <label class="services-contact__label" for="services-contact-phone">Телефон</label>
-          <input class="services-contact__input" id="services-contact-phone" name="phone" type="tel"
-                 placeholder="+7 999 123-45-24" autocomplete="tel" required>
+          <input
+            class="services-contact__input"
+            id="services-contact-phone"
+            name="phone"
+            type="tel"
+            placeholder="+7 999 123-45-24"
+            autocomplete="tel"
+            required />
         </div>
       </div>
 
       <div class="services-contact__form-bottom">
         <div class="services-contact__field">
           <label class="services-contact__label" for="services-contact-comment">Комментарий</label>
-          <textarea class="services-contact__input services-contact__textarea" id="services-contact-comment"
-                    name="comment" placeholder="Ваш комментарий"></textarea>
+          <textarea
+            class="services-contact__input services-contact__textarea"
+            id="services-contact-comment"
+            name="comment"
+            placeholder="Ваш комментарий"></textarea>
         </div>
 
         <div class="services-contact__upload">
+          <svg class="services-contact__upload-border" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <rect
+              x="1"
+              y="1"
+              width="calc(100% - 2px)"
+              height="calc(100% - 2px)"
+              rx="8"
+              ry="8"
+              fill="none"
+              stroke-width="1"
+              stroke-dasharray="12 12" />
+          </svg>
           <label class="services-contact__upload-button" for="services-contact-file">
             <span class="services-contact__file-icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
-                    d="M14 22H10C6.229 22 4.343 22 3.172 20.828C2.001 19.656 2 17.771 2 14V10C2 6.229 2 4.343 3.172 3.172C4.344 2.001 6.239 2 10.03 2C10.636 2 11.121 2 11.53 2.017C11.5167 2.097 11.51 2.17833 11.51 2.261L11.5 5.095C11.5 6.192 11.5 7.162 11.605 7.943C11.719 8.79 11.98 9.637 12.672 10.329C13.362 11.019 14.21 11.281 15.057 11.395C15.838 11.5 16.808 11.5 17.905 11.5H21.957C22 12.034 22 12.69 22 13.563V14C22 17.771 22 19.657 20.828 20.828C19.656 21.999 17.771 22 14 22Z"
-                    fill-rule="evenodd" clip-rule="evenodd" fill="#324C88"/>
+                  d="M14 22H10C6.229 22 4.343 22 3.172 20.828C2.001 19.656 2 17.771 2 14V10C2 6.229 2 4.343 3.172 3.172C4.344 2.001 6.239 2 10.03 2C10.636 2 11.121 2 11.53 2.017C11.5167 2.097 11.51 2.17833 11.51 2.261L11.5 5.095C11.5 6.192 11.5 7.162 11.605 7.943C11.719 8.79 11.98 9.637 12.672 10.329C13.362 11.019 14.21 11.281 15.057 11.395C15.838 11.5 16.808 11.5 17.905 11.5H21.957C22 12.034 22 12.69 22 13.563V14C22 17.771 22 19.657 20.828 20.828C19.656 21.999 17.771 22 14 22Z"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  fill="#324C88" />
                 <path
-                    d="M19.352 7.61662L15.392 4.05362C14.265 3.03862 13.702 2.53062 13.009 2.26562L13 4.99962C13 7.35663 13 8.53562 13.732 9.26762C14.464 9.99962 15.643 9.99963 18 9.99963H21.58C21.218 9.29563 20.568 8.71163 19.352 7.61662Z"
-                    fill="#324C88"/>
+                  d="M19.352 7.61662L15.392 4.05362C14.265 3.03862 13.702 2.53062 13.009 2.26562L13 4.99962C13 7.35663 13 8.53562 13.732 9.26762C14.464 9.99962 15.643 9.99963 18 9.99963H21.58C21.218 9.29563 20.568 8.71163 19.352 7.61662Z"
+                  fill="#324C88" />
               </svg>
             </span>
             <span>Выберите файл</span>
           </label>
-          <input class="services-contact__file-input" id="services-contact-file" name="attachment" type="file"
-                 aria-describedby="services-contact-file-help">
-          <p class="services-contact__upload-help" id="services-contact-file-help">Прикрепите/перетащите файл,
-            max 50 mb</p>
+          <input
+            class="services-contact__file-input"
+            id="services-contact-file"
+            name="attachment"
+            type="file"
+            aria-describedby="services-contact-file-help" />
+          <p class="services-contact__upload-help" id="services-contact-file-help">
+            Прикрепите
+            <span class="mob-hidden">/перетащите</span>
+            файл, max 50 mb
+          </p>
         </div>
 
         <div class="services-contact__submit-group">
           <button class="btn main-btn services-contact__submit" type="submit">Отправить</button>
           <label class="services-contact__consent">
-            <input class="services-contact__checkbox" type="checkbox" name="personal-data-consent" required>
-            <span>Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных</span>
+            <input class="services-contact__checkbox" type="checkbox" name="personal-data-consent" required />
+            <span>
+              Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с
+              Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей,
+              определенных в Согласии на обработку персональных данных
+            </span>
           </label>
         </div>
       </div>
     </form>
   </div>
 </section>
-
