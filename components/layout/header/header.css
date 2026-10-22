@@ -1738,6 +1738,16 @@ html.is-header-menu-open body {
         line-height: 1.25;
     }
 
+    .app-header-component.is-menu-open .nav-list__item > .nav-link {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    .app-header-component.is-menu-open .nav-list__nested-list-item {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
     .app-header-component.is-menu-open .header__contacts-choice-list {
         gap: 18px;
         padding-top: 18px;
@@ -1814,6 +1824,7 @@ html.is-header-menu-open body {
 
     .app-header-component.is-menu-open .header__location-choice-title {
         color: #FFFFFFB2;
+        font-size: 12px;
     }
 
     .app-header-component.is-menu-open .header__location-choice-item {
@@ -1851,14 +1862,14 @@ html.is-header-menu-open body {
         gap: 6px;
         padding: 0;
         color: #FFFFFF;
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .app-header-component.is-menu-open .header__location-current {
         flex: 0 0 100%;
         color: #FFFFFFB2;
         font-family: 'Onest-Regular', sans-serif;
-        font-size: 11px;
+        font-size: 12px;
         text-transform: none;
     }
 
@@ -1871,7 +1882,7 @@ html.is-header-menu-open body {
     .app-header-component.is-menu-open .header__location-choice-country {
         min-width: 0;
         color: #FFFFFF;
-        font-size: 11px;
+        font-size: 14px;
         white-space: normal;
         text-wrap: wrap;
     }
@@ -1905,9 +1916,17 @@ html.is-header-menu-open body {
         gap: 24px;
     }
 
+    .app-header-component.is-menu-open .nav-list__item > .nav-link {
+        font-size: 16px;
+    }
+
+    .app-header-component.is-menu-open .nav-list__nested-list-item {
+        font-size: 14px;
+    }
+
     .app-header-component.is-menu-open .header__contacts-choice-title {
         padding-bottom: 10px;
-        font-size: 13px;
+        font-size: 16px;
     }
 
     .app-header-component.is-menu-open .header__contacts-choice-list {
@@ -1925,11 +1944,11 @@ html.is-header-menu-open body {
 
     .app-header-component.is-menu-open .header__contacts-choice-phone,
     .app-header-component.is-menu-open .header__contacts-choice-email {
-        font-size: 11px;
+        font-size: 14px;
     }
 
     .app-header-component.is-menu-open .header__contacts-choice-description {
-        font-size: 10px;
+        font-size: 12px;
         line-height: 1.35;
     }
 
