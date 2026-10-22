@@ -1664,7 +1664,23 @@ html.is-header-menu-open body {
         display: none;
     }
 
-    .app-header-component.is-menu-open .header__nav {
+    .app-header-component.is-menu-open .header__nav svg [fill] {
+    fill: #424242;
+}
+
+.app-header-component.is-menu-open .header__nav svg [stroke] {
+    stroke: #424242;
+}
+
+.app-header-component.is-menu-open .header__location svg [fill] {
+    fill: #FFFFFF;
+}
+
+.app-header-component.is-menu-open .header__location svg [stroke] {
+    stroke: #FFFFFF;
+}
+
+.app-header-component.is-menu-open .header__nav {
         display: block;
         grid-column: 1;
         grid-row: 3;
