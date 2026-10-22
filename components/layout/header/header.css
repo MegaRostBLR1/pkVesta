@@ -692,15 +692,8 @@ html.is-header-menu-open body {
     .header__nav {
         grid-row: 3;
     }
-    .nav-list__item > .nav-link {
-        padding: 0.75rem 0.625rem;
-        font-size: 0.75rem;
-    }
     .nav-list__item > svg {
         margin-right: 0.625rem;
-    }
-    .nav-list__nested-list {
-        padding: 0 0.625rem 0.625rem;
     }
     .nav-list__nested-list-item {
         font-size: 0.6875rem;
