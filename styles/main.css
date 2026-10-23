@@ -1,55 +1,55 @@
 @font-face {
-  font-family: 'Onest-Bold';
+  font-family: "Onest-Bold";
   font-weight: 700;
-  src: url('../static/fonts/Onest-Bold.woff2') format('woff2');
+  src: url("../static/fonts/Onest-Bold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Onest-SemiBold';
+  font-family: "Onest-SemiBold";
   font-weight: 600;
-  src: url('../static/fonts/Onest-SemiBold.woff2') format('woff2');
+  src: url("../static/fonts/Onest-SemiBold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Onest-Medium';
+  font-family: "Onest-Medium";
   font-weight: 500;
-  src: url('../static/fonts/Onest-Medium.woff2') format('woff2');
+  src: url("../static/fonts/Onest-Medium.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Onest-Regular';
+  font-family: "Onest-Regular";
   font-weight: 400;
-  src: url('../static/fonts/Onest-Regular.woff2') format('woff2');
+  src: url("../static/fonts/Onest-Regular.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Onest-Light';
+  font-family: "Onest-Light";
   font-weight: 300;
-  src: url('../static/fonts/Onest-Light.woff2') format('woff2');
+  src: url("../static/fonts/Onest-Light.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Lato-Regular';
+  font-family: "Lato-Regular";
   font-weight: 400;
-  src: url('../static/fonts/Lato-Regular.woff2') format('woff2');
+  src: url("../static/fonts/Lato-Regular.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Inter-Regular';
+  font-family: "Inter-Regular";
   font-weight: 400;
-  src: url('../static/fonts/Inter-Regular.woff2') format('woff2');
+  src: url("../static/fonts/Inter-Regular.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
@@ -65,8 +65,8 @@ html {
   scroll-behavior: smooth;
   font-family: Onest-Regular, sans-serif;
   font-weight: 400;
-  color: #4D4D4DCC;
-  background: #F5F8F7;
+  color: #4d4d4dcc;
+  background: #f5f8f7;
   min-width: 320px;
   font-size: 18px;
 }
@@ -82,7 +82,7 @@ body {
 .section__container {
   padding: 2.2222rem;
   border-radius: 0.5556rem;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 ul {
@@ -101,6 +101,17 @@ img {
 
 .white-text {
   color: #ffffff;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-col-ac {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .flex-center {
@@ -123,7 +134,7 @@ button {
   align-items: center;
   justify-content: center;
   padding: 1.5556rem 2.6667rem;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 1.1111rem;
   font-weight: 600;
   line-height: 1.5556rem;
@@ -133,74 +144,74 @@ button {
 }
 
 .btn:focus-visible {
-  outline: 0.1111rem solid #324C88;
+  outline: 0.1111rem solid #324c88;
   outline-offset: 0.2222rem;
 }
 
 .main-btn {
-  color: #FFFFFF;
-  background: #324C88;
+  color: #ffffff;
+  background: #324c88;
 }
 
 .main-btn:hover {
-  background: #324C88CC;
+  background: #324c88cc;
 }
 
 .main-btn:active {
-  background: #28427E;
+  background: #28427e;
 }
 
 .main-btn:disabled {
-  color: #28427E33;
-  background: #28427E33;
+  color: #28427e33;
+  background: #28427e33;
   cursor: not-allowed;
 }
 
 .secondary-btn {
-  color: #324C88;
-  background: #FFF500;
+  color: #324c88;
+  background: #fff500;
 }
 
 .secondary-btn:hover {
-  color: #324C88CC;
-  background: #FFF500CC;
+  color: #324c88cc;
+  background: #fff500cc;
 }
 
 .secondary-btn:active {
-  color: #28427E;
-  background: #F5EB0A;
+  color: #28427e;
+  background: #f5eb0a;
 }
 
 .secondary-btn:disabled {
-  color: #324C8833;
-  background: #F5EB0A33;
+  color: #324c8833;
+  background: #f5eb0a33;
   cursor: not-allowed;
 }
 
 .tertiary-btn {
-  color: #324C88;
-  background: #FFFFFF;
+  color: #324c88;
+  background: #ffffff;
 }
 
 .tertiary-btn:hover {
-  color: #324C88CC;
-  background: #FFFFFF;
+  color: #324c88cc;
+  background: #ffffff;
 }
 
 .tertiary-btn:active {
-  color: #28427E;
-  background: #FFFFFF;
+  color: #28427e;
+  background: #ffffff;
 }
 
 .tertiary-btn:disabled {
-  color: #28427E33;
-  background: #FFFFFF33;
+  color: #28427e33;
+  background: #ffffff33;
   cursor: not-allowed;
 }
 
 h2 {
   margin: 0;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 2.6667rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -213,6 +224,12 @@ h2 {
 
   h2 {
     font-size: 1.6667rem;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .tablet-hidden {
+    display: none;
   }
 }
 
@@ -892,7 +909,6 @@ h2 {
   }
 }
 
-
 /* Блок «Стальные здания: от идеи до реализации», Figma 1857:23433. */
 .home-process {
   padding: 0 5px 5px;
@@ -1153,7 +1169,6 @@ h2 {
   }
 }
 
-
 /* Контрольный tablet-frame Figma 1024 px: 1857:25321.
    Точечные переопределения сохраняют desktop-геометрию на 1920/1440 px. */
 @media screen and (min-width: 681px) and (max-width: 1100px) {
@@ -1291,7 +1306,6 @@ h2 {
     line-height: 1.26;
   }
 }
-
 
 /* Контрольный mobile-frame Figma 360 px: 1857:26316.
    Более узкая геометрия действует только на мобильном экране и не меняет
@@ -1834,7 +1848,6 @@ h2 {
   }
 }
 
-
 /* Контрольный desktop-frame Figma 1440 px: 1857:24801.
    Состояние связано с базовой геометрией 1920 px; отдельная модель только
    уточняет плотность шапки и композицию контента в доступной ширине. */
@@ -1958,7 +1971,6 @@ h2 {
     min-height: 482px;
   }
 }
-
 
 /* Планшетный frame Figma 1024 px: 1857:25380.
    Переопределяет общий stacked-layout до 1300 px: в этом frame контент
@@ -2292,7 +2304,7 @@ h2 {
 .home-projects__title {
   margin: 0;
   color: #4d4d4d;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 48px;
   font-weight: 600;
   line-height: 1.25;
@@ -2303,7 +2315,7 @@ h2 {
   flex: 0 0 auto;
   padding-left: 18px;
   color: #324c88;
-  font-family: 'Onest-Medium', sans-serif;
+  font-family: "Onest-Medium", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.6;
@@ -2401,7 +2413,7 @@ h2 {
 .project-card__title {
   margin: 0;
   color: #fff;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 28px;
   font-weight: 600;
   line-height: 1.43;
@@ -2461,7 +2473,7 @@ h2 {
   border-radius: 10px;
   color: #fff;
   background-color: rgb(255 255 255 / 4%);
-  font-family: 'Onest-Medium', sans-serif;
+  font-family: "Onest-Medium", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.625;
@@ -2555,7 +2567,7 @@ h2 {
 
 .project-card__video-label {
   color: #fff;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.45;
@@ -2688,7 +2700,7 @@ h2 {
   border-radius: 10px;
   color: #324c88;
   background-color: #fff500;
-  font-family: 'Onest-Medium', sans-serif;
+  font-family: "Onest-Medium", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.4;
@@ -3398,7 +3410,6 @@ h2 {
     transition-duration: 0s;
   }
 }
-
 
 /* Company overview and factory benefits */
 .home-about {
@@ -4668,8 +4679,6 @@ h2 {
   }
 }
 
-
-
 /* Преимущества завода */
 .home-advantages {
   width: calc(100% - 10px);
@@ -4703,7 +4712,7 @@ h2 {
 .home-advantages__title {
   margin: 0;
   color: #4d4d4d;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 48px;
   font-weight: 600;
   line-height: 1.27;
@@ -4715,7 +4724,7 @@ h2 {
   width: 810px;
   max-width: 100%;
   color: #5d5d5d;
-  font-family: 'Onest-Regular', sans-serif;
+  font-family: "Onest-Regular", sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 1.6;
@@ -4749,7 +4758,7 @@ h2 {
   padding: 24px 18px;
   border-radius: 14px;
   color: #5d5d5d;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.6;
@@ -4811,7 +4820,7 @@ h2 {
 
 .home-advantages__eyebrow {
   color: #324c88;
-  font-family: 'Onest-Bold', sans-serif;
+  font-family: "Onest-Bold", sans-serif;
   font-size: 20px;
   font-weight: 700;
   line-height: 1.6;
@@ -4821,7 +4830,7 @@ h2 {
 .home-advantages__card-title {
   margin: 0;
   color: #4d4d4d;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 40px;
   font-weight: 600;
   line-height: 1.6;
@@ -4830,7 +4839,7 @@ h2 {
 
 .home-advantages__description {
   color: #5d5d5d;
-  font-family: 'Onest-Regular', sans-serif;
+  font-family: "Onest-Regular", sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 1.6;
@@ -4845,7 +4854,7 @@ h2 {
   border-radius: 10px;
   background: #324c88;
   color: #fff;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 15px;
   font-weight: 600;
   line-height: 1.6;
@@ -5198,7 +5207,6 @@ h2 {
   }
 }
 
-
 /* Мобильный frame Figma 360 px: 1857:26714. */
 @media screen and (max-width: 400px) {
   .home-advantages {
@@ -5335,33 +5343,353 @@ h2 {
 }
 
 /* Контактная карточка — Figma 1893:92421, 1920 × 655. */
-.home-contact-person{padding:0 5px 5px;background:#f5f8f7;color:#4d4d4d}
-.home-contact-person__panel{width:100%;padding:40px;border-radius:30px;background:#fff}
-.home-contact-person__layout{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:8px;width:100%;min-width:0;padding:4px;border-radius:14px;background:#f5f8f7}
-.home-contact-person__photo{display:flex;min-width:0;min-height:0;padding:33px 24px;border-radius:18px;background:#fff}
-.home-contact-person__photo img{display:block;width:100%;min-width:0;height:100%;min-height:0;border-radius:14px;object-fit:cover;object-position:center}
-.home-contact-person__details{display:flex;flex-direction:column;gap:10px;min-width:0;padding:33px 24px;border-radius:18px;background:#fff}
-.home-contact-person__person{display:flex;flex-direction:column;align-items:flex-start;gap:20px;width:100%;padding:30px;border-radius:10px;background:rgb(50 76 136 / 10%);text-transform:uppercase}
-.home-contact-person__name{color:#324c88;font-family:'Onest-SemiBold',sans-serif;font-size:30px;font-weight:600;line-height:1.5}
-.home-contact-person__position{color:#4d4d4d;font-family:'Onest-Medium',sans-serif;font-size:20px;font-weight:500;line-height:1.5}
-.home-contact-person__contacts{display:flex;flex-direction:column;gap:5px;width:100%}
-.home-contact-person__contact-group{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;width:100%}
-.home-contact-person__contact{display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-width:0;padding:20px;border-radius:14px;background:#f5f8f7}
-.home-contact-person__label{width:100%;color:#5d5d5d;font-family:'Onest-Medium',sans-serif;font-size:18px;font-weight:500;line-height:1.5}
-.home-contact-person__phone-row{display:flex;align-items:center;gap:10px;width:100%;min-width:0}
-.home-contact-person__value{color:#4d4d4d;font-family:'Onest-SemiBold',sans-serif;font-size:20px;font-weight:600;line-height:1.5;overflow-wrap:anywhere}
-.home-contact-person__phone-row .home-contact-person__value{flex:0 0 auto;white-space:nowrap}
-.home-contact-person__note{flex:1 1 auto;min-width:0;color:rgb(77 77 77 / 80%);font-family:'Onest-Medium',sans-serif;font-size:14px;font-weight:500;line-height:1.3}
-.home-contact-person__socials{display:flex;align-items:flex-start;gap:10px}
-.home-contact-person__social{display:flex;align-items:center;justify-content:center;flex:0 0 36px;width:36px;height:32px;padding:6px 8px;border-radius:10px;background:#fff}
-.home-contact-person__social img{display:block;width:20px;height:20px;object-fit:contain}
-.home-contact-person__button.btn{display:flex;flex:0 0 62px;align-items:center;justify-content:center;width:100%;min-height:62px;padding:18px 48px;border-radius:20px;font-size:18px;line-height:26px}
-.home-contact-person__button.btn:focus-visible,.home-contact-person__social:focus-visible{outline:2px solid #324c88;outline-offset:3px}
-@media(max-width:1300px){.home-contact-person__panel{padding:32px}.home-contact-person__details,.home-contact-person__photo{padding:24px 18px}.home-contact-person__person{gap:14px;padding:24px}.home-contact-person__name{font-size:26px}.home-contact-person__position{font-size:17px}.home-contact-person__contact{padding:16px}.home-contact-person__label,.home-contact-person__value{font-size:16px}.home-contact-person__note{font-size:12px}}
-@media(max-width:1100px){.home-contact-person{padding:40px 20px;background:#fff}.home-contact-person__panel{padding:0;border-radius:20px}.home-contact-person__layout{grid-template-columns:minmax(0,1fr);gap:4px;padding:4px}.home-contact-person__photo{height:577px;padding:33px 24px}.home-contact-person__photo img{height:511px;min-height:0}.home-contact-person__details{gap:10px;padding:33px 24px}.home-contact-person__person{gap:20px;padding:30px}.home-contact-person__name{font-size:24px;line-height:1.5}.home-contact-person__position{font-size:18px;line-height:1.5}.home-contact-person__contacts{gap:5px}.home-contact-person__contact-group{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}.home-contact-person__contact{gap:10px;padding:20px}.home-contact-person__label{font-size:18px;line-height:1.5}.home-contact-person__value{font-size:20px;line-height:1.5}.home-contact-person__note{font-size:14px;line-height:1.3}.home-contact-person__phone-row{flex-direction:column;align-items:flex-start;gap:10px}.home-contact-person__button.btn{flex-basis:62px;min-height:62px;padding:18px 48px;font-size:18px}}
-@media(max-width:680px){.home-contact-person__panel{padding:12px;border-radius:20px}.home-contact-person__layout{grid-template-columns:minmax(0,1fr);gap:5px;padding:4px}.home-contact-person__photo{min-height:280px;padding:12px;border-radius:14px}.home-contact-person__photo img{min-height:256px;max-height:420px}.home-contact-person__details{gap:10px;padding:12px;border-radius:14px}.home-contact-person__person{gap:12px;padding:18px}.home-contact-person__name{font-size:24px;line-height:1.35}.home-contact-person__position{font-size:16px}.home-contact-person__contact-group{grid-template-columns:minmax(0,1fr);gap:5px}.home-contact-person__contact{gap:8px;padding:14px}.home-contact-person__label,.home-contact-person__value{font-size:16px}.home-contact-person__note{font-size:13px}.home-contact-person__button.btn{flex-basis:56px;min-height:56px;padding:14px 20px;font-size:16px}}
-@media(max-width:360px){.home-contact-person__panel{padding:8px}.home-contact-person__person,.home-contact-person__contact{padding:12px}.home-contact-person__name{font-size:21px}.home-contact-person__phone-row{align-items:flex-start;flex-direction:column;gap:2px}}
-
+.home-contact-person {
+  padding: 0 5px 5px;
+  background: #f5f8f7;
+  color: #4d4d4d;
+}
+.home-contact-person__panel {
+  width: 100%;
+  padding: 40px;
+  border-radius: 30px;
+  background: #fff;
+}
+.home-contact-person__layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  padding: 4px;
+  border-radius: 14px;
+  background: #f5f8f7;
+}
+.home-contact-person__photo {
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+  padding: 33px 24px;
+  border-radius: 18px;
+  background: #fff;
+}
+.home-contact-person__photo img {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  min-height: 0;
+  border-radius: 14px;
+  object-fit: cover;
+  object-position: center;
+}
+.home-contact-person__details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  padding: 33px 24px;
+  border-radius: 18px;
+  background: #fff;
+}
+.home-contact-person__person {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 10px;
+  background: rgb(50 76 136 / 10%);
+  text-transform: uppercase;
+}
+.home-contact-person__name {
+  color: #324c88;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.home-contact-person__position {
+  color: #4d4d4d;
+  font-family: "Onest-Medium", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.home-contact-person__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+.home-contact-person__contact-group {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+  width: 100%;
+}
+.home-contact-person__contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  padding: 20px;
+  border-radius: 14px;
+  background: #f5f8f7;
+}
+.home-contact-person__label {
+  width: 100%;
+  color: #5d5d5d;
+  font-family: "Onest-Medium", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.home-contact-person__phone-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+}
+.home-contact-person__value {
+  color: #4d4d4d;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.home-contact-person__phone-row .home-contact-person__value {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.home-contact-person__note {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: rgb(77 77 77 / 80%);
+  font-family: "Onest-Medium", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+.home-contact-person__socials {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.home-contact-person__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 32px;
+  padding: 6px 8px;
+  border-radius: 10px;
+  background: #fff;
+}
+.home-contact-person__social img {
+  display: block;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.home-contact-person__button.btn {
+  display: flex;
+  flex: 0 0 62px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 62px;
+  padding: 18px 48px;
+  border-radius: 20px;
+  font-size: 18px;
+  line-height: 26px;
+}
+.home-contact-person__button.btn:focus-visible,
+.home-contact-person__social:focus-visible {
+  outline: 2px solid #324c88;
+  outline-offset: 3px;
+}
+@media (max-width: 1300px) {
+  .home-contact-person__panel {
+    padding: 32px;
+  }
+  .home-contact-person__details,
+  .home-contact-person__photo {
+    padding: 24px 18px;
+  }
+  .home-contact-person__person {
+    gap: 14px;
+    padding: 24px;
+  }
+  .home-contact-person__name {
+    font-size: 26px;
+  }
+  .home-contact-person__position {
+    font-size: 17px;
+  }
+  .home-contact-person__contact {
+    padding: 16px;
+  }
+  .home-contact-person__label,
+  .home-contact-person__value {
+    font-size: 16px;
+  }
+  .home-contact-person__note {
+    font-size: 12px;
+  }
+}
+@media (max-width: 1100px) {
+  .home-contact-person {
+    padding: 40px 20px;
+    background: #fff;
+  }
+  .home-contact-person__panel {
+    padding: 0;
+    border-radius: 20px;
+  }
+  .home-contact-person__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+    padding: 4px;
+  }
+  .home-contact-person__photo {
+    height: 577px;
+    padding: 33px 24px;
+  }
+  .home-contact-person__photo img {
+    height: 511px;
+    min-height: 0;
+  }
+  .home-contact-person__details {
+    gap: 10px;
+    padding: 33px 24px;
+  }
+  .home-contact-person__person {
+    gap: 20px;
+    padding: 30px;
+  }
+  .home-contact-person__name {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+  .home-contact-person__position {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  .home-contact-person__contacts {
+    gap: 5px;
+  }
+  .home-contact-person__contact-group {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px;
+  }
+  .home-contact-person__contact {
+    gap: 10px;
+    padding: 20px;
+  }
+  .home-contact-person__label {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  .home-contact-person__value {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  .home-contact-person__note {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+  .home-contact-person__phone-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .home-contact-person__button.btn {
+    flex-basis: 62px;
+    min-height: 62px;
+    padding: 18px 48px;
+    font-size: 18px;
+  }
+}
+@media (max-width: 680px) {
+  .home-contact-person__panel {
+    padding: 12px;
+    border-radius: 20px;
+  }
+  .home-contact-person__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 5px;
+    padding: 4px;
+  }
+  .home-contact-person__photo {
+    min-height: 280px;
+    padding: 12px;
+    border-radius: 14px;
+  }
+  .home-contact-person__photo img {
+    min-height: 256px;
+    max-height: 420px;
+  }
+  .home-contact-person__details {
+    gap: 10px;
+    padding: 12px;
+    border-radius: 14px;
+  }
+  .home-contact-person__person {
+    gap: 12px;
+    padding: 18px;
+  }
+  .home-contact-person__name {
+    font-size: 24px;
+    line-height: 1.35;
+  }
+  .home-contact-person__position {
+    font-size: 16px;
+  }
+  .home-contact-person__contact-group {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 5px;
+  }
+  .home-contact-person__contact {
+    gap: 8px;
+    padding: 14px;
+  }
+  .home-contact-person__label,
+  .home-contact-person__value {
+    font-size: 16px;
+  }
+  .home-contact-person__note {
+    font-size: 13px;
+  }
+  .home-contact-person__button.btn {
+    flex-basis: 56px;
+    min-height: 56px;
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 360px) {
+  .home-contact-person__panel {
+    padding: 8px;
+  }
+  .home-contact-person__person,
+  .home-contact-person__contact {
+    padding: 12px;
+  }
+  .home-contact-person__name {
+    font-size: 21px;
+  }
+  .home-contact-person__phone-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
+  }
+}
 
 /* Home contact person: точное мобильное состояние Figma (360 px). */
 @media (max-width: 680px) {
@@ -5487,7 +5815,6 @@ h2 {
   }
 }
 
-
 /* Home news — shared desktop layout for Figma frames 1920 px (1857:24608) and 1440 px (1857:25114).
    The three-column grid contracts naturally; the desktop metrics remain unchanged until 1300 px. */
 .home-news {
@@ -5517,7 +5844,7 @@ h2 {
 
 .home-news__title {
   color: #4d4d4d;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 48px;
   font-weight: 600;
   line-height: 1.2;
@@ -5528,7 +5855,7 @@ h2 {
   flex: 0 0 auto;
   padding: 0 0 0 18px;
   color: #324c88;
-  font-family: 'Onest-Medium', sans-serif;
+  font-family: "Onest-Medium", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.6;
@@ -5602,7 +5929,7 @@ h2 {
   border-radius: 10px;
   color: #4d4d4d;
   background: #f9f9f9;
-  font-family: 'Onest-Medium', sans-serif;
+  font-family: "Onest-Medium", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 26px;
@@ -5611,7 +5938,7 @@ h2 {
 
 .home-news__card-title {
   color: #4d4d4d;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 36px;
@@ -5621,7 +5948,7 @@ h2 {
 
 .home-news__description {
   color: rgba(77, 77, 77, 0.7);
-  font-family: 'Onest-Medium', sans-serif;
+  font-family: "Onest-Medium", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 28px;
@@ -5876,7 +6203,6 @@ h2 {
   }
 }
 
-
 /* Tablet layout follows Figma frame 1857:26149 (1024 px):
    two news cards and a full-width "Показать еще" action. */
 .home-news__show-more {
@@ -5948,7 +6274,7 @@ h2 {
     border-radius: 10px;
     background: rgba(50, 76, 136, 0.1);
     color: #324c88;
-    font-family: 'Onest-Medium', sans-serif;
+    font-family: "Onest-Medium", sans-serif;
     font-size: 18px;
     font-weight: 500;
     line-height: 1.6;
@@ -5965,7 +6291,6 @@ h2 {
     outline-offset: 3px;
   }
 }
-
 
 /* Mobile layout follows Figma frame 1857:26815 (360 px). */
 @media (max-width: 400px) {
@@ -6064,7 +6389,7 @@ h2 {
     border-radius: 10px;
     background: rgba(50, 76, 136, 0.1);
     color: #324c88;
-    font-family: 'Onest-SemiBold', sans-serif;
+    font-family: "Onest-SemiBold", sans-serif;
     font-size: 14px;
     font-weight: 600;
     line-height: 25px;
@@ -6082,13 +6407,12 @@ h2 {
   }
 }
 
-
 /* Агрокомплексы из ЛСТК — Figma 1857:24647 */
 .home-agro {
   width: 100%;
   padding: 0 10px 10px;
-  color: #4D4D4D;
-  background: #F5F8F7;
+  color: #4d4d4d;
+  background: #f5f8f7;
 }
 
 .home-agro__panel {
@@ -6099,7 +6423,7 @@ h2 {
   width: 100%;
   padding: 96px 40px;
   border-radius: 20px;
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 .home-agro__header {
@@ -6111,7 +6435,7 @@ h2 {
 .home-agro__title {
   width: 100%;
   max-width: 1276px;
-  color: #4D4D4D;
+  color: #4d4d4d;
   font-family: "Onest-SemiBold", sans-serif;
   font-size: 48px;
   font-weight: 600;
@@ -6140,9 +6464,9 @@ h2 {
   min-width: 0;
   min-height: 523px;
   padding: 14px;
-  border: 4px solid #FFFFFF;
+  border: 4px solid #ffffff;
   border-radius: 30px;
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 .home-agro__image {
@@ -6165,7 +6489,7 @@ h2 {
   height: 64px;
   border: 1px solid rgb(255 255 255 / 8%);
   border-radius: 10px;
-  color: #FFFFFF;
+  color: #ffffff;
   background: rgb(255 255 255 / 4%);
   backdrop-filter: blur(24px);
   box-shadow: inset 0 0 60px rgb(255 255 255 / 3%);
@@ -6184,7 +6508,7 @@ h2 {
 
 .home-agro__zoom:focus-visible,
 .home-agro__toggle:focus-visible {
-  outline: 2px solid #324C88;
+  outline: 2px solid #324c88;
   outline-offset: 4px;
 }
 
@@ -6216,7 +6540,7 @@ h2 {
   gap: 24px;
   width: 100%;
   min-width: 0;
-  color: #4D4D4D;
+  color: #4d4d4d;
   font-family: "Onest-SemiBold", sans-serif;
   font-size: 20px;
   font-weight: 600;
@@ -6237,7 +6561,7 @@ h2 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #FFF500;
+  background: #fff500;
 }
 
 .home-agro__toggle-icon svg {
@@ -6245,7 +6569,7 @@ h2 {
   width: 24px;
   height: 24px;
   fill: none;
-  stroke: #4D4D4D;
+  stroke: #4d4d4d;
   stroke-linecap: round;
   stroke-width: 2;
 }
@@ -6256,7 +6580,7 @@ h2 {
   gap: 14px;
   overflow: hidden;
   padding-left: 64px;
-  color: #4D4D4DCC;
+  color: #4d4d4dcc;
   font-family: "Onest-Regular", sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -6426,7 +6750,6 @@ h2 {
   }
 }
 
-
 /* Агрокомплексы из ЛСТК — согласование пропорций для 1440 и 1024 px */
 @media screen and (min-width: 1101px) and (max-width: 1600px) {
   .home-agro__layout {
@@ -6511,7 +6834,6 @@ h2 {
     padding-left: 24px;
   }
 }
-
 
 /* Агрокомплексы из ЛСТК — Figma 1857:26186, планшетный кадр 1024 px. */
 .home-agro__tablet-visual {
@@ -6633,7 +6955,6 @@ h2 {
     transform: scale(1.5);
   }
 }
-
 
 /* Агрокомплексы — мобильная композиция Figma 1857:26849 (360 px).
    Сохраняет десктопную сетку 1920/1440 и планшетную композицию 1024 px. */
@@ -6783,13 +7104,13 @@ h2 {
   margin: 0 auto;
   padding: 40px;
   border-radius: 10px;
-  background: #F5F8F7;
+  background: #f5f8f7;
 }
 
 .home-faq__title {
   align-self: center;
   margin: 0;
-  color: #4D4D4D;
+  color: #4d4d4d;
   font-family: "Onest-SemiBold", sans-serif;
   font-size: 48px;
   font-weight: 600;
@@ -6809,7 +7130,7 @@ h2 {
   min-width: 0;
   padding: 30px;
   border-radius: 20px;
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 .home-faq__heading {
@@ -6834,14 +7155,14 @@ h2 {
 }
 
 .home-faq__toggle:focus-visible {
-  outline: 2px solid #324C88;
+  outline: 2px solid #324c88;
   outline-offset: 4px;
 }
 
 .home-faq__question {
   min-width: 0;
   margin: 0;
-  color: #4D4D4D;
+  color: #4d4d4d;
   font-family: "Onest-SemiBold", sans-serif;
   font-size: 24px;
   font-weight: 600;
@@ -6858,7 +7179,7 @@ h2 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #E9ECF3;
+  background: #e9ecf3;
 }
 
 .home-faq__icon svg {
@@ -6866,7 +7187,7 @@ h2 {
   width: 24px;
   height: 24px;
   fill: none;
-  stroke: #324C88;
+  stroke: #324c88;
   stroke-linecap: round;
   stroke-width: 2;
   transition: transform 300ms ease-in-out;
@@ -6882,7 +7203,7 @@ h2 {
   gap: 14px;
   overflow: hidden;
   padding-top: 20px;
-  color: #4D4D4DCC;
+  color: #4d4d4dcc;
   font-family: "Onest-Regular", sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -6896,7 +7217,6 @@ h2 {
 .home-faq__answer p {
   margin: 0;
 }
-
 
 /* Figma desktop frame 1440 px: H3 Semibold 36/44; preserve 1920 px typography above this range. */
 @media screen and (min-width: 1301px) and (max-width: 1440px) {
@@ -7120,7 +7440,12 @@ h2 {
   color: #ffffff;
   text-align: center;
   background-color: #25313a;
+<<<<<<< HEAD
+  background-image: linear-gradient(#00000080, #00000080),
+    url("../../../static/images/home/home-advantages-factory.png");
+=======
   background-image: linear-gradient(#00000080, #00000080), url('../static/images/home/home-advantages-factory.png');
+>>>>>>> develop
   background-position: center;
   background-size: cover;
 }
@@ -7139,7 +7464,7 @@ h2 {
   max-width: 100%;
   margin: 0;
   color: #ffffff;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 3.5556rem;
   font-weight: 600;
   line-height: 1.3;
@@ -7151,7 +7476,7 @@ h2 {
   max-width: 55.7222rem;
   margin: 0;
   color: #ffffff;
-  font-family: 'Onest-Medium', sans-serif;
+  font-family: "Onest-Medium", sans-serif;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.4444rem;
@@ -7170,7 +7495,7 @@ h2 {
   min-height: 0;
   padding: 1.3333rem 2.2222rem;
   border-radius: 1.1111rem;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 1.1111rem;
   font-weight: 600;
   line-height: 1.26;
@@ -7224,7 +7549,6 @@ h2 {
   }
 }
 
-
 /* Блок агрокомплексов — макет Figma 1857:39054. */
 .buildings__agro {
   position: relative;
@@ -7273,7 +7597,7 @@ h2 {
   width: 100%;
   margin: 0;
   color: #fff500;
-  font-family: 'Onest-Medium', sans-serif;
+  font-family: "Onest-Medium", sans-serif;
   font-size: 1.3333rem;
   font-weight: 500;
   line-height: 1.8889rem;
@@ -7283,7 +7607,7 @@ h2 {
   max-width: 100%;
   margin: 0;
   color: #ffffff;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 3.5556rem;
   font-weight: 600;
   line-height: 1.46875;
@@ -7296,7 +7620,7 @@ h2 {
   max-width: 53.8889rem;
   margin: 0;
   color: #ffffff;
-  font-family: 'Onest-Regular', sans-serif;
+  font-family: "Onest-Regular", sans-serif;
   font-size: 1.3333rem;
   font-weight: 400;
   line-height: 1.5;
@@ -7315,7 +7639,7 @@ h2 {
   min-height: 4.9444rem;
   padding: 1.7778rem 2.2222rem;
   border-radius: 1.1111rem;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 1.1111rem;
   font-weight: 600;
   line-height: 1.26;
@@ -7359,7 +7683,7 @@ h2 {
   padding: 0.6667rem 0.4444rem;
   border-radius: 0.3333rem;
   color: #ffffff;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 100%;
@@ -7840,8 +8164,6 @@ h2 {
   }
 }
 
-
-
 /* Figma 1857:46660 — мобильная версия 360 px.
    Планшетный и desktop-макеты выше остаются независимыми. */
 @media (max-width: 680px) {
@@ -8011,7 +8333,7 @@ h2 {
     padding: 0;
     border-radius: 0;
     color: #ffffff;
-    font-family: 'Onest-SemiBold', sans-serif;
+    font-family: "Onest-SemiBold", sans-serif;
     font-size: 16px;
     font-weight: 600;
     line-height: 1.2;
@@ -8075,7 +8397,7 @@ h2 {
   width: 100%;
   margin: 0;
   color: #4d4d4d;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 2.6667rem;
   font-weight: 600;
   line-height: 1.27;
@@ -8089,12 +8411,14 @@ h2 {
   flex-wrap: wrap;
   gap: 1rem;
   width: 100%;
-  font-family: 'Onest-Regular', sans-serif;
+  font-family: "Onest-Regular", sans-serif;
   font-size: 1.3333rem;
   font-weight: 400;
   line-height: 1.7222rem;
 }
-.buildings-description__industries-label { color: #4d4d4dcc; }
+.buildings-description__industries-label {
+  color: #4d4d4dcc;
+}
 .buildings-description__industries-list {
   display: flex;
   align-items: center;
@@ -8155,7 +8479,11 @@ h2 {
   backdrop-filter: blur(1.3333rem);
   color: #ffffff;
 }
-.buildings-description__zoom img { display: block; width: 2rem; height: 2rem; }
+.buildings-description__zoom img {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+}
 .buildings-description__zoom:focus-visible,
 .buildings-description__trigger:focus-visible,
 .buildings-description__more:focus-visible,
@@ -8163,11 +8491,24 @@ h2 {
   outline: 0.1111rem solid #324c88;
   outline-offset: 0.2222rem;
 }
-.buildings-description__accordion { min-width: 0; width: 100%; color: #4d4d4dcc; }
-.buildings-description__item { padding-bottom: 1.1111rem; border-top: 1px solid #0000000d; }
-.buildings-description__item:first-child { padding-top: 1.1111rem; }
-.buildings-description__item:first-child .buildings-description__trigger { align-items: flex-start; }
-.buildings-description__item + .buildings-description__item { padding-top: 1.4444rem; }
+.buildings-description__accordion {
+  min-width: 0;
+  width: 100%;
+  color: #4d4d4dcc;
+}
+.buildings-description__item {
+  padding-bottom: 1.1111rem;
+  border-top: 1px solid #0000000d;
+}
+.buildings-description__item:first-child {
+  padding-top: 1.1111rem;
+}
+.buildings-description__item:first-child .buildings-description__trigger {
+  align-items: flex-start;
+}
+.buildings-description__item + .buildings-description__item {
+  padding-top: 1.4444rem;
+}
 .buildings-description__trigger {
   display: flex;
   align-items: center;
@@ -8188,12 +8529,16 @@ h2 {
   border-radius: 50%;
   background: #fff500;
 }
-.buildings-description__icon img { display: block; width: 1.3333rem; height: 1.3333rem; }
+.buildings-description__icon img {
+  display: block;
+  width: 1.3333rem;
+  height: 1.3333rem;
+}
 .buildings-description__item-title {
   display: block;
   min-width: 0;
   color: #4d4d4d;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 1.1111rem;
   font-weight: 600;
   line-height: 1.6667rem;
@@ -8207,19 +8552,23 @@ h2 {
   margin-left: 3.5556rem;
   padding-top: 0.2222rem;
 }
-.buildings-description__panel[hidden] { display: none; }
+.buildings-description__panel[hidden] {
+  display: none;
+}
 .buildings-description__copy {
   display: flex;
   flex-direction: column;
   gap: 0.7778rem;
   width: 100%;
   color: #4d4d4dcc;
-  font-family: 'Onest-Regular', sans-serif;
+  font-family: "Onest-Regular", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
 }
-.buildings-description__copy p { margin: 0; }
+.buildings-description__copy p {
+  margin: 0;
+}
 .buildings-description__more {
   display: flex;
   align-items: center;
@@ -8229,14 +8578,16 @@ h2 {
   border-radius: 0.5556rem;
   background: #324c88;
   color: #ffffff;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 0.8333rem;
   font-weight: 600;
   line-height: 1.3333rem;
   text-transform: uppercase;
   transition: background-color 0.15s ease;
 }
-.buildings-description__more:hover { background: #324c88cc; }
+.buildings-description__more:hover {
+  background: #324c88cc;
+}
 .buildings-description__lightbox {
   width: auto;
   max-width: 90vw;
@@ -8247,8 +8598,14 @@ h2 {
   border-radius: 1.1111rem;
   background: #f5f8f7;
 }
-.buildings-description__lightbox::backdrop { background: #000000b3; }
-.buildings-description__lightbox-controls { display: flex; justify-content: flex-end; margin-bottom: 0.5556rem; }
+.buildings-description__lightbox::backdrop {
+  background: #000000b3;
+}
+.buildings-description__lightbox-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5556rem;
+}
 .buildings-description__lightbox-close {
   display: flex;
   align-items: center;
@@ -8269,54 +8626,150 @@ h2 {
   object-fit: contain;
 }
 @media (max-width: 1600px) {
-  .buildings-description { padding: 4rem 2.2222rem; }
-  .buildings-description__content { gap: 3.3333rem; }
-  .buildings-description__title { font-size: 2.3333rem; }
-  .buildings-description__industries { font-size: 1.1111rem; line-height: 1.7222rem; }
-  .buildings-description__item-title { font-size: 1rem; }
-  .buildings-description__copy { font-size: 0.8889rem; }
+  .buildings-description {
+    padding: 4rem 2.2222rem;
+  }
+  .buildings-description__content {
+    gap: 3.3333rem;
+  }
+  .buildings-description__title {
+    font-size: 2.3333rem;
+  }
+  .buildings-description__industries {
+    font-size: 1.1111rem;
+    line-height: 1.7222rem;
+  }
+  .buildings-description__item-title {
+    font-size: 1rem;
+  }
+  .buildings-description__copy {
+    font-size: 0.8889rem;
+  }
 }
 @media (max-width: 900px) {
-  .buildings-description { padding: 3.3333rem 1.3333rem; }
-  .buildings-description__inner { gap: 2rem; }
-  .buildings-description__content { grid-template-columns: minmax(0, 1fr); gap: 2rem; max-width: 42.6667rem; }
-  .buildings-description__media { width: 100%; }
-  .buildings-description__title { font-size: 2rem; }
-  .buildings-description__industries { gap: 0.5556rem; }
-  .buildings-description__industries-list { justify-content: center; gap: 0.5556rem; }
+  .buildings-description {
+    padding: 3.3333rem 1.3333rem;
+  }
+  .buildings-description__inner {
+    gap: 2rem;
+  }
+  .buildings-description__content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    max-width: 42.6667rem;
+  }
+  .buildings-description__media {
+    width: 100%;
+  }
+  .buildings-description__title {
+    font-size: 2rem;
+  }
+  .buildings-description__industries {
+    gap: 0.5556rem;
+  }
+  .buildings-description__industries-list {
+    justify-content: center;
+    gap: 0.5556rem;
+  }
 }
 @media (max-width: 680px) {
-  .buildings-description { margin: 0 0.2778rem 0.2778rem; padding: 1.7778rem 0.8889rem; border-radius: 0.5556rem; }
-  .buildings-description__inner { gap: 1.3333rem; }
-  .buildings-description__header { gap: 0.8889rem; }
-  .buildings-description__title { font-size: 1.4444rem; line-height: 1.3; }
-  .buildings-description__industries { flex-direction: column; gap: 0.3333rem; font-size: 0.8889rem; line-height: 1.3333rem; }
-  .buildings-description__industries-list { gap: 0.3333rem 0.5556rem; }
-  .buildings-description__content { gap: 1.3333rem; }
-  .buildings-description__media { padding: 0.2222rem; border-radius: 1rem; }
-  .buildings-description__zoom { width: 3.1111rem; height: 3.1111rem; }
-  .buildings-description__zoom img { width: 1.5556rem; height: 1.5556rem; }
-  .buildings-description__item + .buildings-description__item { padding-top: 1rem; }
-  .buildings-description__trigger { gap: 0.7778rem; }
-  .buildings-description__icon { flex-basis: 2rem; width: 2rem; height: 2rem; }
-  .buildings-description__icon img { width: 1.1111rem; height: 1.1111rem; }
-  .buildings-description__item-title { font-size: 0.8889rem; line-height: 1.3333rem; }
-  .buildings-description__panel { gap: 0.8889rem; margin-left: 2.7778rem; padding-top: 0.7778rem; }
-  .buildings-description__copy { gap: 0.5556rem; font-size: 0.8889rem; }
-  .buildings-description__more { min-height: 2.6667rem; padding: 0.6667rem 1.1111rem; font-size: 0.7778rem; }
-  .buildings-description__lightbox { max-width: 96vw; padding: 0.6667rem; }
-  .buildings-description__lightbox-image { max-width: 90vw; }
+  .buildings-description {
+    margin: 0 0.2778rem 0.2778rem;
+    padding: 1.7778rem 0.8889rem;
+    border-radius: 0.5556rem;
+  }
+  .buildings-description__inner {
+    gap: 1.3333rem;
+  }
+  .buildings-description__header {
+    gap: 0.8889rem;
+  }
+  .buildings-description__title {
+    font-size: 1.4444rem;
+    line-height: 1.3;
+  }
+  .buildings-description__industries {
+    flex-direction: column;
+    gap: 0.3333rem;
+    font-size: 0.8889rem;
+    line-height: 1.3333rem;
+  }
+  .buildings-description__industries-list {
+    gap: 0.3333rem 0.5556rem;
+  }
+  .buildings-description__content {
+    gap: 1.3333rem;
+  }
+  .buildings-description__media {
+    padding: 0.2222rem;
+    border-radius: 1rem;
+  }
+  .buildings-description__zoom {
+    width: 3.1111rem;
+    height: 3.1111rem;
+  }
+  .buildings-description__zoom img {
+    width: 1.5556rem;
+    height: 1.5556rem;
+  }
+  .buildings-description__item + .buildings-description__item {
+    padding-top: 1rem;
+  }
+  .buildings-description__trigger {
+    gap: 0.7778rem;
+  }
+  .buildings-description__icon {
+    flex-basis: 2rem;
+    width: 2rem;
+    height: 2rem;
+  }
+  .buildings-description__icon img {
+    width: 1.1111rem;
+    height: 1.1111rem;
+  }
+  .buildings-description__item-title {
+    font-size: 0.8889rem;
+    line-height: 1.3333rem;
+  }
+  .buildings-description__panel {
+    gap: 0.8889rem;
+    margin-left: 2.7778rem;
+    padding-top: 0.7778rem;
+  }
+  .buildings-description__copy {
+    gap: 0.5556rem;
+    font-size: 0.8889rem;
+  }
+  .buildings-description__more {
+    min-height: 2.6667rem;
+    padding: 0.6667rem 1.1111rem;
+    font-size: 0.7778rem;
+  }
+  .buildings-description__lightbox {
+    max-width: 96vw;
+    padding: 0.6667rem;
+  }
+  .buildings-description__lightbox-image {
+    max-width: 90vw;
+  }
 }
 @media (max-width: 375px) {
-  .buildings-description { padding-right: 0.6667rem; padding-left: 0.6667rem; }
-  .buildings-description__industries-list { column-gap: 0.4444rem; }
-  .buildings-description__item-title { font-size: 0.8333rem; }
+  .buildings-description {
+    padding-right: 0.6667rem;
+    padding-left: 0.6667rem;
+  }
+  .buildings-description__industries-list {
+    column-gap: 0.4444rem;
+  }
+  .buildings-description__item-title {
+    font-size: 0.8333rem;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .buildings-description__more { transition: none; }
+  .buildings-description__more {
+    transition: none;
+  }
 }
-
-
 
 /* Адаптация блока «Описание» под макет Figma 1857:42515 (1440 px). */
 @media (min-width: 901px) and (max-width: 1600px) {
@@ -8383,9 +8836,17 @@ h2 {
     border-radius: 10px;
   }
 
-  .buildings-description__inner { gap: 25px; max-width: none; }
-  .buildings-description__header { gap: 14px; }
-  .buildings-description__title { font-size: 30px; line-height: 38px; }
+  .buildings-description__inner {
+    gap: 25px;
+    max-width: none;
+  }
+  .buildings-description__header {
+    gap: 14px;
+  }
+  .buildings-description__title {
+    font-size: 30px;
+    line-height: 38px;
+  }
 
   .buildings-description__industries {
     flex-wrap: nowrap;
@@ -8395,9 +8856,18 @@ h2 {
     white-space: nowrap;
   }
 
-  .buildings-description__industries-list { flex-wrap: nowrap; gap: 14px; }
-  .buildings-description__content { display: block; max-width: none; padding-bottom: 0; }
-  .buildings-description__media:not(.buildings-description__media--tablet) { display: none; }
+  .buildings-description__industries-list {
+    flex-wrap: nowrap;
+    gap: 14px;
+  }
+  .buildings-description__content {
+    display: block;
+    max-width: none;
+    padding-bottom: 0;
+  }
+  .buildings-description__media:not(.buildings-description__media--tablet) {
+    display: none;
+  }
 
   .buildings-description__media--tablet {
     display: block;
@@ -8432,18 +8902,46 @@ h2 {
     height: 36px;
   }
 
-  .buildings-description__accordion { display: flex; flex-direction: column; }
-  .buildings-description__item { padding-bottom: 20px; }
-  .buildings-description__item:first-child { padding-top: 0; }
-  .buildings-description__item + .buildings-description__item { padding-top: 20px; }
-  .buildings-description__trigger { gap: 24px; }
-  .buildings-description__icon { flex-basis: 30px; width: 30px; height: 30px; }
-  .buildings-description__icon img { width: 24px; height: 24px; }
-  .buildings-description__item-title { font-size: 18px; line-height: 1.5; }
-  .buildings-description__panel { gap: 14px; margin-left: 54px; padding-top: 0; }
-  .buildings-description__copy { gap: 14px; font-size: 16px; line-height: 1.5; }
+  .buildings-description__accordion {
+    display: flex;
+    flex-direction: column;
+  }
+  .buildings-description__item {
+    padding-bottom: 20px;
+  }
+  .buildings-description__item:first-child {
+    padding-top: 0;
+  }
+  .buildings-description__item + .buildings-description__item {
+    padding-top: 20px;
+  }
+  .buildings-description__trigger {
+    gap: 24px;
+  }
+  .buildings-description__icon {
+    flex-basis: 30px;
+    width: 30px;
+    height: 30px;
+  }
+  .buildings-description__icon img {
+    width: 24px;
+    height: 24px;
+  }
+  .buildings-description__item-title {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  .buildings-description__panel {
+    gap: 14px;
+    margin-left: 54px;
+    padding-top: 0;
+  }
+  .buildings-description__copy {
+    gap: 14px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
 }
-
 
 /* Мобильный макет Figma 1857:46708 — ширина 360 px. */
 @media (max-width: 375px) {
@@ -8497,7 +8995,7 @@ h2 {
     gap: 14px;
     min-height: 24px;
     color: #324c88;
-    font-family: 'Onest-Medium', sans-serif;
+    font-family: "Onest-Medium", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
@@ -8587,7 +9085,6 @@ h2 {
   }
 }
 
-
 /* Блок «Преимущества» — Figma 1857:40218, desktop 1920 px. */
 .buildings-advantages {
   margin: 10px;
@@ -8613,7 +9110,7 @@ h2 {
 .buildings-advantages__title {
   margin: 0;
   color: #ffffff;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 48px;
   font-weight: 600;
   line-height: 1.25;
@@ -8622,7 +9119,7 @@ h2 {
 .buildings-advantages__subtitle {
   margin: 0;
   color: #ffffffcc;
-  font-family: 'Onest-Regular', sans-serif;
+  font-family: "Onest-Regular", sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 1.5;
@@ -8672,7 +9169,7 @@ h2 {
   display: block;
   min-width: 0;
   color: #ffffff;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.6;
@@ -8702,37 +9199,100 @@ h2 {
   object-fit: contain;
 }
 @media (max-width: 1300px) {
-  .buildings-advantages { padding: 48px 32px; }
-  .buildings-advantages__content { grid-template-columns: minmax(0, 1fr) 32px minmax(0, 1fr); gap: 20px; }
-  .buildings-advantages__item { gap: 20px; padding: 20px; }
-  .buildings-advantages__label { font-size: 20px; }
+  .buildings-advantages {
+    padding: 48px 32px;
+  }
+  .buildings-advantages__content {
+    grid-template-columns: minmax(0, 1fr) 32px minmax(0, 1fr);
+    gap: 20px;
+  }
+  .buildings-advantages__item {
+    gap: 20px;
+    padding: 20px;
+  }
+  .buildings-advantages__label {
+    font-size: 20px;
+  }
 }
 @media (max-width: 900px) {
-  .buildings-advantages { padding: 40px 24px; }
-  .buildings-advantages__title { font-size: 36px; }
-  .buildings-advantages__subtitle { font-size: 20px; }
-  .buildings-advantages__content { grid-template-columns: minmax(0, 1fr); gap: 24px; }
-  .buildings-advantages__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .buildings-advantages__item { min-height: 100px; }
-  .buildings-advantages__connector { display: none; }
-  .buildings-advantages__visual { max-width: 700px; margin: 0 auto; }
+  .buildings-advantages {
+    padding: 40px 24px;
+  }
+  .buildings-advantages__title {
+    font-size: 36px;
+  }
+  .buildings-advantages__subtitle {
+    font-size: 20px;
+  }
+  .buildings-advantages__content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  .buildings-advantages__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .buildings-advantages__item {
+    min-height: 100px;
+  }
+  .buildings-advantages__connector {
+    display: none;
+  }
+  .buildings-advantages__visual {
+    max-width: 700px;
+    margin: 0 auto;
+  }
 }
 @media (max-width: 600px) {
-  .buildings-advantages { margin: 5px; padding: 28px 16px; border-radius: 10px; }
-  .buildings-advantages__header { gap: 12px; padding-bottom: 20px; }
-  .buildings-advantages__title { font-size: 24px; line-height: 1.3; }
-  .buildings-advantages__subtitle { font-size: 16px; line-height: 1.5; }
-  .buildings-advantages__content { padding-top: 20px; }
-  .buildings-advantages__list { grid-template-columns: minmax(0, 1fr); gap: 12px; }
-  .buildings-advantages__item { min-height: 84px; gap: 16px; padding: 16px; border-radius: 12px; }
-  .buildings-advantages__icon { flex-basis: 40px; width: 40px; height: 40px; }
-  .buildings-advantages__icon img { width: 30px; height: 30px; }
-  .buildings-advantages__label { font-size: 16px; line-height: 1.4; }
+  .buildings-advantages {
+    margin: 5px;
+    padding: 28px 16px;
+    border-radius: 10px;
+  }
+  .buildings-advantages__header {
+    gap: 12px;
+    padding-bottom: 20px;
+  }
+  .buildings-advantages__title {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+  .buildings-advantages__subtitle {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .buildings-advantages__content {
+    padding-top: 20px;
+  }
+  .buildings-advantages__list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+  .buildings-advantages__item {
+    min-height: 84px;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 12px;
+  }
+  .buildings-advantages__icon {
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+  }
+  .buildings-advantages__icon img {
+    width: 30px;
+    height: 30px;
+  }
+  .buildings-advantages__label {
+    font-size: 16px;
+    line-height: 1.4;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .buildings-advantages * { scroll-behavior: auto; }
+  .buildings-advantages * {
+    scroll-behavior: auto;
+  }
 }
-
 
 /* Преимущества — Figma 1857:42579, desktop 1440 px. */
 .buildings-advantages {
@@ -8761,7 +9321,7 @@ h2 {
 
 .buildings-advantages__title {
   color: #ffffff;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 48px;
   font-weight: 600;
   line-height: 1.25;
@@ -8771,7 +9331,7 @@ h2 {
 .buildings-advantages__subtitle {
   max-width: 100%;
   color: #ffffffcc;
-  font-family: 'Onest-Regular', sans-serif;
+  font-family: "Onest-Regular", sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 1.3;
@@ -8852,7 +9412,7 @@ h2 {
 .buildings-advantages__label {
   min-width: 0;
   color: #ffffff;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.6;
@@ -9109,7 +9669,6 @@ h2 {
   }
 }
 
-
 /* Responsive arrangement from Figma 1866:80986 (1024 px and below). */
 .buildings-advantages__item--responsive {
   display: none;
@@ -9287,7 +9846,6 @@ h2 {
   }
 }
 
-
 /* Комплектация здания — Figma node 1866:91048. */
 .buildings-complectation {
   margin: 0 5px 5px;
@@ -9317,7 +9875,7 @@ h2 {
 .buildings-complectation__title {
   margin: 0;
   color: #ffffff;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 40px;
   font-weight: 600;
   line-height: 1.27;
@@ -9326,7 +9884,7 @@ h2 {
 .buildings-complectation__subtitle {
   max-width: 100%;
   color: #ffffffcc;
-  font-family: 'Onest-Regular', sans-serif;
+  font-family: "Onest-Regular", sans-serif;
   font-size: 20px;
   line-height: 1.4;
 }
@@ -9380,7 +9938,7 @@ h2 {
   min-width: 0;
   margin: 0;
   color: #ffffff;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.6;
@@ -9388,17 +9946,35 @@ h2 {
   overflow-wrap: anywhere;
 }
 @media (max-width: 1300px) {
-  .buildings-complectation { padding: 40px; }
-  .buildings-complectation__title { font-size: 38px; }
-  .buildings-complectation__subtitle { font-size: 20px; }
-  .buildings-complectation__illustration img { max-width: 620px; }
-  .buildings-complectation__items { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .buildings-complectation__item { gap: 14px; }
-  .buildings-complectation__label { font-size: 18px; }
+  .buildings-complectation {
+    padding: 40px;
+  }
+  .buildings-complectation__title {
+    font-size: 38px;
+  }
+  .buildings-complectation__subtitle {
+    font-size: 20px;
+  }
+  .buildings-complectation__illustration img {
+    max-width: 620px;
+  }
+  .buildings-complectation__items {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .buildings-complectation__item {
+    gap: 14px;
+  }
+  .buildings-complectation__label {
+    font-size: 18px;
+  }
 }
 @media (max-width: 1100px) {
-  .buildings-complectation__inner { gap: 24px; }
-  .buildings-complectation__illustration img { max-width: 450px; }
+  .buildings-complectation__inner {
+    gap: 24px;
+  }
+  .buildings-complectation__illustration img {
+    max-width: 450px;
+  }
   .buildings-complectation__items {
     display: flex;
     gap: 10px;
@@ -9407,7 +9983,10 @@ h2 {
     scroll-snap-type: x mandatory;
     scrollbar-width: thin;
   }
-  .buildings-complectation__item { flex: 0 0 250px; scroll-snap-align: start; }
+  .buildings-complectation__item {
+    flex: 0 0 250px;
+    scroll-snap-align: start;
+  }
 }
 @media (max-width: 680px) {
   .buildings-complectation {
@@ -9415,14 +9994,21 @@ h2 {
     padding: 20px 10px 14px;
     border-radius: 10px;
   }
-  .buildings-complectation__inner { gap: 30px; }
-  .buildings-complectation__header { gap: 14px; }
+  .buildings-complectation__inner {
+    gap: 30px;
+  }
+  .buildings-complectation__header {
+    gap: 14px;
+  }
   .buildings-complectation__title {
     font-size: 22px;
     line-height: 28px;
     white-space: nowrap;
   }
-  .buildings-complectation__subtitle { font-size: 14px; line-height: 22px; }
+  .buildings-complectation__subtitle {
+    font-size: 14px;
+    line-height: 22px;
+  }
   .buildings-complectation__illustration img {
     width: 300px;
     max-width: 100%;
@@ -9438,7 +10024,9 @@ h2 {
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
   }
-  .buildings-complectation__items::-webkit-scrollbar { display: none; }
+  .buildings-complectation__items::-webkit-scrollbar {
+    display: none;
+  }
   .buildings-complectation__item {
     flex: 0 0 250px;
     min-height: 50px;
@@ -9446,8 +10034,15 @@ h2 {
     border-radius: 20px;
     scroll-snap-align: start;
   }
-  .buildings-complectation__icon { flex-basis: 30px; width: 30px; height: 30px; }
-  .buildings-complectation__icon img { width: 24px; height: 24px; }
+  .buildings-complectation__icon {
+    flex-basis: 30px;
+    width: 30px;
+    height: 30px;
+  }
+  .buildings-complectation__icon img {
+    width: 24px;
+    height: 24px;
+  }
   .buildings-complectation__label {
     font-size: 14px;
     line-height: 22px;
@@ -9456,9 +10051,10 @@ h2 {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .buildings-complectation__item { scroll-behavior: auto; }
+  .buildings-complectation__item {
+    scroll-behavior: auto;
+  }
 }
-
 
 /* Фотогалерея — Figma node 1857:41326, desktop 1920 px. */
 .buildings-gallery {
@@ -9486,7 +10082,7 @@ h2 {
 .buildings-gallery__title {
   margin: 0;
   color: #4d4d4d;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 48px;
   font-weight: 600;
   line-height: 1.25;
@@ -9729,7 +10325,6 @@ h2 {
   }
 }
 
-
 /* Figma node 1857:47901 — mobile gallery, 360 px.
    Desktop frames (1920/1440/1024) retain their existing composition. */
 @media (max-width: 680px) {
@@ -9830,7 +10425,7 @@ h2 {
 .buildings-catalog__title {
   margin: 0;
   color: #4d4d4d;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 48px;
   font-weight: 600;
   line-height: 1.2;
@@ -9855,7 +10450,7 @@ h2 {
   align-items: center;
   gap: 20px;
   color: #5d5d5d4d;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.6;
@@ -9869,7 +10464,7 @@ h2 {
   flex: 0 0 4px;
   border-radius: 50%;
   background: #cfcfcf;
-  content: '';
+  content: "";
 }
 
 .buildings-catalog__filter.is-active {
@@ -9927,7 +10522,7 @@ h2 {
 
 .buildings-catalog__caption {
   color: #4d4d4d;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.6;
@@ -9963,7 +10558,7 @@ h2 {
   height: 64px;
   border: 1px solid #4d4d4d33;
   border-radius: 20px;
-  content: '';
+  content: "";
   transform: rotate(45deg);
 }
 
@@ -10132,7 +10727,6 @@ h2 {
   }
 }
 
-
 /* Figma node 1857:46397 — точная адаптация планшетного кадра 1024 px. */
 @media (min-width: 901px) and (max-width: 1100px) {
   .buildings-catalog__panel {
@@ -10226,7 +10820,7 @@ h2 {
   max-width: 75rem;
   margin: 0 0 2.2222rem;
   color: #25313a;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 2.6667rem;
   font-weight: 600;
   line-height: 1.25;
@@ -10242,7 +10836,7 @@ h2 {
 .buildings-characteristics__section-title {
   margin: 0;
   color: #25313a;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 1.7778rem;
   font-weight: 600;
   line-height: 1.35;
@@ -10278,7 +10872,7 @@ h2 {
   margin: 0;
   padding: 20px 40px 0;
   color: #4d4d4d;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 48px;
   font-weight: 600;
   line-height: 64px;
@@ -10307,7 +10901,7 @@ h2 {
   padding: 14px 18px;
   border-radius: 14px;
   color: #5d5d5d;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.6;
@@ -10349,7 +10943,7 @@ h2 {
 .buildings-characteristics__technical-label {
   margin: 0;
   color: #4d4d4d;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: normal;
@@ -10360,7 +10954,7 @@ h2 {
   width: 100%;
   margin: 0;
   color: #4d4d4d;
-  font-family: 'Onest-Regular', sans-serif;
+  font-family: "Onest-Regular", sans-serif;
   font-size: 22px;
   font-weight: 400;
   line-height: 32px;
@@ -10514,7 +11108,6 @@ h2 {
   }
 }
 
-
 /* Figma 1857:49331 — desktop 1440 px.
    На 1920 px сохраняется базовая геометрия выше; этот диапазон
    компенсирует только разницу размеров между desktop-макетами. */
@@ -10622,7 +11215,6 @@ h2 {
   }
 }
 
-
 /* Technical characteristics: column order and equal-height paired cells. */
 @media screen and (min-width: 681px) {
   .buildings-characteristics__technical-panel {
@@ -10692,7 +11284,6 @@ h2 {
     column-gap: 5px;
   }
 }
-
 
 /* Mobile 360 px — Figma 1857:53588; expanded state 2177:135633. */
 .buildings-characteristics__show-more {
@@ -10790,7 +11381,7 @@ h2 {
     min-height: 24px;
     align-self: center;
     color: #324c88;
-    font-family: 'Onest-Medium', sans-serif;
+    font-family: "Onest-Medium", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.4;
@@ -10841,7 +11432,7 @@ h2 {
 .buildings-production__title {
   margin: 0;
   color: #4d4d4d;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 48px;
   font-weight: 600;
   line-height: normal;
@@ -10851,7 +11442,7 @@ h2 {
 .buildings-production__subtitle {
   margin: 0;
   color: #333333;
-  font-family: 'Onest-Regular', sans-serif;
+  font-family: "Onest-Regular", sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: normal;
@@ -10920,7 +11511,7 @@ h2 {
 .buildings-production__fact-title {
   margin: 0 0 18px;
   color: #324c88;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 30px;
   font-weight: 600;
   line-height: normal;
@@ -10929,7 +11520,7 @@ h2 {
 .buildings-production__fact-description {
   margin: 0;
   color: #4d4d4d;
-  font-family: 'Onest-Regular', sans-serif;
+  font-family: "Onest-Regular", sans-serif;
   font-size: 22px;
   font-weight: 400;
   line-height: 32px;
@@ -11094,7 +11685,6 @@ h2 {
     scroll-behavior: auto;
   }
 }
-
 
 /* Figma 1857:50544 — desktop 1440 px.
    Геометрия адаптируется от 1920 px: gallery 1052 + 8 + 280 px, высота 591 px. */
@@ -11302,8 +11892,6 @@ h2 {
   }
 }
 
-
-
 .services {
   width: 100%;
   color: #4d4d4d;
@@ -11334,7 +11922,7 @@ h2 {
   justify-content: center;
   gap: 1.1111rem;
   color: #4d4d4d;
-  font-family: 'Onest-Regular', sans-serif;
+  font-family: "Onest-Regular", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.4444;
@@ -11361,7 +11949,7 @@ h2 {
   gap: 0;
   margin: 0;
   color: #4d4d4d;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 3rem;
   font-weight: 600;
   line-height: 0;
@@ -11377,7 +11965,7 @@ h2 {
 
 .services__count {
   color: #324c88;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.2222;
@@ -11410,7 +11998,7 @@ h2 {
   padding: 0.9444rem 1.3333rem;
   border-radius: 0.7778rem;
   color: #5d5d5d;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.6;
@@ -11536,7 +12124,7 @@ h2 {
   gap: 0.8889rem;
   padding: 0.5556rem;
   border-radius: 0.5556rem;
-  background-color: #4D4D4D0A;
+  background-color: #4d4d4d0a;
 }
 
 .service-card__image {
@@ -11570,7 +12158,7 @@ h2 {
 .service-card__title {
   width: 100%;
   color: #4d4d4d;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 1.1111rem;
   font-weight: 600;
   line-height: 1.6;
@@ -11580,7 +12168,7 @@ h2 {
 
 .service-card__description {
   color: #979a9b;
-  font-family: 'Onest-Regular', sans-serif;
+  font-family: "Onest-Regular", sans-serif;
   font-size: 0.8889rem;
   font-weight: 400;
   line-height: 1.6;
@@ -11592,7 +12180,7 @@ h2 {
   min-height: 2.8889rem;
   padding: 0.7778rem 2.6667rem;
   border-radius: 1.1111rem;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 0.8889rem;
   font-weight: 600;
   line-height: 1.3333rem;
@@ -11737,8 +12325,8 @@ h2 {
     padding: 0.6667rem 1.3333rem;
     border-radius: 0.5556rem;
     color: #324c88;
-    background: #324C881A;
-    font-family: 'Onest-SemiBold', sans-serif;
+    background: #324c881a;
+    font-family: "Onest-SemiBold", sans-serif;
     font-size: 0.7778rem;
     font-weight: 600;
     line-height: 1.3889rem;
@@ -11790,16 +12378,15 @@ h2 {
 
 .services-contact__eyebrow {
   color: #324c8880;
-  font-family: 'Onest-Medium', sans-serif;
+  font-family: "Onest-Medium", sans-serif;
   font-size: 1.1111rem;
   font-weight: 500;
   line-height: 1.5;
 }
 
 .services-contact__title {
-  max-width: 47.7778rem;
   color: #324c88;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 2.4444rem;
   font-weight: 600;
   line-height: 1.4;
@@ -11807,17 +12394,15 @@ h2 {
 }
 
 .services-contact__description {
-  max-width: 37.1667rem;
   color: #324c88;
-  font-family: 'Onest-Regular', sans-serif;
+  font-family: "Onest-Regular", sans-serif;
   font-size: 1.3889rem;
-  line-height: 1.4;
+  line-height: 35px;
   margin-top: 1.7778rem;
 }
 
 .services-contact__illustration {
-  width: 100%;
-  margin-top: auto;
+  max-width: 91%;
   align-self: flex-start;
 }
 
@@ -11835,7 +12420,6 @@ h2 {
   display: grid;
   grid-template-columns: 16.6667rem minmax(0, 1fr);
   gap: 1.3333rem;
-  row-gap: 1.3333rem;
 }
 
 .services-contact__field {
@@ -11851,7 +12435,7 @@ h2 {
 
 .services-contact__label {
   color: #2c2c2ce6;
-  font-family: 'Onest-Medium', sans-serif;
+  font-family: "Onest-Medium", sans-serif;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.6667rem;
@@ -11868,10 +12452,10 @@ h2 {
   outline-offset: 0.1667rem;
   color: #4d4d4d;
   background-color: #324c880a;
-  font-family: 'Onest-Regular', sans-serif;
+  font-family: "Onest-Regular", sans-serif;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 .services-contact__input::placeholder {
@@ -11896,14 +12480,22 @@ h2 {
 }
 
 .services-contact__upload {
+  position: relative;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.7778rem;
-  min-height: 8.4444rem;
   padding: 1.6667rem 1.1111rem;
-  border: 0.0556rem dashed #2c2c2c;
   border-radius: 0.5556rem;
+}
+
+.services-contact__upload-border {
+  stroke: #2c2c2c;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }
 
 .services-contact__upload-button {
@@ -11914,15 +12506,14 @@ h2 {
   border-radius: 0.5556rem;
   color: #324c88;
   background-color: #ebedf3;
-  font-family: 'Onest-Regular', sans-serif;
+  font-family: "Onest-Regular", sans-serif;
   font-size: 1rem;
   line-height: 1.4;
   cursor: pointer;
 }
 
 .services-contact__file-icon {
-  font-size: 1.3333rem;
-  line-height: 1;
+  font-size: 0;
 }
 
 .services-contact__file-input {
@@ -11941,7 +12532,7 @@ h2 {
 
 .services-contact__upload-help {
   color: #505050;
-  font-family: 'Onest-Regular', sans-serif;
+  font-family: "Onest-Regular", sans-serif;
   font-size: 0.7778rem;
   line-height: 1.5;
   text-align: center;
@@ -11967,7 +12558,7 @@ h2 {
   align-items: flex-start;
   gap: 1rem;
   color: #000;
-  font-family: 'Onest-Light', sans-serif;
+  font-family: "Onest-Light", sans-serif;
   font-size: 0.7778rem;
   font-weight: 300;
   line-height: 1.5;
@@ -11993,70 +12584,12 @@ h2 {
     padding: 2.7778rem 2.5rem;
   }
 
-  .services-contact__container {
-    min-height: 40rem;
-    gap: 1.7778rem;
-  }
-
-  .services-contact__intro {
-    gap: 2.2222rem;
-  }
-
-  .services-contact__heading {
-    gap: 0.7778rem;
-  }
-
-  .services-contact__eyebrow {
-    font-size: 1rem;
-  }
-
-  .services-contact__title {
-    font-size: 2rem;
-  }
-
   .services-contact__description {
-    font-size: 1.1111rem;
+    font-size: 24px;
   }
 
-  .services-contact__form {
-    padding: 0.8889rem;
-  }
-
-  .services-contact__fields {
-    grid-template-columns: minmax(0, 13.3333rem) minmax(0, 1fr);
-    column-gap: 0.8889rem;
-    row-gap: 1.1111rem;
-  }
-
-  .services-contact__label,
-  .services-contact__input,
-  .services-contact__upload-button {
-    font-size: 0.8889rem;
-  }
-
-  .services-contact__input {
-    padding-right: 0.8889rem;
-    padding-left: 0.8889rem;
-  }
-
-  .services-contact__form,
-  .services-contact__form-bottom {
-    gap: 1.1111rem;
-  }
-
-  .services-contact__consent {
-    gap: 0.6667rem;
-    font-size: 0.6667rem;
-  }
-
-  .services-contact__checkbox {
-    flex-basis: 1.1111rem;
-    width: 1.1111rem;
-    height: 1.1111rem;
-  }
-
-  .services-contact__illustration {
-    max-width: 100%;
+  .services-contact__illustration img {
+    height: 350px;
   }
 }
 
@@ -12068,7 +12601,6 @@ h2 {
   .services-contact__container {
     grid-template-columns: minmax(0, 1fr);
     gap: 1.3333rem;
-    min-height: 0;
   }
 
   .services-contact__intro {
@@ -12084,31 +12616,16 @@ h2 {
   }
 
   .services-contact__title {
-    max-width: 100%;
     font-size: 1.6667rem;
-    line-height: 1.4;
   }
 
   .services-contact__description {
-    max-width: 37.1667rem;
     font-size: 1.3889rem;
-    line-height: 1.4;
-    margin-top: 0;
+    margin-top: 7px;
   }
 
   .services-contact__illustration {
     display: none;
-  }
-
-  .services-contact__form {
-    gap: 1.3333rem;
-    padding: 1.1111rem;
-  }
-
-  .services-contact__fields {
-    grid-template-columns: minmax(0, 16.6667rem) minmax(0, 1fr);
-    column-gap: 1.3333rem;
-    row-gap: 1.3333rem;
   }
 
   .services-contact__field {
@@ -12122,8 +12639,9 @@ h2 {
 
   .services-contact__input {
     min-height: 3.1111rem;
-    padding: 0.8889rem 1rem;
+    padding: 1rem;
     font-size: 0.8889rem;
+    line-height: 1.1;
   }
 
   .services-contact__textarea {
@@ -12134,30 +12652,9 @@ h2 {
     gap: 1.3333rem;
   }
 
-  .services-contact__upload {
-    min-height: 8.4444rem;
-  }
-
-  .services-contact__upload-button {
-    font-size: 0.8889rem;
-  }
-
   .services-contact__submit.btn {
-    min-height: 3.1111rem;
+    min-height: 3rem;
     padding: 0.8333rem 1.7778rem;
-    font-size: 0.8889rem;
-    line-height: 1.3333rem;
-  }
-
-  .services-contact__consent {
-    gap: 0.6667rem;
-    font-size: 0.6667rem;
-  }
-
-  .services-contact__checkbox {
-    flex-basis: 1.1111rem;
-    width: 1.1111rem;
-    height: 1.1111rem;
   }
 }
 
@@ -12167,9 +12664,7 @@ h2 {
   }
 
   .services-contact__container {
-    grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
-    min-height: 0;
   }
 
   .services-contact__intro {
@@ -12186,103 +12681,67 @@ h2 {
   }
 
   .services-contact__title {
-    max-width: 100%;
     font-size: 1.1111rem;
     line-height: 1.5556rem;
   }
 
   .services-contact__description {
-    max-width: 100%;
+    margin-top: 0;
     font-size: 1rem;
     line-height: 1.4;
   }
 
-  .services-contact__illustration {
-    display: none;
-  }
-
   .services-contact__form {
-    gap: 1.3333rem;
     padding: 0.7778rem;
-    border-radius: 0.5556rem;
   }
 
   .services-contact__fields {
     grid-template-columns: minmax(0, 1fr);
-    gap: 1.3333rem;
   }
 
   .services-contact__field,
   .services-contact__field--phone {
     grid-column: 1 / -1;
-    gap: 0.4444rem;
-  }
-
-  .services-contact__label {
-    font-size: 0.8889rem;
-    line-height: 1.3333rem;
-  }
-
-  .services-contact__input {
-    min-height: 3.1111rem;
-    padding: 0.8889rem 1rem;
-    font-size: 0.8889rem;
-    line-height: 1.3333rem;
-  }
-
-  .services-contact__textarea {
-    min-height: 6.6667rem;
-  }
-
-  .services-contact__form-bottom {
-    gap: 1.3333rem;
   }
 
   .services-contact__upload {
-    min-height: 8.4444rem;
-    padding: 1.3333rem 0.7778rem;
+    padding: 18px;
+    gap: 8px;
   }
 
   .services-contact__upload-button {
-    max-width: 100%;
-    padding: 0.7778rem;
+    padding: 16px 20px;
+    min-width: 217px;
     font-size: 0.7778rem;
   }
 
+  .services-contact__upload-help {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .services-contact__form-bottom {
+      gap: 27px;
+    }
+
   .services-contact__submit.btn {
-    min-height: 3.1111rem;
-    padding: 0.8889rem 1.1111rem;
-    border-radius: 0.5556rem;
-    font-size: 0.8889rem;
+    font-size: 14px;
     line-height: 1.3333rem;
-  }
-
-  .services-contact__consent {
-    gap: 0.6667rem;
-    font-size: 0.6667rem;
-    line-height: 1.5;
-  }
-
-  .services-contact__checkbox {
-    flex-basis: 1.1111rem;
-    width: 1.1111rem;
-    height: 1.1111rem;
   }
 }
 
 /* Price */
 .prices {
+  margin-top: 5px;
   width: 100%;
-  color: #4D4D4D;
-  background: #FFFFFF;
+  color: #4d4d4d;
+  background: #ffffff;
   border-radius: 0.5556rem;
 }
 
 .prices__panel {
   width: 100%;
   padding: 2.2222rem;
-  border-radius: 1.1111rem;
-  background: #FFFFFF;
 }
 
 .prices__content {
@@ -12298,21 +12757,21 @@ h2 {
   align-items: center;
   justify-content: center;
   gap: 1.1111rem;
-  color: #4D4D4D;
-  font-family: 'Onest-Regular', sans-serif;
+  color: #4d4d4d;
+  font-family: "Onest-Regular", sans-serif;
   font-size: 1.1111rem;
   line-height: 1.4;
   white-space: nowrap;
 }
 
 .prices__breadcrumbs a:hover {
-  color: #324C88;
+  color: #324c88;
 }
 
 .prices__title {
   margin: 0;
-  color: #4D4D4D;
-  font-family: 'Onest-Medium', sans-serif;
+  color: #4d4d4d;
+  font-family: "Onest-Medium", sans-serif;
   font-size: 3.5556rem;
   font-weight: 500;
   line-height: 1.125;
@@ -12323,13 +12782,13 @@ h2 {
 .prices__notice {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.5556rem;
+  gap: 18px;
   width: 100%;
   padding: 1.3333rem;
   border-radius: 0.5556rem;
-  background: #FFFECC;
-  color: #324C88;
-  font-family: 'Onest-Medium', sans-serif;
+  background: #fff5001a;
+  color: #324c88;
+  font-family: "Onest-Medium", sans-serif;
   font-size: 1.3333rem;
   line-height: 1.5;
 }
@@ -12340,7 +12799,7 @@ h2 {
 }
 
 .prices__notice strong {
-  font-family: 'Onest-Bold', sans-serif;
+  font-family: "Onest-Bold", sans-serif;
   font-weight: 700;
 }
 
@@ -12349,9 +12808,13 @@ h2 {
   text-underline-offset: 0.1667rem;
 }
 
+.pices__table-container {
+  gap: 20px;
+  width: 100%;
+}
+
 .prices__filters {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   gap: 1.6667rem;
   width: 100%;
@@ -12362,6 +12825,10 @@ h2 {
   display: flex;
   align-items: center;
   gap: 1.6667rem;
+}
+
+.prices__filter-group {
+  gap: 50px;
 }
 
 .prices__fieldset {
@@ -12378,7 +12845,7 @@ h2 {
   float: left;
   padding: 0;
   color: #272629;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.6;
@@ -12392,7 +12859,7 @@ h2 {
   gap: 0.2222rem;
   padding: 0.2222rem;
   border-radius: 0.5556rem;
-  background: #F5F8F7;
+  background: #f5f8f7;
 }
 
 .prices__option {
@@ -12402,8 +12869,8 @@ h2 {
   min-height: 3.1111rem;
   padding: 0.7778rem 1rem;
   border-radius: 0.7778rem;
-  color: #5D5D5D;
-  font-family: 'Onest-SemiBold', sans-serif;
+  color: #5d5d5d;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.6;
@@ -12412,12 +12879,12 @@ h2 {
 }
 
 .prices__option.is-active {
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 .prices__option:focus-visible,
 .prices__dimension select:focus-visible {
-  outline: 0.1111rem solid #324C88;
+  outline: 0.1111rem solid #324c88;
   outline-offset: 0.1111rem;
 }
 
@@ -12426,7 +12893,7 @@ h2 {
   align-items: center;
   gap: 1.1111rem;
   color: #272629;
-  font-family: 'Onest-SemiBold', sans-serif;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -12434,12 +12901,14 @@ h2 {
 }
 
 .prices__dimension select {
-  min-width: 6.6667rem;
+  min-width: 117px;
   padding: 1rem 1.3333rem;
   border: 0;
   border-radius: 0.5556rem;
   appearance: none;
-  background: #F5F6F8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='m7 10 5 5 5-5' stroke='%234D4D4D' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 0.8889rem center;
+  background: #f5f6f8
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='m7 10 5 5 5-5' stroke='%234D4D4D' stroke-width='2'/%3E%3C/svg%3E")
+    no-repeat right 0.8889rem center;
   color: #272629;
   font: inherit;
   text-transform: none;
@@ -12455,14 +12924,16 @@ h2 {
 .prices__table {
   width: 100%;
   border-collapse: separate;
-  border-spacing: 0.1111rem;
+  border-spacing: 0.1111rem 4px;
   table-layout: fixed;
-  color: #5D5D5D;
-  font-family: 'Onest-SemiBold', sans-serif;
+  color: #5d5d5d;
+  font-family: "Onest-SemiBold", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.6;
   text-transform: uppercase;
+  background-color: #f5f8f7;
+  border-radius: 10px;
 }
 
 .prices__label-column {
@@ -12472,15 +12943,15 @@ h2 {
 .prices__table th,
 .prices__table td {
   padding: 0.7778rem 1rem;
-  background: #FFFFFF;
+  background: #ffffff;
   text-align: center;
   vertical-align: middle;
   overflow-wrap: anywhere;
 }
 
 .prices__table thead th {
-  background: #E2E8ED;
-  color: #324C88;
+  background: #e2e8ed;
+  color: #324c88;
   text-align: left;
 }
 
@@ -12502,19 +12973,20 @@ h2 {
 
 .prices__table small {
   display: block;
-  margin-top: 0.4444rem;
-  color: #5D5D5DCC;
-  font-family: 'Onest-Medium', sans-serif;
+  margin-top: 0.4446rem;
+  color: #5d5d5dcc;
+  font-family: "Onest-Medium", sans-serif;
   font-size: 0.8889rem;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.6;
   text-transform: none;
 }
 
 .prices__table tfoot th,
 .prices__table tfoot td {
-  background: #324C88;
-  color: #FFFFFF;
+  padding: 20.5px 18px;
+  background: #324c88;
+  color: #ffffff;
 }
 
 .prices__table tfoot th {
@@ -12526,28 +12998,171 @@ h2 {
   border-bottom-right-radius: 0.7778rem;
 }
 
-@media (max-width: 1660px) and (min-width: 1001px) {
-  .prices__panel {
-    padding: 2.2222rem;
-  }
+.prices__notice-toggle,
+.prices__parameters-toggle,
+.prices__mobile-summary,
+.prices__mobile-table {
+  display: none;
+}
 
-  .prices__content {
-    gap: 1.6667rem;
-  }
+.prices__filters-modal {
+  width: 100%;
+}
 
-  .prices__title {
-    font-size: 3.5556rem;
-    line-height: 1.125;
-  }
+.prices__filters-backdrop,
+.prices__filters-header,
+.prices__filters-footer {
+  display: none;
+}
 
+.prices__filters-title {
+  margin: 0;
+}
+
+.prices-tech {
+  padding: 0 0.5556rem 0.5556rem;
+  background: #f5f8f7;
+  color: #4d4d4d;
+  font-family: "Onest-Regular", sans-serif;
+}
+
+.prices-tech__inner {
+  gap: 24px;
+  width: 100%;
+  padding: 3.5556rem 2.2222rem;
+}
+
+.prices-tech__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.3333rem;
+  text-align: center;
+}
+
+.prices-tech__title {
+  color: #4d4d4d;
+}
+
+.prices-tech__subtitle {
+  max-width: 100%;
+  margin: 0;
+  color: #5d5d5d;
+  font-size: 1.3333rem;
+  line-height: 1.6;
+}
+
+.prices-calculation {
+  padding: 30px 40px;
+  background: #f5f8f7;
+}
+
+.prices-calculation__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.2222rem;
+  min-height: 17.6667rem;
+  padding: 2.2222rem 50px;
+  overflow: hidden;
+  border-radius: 1.1111rem;
+  background: #324c88;
+  color: #ffffff;
+}
+
+.prices-calculation__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  min-width: 0;
+}
+
+.prices-calculation__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.3333rem;
+  width: 100%;
+  max-width: 42.3333rem;
+}
+
+.prices-calculation__title {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 2.1111rem;
+  font-weight: 600;
+  line-height: 3.2222rem;
+  text-transform: uppercase;
+}
+
+.prices-calculation__subtitle {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Onest-Medium", sans-serif;
+  font-size: 1.2222rem;
+  font-weight: 500;
+  line-height: 2rem;
+  text-transform: uppercase;
+}
+
+.prices-calculation__button {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.6667rem;
+  padding: 1.5556rem 2.6667rem;
+  border-radius: 1.1111rem;
+  background: #fff500;
+  color: #324c88;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 1.1111rem;
+  font-weight: 600;
+  line-height: 1.5556rem;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color 0.15s ease;
+}
+
+.prices-calculation__button:hover {
+  background: #f5eb0a;
+}
+
+.prices-calculation__button:focus-visible {
+  outline: 0.1111rem solid #ffffff;
+  outline-offset: 0.2222rem;
+}
+
+.prices-calculation-img {
+  position: absolute;
+  right: 2.5rem;
+  bottom: 0;
+  z-index: 0;
+  display: block;
+  width: min(52%, 45.1111rem);
+  max-width: 45.1111rem;
+  height: stretch;
+}
+
+/* ===== Медиа-запросы: от широких условий к узким ===== */
+
+@media (max-width: 1660px) {
   .prices__notice {
-    gap: 1rem;
     font-size: 1.2222rem;
     line-height: 1.5455;
   }
 
   .prices__filters,
-  .prices__filter-group,
+  .prices__filter-group {
+    gap: 36px;
+  }
+
   .prices__dimensions {
     gap: 1.1111rem;
   }
@@ -12564,17 +13179,15 @@ h2 {
     min-height: 0;
     padding: 0.6667rem 0.7778rem;
     font-size: 0.8889rem;
-    line-height: 1.6;
   }
 
   .prices__dimension {
-    gap: 1.1111rem;
     font-size: 0.8889rem;
   }
 
   .prices__dimension select {
     min-width: 0;
-    padding: 0.6667rem 2.3333rem 0.6667rem 0.7778rem;
+    padding: 0.6667rem 48px 0.6667rem 0.7778rem;
     background-position: right 0.6667rem center;
     font-size: 0.8889rem;
   }
@@ -12584,23 +13197,28 @@ h2 {
   }
 
   .prices__label-column {
-    width: 39.7%;
+    width: 540px;
   }
-
+  .prices__table td,
+  .prices__table tfoot td {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
   .prices__table thead th {
     font-size: 1rem;
   }
 
   .prices__table small {
-    font-size: 0.8889rem;
+    font-size: 14px;
+  }
+
+  .prices-calculation-img {
+    width: 44%;
+    right: 2rem;
   }
 }
 
 @media (max-width: 1400px) {
-  .prices__panel {
-    padding: 1.3333rem;
-  }
-
   .prices__filters {
     align-items: flex-start;
     flex-direction: column;
@@ -12611,175 +13229,77 @@ h2 {
     flex-wrap: wrap;
   }
 
-  .prices__notice {
-    grid-template-columns: 1fr;
-  }
-
   .prices__table {
     min-width: 61.1111rem;
   }
 }
 
-@media (max-width: 680px) {
-  .prices__panel {
-    padding: 0.6667rem;
-  }
-
-  .prices__content {
-    align-items: stretch;
-    gap: 1.1111rem;
-  }
-
-  .prices__breadcrumbs {
-    justify-content: center;
-    gap: 0.6667rem;
-    font-size: 0.7778rem;
-  }
-
+@media (max-width: 1200px) {
   .prices__title {
-    font-size: 1.5556rem;
-    line-height: 1.2;
+    font-size: 40px;
+    line-height: 48px;
   }
 
   .prices__notice {
-    padding: 0.8889rem;
-    font-size: 0.7778rem;
-    line-height: 1.5;
+    grid-template-columns: 1fr;
+    font-size: 18px;
+    line-height: 30px;
   }
-
-  .prices__filter-group,
-  .prices__dimensions,
-  .prices__fieldset {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.5556rem;
-  }
-
-  .prices__segmented {
-    max-width: 100%;
-    flex-wrap: wrap;
-  }
-
-  .prices__option {
-    min-height: 2.2222rem;
-    padding: 0.4444rem 0.6667rem;
-    font-size: 0.6667rem;
-    white-space: normal;
-  }
-
-  .prices__dimension {
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .prices__table {
-    min-width: 55.5556rem;
-  }
-}
-
-.prices__notice-toggle,
-.prices__parameters-toggle,
-.prices__mobile-summary,
-.prices__mobile-table {
-  display: none;
-}
-
-@media (min-width: 681px) {
-  .prices__notice-extra {
-    display: block;
-  }
-}
-
-@media (max-width: 680px) {
-  .prices {
-    border-radius: 0;
-  }
-
-  .prices__panel {
-    padding: 1.1111rem 0.7778rem;
-    border-radius: 1.1111rem;
-  }
-
-  .prices__content {
-    gap: 1.1111rem;
-  }
-
-  .prices__breadcrumbs {
-    align-self: center;
-    gap: 1.1111rem;
-    font-size: 0.7778rem;
-    line-height: 1.4;
-  }
-
-  .prices__title {
-    width: 100%;
-    font-size: 1.3333rem;
-    font-weight: 500;
-    line-height: 1.7778rem;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  .prices__notice {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.3333rem;
-    background: #FFF5001A;
-    font-size: 0.7778rem;
-    line-height: 1.2222rem;
-  }
-
-  .prices__notice p:first-child {
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 10;
-  }
-
-  .prices__notice.is-expanded p:first-child {
-    display: block;
-    overflow: visible;
-  }
-
-  .prices__notice-extra {
-    display: none;
-  }
-
-  .prices__notice.is-expanded .prices__notice-extra {
-    display: block;
-  }
-
-  .prices__notice-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-    gap: 0.7778rem;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    color: #324C88;
-    font-family: 'Onest-Medium', sans-serif;
-    font-size: 0.8889rem;
-    font-weight: 500;
-    line-height: 1.4;
-    cursor: pointer;
-  }
-
-  .prices__notice-toggle svg {
-    flex: 0 0 1.3333rem;
-    transition: transform 180ms ease;
-  }
-
-  .prices__notice.is-expanded .prices__notice-toggle svg {
-    transform: rotate(180deg);
-  }
-
   .prices__filters {
-    gap: 1.1111rem;
+    gap: 20px;
   }
 
+  .prices__table thead th {
+    font-size: 16px;
+  }
+
+  .pices__table-container {
+    gap: 24px;
+  }
+  
+  .prices-tech__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .prices-tech__header {
+    gap: 0.7778rem;
+  }
+
+  .prices-tech__subtitle {
+    max-width: 42.2222rem;
+    font-size: 20px;
+  }
+
+  .prices-calculation__inner {
+    min-height: 15.6667rem;
+    padding: 2.2222rem;
+  }
+
+  .prices-calculation__text {
+    gap: 0.7778rem;
+  }
+
+  .prices-calculation__title {
+    font-size: 1.3333rem;
+    line-height: 2.2222rem;
+  }
+
+  .prices-calculation__subtitle {
+    font-size: 1rem;
+  }
+
+  .prices-calculation__button {
+    min-height: 4.2222rem;
+    padding: 1.3333rem 2.6667rem;
+  }
+
+  .prices-calculation-img {
+    right: 1.3333rem;
+  }
+}
+
+@media (max-width: 760px) {
   .prices__table-wrap {
     overflow: visible;
   }
@@ -12791,8 +13311,11 @@ h2 {
   .prices__mobile-table {
     display: block;
     width: 100%;
-    color: #5D5D5D;
-    font-family: 'Onest-SemiBold', sans-serif;
+    padding: 4px;
+    color: #5d5d5d;
+    font-family: "Onest-SemiBold", sans-serif;
+    background-color: #F5F8F7;
+    border-radius: 10px;
   }
 
   .prices__mobile-table-heading {
@@ -12808,8 +13331,8 @@ h2 {
     justify-content: center;
     min-width: 0;
     padding: 0.7778rem 1.1111rem;
-    background: #E2E8ED;
-    color: #324C88;
+    background: #e2e8ed;
+    color: #324c88;
     font-size: 0.7778rem;
     font-weight: 600;
     line-height: 1.6;
@@ -12830,7 +13353,7 @@ h2 {
     display: grid;
     grid-template-columns: 5.5556rem minmax(0, 1fr);
     gap: 0.1111rem;
-    margin-bottom: 0.1111rem;
+    margin-bottom: 0.2222rem;
   }
 
   .prices__mobile-table-row span {
@@ -12839,7 +13362,7 @@ h2 {
     justify-content: center;
     min-width: 0;
     padding: 0.7778rem 1rem;
-    background: #FFFFFF;
+    background: #ffffff;
     font-size: 0.8889rem;
     font-weight: 600;
     line-height: 1.2222rem;
@@ -12853,8 +13376,8 @@ h2 {
   }
 
   .prices__mobile-table-total span {
-    background: #324C88;
-    color: #FFFFFF;
+    background: #324c88;
+    color: #ffffff;
     font-size: 0.8333rem;
     line-height: 1.3333rem;
   }
@@ -12866,21 +13389,177 @@ h2 {
   .prices__mobile-table-total span:last-child {
     border-bottom-right-radius: 0.7778rem;
   }
+
+  .prices-tech {
+    padding: 35px 0.7778rem 0.5556rem;
+  }
+
+  .prices-tech__inner {
+    padding: 0;
+    gap: 1.5556rem;
+  }
+
+  .prices-tech__subtitle {
+    font-size: 0.8333rem;
+  }
+
+  .prices-calculation {
+    padding: 1.1111rem 0.7778rem;
+  }
+
+  .prices-calculation__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    min-height: 0;
+    padding: 1rem;
+  }
+
+  .prices-calculation__content {
+    gap: 1.3333rem;
+    width: 100%;
+  }
+
+  .prices-calculation__text {
+    max-width: none;
+  }
+
+  .prices-calculation__title {
+    font-size: 1.3333rem;
+    line-height: 2.2222rem;
+  }
+
+  .prices-calculation__subtitle {
+    font-size: 1rem;
+    line-height: 1.6667rem;
+  }
+
+  .prices-calculation__button {
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.7778rem 1.1111rem;
+    font-size: 0.7778rem;
+    line-height: 1.4444rem;
+  }
+
+  .prices-calculation-img {
+    display: none;
+  }
 }
 
-
 @media (max-width: 680px) {
+  .prices-tech__title {
+  font-size: 20px;
+  line-height: 28px;
+  }
+  .pices__table-container {
+    gap: 17px;
+  }
+
+  .prices__notice-extra {
+    display: none;
+  }
+
+  .prices__content {
+    align-items: stretch;
+    gap: 1.1111rem;
+  }
+
+  .prices__segmented {
+    max-width: 100%;
+    flex-wrap: wrap;
+    padding: 0;
+    background: transparent;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5556rem;
+    width: 100%;
+    color: #2c2c2c;
+    font-family: "Onest-Medium", sans-serif;
+    font-weight: 500;
+    text-transform: none;
+    white-space: normal;
+  }
+
+  .prices__dimension {
+    justify-content: space-between;
+  }
+
+  .prices {
+    border-radius: 0;
+  }
+
+  .prices__panel {
+    padding: 1.1111rem 0.7778rem;
+  }
+
+  .prices__breadcrumbs {
+    align-self: center;
+    font-size: 0.7778rem;
+  }
+
+  .prices__title {
+    font-size: 1.3333rem;
+    line-height: 1.7778rem;
+  }
+
+  .prices__notice {
+    font-size: 0.7778rem;
+    line-height: 1.2222rem;
+  }
+
+  .prices__notice p:first-child {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 11;
+  }
+
+  .prices__notice.is-expanded p:first-child {
+    display: block;
+    overflow: visible;
+  }
+
+  .prices__notice.is-expanded .prices__notice-extra {
+    display: block;
+  }
+
+  .prices__notice-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    gap: 0.7778rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #324c88;
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 0.8889rem;
+    font-weight: 500;
+    line-height: 1.4;
+    cursor: pointer;
+  }
+
+  .prices__notice-toggle svg {
+    flex: 0 0 1.3333rem;
+    transition: transform 180ms ease;
+  }
+
+  .prices__notice.is-expanded .prices__notice-toggle svg {
+    transform: rotate(180deg);
+  }
+
   .prices__parameters-toggle {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     padding: 0.6667rem 1rem;
-    border: 0.1667rem solid #F5F8F7;
     border-radius: 0.5556rem;
-    background: #F5F8F7;
-    color: #4D4D4D;
-    font-family: 'Onest-Medium', sans-serif;
+    background: #f5f8f7;
+    color: #4d4d4d;
+    font-family: "Onest-Medium", sans-serif;
     font-size: 0.8889rem;
     font-weight: 500;
     line-height: 1.2222rem;
@@ -12892,20 +13571,13 @@ h2 {
     flex: 0 0 1.3333rem;
   }
 
-  .prices__filters.is-expanded {
-    display: flex;
-  }
-}
-
-
-@media (max-width: 680px) {
   .prices__mobile-summary {
     display: flex;
     flex-direction: column;
     gap: 0.8333rem;
     width: 100%;
-    color: #2C2C2C;
-    font-family: 'Onest-SemiBold', sans-serif;
+    color: #2c2c2c;
+    font-family: "Onest-SemiBold", sans-serif;
     font-size: 0.7778rem;
     font-weight: 600;
     line-height: 1.6;
@@ -12927,34 +13599,14 @@ h2 {
   }
 
   .prices__mobile-summary-item small {
-    color: #2C2C2C80;
-    font-family: 'Onest-Medium', sans-serif;
+    color: #2c2c2c80;
+    font-family: "Onest-Medium", sans-serif;
     font-size: 0.7222rem;
     font-weight: 500;
     line-height: 1.5;
     text-transform: none;
   }
-}
 
-.prices__filters-modal {
-  display: contents;
-}
-
-.prices__filters-backdrop,
-.prices__filters-header,
-.prices__filters-footer {
-  display: none;
-}
-
-.prices__filters-dialog {
-  display: contents;
-}
-
-.prices__filters-title {
-  margin: 0;
-}
-
-@media (max-width: 680px) {
   .prices__filters-modal {
     position: fixed;
     z-index: 1000;
@@ -12962,7 +13614,7 @@ h2 {
     display: none;
     align-items: stretch;
     justify-content: center;
-    background: #1D253561;
+    background: #1d253561;
   }
 
   .prices__filters-modal.is-open {
@@ -12987,7 +13639,7 @@ h2 {
     padding: 0.1111rem;
     overflow: hidden;
     border-radius: 0.5556rem;
-    background: #F8F8F8;
+    background: #f8f8f8;
   }
 
   .prices__filters-header {
@@ -12997,13 +13649,13 @@ h2 {
     gap: 0.7778rem;
     min-height: 3.1111rem;
     padding: 0.7778rem;
-    border-bottom: 0.1111rem solid #FFFFFF;
+    border-bottom: 0.1111rem solid #ffffff;
   }
 
   .prices__filters-title {
     flex: 1 1 auto;
-    color: #1D4395;
-    font-family: 'Onest-Medium', sans-serif;
+    color: #1d4395;
+    font-family: "Onest-Medium", sans-serif;
     font-size: 0.8889rem;
     font-weight: 500;
     line-height: 1.6;
@@ -13016,34 +13668,30 @@ h2 {
     justify-content: center;
     width: 1.3333rem;
     height: 1.3333rem;
-    color: #4D4D4D;
+    color: #4d4d4d;
   }
 
   .prices__filters-close:focus-visible,
   .prices__filters-back:focus-visible {
-    outline: 0.1111rem solid #2555BD;
+    outline: 0.1111rem solid #2555bd;
     outline-offset: 0.1111rem;
   }
 
   .prices__filters {
-    display: flex;
     flex: 1 1 auto;
-    flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
     gap: 0.7778rem;
     min-height: 0;
-    width: 100%;
     padding: 0.6667rem 1.5556rem 0.6667rem 0.7778rem;
     overflow-y: auto;
     overscroll-behavior: contain;
     border-radius: 0.5556rem;
-    background: #EFEFEF;
+    background: #efefef;
   }
 
   .prices__filter-group,
   .prices__dimensions {
-    display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 0.7778rem;
@@ -13051,7 +13699,6 @@ h2 {
   }
 
   .prices__fieldset {
-    display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 0.7778rem;
@@ -13060,35 +13707,22 @@ h2 {
 
   .prices__fieldset legend {
     float: none;
-    color: #2C2C2CE6;
-    font-family: 'Onest-Medium', sans-serif;
-    font-size: 1rem;
+    color: #2c2c2ce6;
+    font-family: "Onest-Medium", sans-serif;
     font-weight: 500;
     line-height: 1.4444rem;
     text-transform: none;
   }
 
-  .prices__segmented {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.7778rem;
-    width: 100%;
-    padding: 0;
-    background: transparent;
-  }
-
   .prices__option {
-    display: flex;
-    align-items: center;
     justify-content: space-between;
     gap: 0.6667rem;
     width: 100%;
     min-height: 1.2222rem;
     padding: 0;
     border-radius: 0;
-    color: #2C2C2C;
-    font-family: 'Onest-Medium', sans-serif;
+    color: #2c2c2c;
+    font-family: "Onest-Medium", sans-serif;
     font-size: 0.7778rem;
     font-weight: 500;
     line-height: 1.2222rem;
@@ -13105,22 +13739,9 @@ h2 {
     flex: 0 0 1rem;
     width: 1rem;
     height: 1rem;
-    background: no-repeat center / 1rem 1rem url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18' fill='none'%3E%3Cpath d='m4 9 3 3 7-7' stroke='%232555BD' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background: no-repeat center / 1rem 1rem
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18' fill='none'%3E%3Cpath d='m4 9 3 3 7-7' stroke='%232555BD' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     content: "";
-  }
-
-  .prices__dimension {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.5556rem;
-    width: 100%;
-    color: #2C2C2C;
-    font-family: 'Onest-Medium', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    text-transform: none;
-    white-space: normal;
   }
 
   .prices__dimension select {
@@ -13128,7 +13749,7 @@ h2 {
     min-width: 0;
     padding: 0.5556rem 2.2222rem 0.5556rem 0;
     border-radius: 0;
-    border-bottom: 0.0556rem solid #2C2C2C1F;
+    border-bottom: 0.0556rem solid #2c2c2c1f;
     background-color: transparent;
     background-position: right 0.2222rem center;
     font-size: 0.7778rem;
@@ -13140,7 +13761,7 @@ h2 {
     align-items: center;
     justify-content: center;
     padding: 0.2222rem;
-    background: #F8F8F8;
+    background: #f8f8f8;
   }
 
   .prices__filters-back {
@@ -13151,9 +13772,9 @@ h2 {
     min-height: 3.5556rem;
     padding: 1.2222rem 3.5556rem;
     border-radius: 0.5556rem;
-    background: #D7E1F7;
-    color: #2555BD;
-    font-family: 'Onest-Medium', sans-serif;
+    background: #d7e1f7;
+    color: #2555bd;
+    font-family: "Onest-Medium", sans-serif;
     font-size: 0.8889rem;
     font-weight: 500;
     line-height: 1.2;
@@ -13168,778 +13789,11 @@ h2 {
   .prices__notice-toggle svg {
     transition: none;
   }
-}
 
-.prices-tech {
-  padding: 0.5556rem;
-  background: #F5F8F7;
-  color: #4D4D4D;
-  font-family: 'Onest-Regular', sans-serif;
-}
-
-.prices-tech__inner {
-  width: 100%;
-  padding: 3.5556rem 2.2222rem;
-  border-radius: 1.1111rem;
-  background: #F5F8F7;
-}
-
-.prices-tech__header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.3333rem;
-  margin: 0 auto 2.6667rem;
-  text-align: center;
-}
-
-.prices-tech__title {
-  margin: 0;
-  color: #4D4D4D;
-  font-family: 'Onest-SemiBold', sans-serif;
-  font-size: 2.6667rem;
-  font-weight: 600;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
-.prices-tech__subtitle {
-  max-width: 100%;
-  margin: 0;
-  color: #5D5D5D;
-  font-size: 1.3333rem;
-  line-height: 1.6;
-}
-
-.prices-tech__layout {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: start;
-  gap: 7.7778rem;
-  max-width: 83.7778rem;
-  margin: 0 auto;
-}
-
-.prices-tech__buildings {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-content: center;
-  gap: 2rem 1.1111rem;
-  min-height: 38.3889rem;
-  padding: 2rem 1.3333rem;
-  border-radius: 1.6667rem;
-  background: #FFF;
-}
-
-.prices-tech__building {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-  text-align: center;
-}
-
-.prices-tech__building img {
-  display: block;
-  width: min(100%, 11.1111rem);
-  height: 7.3889rem;
-  margin-bottom: 1rem;
-  object-fit: contain;
-}
-
-.prices-tech__building h3 {
-  height: stretch;
-  width: 100%;
-  hyphens: auto;
-  overflow-wrap: normal;
-  margin: 0 0 0.7778rem;
-  color: #505050;
-  font-family: 'Onest-SemiBold', sans-serif;
-  font-size: 1.6667rem;
-  font-weight: 600;
-  line-height: 1.35;
-  text-transform: uppercase;
-}
-
-.prices-tech__building p {
-  margin: 0;
-  color: #4D4D4DCC;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.prices-tech__list {
-  min-width: 0;
-}
-
-.prices-tech__item {
-  padding: 0 0 1.1111rem;
-  margin: 0 0 1.1111rem;
-  border-top: 0.0556rem solid #0000000D;
-}
-
-.prices-tech__item:last-child {
-  margin-bottom: 0;
-}
-
-.prices-tech__item-heading {
-  margin: 0;
-}
-
-.prices-tech__item-heading button {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.3333rem;
-  width: 100%;
-  padding: 1.1111rem 0 0;
-  border: 0;
-  background: transparent;
-  color: #4D4D4D;
-  font-family: 'Onest-SemiBold', sans-serif;
-  font-size: 1.1111rem;
-  font-weight: 600;
-  line-height: 1.5;
-  text-align: left;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.prices-tech__icon {
-  display: flex;
-  flex: 0 0 2.2222rem;
-  align-items: center;
-  justify-content: center;
-  width: 2.2222rem;
-  height: 2.2222rem;
-  margin-top: 0;
-  border-radius: 50%;
-  background: #FFF500;
-  color: #222;
-  font-family: Arial, sans-serif;
-  font-size: 1.5556rem;
-  font-weight: 400;
-  line-height: 1;
-}
-
-.prices-tech__item-heading button:focus-visible {
-  outline: 0.1111rem solid #324C88;
-  outline-offset: 0.2222rem;
-}
-
-.prices-tech__description {
-  overflow: hidden;
-  padding: 0.7778rem 0 0 3.5556rem;
-}
-
-.prices-tech__description p {
-  margin: 0;
-  color: #4D4D4DCC;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-@media (max-width: 1200px) {
-  .prices-tech__inner {
-    padding: 2.6667rem 1.3333rem;
-  }
-
-  .prices-tech__title {
-    font-size: 2rem;
-  }
-
-  .prices-tech__subtitle {
-    font-size: 1rem;
-  }
-
-  .prices-tech__layout {
-    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-    gap: 1.7778rem;
-  }
-
-  .prices-tech__building h3 {
-    font-size: 1.3333rem;
-  }
-
-  .prices-tech__buildings {
-    min-height: 0;
-    padding: 1.5556rem 1rem;
-    gap: 1.6667rem 0.6667rem;
-  }
-
-  .prices-tech__item-heading button {
-    gap: 0.8889rem;
-    font-size: 0.9444rem;
-  }
-
-  .prices-tech__description {
-    padding-left: 3.1111rem;
-  }
-}
-
-@media (max-width: 760px) {
-  .prices-tech {
-    padding: 0;
-  }
-
-  .prices-tech__inner {
-    padding: 2.2222rem 0.7778rem;
-    border-radius: 0;
-  }
-
-  .prices-tech__header {
-    gap: 0.8889rem;
-    margin-bottom: 1.5556rem;
-  }
-
-  .prices-tech__title {
-    font-size: 1.4444rem;
-    line-height: 1.25;
-  }
-
-  .prices-tech__subtitle {
-    font-size: 0.8889rem;
-    line-height: 1.5;
-  }
-
-  .prices-tech__layout {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1.7778rem;
-  }
-
-  .prices-tech__buildings {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5556rem 0.6667rem;
-    padding: 1.3333rem 0.6667rem;
-    border-radius: 1.1111rem;
-  }
-
-  .prices-tech__building img {
-    height: 5.5556rem;
-    margin-bottom: 0.6667rem;
-  }
-
-  .prices-tech__building h3 {
-    margin-bottom: 0.4444rem;
-    font-size: 0.9444rem;
-  }
-
-  .prices-tech__building p {
-    font-size: 0.7778rem;
-  }
-
-  .prices-tech__item {
-    padding-bottom: 0.8889rem;
-    margin-bottom: 0.8889rem;
-  }
-
-  .prices-tech__item-heading button {
-    align-items: center;
-    gap: 0.6667rem;
-    padding-top: 0.8889rem;
-    font-size: 0.8333rem;
-    line-height: 1.4;
-  }
-
-  .prices-tech__icon {
-    flex-basis: 2rem;
-    width: 2rem;
-    height: 2rem;
-    font-size: 1.3889rem;
-  }
-
-  .prices-tech__description {
-    padding: 0.6667rem 0 0 2.6667rem;
-  }
-
-  .prices-tech__description p {
-    font-size: 0.8333rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .prices-tech__title {
-    font-size: 1.2778rem;
-  }
-
-  .prices-tech__buildings {
-    padding: 1.1111rem 0.4444rem;
-  }
-
-  .prices-tech__building h3 {
-    font-size: 0.8333rem;
-  }
-
-  .prices-tech__building p {
-    font-size: 0.7222rem;
-  }
-
-  .prices-tech__item-heading button {
-    font-size: 0.7778rem;
-  }
-}
-
-.prices-tech__mobile-buildings {
-  display: none;
-}
-
-@media (min-width: 761px) and (max-width: 1200px) {
-  .prices-tech__inner {
-    padding: 2.2222rem 1.3333rem;
-  }
-
-  .prices-tech__header {
-    gap: 1.1111rem;
-    margin-bottom: 1.7778rem;
-  }
-
-  .prices-tech__title {
-    font-size: 1.7778rem;
-  }
-
-  .prices-tech__subtitle {
-    max-width: 42.2222rem;
-    font-size: 1rem;
-  }
-
-  .prices-tech__layout {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1.7778rem;
-    max-width: 48.8889rem;
-  }
-
-  .prices-tech__buildings {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    min-height: 0;
-    gap: 1.5556rem 1.1111rem;
-    padding: 1.7778rem 1.3333rem;
-  }
-
-  .prices-tech__building img {
-    width: min(100%, 8.8889rem);
-    height: 5.8889rem;
-  }
-
-  .prices-tech__building h3 {
-    height: auto;
-    font-size: 1.2222rem;
-  }
-
-  .prices-tech__list {
-    width: 100%;
-  }
-}
-
-@media (max-width: 760px) {
-  .prices-tech {
-    padding: 0 0 0.5556rem;
-  }
-
-  .prices-tech__inner {
-    padding: 1.6667rem 0.7778rem 0.5556rem;
-    border-radius: 0.5556rem;
-  }
-
-  .prices-tech__header {
-    gap: 0.7778rem;
-    margin-bottom: 1.3889rem;
-  }
-
-  .prices-tech__title {
-    max-width: 100%;
-    font-size: 1.1111rem;
-    line-height: 1.5556rem;
-  }
-
-  .prices-tech__subtitle {
-    font-size: 0.8333rem;
-    line-height: 1.6;
-  }
-
-  .prices-tech__layout {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0;
-  }
-
-  .prices-tech__buildings {
-    display: none;
-  }
-
-  .prices-tech__item {
-    padding: 0 0 1.1111rem;
-    margin: 0 0 1.1111rem;
-  }
-
-  .prices-tech__item-heading button {
-    align-items: flex-start;
-    gap: 1.3333rem;
-    padding-top: 0;
-    font-size: 0.8889rem;
-    line-height: 1.5;
-  }
-
-  .prices-tech__icon {
-    flex: 0 0 1.6667rem;
-    width: 1.6667rem;
-    height: 1.6667rem;
-    font-size: 1.2222rem;
-  }
-
-  .prices-tech__description {
-    padding: 0.7778rem 0 0;
-  }
-
-  .prices-tech__description > p {
-    padding-left: 3rem;
-    font-size: 0.7778rem;
-    line-height: 1.5;
-  }
-
-  .prices-tech__mobile-buildings {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    margin-top: 1rem;
-    padding: 1.3333rem;
-    border-radius: 1.6667rem;
-    background: #FFFFFF;
-  }
-
-  .prices-tech__mobile-building {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4444rem;
-    min-width: 0;
-    text-align: center;
-  }
-
-  .prices-tech__mobile-building img {
-    display: block;
-    width: 5.8333rem;
-    height: 3.8889rem;
-    margin: 0 0 0.1111rem;
-    object-fit: contain;
-  }
-
-  .prices-tech__mobile-building h4 {
-    margin: 0;
-    color: #505050;
-    font-family: 'Onest-SemiBold', sans-serif;
-    font-size: 1.1111rem;
-    font-weight: 600;
-    line-height: 1.6;
-    text-transform: uppercase;
-  }
-
-  .prices-tech__mobile-building p {
-    margin: 0;
-    color: #4D4D4DCC;
-    font-size: 0.8889rem;
-    line-height: 1.5;
-  }
-}
-
-@media (max-width: 360px) {
-  .prices-tech__inner {
-    padding-right: 0.5556rem;
-    padding-left: 0.5556rem;
-  }
-
-  .prices-tech__mobile-buildings {
-    padding: 1.3333rem;
-  }
-}
-
-.prices-tech__buildings--responsive {
-  display: none;
-}
-
-@media (max-width: 1200px) {
-  .prices-tech__layout > .prices-tech__buildings {
-    display: none;
-  }
-
-  .prices-tech__description .prices-tech__buildings--responsive {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-content: center;
-    gap: 1.5556rem 1.1111rem;
-    min-height: 0;
-    width: 100%;
-    margin-top: 1rem;
-    padding: 1.7778rem 1.3333rem;
-    border-radius: 1.6667rem;
-    background: #FFFFFF;
-  }
-
-  .prices-tech__description .prices-tech__building img {
-    width: min(100%, 8.8889rem);
-    height: 5.8889rem;
-    margin-bottom: 0.6667rem;
-  }
-
-  .prices-tech__description .prices-tech__building h3 {
-    height: auto;
-    margin-bottom: 0.4444rem;
-    font-size: 1.2222rem;
-  }
-
-  .prices-tech__description .prices-tech__building p {
-    font-size: 0.8889rem;
-  }
-}
-
-@media (max-width: 760px) {
-  .prices-tech__description .prices-tech__buildings--responsive {
-    gap: 1.5556rem 0.6667rem;
-    padding: 1.3333rem 0.6667rem;
-    border-radius: 1.1111rem;
-  }
-
-  .prices-tech__description .prices-tech__building img {
-    height: 5.5556rem;
-    margin-bottom: 0.4444rem;
-  }
-
-  .prices-tech__description .prices-tech__building h3 {
-    font-size: 0.9444rem;
-  }
-
-  .prices-tech__description .prices-tech__building p {
-    font-size: 0.7778rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .prices-tech__description .prices-tech__buildings--responsive {
-    padding: 1.1111rem 0.4444rem;
-  }
-
-  .prices-tech__description .prices-tech__building h3 {
-    font-size: 0.8333rem;
-  }
-
-  .prices-tech__description .prices-tech__building p {
-    font-size: 0.7222rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .prices-tech__description .prices-tech__buildings--responsive {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1.3333rem;
-  }
-
-  .prices-tech__description .prices-tech__building--compact-hidden {
-    display: flex;
-  }
-}
-
-.prices-calculation {
-  padding: 1.1111rem 2.5rem;
-  background: #F5F8F7;
-}
-
-.prices-calculation__inner {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.2222rem;
-  min-height: 17.6667rem;
-  padding: 2.2222rem 2.5rem;
-  overflow: hidden;
-  border-radius: 1.1111rem;
-  background: #324C88;
-  color: #FFFFFF;
-}
-
-.prices-calculation__content {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex: 1 1 0;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2rem;
-  min-width: 0;
-}
-
-.prices-calculation__text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.3333rem;
-  width: 100%;
-  max-width: 42.3333rem;
-}
-
-.prices-calculation__title {
-  max-width: 42.3333rem;
-  margin: 0;
-  color: #FFFFFF;
-  font-family: 'Onest-SemiBold', sans-serif;
-  font-size: 2.1111rem;
-  font-weight: 600;
-  line-height: 3.2222rem;
-  text-transform: uppercase;
-}
-
-.prices-calculation__subtitle {
-  max-width: 42.3333rem;
-  margin: 0;
-  color: #FFFFFF;
-  font-family: 'Onest-Medium', sans-serif;
-  font-size: 1.2222rem;
-  font-weight: 500;
-  line-height: 2rem;
-  text-transform: uppercase;
-}
-
-.prices-calculation__button {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 4.6667rem;
-  padding: 1.5556rem 2.6667rem;
-  border-radius: 1.1111rem;
-  background: #FFF500;
-  color: #324C88;
-  font-family: 'Onest-SemiBold', sans-serif;
-  font-size: 1.1111rem;
-  font-weight: 600;
-  line-height: 1.5556rem;
-  text-align: center;
-  text-transform: uppercase;
-  transition: background-color 0.15s ease;
-}
-
-.prices-calculation__button:hover {
-  background: #F5EB0A;
-}
-
-.prices-calculation__button:focus-visible {
-  outline: 0.1111rem solid #FFFFFF;
-  outline-offset: 0.2222rem;
-}
-
-.prices-calculation-img {
-  position: absolute;
-  right: 2.5rem;
-  bottom: 0;
-  z-index: 0;
-  display: block;
-  width: min(52%, 45.1111rem);
-  max-width: 45.1111rem;
-  height: stretch;
-}
-
-@media (min-width: 761px) and (max-width: 1200px) {
-  .prices-calculation {
-    padding: 1.6667rem 2.2222rem;
-  }
-
-  .prices-calculation__inner {
-    min-height: 15.6667rem;
-    padding: 2.2222rem;
-  }
-
-  .prices-calculation__content {
-    gap: 2rem;
-  }
-
-  .prices-calculation__text {
-    gap: 0.7778rem;
-  }
-
-  .prices-calculation__title {
-    max-width: 42.3333rem;
-    font-size: 1.3333rem;
-    line-height: 2.2222rem;
-  }
-
-  .prices-calculation__subtitle {
-    max-width: 42.3333rem;
-    font-size: 1rem;
-    line-height: 2rem;
-  }
-
-  .prices-calculation__button {
-    min-height: 4.2222rem;
-    padding: 1.3333rem 2.6667rem;
-    font-size: 1.1111rem;
-    line-height: 1.5556rem;
-  }
-
-  .prices-calculation-img {
-    right: 1.3333rem;
-    width: min(48%, 33.3333rem);
-  }
-}
-
-@media (max-width: 760px) {
-  .prices-calculation {
-    padding: 1.1111rem 0.7778rem;
-    background: #F5F8F7;
-  }
-
-  .prices-calculation__inner {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    min-height: 0;
-    padding: 1rem;
-    border-radius: 1.1111rem;
-  }
-
-  .prices-calculation__content {
-    gap: 1.3333rem;
-    width: 100%;
-  }
-
-  .prices-calculation__text {
-    gap: 0.7778rem;
-    max-width: none;
-  }
-
-  .prices-calculation__title {
-    max-width: none;
-    font-size: 1.3333rem;
-    font-weight: 600;
-    line-height: 2.2222rem;
-  }
-
-  .prices-calculation__subtitle {
-    max-width: none;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.6667rem;
-  }
-
-  .prices-calculation__button {
-    width: 100%;
-    min-height: 3rem;
-    padding: 0.7778rem 1.1111rem;
-    border-radius: 1.1111rem;
-    font-size: 0.7778rem;
-    font-weight: 600;
-    line-height: 1.4444rem;
-  }
-
-  .prices-calculation-img {
-    display: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
   .prices-calculation__button {
     transition: none;
   }
 }
-
 
 /* Footer styles moved from components/layout/footer/footer.css. */
 
@@ -13985,7 +13839,3 @@ h2 {
 
 /* footer */
 
-.flex-col {
-  display: flex;
-  flex-direction: column;
-}

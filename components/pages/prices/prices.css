@@ -1,0 +1,585 @@
+/* Новая разметка аккардеона */
+
+.cards-accordion {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 710px) minmax(0, 658px);
+  justify-content: space-between;
+  gap: 80px;
+  width: 100%;
+  max-width: 1508px;
+  min-width: 0;
+}
+
+.cards-accordion__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: max-content max-content;
+  gap: 36px 20px;
+  padding: 24px;
+  background-color: #ffffff;
+  align-content: center;
+  height: 691px;
+  border-radius: 30px;
+}
+
+.accordion--tablet-visual {
+  display: none;
+}
+
+.cards-accordion__item {
+  text-align: center;
+  margin: 0;
+  gap: 18px;
+}
+
+.cards-accordion__image {
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
+}
+
+.cards-accordion__descr {
+  gap: 14px;
+}
+
+.cards-accordion__title {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 160%;
+  text-transform: uppercase;
+  color: #505050;
+}
+
+.cards-accordion__price {
+  font-size: 18px;
+  line-height: 150%;
+  color: #4d4d4dcc;
+}
+
+/* Аккордеон */
+
+.cards-accordion__accordion-item {
+  padding: 26px 0px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-bottom: 1px solid rgb(0 0 0 / 5%);
+}
+
+.cards-accordion__accordion-item:first-child {
+  border-top: 1px solid rgb(0 0 0 / 5%);
+}
+
+.cards-accordion__accordion-heading {
+  margin: 0;
+  font: inherit;
+}
+
+.cards-accordion__accordion-toggle {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  min-width: 0;
+  color: #4d4d4d;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: left;
+  text-transform: uppercase;
+}
+.cards-accordion__accordion-toggle-icon {
+  display: flex;
+  flex: 0 0 40px;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff500;
+}
+.cards-accordion__accordion-toggle-icon svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: #324c88;
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+
+.cards-accordion__accordion-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow: hidden;
+  padding-left: 64px;
+}
+.cards-accordion__accordion-body[hidden] {
+  display: none;
+}
+
+.cards-accordion__accordion-text {
+  gap: 14px;
+  color: #4d4d4dcc;
+  font-family: "Onest-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 1100px) {
+  .accodion--desk-visual {
+    display: none;
+  }
+
+  .accordion--tablet-visual {
+    display: grid;
+  }
+
+  .cards-accordion {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-accordion__list {
+    height: auto;
+    gap: 18px;
+  }
+
+  .cards-accordion__item {
+    gap: 10px;
+  }
+
+  .cards-accordion__image {
+    width: 105px;
+  }
+
+  .cards-accordion__descr {
+    gap: 8px;
+  }
+
+  .cards-accordion__title {
+    font-size: 20px;
+  }
+
+  .cards-accordion__price {
+    font-size: 16px;
+  }
+
+  .cards-accordion__accordion-list {
+    width: 100%;
+  }
+
+  .cards-accordion__accordion-body {
+    padding-left: 0;
+  }
+}
+
+/* Агрокомплексы из ЛСТК — Figma 1857:26186, планшетный кадр 1024 px. */
+@media screen and (max-width: 1100px) {
+  .cards-accordion__accordion-toggle {
+    font-size: 18px;
+  }
+
+  .cards-accordion__accordion-toggle-icon {
+    flex-basis: 30px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .cards-accordion__accordion-toggle-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .cards-accordion__accordion-item {
+    gap: 14px;
+  }
+  .cards-accordion__accordion-text {
+    font-size: 16px;
+    padding-left: 54px;
+  }
+}
+
+@media screen and (min-width: 681px) and (max-width: 760px) {
+  .cards-accordion__accordion-list {
+    gap: 20px;
+  }
+
+  .cards-accordion__accordion-item {
+    gap: 16px;
+    padding-bottom: 16px;
+  }
+
+  .cards-accordion__accordion-toggle {
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 16px;
+  }
+
+  .cards-accordion__accordion-toggle-icon {
+    flex-basis: 36px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .cards-accordion__accordion-body {
+    gap: 12px;
+  }
+
+  .cards-accordion__accordion-text {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .cards-accordion__accordion-toggle {
+    font-size: 16px;
+  }
+  .cards-accordion__list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .cards-accordion__accordion-toggle-icon {
+    flex-basis: 30px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .cards-accordion__accordion-toggle-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .cards-accordion__accordion-text {
+    font-size: 14px;
+  }
+}
+
+
+
+/* Старая разметка аккардеона */
+.prices-tech__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 710px) minmax(0, 658px);
+  align-items: start;
+  gap: 4.4444rem;
+  justify-content: space-between;
+  max-width: 83.7778rem;
+  margin: 0 auto;
+}
+
+.prices-tech__buildings {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: center;
+  gap: 2rem 1.1111rem;
+  min-height: 38.3889rem;
+  padding: 2rem 1.3333rem;
+  border-radius: 1.6667rem;
+  background: #fff;
+}
+
+.prices-tech__building {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  text-align: center;
+}
+
+.prices-tech__building img {
+  display: block;
+  width: min(100%, 11.1111rem);
+  height: 7.3889rem;
+  margin-bottom: 1rem;
+  object-fit: contain;
+}
+
+.prices-tech__building h3 {
+  height: stretch;
+  width: 100%;
+  hyphens: auto;
+  overflow-wrap: normal;
+  margin: 0 0 0.7778rem;
+  color: #505050;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 1.6667rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.prices-tech__building p {
+  margin: 0;
+  color: #4d4d4dcc;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.prices-tech__list {
+  min-width: 0;
+}
+
+.prices-tech__item {
+  padding: 1.1111rem 0;
+  border-top: 0.0556rem solid #0000000d;
+}
+.prices-tech__item:last-child {
+  border-bottom: 0.0556rem solid #0000000d;
+}
+
+
+.prices-tech__item-heading button {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.3333rem;
+  width: 100%;
+  color: #4d4d4d;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 1.1111rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.prices-tech__icon {
+  display: flex;
+  flex: 0 0 2.2222rem;
+  align-items: center;
+  justify-content: center;
+  width: 2.2222rem;
+  height: 2.2222rem;
+  margin-top: 0;
+  border-radius: 50%;
+  background: #fff500;
+  color: #324C88;
+  font-family: Arial, sans-serif;
+  font-size: 1.5556rem;
+  font-weight: 400;
+  line-height: 1;
+}
+.prices-tech__item-heading button:focus-visible {
+  outline: 0.1111rem solid #324c88;
+  outline-offset: 0.2222rem;
+}
+
+.prices-tech__item-head {
+  align-self: center;
+}
+
+
+.prices-tech__description {
+  overflow: hidden;
+  padding: 0.7778rem 0 0 3.5556rem;
+}
+
+.prices-tech__description p {
+  margin: 0;
+  color: #4d4d4dcc;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.prices-tech__buildings--responsive {
+  display: none;
+}
+
+/* ===== Медиа-запросы ===== */
+
+@media (max-width: 1200px) {
+  .prices-tech__buildings {
+    min-height: 0;
+  }
+
+  .prices-tech__item-heading button {
+    gap: 0.8889rem;
+    font-size: 0.9444rem;
+  }
+
+  .prices-tech__description {
+    padding-left: 3.1111rem;
+  }
+
+  .prices-tech__layout > .prices-tech__buildings {
+    display: none;
+  }
+
+  .prices-tech__description .prices-tech__buildings--responsive {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-content: center;
+    gap: 1.5556rem 1.1111rem;
+    min-height: 0;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1.7778rem 1.3333rem;
+    border-radius: 1.6667rem;
+    background: #ffffff;
+  }
+
+  .prices-tech__description .prices-tech__building img {
+    width: min(100%, 8.8889rem);
+    height: 5.8889rem;
+    margin-bottom: 0.6667rem;
+  }
+
+  .prices-tech__description .prices-tech__building h3 {
+    height: auto;
+    margin-bottom: 0.4444rem;
+    font-size: 1.2222rem;
+  }
+
+  .prices-tech__description .prices-tech__building p {
+    font-size: 0.8889rem;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1200px) {
+  .prices-tech__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.7778rem;
+    max-width: 48.8889rem;
+  }
+
+  .prices-tech__buildings {
+    gap: 1.5556rem 1.1111rem;
+    padding: 1.7778rem 1.3333rem;
+  }
+
+  .prices-tech__building img {
+    width: min(100%, 8.8889rem);
+    height: 5.8889rem;
+  }
+
+  .prices-tech__building h3 {
+    height: auto;
+    font-size: 1.2222rem;
+  }
+
+  .prices-tech__list {
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .prices-tech__buildings {
+    gap: 1.5556rem 0.6667rem;
+    padding: 1.3333rem 0.6667rem;
+    border-radius: 1.1111rem;
+  }
+
+  .prices-tech__building img {
+    height: 5.5556rem;
+    margin-bottom: 0.6667rem;
+  }
+
+  .prices-tech__building h3 {
+    margin-bottom: 0.4444rem;
+    font-size: 0.9444rem;
+  }
+
+  .prices-tech__building p {
+    font-size: 0.7778rem;
+  }
+
+  .prices-tech__description p {
+    font-size: 0.8333rem;
+  }
+
+  .prices-tech__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .prices-tech__buildings {
+    display: none;
+  }
+
+  .prices-tech__item {
+    padding: 0 0 1.1111rem;
+    margin: 0 0 1.1111rem;
+  }
+
+  .prices-tech__item-heading button {
+    gap: 1.3333rem;
+    padding-top: 0;
+    font-size: 0.8889rem;
+  }
+
+  .prices-tech__icon {
+    flex: 0 0 1.6667rem;
+    width: 1.6667rem;
+    height: 1.6667rem;
+    font-size: 1.2222rem;
+  }
+
+  .prices-tech__description {
+    padding: 0.7778rem 0 0;
+  }
+
+  .prices-tech__description > p {
+    padding-left: 3rem;
+    font-size: 0.7778rem;
+  }
+
+  .prices-tech__description .prices-tech__buildings--responsive {
+    gap: 1.5556rem 0.6667rem;
+    padding: 1.3333rem 0.6667rem;
+    border-radius: 1.1111rem;
+  }
+
+  .prices-tech__description .prices-tech__building img {
+    height: 5.5556rem;
+    margin-bottom: 0.4444rem;
+  }
+
+  .prices-tech__description .prices-tech__building h3 {
+    font-size: 0.9444rem;
+  }
+
+  .prices-tech__description .prices-tech__building p {
+    font-size: 0.7778rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .prices-tech__description .prices-tech__buildings--responsive {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.3333rem;
+  }
+
+  .prices-tech__description .prices-tech__building--compact-hidden {
+    display: flex;
+  }
+}
+
+@media (max-width: 360px) {
+  .prices-tech__buildings {
+    padding: 1.1111rem 0.4444rem;
+  }
+
+  .prices-tech__building h3 {
+    font-size: 0.8333rem;
+  }
+
+  .prices-tech__building p {
+    font-size: 0.7222rem;
+  }
+
+  .prices-tech__description .prices-tech__buildings--responsive {
+    padding: 1.1111rem 0.4444rem;
+  }
+
+  .prices-tech__description .prices-tech__building h3 {
+    font-size: 0.8333rem;
+  }
+
+  .prices-tech__description .prices-tech__building p {
+    font-size: 0.7222rem;
+  }
+}
