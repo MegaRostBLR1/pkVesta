@@ -9,7 +9,23 @@ const APP_CONFIG = {
     css: './components/layout/footer/footer.css',
     js: './components/layout/footer/footer.js'
   },
-  defaultPage: 'calculator',
+  cookies: {
+    html: './components/layout/popups/cookies/cookies.html',
+    css: './components/layout/popups/cookies/cookies.css',
+    js: './components/layout/popups/cookies/cookies.js'
+  },
+  subscribe: {
+    html: './components/layout/popups/subscribe/subscribe.html',
+    css: './components/layout/popups/subscribe/subscribe.css',
+    js: './components/layout/popups/subscribe/subscribe.js'
+  },
+  modal: {
+    html: './components/layout/popups/main-modal/main-modal.html',
+    css: './components/layout/popups/main-modal/main-modal.css',
+    js: './components/layout/popups/main-modal/main-modal.js',
+    init: 'initMainModal'
+  },
+  defaultPage: 'home',
   pages: {
     'home': {
       title: 'Главная',
@@ -38,6 +54,13 @@ const APP_CONFIG = {
       css: './components/pages/buildings/buildings.css',
       js: './components/pages/buildings/buildings.js',
       init: 'initBuildings'
+    },
+    'fast-buildings': {
+      title: 'Быстровозводимые здания',
+      html: './components/pages/fast-buildings/fast-buildings.html',
+      css: './components/pages/fast-buildings/fast-buildings.css',
+      js: './components/pages/fast-buildings/fast-buildings.js',
+      init: 'initFastBuildings'
     },
     'buildings-directory': {
       title: 'Каталог зданий',
@@ -151,6 +174,13 @@ const APP_CONFIG = {
       js: './components/pages/press-center/articles/articles.js',
       init: 'initArticles'
     },
+    'article-item': {
+      title: 'Статья',
+      html: './components/pages/press-center/article-item/article-item.html',
+      css: './components/pages/press-center/article-item/article-item.css',
+      js: './components/pages/press-center/article-item/article-item.js',
+      init: 'initArticleItem'
+    },
     'about': {
       title: 'О компании',
       html: './components/pages/about/about.html',
@@ -165,6 +195,13 @@ const APP_CONFIG = {
       js: './components/pages/prices/prices.js',
       init: 'initPrices'
     },
+    'calculator': {
+      title: 'Онлайн калькулятор',
+      html: './components/pages/calculator/calculator.html',
+      css: './components/pages/calculator/calculator.css',
+      js: './components/pages/calculator/calculator.js',
+      init: 'initCalculator'
+    },
     'contacts': {
       title: 'Контакты',
       html: './components/pages/contacts/contacts.html',
@@ -172,12 +209,12 @@ const APP_CONFIG = {
       js: './components/pages/contacts/contacts.js',
       init: 'initContacts'
     },
-    'calculator': {
-      title: 'Онлайн калькулятор зданий',
-      html: './components/pages/calculator/calculator.html',
-      css: './components/pages/calculator/calculator.css',
-      js: './components/pages/calculator/calculator.js',
-      init: 'initCalculator'
+    'search-result': {
+      title: 'Результаты поиска',
+      html: './components/pages/search-result/search-result.html',
+      css: './components/pages/search-result/search-result.css',
+      js: './components/pages/search-result/search-result.js',
+      init: 'initSearchResult'
     }
   }
 };
@@ -207,7 +244,9 @@ async function loadHtml(url) {
 
 async function loadComponent(target, component) {
   target.innerHTML = await loadHtml(component.html);
-  loadStylesheet(component.css);
+  if (component.css) {
+    loadStylesheet(component.css);
+  }
   await loadScript(component.js);
 }
 
@@ -310,9 +349,15 @@ async function renderPage(pageName) {
 
 
 function initNavigationRouting() {
+  const calculatorLink = document.querySelector('.app-header .header-bottom__action-calculation');
+
+  if (calculatorLink) {
+    calculatorLink.href = '#/calculator';
+  }
+
   const routeByLabel = {
-    'Продукция': 'objects',
-    'Быстровозводимые здания': 'buildings',
+    'Продукция': 'buildings',
+    'Быстровозводимые здания': 'fast-buildings',
     'Легкие металлоконструкции': 'objects',
     'Сэндвич панели': 'objects',
     'Комплектующие для ворот': 'objects',
@@ -352,12 +397,26 @@ function initNavigationRouting() {
 async function initApp() {
   const header = document.querySelector('#app-header');
   const footer = document.querySelector('#app-footer');
+  const cookies = document.querySelector('#app-cookies');
+  const subscribe = document.querySelector('#app-subscribe');
+  const mainModal = document.querySelector('#app-main-modal');
 
   try {
     await Promise.all([
       loadComponent(header, APP_CONFIG.header),
-      loadComponent(footer, APP_CONFIG.footer)
+      loadComponent(footer, APP_CONFIG.footer),
+      loadComponent(cookies, APP_CONFIG.cookies),
+      loadComponent(subscribe, APP_CONFIG.subscribe),
+      mainModal ? loadComponent(mainModal, APP_CONFIG.modal) : Promise.resolve()
     ]);
+
+    if (mainModal && APP_CONFIG.modal.init) {
+      const initMainModal = window[APP_CONFIG.modal.init];
+
+      if (typeof initMainModal === 'function') {
+        initMainModal();
+      }
+    }
   } catch (error) {
     console.error(error);
   }

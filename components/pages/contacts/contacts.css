@@ -1,3 +1,1136 @@
 .contacts {
-  /* Contacts page styles. */
+    padding: 2.2222rem;
+    border-radius: 1.1111rem;
+    background: #FFFFFF;
+}
+
+.contacts__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6667rem;
+    width: 100%;
+    max-width: 99.7778rem;
+    margin: 0 auto;
+}
+
+.contacts__breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.1111rem;
+    color: #4D4D4D;
+    font-size: 1.1111rem;
+    line-height: 1.4;
+}
+
+.contacts__breadcrumbs a:hover {
+    color: #324C88;
+}
+
+.contacts__title {
+    margin: 0;
+    color: #4D4D4D;
+    font-family: 'Onest-Medium', sans-serif;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.contacts__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0.2222rem;
+    padding: 0.2222rem;
+    border-radius: 0.7778rem;
+    background: #F5F8F7;
+}
+
+.contacts__details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2222rem;
+    min-width: 0;
+}
+
+.contacts__panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6667rem;
+    min-width: 0;
+    padding: 1.8333rem 1.3333rem;
+    border-radius: 1rem;
+    background: #FFFFFF;
+}
+
+.contacts__panel-title {
+    margin: 0;
+    color: #4D4D4D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 1.3333rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.contacts__address-card,
+.contacts__requisite,
+.contacts__phone-card {
+    min-width: 0;
+    padding: 1.1111rem;
+    border-radius: 0.7778rem;
+    background: #F5F8F7;
+}
+
+.contacts__office-data {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6667rem;
+    min-width: 0;
+}
+
+.contacts__address-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5556rem;
+}
+
+.contacts__requisites {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) 8.8889rem;
+    align-items: stretch;
+    gap: 0.2778rem;
+}
+
+.contacts__requisite {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5556rem;
+}
+
+.contacts__label {
+    margin: 0;
+    color: #4D4D4D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 1.1111rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.contacts__value {
+    margin: 0;
+    color: #5D5D5D;
+    font-family: 'Onest-Medium', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.contacts__download {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5556rem;
+    min-width: 0;
+    padding: 1.1111rem 0.5556rem;
+    border: 1px solid #D6DBE5;
+    border-radius: 0.7778rem;
+    color: #324C88;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 0.8889rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    transition: background-color 0.15s ease;
+}
+
+.contacts__download:hover {
+    background: #FFFFFF;
+}
+
+.contacts__download:focus-visible,
+.contacts__breadcrumbs a:focus-visible,
+.contacts__phone-number:focus-visible {
+    outline: 0.1111rem solid #324C88;
+    outline-offset: 0.1667rem;
+}
+
+.contacts__download-icon {
+    width: 1.3333rem;
+    height: 1.3333rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+}
+
+.contacts__phones {
+    gap: 1.6667rem;
+}
+
+.contacts__phone-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 0.2778rem;
+}
+
+.contacts__phone-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5556rem;
+}
+
+.contacts__phone-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5556rem;
+    min-width: 0;
+    width: 100%;
+    padding-right: 1.7778rem;
+}
+
+.contacts__phone-number {
+    color: #4D4D4D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 1.1111rem;
+    font-weight: 600;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.contacts__languages {
+    position: absolute;
+    top: 0.2222rem;
+    right: 0.2222rem;
+    display: flex;
+    gap: 0.2222rem;
+}
+
+.contacts__language {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.7778rem;
+    padding: 0.3333rem 0.4444rem;
+    border-radius: 0.5556rem;
+    background: #324C88;
+    color: #FFFFFF;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 0.6667rem;
+    font-weight: 600;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.contacts__phone-card > .contacts__language {
+    position: absolute;
+    top: 0.2222rem;
+    right: 0.2222rem;
+}
+
+.contacts__visual {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+    background: #F5F8F7;
+}
+
+.contacts__map {
+    display: block;
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 0;
+    height: 100%;
+    border: 0;
+}
+
+@media screen and (max-width: 1500px) {
+    .contacts__requisites {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contacts__download {
+        min-height: 6rem;
+    }
+
+    .contacts__phone-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contacts__phone-card:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Figma 1857:103812 — tablet layout at 1024px. */
+@media screen and (min-width: 1001px) and (max-width: 1100px) {
+    .contacts__layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .contacts__office-data {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
+        gap: 0.2778rem;
+    }
+
+    .contacts__phone-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .contacts__phone-card:last-child {
+        grid-column: auto;
+    }
+
+    .contacts__visual {
+        min-height: 33.3333rem;
+    }
+
+    .contacts__map {
+        min-height: 33.3333rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .contacts {
+        padding: 1.3333rem;
+    }
+
+    .contacts__layout {
+        grid-template-columns: 1fr;
+    }
+
+    .contacts__visual {
+        min-height: 24rem;
+    }
+
+    .contacts__map {
+        min-height: 24rem;
+    }
+
+    .contacts__phone-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .contacts {
+        padding: 2.2222rem 0.5556rem;
+    }
+
+    .contacts__container {
+        gap: 1rem;
+    }
+
+    .contacts__breadcrumbs {
+        justify-content: center;
+        gap: 1.1111rem;
+        font-size: 0.7778rem;
+        line-height: 1.4444;
+    }
+
+    .contacts__title {
+        align-self: center;
+        font-size: 1.3333rem;
+        line-height: 1.3333;
+    }
+
+    .contacts__layout {
+        gap: 0.2222rem;
+        padding: 0.2222rem;
+        border-radius: 0.7778rem;
+    }
+
+    .contacts__panel {
+        gap: 1.1111rem;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+
+    .contacts__panel-title {
+        font-size: 0.8889rem;
+        line-height: 1.5556;
+    }
+
+    .contacts__office-data {
+        gap: 0.2778rem;
+    }
+
+    .contacts__address-card,
+    .contacts__requisite,
+    .contacts__phone-card {
+        padding: 1.1111rem;
+    }
+
+    .contacts__requisites,
+    .contacts__phone-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.2778rem;
+    }
+
+    .contacts__label {
+        font-size: 0.8889rem;
+    }
+
+    .contacts__value {
+        font-size: 0.7778rem;
+        line-height: 1.5;
+    }
+
+    .contacts__phone-number {
+        font-size: 0.8889rem;
+    }
+
+    .contacts__phones {
+        gap: 1.1111rem;
+    }
+
+    .contacts__visual {
+        min-height: 33.3333rem;
+    }
+
+    .contacts__map {
+        min-height: 33.3333rem;
+    }
+
+    .contacts__phone-card:last-child {
+        grid-column: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contacts__phone-card {
+        padding: 1.1111rem;
+    }
+}
+
+/* Figma 1857:103450 — contact channels. */
+.contacts-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6667rem;
+    width: 100%;
+    min-width: 0;
+}
+.contacts-links__title {
+    margin: 0;
+    color: #4D4D4D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2.4444rem;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+.contacts-links__frame {
+    width: 100%;
+    min-width: 0;
+    padding: 0.2222rem;
+    border-radius: 0.7778rem;
+    background: #F5F8F7;
+}
+.contacts-links__cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.2778rem;
+    width: 100%;
+    min-width: 0;
+    padding: 1.8333rem 1.3333rem;
+    border-radius: 1rem;
+    background: #FFFFFF;
+}
+.contacts-links__card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5556rem;
+    min-width: 0;
+    padding: 1.1111rem;
+    border-radius: 0.7778rem;
+    background: #F5F8F7;
+}
+.contacts-links__label {
+    margin: 0;
+    color: #5D5D5D;
+    font-family: 'Onest-Medium', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-transform: none;
+}
+.contacts-links__value {
+    max-width: 100%;
+    color: #4D4D4D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 1.1111rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
+.contacts-links__value:hover { color: #324C88; }
+.contacts-links__socials { display: flex; flex-wrap: wrap; gap: 0.5556rem; }
+.contacts-links__social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3333rem 0.4444rem;
+    border-radius: 0.5556rem;
+    background: #FFFFFF;
+}
+.contacts-links__social-link img {
+    display: block;
+    width: 1.1111rem;
+    height: 1.1111rem;
+    object-fit: contain;
+}
+.contacts-links__value:focus-visible,
+.contacts-links__social-link:focus-visible { outline: 0.1111rem solid #324C88; outline-offset: 0.1667rem; }
+/* Figma 1857:103892 — contacts block at 1024px. */
+@media screen and (min-width: 1001px) and (max-width: 1100px) {
+    .contacts-links {
+        gap: 1.6667rem;
+        padding: 2.2222rem;
+    }
+
+    .contacts-links__title {
+        font-size: 1.3333rem;
+        line-height: 1.7778rem;
+    }
+
+    .contacts-links__cards {
+        gap: 0.2778rem;
+        padding: 1.8333rem 1.3333rem;
+    }
+
+    .contacts-links__card {
+        padding: 1.1111rem;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .contacts-links { gap: 1.3333rem; }
+    .contacts-links__title { font-size: 2.2222rem; }
+    .contacts-links__cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media screen and (max-width: 680px) {
+    .contacts-links {
+        align-items: stretch;
+        gap: 1rem;
+        padding: 1.1111rem 0.7778rem;
+        border-radius: 0.5556rem;
+        background: #FFFFFF;
+    }
+
+    .contacts-links__title {
+        align-self: center;
+        max-width: 100%;
+        font-size: 1.1111rem;
+        line-height: 1.5556rem;
+        white-space: nowrap;
+    }
+
+    .contacts-links__frame {
+        padding: 0.2222rem;
+        border-radius: 0.7778rem;
+    }
+
+    .contacts-links__cards {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.2778rem;
+        padding: 0.7778rem;
+        border-radius: 1rem;
+    }
+
+    .contacts-links__card {
+        gap: 0.5556rem;
+        padding: 1.1111rem;
+        border-radius: 0.7778rem;
+    }
+
+    .contacts-links__label {
+        font-size: 0.8889rem;
+        line-height: 1.5;
+    }
+
+    .contacts-links__value {
+        font-size: 0.8889rem;
+        line-height: 1.5;
+    }
+
+    .contacts-links__card--social .contacts-links__label {
+        font-size: 1rem;
+    }
+
+    .contacts-links__socials {
+        gap: 0.5556rem;
+    }
+
+    .contacts-links__social-link {
+        padding: 0.3333rem 0.4444rem;
+    }
+
+    .contacts-links__social-link img {
+        width: 1.1111rem;
+        height: 1.1111rem;
+    }
+}
+
+/* Figma 1857:103489 — Представительства, desktop 1920px. */
+.contacts-representations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6667rem;
+    width: 100%;
+    min-width: 0;
+    padding: 2.2222rem;
+    border-radius: 1.1111rem;
+    background: #FFFFFF;
+}
+
+.contacts-representations__title {
+    margin: 0;
+    color: #4D4D4D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 2.6667rem;
+    font-weight: 600;
+    line-height: 1.1667;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.contacts-representations__filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2222rem;
+    padding: 0.2222rem;
+    border-radius: 0.5556rem;
+    background: #F5F8F7;
+}
+
+.contacts-representations__filter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4444rem;
+    min-height: 3.1667rem;
+    padding: 0.7778rem 1rem;
+    border-radius: 0.7778rem;
+    color: #5D5D5D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.6;
+    text-transform: uppercase;
+    transition: background-color 0.15s ease;
+}
+
+.contacts-representations__filter.is-active {
+    background: #FFF500;
+}
+
+.contacts-representations__filter:focus-visible,
+.contacts-representations__more:focus-visible {
+    outline: 0.1111rem solid #324C88;
+    outline-offset: 0.1667rem;
+}
+
+.contacts-representations__hotline {
+    color: #4D4D4D;
+    font-family: 'Onest-Medium', sans-serif;
+    font-size: 1.1111rem;
+    font-weight: 500;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.contacts-representations__hotline a {
+    color: #324C88;
+    white-space: nowrap;
+}
+
+.contacts-representations__frame {
+    width: 100%;
+    min-width: 0;
+    padding: 0.2222rem;
+    border-radius: 0.7778rem;
+    background: #F5F8F7;
+}
+
+.contacts-representations__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.2778rem;
+    width: 100%;
+    min-width: 0;
+    padding: 0.7778rem;
+    border-radius: 1rem;
+    background: #FFFFFF;
+}
+
+.contacts-representations__card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1111rem;
+    min-width: 0;
+    padding: 1.1111rem;
+    border-radius: 0.7778rem;
+    background: #F5F8F7;
+}
+
+.contacts-representations__card-title {
+    margin: 0;
+    color: #4D4D4D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.contacts-representations__address {
+    color: #5D5D5D;
+    font-family: 'Onest-Medium', sans-serif;
+    font-size: 0.8333rem;
+    font-weight: 500;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.contacts-representations__contacts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.2778rem;
+    min-width: 0;
+}
+
+.contacts-representations__contact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.2222rem;
+    min-width: 0;
+    padding: 0.7778rem 1rem;
+    border-radius: 0.7778rem;
+    background: #FFFFFF;
+    color: #5D5D5D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 0.7778rem;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.contacts-representations__contact strong {
+    font-size: 0.7778rem;
+    font-weight: 600;
+}
+
+.contacts-representations__contact span {
+    font-size: 0.6667rem;
+    font-weight: 500;
+}
+
+.contacts-representations__more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7778rem;
+    color: #324C88;
+    font-family: 'Onest-Medium', sans-serif;
+    font-size: 1.2222rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.contacts-representations__more svg {
+    width: 1.3333rem;
+    height: 1.3333rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.5;
+}
+
+.contacts-representations__card[hidden] {
+    display: none;
+}
+
+@media screen and (max-width: 1300px) {
+    .contacts-representations__title {
+        font-size: 2.2222rem;
+    }
+
+    .contacts-representations__hotline {
+        font-size: 1rem;
+    }
+
+    .contacts-representations__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .contacts-representations {
+        padding: 1.3333rem;
+    }
+
+    .contacts-representations__grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contacts-representations {
+        gap: 1.1111rem;
+        padding: 1rem;
+    }
+
+    .contacts-representations__title {
+        font-size: 1.6667rem;
+    }
+
+    .contacts-representations__filters {
+        width: 100%;
+    }
+
+    .contacts-representations__filter {
+        flex: 1 1 auto;
+        padding: 0.5556rem 0.6667rem;
+        font-size: 0.7778rem;
+    }
+
+    .contacts-representations__hotline {
+        font-size: 0.8889rem;
+    }
+
+}
+
+
+/* Figma 1857:103685 — точная desktop-компоновка для viewport 1440px.
+   Базовые правила выше сохраняют исходное состояние для 1920px. */
+@media screen and (min-width: 1301px) and (max-width: 1440px) {
+    .contacts-representations {
+        gap: 30px;
+        padding: 40px;
+        border-radius: 20px;
+    }
+
+    .contacts-representations__title {
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    .contacts-representations__filters {
+        gap: 4px;
+        padding: 4px;
+        border-radius: 10px;
+    }
+
+    .contacts-representations__filter {
+        min-height: 57px;
+        padding: 14px 18px;
+        border-radius: 14px;
+        font-size: 18px;
+        line-height: 29px;
+    }
+
+    .contacts-representations__hotline {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .contacts-representations__frame {
+        padding: 4px;
+        border-radius: 14px;
+    }
+
+    .contacts-representations__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 5px;
+        padding: 14px;
+        border-radius: 18px;
+    }
+
+    .contacts-representations__card {
+        gap: 20px;
+        padding: 20px;
+        border-radius: 14px;
+    }
+
+    .contacts-representations__card-title {
+        font-size: 18px;
+        line-height: 27px;
+    }
+
+    .contacts-representations__address {
+        font-size: 15px;
+        line-height: 22.5px;
+    }
+
+    .contacts-representations__contacts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 5px;
+    }
+
+    .contacts-representations__contact {
+        gap: 4px;
+        padding: 14px 18px;
+        border-radius: 14px;
+        font-size: 14px;
+        line-height: 22.4px;
+    }
+
+    .contacts-representations__contact strong {
+        font-size: 14px;
+    }
+
+    .contacts-representations__contact span {
+        font-size: 12px;
+    }
+
+    .contacts-representations__more {
+        gap: 14px;
+        font-size: 22px;
+        line-height: 31px;
+    }
+
+    .contacts-representations__more svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .contacts-representations__card[data-layout-1920] {
+        display: none;
+    }
+}
+
+
+/* Figma 1857:103934 — tablet landscape, viewport 1024px. */
+@media screen and (min-width: 1001px) and (max-width: 1100px) {
+    .contacts-representations {
+        gap: 30px;
+        padding: 40px;
+        border-radius: 20px;
+    }
+
+    .contacts-representations__title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .contacts-representations__filters {
+        gap: 4px;
+        padding: 4px;
+        border-radius: 10px;
+    }
+
+    .contacts-representations__filter {
+        min-height: 54px;
+        padding: 14px 18px;
+        border-radius: 14px;
+        font-size: 16px;
+        line-height: 25.6px;
+    }
+
+    .contacts-representations__hotline {
+        font-size: 18px;
+        line-height: 1.5;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .contacts-representations__frame {
+        padding: 4px;
+        border-radius: 14px;
+    }
+
+    .contacts-representations__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 5px;
+        padding: 14px;
+        border-radius: 18px;
+    }
+
+    .contacts-representations__card {
+        gap: 20px;
+        padding: 20px;
+        border-radius: 14px;
+    }
+
+    .contacts-representations__card-title {
+        font-size: 18px;
+        line-height: 27px;
+    }
+
+    .contacts-representations__address {
+        font-size: 15px;
+        line-height: 22.5px;
+    }
+
+    .contacts-representations__contacts {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 5px;
+    }
+
+    .contacts-representations__contact {
+        gap: 4px;
+        padding: 14px 18px;
+        border-radius: 14px;
+        font-size: 14px;
+        line-height: 22.4px;
+    }
+
+    .contacts-representations__contact strong {
+        font-size: 14px;
+    }
+
+    .contacts-representations__contact span {
+        font-size: 12px;
+    }
+
+    .contacts-representations__more {
+        gap: 14px;
+        font-size: 22px;
+        line-height: 31px;
+    }
+
+    .contacts-representations__more svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+
+/* Figma 1857:104198 — mobile representation section (360px reference).
+   The desktop/tablet layouts above remain the source for larger viewports. */
+@media screen and (max-width: 600px) {
+    .contacts-representations {
+        align-items: center;
+        gap: 18px;
+        padding: 20px 14px;
+        border-radius: 20px;
+    }
+
+    .contacts-representations__title {
+        width: 100%;
+        font-size: 24px;
+        line-height: 32px;
+        text-align: center;
+    }
+
+    .contacts-representations__filters {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-self: stretch;
+        gap: 4px;
+        width: 100%;
+        min-width: 0;
+        padding: 4px;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .contacts-representations__filter {
+        flex: 0 0 auto;
+        min-height: 0;
+        padding: 12px 18px;
+        border-radius: 14px;
+        font-size: 14px;
+        line-height: 22.4px;
+        white-space: nowrap;
+    }
+
+    .contacts-representations__hotline {
+        align-self: stretch;
+        font-size: 13px;
+        line-height: 20px;
+        text-align: left;
+    }
+
+    .contacts-representations__frame {
+        align-self: stretch;
+        padding: 4px;
+        border-radius: 14px;
+    }
+
+    .contacts-representations__grid {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 14px;
+        border-radius: 18px;
+    }
+
+    .contacts-representations__card {
+        gap: 13px;
+        padding: 20px;
+        border-radius: 14px;
+    }
+
+    .contacts-representations__card-title {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .contacts-representations__address {
+        font-size: 13px;
+        line-height: 19.5px;
+    }
+
+    .contacts-representations__contacts {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 5px;
+    }
+
+    .contacts-representations__contact {
+        justify-content: center;
+        gap: 4px;
+        min-height: 48px;
+        padding: 14px 18px;
+        border-radius: 14px;
+        font-size: 14px;
+        line-height: 22.4px;
+    }
+
+    .contacts-representations__contact strong {
+        font-size: 14px;
+        line-height: 22.4px;
+    }
+
+    .contacts-representations__contact span {
+        font-size: 12px;
+        line-height: 19.2px;
+    }
+
+    .contacts-representations__more {
+        gap: 14px;
+        font-size: 18px;
+        line-height: 25.2px;
+    }
+
+    .contacts-representations__more svg {
+        width: 24px;
+        height: 24px;
+    }
 }

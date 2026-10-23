@@ -1,0 +1,25 @@
+<!-- Subscribe popup. Desktop/tablet: centered dialog; mobile: bottom sheet from Figma node 2269:144378. -->
+<div class="subscribe" role="dialog" aria-modal="true" aria-labelledby="subscribe-title" hidden>
+  <section class="subscribe__content" aria-label="Подписка на обновления">
+    <div class="subscribe__handle" aria-hidden="true"></div>
+    <header class="subscribe__header">
+      <h2 class="subscribe__title" id="subscribe-title">Подписаться</h2>
+      <button class="subscribe__close" type="button" aria-label="Закрыть окно подписки" data-subscribe-close>
+        <img src="https://www.figma.com/api/mcp/asset/253b569c-8271-46ef-a7ec-e5eaae9a8019/db4c7.svg" alt="">
+      </button>
+    </header>
+    <form class="subscribe__form" data-subscribe-form>
+      <label class="subscribe__visually-hidden" for="subscribe-email">Ваш Email</label>
+      <input class="subscribe__input" id="subscribe-email" name="email" type="email" autocomplete="email" placeholder="Введите ваш Email" required>
+      <button class="subscribe__button btn main-btn" type="submit">Подписаться</button>
+      <p class="subscribe__message" data-subscribe-message aria-live="polite"></p>
+      <div class="subscribe__consent">
+        <input class="subscribe__checkbox" id="subscribe-consent" name="consent" type="checkbox" required>
+        <label class="subscribe__consent-text" for="subscribe-consent">Нажимая кнопку «Подписаться», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных</label>
+      </div>
+    </form>
+  </section>
+  <div class="subscribe__mobile-footer">
+    <button class="subscribe__back" type="button" data-subscribe-back>Назад</button>
+  </div>
+</div>

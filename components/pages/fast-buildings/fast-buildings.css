@@ -1,0 +1,5508 @@
+/* Первый экран страницы «Быстровозводимые здания». Макет Figma: 1857:115858. */
+.fast-buildings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.6667rem;
+    padding: 3.5556rem 0.4444rem;
+    border-radius: 0 0 1.6667rem 1.6667rem;
+    color: #4D4D4D;
+    background: #FFFFFF;
+}
+
+.fast-buildings__intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 73.4444rem;
+    text-align: center;
+}
+
+.fast-buildings__eyebrow {
+    width: 100%;
+    max-width: 77.1111rem;
+    margin: 0;
+    color: #324C8866;
+    font-family: 'Onest-Medium', sans-serif;
+    font-size: 1.6667rem;
+    font-weight: 500;
+    line-height: 1.8889rem;
+}
+
+.fast-buildings__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.fast-buildings__copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7778rem;
+    width: 100%;
+}
+
+.fast-buildings__title {
+    display: block;
+    width: 100%;
+    margin: 0;
+    color: #324C8866;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+}
+
+.fast-buildings__title-accent,
+.fast-buildings__title-main {
+    color: inherit;
+}
+
+.fast-buildings__title-main {
+    color: #324C88;
+}
+
+.fast-buildings__description {
+    width: 100%;
+    max-width: 61.5556rem;
+    margin: 0;
+    color: #4D4D4DE6;
+    font-family: 'Onest-Medium', sans-serif;
+    font-size: 1.2222rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.fast-buildings__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.7778rem;
+}
+
+.fast-buildings__button.btn {
+    min-height: 4.9444rem;
+    padding: 1.7778rem 2.2222rem;
+    border-radius: 1.1111rem;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 1.1111rem;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.fast-buildings__visual {
+    position: relative;
+    width: min(100%, 67.7778rem);
+    aspect-ratio: 61 / 30;
+    overflow: hidden;
+    border-radius: 1.1111rem;
+    isolation: isolate;
+}
+
+.fast-buildings__image {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.fast-buildings__image--base {
+    z-index: -3;
+}
+
+.fast-buildings__image--detail {
+    z-index: -2;
+}
+
+.fast-buildings__visual-overlay {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    border-radius: inherit;
+    background: #324C884D;
+    pointer-events: none;
+}
+
+@media screen and (min-width: 1600px) {
+    .fast-buildings__intro {
+        max-width: 88.3333rem;
+    }
+
+    .fast-buildings__visual {
+        width: min(100%, 94.4444rem);
+        aspect-ratio: 17 / 8;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .fast-buildings {
+        gap: 2rem;
+        padding: 2.6667rem 0.8889rem;
+    }
+
+    .fast-buildings__intro {
+        gap: 1.3333rem;
+    }
+
+    .fast-buildings__eyebrow {
+        font-size: 1.3333rem;
+        line-height: 1.8889rem;
+    }
+
+    .fast-buildings__content {
+        gap: 1.3333rem;
+    }
+
+    .fast-buildings__copy {
+        gap: 0.7778rem;
+    }
+
+    .fast-buildings__title {
+        max-width: 38.7778rem;
+        font-size: 2.2222rem;
+        line-height: 1.8;
+    }
+
+    .fast-buildings__description {
+        max-width: 42.4444rem;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .fast-buildings__button.btn {
+        min-height: 4.1667rem;
+        padding: 1.4444rem 1.7778rem;
+        border-radius: 1.1111rem;
+        font-size: 1rem;
+        line-height: 1.26;
+        text-transform: uppercase;
+    }
+
+    .fast-buildings__visual {
+        width: 100%;
+        max-width: 67.7778rem;
+        aspect-ratio: 122 / 60;
+        border-radius: 1.1111rem;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .fast-buildings {
+        gap: 1rem;
+        padding: 1.1111rem 0.5556rem;
+        border-radius: 0 0 0.5556rem 0.5556rem;
+    }
+
+    .fast-buildings__intro {
+        gap: 0;
+    }
+
+    .fast-buildings__eyebrow {
+        display: none;
+    }
+
+    .fast-buildings__content {
+        gap: 0.7778rem;
+    }
+
+    .fast-buildings__copy {
+        gap: 0.7778rem;
+    }
+
+    .fast-buildings__title {
+        width: 100%;
+        max-width: 20rem;
+        font-size: 1.3333rem;
+        line-height: 1.3333;
+        text-align: center;
+    }
+
+    .fast-buildings__description {
+        width: 100%;
+        max-width: none;
+        font-size: 0.7778rem;
+        line-height: 1.2222rem;
+        text-align: center;
+    }
+
+    .fast-buildings__actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.7778rem;
+        width: 15.8889rem;
+        max-width: 100%;
+    }
+
+    .fast-buildings__button.btn {
+        width: 100%;
+        min-height: 0;
+        padding: 1rem 1.3333rem;
+        border-radius: 1.1111rem;
+        font-size: 0.7778rem;
+        line-height: 1.26;
+        white-space: nowrap;
+    }
+
+    .fast-buildings__visual {
+        width: 100%;
+        max-width: none;
+        aspect-ratio: 61 / 30;
+        border-radius: 1.1111rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fast-buildings__button {
+        transition: none;
+    }
+}
+
+
+/* Каталог быстровозводимых зданий — Figma 1857:113629. */
+.fast-buildings-catalog {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6667rem;
+    margin: 0 0.2778rem 0.2778rem;
+    padding: 2.6667rem 2.7778rem 0.2778rem;
+    border-radius: 1.1111rem;
+    background: #F5F8F7;
+    color: #4D4D4D;
+}
+
+.fast-buildings-catalog__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3333rem;
+    width: 100%;
+    text-align: center;
+}
+
+.fast-buildings-catalog__title {
+    margin: 0;
+    color: #4D4D4D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 2.6667rem;
+    font-weight: 600;
+    line-height: 1.25;
+    text-transform: uppercase;
+}
+
+.fast-buildings-catalog__subtitle {
+    margin: 0;
+    color: #4D4D4DCC;
+    font-family: 'Onest-Regular', sans-serif;
+    font-size: 1.3333rem;
+    line-height: 1.5;
+}
+
+.fast-buildings-catalog__tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.1111rem;
+    padding: 0.2222rem;
+}
+
+.fast-buildings-catalog__tab {
+    color: #5D5D5D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 1.1111rem;
+    font-weight: 600;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.fast-buildings-catalog__tab--muted {
+    color: #5D5D5D4D;
+}
+
+.fast-buildings-catalog__tab-separator {
+    flex: 0 0 0.2222rem;
+    width: 0.2222rem;
+    height: 0.2222rem;
+    border-radius: 50%;
+    background: #5D5D5D;
+}
+
+.fast-buildings-catalog__carousel {
+    width: 100%;
+    min-width: 0;
+}
+
+.fast-buildings-catalog__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.5556rem;
+    width: 100%;
+}
+
+.fast-buildings-catalog__card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.6667rem;
+    min-width: 0;
+    padding: 1.1111rem;
+    border-radius: 1.1111rem;
+    background: #FFFFFF;
+}
+
+.fast-buildings-catalog__card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7778rem;
+    width: 100%;
+    text-align: center;
+}
+
+.fast-buildings-catalog__card-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7778rem;
+    width: 100%;
+}
+
+.fast-buildings-catalog__image {
+    display: block;
+    flex: 0 0 auto;
+    width: 11.1111rem;
+    max-width: 100%;
+    height: 7.3889rem;
+    object-fit: contain;
+}
+
+.fast-buildings-catalog__card-title {
+    max-width: 100%;
+    margin: 0;
+    color: #505050;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 1.6667rem;
+    font-weight: 600;
+    line-height: 1.6;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
+
+.fast-buildings-catalog__price {
+    margin: 0;
+    color: #4D4D4DCC;
+    font-family: 'Onest-Regular', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.fast-buildings-catalog__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 3.5556rem;
+    padding: 0.8889rem 1.1111rem;
+    border-radius: 1.1111rem;
+    background: #EBEDF3;
+    color: #324C88;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 0.9444rem;
+    font-weight: 600;
+    line-height: 1.26;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-color 0.1s ease;
+}
+
+.fast-buildings-catalog__button:hover {
+    background: #DFE3ED;
+}
+
+.fast-buildings-catalog__button:focus-visible,
+.fast-buildings-catalog__arrow:focus-visible {
+    outline: 0.1111rem solid #324C88;
+    outline-offset: 0.2222rem;
+}
+
+.fast-buildings-catalog__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.3333rem;
+    align-self: center;
+}
+
+.fast-buildings-catalog__arrow {
+    display: grid;
+    flex: 0 0 3.5556rem;
+    width: 3.5556rem;
+    height: 3.5556rem;
+    place-items: center;
+    border: 1px solid #4D4D4D33;
+    border-radius: 1.1111rem;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+
+.fast-buildings-catalog__arrow img {
+    display: block;
+    width: 2.2222rem;
+    height: 2.2222rem;
+    object-fit: contain;
+}
+
+.fast-buildings-catalog__dots {
+    display: flex;
+    align-items: center;
+    gap: 0.2222rem;
+}
+
+.fast-buildings-catalog__dot {
+    display: block;
+    flex: 0 0 0.5556rem;
+    width: 0.5556rem;
+    height: 0.5556rem;
+    border-radius: 50%;
+    background: #324C8833;
+}
+
+.fast-buildings-catalog__dot--active {
+    background: #324C88;
+}
+
+/* Desktop layout for the 1440px Figma frame (1857:115870).
+   The 1920px layout remains the four-card grid above this range. */
+@media screen and (min-width: 1301px) and (max-width: 1599px) {
+    .fast-buildings-catalog {
+        gap: 1.6667rem;
+        padding: 2.6667rem 2.7778rem 0.2778rem;
+    }
+
+    .fast-buildings-catalog__heading {
+        gap: 1.3333rem;
+    }
+
+    .fast-buildings-catalog__title {
+        font-size: 2.6667rem;
+        line-height: normal;
+    }
+
+    .fast-buildings-catalog__subtitle {
+        font-size: 1.3333rem;
+        line-height: normal;
+    }
+
+    .fast-buildings-catalog__tabs {
+        gap: 1.1111rem;
+    }
+
+    .fast-buildings-catalog__tab {
+        font-size: 1.1111rem;
+    }
+
+    .fast-buildings-catalog__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.5556rem;
+    }
+
+    .fast-buildings-catalog__card--desktop-hidden {
+        display: none;
+    }
+
+    .fast-buildings-catalog__card {
+        gap: 1.6667rem;
+        padding: 1.1111rem;
+    }
+
+    .fast-buildings-catalog__card-title {
+        font-size: 1.6667rem;
+        line-height: 1.6;
+    }
+
+    .fast-buildings-catalog__price {
+        font-size: 1rem;
+    }
+
+    .fast-buildings-catalog__button {
+        min-height: 3.5556rem;
+        padding: 1.7778rem 2.2222rem;
+        font-size: 0.9444rem;
+    }
+
+    .fast-buildings-catalog__pagination {
+        gap: 1.3333rem;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .fast-buildings-catalog {
+        gap: 1.3333rem;
+        padding: 2.2222rem 1.1111rem 0.2778rem;
+    }
+
+    .fast-buildings-catalog__title {
+        font-size: 1.6667rem;
+    }
+
+    .fast-buildings-catalog__subtitle {
+        font-size: 1rem;
+    }
+
+    .fast-buildings-catalog__grid {
+        display: flex;
+        gap: 0.5556rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+
+    .fast-buildings-catalog__grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .fast-buildings-catalog__card {
+        flex: 0 0 48%;
+        scroll-snap-align: start;
+    }
+
+    .fast-buildings-catalog__card-title {
+        font-size: 1.3333rem;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .fast-buildings-catalog {
+        gap: 1rem;
+        padding: 1.3333rem 0.5556rem 0.2778rem;
+        border-radius: 0.5556rem;
+    }
+
+    .fast-buildings-catalog__heading {
+        gap: 0.6667rem;
+    }
+
+    .fast-buildings-catalog__title {
+        font-size: 1.2222rem;
+        line-height: 1.35;
+    }
+
+    .fast-buildings-catalog__subtitle {
+        font-size: 0.7778rem;
+        line-height: 1.5;
+    }
+
+    .fast-buildings-catalog__tabs {
+        gap: 0.6667rem;
+    }
+
+    .fast-buildings-catalog__tab {
+        font-size: 0.7778rem;
+    }
+
+    .fast-buildings-catalog__grid {
+        gap: 0.5556rem;
+    }
+
+    .fast-buildings-catalog__card {
+        flex-basis: 100%;
+    }
+
+    .fast-buildings-catalog__card {
+        gap: 1rem;
+        padding: 0.8889rem;
+    }
+
+    .fast-buildings-catalog__card-title {
+        font-size: 1.1111rem;
+    }
+
+    .fast-buildings-catalog__price {
+        font-size: 0.7778rem;
+    }
+
+    .fast-buildings-catalog__button {
+        min-height: 2.8889rem;
+        font-size: 0.7778rem;
+    }
+
+    .fast-buildings-catalog__pagination {
+        gap: 0.7778rem;
+    }
+
+    .fast-buildings-catalog__arrow {
+        flex-basis: 2.6667rem;
+        width: 2.6667rem;
+        height: 2.6667rem;
+        border-radius: 0.6667rem;
+    }
+
+    .fast-buildings-catalog__arrow img {
+        width: 1.6667rem;
+        height: 1.6667rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fast-buildings-catalog__button {
+        transition: none;
+    }
+}
+
+
+/* Tablet catalog layout — Figma 1857:118111 (1024px).
+   Keep three cards in one row and preserve the existing desktop layouts. */
+@media screen and (min-width: 681px) and (max-width: 1300px) {
+    .fast-buildings-catalog {
+        padding-right: 2.2222rem;
+        padding-left: 2.2222rem;
+    }
+
+    .fast-buildings-catalog__heading {
+        gap: 1.3333rem;
+    }
+
+    .fast-buildings-catalog__title {
+        font-size: 1.6667rem;
+        line-height: 1.2667;
+    }
+
+    .fast-buildings-catalog__subtitle {
+        font-size: 1.1111rem;
+        line-height: 1.3;
+    }
+
+    .fast-buildings-catalog__grid {
+        display: flex;
+        gap: 0.5556rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+
+    .fast-buildings-catalog__grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .fast-buildings-catalog__card {
+        flex: 0 0 32.7%;
+        gap: 1.6667rem;
+        padding: 1.1111rem;
+        scroll-snap-align: start;
+    }
+
+    .fast-buildings-catalog__card-content {
+        gap: 0.7778rem;
+    }
+
+    .fast-buildings-catalog__image {
+        width: 11.1111rem;
+        height: 7.3889rem;
+    }
+
+    .fast-buildings-catalog__card-title {
+        font-size: 1.2222rem;
+        line-height: 1.4545;
+    }
+
+    .fast-buildings-catalog__price {
+        font-size: 0.8889rem;
+        line-height: 1.5;
+    }
+
+    .fast-buildings-catalog__button {
+        min-height: 3.5556rem;
+        padding: 0.8889rem 1.1111rem;
+        font-size: 0.9444rem;
+    }
+
+    .fast-buildings-catalog__pagination {
+        margin-top: 0;
+    }
+}
+
+/* Mobile layout for Figma frame 1857:120458 (360px).
+   Desktop 1920/1440 and tablet 1024 rules above remain unchanged. */
+@media screen and (max-width: 480px) {
+    .fast-buildings-catalog {
+        gap: 18px;
+        margin: 0 5px 5px;
+        padding: 20px 10px 5px;
+        border-radius: 10px;
+    }
+
+    .fast-buildings-catalog__heading {
+        gap: 18px;
+    }
+
+    .fast-buildings-catalog__copy {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        width: 100%;
+    }
+
+    .fast-buildings-catalog__title {
+        width: 100%;
+        font-size: 20px;
+        line-height: 28px;
+        overflow-wrap: break-word;
+    }
+
+    .fast-buildings-catalog__subtitle {
+        width: 100%;
+        font-size: 17px;
+        line-height: normal;
+    }
+
+    .fast-buildings-catalog__tabs {
+        gap: 20px;
+        padding: 4px;
+    }
+
+    .fast-buildings-catalog__tab {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .fast-buildings-catalog__tab-separator {
+        flex-basis: 4px;
+        width: 4px;
+        height: 4px;
+    }
+
+    .fast-buildings-catalog__carousel {
+        overflow: hidden;
+    }
+
+    .fast-buildings-catalog__grid {
+        gap: 10px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-padding-inline: 0;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .fast-buildings-catalog__card {
+        flex: 0 0 312px;
+        gap: 18px;
+        padding: 20px;
+        border-radius: 20px;
+        scroll-snap-align: start;
+    }
+
+    .fast-buildings-catalog__card-content {
+        gap: 14px;
+    }
+
+    .fast-buildings-catalog__card-visual {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        width: 100%;
+    }
+
+    .fast-buildings-catalog__image {
+        width: 163px;
+        max-width: 100%;
+        height: 109px;
+        object-fit: contain;
+    }
+
+    .fast-buildings-catalog__card-title {
+        font-size: 20px;
+        line-height: 32px;
+        overflow-wrap: anywhere;
+    }
+
+    .fast-buildings-catalog__price {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .fast-buildings-catalog__button {
+        min-height: 54px;
+        padding: 18px 20px;
+        border-radius: 20px;
+        font-size: 14px;
+        line-height: 18px;
+        white-space: nowrap;
+    }
+
+    .fast-buildings-catalog__pagination {
+        display: none;
+    }
+
+    .fast-buildings-catalog__arrow {
+        flex-basis: 48px;
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+    }
+
+    .fast-buildings-catalog__arrow img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Этапы работы — Figma 1857:113910. */
+.fast-buildings-process {
+    padding: 0.5556rem 0.5556rem 0;
+    color: #4D4D4D;
+    background: #F5F8F7;
+}
+
+.fast-buildings-process__panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.6667rem;
+    padding: 3.5556rem 4rem;
+    border-radius: 1.1111rem;
+    background: #FFFFFF;
+}
+
+.fast-buildings-process__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3333rem;
+    width: 100%;
+    text-align: center;
+}
+
+.fast-buildings-process__title {
+    margin: 0;
+    color: #4D4D4D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 2.6667rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.fast-buildings-process__subtitle {
+    width: 100%;
+    max-width: 50rem;
+    margin: 0;
+    color: #5D5D5D;
+    font-family: 'Onest-Regular', sans-serif;
+    font-size: 1.3333rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.fast-buildings-process__steps {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.fast-buildings-process__steps::before {
+    position: absolute;
+    z-index: 0;
+    top: 2.2778rem;
+    right: 10%;
+    left: 10%;
+    height: 2px;
+    background: #36508A1A;
+    content: '';
+    pointer-events: none;
+}
+
+.fast-buildings-process__step {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3333rem;
+    min-width: 0;
+    padding: 0 0.4444rem;
+    text-align: center;
+}
+
+.fast-buildings-process__icon-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.fast-buildings-process__icon {
+    display: grid;
+    flex: 0 0 4rem;
+    width: 4rem;
+    height: 4rem;
+    place-items: center;
+    border-radius: 1.1111rem;
+    background: #36508A;
+}
+
+.fast-buildings-process__icon img {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+}
+
+.fast-buildings-process__number {
+    position: absolute;
+    top: -0.5rem;
+    left: 55%;
+    display: grid;
+    width: 1.6667rem;
+    height: 1.6667rem;
+    place-items: center;
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
+    background: #FFF500;
+    color: #36508A;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 0.6667rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.fast-buildings-process__step-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7778rem;
+    width: 100%;
+}
+
+.fast-buildings-process__step-title {
+    margin: 0;
+    color: #4D4D4D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 1.3333rem;
+    font-weight: 600;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.fast-buildings-process__description {
+    width: 100%;
+    max-width: 16.7778rem;
+    margin: 0;
+    color: #5D5D5D;
+    font-family: 'Onest-Regular', sans-serif;
+    font-size: 1rem;
+    line-height: 1.375;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.fast-buildings-process__footnote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3333rem;
+    width: 100%;
+    margin: 0;
+    color: #5D5D5D;
+    font-family: 'Onest-Regular', sans-serif;
+    font-size: 1.1111rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.fast-buildings-process__footnote p {
+    max-width: 50rem;
+    margin: 0;
+}
+
+.fast-buildings-process__separator {
+    display: block;
+    width: 16.6667rem;
+    max-width: 100%;
+    height: 2px;
+    background: #36508A1A;
+}
+
+@media screen and (min-width: 1301px) {
+    .fast-buildings-process {
+        padding: 10px 10px 0;
+    }
+
+    .fast-buildings-process__panel {
+        gap: 64px;
+        padding: 64px 72px;
+        border-radius: 20px;
+    }
+
+    .fast-buildings-process__heading {
+        gap: 24px;
+    }
+
+    .fast-buildings-process__title {
+        font-size: 48px;
+        line-height: 1.2;
+    }
+
+    .fast-buildings-process__subtitle {
+        max-width: 900px;
+        font-size: 24px;
+        line-height: 1.6;
+    }
+
+    .fast-buildings-process__steps::before {
+        top: 35px;
+        right: 10%;
+        left: 10%;
+    }
+
+    .fast-buildings-process__step {
+        gap: 24px;
+        padding: 0 8px;
+    }
+
+    .fast-buildings-process__icon {
+        flex-basis: 72px;
+        width: 72px;
+        height: 72px;
+        border-radius: 20px;
+    }
+
+    .fast-buildings-process__icon img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .fast-buildings-process__number {
+        top: -9px;
+        left: 55%;
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .fast-buildings-process__step-copy {
+        gap: 14px;
+    }
+
+    .fast-buildings-process__step-title {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+
+    .fast-buildings-process__description {
+        max-width: 335px;
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    .fast-buildings-process__footnote {
+        gap: 24px;
+        font-size: 20px;
+    }
+
+    .fast-buildings-process__separator {
+        width: 300px;
+    }
+}
+
+
+/* Адаптация этапов работы — Figma 1857:116143, viewport 1440px. */
+@media screen and (min-width: 1301px) and (max-width: 1599px) {
+    .fast-buildings-process {
+        padding: 0 5px 10px;
+    }
+
+    .fast-buildings-process__panel {
+        gap: 48px;
+        padding: 70px 40px;
+        border-radius: 20px;
+    }
+
+    .fast-buildings-process__heading {
+        gap: 30px;
+    }
+
+    .fast-buildings-process__title {
+        font-size: 48px;
+        line-height: normal;
+    }
+
+    .fast-buildings-process__subtitle {
+        max-width: 900px;
+        font-size: 24px;
+        line-height: 1.6;
+    }
+
+    .fast-buildings-process__steps {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        align-items: start;
+    }
+
+    .fast-buildings-process__steps::before {
+        top: 35px;
+        right: 10%;
+        left: 10%;
+        height: 2px;
+    }
+
+    .fast-buildings-process__step {
+        gap: 24px;
+        padding: 0 8px;
+    }
+
+    .fast-buildings-process__icon-wrap {
+        width: 100%;
+    }
+
+    .fast-buildings-process__icon {
+        flex-basis: 72px;
+        width: 72px;
+        height: 72px;
+        border-radius: 20px;
+    }
+
+    .fast-buildings-process__icon img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .fast-buildings-process__number {
+        top: -9px;
+        left: 50%;
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .fast-buildings-process__step-copy {
+        gap: 14px;
+    }
+
+    .fast-buildings-process__step-title {
+        font-size: 24px;
+        line-height: normal;
+        overflow-wrap: normal;
+    }
+
+    .fast-buildings-process__description {
+        max-width: 100%;
+        font-size: 18px;
+        line-height: normal;
+        overflow-wrap: normal;
+    }
+
+    .fast-buildings-process__footnote {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .fast-buildings-process__panel {
+        gap: 2rem;
+        padding: 2rem 1.3333rem;
+    }
+
+    .fast-buildings-process__steps {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        row-gap: 2rem;
+    }
+
+    .fast-buildings-process__steps::before {
+        display: none;
+    }
+
+    .fast-buildings-process__step-title {
+        font-size: 1.1111rem;
+    }
+
+    .fast-buildings-process__description {
+        font-size: 0.8889rem;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .fast-buildings-process {
+        padding: 0.5556rem 0.5556rem 0;
+    }
+
+    .fast-buildings-process__panel {
+        gap: 1.3333rem;
+        padding: 1.3333rem 0.5556rem;
+        border-radius: 0.5556rem;
+    }
+
+    .fast-buildings-process__heading {
+        gap: 0.6667rem;
+    }
+
+    .fast-buildings-process__title {
+        font-size: 1.2222rem;
+    }
+
+    .fast-buildings-process__subtitle {
+        font-size: 0.7778rem;
+    }
+
+    .fast-buildings-process__steps {
+        grid-template-columns: 1fr;
+        gap: 1.3333rem;
+    }
+
+    .fast-buildings-process__step {
+        gap: 0.7778rem;
+    }
+
+    .fast-buildings-process__icon {
+        flex-basis: 3rem;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 0.7778rem;
+    }
+
+    .fast-buildings-process__icon img {
+        width: 1.5556rem;
+        height: 1.5556rem;
+    }
+
+    .fast-buildings-process__number {
+        left: 55%;
+    }
+
+    .fast-buildings-process__step-title {
+        font-size: 1rem;
+    }
+
+    .fast-buildings-process__description {
+        max-width: 20rem;
+        font-size: 0.7778rem;
+    }
+
+    .fast-buildings-process__footnote {
+        gap: 0.7778rem;
+        font-size: 0.7778rem;
+    }
+
+    .fast-buildings-process__separator {
+        width: 10rem;
+    }
+}
+
+
+/* Сохраняем соединительные линии между иконками на планшетном диапазоне. */
+@media screen and (min-width: 681px) and (max-width: 1300px) {
+    .fast-buildings-process__steps {
+        position: relative;
+    }
+
+    .fast-buildings-process__step {
+        overflow: visible;
+    }
+
+    .fast-buildings-process__icon-wrap::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: -50%;
+        width: auto;
+        margin-left: 2rem;
+        height: 2px;
+        background: #36508A1A;
+        content: "";
+        pointer-events: none;
+    }
+
+    .fast-buildings-process__step:nth-child(3) .fast-buildings-process__icon-wrap::after,
+    .fast-buildings-process__step:last-child .fast-buildings-process__icon-wrap::after {
+        display: none;
+    }
+}
+
+
+/* Этапы работы — адаптация под Figma 1857:118385 (1024px).
+   Переопределяем только планшетный диапазон; desktop 1440/1920 и mobile сохраняются. */
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+    .fast-buildings-process {
+        padding: 5px 5px 10px;
+    }
+
+    .fast-buildings-process__panel {
+        align-items: stretch;
+        gap: 36px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .fast-buildings-process__heading {
+        gap: 18px;
+    }
+
+    .fast-buildings-process__title {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .fast-buildings-process__subtitle {
+        max-width: 900px;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .fast-buildings-process__steps {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        align-items: start;
+        row-gap: 0;
+    }
+
+    .fast-buildings-process__steps::before {
+        display: none;
+    }
+
+    .fast-buildings-process__step {
+        gap: 24px;
+        padding: 0;
+    }
+
+    .fast-buildings-process__icon-wrap {
+        align-items: center;
+        min-height: 48px;
+    }
+
+    .fast-buildings-process__icon {
+        flex-basis: 48px;
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+    }
+
+    .fast-buildings-process__icon img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .fast-buildings-process__number {
+        top: -9px;
+        left: 60%;
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .fast-buildings-process__step-copy {
+        gap: 8px;
+        padding: 0 4px;
+    }
+
+    .fast-buildings-process__step-title {
+        font-size: 20px;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+    }
+
+    .fast-buildings-process__description {
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 22px;
+        overflow-wrap: anywhere;
+    }
+
+    .fast-buildings-process__icon-wrap::after {
+        top: 24px;
+        left: 50%;
+        right: -50%;
+        width: auto;
+        margin-left: 24px;
+        height: 2px;
+        background: #36508A1A;
+        content: "";
+        pointer-events: none;
+    }
+
+    .fast-buildings-process__step:nth-child(3) .fast-buildings-process__icon-wrap::after {
+        display: block;
+    }
+
+    .fast-buildings-process__step:last-child .fast-buildings-process__icon-wrap::after {
+        display: none;
+    }
+
+    .fast-buildings-process__footnote {
+        display: none;
+    }
+}
+
+
+/* Этапы работы — мобильный макет Figma 1857:120710 (360px).
+   Секция адаптируется без изменения HTML и без влияния на tablet/desktop. */
+@media screen and (max-width: 400px) {
+    .fast-buildings-process {
+        padding: 0 5px 10px;
+    }
+
+    .fast-buildings-process__panel {
+        align-items: center;
+        gap: 24px;
+        padding: 20px 10px;
+        border-radius: 10px;
+    }
+
+    .fast-buildings-process__heading {
+        gap: 18px;
+    }
+
+    .fast-buildings-process__title {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .fast-buildings-process__subtitle {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .fast-buildings-process__steps {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 48px;
+        width: 100%;
+    }
+
+    .fast-buildings-process__steps::before {
+        display: none;
+    }
+
+    .fast-buildings-process__step {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 0;
+        text-align: left;
+    }
+
+    .fast-buildings-process__icon-wrap {
+        flex: 0 0 48px;
+        width: 48px;
+        min-height: 48px;
+        justify-content: flex-start;
+    }
+
+    .fast-buildings-process__icon {
+        flex-basis: 48px;
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+    }
+
+    .fast-buildings-process__icon img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .fast-buildings-process__number {
+        top: -9px;
+        left: 28px;
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .fast-buildings-process__step-copy {
+        align-items: flex-start;
+        gap: 8px;
+        min-width: 0;
+        padding: 0;
+        text-align: left;
+    }
+
+    .fast-buildings-process__step-title {
+        font-size: 18px;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+    }
+
+    .fast-buildings-process__description {
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 23px;
+        text-align: left;
+        overflow-wrap: anywhere;
+    }
+
+    .fast-buildings-process__step:nth-child(1) .fast-buildings-process__icon-wrap::after,
+    .fast-buildings-process__step:nth-child(2) .fast-buildings-process__icon-wrap::after,
+    .fast-buildings-process__step:nth-child(3) .fast-buildings-process__icon-wrap::after,
+    .fast-buildings-process__step:nth-child(4) .fast-buildings-process__icon-wrap::after {
+        position: absolute;
+        top: 48px;
+        left: 23px;
+        right: auto;
+        display: block;
+        width: 2px;
+        height: 48px;
+        margin: 0;
+        background: #36508A1A;
+        content: "";
+        pointer-events: none;
+    }
+
+    .fast-buildings-process__step:last-child .fast-buildings-process__icon-wrap::after {
+        display: none;
+    }
+
+    .fast-buildings-process__footnote {
+        display: none;
+    }
+}
+
+.fast-buildings-websteel {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0.2778rem;
+    color: #4D4D4D;
+    background: #F5F8F7;
+}
+
+.fast-buildings-websteel__panel {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 3.5556rem 2.2222rem;
+    border-radius: 1.1111rem;
+    background: #FFFFFF;
+}
+
+.fast-buildings-websteel__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.2222rem;
+    width: 100%;
+    max-width: 94.4444rem;
+    min-height: 47.7778rem;
+    padding: 2.6667rem 5.3333rem;
+    border-radius: 1.6667rem;
+    background: #F7F8FA;
+}
+
+.fast-buildings-websteel__copy {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.6667rem;
+    min-width: 0;
+}
+
+.fast-buildings-websteel__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.3333rem;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.fast-buildings-websteel__title,
+.fast-buildings-websteel__description {
+    margin: 0;
+}
+
+.fast-buildings-websteel__title {
+    color: #4D4D4D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 2.6667rem;
+    font-weight: 600;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.fast-buildings-websteel__description {
+    max-width: 49rem;
+    color: #5D5D5D;
+    font-family: 'Onest-Regular', sans-serif;
+    font-size: 1.3333rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.fast-buildings-websteel__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0.7778rem;
+}
+
+.fast-buildings-websteel__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.7778rem 2.2222rem;
+    border: 1px solid #324C88;
+    border-radius: 1.1111rem;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 1.1111rem;
+    font-weight: 600;
+    line-height: 1.26;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.fast-buildings-websteel__button--primary {
+    color: #FFFFFF;
+    background: #324C88;
+}
+
+.fast-buildings-websteel__button--secondary {
+    color: #324C88;
+    background: transparent;
+}
+
+.fast-buildings-websteel__button--primary:hover {
+    background: #263B6B;
+}
+
+.fast-buildings-websteel__button--secondary:hover {
+    color: #FFFFFF;
+    background: #324C88;
+}
+
+.fast-buildings-websteel__button:focus-visible {
+    outline: 2px solid #324C88;
+    outline-offset: 4px;
+}
+
+.fast-buildings-websteel__devices {
+    position: relative;
+    flex: 0 0 30rem;
+    height: 39.1111rem;
+}
+
+.fast-buildings-websteel__device {
+    position: absolute;
+    width: 13.8889rem;
+    height: 34.0556rem;
+}
+
+.fast-buildings-websteel__device--left {
+    top: 5.0556rem;
+    left: 0;
+}
+
+.fast-buildings-websteel__device--right {
+    top: 0;
+    right: 0.5rem;
+}
+
+.fast-buildings-websteel__device img {
+    position: absolute;
+    display: block;
+    max-width: none;
+    height: auto;
+    pointer-events: none;
+}
+
+.fast-buildings-websteel__device-shadow,
+.fast-buildings-websteel__device-frame {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.fast-buildings-websteel__device-shadow {
+    opacity: 0.7;
+}
+
+.fast-buildings-websteel__device-screen {
+    top: 1.8%;
+    left: 2%;
+    width: 86%;
+    height: 96.5%;
+    object-fit: contain;
+}
+
+.fast-buildings-websteel__device--left .fast-buildings-websteel__device-screen {
+    left: 2%;
+}
+
+.fast-buildings-websteel__device--right .fast-buildings-websteel__device-screen {
+    left: 10.5%;
+}
+
+@media screen and (max-width: 1300px) {
+    .fast-buildings-websteel__panel {
+        padding: 2.6667rem 1.3333rem;
+    }
+
+    .fast-buildings-websteel__content {
+        gap: 1.7778rem;
+        min-height: 0;
+        padding: 2.6667rem;
+    }
+
+    .fast-buildings-websteel__title {
+        font-size: 2.2222rem;
+    }
+
+    .fast-buildings-websteel__description {
+        font-size: 1.1111rem;
+    }
+
+    .fast-buildings-websteel__devices {
+        flex-basis: 24rem;
+        height: 34rem;
+    }
+
+    .fast-buildings-websteel__device {
+        width: 11.1111rem;
+        height: 27.3333rem;
+    }
+
+    .fast-buildings-websteel__device--left {
+        top: 4rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .fast-buildings-websteel__content {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 2rem;
+    }
+
+    .fast-buildings-websteel__copy {
+        gap: 1.7778rem;
+    }
+
+    .fast-buildings-websteel__devices {
+        align-self: center;
+        flex: 0 1 auto;
+        width: 100%;
+        max-width: 30rem;
+        height: 34rem;
+    }
+
+    .fast-buildings-websteel__device {
+        width: 11.1111rem;
+        height: 27.3333rem;
+    }
+
+    .fast-buildings-websteel__device--left {
+        top: 4rem;
+        left: 0;
+    }
+
+    .fast-buildings-websteel__device--right {
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .fast-buildings-websteel {
+        padding: 0;
+    }
+
+    .fast-buildings-websteel__panel {
+        padding: 1.1111rem 0.5556rem;
+        border-radius: 0;
+    }
+
+    .fast-buildings-websteel__content {
+        gap: 1.7778rem;
+        padding: 1.3333rem 1rem;
+        border-radius: 1.1111rem;
+    }
+
+    .fast-buildings-websteel__title {
+        font-size: 1.4444rem;
+        line-height: 1.4;
+    }
+
+    .fast-buildings-websteel__description {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .fast-buildings-websteel__actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .fast-buildings-websteel__button {
+        width: 100%;
+        padding: 1.1111rem 1rem;
+        font-size: 0.8889rem;
+    }
+
+    .fast-buildings-websteel__devices {
+        max-width: 22rem;
+        height: 27rem;
+    }
+
+    .fast-buildings-websteel__device {
+        width: 9.2rem;
+        height: 22.5rem;
+    }
+
+    .fast-buildings-websteel__device--left {
+        top: 3.5rem;
+    }
+
+    .fast-buildings-websteel__device--right {
+        right: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fast-buildings-websteel__button {
+        transition: none;
+    }
+}
+
+/* Figma 1857:116253 — desktop adaptation at 1440px; retain the 1920px layout above. */
+@media screen and (min-width: 1301px) and (max-width: 1600px) {
+    .fast-buildings-websteel {
+        padding-top: 0;
+    }
+}
+
+@media screen and (min-width: 1301px) and (max-width: 1600px) {
+    .fast-buildings-websteel__panel {
+        padding: 64px 40px;
+        border-radius: 10px;
+    }
+
+    .fast-buildings-websteel__content {
+        gap: 40px;
+        min-height: 860px;
+        padding: 48px 86px;
+    }
+
+    .fast-buildings-websteel__copy {
+        flex: 0 1 636px;
+        gap: 48px;
+    }
+
+    .fast-buildings-websteel__text {
+        gap: 24px;
+    }
+
+    .fast-buildings-websteel__title {
+        font-size: 48px;
+        line-height: 1.6;
+    }
+
+    .fast-buildings-websteel__description {
+        max-width: 636px;
+        font-size: 24px;
+        line-height: 1.6;
+    }
+
+    .fast-buildings-websteel__actions {
+        gap: 14px;
+    }
+
+    .fast-buildings-websteel__button {
+        padding: 32px 40px;
+        border-radius: 20px;
+        font-size: 20px;
+        line-height: 1.26;
+    }
+
+    .fast-buildings-websteel__devices {
+        flex: 0 0 432.614px;
+        width: 432.614px;
+        height: 564px;
+    }
+
+    .fast-buildings-websteel__device {
+        width: 200px;
+    }
+
+    .fast-buildings-websteel__device--left {
+        top: 72.9px;
+        left: 0;
+        width: 200.264px;
+        height: 493.55px;
+    }
+
+    .fast-buildings-websteel__device--right {
+        top: 0;
+        right: 7.21px;
+        width: 200.284px;
+        height: 491.097px;
+    }
+
+    .fast-buildings-websteel__device--left .fast-buildings-websteel__device-screen {
+        top: 1.51%;
+        left: 2.04%;
+        width: 86%;
+        height: 96.05%;
+    }
+
+    .fast-buildings-websteel__device--right .fast-buildings-websteel__device-screen {
+        top: 1.51%;
+        left: 10.55%;
+        width: 85.75%;
+        height: 96.54%;
+    }
+}
+
+
+/* Figma 1857:118492 — tablet layout at 1024px. */
+@media screen and (min-width: 901px) and (max-width: 1100px) {
+    .fast-buildings-websteel {
+        padding: 5px;
+    }
+
+    .fast-buildings-websteel__panel {
+        padding: 40px;
+        border-radius: 10px;
+    }
+
+    .fast-buildings-websteel__content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        width: 100%;
+        min-height: 0;
+        padding: 40px;
+        border-radius: 30px;
+    }
+
+    .fast-buildings-websteel__copy {
+        flex: 1 1 418px;
+        gap: 48px;
+        min-width: 0;
+    }
+
+    .fast-buildings-websteel__text {
+        gap: 24px;
+        width: 100%;
+        max-width: 418px;
+    }
+
+    .fast-buildings-websteel__title {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .fast-buildings-websteel__description {
+        max-width: 418px;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .fast-buildings-websteel__actions {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .fast-buildings-websteel__button {
+        padding: 26px 32px;
+        border-radius: 20px;
+        font-size: 18px;
+        line-height: 1.26;
+    }
+
+    .fast-buildings-websteel__devices {
+        align-self: center;
+        flex: 0 0 370px;
+        width: 370px;
+        max-width: none;
+        height: 486px;
+    }
+
+    .fast-buildings-websteel__device {
+        width: 172px;
+        height: 423px;
+    }
+
+    .fast-buildings-websteel__device--left {
+        top: 62.75px;
+        left: 0;
+        width: 172.37px;
+        height: 424.805px;
+    }
+
+    .fast-buildings-websteel__device--right {
+        top: 0;
+        right: 3.85px;
+        width: 172.387px;
+        height: 422.693px;
+    }
+
+    .fast-buildings-websteel__device--left .fast-buildings-websteel__device-screen {
+        top: 1.51%;
+        left: 2.03%;
+        width: 86%;
+        height: 96.05%;
+    }
+
+    .fast-buildings-websteel__device--right .fast-buildings-websteel__device-screen {
+        top: 1.51%;
+        left: 10.55%;
+        width: 85.75%;
+        height: 96.54%;
+    }
+}
+
+
+/* Figma 1857:120815 — точная адаптация WebSteel для 360 px. */
+@media screen and (max-width: 680px) {
+    .fast-buildings-websteel {
+        display: block;
+        padding: 5px;
+    }
+
+    .fast-buildings-websteel__panel {
+        display: block;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .fast-buildings-websteel__content {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 24px;
+        width: 100%;
+        min-height: 0;
+        padding: 20px 10px;
+        border-radius: 30px;
+    }
+
+    .fast-buildings-websteel__copy {
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        width: 100%;
+    }
+
+    .fast-buildings-websteel__title {
+        width: 100%;
+        font-size: 20px;
+        line-height: 28px;
+        text-align: center;
+    }
+
+    .fast-buildings-websteel__description {
+        max-width: none;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .fast-buildings-websteel__actions {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        width: 100%;
+    }
+
+    .fast-buildings-websteel__button {
+        display: flex;
+        flex: 0 0 54px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 54px;
+        padding: 18px 24px;
+        border-radius: 20px;
+        font-size: 14px;
+        line-height: 1.26;
+        white-space: nowrap;
+    }
+
+    .fast-buildings-websteel__devices {
+        position: relative;
+        align-self: center;
+        flex: 0 0 262.5px;
+        width: 200px;
+        max-width: none;
+        height: 262.5px;
+    }
+
+    .fast-buildings-websteel__device {
+        position: absolute;
+        width: 93px;
+        height: 228.5px;
+    }
+
+    .fast-buildings-websteel__device--left {
+        top: 33.9px;
+        left: 0;
+    }
+
+    .fast-buildings-websteel__device--right {
+        top: 0;
+        right: 2px;
+    }
+
+    .fast-buildings-websteel__device-shadow,
+    .fast-buildings-websteel__device-frame {
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .fast-buildings-websteel__device-screen {
+        top: 1.5%;
+        left: 2%;
+        width: 86%;
+        height: 96.5%;
+        object-fit: contain;
+    }
+
+    .fast-buildings-websteel__device--left .fast-buildings-websteel__device-screen {
+        left: 2%;
+    }
+
+    .fast-buildings-websteel__device--right .fast-buildings-websteel__device-screen {
+        left: 10.5%;
+    }
+}
+
+/* Факторы, влияющие на стоимость здания — Figma 1857:114052. */
+.fast-buildings-factors {
+    padding: 0 0.5556rem 0.5556rem;
+    background: #F5F8F7;
+    color: #4D4D4D;
+}
+
+.fast-buildings-factors__panel {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2.2222rem;
+    border-radius: 1.1111rem;
+    background: #F5F8F7;
+}
+
+.fast-buildings-factors__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3889rem;
+    width: 100%;
+    text-align: center;
+}
+
+.fast-buildings-factors__title {
+    width: 100%;
+    max-width: 70.8889rem;
+    margin: 0;
+    color: #4D4D4D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 2.6667rem;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.fast-buildings-factors__subtitle {
+    margin: 0;
+    color: #4D4D4DCC;
+    font-family: 'Onest-Regular', sans-serif;
+    font-size: 1.3333rem;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+
+.fast-buildings-factors__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    justify-content: center;
+    gap: 1.1111rem;
+    width: 100%;
+}
+
+@media screen and (min-width: 1800px) {
+    .fast-buildings-factors__grid {
+        grid-template-columns: repeat(4, 20.6667rem);
+    }
+}
+
+.fast-buildings-factors__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    min-width: 0;
+    min-height: 14.5rem;
+    padding: 1.5556rem 1.3333rem 1.3333rem;
+    border-radius: 1.6667rem;
+    background: transparent;
+    isolation: isolate;
+}
+
+.fast-buildings-factors__card::before {
+    position: absolute;
+    z-index: -2;
+    top: 0.0272rem;
+    right: 3%;
+    bottom: 0.2778rem;
+    left: 3%;
+    border-radius: 1.6667rem;
+    background: #36508A;
+    content: "";
+}
+
+.fast-buildings-factors__card::after {
+    position: absolute;
+    z-index: -1;
+    top: 0.2494rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 1.6667rem;
+    background: #FFFFFF;
+    content: "";
+}
+
+.fast-buildings-factors__icon {
+    display: grid;
+    flex: 0 0 2.6667rem;
+    width: 2.6667rem;
+    height: 2.6667rem;
+    place-items: center;
+    border-radius: 1.1111rem;
+    background: #36508A;
+}
+
+.fast-buildings-factors__icon img {
+    display: block;
+    width: 1.3333rem;
+    height: 1.3333rem;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.fast-buildings-factors__copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4444rem;
+    width: 100%;
+    min-width: 0;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.fast-buildings-factors__card-title {
+    margin: 0;
+    color: #4D4D4D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 1.1111rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.fast-buildings-factors__description {
+    margin: 0;
+    color: #4D4D4DCC;
+    font-family: 'Onest-Regular', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 1300px) {
+    .fast-buildings-factors__panel {
+        gap: 1.7778rem;
+        padding: 1.7778rem;
+    }
+
+    .fast-buildings-factors__title {
+        font-size: 2rem;
+    }
+
+    .fast-buildings-factors__subtitle {
+        font-size: 1.1111rem;
+    }
+
+    .fast-buildings-factors__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .fast-buildings-factors {
+        padding: 0 0.5556rem 0.5556rem;
+    }
+
+    .fast-buildings-factors__panel {
+        gap: 1.3333rem;
+        padding: 1.1111rem 0.5556rem;
+    }
+
+    .fast-buildings-factors__heading {
+        gap: 0.7778rem;
+    }
+
+    .fast-buildings-factors__title {
+        font-size: 1.2222rem;
+        line-height: 1.35;
+    }
+
+    .fast-buildings-factors__subtitle {
+        font-size: 0.8889rem;
+        line-height: 1.4;
+    }
+
+    .fast-buildings-factors__grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.7778rem;
+    }
+
+    .fast-buildings-factors__card {
+        gap: 1.3333rem;
+        min-height: 0;
+        padding: 1.1111rem;
+        border-radius: 1.1111rem;
+    }
+
+    .fast-buildings-factors__card::before {
+        right: 3%;
+        left: 3%;
+        bottom: 0.2222rem;
+        border-radius: 1.1111rem;
+    }
+
+    .fast-buildings-factors__card::after {
+        top: 0.2222rem;
+        border-radius: 1.1111rem;
+    }
+
+    .fast-buildings-factors__icon {
+        flex-basis: 2.4444rem;
+        width: 2.4444rem;
+        height: 2.4444rem;
+        border-radius: 0.8889rem;
+    }
+
+    .fast-buildings-factors__card-title {
+        font-size: 1.1111rem;
+    }
+
+    .fast-buildings-factors__description {
+        font-size: 0.8889rem;
+    }
+}
+
+/* Адаптация блока факторов под макет Figma 1857:118573 (1024 px). */
+@media screen and (min-width: 1018px) and (max-width: 1100px) {
+    .fast-buildings-factors__panel {
+        gap: 1.3333rem;
+        padding: 2.2222rem 1.6667rem;
+    }
+
+    .fast-buildings-factors__heading {
+        gap: 1.3333rem;
+    }
+
+    .fast-buildings-factors__title {
+        max-width: none;
+        font-size: 1.6667rem;
+        line-height: 1.2667;
+    }
+
+    .fast-buildings-factors__subtitle {
+        font-size: 1.1111rem;
+        line-height: 1.5;
+    }
+
+    .fast-buildings-factors__grid {
+        grid-template-columns: repeat(2, 25.5556rem);
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .fast-buildings-factors__card {
+        gap: 2rem;
+        min-height: 18.2222rem;
+        padding: 2rem 1.3333rem;
+        border-radius: 1.6667rem;
+    }
+
+    .fast-buildings-factors__card::before {
+        top: 0;
+        right: 4.3478%;
+        bottom: 4rem;
+        left: 4.3478%;
+        border-radius: 1.6667rem;
+    }
+
+    .fast-buildings-factors__card::after {
+        top: 0.4444rem;
+        border-radius: 1.6667rem;
+    }
+
+    .fast-buildings-factors__icon {
+        flex-basis: 4rem;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 1.1111rem;
+    }
+
+    .fast-buildings-factors__icon img {
+        width: 2rem;
+        height: 2rem;
+        filter: none;
+    }
+
+    .fast-buildings-factors__copy {
+        gap: 0.7778rem;
+    }
+
+    .fast-buildings-factors__card-title {
+        font-size: 1.2222rem;
+        line-height: 1.5;
+    }
+
+    .fast-buildings-factors__description {
+        font-size: 1.1111rem;
+        line-height: 1.5;
+    }
+}
+
+
+/* Мобильный кадр блока факторов — Figma 1857:120892 (360 px). */
+.fast-buildings-factors__more {
+    display: none;
+}
+
+@media screen and (max-width: 680px) {
+    .fast-buildings-factors {
+        padding: 0 10px 10px;
+    }
+
+    .fast-buildings-factors__panel {
+        gap: 24px;
+        padding: 20px 0;
+        border-radius: 20px;
+        background: #FFFFFF;
+    }
+
+    .fast-buildings-factors__heading {
+        gap: 18px;
+        padding: 0 10px;
+    }
+
+    .fast-buildings-factors__title {
+        color: #4D4D4D;
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .fast-buildings-factors__subtitle {
+        color: #4D4D4DCC;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .fast-buildings-factors__grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+        padding: 0;
+    }
+
+    .fast-buildings-factors__card {
+        gap: 36px;
+        min-height: 214px;
+        padding: 18px;
+        border-radius: 30px;
+    }
+
+    .fast-buildings-factors__card:nth-child(n + 3) {
+        display: none;
+    }
+
+    .fast-buildings-factors__grid.is-expanded .fast-buildings-factors__card:nth-child(n + 3) {
+        display: flex;
+    }
+
+    .fast-buildings-factors__card::before {
+        top: 0;
+        right: 24px;
+        bottom: 0;
+        left: 24px;
+        border-radius: 30px;
+    }
+
+    .fast-buildings-factors__card::after {
+        top: 8px;
+        border-radius: 30px;
+    }
+
+    .fast-buildings-factors__icon {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+        border-radius: 14px;
+    }
+
+    .fast-buildings-factors__icon img {
+        width: 14px;
+        height: 14px;
+    }
+
+    .fast-buildings-factors__copy {
+        gap: 8px;
+    }
+
+    .fast-buildings-factors__card-title {
+        font-size: 18px;
+        line-height: 27px;
+    }
+
+    .fast-buildings-factors__description {
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    .fast-buildings-factors__more {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        align-self: center;
+        min-height: 24px;
+        padding: 0;
+        color: #324C88;
+        font-family: 'Onest-Medium', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+    }
+
+    .fast-buildings-factors__more svg {
+        flex: 0 0 24px;
+        width: 24px;
+        height: 24px;
+        transition: transform 0.2s ease;
+    }
+
+    .fast-buildings-factors__more[aria-expanded="true"] svg {
+        transform: rotate(180deg);
+    }
+
+    .fast-buildings-factors__more:focus-visible {
+        outline: 2px solid #324C88;
+        outline-offset: 4px;
+        border-radius: 4px;
+    }
+}
+
+@media screen and (min-width: 681px) {
+    .fast-buildings-factors__more {
+        display: none;
+    }
+}
+
+
+/* Гарантия — Figma 1857:116481. */
+.fast-buildings-guarantee {
+    padding: 0.5556rem;
+    color: #4D4D4D;
+    background: #F5F8F7;
+}
+
+.fast-buildings-guarantee__panel {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2.2222rem;
+    border-radius: 1.1111rem;
+    background: #FFFFFF;
+}
+
+.fast-buildings-guarantee__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3333rem;
+    text-align: center;
+}
+
+.fast-buildings-guarantee__title {
+    width: 100%;
+    margin: 0;
+    color: #4D4D4D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 2.6667rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.fast-buildings-guarantee__subtitle {
+    max-width: 100%;
+    margin: 0;
+    color: #4D4D4DCC;
+    font-family: 'Onest-Regular', sans-serif;
+    font-size: 1.3333rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-wrap: balance;
+}
+
+.fast-buildings-guarantee__options {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 35.4444rem));
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.1111rem;
+    padding-bottom: 5.9444rem;
+}
+
+.fast-buildings-guarantee__option {
+    position: relative;
+    min-width: 0;
+    padding-top: 0.2222rem;
+}
+
+.fast-buildings-guarantee__option::before {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 50%;
+    width: 92.4765%;
+    height: 14.2222rem;
+    border-radius: 1.6667rem;
+    background: #36508A;
+    content: "";
+    transform: translateX(-50%);
+}
+
+.fast-buildings-guarantee__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 20.5556rem;
+    padding: 2rem 1.3333rem;
+    overflow: hidden;
+    border-radius: 1.6667rem;
+    background: #FFFFFF;
+}
+
+.fast-buildings-guarantee__card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.fast-buildings-guarantee__label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6667rem 1.1111rem;
+    border-radius: 1.1111rem;
+    color: #36508A;
+    background: #36508A0D;
+    font-family: 'Onest-Medium', sans-serif;
+    font-size: 0.8889rem;
+    font-weight: 500;
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+.fast-buildings-guarantee__icon {
+    display: flex;
+    flex: 0 0 2.6667rem;
+    align-items: center;
+    justify-content: center;
+    width: 2.6667rem;
+    height: 2.6667rem;
+    border-radius: 1.1111rem;
+    background: #36508A;
+}
+
+.fast-buildings-guarantee__icon img {
+    display: block;
+    width: 1.3333rem;
+    height: 1.3333rem;
+}
+
+.fast-buildings-guarantee__card-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+}
+
+.fast-buildings-guarantee__card-title {
+    margin: 0;
+    color: #000000;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 1.3333rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
+
+.fast-buildings-guarantee__type {
+    margin: 0;
+    color: #36508A;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 0.8889rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.fast-buildings-guarantee__divider {
+    width: 100%;
+    height: 1px;
+    flex: 0 0 1px;
+    background: #36508A26;
+}
+
+.fast-buildings-guarantee__benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.fast-buildings-guarantee__benefit {
+    display: flex;
+    align-items: center;
+    gap: 0.7778rem;
+    min-width: 0;
+}
+
+.fast-buildings-guarantee__benefit p {
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0;
+    color: #4D4D4D;
+    font-family: 'Onest-Regular', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.fast-buildings-guarantee__check {
+    display: flex;
+    flex: 0 0 2rem;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5556rem;
+    background: #324C880D;
+}
+
+.fast-buildings-guarantee__check img {
+    display: block;
+    width: 1.3333rem;
+    height: 1.3333rem;
+}
+
+.fast-buildings-guarantee__number {
+    position: absolute;
+    z-index: 0;
+    top: -8.1111rem;
+    right: 5.0556rem;
+    color: #36508A0D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 11.1111rem;
+    font-weight: 600;
+    line-height: 1.5;
+    pointer-events: none;
+}
+
+.fast-buildings-guarantee__number--five {
+    top: -1.2222rem;
+    right: 9rem;
+}
+
+.fast-buildings-guarantee__footnote {
+    position: relative;
+    z-index: 1;
+    justify-self: center;
+    width: fit-content;
+    max-width: 100%;
+    margin: -6.7222rem auto 0;
+    padding: 1.6667rem 12.6111rem 1.3333rem;
+    border-radius: 0 0 1.6667rem 1.6667rem;
+    color: #FFFFFF;
+    background: #36508A;
+    font-family: 'Onest-Medium', sans-serif;
+    font-size: 1.3333rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+}
+
+@media screen and (min-width: 1600px) {
+    .fast-buildings-guarantee__panel {
+        gap: 2rem;
+        padding: 2.2222rem;
+    }
+
+    .fast-buildings-guarantee__options {
+        grid-template-columns: repeat(2, minmax(0, 35.4444rem));
+        gap: 1.1111rem;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .fast-buildings-guarantee__panel {
+        gap: 1.7778rem;
+        padding: 2rem 1.3333rem;
+    }
+
+    .fast-buildings-guarantee__options {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+        padding-bottom: 0;
+    }
+
+    .fast-buildings-guarantee__card {
+        gap: 1.3333rem;
+        padding: 1.3333rem 1rem;
+    }
+
+    .fast-buildings-guarantee__number,
+    .fast-buildings-guarantee__number--five {
+        top: -0.6667rem;
+        right: 0.4444rem;
+        font-size: 8rem;
+    }
+
+    .fast-buildings-guarantee__footnote {
+        margin: 0 auto;
+        padding: 1.3333rem 1.7778rem;
+        border-radius: 1.1111rem;
+        white-space: normal;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .fast-buildings-guarantee__title {
+        font-size: 2rem;
+    }
+
+    .fast-buildings-guarantee__subtitle {
+        font-size: 1.1111rem;
+    }
+
+    .fast-buildings-guarantee__options {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.3333rem;
+    }
+
+    .fast-buildings-guarantee__card {
+        min-height: 0;
+        padding: 1.3333rem;
+    }
+
+    .fast-buildings-guarantee__option::before {
+        width: 92%;
+    }
+
+    .fast-buildings-guarantee__footnote {
+        font-size: 1.1111rem;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .fast-buildings-guarantee {
+        padding: 0 0.5556rem 0.5556rem;
+    }
+
+    .fast-buildings-guarantee__panel {
+        gap: 1.3333rem;
+        padding: 1.1111rem 0.5556rem;
+        border-radius: 1.1111rem;
+    }
+
+    .fast-buildings-guarantee__heading {
+        gap: 1rem;
+        padding: 0 0.2222rem;
+    }
+
+    .fast-buildings-guarantee__title {
+        font-size: 1.3333rem;
+        line-height: 1.4;
+    }
+
+    .fast-buildings-guarantee__subtitle {
+        font-size: 0.8889rem;
+        line-height: 1.5;
+    }
+
+    .fast-buildings-guarantee__options {
+        gap: 1.1111rem;
+    }
+
+    .fast-buildings-guarantee__card {
+        gap: 1.3333rem;
+        padding: 1.1111rem;
+        border-radius: 1.1111rem;
+    }
+
+    .fast-buildings-guarantee__card-title {
+        font-size: 1.1111rem;
+    }
+
+    .fast-buildings-guarantee__benefit {
+        align-items: flex-start;
+        gap: 0.7778rem;
+    }
+
+    .fast-buildings-guarantee__benefit p {
+        font-size: 0.8889rem;
+    }
+
+    .fast-buildings-guarantee__number,
+    .fast-buildings-guarantee__number--five {
+        top: -0.3333rem;
+        right: 0.3333rem;
+        font-size: 5.5556rem;
+    }
+
+    .fast-buildings-guarantee__footnote {
+        padding: 1rem;
+        font-size: 0.8889rem;
+    }
+}
+
+
+/* Адаптация блока гарантии под Figma 1857:118726 (1024 px).
+   Отдельный tablet breakpoint не меняет раскладку для 1440/1920 px. */
+@media screen and (min-width: 801px) and (max-width: 1100px) {
+    .fast-buildings-guarantee {
+        padding: 0 0.5556rem 0.5556rem;
+    }
+
+    .fast-buildings-guarantee__panel {
+        gap: 1.3333rem;
+        padding: 2.2222rem;
+        border-radius: 1.1111rem;
+    }
+
+    .fast-buildings-guarantee__heading {
+        gap: 1rem;
+    }
+
+    .fast-buildings-guarantee__title {
+        font-size: 1.6667rem;
+        line-height: 1.2667;
+    }
+
+    .fast-buildings-guarantee__subtitle {
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: center;
+        white-space: normal;
+    }
+
+    .fast-buildings-guarantee__options {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.1111rem;
+        align-items: stretch;
+        padding-bottom: 0;
+    }
+
+    .fast-buildings-guarantee__option {
+        min-width: 0;
+    }
+
+    .fast-buildings-guarantee__card {
+        gap: 1.3333rem;
+        min-height: 20.5556rem;
+        height: 100%;
+        padding: 1.3333rem;
+        border-radius: 1.6667rem;
+    }
+
+    .fast-buildings-guarantee__card-header {
+        gap: 0.7778rem;
+    }
+
+    .fast-buildings-guarantee__label {
+        padding: 0.6667rem 1.1111rem;
+        border-radius: 1.1111rem;
+        font-size: 0.8889rem;
+    }
+
+    .fast-buildings-guarantee__icon {
+        flex: 0 0 2.6667rem;
+        width: 2.6667rem;
+        height: 2.6667rem;
+        border-radius: 1.1111rem;
+    }
+
+    .fast-buildings-guarantee__card-content {
+        gap: 0.7778rem;
+    }
+
+    .fast-buildings-guarantee__card-title {
+        font-size: 1.1111rem;
+        line-height: 1.5;
+    }
+
+    .fast-buildings-guarantee__type {
+        font-size: 0.8889rem;
+        line-height: 1.5;
+    }
+
+    .fast-buildings-guarantee__divider {
+        margin: 0.1111rem 0;
+    }
+
+    .fast-buildings-guarantee__benefits {
+        gap: 0.7778rem;
+    }
+
+    .fast-buildings-guarantee__benefit {
+        align-items: flex-start;
+        gap: 0.7778rem;
+    }
+
+    .fast-buildings-guarantee__check {
+        flex: 0 0 2rem;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .fast-buildings-guarantee__check img {
+        width: 1.3333rem;
+        height: 1.3333rem;
+    }
+
+    .fast-buildings-guarantee__benefit p {
+        min-width: 0;
+        font-size: 0.8889rem;
+        line-height: 1.5;
+    }
+
+    .fast-buildings-guarantee__number,
+    .fast-buildings-guarantee__number--five {
+        top: -0.6667rem;
+        right: 0.4444rem;
+        font-size: 8rem;
+    }
+
+    .fast-buildings-guarantee__footnote {
+        margin: 0 auto;
+        padding: 1.1111rem 2.2222rem;
+        border-radius: 0 0 1.1111rem 1.1111rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        white-space: normal;
+    }
+}
+
+/* Гарантия — mobile Figma 1857:121043 (360 px). */
+@media screen and (max-width: 680px) {
+    .fast-buildings-guarantee {
+        padding: 0 10px 10px;
+    }
+
+    .fast-buildings-guarantee__panel {
+        gap: 24px;
+        padding: 20px 0;
+        border-radius: 20px;
+    }
+
+    .fast-buildings-guarantee__heading {
+        gap: 18px;
+        padding: 0 10px;
+    }
+
+    .fast-buildings-guarantee__title {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .fast-buildings-guarantee__subtitle {
+        font-size: 16px;
+        line-height: normal;
+        text-wrap: initial;
+    }
+
+    .fast-buildings-guarantee__options {
+        gap: 14px;
+        padding: 0 5px;
+    }
+
+    .fast-buildings-guarantee__option {
+        width: 100%;
+        padding-top: 5px;
+    }
+
+    .fast-buildings-guarantee__option::before {
+        top: 0;
+        width: 88.4393%;
+        height: 256px;
+        border-radius: 30px;
+    }
+
+    .fast-buildings-guarantee__card {
+        gap: 24px;
+        width: 100%;
+        max-width: 346px;
+        min-height: 0;
+        margin: 0 auto;
+        padding: 24px;
+        border-radius: 30px;
+    }
+
+    .fast-buildings-guarantee__card-header {
+        gap: 14px;
+    }
+
+    .fast-buildings-guarantee__label {
+        padding: 12px 20px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .fast-buildings-guarantee__icon {
+        flex: 0 0 36px;
+        width: 36px;
+        height: 36px;
+        border-radius: 14px;
+    }
+
+    .fast-buildings-guarantee__icon img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .fast-buildings-guarantee__card-content {
+        gap: 10px;
+    }
+
+    .fast-buildings-guarantee__card-title,
+    .fast-buildings-guarantee__type {
+        font-size: 16px;
+        line-height: 1.3333;
+    }
+
+    .fast-buildings-guarantee__divider {
+        margin: 2px 0;
+    }
+
+    .fast-buildings-guarantee__benefits {
+        gap: 14px;
+    }
+
+    .fast-buildings-guarantee__benefit {
+        align-items: center;
+        gap: 14px;
+    }
+
+    .fast-buildings-guarantee__benefit p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .fast-buildings-guarantee__check {
+        flex: 0 0 24px;
+        width: 24px;
+        height: 24px;
+        border-radius: 10px;
+    }
+
+    .fast-buildings-guarantee__check img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .fast-buildings-guarantee__number,
+    .fast-buildings-guarantee__number--five {
+        top: -86px;
+        right: 49.5px;
+        font-size: 120px;
+        line-height: 1.5;
+    }
+
+    .fast-buildings-guarantee__number--five {
+        top: -86px;
+        right: 86.5px;
+    }
+
+    .fast-buildings-guarantee__footnote {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 20px 10px;
+        border-radius: 0 0 30px 30px;
+        font-size: 16px;
+        line-height: 22px;
+        white-space: normal;
+    }
+}
+
+/* Figma 1857:114262 — блок «Комфорт». */
+.fast-buildings-comfort {
+    padding: 0.5556rem;
+    background: #F5F8F7;
+    color: #4D4D4D;
+    font-family: 'Onest-Regular', sans-serif;
+}
+
+.fast-buildings-comfort__panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3889rem;
+    width: 100%;
+    padding: 3.5556rem 2.2222rem;
+    border-radius: 1.1111rem;
+    background: #F5F8F7;
+}
+
+.fast-buildings-comfort__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3333rem;
+    width: 100%;
+    text-align: center;
+}
+
+.fast-buildings-comfort__title {
+    margin: 0;
+    color: #4D4D4D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 2.6667rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.fast-buildings-comfort__subtitle {
+    max-width: 100%;
+    margin: 0;
+    color: #5D5D5D;
+    font-size: 1.3333rem;
+    line-height: 1.6;
+}
+
+.fast-buildings-comfort__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 710fr) minmax(0, 658fr);
+    align-items: start;
+    gap: 7.7778rem;
+    width: 100%;
+    max-width: 83.7778rem;
+}
+
+.fast-buildings-comfort__buildings {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-content: center;
+    gap: 2rem 1.1111rem;
+    min-height: 38.3889rem;
+    padding: 2rem 1.3333rem;
+    border-radius: 1.6667rem;
+    background: #FFFFFF;
+}
+
+.fast-buildings-comfort__building {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    text-align: center;
+}
+
+.fast-buildings-comfort__building img {
+    display: block;
+    width: min(100%, 11.1111rem);
+    height: 7.3889rem;
+    margin-bottom: 1rem;
+    object-fit: contain;
+}
+
+.fast-buildings-comfort__building h3 {
+    margin: 0 0 0.7778rem;
+    color: #505050;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 1.6667rem;
+    font-weight: 600;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.fast-buildings-comfort__building p {
+    margin: 0;
+    color: #4D4D4DCC;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.fast-buildings-comfort__list {
+    min-width: 0;
+    width: 100%;
+}
+
+.fast-buildings-comfort__item {
+    padding: 0 0 1.1111rem;
+    margin: 0 0 1.1111rem;
+    border-top: 0.0556rem solid #0000000D;
+}
+
+.fast-buildings-comfort__item:last-child {
+    margin-bottom: 0;
+}
+
+.fast-buildings-comfort__item-heading {
+    margin: 0;
+}
+
+.fast-buildings-comfort__item-heading button {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.3333rem;
+    width: 100%;
+    padding: 1.1111rem 0 0;
+    border: 0;
+    background: transparent;
+    color: #4D4D4D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 1.1111rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: left;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.fast-buildings-comfort__icon {
+    display: flex;
+    flex: 0 0 2.2222rem;
+    align-items: center;
+    justify-content: center;
+    width: 2.2222rem;
+    height: 2.2222rem;
+    border-radius: 50%;
+    background: #FFF500;
+}
+
+.fast-buildings-comfort__icon img {
+    display: block;
+    width: 1.3333rem;
+    height: 1.3333rem;
+}
+
+.fast-buildings-comfort__item-heading button:focus-visible {
+    outline: 0.1111rem solid #324C88;
+    outline-offset: 0.2222rem;
+}
+
+.fast-buildings-comfort__description {
+    padding: 0.7778rem 0 0 3.5556rem;
+}
+
+.fast-buildings-comfort__description[hidden] {
+    display: none;
+}
+
+.fast-buildings-comfort__description p {
+    margin: 0;
+    color: #4D4D4DCC;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.fast-buildings-comfort__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    margin-top: 1rem;
+    padding: 0.7778rem 1.6667rem;
+    border-radius: 0.5556rem;
+    background: #324C88;
+    color: #FFFFFF;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 0.8333rem;
+    font-weight: 600;
+    line-height: 1.6;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+@media (min-width: 761px) and (max-width: 1200px) {
+    .fast-buildings-comfort__panel {
+        gap: 1.3889rem;
+        padding: 2.2222rem;
+    }
+
+    .fast-buildings-comfort__heading {
+        gap: 0.7778rem;
+    }
+
+    .fast-buildings-comfort__title {
+        font-size: 1.6667rem;
+        line-height: 1.2667;
+    }
+
+    .fast-buildings-comfort__subtitle {
+        max-width: 42.8889rem;
+        font-size: 1.1111rem;
+        line-height: 1.6;
+    }
+
+    .fast-buildings-comfort__layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.3333rem;
+        max-width: 100%;
+    }
+
+    .fast-buildings-comfort__list {
+        order: 1;
+    }
+
+    .fast-buildings-comfort__buildings {
+        order: 2;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem 1.3333rem;
+        min-height: 0;
+        padding: 1.3333rem;
+        border-radius: 1.6667rem;
+    }
+
+    .fast-buildings-comfort__building img {
+        width: min(100%, 5.8333rem);
+        height: 3.8889rem;
+        margin-bottom: 0.5556rem;
+    }
+
+    .fast-buildings-comfort__building h3 {
+        margin-bottom: 0.4444rem;
+        font-size: 1.1111rem;
+        line-height: 1.6;
+    }
+
+    .fast-buildings-comfort__building p {
+        font-size: 0.8889rem;
+    }
+
+    .fast-buildings-comfort__item {
+        padding-bottom: 1.1111rem;
+        margin-bottom: 1.1111rem;
+    }
+
+    .fast-buildings-comfort__item-heading button {
+        align-items: center;
+        gap: 1.3333rem;
+        padding-top: 1.1111rem;
+        font-size: 1rem;
+    }
+
+    .fast-buildings-comfort__icon {
+        flex-basis: 1.6667rem;
+        width: 1.6667rem;
+        height: 1.6667rem;
+    }
+
+    .fast-buildings-comfort__icon img {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .fast-buildings-comfort__description {
+        padding: 0.7778rem 0 0 3rem;
+    }
+
+    .fast-buildings-comfort__description p {
+        font-size: 0.8889rem;
+    }
+}
+
+@media (max-width: 760px) {
+    .fast-buildings-comfort {
+        padding: 0 0 0.5556rem;
+    }
+
+    .fast-buildings-comfort__panel {
+        gap: 1.3889rem;
+        padding: 1.6667rem 0.7778rem 0.5556rem;
+        border-radius: 0.5556rem;
+    }
+
+    .fast-buildings-comfort__heading {
+        gap: 0.7778rem;
+    }
+
+    .fast-buildings-comfort__title {
+        font-size: 1.1111rem;
+        line-height: 1.5556rem;
+    }
+
+    .fast-buildings-comfort__subtitle {
+        font-size: 0.8333rem;
+        line-height: 1.6;
+    }
+
+    .fast-buildings-comfort__layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+
+    .fast-buildings-comfort__buildings {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5556rem 0.6667rem;
+        min-height: 0;
+        padding: 1.3333rem 0.6667rem;
+        border-radius: 1.1111rem;
+    }
+
+    .fast-buildings-comfort__building img {
+        height: 5.5556rem;
+        margin-bottom: 0.4444rem;
+    }
+
+    .fast-buildings-comfort__building h3 {
+        margin-bottom: 0.4444rem;
+        font-size: 0.9444rem;
+    }
+
+    .fast-buildings-comfort__building p {
+        font-size: 0.7778rem;
+    }
+
+    .fast-buildings-comfort__item {
+        padding-bottom: 1.1111rem;
+        margin-bottom: 1.1111rem;
+    }
+
+    .fast-buildings-comfort__item-heading button {
+        align-items: flex-start;
+        gap: 1.3333rem;
+        padding-top: 0;
+        font-size: 0.8889rem;
+    }
+
+    .fast-buildings-comfort__icon {
+        flex-basis: 1.6667rem;
+        width: 1.6667rem;
+        height: 1.6667rem;
+    }
+
+    .fast-buildings-comfort__description {
+        padding: 0.7778rem 0 0 3rem;
+    }
+
+    .fast-buildings-comfort__description p {
+        font-size: 0.7778rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .fast-buildings-comfort__panel {
+        padding-right: 0.5556rem;
+        padding-left: 0.5556rem;
+    }
+
+    .fast-buildings-comfort__title {
+        font-size: 1rem;
+    }
+
+    .fast-buildings-comfort__buildings {
+        padding: 1.1111rem 0.4444rem;
+    }
+
+    .fast-buildings-comfort__building h3 {
+        font-size: 0.8333rem;
+    }
+
+    .fast-buildings-comfort__building p {
+        font-size: 0.7222rem;
+    }
+
+    .fast-buildings-comfort__item-heading button {
+        font-size: 0.7778rem;
+    }
+}
+
+
+/* Figma 1857:116542 — desktop layout for 1440px, fluidly connected to 1920px. */
+@media screen and (min-width: 1301px) and (max-width: 1599px) {
+    .fast-buildings-comfort__panel {
+        padding: 3.5556rem 2.2222rem;
+    }
+
+    .fast-buildings-comfort__layout {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 4.4444rem;
+        max-width: 75.5556rem;
+    }
+
+    .fast-buildings-comfort__buildings {
+        min-height: 38.3889rem;
+        padding: 2rem 1.3333rem;
+    }
+
+    .fast-buildings-comfort__building img {
+        width: min(100%, 11.1111rem);
+        height: 7.3889rem;
+    }
+
+    .fast-buildings-comfort__building h3 {
+        font-size: 1.6667rem;
+    }
+
+    .fast-buildings-comfort__building p {
+        font-size: 1rem;
+    }
+}
+
+
+/* Figma 1857:121107 — точная мобильная компоновка блока «Комфорт» (360px). */
+@media screen and (max-width: 360px) {
+    .fast-buildings-comfort {
+        padding: 0 0.5556rem 0.5556rem;
+    }
+
+    .fast-buildings-comfort__panel {
+        align-items: center;
+        gap: 1.3889rem;
+        padding: 2.2222rem 0.2222rem 0.5556rem;
+        border-radius: 0.5556rem;
+    }
+
+    .fast-buildings-comfort__heading {
+        gap: 0.7778rem;
+    }
+
+    .fast-buildings-comfort__title {
+        font-size: 1.1111rem;
+        line-height: 1.5556rem;
+    }
+
+    .fast-buildings-comfort__subtitle {
+        font-size: 0.8333rem;
+        line-height: 1.6;
+    }
+
+    .fast-buildings-comfort__layout {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .fast-buildings-comfort__list {
+        order: 1;
+    }
+
+    .fast-buildings-comfort__buildings {
+        order: 2;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1rem;
+        width: 100%;
+        padding: 1.3333rem;
+        border-radius: 1.6667rem;
+    }
+
+    .fast-buildings-comfort__building img {
+        width: 5.8333rem;
+        height: 3.8889rem;
+        margin-bottom: 0.5556rem;
+    }
+
+    .fast-buildings-comfort__building h3 {
+        margin-bottom: 0.4444rem;
+        font-size: 1.1111rem;
+        line-height: 1.6;
+    }
+
+    .fast-buildings-comfort__building p {
+        font-size: 0.8889rem;
+        line-height: 1.5;
+    }
+
+    .fast-buildings-comfort__item {
+        padding-bottom: 1.1111rem;
+        margin-bottom: 1.1111rem;
+    }
+
+    .fast-buildings-comfort__item-heading button {
+        align-items: flex-start;
+        gap: 1.3333rem;
+        padding-top: 0;
+        font-size: 0.8889rem;
+        line-height: 1.5;
+    }
+
+    .fast-buildings-comfort__icon {
+        flex-basis: 1.6667rem;
+        width: 1.6667rem;
+        height: 1.6667rem;
+    }
+
+    .fast-buildings-comfort__icon img {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .fast-buildings-comfort__description {
+        padding: 0.7778rem 0 0 3rem;
+    }
+
+    .fast-buildings-comfort__description p {
+        font-size: 0.7778rem;
+        line-height: 1.5;
+    }
+}
+
+
+.fast-buildings-comfort__mobile-buildings {
+    display: none;
+}
+
+@media screen and (max-width: 360px) {
+    .fast-buildings-comfort__buildings {
+        display: none;
+    }
+
+    .fast-buildings-comfort__mobile-buildings {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        width: 100%;
+        margin-top: 1rem;
+        padding: 1.3333rem;
+        overflow: hidden;
+        border-radius: 1.6667rem;
+        background: #FFFFFF;
+    }
+
+    .fast-buildings-comfort__mobile-buildings .fast-buildings-comfort__building img {
+        width: 5.8333rem;
+        height: 3.8889rem;
+        margin-bottom: 0.5556rem;
+    }
+
+    .fast-buildings-comfort__mobile-buildings .fast-buildings-comfort__building h3 {
+        margin-bottom: 0.4444rem;
+        font-size: 1.1111rem;
+        line-height: 1.6;
+    }
+
+    .fast-buildings-comfort__mobile-buildings .fast-buildings-comfort__building p {
+        font-size: 0.8889rem;
+        line-height: 1.5;
+    }
+}
+
+/* Характеристики зданий — Figma 1857:115534. */
+.fast-buildings-characteristics {
+    padding: 0 0.2778rem 0.5556rem;
+    background: #F5F8F7;
+    color: #4D4D4D;
+}
+
+.fast-buildings-characteristics__panel {
+    width: 100%;
+    border-radius: 0.5556rem;
+    background: #FFFFFF;
+}
+
+.fast-buildings-characteristics__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6667rem;
+    padding: 2.2222rem;
+    border-radius: 1.1111rem;
+}
+
+.fast-buildings-characteristics__title {
+    width: 100%;
+    margin: 0;
+    color: #4D4D4D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 2.6667rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
+
+.fast-buildings-characteristics__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2222rem;
+    max-width: 100%;
+    padding: 0.2222rem;
+    border-radius: 0.5556rem;
+    background: #F5F8F7;
+}
+
+.fast-buildings-characteristics__tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7778rem 1rem;
+    border-radius: 0.7778rem;
+    color: #5D5D5D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
+
+.fast-buildings-characteristics__tab--active {
+    background: #FFFFFF;
+}
+
+.fast-buildings-characteristics__table {
+    width: 100%;
+    max-width: 96.8889rem;
+    padding: 0.2778rem;
+    border-radius: 0.5556rem;
+    background: #F5F8F7;
+}
+
+.fast-buildings-characteristics__columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 2.2222rem;
+}
+
+.fast-buildings-characteristics__column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2778rem;
+    min-width: 0;
+    margin: 0;
+}
+
+.fast-buildings-characteristics__item {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 0;
+    padding: 1.1111rem;
+    border-radius: 0.5556rem;
+    background: #FFFFFF;
+    overflow-wrap: anywhere;
+}
+
+.fast-buildings-characteristics__item--fill {
+    flex: 1 0 auto;
+}
+
+.fast-buildings-characteristics__label {
+    color: #4D4D4D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 1.1111rem;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.fast-buildings-characteristics__value {
+    margin: 0;
+    color: #4D4D4D;
+    font-family: 'Onest-Regular', sans-serif;
+    font-size: 1.2222rem;
+    font-weight: 400;
+    line-height: 1.4545;
+    overflow-wrap: anywhere;
+}
+
+@media screen and (max-width: 1300px) {
+    .fast-buildings-characteristics__content {
+        gap: 1.3333rem;
+        padding: 1.7778rem;
+    }
+
+    .fast-buildings-characteristics__title {
+        font-size: 2.2222rem;
+    }
+
+    .fast-buildings-characteristics__columns {
+        gap: 1.1111rem;
+    }
+
+    .fast-buildings-characteristics__tab {
+        font-size: 0.8889rem;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .fast-buildings-characteristics {
+        padding: 0 0.5556rem 0.5556rem;
+    }
+
+    .fast-buildings-characteristics__content {
+        gap: 1rem;
+        padding: 1.1111rem 0.5556rem;
+    }
+
+    .fast-buildings-characteristics__title {
+        font-size: 1.3333rem;
+        line-height: 1.3333;
+    }
+
+    .fast-buildings-characteristics__tabs {
+        width: 100%;
+    }
+
+    .fast-buildings-characteristics__tab {
+        flex: 1 1 auto;
+        padding: 0.5556rem 0.6667rem;
+        font-size: 0.7778rem;
+        line-height: 1.4;
+    }
+
+    .fast-buildings-characteristics__table {
+        padding: 0.2778rem;
+    }
+
+    .fast-buildings-characteristics__columns {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.2778rem;
+    }
+
+    .fast-buildings-characteristics__item {
+        gap: 0.5556rem;
+        padding: 0.8889rem;
+    }
+
+    .fast-buildings-characteristics__label {
+        font-size: 0.8889rem;
+    }
+
+    .fast-buildings-characteristics__value {
+        font-size: 0.8889rem;
+        line-height: 1.5;
+    }
+}
+
+
+/* Характеристики зданий — desktop 1440px (Figma 1857:117815).
+   Базовые desktop-правила выше остаются источником стилей для 1920px. */
+@media screen and (min-width: 1301px) and (max-width: 1599px) {
+    .fast-buildings-characteristics {
+        padding: 0 5px 10px;
+    }
+
+    .fast-buildings-characteristics__panel {
+        border-radius: 10px;
+    }
+
+    .fast-buildings-characteristics__content {
+        gap: 30px;
+        padding: 40px;
+        border-radius: 20px;
+    }
+
+    .fast-buildings-characteristics__title {
+        font-size: 48px;
+        line-height: 1.5;
+    }
+
+    .fast-buildings-characteristics__tabs {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-self: stretch;
+        width: 100%;
+        max-width: 1350px;
+        gap: 4px;
+        padding: 4px;
+        overflow: hidden;
+    }
+
+    .fast-buildings-characteristics__tab {
+        flex: 0 0 auto;
+        padding: 14px 18px;
+        border-radius: 14px;
+        font-size: 18px;
+        line-height: 1.6;
+        white-space: nowrap;
+    }
+
+    .fast-buildings-characteristics__table {
+        max-width: 100%;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    .fast-buildings-characteristics__columns {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: start;
+        gap: 40px;
+    }
+
+    .fast-buildings-characteristics__column {
+        gap: 5px;
+    }
+
+    .fast-buildings-characteristics__item {
+        gap: 18px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .fast-buildings-characteristics__label {
+        font-size: 20px;
+        line-height: normal;
+    }
+
+    .fast-buildings-characteristics__value {
+        font-size: 22px;
+        line-height: 32px;
+    }
+}
+
+
+/* Характеристики зданий — планшетный макет 1024px (Figma 1857:120050).
+   Сохраняем композицию desktop и точные параметры целевого фрейма. */
+@media screen and (min-width: 681px) and (max-width: 1300px) {
+    .fast-buildings-characteristics {
+        padding: 0 5px 10px;
+    }
+
+    .fast-buildings-characteristics__panel {
+        border-radius: 10px;
+    }
+
+    .fast-buildings-characteristics__content {
+        gap: 30px;
+        padding: 40px;
+        border-radius: 20px;
+    }
+
+    .fast-buildings-characteristics__title {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .fast-buildings-characteristics__tabs {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-self: stretch;
+        width: 100%;
+        gap: 4px;
+        padding: 4px;
+        overflow: hidden;
+    }
+
+    .fast-buildings-characteristics__tab {
+        flex: 0 0 auto;
+        padding: 14px 18px;
+        border-radius: 14px;
+        font-size: 16px;
+        line-height: 1.6;
+        white-space: nowrap;
+        overflow-wrap: normal;
+    }
+
+    .fast-buildings-characteristics__table {
+        max-width: 100%;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    .fast-buildings-characteristics__columns {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: start;
+        gap: 40px;
+    }
+
+    .fast-buildings-characteristics__column {
+        gap: 5px;
+    }
+
+    .fast-buildings-characteristics__item {
+        gap: 18px;
+        padding: 14px;
+        border-radius: 10px;
+    }
+
+    .fast-buildings-characteristics__label {
+        font-size: 16px;
+        line-height: normal;
+    }
+
+    .fast-buildings-characteristics__value {
+        font-size: 18px;
+        line-height: 32px;
+    }
+}
+
+
+/* Mobile characteristics expansion — Figma 1857:122359 / 2132:136819. */
+.fast-buildings-characteristics__more {
+    display: none;
+}
+
+@media screen and (max-width: 680px) {
+    .fast-buildings-characteristics__content {
+        gap: 14px;
+        padding: 20px 10px 10px;
+    }
+
+    .fast-buildings-characteristics__title {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .fast-buildings-characteristics__tabs {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 4px;
+        padding: 4px;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+    }
+
+    .fast-buildings-characteristics__tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .fast-buildings-characteristics__tab {
+        flex: 0 0 auto;
+        padding: 12px 18px;
+        border-radius: 14px;
+        font-size: 14px;
+        line-height: 22px;
+        white-space: nowrap;
+        overflow-wrap: normal;
+    }
+
+    .fast-buildings-characteristics__table {
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    .fast-buildings-characteristics__columns {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 5px;
+    }
+
+    .fast-buildings-characteristics__column {
+        gap: 5px;
+    }
+
+    .fast-buildings-characteristics__item {
+        gap: 14px;
+        padding: 14px;
+        border-radius: 10px;
+    }
+
+    .fast-buildings-characteristics__label {
+        font-size: 14px;
+        line-height: normal;
+    }
+
+    .fast-buildings-characteristics__value {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .fast-buildings-characteristics__column:first-child .fast-buildings-characteristics__item:nth-child(n + 6),
+    .fast-buildings-characteristics__column:nth-child(n + 2) {
+        display: none;
+    }
+
+    .fast-buildings-characteristics__more {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        padding: 0;
+        color: #324C88;
+        font-family: 'Onest-Medium', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+    .fast-buildings-characteristics__more svg {
+        flex: 0 0 24px;
+        transition: transform 0.2s ease;
+    }
+
+    .fast-buildings-characteristics__more[aria-expanded="true"] svg {
+        transform: rotate(180deg);
+    }
+
+    .fast-buildings-characteristics__table.is-expanded .fast-buildings-characteristics__column:first-child .fast-buildings-characteristics__item,
+    .fast-buildings-characteristics__table.is-expanded .fast-buildings-characteristics__column:nth-child(n + 2) {
+        display: flex;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fast-buildings-characteristics__more svg {
+        transition: none;
+    }
+}
+
+
+/* Блок «Наши работы», Figma 1857:115702. */
+.fast-buildings-works {
+    padding: 0 10px 10px;
+    color: #4d4d4d;
+    background: #f5f8f7
+}
+
+.fast-buildings-works__panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 10px;
+    background: #fff
+}
+
+.fast-buildings-works__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    text-align: center
+}
+
+.fast-buildings-works__title {
+    margin: 0;
+    color: #4d4d4d;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase
+}
+
+.fast-buildings-works__catalog {
+    color: #324c88;
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+    text-transform: uppercase
+}
+
+.fast-buildings-works__catalog:focus-visible, .fast-buildings-works__arrow:focus-visible {
+    outline: 2px solid #324c88;
+    outline-offset: 3px
+}
+
+.fast-buildings-works__gallery {
+    width: 100%;
+    padding: 4px;
+    border-radius: 10px;
+    background: #f5f8f7
+}
+
+.fast-buildings-works__grid {
+    display: grid;
+    grid-template-columns:repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 5px;
+    width: 100%
+}
+
+.fast-buildings-works__card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+    padding: 4px 4px 14px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #fff
+}
+
+.fast-buildings-works__image-wrap {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 460/265;
+    padding: 10px 11px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.fast-buildings-works__image {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.fast-buildings-works__project-id, .fast-buildings-works__area {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 4px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+    white-space: nowrap
+}
+
+.fast-buildings-works__project-id {
+    color: #39538c;
+    background: #fff500
+}
+
+.fast-buildings-works__area {
+    color: #fff;
+    background: rgb(237 237 237 / 20%);
+    backdrop-filter: blur(25px)
+}
+
+.fast-buildings-works__area sup {
+    font-size: 10px;
+    line-height: 1
+}
+
+.fast-buildings-works__card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+    padding: 0 10px
+}
+
+.fast-buildings-works__card-title {
+    width: 100%;
+    margin: 0;
+    color: #4d4d4d;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+    overflow-wrap: anywhere
+}
+
+.fast-buildings-works__divider {
+    flex: 0 0 1px;
+    width: 100%;
+    height: 1px;
+    background: rgb(77 77 77 / 20%)
+}
+
+.fast-buildings-works__details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+    padding: 0;
+    list-style: none
+}
+
+.fast-buildings-works__detail {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    min-height: 34px;
+    padding: 2px 10px 2px 2px;
+    border-radius: 10px;
+    background: rgb(39 38 41 / 5%);
+    color: #4d4d4d;
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    white-space: nowrap
+}
+
+.fast-buildings-works__detail-icon {
+    display: grid;
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    border-radius: 10px;
+    background: #38528b
+}
+
+.fast-buildings-works__detail-icon img {
+    display: block;
+    width: 18px;
+    height: 18px;
+    object-fit: contain
+}
+
+.fast-buildings-works__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    max-width: 100%
+}
+
+.fast-buildings-works__arrow {
+    display: grid;
+    flex: 0 0 90.51px;
+    width: 90.51px;
+    height: 90.51px;
+    place-items: center;
+    border: 0;
+    border-radius: 0;
+    background: transparent
+}
+
+.fast-buildings-works__arrow:disabled {
+    cursor: default;
+    opacity: 1
+}
+
+.fast-buildings-works__arrow img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    object-fit: contain
+}
+
+.fast-buildings-works__arrow--previous img {
+    transform: rotate(90deg)
+}
+
+.fast-buildings-works__arrow--next img {
+    transform: rotate(-90deg)
+}
+
+.fast-buildings-works__dots {
+    display: flex;
+    align-items: center;
+    gap: 4px
+}
+
+.fast-buildings-works__dot {
+    display: block;
+    flex: 0 0 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgb(50 76 136 / 20%)
+}
+
+.fast-buildings-works__dot--active {
+    background: #324c88
+}
+
+@media screen and (max-width: 1500px) {
+    .fast-buildings-works__panel {
+        padding: 40px 30px
+    }
+
+    .fast-buildings-works__card-title {
+        font-size: 18px
+    }
+
+    .fast-buildings-works__detail {
+        gap: 8px;
+        font-size: 14px
+    }
+
+    .fast-buildings-works__details {
+        gap: 10px
+    }
+
+    .fast-buildings-works__project-id, .fast-buildings-works__area {
+        padding: 8px 10px;
+        font-size: 14px
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .fast-buildings-works__panel {
+        gap: 24px;
+        padding: 30px
+    }
+
+    .fast-buildings-works__title {
+        font-size: 34px
+    }
+
+    .fast-buildings-works__grid {
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        gap: 10px
+    }
+
+    .fast-buildings-works__card-title {
+        font-size: 20px
+    }
+
+    .fast-buildings-works__detail {
+        font-size: 14px
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .fast-buildings-works {
+        padding: 0 5px 5px
+    }
+
+    .fast-buildings-works__panel {
+        gap: 24px;
+        padding: 24px 10px;
+        border-radius: 10px
+    }
+
+    .fast-buildings-works__header {
+        gap: 12px
+    }
+
+    .fast-buildings-works__title {
+        font-size: 24px;
+        line-height: 1.25
+    }
+
+    .fast-buildings-works__catalog {
+        font-size: 14px
+    }
+
+    .fast-buildings-works__gallery {
+        padding: 0;
+        background: transparent
+    }
+
+    .fast-buildings-works__grid {
+        grid-template-columns:minmax(0, 1fr);
+        gap: 12px
+    }
+
+    .fast-buildings-works__card {
+        gap: 14px;
+        padding: 4px 4px 14px;
+        border-radius: 14px
+    }
+
+    .fast-buildings-works__image-wrap {
+        border-radius: 12px
+    }
+
+    .fast-buildings-works__card-content {
+        gap: 12px;
+        padding: 0 8px
+    }
+
+    .fast-buildings-works__card-title {
+        font-size: 18px;
+        line-height: 1.4
+    }
+
+    .fast-buildings-works__details {
+        gap: 8px
+    }
+
+    .fast-buildings-works__detail {
+        gap: 8px;
+        max-width: 100%;
+        font-size: 13px;
+        line-height: 22px;
+        white-space: normal
+    }
+
+    .fast-buildings-works__detail-icon {
+        flex-basis: 28px;
+        width: 28px;
+        height: 28px
+    }
+
+    .fast-buildings-works__pagination {
+        gap: 12px
+    }
+
+    .fast-buildings-works__arrow {
+        flex-basis: 52px;
+        width: 52px;
+        height: 52px
+    }
+
+    .fast-buildings-works__arrow img {
+        width: 30px;
+        height: 30px
+    }
+
+    .fast-buildings-works__dot {
+        flex-basis: 8px;
+        width: 8px;
+        height: 8px
+    }
+}
+
+
+/* Макет «Наши работы»: адаптация для Figma 1440 (node 1857:117983). */
+@media screen and (min-width: 1301px) and (max-width: 1599px) {
+    .fast-buildings-works__panel {
+        padding: 40px;
+    }
+
+    .fast-buildings-works__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .fast-buildings-works__card--1440-hidden {
+        display: none;
+    }
+
+    .fast-buildings-works__title {
+        font-size: 48px;
+    }
+
+    .fast-buildings-works__card-title {
+        font-size: 22px;
+    }
+
+    .fast-buildings-works__detail {
+        gap: 12px;
+        font-size: 16px;
+    }
+
+    .fast-buildings-works__details {
+        gap: 15px;
+    }
+
+    .fast-buildings-works__project-id,
+    .fast-buildings-works__area {
+        padding: 10px 14px;
+        font-size: 16px;
+    }
+}
+
+
+/* Планшетная адаптация секции «Наши работы», Figma 1857:120216 (1024 px). */
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+    .fast-buildings-works {
+        padding: 0 10px 10px;
+    }
+
+    .fast-buildings-works__panel {
+        gap: 30px;
+        padding: 40px;
+    }
+
+    .fast-buildings-works__header {
+        gap: 24px;
+    }
+
+    .fast-buildings-works__title {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .fast-buildings-works__catalog {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .fast-buildings-works__gallery {
+        padding: 0;
+    }
+
+    .fast-buildings-works__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .fast-buildings-works__card {
+        gap: 20px;
+        padding: 4px 4px 20px;
+    }
+
+    .fast-buildings-works__image-wrap {
+        aspect-ratio: 460 / 265;
+        padding: 10px 11px;
+    }
+
+    .fast-buildings-works__card-content {
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .fast-buildings-works__card-title {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .fast-buildings-works__details {
+        gap: 10px;
+    }
+
+    .fast-buildings-works__detail {
+        gap: 8px;
+        font-size: 14px;
+        line-height: 26px;
+    }
+
+    .fast-buildings-works__project-id,
+    .fast-buildings-works__area {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    .fast-buildings-works__pagination {
+        gap: 24px;
+    }
+}
+
+
+/* Мобильная адаптация секции «Наши работы», Figma 1857:122481 (360 px). */
+@media screen and (max-width: 680px) {
+    .fast-buildings-works {
+        padding: 0 10px 10px;
+    }
+
+    .fast-buildings-works__panel {
+        gap: 18px;
+        padding: 40px 4px;
+        border-radius: 10px;
+    }
+
+    .fast-buildings-works__header {
+        gap: 14px;
+    }
+
+    .fast-buildings-works__title {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .fast-buildings-works__catalog {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .fast-buildings-works__gallery {
+        width: 100%;
+        min-width: 0;
+        padding: 0;
+        overflow: hidden;
+        border-radius: 0;
+        background: transparent;
+    }
+
+    .fast-buildings-works__grid {
+        display: flex;
+        align-items: stretch;
+        gap: 8px;
+        width: max-content;
+    }
+
+    .fast-buildings-works__card {
+        flex: 0 0 310px;
+        width: 310px;
+        gap: 20px;
+        padding: 4px 4px 20px;
+        border-radius: 20px;
+    }
+
+    .fast-buildings-works__image-wrap {
+        flex: 0 0 185px;
+        width: 100%;
+        height: 185px;
+        aspect-ratio: auto;
+        padding: 10px 11px;
+        border-radius: 20px;
+    }
+
+    .fast-buildings-works__project-id {
+        padding: 10px 14px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .fast-buildings-works__area {
+        display: none;
+    }
+
+    .fast-buildings-works__card-content {
+        gap: 15px;
+        padding: 0 4px;
+    }
+
+    .fast-buildings-works__card-title {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .fast-buildings-works__divider {
+        flex-basis: 1px;
+    }
+
+    .fast-buildings-works__details {
+        gap: 15px;
+    }
+
+    .fast-buildings-works__detail {
+        gap: 12px;
+        max-width: none;
+        min-height: 34px;
+        padding: 2px 10px 2px 2px;
+        font-size: 14px;
+        line-height: 26px;
+        white-space: nowrap;
+    }
+
+    .fast-buildings-works__detail-icon {
+        flex-basis: 30px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .fast-buildings-works__pagination {
+        display: none;
+    }
+}
+
+
+/* Комплектация здания — Figma 1857:116637 (1440px). */
+@media (min-width: 1301px) and (max-width: 1600px) {
+    .fast-buildings-complectation {
+        padding-right: 2.6111rem;
+        padding-left: 2.6111rem;
+    }
+
+    .fast-buildings-complectation__header {
+        gap: 2rem;
+        margin-bottom: 1.6667rem;
+    }
+
+    .fast-buildings-complectation__content {
+        grid-template-columns: minmax(0, 31.5556rem) minmax(0, 1fr);
+        gap: 3.3333rem;
+    }
+
+    .fast-buildings-complectation__item {
+        padding: 1.5556rem;
+    }
+
+    .fast-buildings-complectation__visual img {
+        max-width: 38rem;
+    }
+}
+
+/* Комплектация здания — Figma 1857:123779. */
+.fast-buildings-complectation {
+    margin: 0 0.2778rem 0.2778rem;
+    padding: 4.4444rem 2.7778rem 3.3333rem;
+    border-radius: 1.1111rem;
+    background: #242424;
+    color: #FFFFFF;
+}
+
+.fast-buildings-complectation__inner {
+    width: 100%;
+    max-width: 100.5556rem;
+    margin: 0 auto;
+}
+
+.fast-buildings-complectation__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3333rem;
+    margin-bottom: 2.2222rem;
+    text-align: center;
+}
+
+.fast-buildings-complectation__title {
+    margin: 0;
+    color: #FFFFFF;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 2.6667rem;
+    font-weight: 600;
+    line-height: 1.27;
+    text-transform: uppercase;
+}
+
+.fast-buildings-complectation__categories {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.1111rem;
+    padding: 0.2222rem;
+}
+
+.fast-buildings-complectation__category {
+    color: #FFFFFF66;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 1.3333rem;
+    font-weight: 600;
+    line-height: 1.6;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.fast-buildings-complectation__category--active {
+    color: #FFFFFF;
+}
+
+.fast-buildings-complectation__separator {
+    flex: 0 0 0.2222rem;
+    width: 0.2222rem;
+    height: 0.2222rem;
+    border-radius: 50%;
+    background: #FFFFFF;
+}
+
+.fast-buildings-complectation__content {
+    display: grid;
+    grid-template-columns: minmax(0, 33.1667rem) minmax(0, 1fr);
+    align-items: start;
+    gap: 1.3333rem;
+}
+
+.fast-buildings-complectation__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5556rem;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.fast-buildings-complectation__item {
+    min-width: 0;
+    padding: 1.6667rem;
+    border-radius: 1.1111rem;
+    background: #363636;
+    color: #FFFFFF;
+}
+
+.fast-buildings-complectation__item-heading {
+    min-width: 0;
+    margin: 0;
+}
+
+.fast-buildings-complectation__toggle {
+    display: flex;
+    align-items: center;
+    gap: 1.6667rem;
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.fast-buildings-complectation__toggle:focus-visible {
+    outline: 0.1667rem solid #FFF500;
+    outline-offset: 0.2222rem;
+    border-radius: 0.3333rem;
+}
+
+.fast-buildings-complectation__icon {
+    display: grid;
+    flex: 0 0 2.6667rem;
+    width: 2.6667rem;
+    height: 2.6667rem;
+    place-items: center;
+    border-radius: 50%;
+    background: #FFF500;
+}
+
+.fast-buildings-complectation__icon img {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+}
+
+.fast-buildings-complectation__label {
+    flex: 1;
+    min-width: 0;
+    color: #FFFFFF;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 1.3333rem;
+    font-weight: 600;
+    line-height: 1.6;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
+
+.fast-buildings-complectation__arrow {
+    flex: 0 0 0.6667rem;
+    width: 0.6667rem;
+    height: 0.6667rem;
+    margin-left: auto;
+    border-right: 0.1111rem solid #FFFFFF;
+    border-bottom: 0.1111rem solid #FFFFFF;
+    transform: rotate(45deg) translateY(-0.1667rem);
+    transition: transform 280ms ease;
+}
+
+.fast-buildings-complectation__toggle[aria-expanded="true"] .fast-buildings-complectation__arrow {
+    transform: rotate(225deg) translateY(-0.1667rem);
+}
+
+.fast-buildings-complectation__panel {
+    display: grid;
+    grid-template-rows: 1fr;
+    opacity: 1;
+    transition: grid-template-rows 320ms ease, opacity 240ms ease, visibility 0s linear;
+}
+
+.fast-buildings-complectation__panel.is-collapsed {
+    grid-template-rows: 0fr;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: grid-template-rows 320ms ease, opacity 240ms ease, visibility 0s linear 320ms;
+}
+
+.fast-buildings-complectation__panel-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1111rem;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.fast-buildings-complectation__roof-options {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.2222rem;
+    margin-top: 1.6667rem;
+}
+
+.fast-buildings-complectation__roof-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4444rem;
+    min-width: 0;
+    padding: 0.8889rem;
+    border-radius: 0.5556rem;
+    background: #555555;
+    text-align: center;
+}
+
+.fast-buildings-complectation__roof-option + .fast-buildings-complectation__roof-option {
+    background: #3E3E3E;
+}
+
+.fast-buildings-complectation__roof-option img {
+    display: block;
+    width: 2.2222rem;
+    height: 2.2222rem;
+    object-fit: contain;
+}
+
+.fast-buildings-complectation__roof-option span {
+    color: #FFFFFF;
+    font-family: 'Onest-Medium', sans-serif;
+    font-size: 0.7778rem;
+    font-weight: 500;
+    line-height: 1.5714;
+}
+
+.fast-buildings-complectation__description {
+    margin: 0;
+    color: #FFFFFFCC;
+    font-family: 'Onest-Regular', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5556;
+}
+
+.fast-buildings-complectation__visual {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 0;
+    padding-top: 0.5556rem;
+}
+
+.fast-buildings-complectation__visual img {
+    display: block;
+    width: 100%;
+    max-width: 39.7222rem;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 1300px) {
+    .fast-buildings-complectation {
+        padding: 3.1111rem 1.7778rem 2.2222rem;
+    }
+
+    .fast-buildings-complectation__content {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 1.3333rem;
+    }
+
+    .fast-buildings-complectation__item {
+        padding: 1.3333rem;
+    }
+
+    .fast-buildings-complectation__toggle {
+        gap: 1.1111rem;
+    }
+
+    .fast-buildings-complectation__label {
+        font-size: 1.1111rem;
+    }
+
+    .fast-buildings-complectation__visual img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .fast-buildings-complectation {
+        padding: 2.2222rem 1.3333rem;
+    }
+
+    .fast-buildings-complectation__content {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.3333rem;
+    }
+
+    .fast-buildings-complectation__visual {
+        grid-row: 2;
+        max-width: 34rem;
+        margin: 0 auto;
+    }
+
+    .fast-buildings-complectation__title {
+        font-size: 2rem;
+    }
+
+    .fast-buildings-complectation__category {
+        font-size: 1.1111rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .fast-buildings-complectation {
+        padding: 1.5556rem 0.8889rem 1.3333rem;
+        border-radius: 0.5556rem;
+    }
+
+    .fast-buildings-complectation__header {
+        gap: 1.1111rem;
+        margin-bottom: 1.3333rem;
+    }
+
+    .fast-buildings-complectation__title {
+        font-size: 1.3333rem;
+        line-height: 1.3;
+    }
+
+    .fast-buildings-complectation__categories {
+        flex-wrap: wrap;
+        gap: 0.5556rem;
+    }
+
+    .fast-buildings-complectation__category {
+        font-size: 0.7778rem;
+    }
+
+    .fast-buildings-complectation__content {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.8889rem;
+    }
+
+    .fast-buildings-complectation__item {
+        padding: 0.7778rem;
+        border-radius: 0.6667rem;
+    }
+
+    .fast-buildings-complectation__toggle {
+        gap: 0.8889rem;
+    }
+
+    .fast-buildings-complectation__icon {
+        flex-basis: 2.6667rem;
+        width: 2.6667rem;
+        height: 2.6667rem;
+    }
+
+    .fast-buildings-complectation__label {
+        font-size: 0.8889rem;
+        line-height: 1.4;
+    }
+
+    .fast-buildings-complectation__roof-options {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .fast-buildings-complectation__roof-option {
+        padding: 0.4444rem 0.2222rem;
+    }
+
+    .fast-buildings-complectation__roof-option span {
+        font-size: 0.6667rem;
+    }
+
+    .fast-buildings-complectation__description {
+        font-size: 0.7778rem;
+        line-height: 1.5;
+    }
+
+    .fast-buildings-complectation__visual {
+        grid-row: 2;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fast-buildings-complectation__arrow,
+    .fast-buildings-complectation__panel,
+    .fast-buildings-complectation__details {
+        transition: none;
+    }
+}
+
+/* Комплектация здания — адаптив Figma 1857:118875 (1024 px).
+   Desktop layout (1920/1440) остаётся без изменений. */
+@media (min-width: 901px) and (max-width: 1300px) {
+    .fast-buildings-complectation {
+        padding: 2.2222rem;
+    }
+
+    .fast-buildings-complectation__inner {
+        max-width: 100%;
+    }
+
+    .fast-buildings-complectation__header {
+        gap: 0.8889rem;
+        margin-bottom: 1.1111rem;
+    }
+
+    .fast-buildings-complectation__title {
+        font-size: 1.3333rem;
+        line-height: 1.5833;
+    }
+
+    .fast-buildings-complectation__categories {
+        gap: 1.1111rem;
+        padding: 0;
+    }
+
+    .fast-buildings-complectation__category {
+        font-size: 1rem;
+        line-height: 1.6111;
+    }
+
+    .fast-buildings-complectation__content {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.1111rem;
+    }
+
+    .fast-buildings-complectation__visual {
+        order: 0;
+        align-self: center;
+        width: 100%;
+        max-width: 45rem;
+        padding-top: 0;
+    }
+
+    .fast-buildings-complectation__visual img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .fast-buildings-complectation__list {
+        order: 1;
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 0.5556rem;
+        width: 100%;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        scroll-snap-type: x proximity;
+        scrollbar-width: thin;
+        padding-bottom: 0.2222rem;
+    }
+
+    .fast-buildings-complectation__item {
+        position: relative;
+        flex: 0 0 18.8889rem;
+        padding: 1.1111rem;
+        border-radius: 0.5556rem;
+        scroll-snap-align: start;
+    }
+
+    .fast-buildings-complectation__item--expanded {
+        z-index: 2;
+    }
+
+    .fast-buildings-complectation__content {
+        position: relative;
+    }
+
+    .fast-buildings-complectation__overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 5;
+        pointer-events: none;
+    }
+
+    .fast-buildings-complectation__overlay > .fast-buildings-complectation__panel {
+        position: absolute;
+        pointer-events: auto;
+        box-sizing: border-box;
+        padding: 0 1.1111rem 1.1111rem;
+        border-radius: 0.5556rem 0.5556rem 0 0;
+        background: #363636;
+    }
+
+    .fast-buildings-complectation__toggle {
+        gap: 1rem;
+    }
+
+    .fast-buildings-complectation__icon {
+        flex-basis: 2rem;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .fast-buildings-complectation__icon img {
+        width: 1.3333rem;
+        height: 1.3333rem;
+    }
+
+    .fast-buildings-complectation__label {
+        font-size: 1rem;
+        line-height: 1.6111;
+    }
+
+    .fast-buildings-complectation__panel-inner {
+        gap: 0.8889rem;
+    }
+
+    .fast-buildings-complectation__roof-options {
+        gap: 0.2222rem;
+        margin-top: 1.1111rem;
+    }
+
+    .fast-buildings-complectation__roof-option {
+        gap: 0.3333rem;
+        padding: 0.5556rem 0.2222rem;
+    }
+
+    .fast-buildings-complectation__roof-option img {
+        width: 1.7778rem;
+        height: 1.7778rem;
+    }
+
+    .fast-buildings-complectation__roof-option span {
+        font-size: 0.6667rem;
+        line-height: 1.5;
+    }
+
+    .fast-buildings-complectation__description {
+        font-size: 0.7778rem;
+        line-height: 1.5;
+    }
+}
+
+
+
+/* Комплектация здания — mobile Figma 1866:77245 (360 px). */
+@media (max-width: 600px) {
+    .fast-buildings-complectation {
+        margin: 0 0.2778rem 0.2778rem;
+        padding: 1.1111rem 0.5556rem 0.8889rem;
+        border-radius: 0.5556rem;
+    }
+    .fast-buildings-complectation__inner { max-width: 100%; }
+    .fast-buildings-complectation__header { gap: 0.7778rem; margin-bottom: 1.9444rem; }
+    .fast-buildings-complectation__title { font-size: 1.1111rem; line-height: 1.4; }
+    .fast-buildings-complectation__categories { flex-wrap: nowrap; gap: 0.7778rem; padding: 0; }
+    .fast-buildings-complectation__category { font-size: 0.7778rem; line-height: 1.5714; }
+    .fast-buildings-complectation__separator { flex-basis: 0.2222rem; width: 0.2222rem; height: 0.2222rem; }
+    .fast-buildings-complectation__content { position: relative; display: flex; flex-direction: column; align-items: stretch; gap: 1.9444rem; }
+    .fast-buildings-complectation__visual { order: 0; align-self: center; width: 100%; max-width: 16.6667rem; height: 16.1667rem; margin: 0; padding: 0; }
+    .fast-buildings-complectation__visual img { width: 100%; height: 100%; max-width: 100%; object-fit: contain; object-position: center; }
+    .fast-buildings-complectation__list { order: 1; flex-direction: row; align-items: flex-end; gap: 0.5556rem; width: 100%; overflow-x: auto; overflow-y: visible; overscroll-behavior-inline: contain; scroll-snap-type: x proximity; scrollbar-width: none; padding: 0 0 0.1111rem; }
+    .fast-buildings-complectation__list::-webkit-scrollbar { display: none; }
+    .fast-buildings-complectation__item { position: relative; flex: 0 0 13.8889rem; padding: 0.5556rem; border-radius: 1.1111rem; scroll-snap-align: start; }
+    .fast-buildings-complectation__item--expanded { z-index: 2; }
+    .fast-buildings-complectation__toggle { gap: 1rem; }
+    .fast-buildings-complectation__icon { flex-basis: 1.6667rem; width: 1.6667rem; height: 1.6667rem; }
+    .fast-buildings-complectation__icon img { width: 1.3333rem; height: 1.3333rem; }
+    .fast-buildings-complectation__label { font-size: 0.7778rem; line-height: 1.5714; }
+    .fast-buildings-complectation__arrow { flex-basis: 0.5556rem; width: 0.5556rem; height: 0.5556rem; }
+    .fast-buildings-complectation__panel-inner { gap: 0.5556rem; }
+    .fast-buildings-complectation__roof-options { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.2222rem; margin-top: 0.7778rem; }
+    .fast-buildings-complectation__roof-option { gap: 0.3333rem; padding: 0.3333rem 0.1667rem; }
+    .fast-buildings-complectation__roof-option img { width: 1.3333rem; height: 1.3333rem; }
+    .fast-buildings-complectation__roof-option span { font-size: 0.6111rem; line-height: 1.4; }
+    .fast-buildings-complectation__description { font-size: 0.7222rem; line-height: 1.45; }
+    .fast-buildings-complectation__overlay { position: absolute; inset: 0; z-index: 5; pointer-events: none; }
+    .fast-buildings-complectation__overlay > .fast-buildings-complectation__panel { position: absolute; box-sizing: border-box; padding: 0 0.5556rem 0.5556rem; border-radius: 1.1111rem 1.1111rem 0 0; background: #363636; pointer-events: auto; }
+}

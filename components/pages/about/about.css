@@ -1,3 +1,3171 @@
 .about {
-  /* About page styles. */
+    padding: 64px 8px;
+    border-radius: 0 0 10px 10px;
+    background: #fff;
+}
+
+.about__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.about__intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    width: 100%;
+    text-align: center;
+}
+
+.about__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+}
+
+.about__title {
+    width: 100%;
+    max-width: 1338px;
+    margin: 0;
+    color: #324c88;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 94px;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
+
+.about__description {
+    width: 100%;
+    max-width: 1052px;
+    color: #4d4d4d;
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.about__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+.about__button.btn {
+    min-height: 88px;
+    padding: 32px 40px;
+    border-radius: 20px;
+    font-size: 20px;
+    line-height: 1.26;
+    text-align: center;
+}
+
+.about__media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+}
+
+.about__media-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    max-width: 100%;
+    padding: 4px;
+    border-radius: 10px;
+}
+
+.about__media-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
+    color: #5d5d5dcc;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.about__media-tab.is-active {
+    border-bottom-color: #000;
+    color: #5d5d5d;
+    background: transparent;
+}
+
+.about__media-tab:focus-visible {
+    outline: 2px solid #324c88;
+    outline-offset: 4px;
+}
+
+.about__media-frame {
+    width: 100%;
+    max-width: 1700px;
+    aspect-ratio: 17 / 9;
+    border-radius: 30px;
+    background: #e5e8ec;
+}
+
+.about__media-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 1300px) {
+    .about {
+        padding: 48px 30px;
+    }
+
+    .about__title {
+        font-size: 48px;
+        line-height: 1.3;
+    }
+
+    .about__description {
+        font-size: 20px;
+    }
+
+    .about__button.btn {
+        min-height: 76px;
+        padding: 24px 28px;
+    }
+
+    .about__media-frame {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .about {
+        padding: 32px 10px;
+    }
+
+    .about__container,
+    .about__intro {
+        gap: 24px;
+    }
+
+    .about__title {
+        font-size: 28px;
+        line-height: 1.25;
+    }
+
+    .about__description {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .about__actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .about__button.btn {
+        width: 100%;
+        min-width: 0;
+        min-height: 54px;
+        padding: 14px 18px;
+        border-radius: 14px;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .about__media {
+        gap: 12px;
+    }
+
+    .about__media-switch {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .about__media-tab {
+        padding: 10px 0;
+        font-size: 12px;
+    }
+
+    .about__media-frame {
+        aspect-ratio: 4 / 3;
+        border-radius: 16px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .about__media-switch {
+        gap: 8px;
+    }
+
+    .about__media-tab {
+        font-size: 11px;
+    }
+}
+
+/* Figma: About, desktop frame 1440 px (1857:129646). */
+@media screen and (min-width: 1301px) and (max-width: 1600px) {
+    .about {
+        padding: 64px 60px;
+        border-radius: 0 0 30px 30px;
+    }
+
+    .about__container {
+        gap: 36px;
+        max-width: 1322px;
+    }
+
+    .about__intro {
+        gap: 36px;
+    }
+
+    .about__title {
+        max-width: none;
+        font-size: 54px;
+        line-height: 1.5;
+    }
+
+    .about__description {
+        max-width: 1108px;
+        font-size: 22px;
+        line-height: 1.5;
+    }
+
+    .about__button.btn {
+        min-height: 0;
+        padding: 32px 40px;
+        border-radius: 20px;
+        font-size: 20px;
+        line-height: 1.26;
+    }
+
+    .about__media {
+        gap: 24px;
+    }
+
+    .about__media-switch {
+        flex: 0 0 auto;
+        flex-wrap: nowrap;
+        gap: 24px;
+        padding: 4px;
+    }
+
+    .about__media-tab {
+        flex: 0 0 auto;
+        padding: 14px 0;
+        border: 0;
+        border-bottom: 1px solid transparent;
+        border-radius: 0;
+        background: transparent;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .about__media-tab.is-active {
+        border-bottom: 1px solid #000;
+        background: transparent;
+    }
+
+    .about__media-frame {
+        max-width: none;
+        height: 750px;
+        aspect-ratio: auto;
+        border-radius: 30px;
+    }
+}
+
+/* Figma: About, responsive frame 1024 px (1857:133156). */
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+    .about {
+        padding: 40px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .about__container,
+    .about__intro {
+        gap: 24px;
+    }
+
+    .about__title {
+        max-width: 698px;
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .about__description {
+        max-width: 764px;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .about__button.btn {
+        min-height: 0;
+        padding: 26px 32px;
+        border-radius: 20px;
+        font-size: 18px;
+        line-height: 1.26;
+    }
+
+    .about__media-switch {
+        flex: 0 0 auto;
+        flex-wrap: nowrap;
+        gap: 24px;
+        padding: 4px;
+    }
+
+    .about__media-tab {
+        flex: 0 0 auto;
+        padding: 14px 0;
+        font-size: 16px;
+    }
+
+    .about__media-frame {
+        max-width: none;
+        aspect-ratio: 1220 / 600;
+        border-radius: 20px;
+    }
+}
+
+/* Figma: About, mobile frame 360 px (1857:136675). */
+@media screen and (max-width: 680px) {
+    .about {
+        padding: 20px 10px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .about__container {
+        gap: 18px;
+    }
+
+    .about__intro {
+        gap: 14px;
+    }
+
+    .about__heading {
+        gap: 14px;
+    }
+
+    .about__title {
+        width: 260px;
+        max-width: 260px;
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .about__description {
+        width: 100%;
+        max-width: none;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .about__actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        width: 286px;
+        max-width: 100%;
+    }
+
+    .about__button.btn {
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+        padding: 18px 24px;
+        border-radius: 20px;
+        font-size: 14px;
+        line-height: 1.26;
+    }
+
+    .about__media {
+        gap: 18px;
+    }
+
+    .about__media-switch {
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 14px;
+        width: auto;
+        max-width: 100%;
+        padding: 4px;
+    }
+
+    .about__media-tab {
+        flex: 0 0 auto;
+        gap: 20px;
+        padding: 14px 0;
+        font-size: 14px;
+        line-height: 1.6;
+        white-space: nowrap;
+    }
+
+    .about__media-tab.is-active {
+        border-bottom: 1px solid #000;
+    }
+
+    .about__media-frame {
+        max-width: none;
+        aspect-ratio: 1220 / 600;
+        border-radius: 20px;
+    }
+}
+
+
+/* Figma: About history block, desktop 1920 px (1857:126148). */
+.about-history {
+    position: relative;
+    padding: 4.444rem 2.222rem;
+    border-radius: 1.167rem;
+    background: #f5f8f7;
+}
+
+.about-history__layout {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 52.889rem;
+}
+
+.about-history__visual {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 0;
+    width: 64%;
+    height: 57.056rem;
+    transform: translateY(-50%);
+}
+
+.about-history__background {
+    position: absolute;
+    top: -5.5rem;
+    right: -1.111rem;
+    display: block;
+    width: 67.833rem;
+    max-width: none;
+    height: 57.056rem;
+    object-fit: cover;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
+.about-history__tiles {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 31.806rem;
+    height: 31.806rem;
+    transform: translate(-50%, -35%);
+}
+
+.about-history__tile {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 11.111rem;
+    height: 11.111rem;
+    border-radius: 0.556rem;
+    color: #324c88;
+    text-decoration: none;
+    transform: rotate(45deg);
+    transition: box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.about-history__tile--video {
+    background: rgb(255 255 255 / 92%);
+    backdrop-filter: blur(2px);
+}
+
+.about-history__tile--download {
+    top: 57%;
+    left: 0;
+    color: #fff;
+    background: #324c88;
+}
+
+.about-history__tile--video-30 {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.about-history__tile--video-25 {
+    top: 29%;
+    right: 0;
+}
+
+.about-history__tile--video-35 {
+    top: 29%;
+    left: 0;
+}
+
+.about-history__tile-icon {
+    position: absolute;
+    top: 1.111rem;
+    left: 1.111rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.667rem;
+    height: 2.667rem;
+    border-radius: 1.111rem;
+    background: #324c88;
+    transform: rotate(-45deg);
+}
+
+.about-history__tile-icon--light {
+    background: #fff;
+}
+
+.about-history__tile-icon img {
+    display: block;
+    width: 1.333rem;
+    height: 1.333rem;
+}
+
+.about-history__tile-icon--light img {
+    width: 1.333rem;
+    height: 1.333rem;
+}
+
+.about-history__tile-label {
+    display: block;
+    width: 9.833rem;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.444rem;
+    text-align: center;
+    text-transform: uppercase;
+    transform: rotate(-45deg);
+}
+
+.about-history__tile:hover,
+.about-history__tile:focus-visible {
+    box-shadow: 0 0.333rem 1.111rem rgb(50 76 136 / 18%);
+}
+
+.about-history__tile:focus-visible {
+    outline: 2px solid #324c88;
+    outline-offset: 4px;
+}
+
+.about-history__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1.333rem;
+    width: 55.556%;
+    padding: 3.333rem;
+    border-radius: 1.111rem;
+    background: #fff;
+}
+
+.about-history__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 1.667rem;
+}
+
+.about-history__eyebrow {
+    margin: 0;
+    color: #4d4d4de6;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 1.333rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.about-history__title {
+    margin: 0;
+    text-transform: none;
+    color: #4d4d4d;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 2.667rem;
+    font-weight: 600;
+    line-height: 1.333;
+}
+
+.about-history__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.333rem;
+    color: #4d4d4de6;
+    font-family: "Onest-Regular", sans-serif;
+    font-size: 1.333rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.about-history__text p {
+    margin: 0;
+}
+
+.about-history__text strong {
+    font-family: "Onest-SemiBold", sans-serif;
+    font-weight: 600;
+}
+
+@media screen and (min-width: 1101px) and (max-width: 1600px) {
+    .about-history {
+        padding: 4.444rem 2.222rem;
+    }
+
+    .about-history__layout {
+        min-height: 52.889rem;
+    }
+
+    .about-history__content {
+        width: 46.7%;
+        padding: 3.333rem;
+    }
+
+    .about-history__visual {
+        right: 0;
+        width: 89.6%;
+        height: 52.889rem;
+        transform: translateY(-50%);
+    }
+
+    .about-history__background {
+        top: -5.5rem;
+        right: -1.111rem;
+        width: 67.833rem;
+        height: 57.056rem;
+    }
+
+    .about-history__tiles {
+        left: 40%;
+        transform: translate(-50%, -35%);
+    }
+
+    .about-history__title {
+        font-size: 2.667rem;
+    }
+
+    .about-history__text {
+        font-size: 1.333rem;
+        line-height: 1.5;
+    }
+}
+
+/* Figma: блок «Вместе с 1991 г.», планшетный кадр 1024 px (1857:133240). */
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+    .about-history {
+        padding: 40px;
+        border-radius: 10px;
+    }
+
+    .about-history__layout {
+        display: flex;
+        align-items: flex-start;
+        min-height: 1097px;
+    }
+
+    .about-history__content {
+        width: 100%;
+        padding: 40px;
+        border-radius: 20px;
+    }
+
+    .about-history__heading {
+        gap: 18px;
+    }
+
+    .about-history__eyebrow {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .about-history__title {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .about-history__text {
+        gap: 14px;
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .about-history__visual {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 952px;
+        transform: none;
+        pointer-events: none;
+    }
+
+    .about-history__background {
+        top: 390px;
+        right: 50px;
+        width: 677px;
+        max-width: 100%;
+        height: 570px;
+        object-fit: contain;
+    }
+
+    .about-history__tiles {
+        top: 227px;
+        left: auto;
+        right: 100px;
+        width: 572px;
+        height: 573px;
+        transform: none;
+        pointer-events: auto;
+    }
+
+    .about-history__tile {
+        width: 170px;
+        height: 170px;
+        border-radius: 10px;
+    }
+
+    .about-history__tile--download {
+        top: 240px;
+        left: 238px;
+    }
+
+    .about-history__tile--video-30 {
+        top: 120px;
+        right: 42px;
+        left: auto;
+        transform: rotate(45deg);
+    }
+
+    .about-history__tile--video-25 {
+        top: 120px;
+        right: 287px;
+    }
+
+    .about-history__tile--video-35 {
+        top: 0;
+        right: 165px;
+        left: auto;
+    }
+
+    .about-history__tile-icon {
+        top: 18px;
+        left: 18px;
+        width: 48px;
+        height: 48px;
+        border-radius: 20px;
+    }
+
+    .about-history__tile-icon img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .about-history__tile-label {
+        width: 157px;
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+
+/* Figma: About history, mobile frame 360 px (1857:136758). */
+@media screen and (max-width: 680px) {
+    .about-history {
+        padding: 20px 10px;
+        border-radius: 10px;
+    }
+
+    .about-history__layout {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        min-height: 0;
+    }
+
+    .about-history__content {
+        order: 0;
+        gap: 14px;
+        width: 100%;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .about-history__heading {
+        gap: 14px;
+    }
+
+    .about-history__eyebrow {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .about-history__title {
+        font-size: 20px;
+        line-height: 29px;
+    }
+
+    .about-history__text {
+        gap: 14px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .about-history__visual {
+        position: relative;
+        order: 1;
+        top: auto;
+        right: auto;
+        width: 100%;
+        height: 496px;
+        margin-top: 0;
+        transform: none;
+        pointer-events: auto;
+    }
+
+    .about-history__background {
+        top: 0;
+        right: 0;
+        width: 100%;
+        max-width: none;
+        height: 293px;
+        object-fit: contain;
+    }
+
+    .about-history__tiles {
+        top: 0;
+        left: 50%;
+        width: 348px;
+        height: 496px;
+        transform: translateX(-50%);
+    }
+
+    .about-history__tile {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+    }
+
+    .about-history__tile--download {
+        top: 326px;
+        left: auto;
+        right: 87px;
+    }
+
+    .about-history__tile--video-30 {
+        top: 241px;
+        right: 0;
+        left: auto;
+        transform: rotate(45deg);
+    }
+
+    .about-history__tile--video-25 {
+        top: 241px;
+        right: 174px;
+        left: auto;
+    }
+
+    .about-history__tile--video-35 {
+        top: 156px;
+        right: 87px;
+        left: auto;
+    }
+
+    .about-history__tile-icon {
+        top: 12px;
+        left: 12px;
+        width: 28px;
+        height: 28px;
+        border-radius: 12px;
+    }
+
+    .about-history__tile-icon img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .about-history__tile-label {
+        width: 115px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+
+/* Figma: About timeline, desktop frame 1920 px (1857:126762). */
+.about-timeline {
+    padding: 5px;
+    background: #F5F8F7;
+}
+
+.about-timeline__panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 80px 40px;
+    border-radius: 21px;
+    background: #324C88;
+    color: #FFFFFF;
+}
+
+.about-timeline__container {
+    display: flex;
+    flex-direction: column;
+    gap: 96px;
+    width: 100%;
+}
+
+.about-timeline__header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.about-timeline__eyebrow,
+.about-timeline__title {
+    color: #FFFFFF;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.about-timeline__eyebrow {
+    font-size: 24px;
+    line-height: 1.4;
+}
+
+.about-timeline__title {
+    font-size: 48px;
+    line-height: 64px;
+}
+
+.about-timeline__divider {
+    width: 100%;
+    height: 2px;
+    background: #FFFFFF1A;
+}
+
+.about-timeline__story {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+}
+
+.about-timeline__story-content {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+    min-width: 0;
+}
+
+.about-timeline__year {
+    color: #FFFFFF;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 140px;
+    font-weight: 600;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.about-timeline__description {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.about-timeline__story-title {
+    color: #FFFFFF;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.about-timeline__description p {
+    color: #FFFFFF;
+    font-family: 'Onest-Regular', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+}
+
+.about-timeline__controls {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.about-timeline__arrow {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 90.51px;
+    width: 90.51px;
+    height: 90.51px;
+    border-radius: 20px;
+}
+
+.about-timeline__arrow::before {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border: 1px solid #FFFFFF80;
+    border-radius: 20px;
+    background: #FFFFFF;
+    content: '';
+}
+
+.about-timeline__arrow img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.about-timeline__arrow--previous img {
+    transform: rotate(-45deg);
+}
+
+.about-timeline__arrow--next img {
+    transform: rotate(45deg);
+}
+
+.about-timeline__image {
+    flex: 0 1 801px;
+    width: 44%;
+    min-width: 0;
+    aspect-ratio: 801 / 549;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #FFFFFF;
+}
+
+.about-timeline__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-timeline__years {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+}
+
+.about-timeline__milestone {
+    display: flex;
+    flex: 1 1 0;
+    align-items: center;
+    gap: 36px;
+    min-width: 0;
+}
+
+.about-timeline__milestone:last-child {
+    flex: 0 0 auto;
+}
+
+.about-timeline__milestone-mark {
+    position: relative;
+    display: flex;
+    flex: 0 0 114px;
+    align-items: center;
+    justify-content: center;
+    width: 114px;
+    height: 119px;
+}
+
+.about-timeline__milestone-mark img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.about-timeline__milestone-mark span {
+    position: relative;
+    color: #FFFFFF;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.about-timeline__milestone.is-active .about-timeline__milestone-mark span {
+    color: #324C88;
+}
+
+.about-timeline__milestone-line {
+    flex: 1 1 auto;
+    height: 2px;
+    min-width: 12px;
+    border-radius: 10px;
+    background: #FFFFFF80;
+}
+
+.about-timeline__arrow:focus-visible {
+    outline: 2px solid #FFFFFF;
+    outline-offset: 4px;
+}
+
+@media screen and (max-width: 1300px) {
+    .about-timeline__panel {
+        padding: 56px 32px;
+    }
+
+    .about-timeline__container {
+        gap: 64px;
+    }
+
+    .about-timeline__story {
+        gap: 28px;
+    }
+
+    .about-timeline__year {
+        font-size: 88px;
+    }
+
+    .about-timeline__story-title {
+        font-size: 28px;
+    }
+
+    .about-timeline__description p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .about-timeline__image {
+        flex-basis: 48%;
+    }
+
+    .about-timeline__years,
+    .about-timeline__milestone {
+        gap: 16px;
+    }
+
+    .about-timeline__milestone-mark {
+        flex-basis: 86px;
+        width: 86px;
+        height: 90px;
+    }
+
+    .about-timeline__milestone-mark span {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .about-timeline {
+        padding: 5px;
+    }
+
+    .about-timeline__panel {
+        gap: 20px;
+        padding: 20px;
+        border-radius: 21px;
+    }
+
+    .about-timeline__container {
+        gap: 24px;
+    }
+
+    .about-timeline__header {
+        gap: 24px;
+    }
+
+    .about-timeline__eyebrow {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .about-timeline__title {
+        margin: 0;
+        font-size: 22px;
+        line-height: 32px;
+    }
+
+    .about-timeline__divider {
+        flex: 0 0 2px;
+    }
+
+    .about-timeline__story {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 24px;
+    }
+
+    .about-timeline__story-content {
+        flex: 0 0 auto;
+        gap: 18px;
+        width: 100%;
+    }
+
+    .about-timeline__year {
+        font-size: 40px;
+        line-height: 1.2;
+    }
+
+    .about-timeline__description {
+        gap: 14px;
+    }
+
+    .about-timeline__story-title {
+        margin: 0;
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .about-timeline__description p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .about-timeline__controls {
+        display: none;
+    }
+
+    .about-timeline__arrow {
+        flex-basis: 64px;
+        width: 64px;
+        height: 64px;
+    }
+
+    .about-timeline__arrow::before {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+    }
+
+    .about-timeline__arrow img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .about-timeline__image {
+        flex: 0 0 auto;
+        width: 100%;
+        aspect-ratio: 801 / 549;
+        margin: 0;
+    }
+
+    .about-timeline__years {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .about-timeline__milestone {
+        flex: 0 0 auto;
+        gap: 10px;
+    }
+
+    .about-timeline__milestone-mark {
+        flex-basis: 74px;
+        width: 74px;
+        height: 75px;
+    }
+
+    .about-timeline__milestone-mark span {
+        font-size: 16px;
+        line-height: 1;
+    }
+
+    .about-timeline__milestone-line {
+        flex: 0 0 36px;
+        min-width: 0;
+    }
+
+    .about-timeline__milestone:last-child {
+        flex: 0 0 auto;
+    }
+}
+
+
+/* Figma: About timeline, desktop frame 1440 px (1857:130352).
+   Отдельная адаптация сохраняет геометрию исходного кадра 1920 px выше этого диапазона. */
+@media screen and (min-width: 1301px) and (max-width: 1600px) {
+    .about-timeline__panel {
+        padding: 40px;
+    }
+
+    .about-timeline__container {
+        gap: 72px;
+    }
+
+    .about-timeline__header {
+        gap: 24px;
+    }
+
+    .about-timeline__eyebrow {
+        font-size: 24px;
+        line-height: 31px;
+    }
+
+    .about-timeline__title {
+        font-size: 48px;
+        line-height: 64px;
+    }
+
+    .about-timeline__story {
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .about-timeline__story-content {
+        flex: 1 1 707px;
+        gap: 48px;
+    }
+
+    .about-timeline__year {
+        font-size: 120px;
+        line-height: 1.275;
+    }
+
+    .about-timeline__story-title {
+        font-size: 36px;
+        line-height: 1.3;
+    }
+
+    .about-timeline__description p {
+        font-size: 22px;
+        line-height: 36px;
+    }
+
+    .about-timeline__image {
+        flex: 0 1 619px;
+        width: 45.85%;
+        aspect-ratio: 833 / 549;
+    }
+
+    .about-timeline__years,
+    .about-timeline__milestone {
+        gap: 36px;
+    }
+
+    .about-timeline__milestone-mark {
+        flex-basis: 114px;
+        width: 114px;
+        height: 119px;
+    }
+
+    .about-timeline__milestone-mark span {
+        font-size: 24px;
+    }
+}
+
+
+/* Figma: About timeline, tablet frame 1024 px (1857:133862).
+   На планшете текст и изображение располагаются вертикально; desktop-кадры 1440/1920 сохраняют свои правила. */
+@media screen and (min-width: 681px) and (max-width: 1300px) {
+    .about-timeline {
+        padding: 5px;
+    }
+
+    .about-timeline__panel {
+        padding: 40px;
+        border-radius: 21px;
+    }
+
+    .about-timeline__container {
+        gap: 20px;
+    }
+
+    .about-timeline__header {
+        gap: 24px;
+    }
+
+    .about-timeline__eyebrow {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .about-timeline__title {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .about-timeline__story {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 36px;
+    }
+
+    .about-timeline__story-content {
+        flex: 0 1 auto;
+        gap: 24px;
+    }
+
+    .about-timeline__year {
+        font-size: 70px;
+        line-height: 1.2;
+    }
+
+    .about-timeline__description {
+        gap: 24px;
+    }
+
+    .about-timeline__story-title {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+
+    .about-timeline__description p {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .about-timeline__controls {
+        gap: 20px;
+    }
+
+    .about-timeline__image {
+        flex: 0 0 auto;
+        width: 100%;
+        aspect-ratio: auto;
+        height: 549px;
+    }
+
+    .about-timeline__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .about-timeline__years,
+    .about-timeline__milestone {
+        gap: 36px;
+    }
+
+    .about-timeline__milestone-mark {
+        flex-basis: 114px;
+        width: 114px;
+        height: 119px;
+    }
+
+    .about-timeline__milestone-mark span {
+        font-size: 24px;
+    }
+}
+
+
+/* Figma: «Лица компании», desktop 1920 px (1857:126830). */
+.about-team {
+    padding: 10px;
+    background: #F5F8F7;
+}
+
+.about-team__panel {
+    width: 100%;
+    padding: 60px 40px;
+    border-radius: 10px;
+    background: #FFFFFF;
+}
+
+.about-team__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    width: 100%;
+}
+
+.about-team__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    text-align: center;
+}
+
+.about-team__title {
+    color: #4D4D4D;
+    font-family: 'Onest-SemiBold', sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.about-team__subtitle {
+    color: #333333;
+    font-family: 'Onest-Regular', sans-serif;
+    font-size: 24px;
+    line-height: 1.4;
+}
+
+.about-team__gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 1736px;
+}
+
+.about-team__featured-row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.about-team__featured {
+    position: relative;
+    scroll-snap-align: start;
+    flex: 0 0 66.55%;
+    min-width: 0;
+    height: 649px;
+    overflow: hidden;
+    border-radius: 30px;
+    background: #E5E8EC;
+}
+
+.about-team__featured img,
+.about-team__thumbnail img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-team__featured--peek {
+    flex-basis: 66.55%;
+}
+
+.about-team__featured-row::-webkit-scrollbar {
+    display: none;
+}
+
+.about-team__controls {
+    position: absolute;
+    inset: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.about-team__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    border: 1px solid #FFFFFF80;
+    border-radius: 20px;
+    color: #324C88;
+    background: #FFFFFF;
+    font-family: 'Onest-Regular', sans-serif;
+    font-size: 48px;
+    line-height: 1;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.about-team__arrow--previous {
+    transform: rotate(-45deg);
+}
+
+.about-team__arrow--next {
+    transform: rotate(45deg);
+}
+
+.about-team__arrow span {
+    display: block;
+    transform: rotate(45deg);
+}
+
+.about-team__thumbnails {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.about-team__thumbnail {
+    min-width: 0;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 30px;
+    background: #E5E8EC;
+}
+
+@media screen and (min-width: 1301px) and (max-width: 1600px) {
+    .about-team__panel {
+        padding: 48px 30px;
+    }
+
+    .about-team__featured,
+    .about-team__featured--peek {
+        height: 540px;
+    }
+
+    .about-team__thumbnail {
+        height: 240px;
+    }
+}
+
+@media screen and (min-width: 681px) and (max-width: 1300px) {
+    .about-team__panel {
+        padding: 40px;
+    }
+
+    .about-team__title {
+        font-size: 36px;
+    }
+
+    .about-team__subtitle {
+        font-size: 18px;
+    }
+
+    .about-team__featured,
+    .about-team__featured--peek {
+        flex-basis: 75%;
+        height: 420px;
+    }
+
+    .about-team__thumbnail {
+        height: 180px;
+        border-radius: 20px;
+    }
+
+    .about-team__arrow {
+        width: 52px;
+        height: 52px;
+        border-radius: 16px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .about-team {
+        padding: 10px;
+    }
+
+    .about-team__panel {
+        padding: 30px 10px;
+        border-radius: 10px;
+    }
+
+    .about-team__content {
+        gap: 24px;
+    }
+
+    .about-team__header {
+        gap: 14px;
+    }
+
+    .about-team__title {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+
+    .about-team__subtitle {
+        max-width: 320px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .about-team__featured-row {
+        gap: 12px;
+    }
+
+    .about-team__featured,
+    .about-team__featured--peek {
+        flex-basis: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        border-radius: 20px;
+    }
+
+    .about-team__featured--peek {
+        display: none;
+    }
+
+    .about-team__controls {
+        inset: 0 12px;
+    }
+
+    .about-team__arrow {
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+        font-size: 34px;
+    }
+
+    .about-team__thumbnails {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .about-team__thumbnail {
+        height: auto;
+        aspect-ratio: 4 / 3;
+        border-radius: 16px;
+    }
+}
+
+
+/* Figma 1857:130420 — layout adjustment for the 1440px frame. */
+@media screen and (min-width: 1301px) and (max-width: 1600px) {
+    .about-team__panel {
+        padding: 60px 40px;
+    }
+
+    .about-team__header {
+        gap: 24px;
+    }
+
+    .about-team__title {
+        font-size: 48px;
+        line-height: 1.2;
+    }
+
+    .about-team__subtitle {
+        font-size: 24px;
+        line-height: 1.4;
+    }
+
+    .about-team__featured-row {
+        overflow: hidden;
+    }
+
+    .about-team__featured,
+    .about-team__featured--peek {
+        flex: 0 0 100%;
+        height: 649px;
+    }
+
+    .about-team__featured--peek {
+        display: none;
+    }
+
+    .about-team__thumbnails {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .about-team__thumbnail {
+        height: 300px;
+        border-radius: 30px;
+    }
+}
+
+
+/* Figma 1857:130420 — responsive layout for 1440px and 1024px.
+   The extra 10px inset matches the nested frame in Figma without changing 1920px. */
+@media screen and (min-width: 1301px) and (max-width: 1600px) {
+    .about-team__panel {
+        width: auto;
+        margin: 0 10px;
+        padding: 60px 40px;
+    }
+
+    .about-team__gallery {
+        max-width: none;
+    }
+
+    .about-team__featured,
+    .about-team__featured--peek {
+        height: 649px;
+    }
+
+    .about-team__thumbnails {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media screen and (min-width: 681px) and (max-width: 1300px) {
+    .about-team__panel {
+        width: auto;
+        margin: 0 10px;
+        padding: 40px;
+    }
+
+    .about-team__content {
+        gap: 24px;
+    }
+
+    .about-team__header {
+        gap: 18px;
+    }
+
+    .about-team__title {
+        font-size: 36px;
+        line-height: 1.3;
+    }
+
+    .about-team__subtitle {
+        max-width: 100%;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .about-team__featured-row {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .about-team__featured,
+    .about-team__featured--peek {
+        flex: 0 0 100%;
+        height: 420px;
+    }
+
+    .about-team__featured--peek {
+        display: none;
+    }
+
+    .about-team__controls {
+        inset: 0 20px;
+    }
+
+    .about-team__thumbnails {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .about-team__thumbnail {
+        height: 180px;
+        border-radius: 20px;
+    }
+}
+
+
+/* Figma 1857:133930 — «Лица компании», tablet frame 1024 px.
+   Изменяется только tablet layout; desktop frames 1440/1920 остаются без изменений. */
+@media screen and (min-width: 681px) and (max-width: 1300px) {
+    .about-team__panel {
+        padding: 40px 20px;
+        border-radius: 10px;
+    }
+
+    .about-team__content {
+        gap: 36px;
+    }
+
+    .about-team__header {
+        gap: 24px;
+    }
+
+    .about-team__title {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .about-team__subtitle {
+        font-size: 22px;
+        line-height: 1.4;
+    }
+
+    .about-team__gallery {
+        gap: 20px;
+    }
+
+    .about-team__featured-row {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        border-radius: 30px;
+    }
+
+    .about-team__featured {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2520 / 1417;
+        border-radius: 30px;
+    }
+
+    .about-team__featured img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .about-team__featured--peek {
+        display: none;
+    }
+
+    .about-team__controls {
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 467px;
+        height: 101px;
+        margin: auto;
+        pointer-events: none;
+    }
+
+    .about-team__arrow {
+        position: relative;
+        flex: 0 0 90.51px;
+        width: 90.51px;
+        height: 90.51px;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        font-size: 0;
+    }
+
+    .about-team__arrow::before {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 64px;
+        height: 64px;
+        border: 1px solid #FFFFFF80;
+        border-radius: 20px;
+        background: #FFFFFF;
+        content: "";
+        transform: rotate(45deg);
+    }
+
+    .about-team__arrow span {
+        position: relative;
+        z-index: 1;
+        display: block;
+        color: #324C88;
+        font-family: "Onest-Regular", sans-serif;
+        font-size: 40px;
+        line-height: 1;
+        transform: none;
+    }
+
+    .about-team__arrow--previous span {
+        transform: rotate(180deg);
+    }
+
+    .about-team__arrow--previous::before {
+        transform: rotate(-45deg);
+    }
+
+    .about-team__arrow--next::before {
+        transform: rotate(45deg);
+    }
+
+    .about-team__thumbnails {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .about-team__thumbnail {
+        height: 300px;
+        border-radius: 30px;
+    }
+
+    .about-team__thumbnail:nth-child(n + 4) {
+        display: none;
+    }
+}
+
+
+/* Figma 1857:137434 — «Лица компании», mobile frame 360 px.
+   Desktop 1920/1440 and tablet 1024 rules above remain unchanged. */
+@media screen and (max-width: 680px) {
+    .about-team {
+        padding: 0 4px 10px;
+    }
+
+    .about-team__panel {
+        width: 100%;
+        margin: 0;
+        padding: 0 10px 10px;
+        border-radius: 10px;
+    }
+
+    .about-team__content {
+        gap: 24px;
+        padding: 20px 10px;
+        border-radius: 20px;
+    }
+
+    .about-team__header {
+        gap: 14px;
+    }
+
+    .about-team__title {
+        font-size: 20px;
+        line-height: 28px;
+        white-space: nowrap;
+    }
+
+    .about-team__subtitle {
+        width: 100%;
+        max-width: none;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+    }
+
+    .about-team__gallery {
+        gap: 0;
+        width: 100%;
+        max-width: none;
+    }
+
+    .about-team__featured-row {
+        display: flex;
+        gap: 5px;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 0;
+        scroll-snap-type: none;
+    }
+
+    .about-team__featured,
+    .about-team__featured--peek {
+        display: block;
+        flex: 0 0 302px;
+        width: 302px;
+        height: 283px;
+        aspect-ratio: auto;
+        border-radius: 30px;
+    }
+
+    .about-team__featured img {
+        display: block;
+        width: 100%;
+        height: 118.56%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .about-team__controls,
+    .about-team__thumbnails {
+        display: none;
+    }
+}
+
+/* Figma 1857:126859 — блок «Почему завод ПК Веста», desktop 1920 px. */
+.about-reasons {
+    padding: 64px 10px 74px;
+    background: #ffffff;
+}
+
+.about-reasons__inner {
+    width: 100%;
+    max-width: 1900px;
+    margin: 0 auto;
+}
+
+.about-reasons__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+.about-reasons__title {
+    margin: 0;
+    color: #4d4d4d;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 61px;
+    text-transform: uppercase;
+}
+
+.about-reasons__subtitle {
+    margin: 0;
+    color: #5d5d5d;
+    font-family: "Onest-Regular", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 38px;
+}
+
+.about-reasons__tabs {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    max-width: 1150px;
+    min-height: 88px;
+    margin: 0 auto 36px;
+    padding: 4px;
+    border-radius: 30px;
+    background: #f7f8fa;
+}
+
+.about-reasons__tab {
+    display: flex;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 80px;
+    padding: 24px 18px;
+    border-radius: 14px;
+    color: #5d5d5d;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 29px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.about-reasons__tab.is-active {
+    color: #324c88;
+    background: #fff500;
+    font-size: 20px;
+}
+
+.about-reasons__tab:focus-visible {
+    outline: 2px solid #324c88;
+    outline-offset: 3px;
+}
+
+.about-reasons__panel {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    max-width: 1700px;
+    min-height: 620px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 30px;
+    background: #f7f8fa;
+}
+
+.about-reasons__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex: 0 0 660px;
+    flex-direction: column;
+    gap: 36px;
+    width: 660px;
+    margin: 79px 0 79px 96px;
+}
+
+.about-reasons__icon {
+    display: grid;
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    place-items: center;
+    border-radius: 20px;
+    background: #edf0f6;
+}
+
+.about-reasons__icon img {
+    display: block;
+    width: 36px;
+    height: 36px;
+}
+
+.about-reasons__copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.about-reasons__eyebrow {
+    margin: 0;
+    color: #324c88;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 32px;
+    text-transform: uppercase;
+}
+
+.about-reasons__heading {
+    margin: 0;
+    color: #4d4d4d;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 64px;
+    text-transform: uppercase;
+}
+
+.about-reasons__description {
+    max-width: 660px;
+    margin: 0;
+    color: #5d5d5d;
+    font-family: "Onest-Regular", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 33px;
+}
+
+.about-reasons__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 155px;
+    min-height: 60px;
+    margin-top: 0;
+    padding: 18px 30px;
+    border-radius: 10px;
+    color: #ffffff;
+    background: #324c88;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.about-reasons__link:hover {
+    background: #28427e;
+}
+
+.about-reasons__link:focus-visible {
+    outline: 2px solid #324c88;
+    outline-offset: 4px;
+}
+
+.about-reasons__map {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    display: block;
+    width: 1047px;
+    max-width: none;
+    height: 700px;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+@media screen and (max-width: 1600px) {
+    .about-reasons {
+        padding: 64px 10px 74px;
+    }
+
+    .about-reasons__inner {
+        padding: 0 40px;
+    }
+
+    .about-reasons__header {
+        margin-bottom: 48px;
+    }
+
+    .about-reasons__panel {
+        min-height: 620px;
+    }
+
+    .about-reasons__content {
+        flex: 0 0 567px;
+        width: 567px;
+        gap: 36px;
+        margin: 60px 0 60px 86px;
+    }
+
+    .about-reasons__heading {
+        font-size: 36px;
+        line-height: 64px;
+    }
+
+    .about-reasons__description {
+        max-width: 567px;
+        font-size: 20px;
+        line-height: 33px;
+    }
+
+    .about-reasons__map {
+        top: -40px;
+        right: -104px;
+        width: 1047px;
+        height: 700px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .about-reasons {
+        padding: 40px;
+    }
+
+    .about-reasons__inner {
+        padding: 0;
+    }
+
+    .about-reasons__title {
+        font-size: 36px;
+        line-height: 48px;
+    }
+
+    .about-reasons__subtitle {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .about-reasons__tabs {
+        min-height: 72px;
+        margin-bottom: 24px;
+        border-radius: 20px;
+    }
+
+    .about-reasons__tab {
+        min-height: 64px;
+        padding: 16px 10px;
+        font-size: 14px;
+        line-height: 22px;
+        white-space: normal;
+    }
+
+    .about-reasons__tab.is-active {
+        font-size: 16px;
+    }
+
+    .about-reasons__panel {
+        min-height: 700px;
+    }
+
+    .about-reasons__content {
+        flex-basis: 62%;
+        width: 62%;
+        gap: 24px;
+        margin: 40px;
+    }
+
+    .about-reasons__heading {
+        font-size: 30px;
+        line-height: 42px;
+    }
+
+    .about-reasons__description {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .about-reasons__map {
+        top: auto;
+        right: -80px;
+        bottom: -30px;
+        width: 650px;
+        height: 440px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .about-reasons {
+        padding: 32px 10px;
+    }
+
+    .about-reasons__header {
+        gap: 14px;
+        margin-bottom: 28px;
+    }
+
+    .about-reasons__title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .about-reasons__subtitle {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .about-reasons__tabs {
+        flex-wrap: wrap;
+        gap: 4px;
+        min-height: 0;
+        margin-bottom: 16px;
+        border-radius: 14px;
+    }
+
+    .about-reasons__tab,
+    .about-reasons__tab.is-active {
+        flex: 1 1 48%;
+        min-height: 48px;
+        padding: 10px 8px;
+        border-radius: 10px;
+        font-size: 12px;
+        line-height: 18px;
+        white-space: normal;
+    }
+
+    .about-reasons__panel {
+        flex-direction: column;
+        min-height: 0;
+        padding: 24px 20px 0;
+        border-radius: 20px;
+    }
+
+    .about-reasons__content {
+        flex: 0 1 auto;
+        gap: 20px;
+        width: 100%;
+        margin: 0;
+    }
+
+    .about-reasons__icon {
+        flex-basis: 48px;
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+    }
+
+    .about-reasons__icon img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .about-reasons__copy {
+        gap: 12px;
+    }
+
+    .about-reasons__eyebrow {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .about-reasons__heading {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .about-reasons__description {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .about-reasons__link {
+        min-width: 130px;
+        min-height: 48px;
+        padding: 12px 20px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .about-reasons__map {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        align-self: center;
+        width: 120%;
+        max-width: 420px;
+        height: auto;
+        margin: 0 -20px;
+    }
+}
+
+
+/* Figma 1857:133956 — «Почему завод ПК Веста», tablet frame 1024 px.
+   Desktop 1920/1440 rules above are preserved; the content changes to a vertical flow. */
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+    .about-reasons {
+        padding: 40px 10px;
+    }
+
+    .about-reasons__inner {
+        padding: 0 40px;
+    }
+
+    .about-reasons__header {
+        gap: 18px;
+        margin-bottom: 36px;
+    }
+
+    .about-reasons__title {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .about-reasons__subtitle {
+        font-size: 20px;
+        line-height: 29px;
+    }
+
+    .about-reasons__tabs {
+        display: grid;
+        grid-template-columns: 164px 168px 89px 152px;
+        gap: 4px;
+        width: 593px;
+        max-width: 100%;
+        min-height: 62px;
+        margin-bottom: 36px;
+        padding: 4px;
+        border-radius: 20px;
+    }
+
+    .about-reasons__tab,
+    .about-reasons__tab.is-active {
+        flex: initial;
+        min-height: 54px;
+        padding: 12px 8px;
+        border-radius: 14px;
+        font-size: 14px;
+        line-height: 26px;
+        white-space: nowrap;
+    }
+
+    .about-reasons__tab.is-active {
+        font-size: 14px;
+    }
+
+    .about-reasons__panel {
+        flex-direction: column;
+        min-height: 0;
+        padding: 40px;
+        border-radius: 30px;
+    }
+
+    .about-reasons__content {
+        flex: 0 0 auto;
+        gap: 36px;
+        width: 100%;
+        margin: 0;
+    }
+
+    .about-reasons__copy {
+        gap: 18px;
+        width: 100%;
+    }
+
+    .about-reasons__eyebrow {
+        font-size: 18px;
+        line-height: 32px;
+    }
+
+    .about-reasons__heading {
+        width: 100%;
+        font-size: 32px;
+        line-height: 48px;
+    }
+
+    .about-reasons__description {
+        max-width: none;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .about-reasons__link {
+        width: 100%;
+        min-width: 0;
+        min-height: 54px;
+        padding: 15px 30px;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .about-reasons__map {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        align-self: stretch;
+        width: 100%;
+        max-width: 844px;
+        height: auto;
+        margin: 24px 0 0;
+    }
+}
+
+
+/* Figma 1857:137459 — mobile layout at 360 px. */
+@media screen and (max-width: 680px) {
+    .about-reasons {
+        padding: 20px 10px 10px;
+    }
+
+    .about-reasons__inner {
+        padding: 0;
+    }
+
+    .about-reasons__header {
+        gap: 14px;
+        margin-bottom: 24px;
+    }
+
+    .about-reasons__title {
+        width: 100%;
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .about-reasons__subtitle {
+        width: 100%;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .about-reasons__tabs {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 4px;
+        width: 100%;
+        max-width: 100%;
+        min-height: 50px;
+        margin: 0 0 24px;
+        padding: 4px;
+        overflow-x: auto;
+        border-radius: 14px;
+        scrollbar-width: none;
+    }
+
+    .about-reasons__tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .about-reasons__tab,
+    .about-reasons__tab.is-active {
+        flex: 0 0 auto;
+        min-height: 42px;
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-size: 12px;
+        line-height: 22px;
+        white-space: nowrap;
+    }
+
+    .about-reasons__tab.is-active {
+        font-size: 12px;
+    }
+
+    .about-reasons__panel {
+        flex-direction: column;
+        min-height: 0;
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .about-reasons__content {
+        flex: 0 0 auto;
+        gap: 36px;
+        width: 100%;
+        margin: 0;
+    }
+
+    .about-reasons__icon {
+        flex: 0 0 36px;
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+    }
+
+    .about-reasons__icon img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .about-reasons__copy {
+        gap: 14px;
+        width: 100%;
+    }
+
+    .about-reasons__eyebrow {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .about-reasons__heading {
+        width: 100%;
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .about-reasons__description {
+        max-width: none;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .about-reasons__link {
+        align-self: stretch;
+        width: 100%;
+        min-width: 0;
+        min-height: 54px;
+        margin-top: 0;
+        padding: 18px 24px;
+        border-radius: 10px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .about-reasons__map {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        align-self: center;
+        width: 100%;
+        max-width: 304px;
+        height: auto;
+        margin: 14px 0 0;
+    }
+}
+
+
+/* Figma 1857:129413 — документы и сертификаты. */
+.about-documents {
+    display: flex;
+    justify-content: center;
+    padding: 80px 45px;
+    background: #F5F8F7;
+}
+
+.about-documents__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 1700px;
+    min-width: 0;
+}
+
+.about-documents__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 17px;
+    width: 100%;
+    text-align: center;
+}
+
+.about-documents__eyebrow {
+    margin: 0;
+    color: #324C8880;
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.about-documents__title {
+    margin: 0;
+    color: #324C88;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.about-documents__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 5px;
+    row-gap: 24px;
+    width: 100%;
+}
+
+.about-documents__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-width: 0;
+    min-height: 244px;
+    padding: 30px 20px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    color: #324C88;
+    text-align: center;
+    transition: background-color 0.15s ease;
+}
+
+.about-documents__card:hover {
+    background: #FFFFFFCC;
+}
+
+.about-documents__card:focus-visible {
+    outline: 2px solid #324C88;
+    outline-offset: -4px;
+}
+
+.about-documents__icon {
+    display: block;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.about-documents__name {
+    margin: 0;
+    font-family: "Onest-Regular", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.about-documents__meta {
+    margin: 0;
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+@media screen and (max-width: 1300px) {
+    .about-documents {
+        padding: 60px 24px;
+    }
+
+    .about-documents__grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .about-documents__card {
+        min-height: 220px;
+        gap: 16px;
+        padding: 24px 16px;
+    }
+
+    .about-documents__title {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .about-documents__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-documents__eyebrow {
+        font-size: 18px;
+    }
+
+    .about-documents__name {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .about-documents {
+        padding: 40px 10px 20px;
+    }
+
+    .about-documents__container {
+        gap: 24px;
+    }
+
+    .about-documents__header {
+        gap: 14px;
+    }
+
+    .about-documents__eyebrow {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .about-documents__title {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .about-documents__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 5px;
+    }
+
+    .about-documents__card {
+        gap: 14px;
+        min-height: 190px;
+        padding: 20px 12px;
+        border-radius: 10px;
+    }
+
+    .about-documents__icon {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .about-documents__name {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .about-documents__meta {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .about-documents__card {
+        padding: 18px 8px;
+    }
+}
+
+
+/* Figma 1857:133001 — desktop frame 1440 px; preserve the 1920 px base layout. */
+@media screen and (min-width: 1301px) and (max-width: 1600px) {
+    .about-documents {
+        padding: 80px 45px;
+    }
+
+    .about-documents__container {
+        max-width: 1350px;
+    }
+
+    .about-documents__title {
+        font-size: 44px;
+        line-height: 1.4;
+    }
+
+    .about-documents__grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        column-gap: 5px;
+        row-gap: 24px;
+    }
+
+    .about-documents__card {
+        min-height: 244px;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    .about-documents__name {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .about-documents__meta {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+}
+
+
+/* Figma 1857:136507 — документы и сертификаты, адаптация планшетного кадра 1024 px. */
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+    .about-documents {
+        padding: 40px;
+    }
+
+    .about-documents__container {
+        gap: 24px;
+        max-width: none;
+    }
+
+    .about-documents__header {
+        gap: 17px;
+    }
+
+    .about-documents__eyebrow {
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    .about-documents__title {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .about-documents__grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-rows: repeat(2, minmax(244px, 1fr));
+        column-gap: 5px;
+        row-gap: 5px;
+        height: 512px;
+    }
+
+    .about-documents__card {
+        gap: 20px;
+        min-height: 0;
+        padding: 30px 20px;
+        border-radius: 10px;
+    }
+
+    .about-documents__icon {
+        flex-basis: 48px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .about-documents__name {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    .about-documents__meta {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+}
+
+
+/* Figma 1857:140010 — mobile documents frame, 360 px. */
+.about-documents__more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 0;
+    color: #324C88;
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.about-documents__more:focus-visible {
+    outline: 2px solid #324C88;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.about-documents__more-icon {
+    position: relative;
+    display: block;
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+}
+
+.about-documents__more-icon::before {
+    position: absolute;
+    top: 5px;
+    left: 7px;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    content: "";
+    transform: rotate(45deg);
+}
+
+@media screen and (max-width: 680px) {
+    .about-documents {
+        padding: 20px 10px;
+    }
+
+    .about-documents__container {
+        gap: 24px;
+    }
+
+    .about-documents__header {
+        gap: 17px;
+    }
+
+    .about-documents__eyebrow {
+        font-size: 16px;
+        line-height: 24px;
+        white-space: nowrap;
+    }
+
+    .about-documents__title {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .about-documents__grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 5px;
+    }
+
+    .about-documents__card {
+        gap: 14px;
+        min-height: 0;
+        padding: 30px 20px;
+        border-radius: 10px;
+    }
+
+    .about-documents__icon {
+        flex-basis: 48px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .about-documents__name {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .about-documents__meta {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .about-documents__card:nth-child(n + 3) {
+        display: none;
+    }
+
+    .about-documents__grid.is-expanded .about-documents__card {
+        display: flex;
+    }
+
+    .about-documents__more {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        padding: 0;
+        color: #324C88;
+        font-family: "Onest-Medium", sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 25px;
+    }
+
+    .about-documents__more-icon {
+        transform: rotate(180deg);
+    }
+
+    .about-documents__more[aria-expanded="true"] .about-documents__more-icon {
+        transform: none;
+    }
 }
