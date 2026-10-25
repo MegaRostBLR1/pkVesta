@@ -1585,23 +1585,27 @@ h2 {
     flex: 1 1 851px;
     width: auto;
     min-width: 0;
+    height: 482px;
     min-height: 482px;
     margin-left: 0;
   }
 
   .home-industries__image--small {
-    flex: 0 1 37.6028%;
-    width: 37.6028%;
-    height: auto;
-    aspect-ratio: 1;
+    flex: 0 1 320px;
+    width: 320px;
+    height: 320px;
+    min-width: 0;
+    aspect-ratio: auto;
+    object-fit: cover;
   }
 
   .home-industries__image--large {
-    flex: 1 1 0;
-    width: auto;
-    height: 100%;
+    flex: 0 1 526px;
+    width: 526px;
+    height: 482px;
     min-width: 0;
-    min-height: 0;
+    min-height: 482px;
+    object-fit: cover;
   }
 }
 
