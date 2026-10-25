@@ -959,10 +959,6 @@ h2 {
     font-size: 24px;
   }
 
-  .home-process__description {
-    font-size: 16px;
-  }
-
   .home-process__icon {
     flex-basis: 44px;
     width: 44px;
@@ -975,6 +971,12 @@ h2 {
 
   .home-process__card {
     padding: 16px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .home-process__description {
+    font-size: 16px;
   }
 }
 
@@ -1054,8 +1056,6 @@ h2 {
   }
 }
 
-/* Контрольный desktop-frame Figma 1440 px: 1857:24744.
-   Сохраняет четыре карточки в ряд и уточняет параметры относительно 1920 px. */
 @media screen and (min-width: 1301px) and (max-width: 1440px) {
   .home-process__panel {
     gap: 30px;
@@ -1123,7 +1123,6 @@ h2 {
   }
 }
 
-/* Mobile-frame Figma 360 px: 1857:26316. Все правила мобильной версии собраны в одном блоке. */
 @media screen and (max-width: 680px) {
   .home-process {
     padding: 0 5px 5px;
