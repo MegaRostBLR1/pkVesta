@@ -25,7 +25,7 @@ const APP_CONFIG = {
     js: './components/layout/popups/main-modal/main-modal.js',
     init: 'initMainModal'
   },
-  defaultPage: 'home',
+  defaultPage: 'press-center',
   pages: {
     'home': {
       title: 'Главная',
