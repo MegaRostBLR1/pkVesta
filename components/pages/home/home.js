@@ -5,6 +5,37 @@ function initHome() {
         return;
     }
 
+    const processGrid = document.querySelector('.home-process__grid');
+
+    if (processGrid && !processGrid.dataset.headersEqualized) {
+        processGrid.dataset.headersEqualized = 'true';
+
+        const cardHeaders = Array.from(processGrid.querySelectorAll('.home-process__card-header'));
+        const cardTitles = cardHeaders.map((header) => header.querySelector('.home-process__card-title')).filter(Boolean);
+
+        const equalizeCardHeaders = () => {
+            cardHeaders.forEach((header) => {
+                header.style.removeProperty('height');
+            });
+
+            const maxHeight = Math.max(0, ...cardHeaders.map((header) => header.getBoundingClientRect().height));
+
+            cardHeaders.forEach((header) => {
+                header.style.height = `${maxHeight}px`;
+            });
+        };
+
+        equalizeCardHeaders();
+
+        if ('ResizeObserver' in window) {
+            const headerResizeObserver = new ResizeObserver(equalizeCardHeaders);
+            cardTitles.forEach((title) => headerResizeObserver.observe(title));
+        }
+
+        window.addEventListener('resize', equalizeCardHeaders, { passive: true });
+        document.fonts?.ready.then(equalizeCardHeaders);
+    }
+
     // Навигация слайдера остаётся неактивной, пока в проект не добавлены остальные слайды.
 
     const accordionAnimations = new WeakMap();
