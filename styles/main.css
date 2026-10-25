@@ -1213,14 +1213,13 @@ h2 {
   }
 }
 
-.home-industries  {
+.home-industries {
   margin: 0 5px 5px;
   color: #4d4d4d;
   background: #f5f8f7;
 }
 
-.home-industries__panel  {
-
+.home-industries__panel {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -1231,8 +1230,7 @@ h2 {
   background: #fff;
 }
 
-.home-industries__header  {
-
+.home-industries__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1240,8 +1238,7 @@ h2 {
   min-width: 0;
 }
 
-.home-industries__eyebrow  {
-
+.home-industries__eyebrow {
   flex: 0 0 auto;
   margin: 0;
   color: #4d4d4d;
@@ -1252,16 +1249,14 @@ h2 {
   text-transform: uppercase;
 }
 
-.home-industries__nav  {
-
+.home-industries__nav {
   display: flex;
   align-items: center;
   gap: 24px;
   min-width: 0;
 }
 
-.home-industries__nav-list  {
-
+.home-industries__nav-list {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -1270,8 +1265,7 @@ h2 {
   padding: 0;
 }
 
-.home-industries__nav-item  {
-
+.home-industries__nav-item {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -1284,8 +1278,7 @@ h2 {
   white-space: nowrap;
 }
 
-.home-industries__nav-item::after  {
-
+.home-industries__nav-item::after {
   flex: 0 0 4px;
   width: 4px;
   height: 4px;
@@ -1294,31 +1287,26 @@ h2 {
   content: "";
 }
 
-.home-industries__nav-item:last-child::after  {
-
+.home-industries__nav-item:last-child::after {
   display: none;
 }
 
-.home-industries__nav-item.is-active  {
-
+.home-industries__nav-item.is-active {
   color: #5d5d5d;
 }
 
-.home-industries__nav-item.is-active::after  {
-
+.home-industries__nav-item.is-active::after {
   background: #5d5d5d;
 }
 
-.home-industries__nav-divider  {
-
+.home-industries__nav-divider {
   flex: 0 0 1px;
   width: 1px;
   height: 40px;
   background: #dbdbdb;
 }
 
-.home-industries__catalog-link  {
-
+.home-industries__catalog-link {
   flex: 0 0 auto;
   color: #324c88;
   font-family: "Onest-SemiBold", sans-serif;
@@ -1329,21 +1317,18 @@ h2 {
   white-space: nowrap;
 }
 
-.home-industries__catalog-link:hover  {
-
+.home-industries__catalog-link:hover {
   color: #28427e;
 }
 
-.home-industries__divider  {
-
+.home-industries__divider {
   flex: 0 0 1px;
   width: 100%;
   height: 1px;
   background: rgb(77 77 77 / 20%);
 }
 
-.home-industries__content  {
-
+.home-industries__content {
   display: flex;
   align-items: stretch;
   justify-content: space-between;
@@ -1352,8 +1337,7 @@ h2 {
   flex: 1 1 auto;
 }
 
-.home-industries__details  {
-
+.home-industries__details {
   display: flex;
   flex: 0 1 620px;
   flex-direction: column;
@@ -1363,8 +1347,7 @@ h2 {
   min-width: 0;
 }
 
-.home-industries__intro  {
-
+.home-industries__intro {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1372,8 +1355,7 @@ h2 {
   width: 100%;
 }
 
-.home-industries__title  {
-
+.home-industries__title {
   margin: 0;
   color: #505050;
   font-family: "Onest-SemiBold", sans-serif;
@@ -1384,8 +1366,7 @@ h2 {
   overflow-wrap: anywhere;
 }
 
-.home-industries__description  {
-
+.home-industries__description {
   width: 100%;
   max-width: 672px;
   color: rgb(77 77 77 / 80%);
@@ -1395,14 +1376,12 @@ h2 {
   line-height: 1.5;
 }
 
-.home-industries__types  {
-
+.home-industries__types {
   width: 100%;
   max-width: 539px;
 }
 
-.home-industries__types-title  {
-
+.home-industries__types-title {
   margin: 0 0 14px;
   color: #4d4d4d;
   font-family: "Onest-SemiBold", sans-serif;
@@ -1412,8 +1391,7 @@ h2 {
   text-transform: uppercase;
 }
 
-.home-industries__tags  {
-
+.home-industries__tags {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -1423,8 +1401,7 @@ h2 {
   padding: 0;
 }
 
-.home-industries__tag  {
-
+.home-industries__tag {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1440,13 +1417,11 @@ h2 {
   white-space: nowrap;
 }
 
-.home-industries__tag--more  {
-
+.home-industries__tag--more {
   background: transparent;
 }
 
-.home-industries__button  {
-
+.home-industries__button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1466,13 +1441,11 @@ h2 {
   transition: background-color 0.15s ease;
 }
 
-.home-industries__button:hover  {
-
+.home-industries__button:hover {
   background: #28427e;
 }
 
-.home-industries__visual  {
-
+.home-industries__visual {
   display: flex;
   flex: 0 1 851px;
   align-items: flex-end;
@@ -1481,8 +1454,7 @@ h2 {
   min-height: 482px;
 }
 
-.home-industries__image  {
-
+.home-industries__image {
   display: block;
   flex: 0 1 auto;
   min-width: 0;
@@ -1490,125 +1462,109 @@ h2 {
   object-fit: cover;
 }
 
-.home-industries__image--small  {
-
+.home-industries__image--small {
   width: 37.6028%;
   aspect-ratio: 1;
 }
 
-.home-industries__image--large  {
-
+.home-industries__image--large {
   align-self: stretch;
   width: 61.8096%;
   min-height: 0;
 }
 
 .home-industries__catalog-link:focus-visible,
-.home-industries__button:focus-visible  {
+.home-industries__button:focus-visible {
   outline: 2px solid #324c88;
   outline-offset: 3px;
 }
 
 @media screen and (max-width: 1700px) {
-  .home-industries__panel  {
+  .home-industries__panel {
     padding: 32px;
   }
 
-  .home-industries__header  {
-
+  .home-industries__header {
     align-items: flex-start;
   }
 
-  .home-industries__nav  {
-
+  .home-industries__nav {
     gap: 16px;
   }
 
-  .home-industries__nav-list  {
-
+  .home-industries__nav-list {
     gap: 12px;
   }
 
-  .home-industries__nav-item  {
-
+  .home-industries__nav-item {
     gap: 12px;
     font-size: 15px;
   }
 
-  .home-industries__catalog-link  {
-
+  .home-industries__catalog-link {
     font-size: 15px;
   }
 
-  .home-industries__content  {
-
+  .home-industries__content {
     gap: 24px;
   }
 
-  .home-industries__title  {
-
+  .home-industries__title {
     font-size: 40px;
   }
 
-  .home-industries__description  {
-
+  .home-industries__description {
     font-size: 18px;
   }
 
-  .home-industries__visual  {
-
+  .home-industries__visual {
     flex-basis: 48%;
     min-height: 400px;
   }
 }
 
+
 /* Контрольный desktop-frame Figma 1440 px: 1857:24801.
    Состояние связано с базовой геометрией 1920 px; отдельная модель только
    уточняет плотность шапки и композицию контента в доступной ширине. */
 @media screen and (min-width: 1301px) and (max-width: 1440px) {
-  .home-industries__panel  {
+  .home-industries__panel {
+    gap: 24px;
     height: 675px;
+    min-height: 675px;
     padding: 40px;
     border-radius: 10px;
   }
 
-  .home-industries__header  {
-
+  .home-industries__header {
     align-items: center;
     gap: 20px;
   }
 
-  .home-industries__eyebrow  {
-
+  .home-industries__eyebrow {
     font-size: 24px;
     line-height: normal;
   }
 
-  .home-industries__nav  {
-
+  .home-industries__nav {
     flex: 0 1 auto;
     gap: 18px;
   }
 
-  .home-industries__nav-item  {
-
-    font-size: 14px;
-
-  }
-
-  .home-industries__catalog-link  {
-
+  .home-industries__nav-item {
     font-size: 14px;
   }
 
-  .home-industries__content  {
+  .home-industries__catalog-link {
+    font-size: 14px;
+  }
 
+  .home-industries__content {
     gap: 0;
     min-height: 482px;
   }
 
-  .home-industries__details  {
-
+  .home-industries__details {
     position: relative;
     z-index: 1;
     flex: 0 0 539px;
@@ -1617,14 +1573,12 @@ h2 {
     padding-right: 0;
   }
 
-  .home-industries__title  {
-
+  .home-industries__title {
     line-height: 1.6;
     white-space: nowrap;
   }
 
-  .home-industries__visual  {
-
+  .home-industries__visual {
     position: relative;
     z-index: 0;
     flex: 0 0 851px;
@@ -1634,16 +1588,14 @@ h2 {
     margin-left: -121px;
   }
 
-  .home-industries__image--small  {
-
+  .home-industries__image--small {
     flex: 0 0 320px;
     width: 320px;
     height: 320px;
     aspect-ratio: auto;
   }
 
-  .home-industries__image--large  {
-
+  .home-industries__image--large {
     flex: 0 0 526px;
     width: 526px;
     height: 482px;
@@ -1651,43 +1603,38 @@ h2 {
   }
 }
 
+
 @media screen and (max-width: 1300px) {
-  .home-industries__panel  {
+  .home-industries__panel {
     min-height: 0;
     padding: 30px;
   }
 
-  .home-industries__header  {
-
+  .home-industries__header {
     flex-direction: column;
     gap: 18px;
   }
 
-  .home-industries__nav  {
-
+  .home-industries__nav {
     width: 100%;
     overflow-x: auto;
     padding-bottom: 4px;
   }
 
-  .home-industries__content  {
-
+  .home-industries__content {
     flex-direction: column;
   }
 
-  .home-industries__details  {
-
+  .home-industries__details {
     flex-basis: auto;
     gap: 30px;
   }
 
-  .home-industries__description  {
-
+  .home-industries__description {
     max-width: 760px;
   }
 
-  .home-industries__visual  {
-
+  .home-industries__visual {
     flex: 0 1 auto;
     width: 100%;
     min-height: 0;
@@ -1695,45 +1642,41 @@ h2 {
     aspect-ratio: 1.77;
   }
 
-  .home-industries__image--small  {
-
+  .home-industries__image--small {
     width: 37.6%;
   }
 
-  .home-industries__image--large  {
-
+  .home-industries__image--large {
     width: calc(62.4% - 5px);
   }
 }
+
 
 /* Планшетный frame Figma 1024 px: 1857:25380.
    Переопределяет общий stacked-layout до 1300 px: в этом frame контент
    остаётся двухколоночным, а шапка каталога переносится над навигацией. */
 @media screen and (min-width: 681px) and (max-width: 1100px) {
-  .home-industries__panel  {
+  .home-industries__panel {
     gap: 18px;
     min-height: 0;
     padding: 40px;
     border-radius: 10px;
   }
 
-  .home-industries__header  {
-
+  .home-industries__header {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     gap: 30px;
   }
 
-  .home-industries__eyebrow  {
-
+  .home-industries__eyebrow {
     font-size: 30px;
     line-height: 38px;
     text-align: center;
   }
 
-  .home-industries__nav  {
-
+  .home-industries__nav {
     align-self: stretch;
     justify-content: center;
     gap: 20px;
@@ -1743,42 +1686,35 @@ h2 {
     scrollbar-width: none;
   }
 
-  .home-industries__nav::-webkit-scrollbar  {
-
+  .home-industries__nav::-webkit-scrollbar {
     display: none;
   }
 
-  .home-industries__nav-list  {
-
+  .home-industries__nav-list {
     flex: 0 0 auto;
     gap: 20px;
   }
 
-  .home-industries__nav-item--tablet-hidden  {
-
+  .home-industries__nav-item--tablet-hidden {
     display: none;
   }
 
-  .home-industries__nav-item  {
-
+  .home-industries__nav-item {
     gap: 20px;
     font-size: 16px;
     line-height: 1.6;
   }
 
-  .home-industries__nav-divider  {
-
+  .home-industries__nav-divider {
     flex: 0 0 1px;
     height: 40px;
   }
 
-  .home-industries__catalog-link  {
-
+  .home-industries__catalog-link {
     font-size: 18px;
   }
 
-  .home-industries__content  {
-
+  .home-industries__content {
     flex-direction: row;
     align-items: stretch;
     justify-content: space-between;
@@ -1786,8 +1722,7 @@ h2 {
     min-height: 482px;
   }
 
-  .home-industries__details  {
-
+  .home-industries__details {
     flex: 0 1 411px;
     justify-content: space-between;
     gap: 24px;
@@ -1795,52 +1730,44 @@ h2 {
     min-height: 482px;
   }
 
-  .home-industries__intro  {
-
+  .home-industries__intro {
     gap: 10px;
     width: 100%;
   }
 
-  .home-industries__title  {
-
+  .home-industries__title {
     font-size: 30px;
     line-height: 38px;
     overflow-wrap: normal;
   }
 
-  .home-industries__description  {
-
+  .home-industries__description {
     max-width: 100%;
     font-size: 18px;
     line-height: 1.5;
   }
 
-  .home-industries__types  {
-
+  .home-industries__types {
     max-width: 100%;
   }
 
-  .home-industries__types-title  {
-
+  .home-industries__types-title {
     margin-bottom: 14px;
     font-size: 24px;
     line-height: 1.5;
   }
 
-  .home-industries__tags  {
-
+  .home-industries__tags {
     max-width: 100%;
     gap: 10px;
   }
 
-  .home-industries__tag  {
-
+  .home-industries__tag {
     padding: 8px 14px;
     font-size: 16px;
   }
 
-  .home-industries__button  {
-
+  .home-industries__button {
     width: 100%;
     min-height: 62px;
     padding: 18px 20px;
@@ -1849,8 +1776,7 @@ h2 {
     line-height: 1.6;
   }
 
-  .home-industries__visual  {
-
+  .home-industries__visual {
     flex: 0 1 523px;
     align-self: stretch;
     gap: 5px;
@@ -1861,16 +1787,14 @@ h2 {
     aspect-ratio: auto;
   }
 
-  .home-industries__image--small  {
-
+  .home-industries__image--small {
     flex: 0 0 43.5946%;
     width: 43.5946%;
     height: auto;
     aspect-ratio: 1;
   }
 
-  .home-industries__image--large  {
-
+  .home-industries__image--large {
     flex: 1 1 0;
     align-self: auto;
     width: auto;
@@ -1879,85 +1803,72 @@ h2 {
   }
 }
 
+
 @media screen and (max-width: 680px) {
-  .home-industries__panel  {
+  .home-industries__panel {
     gap: 18px;
     padding: 20px 10px;
     border-radius: 10px;
   }
 
-  .home-industries__eyebrow  {
-
+  .home-industries__eyebrow {
     font-size: 18px;
   }
 
-  .home-industries__nav  {
-
+  .home-industries__nav {
     gap: 12px;
   }
 
-  .home-industries__nav-list  {
-
+  .home-industries__nav-list {
     gap: 10px;
   }
 
-  .home-industries__nav-item  {
-
+  .home-industries__nav-item {
     gap: 10px;
     font-size: 12px;
   }
 
-  .home-industries__nav-divider  {
-
+  .home-industries__nav-divider {
     height: 28px;
   }
 
-  .home-industries__catalog-link  {
-
+  .home-industries__catalog-link {
     font-size: 12px;
   }
 
-  .home-industries__content  {
-
+  .home-industries__content {
     gap: 24px;
   }
 
-  .home-industries__details  {
-
+  .home-industries__details {
     gap: 24px;
   }
 
-  .home-industries__title  {
-
+  .home-industries__title {
     font-size: 24px;
     line-height: 1.25;
   }
 
-  .home-industries__description  {
-
+  .home-industries__description {
     font-size: 16px;
     line-height: 1.5;
   }
 
-  .home-industries__types-title  {
-
+  .home-industries__types-title {
     margin-bottom: 10px;
     font-size: 18px;
   }
 
-  .home-industries__tags  {
-
+  .home-industries__tags {
     gap: 8px;
   }
 
-  .home-industries__tag  {
-
+  .home-industries__tag {
     padding: 6px 10px;
     font-size: 14px;
   }
 
-  .home-industries__button  {
-
+  .home-industries__button {
     width: 100%;
     min-height: 54px;
     padding: 14px 16px;
@@ -1966,40 +1877,36 @@ h2 {
     line-height: 1.4;
   }
 
-  .home-industries__visual  {
-
+  .home-industries__visual {
     gap: 5px;
     aspect-ratio: 1.15;
   }
 
-  .home-industries__image  {
-
+  .home-industries__image {
     border-radius: 8px;
   }
 }
 
+
 @media screen and (max-width: 400px) {
-  .home-industries__panel  {
+  .home-industries__panel {
     gap: 16px;
     padding: 20px 10px;
     border-radius: 10px;
   }
 
-  .home-industries__header  {
-
+  .home-industries__header {
     align-items: center;
     gap: 20px;
     width: 100%;
   }
 
-  .home-industries__eyebrow  {
-
+  .home-industries__eyebrow {
     line-height: 1.4;
     text-align: center;
   }
 
-  .home-industries__nav  {
-
+  .home-industries__nav {
     justify-content: flex-start;
     width: 100%;
     max-width: 100%;
@@ -2008,83 +1915,66 @@ h2 {
     scrollbar-width: none;
   }
 
-  .home-industries__nav::-webkit-scrollbar  {
-
+  .home-industries__nav::-webkit-scrollbar {
     display: none;
   }
 
-  .home-industries__nav-list  {
-
+  .home-industries__nav-list {
     flex: 0 0 auto;
-
   }
 
-  .home-industries__nav-item--tablet-hidden  {
-
+  .home-industries__nav-item--tablet-hidden {
     display: flex;
   }
 
-  .home-industries__nav-divider  {
-
+  .home-industries__nav-divider {
     flex: 0 0 1px;
-
   }
 
-  .home-industries__content  {
-
+  .home-industries__content {
     gap: 20px;
   }
 
-  .home-industries__details  {
-
+  .home-industries__details {
     gap: 20px;
     width: 100%;
   }
 
-  .home-industries__intro  {
-
+  .home-industries__intro {
     gap: 10px;
   }
 
-  .home-industries__title  {
-
+  .home-industries__title {
     font-size: 22px;
     line-height: 1.3;
     overflow-wrap: anywhere;
   }
 
-  .home-industries__description  {
-
+  .home-industries__description {
     max-width: none;
     font-size: 14px;
     line-height: 1.5;
   }
 
-  .home-industries__types  {
-
+  .home-industries__types {
     max-width: none;
   }
 
-  .home-industries__types-title  {
-
+  .home-industries__types-title {
     margin-bottom: 10px;
     font-size: 16px;
     line-height: 1.5;
   }
 
-  .home-industries__tags  {
-
+  .home-industries__tags {
     max-width: none;
   }
 
-  .home-industries__tag  {
-
+  .home-industries__tag {
     font-size: 12px;
-
   }
 
-  .home-industries__button  {
-
+  .home-industries__button {
     min-height: 48px;
     padding: 12px 10px;
     border-radius: 10px;
@@ -2092,22 +1982,19 @@ h2 {
     line-height: 1.5;
   }
 
-  .home-industries__visual  {
-
+  .home-industries__visual {
     gap: 5px;
     max-height: none;
     aspect-ratio: 1.15;
   }
 
-  .home-industries__image--small  {
-
+  .home-industries__image--small {
     flex: 0 0 37.6%;
     height: auto;
     aspect-ratio: 1;
   }
 
-  .home-industries__image--large  {
-
+  .home-industries__image--large {
     flex: 1 1 0;
     align-self: stretch;
     width: auto;
@@ -2116,11 +2003,13 @@ h2 {
   }
 }
 
+
 @media (prefers-reduced-motion: reduce) {
-  .home-industries__button  {
+  .home-industries__button {
     transition: none;
   }
 }
+
 /* Выполненные проекты */
 .home-projects {
   width: 100%;
