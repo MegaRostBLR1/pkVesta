@@ -1129,10 +1129,6 @@ h2 {
 }
 
 @media screen and (max-width: 680px) {
-  .home-process {
-    padding: 0 5px 5px;
-  }
-
   .home-process__panel {
     gap: 18px;
     padding: 20px 10px;
@@ -1218,7 +1214,7 @@ h2 {
 }
 
 .home-industries {
-  padding: 5px;
+  margin: 0 5px 5px;
   color: #4d4d4d;
   background: #f5f8f7;
 }
@@ -1575,10 +1571,6 @@ h2 {
 }
 
 @media screen and (max-width: 680px) {
-  .home-industries {
-    padding: 0 5px 5px;
-  }
-
   .home-industries__panel {
     gap: 18px;
     padding: 20px 10px;
@@ -1943,10 +1935,6 @@ h2 {
 }
 
 @media screen and (max-width: 400px) {
-  .home-industries {
-    padding: 0 5px 5px;
-  }
-
   .home-industries__panel {
     gap: 16px;
     padding: 20px 10px;
