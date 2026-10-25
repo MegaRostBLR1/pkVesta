@@ -1234,7 +1234,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 10px;
   min-width: 0;
 }
 
@@ -1332,7 +1332,7 @@ h2 {
   display: flex;
   align-items: stretch;
   justify-content: space-between;
-  gap: 40px;
+  gap: 20px;
   min-width: 0;
   flex: 1 1 auto;
 }
@@ -1342,7 +1342,6 @@ h2 {
   flex: 0 1 620px;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
   gap: 30px;
   min-width: 0;
 }
@@ -1439,6 +1438,7 @@ h2 {
   text-align: center;
   text-transform: uppercase;
   transition: background-color 0.15s ease;
+  margin-top: auto;
 }
 
 .home-industries__button:hover {
@@ -1451,8 +1451,6 @@ h2 {
   align-items: flex-end;
   gap: 5px;
   min-width: 0;
-  height: 482px;
-  min-height: 482px;
 }
 
 .home-industries__image {
@@ -1465,7 +1463,6 @@ h2 {
 
 .home-industries__image--small {
   flex: 0 1 320px;
-  width: 320px;
   height: 320px;
   min-width: 0;
   aspect-ratio: auto;
@@ -1475,10 +1472,7 @@ h2 {
 .home-industries__image--large {
   flex: 0 1 526px;
   align-self: stretch;
-  width: 526px;
-  height: 482px;
   min-width: 0;
-  min-height: 482px;
   object-fit: cover;
 }
 
@@ -1493,10 +1487,6 @@ h2 {
     padding: 32px;
   }
 
-  .home-industries__header {
-    align-items: flex-start;
-  }
-
   .home-industries__nav {
     gap: 16px;
   }
@@ -1507,15 +1497,6 @@ h2 {
 
   .home-industries__nav-item {
     gap: 12px;
-    font-size: 15px;
-  }
-
-  .home-industries__catalog-link {
-    font-size: 15px;
-  }
-
-  .home-industries__content {
-    gap: 24px;
   }
 
   .home-industries__title {
@@ -1525,18 +1506,13 @@ h2 {
   .home-industries__description {
     font-size: 18px;
   }
-
-  .home-industries__visual {
-    flex-basis: 48%;
-    min-height: 400px;
-  }
 }
 
 
 /* Контрольный desktop-frame Figma 1440 px: 1857:24801.
    Состояние связано с базовой геометрией 1920 px; отдельная модель только
    уточняет плотность шапки и композицию контента в доступной ширине. */
-@media screen and (min-width: 1301px) and (max-width: 1440px) {
+@media screen and (min-width: 1301px) and (max-width: 1439px) {
   .home-industries__panel {
     gap: 24px;
     height: 675px;
@@ -1547,6 +1523,7 @@ h2 {
 
   .home-industries__header {
     align-items: center;
+    flex-direction: column;
     gap: 20px;
   }
 
@@ -1561,16 +1538,11 @@ h2 {
   }
 
   .home-industries__nav-item {
-    font-size: 14px;
+    font-size: 18px;
   }
 
-  .home-industries__catalog-link {
-    font-size: 14px;
-  }
-
-  .home-industries__content {
-    gap: 24px;
-    min-height: 482px;
+  .home-industries__nav-divider {
+    margin: auto;
   }
 
   .home-industries__details {
@@ -1594,8 +1566,6 @@ h2 {
     flex: 1 1 851px;
     width: auto;
     min-width: 0;
-    height: 482px;
-    min-height: 482px;
     margin-left: 0;
   }
 
@@ -1610,10 +1580,7 @@ h2 {
 
   .home-industries__image--large {
     flex: 0 1 526px;
-    width: 526px;
-    height: 482px;
     min-width: 0;
-    min-height: 482px;
     object-fit: cover;
   }
 }
@@ -1634,10 +1601,7 @@ h2 {
     width: 100%;
     overflow-x: auto;
     padding-bottom: 4px;
-  }
-
-  .home-industries__content {
-    flex-direction: column;
+    justify-content: center;
   }
 
   .home-industries__details {
@@ -1653,8 +1617,6 @@ h2 {
     flex: 0 1 auto;
     width: 100%;
     min-width: 0;
-    height: 482px;
-    min-height: 482px;
     max-height: none;
     aspect-ratio: auto;
   }
@@ -1737,8 +1699,8 @@ h2 {
     flex-direction: row;
     align-items: stretch;
     justify-content: space-between;
-    gap: 0;
     min-height: 482px;
+    gap: 10px;
   }
 
   .home-industries__details {
@@ -1786,23 +1748,12 @@ h2 {
     font-size: 16px;
   }
 
-  .home-industries__button {
-    width: 100%;
-    min-height: 62px;
-    padding: 18px 20px;
-    border-radius: 10px;
-    font-size: 18px;
-    line-height: 1.6;
-  }
-
   .home-industries__visual {
     flex: 0 1 523px;
     align-self: stretch;
     gap: 5px;
     width: 523px;
     min-width: 0;
-    height: 482px;
-    min-height: 482px;
     max-height: none;
     aspect-ratio: auto;
   }
@@ -1814,7 +1765,6 @@ h2 {
 
   .home-industries__image--large {
     flex: 1 1 0;
-    align-self: auto;
     width: auto;
   }
 }
@@ -1947,10 +1897,6 @@ h2 {
 
   .home-industries__nav-divider {
     flex: 0 0 1px;
-  }
-
-  .home-industries__content {
-    gap: 20px;
   }
 
   .home-industries__details {
