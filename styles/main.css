@@ -2270,6 +2270,8 @@ h2 {
 }
 
 .project-card__play {
+  position: relative;
+  z-index: 0;
   display: flex;
   flex: 0 0 48px;
   align-items: center;
@@ -2279,6 +2281,19 @@ h2 {
   border-radius: 20px;
   color: #324c88;
   background-color: #fff;
+}
+
+.project-card__play:not(.project-card__play--compact)::before {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  border-radius: 10px;
+  background-color: rgb(255 255 255 / 10%);
+  content: "";
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .project-card__play svg {
@@ -2936,25 +2951,10 @@ h2 {
   }
 
   .project-card__play:not(.project-card__play--compact) {
-    position: relative;
-    z-index: 0;
     flex: 0 0 36px;
     width: 36px;
     height: 36px;
     border-radius: 10px;
-  }
-
-  .project-card__play:not(.project-card__play--compact)::before {
-    position: absolute;
-    z-index: -1;
-    top: 50%;
-    left: 50%;
-    width: 140px;
-    height: 140px;
-    border-radius: 10px;
-    background-color: rgb(255 255 255 / 10%);
-    content: "";
-    transform: translate(-50%, -50%) rotate(45deg);
   }
 
   .project-card__video-label {
