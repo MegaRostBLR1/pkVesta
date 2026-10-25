@@ -154,16 +154,16 @@ button {
 }
 
 .main-btn:hover {
-  background: #324c88cc;
+  background: #586c9e;
 }
 
 .main-btn:active {
-  background: #28427e;
+  background: #28427d;
 }
 
 .main-btn:disabled {
-  color: #28427e33;
-  background: #28427e33;
+  color: #a9b1c7;
+  background: #c9cdd9;
   cursor: not-allowed;
 }
 
@@ -173,28 +173,28 @@ button {
 }
 
 .secondary-btn:hover {
-  color: #324c88cc;
-  background: #fff500cc;
+  color: #5b707b;
+  background: #fff500;
 }
 
 .secondary-btn:active {
-  color: #28427e;
-  background: #f5eb0a;
+  color: #3e5484;
+  background: #f4eb0a;
 }
 
 .secondary-btn:disabled {
-  color: #324c8833;
-  background: #f5eb0a33;
+  color: #ccceb3;
+  background: #f1eec1;
   cursor: not-allowed;
 }
 
 .tertiary-btn {
-  color: #324c88;
+  color: #324C88;
   background: #ffffff;
 }
 
 .tertiary-btn:hover {
-  color: #324c88cc;
+  color: #5a70a0;
   background: #ffffff;
 }
 
@@ -204,8 +204,8 @@ button {
 }
 
 .tertiary-btn:disabled {
-  color: #28427e33;
-  background: #ffffff33;
+  color: #28427e;
+  background: #ffffff;
   cursor: not-allowed;
 }
 
