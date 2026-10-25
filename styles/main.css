@@ -2152,7 +2152,7 @@ h2 {
 .project-card__pagination {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 24px;
 }
 
 .project-card__pagination > span {
@@ -2276,8 +2276,8 @@ h2 {
   z-index: -1;
   top: 50%;
   left: 50%;
-  width: 140px;
-  height: 140px;
+  width: 200px;
+  height: 200px;
   border-radius: 10px;
   background-color: rgb(255 255 255 / 10%);
   content: "";
@@ -2294,6 +2294,7 @@ h2 {
   border-radius: 20px;
   color: #324c88;
   background-color: #fff;
+  cursor: pointer;
 }
 
 
