@@ -1,6 +1,6 @@
 <section class="press-center" aria-labelledby="press-center-title">
-  <div class="press-center__container">
-    <div class="press-center__content">
+  <header class="press-center__header">
+    <div class="press-center__container">
       <nav class="press-center__breadcrumbs" aria-label="Хлебные крошки">
         <a class="press-center__breadcrumb" href="#/home">Главная</a>
         <span class="press-center__breadcrumb-separator" aria-hidden="true">-</span>
@@ -10,92 +10,213 @@
       <nav class="press-center__categories" aria-label="Категории пресс-центра">
         <a class="press-center__category is-active" href="#/press-center" aria-current="page">Все</a>
         <a class="press-center__category" href="#/news">Новости</a>
-        <a class="press-center__category" href="#/about">О заводе</a>
         <a class="press-center__category" href="#/video">Видео</a>
         <a class="press-center__category" href="#/articles">Статьи</a>
         <a class="press-center__category" href="#/faq">F.A.Q.</a>
       </nav>
     </div>
-
-    <div class="press-center__featured">
-      <a class="press-center__featured-news" href="#/news-item" aria-label="Завод PK VESTA сообщает об успешном участии на строительной выставке KyrgyzBuild 2026">
-        <img class="press-center__featured-image" src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/cafe2.png" alt="">
-        <span class="press-center__featured-overlay" aria-hidden="true"></span>
-        <span class="press-center__featured-copy">
-          <span class="press-center__featured-title">Завод PK VESTA сообщает об успешном участии на строительной выставке KyrgyzBuild 2026</span>
-          <span class="press-center__featured-meta">
-            <span class="press-center__tag press-center__tag--featured">27 апреля 20026 года</span>
-            <span class="press-center__tag press-center__tag--featured">Новость</span>
+  </header>
+  <div class="press-center__content">
+    <div class="press-center__container">
+      <div class="press-center__featured">
+        <a
+          class="press-center__featured-news"
+          href="#/news-item"
+          aria-label="Завод PK VESTA сообщает об успешном участии на строительной выставке KyrgyzBuild 2026">
+          <img
+            class="press-center__featured-image"
+            src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/cafe2.png"
+            alt="" />
+          <span class="press-center__featured-copy">
+            <span class="press-center__featured-title">
+              Завод PK VESTA сообщает об успешном участии на строительной выставке KyrgyzBuild 2026
+            </span>
+            <span class="press-center__featured-meta">
+              <span class="press-center__tag press-center__tag--featured">27 апреля 20026 года</span>
+              <span class="press-center__tag press-center__tag--featured">Новость</span>
+            </span>
           </span>
-        </span>
-      </a>
+        </a>
 
-      <aside class="press-center__social" aria-label="Социальные сети">
-        <p class="press-center__social-title">Читайте про нас в соц. сетях</p>
-        <div class="press-center__social-links">
-          <a class="press-center__social-link" href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-            <span class="press-center__social-icon"><img src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/005dc.svg" alt=""></span><span>Телеграмм</span>
-          </a>
-          <a class="press-center__social-link" href="https://vk.com/" target="_blank" rel="noopener noreferrer" aria-label="VK">
-            <span class="press-center__social-icon"><img src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/1fa3c.svg" alt=""></span><span>VK</span>
-          </a>
-          <a class="press-center__social-link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-            <span class="press-center__social-icon"><img src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/48bb4.svg" alt=""></span><span>YouTube</span>
-          </a>
-          <a class="press-center__social-link" href="https://max.ru/" target="_blank" rel="noopener noreferrer" aria-label="MAX">
-            <span class="press-center__social-icon"><img src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/00169.svg" alt=""></span><span>MAX</span>
-          </a>
-          <a class="press-center__social-link" href="https://rutube.ru/" target="_blank" rel="noopener noreferrer" aria-label="Rutube">
-            <span class="press-center__social-icon"><img src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/d1d2e.svg" alt=""></span><span>Rutube</span>
-          </a>
-        </div>
-        <div class="press-center__social-art" aria-hidden="true">
-          <img src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/0e253.svg" alt="">
-        </div>
-      </aside>
+        <aside class="press-center__social" aria-label="Социальные сети">
+          <div class="press-center__social-content">
+            <p class="press-center__social-title">Читайте про нас в соц. сетях</p>
+            <div class="press-center__social-links">
+              <a
+                class="press-center__social-link"
+                href="https://t.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Telegram">
+                <span class="press-center__social-icon">
+                  <img src="/static/images/press-center/ic-tg.svg" alt="Телеграмм" />
+                </span>
+                <span>Телеграмм</span>
+              </a>
+              <a
+                class="press-center__social-link"
+                href="https://vk.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="VK">
+                <span class="press-center__social-icon">
+                  <img src="/static/images/press-center/ic-vk.svg" alt="VK" />
+                </span>
+                <span>VK</span>
+              </a>
+              <a
+                class="press-center__social-link"
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube">
+                <span class="press-center__social-icon">
+                  <img src="/static/images/press-center/ic-youtube.svg" alt="YouTube" />
+                </span>
+                <span>YouTube</span>
+              </a>
+              <a
+                class="press-center__social-link"
+                href="https://max.ru/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="MAX">
+                <span class="press-center__social-icon">
+                  <img src="/static/images/press-center/ic-max.svg" alt="MAX" />
+                </span>
+                <span>MAX</span>
+              </a>
+              <a
+                class="press-center__social-link"
+                href="https://rutube.ru/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Rutube">
+                <span class="press-center__social-icon">
+                  <img src="/static/images/press-center/ic-rutube.svg" alt="Rutube" />
+                </span>
+                <span>Rutube</span>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div class="press-center__cards" aria-label="Последние публикации">
+        <a class="press-center__card" href="#/news-item">
+          <img
+            class="press-center__card-image"
+            src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/b6ddc.png"
+            alt="" />
+          <span class="press-center__card-meta">
+            <span class="press-center__tag">27 апреля 20026 года</span>
+            <span class="press-center__tag">Новость</span>
+          </span>
+          <span class="press-center__card-title">Приглашаем клиентов и партнеров на строительную выставку UzBUILD</span>
+          <span class="press-center__card-description">
+            Приглашаем клиентов и партнеров на строительную выставку UzBUILD в г. Ташкент, Узбекистан. Приглашаем
+            клиентов и партнеров
+          </span>
+        </a>
+        <a class="press-center__card" href="#/news-item">
+          <img
+            class="press-center__card-image"
+            src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/b6ddc.png"
+            alt="" />
+          <span class="press-center__card-meta">
+            <span class="press-center__tag">27 апреля 20026 года</span>
+            <span class="press-center__tag">Новость</span>
+          </span>
+          <span class="press-center__card-title">Приглашаем клиентов и партнеров на строительную выставку UzBUILD</span>
+          <span class="press-center__card-description">
+            Приглашаем клиентов и партнеров на строительную выставку UzBUILD в г. Ташкент, Узбекистан. Приглашаем
+            клиентов и партнеров
+          </span>
+        </a>
+        <a class="press-center__card" href="#/news-item">
+          <img
+            class="press-center__card-image"
+            src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/b6ddc.png"
+            alt="" />
+          <span class="press-center__card-meta">
+            <span class="press-center__tag">27 апреля 20026 года</span>
+            <span class="press-center__tag">Новость</span>
+          </span>
+          <span class="press-center__card-title">Приглашаем клиентов и партнеров на строительную выставку UzBUILD</span>
+          <span class="press-center__card-description">
+            Приглашаем клиентов и партнеров на строительную выставку UzBUILD в г. Ташкент, Узбекистан. Приглашаем
+            клиентов и партнеров
+          </span>
+        </a>
+        <a class="press-center__card press-center__card--video" href="#/video">
+          <span class="press-center__card-media">
+            <img
+              class="press-center__card-image"
+              src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/47cbb.png"
+              alt="" />
+            <span class="press-center__play" aria-hidden="true">
+              <img src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/7c7cb.svg" alt="" />
+            </span>
+          </span>
+          <span class="press-center__card-title">
+            Быстровозводимая пристройка 13.3Ш x 42Д x 6В из ЛСТК в г. Тула, Россия
+          </span>
+          <span class="press-center__card-duration">
+            <span>Продолжительность:</span>
+            <span>180 секунд</span>
+          </span>
+        </a>
+        <a class="press-center__card press-center__card--video" href="#/video">
+          <span class="press-center__card-media">
+            <img
+              class="press-center__card-image"
+              src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/47cbb.png"
+              alt="" />
+            <span class="press-center__play" aria-hidden="true">
+              <img src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/7c7cb.svg" alt="" />
+            </span>
+          </span>
+          <span class="press-center__card-title">
+            Быстровозводимая пристройка 13.3Ш x 42Д x 6В из ЛСТК в г. Тула, Россия
+          </span>
+          <span class="press-center__card-duration">
+            <span>Продолжительность:</span>
+            <span>180 секунд</span>
+          </span>
+        </a>
+        <a class="press-center__card press-center__card--video" href="#/video">
+          <span class="press-center__card-media">
+            <img
+              class="press-center__card-image"
+              src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/47cbb.png"
+              alt="" />
+            <span class="press-center__play" aria-hidden="true">
+              <img src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/7c7cb.svg" alt="" />
+            </span>
+          </span>
+          <span class="press-center__card-title">
+            Быстровозводимая пристройка 13.3Ш x 42Д x 6В из ЛСТК в г. Тула, Россия
+          </span>
+          <span class="press-center__card-duration">
+            <span>Продолжительность:</span>
+            <span>180 секунд</span>
+          </span>
+        </a>
+        <a class="press-center__card press-center__card--extra" href="#/news-item" hidden>
+          <img
+            class="press-center__card-image"
+            src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/b6ddc.png"
+            alt="" />
+          <span class="press-center__card-meta">
+            <span class="press-center__tag">27 апреля 20026 года</span>
+            <span class="press-center__tag">Новость</span>
+          </span>
+          <span class="press-center__card-title">Приглашаем клиентов и партнеров на строительную выставку UzBUILD</span>
+          <span class="press-center__card-description">
+            Приглашаем клиентов и партнеров на строительную выставку UzBUILD в г. Ташкент, Узбекистан.
+          </span>
+        </a>
+      </div>
+      <button class="press-center__load-more" type="button">Показать еще</button>
     </div>
-
-    <div class="press-center__cards" aria-label="Последние публикации">
-      <a class="press-center__card" href="#/news-item">
-        <img class="press-center__card-image" src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/b6ddc.png" alt="">
-        <span class="press-center__card-meta"><span class="press-center__tag">27 апреля 20026 года</span><span class="press-center__tag">Новость</span></span>
-        <span class="press-center__card-title">Приглашаем клиентов и партнеров на строительную выставку UzBUILD</span>
-        <span class="press-center__card-description">Приглашаем клиентов и партнеров на строительную выставку UzBUILD в г. Ташкент, Узбекистан. Приглашаем клиентов и партнеров</span>
-      </a>
-      <a class="press-center__card" href="#/news-item">
-        <img class="press-center__card-image" src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/b6ddc.png" alt="">
-        <span class="press-center__card-meta"><span class="press-center__tag">27 апреля 20026 года</span><span class="press-center__tag">Новость</span></span>
-        <span class="press-center__card-title">Приглашаем клиентов и партнеров на строительную выставку UzBUILD</span>
-        <span class="press-center__card-description">Приглашаем клиентов и партнеров на строительную выставку UzBUILD в г. Ташкент, Узбекистан. Приглашаем клиентов и партнеров</span>
-      </a>
-      <a class="press-center__card" href="#/news-item">
-        <img class="press-center__card-image" src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/b6ddc.png" alt="">
-        <span class="press-center__card-meta"><span class="press-center__tag">27 апреля 20026 года</span><span class="press-center__tag">Новость</span></span>
-        <span class="press-center__card-title">Приглашаем клиентов и партнеров на строительную выставку UzBUILD</span>
-        <span class="press-center__card-description">Приглашаем клиентов и партнеров на строительную выставку UzBUILD в г. Ташкент, Узбекистан. Приглашаем клиентов и партнеров</span>
-      </a>
-      <a class="press-center__card press-center__card--video" href="#/video">
-        <span class="press-center__card-media"><img class="press-center__card-image" src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/47cbb.png" alt=""><span class="press-center__play" aria-hidden="true"><img src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/7c7cb.svg" alt=""></span></span>
-        <span class="press-center__card-title">Быстровозводимая пристройка 13.3Ш x 42Д x 6В из ЛСТК в г. Тула, Россия</span>
-        <span class="press-center__card-duration"><span>Продолжительность:</span><span>180 секунд</span></span>
-      </a>
-      <a class="press-center__card press-center__card--video" href="#/video">
-        <span class="press-center__card-media"><img class="press-center__card-image" src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/47cbb.png" alt=""><span class="press-center__play" aria-hidden="true"><img src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/7c7cb.svg" alt=""></span></span>
-        <span class="press-center__card-title">Быстровозводимая пристройка 13.3Ш x 42Д x 6В из ЛСТК в г. Тула, Россия</span>
-        <span class="press-center__card-duration"><span>Продолжительность:</span><span>180 секунд</span></span>
-      </a>
-      <a class="press-center__card press-center__card--video" href="#/video">
-        <span class="press-center__card-media"><img class="press-center__card-image" src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/47cbb.png" alt=""><span class="press-center__play" aria-hidden="true"><img src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/7c7cb.svg" alt=""></span></span>
-        <span class="press-center__card-title">Быстровозводимая пристройка 13.3Ш x 42Д x 6В из ЛСТК в г. Тула, Россия</span>
-        <span class="press-center__card-duration"><span>Продолжительность:</span><span>180 секунд</span></span>
-      </a>
-      <a class="press-center__card press-center__card--extra" href="#/news-item" hidden>
-        <img class="press-center__card-image" src="https://www.figma.com/api/mcp/asset/ac5d9bb4-ad27-4bc7-824d-1d80f5d8fabf/b6ddc.png" alt="">
-        <span class="press-center__card-meta"><span class="press-center__tag">27 апреля 20026 года</span><span class="press-center__tag">Новость</span></span>
-        <span class="press-center__card-title">Приглашаем клиентов и партнеров на строительную выставку UzBUILD</span>
-        <span class="press-center__card-description">Приглашаем клиентов и партнеров на строительную выставку UzBUILD в г. Ташкент, Узбекистан.</span>
-      </a>
-    </div>
-    <button class="press-center__load-more" type="button">Показать еще</button>
   </div>
 </section>
