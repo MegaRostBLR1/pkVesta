@@ -880,12 +880,14 @@ h2 {
   flex-direction: column;
   gap: 24px;
   width: 100%;
+  min-width: 0;
 }
 
 .home-process__card-header {
   display: flex;
   align-items: center;
   gap: 18px;
+  width: 100%;
   min-width: 0;
 }
 
@@ -1126,7 +1128,7 @@ h2 {
   .home-process__card-title {
     font-size: 22px;
     line-height: 1.6;
-    overflow-wrap: normal;
+    overflow-wrap: anywhere;
   }
 
   .home-process__description {
@@ -1253,7 +1255,6 @@ h2 {
   .home-process__card {
     gap: 14px;
     padding: 20px;
-    overflow: hidden;
     border-radius: 20px;
     background: #fff;
   }
@@ -1274,8 +1275,8 @@ h2 {
 
   .home-process__card-title {
     font-size: 18px;
-    line-height: 16px;
-    overflow-wrap: normal;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
   }
 
   .home-process__divider {
@@ -1284,8 +1285,10 @@ h2 {
   }
 
   .home-process__description {
+    min-width: 0;
     font-size: 14px;
     line-height: 22px;
+    overflow-wrap: anywhere;
   }
 
   .home-process__description p + p {
