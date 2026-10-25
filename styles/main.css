@@ -488,6 +488,7 @@ h2 {
   }
 }
 
+
 /* Адаптация главного экрана под планшетный макет Figma 1024 px. */
 @media screen and (min-width: 681px) and (max-width: 1100px) {
   .home-hero {
@@ -568,24 +569,11 @@ h2 {
   }
 }
 
-@media screen and (max-width: 427px) {
-  .home-hero__category-text {
-    max-width: 216px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .home-hero *,
-  .home-hero *::before,
-  .home-hero *::after {
-    scroll-behavior: auto;
-    transition: none;
-  }
-}
 
 .home-hero__mobile-break {
   display: none;
 }
+
 
 /* Figma mobile frame 360 × 556 (1857:26279). */
 @media screen and (max-width: 680px) {
@@ -785,6 +773,23 @@ h2 {
     flex-basis: 8px;
     width: 8px;
     height: 8px;
+  }
+}
+
+
+@media screen and (max-width: 427px) {
+  .home-hero__category-text {
+    max-width: 216px;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero *,
+  .home-hero *::before,
+  .home-hero *::after {
+    scroll-behavior: auto;
+    transition: none;
   }
 }
 
