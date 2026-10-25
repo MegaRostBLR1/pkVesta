@@ -1523,141 +1523,6 @@ h2 {
   }
 }
 
-@media screen and (max-width: 1300px) {
-  .home-industries__panel {
-    min-height: 0;
-    padding: 30px;
-  }
-
-  .home-industries__header {
-    flex-direction: column;
-    gap: 18px;
-  }
-
-  .home-industries__nav {
-    width: 100%;
-    overflow-x: auto;
-    padding-bottom: 4px;
-  }
-
-  .home-industries__content {
-    flex-direction: column;
-  }
-
-  .home-industries__details {
-    flex-basis: auto;
-    gap: 30px;
-  }
-
-  .home-industries__description {
-    max-width: 760px;
-  }
-
-  .home-industries__visual {
-    flex: 0 1 auto;
-    width: 100%;
-    min-height: 0;
-    max-height: 482px;
-    aspect-ratio: 1.77;
-  }
-
-  .home-industries__image--small {
-    width: 37.6%;
-  }
-
-  .home-industries__image--large {
-    width: calc(62.4% - 5px);
-  }
-}
-
-@media screen and (max-width: 680px) {
-  .home-industries__panel {
-    gap: 18px;
-    padding: 20px 10px;
-    border-radius: 10px;
-  }
-
-  .home-industries__eyebrow {
-    font-size: 18px;
-  }
-
-  .home-industries__nav {
-    gap: 12px;
-  }
-
-  .home-industries__nav-list {
-    gap: 10px;
-  }
-
-  .home-industries__nav-item {
-    gap: 10px;
-    font-size: 12px;
-  }
-
-  .home-industries__nav-divider {
-    height: 28px;
-  }
-
-  .home-industries__catalog-link {
-    font-size: 12px;
-  }
-
-  .home-industries__content {
-    gap: 24px;
-  }
-
-  .home-industries__details {
-    gap: 24px;
-  }
-
-  .home-industries__title {
-    font-size: 24px;
-    line-height: 1.25;
-  }
-
-  .home-industries__description {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  .home-industries__types-title {
-    margin-bottom: 10px;
-    font-size: 18px;
-  }
-
-  .home-industries__tags {
-    gap: 8px;
-  }
-
-  .home-industries__tag {
-    padding: 6px 10px;
-    font-size: 14px;
-  }
-
-  .home-industries__button {
-    width: 100%;
-    min-height: 54px;
-    padding: 14px 16px;
-    border-radius: 14px;
-    font-size: 14px;
-    line-height: 1.4;
-  }
-
-  .home-industries__visual {
-    gap: 5px;
-    aspect-ratio: 1.15;
-  }
-
-  .home-industries__image {
-    border-radius: 8px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .home-industries__button {
-    transition: none;
-  }
-}
 
 /* Контрольный desktop-frame Figma 1440 px: 1857:24801.
    Состояние связано с базовой геометрией 1920 px; отдельная модель только
@@ -1782,6 +1647,55 @@ h2 {
     min-height: 482px;
   }
 }
+
+
+@media screen and (max-width: 1300px) {
+  .home-industries__panel {
+    min-height: 0;
+    padding: 30px;
+  }
+
+  .home-industries__header {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .home-industries__nav {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .home-industries__content {
+    flex-direction: column;
+  }
+
+  .home-industries__details {
+    flex-basis: auto;
+    gap: 30px;
+  }
+
+  .home-industries__description {
+    max-width: 760px;
+  }
+
+  .home-industries__visual {
+    flex: 0 1 auto;
+    width: 100%;
+    min-height: 0;
+    max-height: 482px;
+    aspect-ratio: 1.77;
+  }
+
+  .home-industries__image--small {
+    width: 37.6%;
+  }
+
+  .home-industries__image--large {
+    width: calc(62.4% - 5px);
+  }
+}
+
 
 /* Планшетный frame Figma 1024 px: 1857:25380.
    Переопределяет общий stacked-layout до 1300 px: в этом frame контент
@@ -1934,6 +1848,91 @@ h2 {
   }
 }
 
+
+@media screen and (max-width: 680px) {
+  .home-industries__panel {
+    gap: 18px;
+    padding: 20px 10px;
+    border-radius: 10px;
+  }
+
+  .home-industries__eyebrow {
+    font-size: 18px;
+  }
+
+  .home-industries__nav {
+    gap: 12px;
+  }
+
+  .home-industries__nav-list {
+    gap: 10px;
+  }
+
+  .home-industries__nav-item {
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .home-industries__nav-divider {
+    height: 28px;
+  }
+
+  .home-industries__catalog-link {
+    font-size: 12px;
+  }
+
+  .home-industries__content {
+    gap: 24px;
+  }
+
+  .home-industries__details {
+    gap: 24px;
+  }
+
+  .home-industries__title {
+    font-size: 24px;
+    line-height: 1.25;
+  }
+
+  .home-industries__description {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .home-industries__types-title {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  .home-industries__tags {
+    gap: 8px;
+  }
+
+  .home-industries__tag {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .home-industries__button {
+    width: 100%;
+    min-height: 54px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .home-industries__visual {
+    gap: 5px;
+    aspect-ratio: 1.15;
+  }
+
+  .home-industries__image {
+    border-radius: 8px;
+  }
+}
+
+
 @media screen and (max-width: 400px) {
   .home-industries__panel {
     gap: 16px;
@@ -2075,6 +2074,13 @@ h2 {
     width: auto;
     height: auto;
     min-height: 0;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .home-industries__button {
+    transition: none;
   }
 }
 
