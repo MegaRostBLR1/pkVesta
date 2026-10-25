@@ -1304,6 +1304,7 @@ h2 {
   width: 1px;
   height: 40px;
   background: #dbdbdb;
+  margin: auto;
 }
 
 .home-industries__catalog-link {
@@ -1363,6 +1364,7 @@ h2 {
   line-height: 1.25;
   text-transform: uppercase;
   overflow-wrap: anywhere;
+  text-wrap: nowrap;
 }
 
 .home-industries__description {
@@ -1533,16 +1535,13 @@ h2 {
   }
 
   .home-industries__nav {
+    width: 100%;
     flex: 0 1 auto;
     gap: 18px;
   }
 
   .home-industries__nav-item {
     font-size: 18px;
-  }
-
-  .home-industries__nav-divider {
-    margin: auto;
   }
 
   .home-industries__details {
@@ -1599,7 +1598,6 @@ h2 {
 
   .home-industries__nav {
     width: 100%;
-    overflow-x: auto;
     padding-bottom: 4px;
     justify-content: center;
   }
@@ -1632,10 +1630,21 @@ h2 {
   }
 }
 
+@media screen and (max-width: 1190px) {
+  .home-industries__nav {
+    flex-direction: column;
+  }
 
-/* Планшетный frame Figma 1024 px: 1857:25380.
-   Переопределяет общий stacked-layout до 1300 px: в этом frame контент
-   остаётся двухколоночным, а шапка каталога переносится над навигацией. */
+  .home-industries__nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .home-industries__nav-divider {
+    display: none;
+  }
+}
+
 @media screen and (min-width: 681px) and (max-width: 1100px) {
   .home-industries__panel {
     gap: 18px;
@@ -1676,9 +1685,9 @@ h2 {
     gap: 20px;
   }
 
-  .home-industries__nav-item--tablet-hidden {
-    display: none;
-  }
+  /*.home-industries__nav-item--tablet-hidden {*/
+  /*  display: none;*/
+  /*}*/
 
   .home-industries__nav-item {
     gap: 20px;
@@ -1687,7 +1696,6 @@ h2 {
   }
 
   .home-industries__nav-divider {
-    flex: 0 0 1px;
     height: 40px;
   }
 
@@ -1749,7 +1757,6 @@ h2 {
   }
 
   .home-industries__visual {
-    flex: 0 1 523px;
     align-self: stretch;
     gap: 5px;
     width: 523px;
@@ -1769,6 +1776,31 @@ h2 {
   }
 }
 
+@media screen and (max-width: 810px) {
+  .home-industries__details {
+    min-height: 0;
+  }
+
+  .home-industries__button {
+    margin-top: 0;
+  }
+
+  .home-industries__content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .home-industries__visual {
+    width: 100%;
+  }
+
+  .home-industries__image--small,
+  .home-industries__image--large {
+    flex: 0 1 100%;
+    width: 100%;
+  }
+}
+
 
 @media screen and (max-width: 680px) {
   .home-industries__panel {
@@ -1782,11 +1814,11 @@ h2 {
   }
 
   .home-industries__nav {
-    gap: 12px;
+    gap: 24px;
   }
 
   .home-industries__nav-list {
-    gap: 10px;
+    gap: 14px;
   }
 
   .home-industries__nav-item {
@@ -1830,7 +1862,7 @@ h2 {
   }
 
   .home-industries__tag {
-    padding: 6px 10px;
+    padding: 8px 14px;
     font-size: 14px;
   }
 
@@ -1845,13 +1877,15 @@ h2 {
 
   .home-industries__visual {
     gap: 5px;
-    height: 482px;
-    min-height: 482px;
     aspect-ratio: auto;
   }
 
   .home-industries__image {
     border-radius: 8px;
+  }
+
+  .home-industries__image--small {
+    height: auto;
   }
 }
 
@@ -1948,21 +1982,8 @@ h2 {
 
   .home-industries__visual {
     gap: 5px;
-    height: 482px;
-    min-height: 482px;
     max-height: none;
     aspect-ratio: auto;
-  }
-
-  .home-industries__image--small {
-    flex: 0 1 37.6%;
-    width: 37.6%;
-  }
-
-  .home-industries__image--large {
-    flex: 1 1 0;
-    align-self: stretch;
-    width: auto;
   }
 }
 
