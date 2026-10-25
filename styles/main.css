@@ -1451,6 +1451,7 @@ h2 {
   align-items: flex-end;
   gap: 5px;
   min-width: 0;
+  height: 482px;
   min-height: 482px;
 }
 
@@ -1463,14 +1464,22 @@ h2 {
 }
 
 .home-industries__image--small {
-  width: 37.6028%;
-  aspect-ratio: 1;
+  flex: 0 1 320px;
+  width: 320px;
+  height: 320px;
+  min-width: 0;
+  aspect-ratio: auto;
+  object-fit: cover;
 }
 
 .home-industries__image--large {
+  flex: 0 1 526px;
   align-self: stretch;
-  width: 61.8096%;
-  min-height: 0;
+  width: 526px;
+  height: 482px;
+  min-width: 0;
+  min-height: 482px;
+  object-fit: cover;
 }
 
 .home-industries__catalog-link:focus-visible,
@@ -1643,16 +1652,20 @@ h2 {
   .home-industries__visual {
     flex: 0 1 auto;
     width: 100%;
-    min-height: 0;
-    max-height: 482px;
-    aspect-ratio: 1.77;
+    min-width: 0;
+    height: 482px;
+    min-height: 482px;
+    max-height: none;
+    aspect-ratio: auto;
   }
 
   .home-industries__image--small {
+    flex: 0 1 37.6%;
     width: 37.6%;
   }
 
   .home-industries__image--large {
+    flex: 0 1 calc(62.4% - 5px);
     width: calc(62.4% - 5px);
   }
 }
@@ -1788,24 +1801,21 @@ h2 {
     gap: 5px;
     width: 523px;
     min-width: 0;
+    height: 482px;
     min-height: 482px;
     max-height: none;
     aspect-ratio: auto;
   }
 
   .home-industries__image--small {
-    flex: 0 0 43.5946%;
+    flex: 0 1 43.5946%;
     width: 43.5946%;
-    height: auto;
-    aspect-ratio: 1;
   }
 
   .home-industries__image--large {
     flex: 1 1 0;
     align-self: auto;
     width: auto;
-    height: 421px;
-    min-height: 0;
   }
 }
 
@@ -1885,7 +1895,9 @@ h2 {
 
   .home-industries__visual {
     gap: 5px;
-    aspect-ratio: 1.15;
+    height: 482px;
+    min-height: 482px;
+    aspect-ratio: auto;
   }
 
   .home-industries__image {
@@ -1990,22 +2002,21 @@ h2 {
 
   .home-industries__visual {
     gap: 5px;
+    height: 482px;
+    min-height: 482px;
     max-height: none;
-    aspect-ratio: 1.15;
+    aspect-ratio: auto;
   }
 
   .home-industries__image--small {
-    flex: 0 0 37.6%;
-    height: auto;
-    aspect-ratio: 1;
+    flex: 0 1 37.6%;
+    width: 37.6%;
   }
 
   .home-industries__image--large {
     flex: 1 1 0;
     align-self: stretch;
     width: auto;
-    height: auto;
-    min-height: 0;
   }
 }
 
