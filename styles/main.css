@@ -249,7 +249,7 @@ h2 {
 .home-hero {
   position: relative;
   display: flex;
-  min-height: 43.5417vw;
+  min-height: 836px;
   margin: 0 0.2778rem 0.2778rem;
   overflow: hidden;
   border-radius: 0.5556rem;
@@ -286,7 +286,7 @@ h2 {
   gap: 2rem;
   width: 100%;
   min-width: 0;
-  padding: 50px 0;
+  padding: 50px 10px;
 }
 
 .home-hero__intro {
@@ -334,6 +334,10 @@ h2 {
   stroke-width: 1.6;
 }
 
+.home-hero__category-text {
+  text-wrap: wrap;
+}
+
 .home-hero__heading {
   display: flex;
   flex-direction: column;
@@ -378,13 +382,13 @@ h2 {
 }
 
 .home-hero__button.btn {
-  width: 14.4444rem;
-  min-height: 4.6667rem;
-  padding: 1.5556rem 1rem;
-  border-radius: 1.1111rem;
-  font-size: 1.1111rem;
-  line-height: 1.5556rem;
-  text-align: center;
+  width: 260px;
+  min-height: 0;
+  padding: 30px 20px;
+  border-radius: 20px;
+  font-size: 20px;
+  line-height: 25.2px;
+  white-space: nowrap;
 }
 
 .home-hero__slider {
@@ -397,15 +401,28 @@ h2 {
 }
 
 .home-hero__arrow {
+  position: relative;
+  flex: 0 0 90.51px;
+  width: 90.51px;
+  height: 90.51px;
+  border: 0;
+  border-radius: 0;
+  transform: none;
   display: grid;
-  flex: 0 0 3.5556rem;
-  width: 3.5556rem;
-  height: 3.5556rem;
   place-items: center;
-  border: 1px solid rgb(255 255 255 / 50%);
-  border-radius: 1.1111rem;
   color: #fff;
-  transform: rotate(0deg);
+}
+
+.home-hero__arrow::before {
+  position: absolute;
+  top: 13.25px;
+  left: 13.25px;
+  width: 64px;
+  height: 64px;
+  border: 1px solid rgb(255 255 255 / 50%);
+  border-radius: 20px;
+  content: "";
+  transform: rotate(45deg);
 }
 
 .home-hero__arrow:disabled {
@@ -443,7 +460,13 @@ h2 {
   background: #fff;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1440px) {
+  .home-hero {
+    min-height: 836px;
+  }
+}
+
+@media screen and (max-width: 1297px) {
   .home-hero {
     min-height: 46rem;
   }
@@ -533,13 +556,6 @@ h2 {
 
   .home-hero__slider {
     gap: 24px;
-  }
-
-  .home-hero__arrow {
-    flex-basis: 64px;
-    width: 64px;
-    height: 64px;
-    border-radius: 20px;
   }
 
   .home-hero__arrow svg {
@@ -667,114 +683,6 @@ h2 {
   }
 }
 
-/* Точная геометрия hero для контрольного desktop-макета Figma 1440 × 836. */
-@media screen and (min-width: 1301px) {
-  .home-hero {
-    min-height: 826px;
-  }
-
-  .home-hero__content {
-    gap: 2rem;
-    padding: 60px 20px 40px 60px;
-  }
-
-  .home-hero__intro {
-    gap: 28px;
-    width: min(100%, 1184px);
-  }
-
-  .home-hero__category {
-    gap: 12px;
-    padding: 2px 20px 2px 2px;
-    font-size: 20px;
-    line-height: 26px;
-    white-space: nowrap;
-  }
-
-  .home-hero__category-icon {
-    flex-basis: 48px;
-    width: 48px;
-    height: 48px;
-  }
-
-  .home-hero__category-icon svg {
-    width: 24px;
-    height: 24px;
-  }
-
-  .home-hero__heading {
-    gap: 18px;
-  }
-
-  .home-hero__title {
-    font-size: 64px;
-    line-height: 94px;
-  }
-
-  .home-hero__description {
-    font-size: 26px;
-    line-height: 44px;
-    white-space: nowrap;
-  }
-
-  .home-hero__actions {
-    gap: 14px;
-  }
-
-  .home-hero__button.btn {
-    width: 260px;
-    min-height: 0;
-    padding: 32px 20px;
-    border-radius: 20px;
-    font-size: 20px;
-    line-height: 25.2px;
-    white-space: nowrap;
-  }
-
-  .home-hero__slider {
-    gap: 24px;
-    padding: 5px;
-  }
-
-  .home-hero__arrow {
-    position: relative;
-    flex: 0 0 90.51px;
-    width: 90.51px;
-    height: 90.51px;
-    border: 0;
-    border-radius: 0;
-    transform: none;
-  }
-
-  .home-hero__arrow::before {
-    position: absolute;
-    top: 13.25px;
-    left: 13.25px;
-    width: 64px;
-    height: 64px;
-    border: 1px solid rgb(255 255 255 / 50%);
-    border-radius: 20px;
-    content: "";
-    transform: rotate(45deg);
-  }
-
-  .home-hero__arrow svg {
-    position: relative;
-    width: 40px;
-    height: 40px;
-  }
-
-  .home-hero__pagination {
-    gap: 4px;
-  }
-
-  .home-hero__dot {
-    flex-basis: 10px;
-    width: 10px;
-    height: 10px;
-  }
-}
-
 .home-hero__mobile-break {
   display: none;
 }
@@ -844,7 +752,6 @@ h2 {
     align-items: center;
     gap: 8px;
     width: 100%;
-    margin-top: 46px;
   }
 
   .home-hero__button.btn {
@@ -911,7 +818,7 @@ h2 {
 
 /* Блок «Стальные здания: от идеи до реализации», Figma 1857:23433. */
 .home-process {
-  padding: 0 5px 5px;
+  margin: 0 5px 5px;
   background: #f5f8f7;
 }
 
@@ -922,7 +829,6 @@ h2 {
   width: 100%;
   padding: 80px 50px;
   border-radius: 10px;
-  background: #fff;
 }
 
 .home-process__header {
@@ -966,7 +872,7 @@ h2 {
   min-width: 0;
   padding: 20px;
   border-radius: 20px;
-  background: #f8f8f8;
+  background: #FFFFFF;
 }
 
 .home-process__card-content {
@@ -7046,6 +6952,7 @@ h2 {
   }
 
   .home-agro__tablet-visual .home-agro__image {
+    position: static;
     inset: 4px;
     width: calc(100% - 8px);
     height: calc(100% - 8px);
