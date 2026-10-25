@@ -2565,24 +2565,7 @@ h2 {
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .home-projects__layout {
-    grid-template-columns: minmax(0, 1fr);
-    height: auto;
-  }
 
-  .project-card--featured {
-    min-height: 640px;
-  }
-
-  .home-projects__secondary {
-    gap: 16px;
-  }
-
-  .home-projects__cards {
-    min-height: 650px;
-  }
-}
 
 /* Контрольный tablet-frame Figma 1024 px: 1857:25447.
    Главная карточка занимает отдельный ряд; две дополнительные карточки
@@ -2718,8 +2701,13 @@ h2 {
 }
 
 @media screen and (max-width: 680px) {
-  .home-projects {
-    padding: 5px;
+  .home-projects__layout {
+    grid-template-columns: minmax(0, 1fr);
+    height: auto;
+  }
+
+  .home-projects__secondary {
+    gap: 16px;
   }
 
   .home-projects__panel {
@@ -3021,8 +3009,6 @@ h2 {
   }
 
   .home-projects__cards {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: none;
     gap: 4px;
   }
 
