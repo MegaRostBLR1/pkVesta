@@ -1,21 +1,13 @@
-const accordionHeads = document.querySelectorAll(".accordion__head");
+document.querySelectorAll(".accordion__btn").forEach((accordionButton) => {
+  if (accordionButton.dataset.initialized === "true") return;
+  accordionButton.dataset.initialized = "true";
 
-accordionHeads.forEach((item) => {
-  const accordion = item.closest(".accordion");
-  const button = item.querySelector(".accordion__btn");
-  const title = item.querySelector(".footer-accordion__title")?.textContent.trim() || "меню";
+  const accordionBody = document.getElementById(accordionButton.getAttribute("aria-controls"));
+  if (!accordionBody) return;
 
-  const syncExpandedState = () => {
-    if (!button) return;
-    const expanded = accordion.classList.contains("active");
-    button.setAttribute("aria-expanded", String(expanded));
-    button.setAttribute("aria-label", (expanded ? "Свернуть" : "Развернуть") + " раздел «" + title + "»");
-  };
-
-  syncExpandedState();
-
-  item.addEventListener("click", () => {
-    accordion.classList.toggle("active");
-    syncExpandedState();
+  accordionButton.addEventListener("click", () => {
+    const isExpanded = accordionButton.getAttribute("aria-expanded") === "true";
+    accordionButton.setAttribute("aria-expanded", String(!isExpanded));
+    accordionBody.hidden = isExpanded;
   });
 });
