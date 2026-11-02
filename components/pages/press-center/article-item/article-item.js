@@ -4,35 +4,45 @@ function initArticleItem() {
   if (!root || root.dataset.initialized === 'true') return;
   root.dataset.initialized = 'true';
 
-  const contentsList = root.querySelector('.article-item__contents-list');
+  const toggle = root.querySelector('.article-item__contents-toggle');
   const popup = root.querySelector('.article-item__contents-popup');
 
-  if (!contentsList || !popup) return;
+  if (!toggle || !popup) return;
 
   const isCompactLayout = () => window.matchMedia('(max-width: 1300px)').matches;
 
-  function toggleContents() {
-    if (!isCompactLayout()) return;
-    const isExpanded = contentsList.getAttribute('aria-expanded') === 'true';
-    contentsList.setAttribute('aria-expanded', String(!isExpanded));
-    popup.hidden = isExpanded;
+  function onOutsideClick(event) {
+    if (!toggle.contains(event.target) && !popup.contains(event.target)) setExpanded(false);
   }
 
-  contentsList.addEventListener('click', (event) => {
-    if (!isCompactLayout()) return;
-    if (event.target.closest('a')) event.preventDefault();
-    toggleContents();
-  });
-  contentsList.addEventListener('keydown', (event) => {
-    if (!isCompactLayout() || (event.key !== 'Enter' && event.key !== ' ')) return;
-    event.preventDefault();
-    toggleContents();
+  function onResize() {
+    if (!isCompactLayout()) setExpanded(false);
+  }
+
+  function setExpanded(isExpanded) {
+    toggle.setAttribute('aria-expanded', String(isExpanded));
+    popup.hidden = !isExpanded;
+
+    if (isExpanded) {
+      document.addEventListener('click', onOutsideClick);
+      window.addEventListener('resize', onResize);
+    } else {
+      document.removeEventListener('click', onOutsideClick);
+      window.removeEventListener('resize', onResize);
+    }
+  }
+
+  toggle.addEventListener('click', () => {
+    setExpanded(toggle.getAttribute('aria-expanded') !== 'true');
   });
 
-  window.addEventListener('resize', () => {
-    if (!isCompactLayout()) {
-      popup.hidden = true;
-      contentsList.setAttribute('aria-expanded', 'false');
-    }
+  popup.addEventListener('click', (event) => {
+    if (event.target.closest('a')) setExpanded(false);
+  });
+
+  root.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape' || popup.hidden) return;
+    setExpanded(false);
+    toggle.focus();
   });
 }
