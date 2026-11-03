@@ -1,251 +1,787 @@
-<section class="video-page" aria-labelledby="video-page-title">
-  <div class="video-page__container">
-    <div class="video-page__content">
-      <nav class="video-page__breadcrumbs" aria-label="Хлебные крошки">
-        <a class="video-page__breadcrumb" href="#/home">Главная</a>
-        <span class="video-page__breadcrumb-separator" aria-hidden="true">-</span>
-        <a class="video-page__breadcrumb" href="#/press-center">Пресс-центр</a>
-        <span class="video-page__breadcrumb-separator" aria-hidden="true">-</span>
-        <span class="video-page__breadcrumb video-page__breadcrumb--current" aria-current="page">Видео</span>
+<section class="press-center video-page" aria-labelledby="video-page-title">
+  <header class="press-center__header">
+    <div class="press-center__container">
+      <nav class="press-center__breadcrumbs" aria-label="Хлебные крошки">
+        <a class="press-center__breadcrumb" href="#/home">Главная</a>
+        <span class="press-center__breadcrumb-separator" aria-hidden="true">-</span>
+        <a class="press-center__breadcrumb" href="#/press-center">Пресс-центр</a>
+        <span class="press-center__breadcrumb-separator" aria-hidden="true">-</span>
+        <span class="press-center__breadcrumb press-center__breadcrumb--current" aria-current="page">Видео</span>
       </nav>
-
-      <h1 class="video-page__title" id="video-page-title">
-        Видео <span class="video-page__count">(2000)</span>
+      <h1 class="press-center__title" id="video-page-title">
+        Видео
+        <sup class="main-color">(2000)</sup>
       </h1>
-
-      <nav class="video-page__categories" aria-label="Разделы пресс-центра">
-        <a class="video-page__category" href="#/press-center">Все</a>
-        <a class="video-page__category" href="#/news">Новости</a>
-        <a class="video-page__category is-active" href="#/video" aria-current="page">Видео</a>
-        <a class="video-page__category" href="#/articles">Статьи</a>
-        <a class="video-page__category" href="#/faq">F.A.Q</a>
+      <nav class="press-center__categories" aria-label="Категории пресс-центра">
+        <a class="press-center__category" href="#/press-center">Все</a>
+        <a class="press-center__category" href="#/news">Новости</a>
+        <a class="press-center__category is-active" href="#/video" aria-current="page">Видео</a>
+        <a class="press-center__category" href="#/articles">Статьи</a>
+        <a class="press-center__category" href="#/faq">F.A.Q.</a>
       </nav>
     </div>
-
-    <div class="video-page__archive">
-      <div class="video-page__filter" aria-label="Фильтры видео">
-        <p class="video-page__filter-label">Показывать:</p>
-        <button class="video-page__mobile-filter-button" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="video-mobile-filter">
-          <span>Фильтр</span>
-          <img src="https://www.figma.com/api/mcp/asset/0adc6177-e29b-43e8-9360-45e2a18a7717/21205.svg" alt="" aria-hidden="true">
-        </button>
-        <div class="video-page__filter-controls">
-          <div class="video-page__filter-dropdown">
-            <button class="video-page__filter-button" type="button" aria-expanded="false" aria-controls="video-filter-years" data-filter-type="years">
-              <span>Год:</span>
-              <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/2a347.svg" alt="" aria-hidden="true">
-            </button>
-            <div class="video-page__filter-menu" id="video-filter-years" role="listbox" aria-label="Выберите год" hidden>
-              <button class="video-page__filter-option is-selected" type="button" role="option" aria-selected="true" data-filter-value="2026">2026</button>
-              <button class="video-page__filter-option" type="button" role="option" aria-selected="false" data-filter-value="2025">2025</button>
-              <button class="video-page__filter-option" type="button" role="option" aria-selected="false" data-filter-value="2024">2024</button>
-              <button class="video-page__filter-option" type="button" role="option" aria-selected="false" data-filter-value="2023">2023</button>
+  </header>
+  <div class="video-page__content">
+    <div class="press-center__container">
+      <div class="video-page__archive">
+        <div class="video-page__filter" aria-label="Фильтры видео">
+          <span class="video-page__filter-label">Показывать:</span>
+          <button
+            class="press__mobile-filter-button"
+            type="button"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+            aria-controls="video-mobile-filter">
+            <span>Фильтр</span>
+            <img src="/static/images/news/settings-ic.svg" alt="" aria-hidden="true" />
+          </button>
+          <div class="video-page__filter-controls">
+            <div class="video-page__filter-dropdown">
+              <button
+                class="video-page__filter-button"
+                type="button"
+                aria-expanded="false"
+                aria-controls="video-filter-years"
+                data-filter-type="years">
+                <span>Год:</span>
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path
+                    d="M23.0577 31.5782C23.3077 31.8483 23.6466 32 24 32C24.3534 32 24.6923 31.8483 24.9423 31.5782L35.61 20.0386C35.8597 19.7682 36 19.4016 36 19.0193C36 18.6371 35.8597 18.2705 35.61 18L12.39 18C12.1403 18.2705 12 18.6371 12 19.0193C12 19.4016 12.1403 19.7682 12.39 20.0386L23.0577 31.5782Z" />
+                </svg>
+              </button>
+              <div
+                class="video-page__filter-menu"
+                id="video-filter-years"
+                role="listbox"
+                aria-label="Выберите год"
+                hidden>
+                <button
+                  class="video-page__filter-option is-selected"
+                  type="button"
+                  role="option"
+                  aria-selected="true"
+                  data-filter-value="Все">
+                  Все
+                </button>
+                <button
+                  class="video-page__filter-option is-selected"
+                  type="button"
+                  role="option"
+                  aria-selected="true"
+                  data-filter-value="2026">
+                  2026
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="2025">
+                  2025
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="2024">
+                  2024
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="2023">
+                  2023
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="2023">
+                  2023
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="2023">
+                  2023
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="2023">
+                  2023
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="2023">
+                  2023
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="2023">
+                  2023
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="video-page__filter-dropdown">
-            <button class="video-page__filter-button" type="button" aria-expanded="false" aria-controls="video-filter-countries" data-filter-type="countries">
-              <span>Страна:</span>
-              <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/2a347.svg" alt="" aria-hidden="true">
-            </button>
-            <div class="video-page__filter-menu" id="video-filter-countries" role="listbox" aria-label="Выберите страну" hidden>
-              <button class="video-page__filter-option is-selected" type="button" role="option" aria-selected="true" data-filter-value="Россия">Россия</button>
-              <button class="video-page__filter-option" type="button" role="option" aria-selected="false" data-filter-value="Беларусь">Беларусь</button>
-              <button class="video-page__filter-option" type="button" role="option" aria-selected="false" data-filter-value="Узбекистан">Узбекистан</button>
+            <div class="video-page__filter-dropdown">
+              <button
+                class="video-page__filter-button"
+                type="button"
+                aria-expanded="false"
+                aria-controls="video-filter-countries"
+                data-filter-type="countries">
+                <span>Страна:</span>
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path
+                    d="M23.0577 31.5782C23.3077 31.8483 23.6466 32 24 32C24.3534 32 24.6923 31.8483 24.9423 31.5782L35.61 20.0386C35.8597 19.7682 36 19.4016 36 19.0193C36 18.6371 35.8597 18.2705 35.61 18L12.39 18C12.1403 18.2705 12 18.6371 12 19.0193C12 19.4016 12.1403 19.7682 12.39 20.0386L23.0577 31.5782Z" />
+                </svg>
+              </button>
+              <div
+                class="video-page__filter-menu"
+                id="video-filter-countries"
+                role="listbox"
+                aria-label="Выберите страну"
+                hidden>
+                <button
+                  class="video-page__filter-option is-selected"
+                  type="button"
+                  role="option"
+                  aria-selected="true"
+                  data-filter-value="Все">
+                  Все
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="true"
+                  data-filter-value="Россия">
+                  Россия
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="Беларусь">
+                  Беларусь
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="Узбекистан">
+                  Узбекистан
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="video-page__filter-dropdown">
-            <button class="video-page__filter-button" type="button" aria-expanded="false" aria-controls="video-filter-regions" data-filter-type="regions">
-              <span>Регион:</span>
-              <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/2a347.svg" alt="" aria-hidden="true">
-            </button>
-            <div class="video-page__filter-menu" id="video-filter-regions" role="listbox" aria-label="Выберите регион" hidden>
-              <button class="video-page__filter-option is-selected" type="button" role="option" aria-selected="true" data-filter-value="Все регионы">Все регионы</button>
-              <button class="video-page__filter-option" type="button" role="option" aria-selected="false" data-filter-value="Тульская область">Тульская область</button>
+            <div class="video-page__filter-dropdown">
+              <button
+                class="video-page__filter-button"
+                type="button"
+                aria-expanded="false"
+                aria-controls="video-filter-regions"
+                data-filter-type="regions">
+                <span>Регион:</span>
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path
+                    d="M23.0577 31.5782C23.3077 31.8483 23.6466 32 24 32C24.3534 32 24.6923 31.8483 24.9423 31.5782L35.61 20.0386C35.8597 19.7682 36 19.4016 36 19.0193C36 18.6371 35.8597 18.2705 35.61 18L12.39 18C12.1403 18.2705 12 18.6371 12 19.0193C12 19.4016 12.1403 19.7682 12.39 20.0386L23.0577 31.5782Z" />
+                </svg>
+              </button>
+              <div
+                class="video-page__filter-menu"
+                id="video-filter-regions"
+                role="listbox"
+                aria-label="Выберите регион"
+                hidden>
+                <button
+                  class="video-page__filter-option is-selected"
+                  type="button"
+                  role="option"
+                  aria-selected="true"
+                  data-filter-value="Все">
+                  Все
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="Аксай">
+                  Аксай
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="Алупка">
+                  Алупка
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="Астана">
+                  Астана
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="Дагестанские огни">
+                  Дагестанские огни
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="Домодедово">
+                  Домодедово
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="Егорьевск">
+                  Егорьевск
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="Тульская область">
+                  Тульская область
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="video-page__filter-dropdown">
-            <button class="video-page__filter-button" type="button" aria-expanded="false" aria-controls="video-filter-segments" data-filter-type="segments">
-              <span>Сегменты:</span>
-              <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/2a347.svg" alt="" aria-hidden="true">
-            </button>
-            <div class="video-page__filter-menu" id="video-filter-segments" role="listbox" aria-label="Выберите сегмент" hidden>
-              <button class="video-page__filter-option is-selected" type="button" role="option" aria-selected="true" data-filter-value="Все сегменты">Все сегменты</button>
-              <button class="video-page__filter-option" type="button" role="option" aria-selected="false" data-filter-value="Промышленные здания">Промышленные здания</button>
+            <div class="video-page__filter-dropdown">
+              <button
+                class="video-page__filter-button"
+                type="button"
+                aria-expanded="false"
+                aria-controls="video-filter-segments"
+                data-filter-type="segments">
+                <span>Сегменты:</span>
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path
+                    d="M23.0577 31.5782C23.3077 31.8483 23.6466 32 24 32C24.3534 32 24.6923 31.8483 24.9423 31.5782L35.61 20.0386C35.8597 19.7682 36 19.4016 36 19.0193C36 18.6371 35.8597 18.2705 35.61 18L12.39 18C12.1403 18.2705 12 18.6371 12 19.0193C12 19.4016 12.1403 19.7682 12.39 20.0386L23.0577 31.5782Z" />
+                </svg>
+              </button>
+              <div
+                class="video-page__filter-menu"
+                id="video-filter-segments"
+                role="listbox"
+                aria-label="Выберите сегмент"
+                hidden>
+                <button
+                  class="video-page__filter-option is-selected"
+                  type="button"
+                  role="option"
+                  aria-selected="true"
+                  data-filter-value="Все">
+                  Все
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="Промышленные здания">
+                  Промышленные здания
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="video-page__filter-dropdown">
-            <button class="video-page__filter-button" type="button" aria-expanded="false" aria-controls="video-filter-technology" data-filter-type="technology">
-              <span>Технология:</span>
-              <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/2a347.svg" alt="" aria-hidden="true">
-            </button>
-            <div class="video-page__filter-menu" id="video-filter-technology" role="listbox" aria-label="Выберите технологию" hidden>
-              <button class="video-page__filter-option is-selected" type="button" role="option" aria-selected="true" data-filter-value="Все технологии">Все технологии</button>
-              <button class="video-page__filter-option" type="button" role="option" aria-selected="false" data-filter-value="ЛСТК">ЛСТК</button>
+            <div class="video-page__filter-dropdown">
+              <button
+                class="video-page__filter-button"
+                type="button"
+                aria-expanded="false"
+                aria-controls="video-filter-technology"
+                data-filter-type="technology">
+                <span>Технология:</span>
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path
+                    d="M23.0577 31.5782C23.3077 31.8483 23.6466 32 24 32C24.3534 32 24.6923 31.8483 24.9423 31.5782L35.61 20.0386C35.8597 19.7682 36 19.4016 36 19.0193C36 18.6371 35.8597 18.2705 35.61 18L12.39 18C12.1403 18.2705 12 18.6371 12 19.0193C12 19.4016 12.1403 19.7682 12.39 20.0386L23.0577 31.5782Z" />
+                </svg>
+              </button>
+              <div
+                class="video-page__filter-menu"
+                id="video-filter-technology"
+                role="listbox"
+                aria-label="Выберите технологию"
+                hidden>
+                <button
+                  class="video-page__filter-option is-selected"
+                  type="button"
+                  role="option"
+                  aria-selected="true"
+                  data-filter-value="Все">
+                  Все
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="ГИБРИД">
+                  ГИБРИД
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="ЛМК">
+                  ЛМК
+                </button>
+                <button
+                  class="video-page__filter-option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="ЛСТК">
+                  ЛСТК
+                </button>
+              </div>
             </div>
           </div>
         </div>
+
+        <div class="press__filter-overlay" id="video-mobile-filter" hidden>
+          <div
+            class="press__filter-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="video-mobile-filter-title"
+            tabindex="-1">
+            <div class="press__filter-dialog-header">
+              <div class="press__filter-dialog-title" id="video-mobile-filter-title">Фильтр</div>
+              <button class="press__filter-dialog-close" type="button" aria-label="Закрыть фильтр">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M18 6L6 18"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke="currentColor" />
+                  <path
+                    d="M6 6L18 18"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke="currentColor" />
+                </svg>
+              </button>
+            </div>
+            <div class="press__filter-dialog-content">
+              <div class="press__filter-group" role="group" aria-labelledby="video-mobile-years-title">
+                <div class="press__filter-group-title" id="video-mobile-years-title">Год:</div>
+                <div class="press__filter-list" data-filter-list="years">
+                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2026">
+                    2026
+                  </button>
+                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2025">
+                    2025
+                  </button>
+                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2024">
+                    2024
+                  </button>
+                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2023">
+                    2023
+                  </button>
+                </div>
+                <button class="press__filter-show-more" type="button" aria-expanded="false" data-expand-list="years">
+                  <span>Показать еще</span>
+                  <svg
+                    class="press__filter-show-more-icon"
+                    aria-hidden="true"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M6 9L12 15L18 9"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke="currentColor" />
+                  </svg>
+                </button>
+              </div>
+              <div class="press__filter-group" role="group" aria-labelledby="video-mobile-countries-title">
+                <div class="press__filter-group-title" id="video-mobile-countries-title">Страна</div>
+                <div class="press__filter-list" data-filter-list="countries">
+                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Россия">
+                    Россия
+                  </button>
+                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Беларусь">
+                    Беларусь
+                  </button>
+                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Узбекистан">
+                    Узбекистан
+                  </button>
+                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Казахстан">
+                    Казахстан
+                  </button>
+                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Украина">
+                    Украина
+                  </button>
+                </div>
+                <button
+                  class="press__filter-show-more"
+                  type="button"
+                  aria-expanded="false"
+                  data-expand-list="countries">
+                  <span>Показать еще</span>
+                  <svg
+                    class="press__filter-show-more-icon"
+                    aria-hidden="true"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M6 9L12 15L18 9"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke="currentColor" />
+                  </svg>
+                </button>
+              </div>
+              <div class="press__filter-group" role="group" aria-labelledby="video-mobile-regions-title">
+                <div class="press__filter-group-title" id="video-mobile-regions-title">Регион</div>
+                <div class="press__filter-list" data-filter-list="regions">
+                  <button
+                    class="press__filter-option"
+                    type="button"
+                    aria-pressed="false"
+                    data-filter-value="Тульская область">
+                    Тульская область
+                  </button>
+                </div>
+                <button class="press__filter-show-more" type="button" aria-expanded="false" data-expand-list="regions">
+                  <span>Показать еще</span>
+                  <svg
+                    class="press__filter-show-more-icon"
+                    aria-hidden="true"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M6 9L12 15L18 9"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke="currentColor" />
+                  </svg>
+                </button>
+              </div>
+              <div class="press__filter-group" role="group" aria-labelledby="video-mobile-segments-title">
+                <div class="press__filter-group-title" id="video-mobile-segments-title">Сегменты</div>
+                <div class="press__filter-list" data-filter-list="segments">
+                  <button
+                    class="press__filter-option"
+                    type="button"
+                    aria-pressed="false"
+                    data-filter-value="Промышленные здания">
+                    Промышленные здания
+                  </button>
+                </div>
+                <button class="press__filter-show-more" type="button" aria-expanded="false" data-expand-list="segments">
+                  <span>Показать еще</span>
+                  <svg
+                    class="press__filter-show-more-icon"
+                    aria-hidden="true"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M6 9L12 15L18 9"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke="currentColor" />
+                  </svg>
+                </button>
+              </div>
+              <div class="press__filter-group" role="group" aria-labelledby="video-mobile-technology-title">
+                <div class="press__filter-group-title" id="video-mobile-technology-title">Технология</div>
+                <div class="press__filter-list" data-filter-list="technology">
+                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="ЛСТК">
+                    ЛСТК
+                  </button>
+                </div>
+                <button
+                  class="press__filter-show-more"
+                  type="button"
+                  aria-expanded="false"
+                  data-expand-list="technology">
+                  <span>Показать еще</span>
+                  <svg
+                    class="press__filter-show-more-icon"
+                    aria-hidden="true"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M6 9L12 15L18 9"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke="currentColor" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="press__filter-back-wrapper">
+            <button class="press__filter-back" type="button">Назад</button>
+          </div>
+        </div>
+
+        <div class="video-page__grid" aria-label="Видео">
+          <article class="video-page__card">
+            <a href="#/video" class="video-page__card-link">
+              <div class="video-page__card-media">
+                <img
+                  class="video-page__card-image"
+                  src="/static/images/press-center/article-img.jpg"
+                  alt="Превью видео: пристройка из ЛСТК в Туле" />
+                <span class="video-page__play flex-center" aria-hidden="true">
+                  <img src="/static/images/press-center/ic-play.svg" alt="" />
+                </span>
+              </div>
+
+              <div class="video-page__card-content flex-col">
+                <h4 class="video-page__card-title">
+                  Быстровозводимая пристройка 13.3Ш x 42Д x 6В из ЛСТК в г. Тула, Россия
+                </h4>
+                <div class="video-page__card-duration">
+                  <span>Продолжительность:</span>
+                  <span>180 секунд</span>
+                </div>
+              </div>
+            </a>
+          </article>
+          <article class="video-page__card">
+            <a href="#/video" class="video-page__card-link">
+              <div class="video-page__card-media">
+                <img
+                  class="video-page__card-image"
+                  src="/static/images/press-center/article-img.jpg"
+                  alt="Превью видео: пристройка из ЛСТК в Туле" />
+                <span class="video-page__play flex-center" aria-hidden="true">
+                  <img src="/static/images/press-center/ic-play.svg" alt="" />
+                </span>
+              </div>
+
+              <div class="video-page__card-content flex-col">
+                <h4 class="video-page__card-title">
+                  Быстровозводимая пристройка 13.3Ш x 42Д x 6В из ЛСТК в г. Тула, Россия
+                </h4>
+                <div class="video-page__card-duration">
+                  <span>Продолжительность:</span>
+                  <span>180 секунд</span>
+                </div>
+              </div>
+            </a>
+          </article>
+          <article class="video-page__card">
+            <a href="#/video" class="video-page__card-link">
+              <div class="video-page__card-media">
+                <img
+                  class="video-page__card-image"
+                  src="/static/images/press-center/article-img.jpg"
+                  alt="Превью видео: пристройка из ЛСТК в Туле" />
+                <span class="video-page__play flex-center" aria-hidden="true">
+                  <img src="/static/images/press-center/ic-play.svg" alt="" />
+                </span>
+              </div>
+
+              <div class="video-page__card-content flex-col">
+                <h4 class="video-page__card-title">
+                  Быстровозводимая пристройка 13.3Ш x 42Д x 6В из ЛСТК в г. Тула, Россия
+                </h4>
+                <div class="video-page__card-duration">
+                  <span>Продолжительность:</span>
+                  <span>180 секунд</span>
+                </div>
+              </div>
+            </a>
+          </article>
+          <article class="video-page__card">
+            <a href="#/video" class="video-page__card-link">
+              <div class="video-page__card-media">
+                <img
+                  class="video-page__card-image"
+                  src="/static/images/press-center/article-img.jpg"
+                  alt="Превью видео: пристройка из ЛСТК в Туле" />
+                <span class="video-page__play flex-center" aria-hidden="true">
+                  <img src="/static/images/press-center/ic-play.svg" alt="" />
+                </span>
+              </div>
+
+              <div class="video-page__card-content flex-col">
+                <h4 class="video-page__card-title">
+                  Быстровозводимая пристройка 13.3Ш x 42Д x 6В из ЛСТК в г. Тула, Россия
+                </h4>
+                <div class="video-page__card-duration">
+                  <span>Продолжительность:</span>
+                  <span>180 секунд</span>
+                </div>
+              </div>
+            </a>
+          </article>
+          <article class="video-page__card">
+            <a href="#/video" class="video-page__card-link">
+              <div class="video-page__card-media">
+                <img
+                  class="video-page__card-image"
+                  src="/static/images/press-center/article-img.jpg"
+                  alt="Превью видео: пристройка из ЛСТК в Туле" />
+                <span class="video-page__play flex-center" aria-hidden="true">
+                  <img src="/static/images/press-center/ic-play.svg" alt="" />
+                </span>
+              </div>
+
+              <div class="video-page__card-content flex-col">
+                <h4 class="video-page__card-title">
+                  Быстровозводимая пристройка 13.3Ш x 42Д x 6В из ЛСТК в г. Тула, Россия
+                </h4>
+                <div class="video-page__card-duration">
+                  <span>Продолжительность:</span>
+                  <span>180 секунд</span>
+                </div>
+              </div>
+            </a>
+          </article>
+          <article class="video-page__card">
+            <a href="#/video" class="video-page__card-link">
+              <div class="video-page__card-media">
+                <img
+                  class="video-page__card-image"
+                  src="/static/images/press-center/article-img.jpg"
+                  alt="Превью видео: пристройка из ЛСТК в Туле" />
+                <span class="video-page__play flex-center" aria-hidden="true">
+                  <img src="/static/images/press-center/ic-play.svg" alt="" />
+                </span>
+              </div>
+
+              <div class="video-page__card-content flex-col">
+                <h4 class="video-page__card-title">
+                  Быстровозводимая пристройка 13.3Ш x 42Д x 6В из ЛСТК в г. Тула, Россия
+                </h4>
+                <div class="video-page__card-duration">
+                  <span>Продолжительность:</span>
+                  <span>180 секунд</span>
+                </div>
+              </div>
+            </a>
+          </article>
+          <article class="video-page__card">
+            <a href="#/video" class="video-page__card-link">
+              <div class="video-page__card-media">
+                <img
+                  class="video-page__card-image"
+                  src="/static/images/press-center/article-img.jpg"
+                  alt="Превью видео: пристройка из ЛСТК в Туле" />
+                <span class="video-page__play flex-center" aria-hidden="true">
+                  <img src="/static/images/press-center/ic-play.svg" alt="" />
+                </span>
+              </div>
+
+              <div class="video-page__card-content flex-col">
+                <h4 class="video-page__card-title">
+                  Быстровозводимая пристройка 13.3Ш x 42Д x 6В из ЛСТК в г. Тула, Россия
+                </h4>
+                <div class="video-page__card-duration">
+                  <span>Продолжительность:</span>
+                  <span>180 секунд</span>
+                </div>
+              </div>
+            </a>
+          </article>
+          <article class="video-page__card">
+            <a href="#/video" class="video-page__card-link">
+              <div class="video-page__card-media">
+                <img
+                  class="video-page__card-image"
+                  src="/static/images/press-center/article-img.jpg"
+                  alt="Превью видео: пристройка из ЛСТК в Туле" />
+                <span class="video-page__play flex-center" aria-hidden="true">
+                  <img src="/static/images/press-center/ic-play.svg" alt="" />
+                </span>
+              </div>
+
+              <div class="video-page__card-content flex-col">
+                <h4 class="video-page__card-title">
+                  Быстровозводимая пристройка 13.3Ш x 42Д x 6В из ЛСТК в г. Тула, Россия
+                </h4>
+                <div class="video-page__card-duration">
+                  <span>Продолжительность:</span>
+                  <span>180 секунд</span>
+                </div>
+              </div>
+            </a>
+          </article>
+          <article class="video-page__card">
+            <a href="#/video" class="video-page__card-link">
+              <div class="video-page__card-media">
+                <img
+                  class="video-page__card-image"
+                  src="/static/images/press-center/article-img.jpg"
+                  alt="Превью видео: пристройка из ЛСТК в Туле" />
+                <span class="video-page__play flex-center" aria-hidden="true">
+                  <img src="/static/images/press-center/ic-play.svg" alt="" />
+                </span>
+              </div>
+
+              <div class="video-page__card-content flex-col">
+                <h4 class="video-page__card-title">
+                  Быстровозводимая пристройка 13.3Ш x 42Д x 6В из ЛСТК в г. Тула, Россия
+                </h4>
+                <div class="video-page__card-duration">
+                  <span>Продолжительность:</span>
+                  <span>180 секунд</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+
+        <button class="press-center__load-more" type="button">ПОКАЗАТЬ ЕЩЁ</button>
       </div>
-
-      <div class="video-page__mobile-filter-dialog" id="video-mobile-filter" hidden>
-        <form class="video-page__mobile-filter-form" aria-labelledby="video-mobile-filter-title" role="dialog" aria-modal="true" tabindex="-1">
-          <div class="video-page__mobile-filter-heading">
-            <h2 id="video-mobile-filter-title">Фильтр</h2>
-            <button class="video-page__mobile-filter-close" type="button" aria-label="Закрыть фильтр">×</button>
-          </div>
-          <div class="video-page__mobile-filter-fields">
-            <label class="video-page__mobile-filter-field">Год
-              <select name="years"><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option></select>
-            </label>
-            <label class="video-page__mobile-filter-field">Страна
-              <select name="countries"><option value="Россия">Россия</option><option value="Беларусь">Беларусь</option><option value="Узбекистан">Узбекистан</option></select>
-            </label>
-            <label class="video-page__mobile-filter-field">Регион
-              <select name="regions"><option value="Все регионы">Все регионы</option><option value="Тульская область">Тульская область</option></select>
-            </label>
-            <label class="video-page__mobile-filter-field">Сегменты
-              <select name="segments"><option value="Все сегменты">Все сегменты</option><option value="Промышленные здания">Промышленные здания</option></select>
-            </label>
-            <label class="video-page__mobile-filter-field">Технология
-              <select name="technology"><option value="Все технологии">Все технологии</option><option value="ЛСТК">ЛСТК</option></select>
-            </label>
-          </div>
-          <button class="video-page__mobile-filter-apply" type="submit">Показать</button>
-        </form>
-      </div>
-
-      <div class="video-page__grid" aria-label="Видео">
-        <article class="video-page__card">
-          <a class="video-page__card-link" href="#/video" aria-label="Смотреть видео: Быстровозводимая пристройка из ЛСТК в Туле">
-            <div class="video-page__card-media">
-              <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/47cbb.png" alt="Видео о строительстве быстровозводимого здания" loading="eager">
-              <span class="video-page__play" aria-hidden="true">
-                <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/7c7cb.svg" alt="">
-              </span>
-            </div>
-          </a>
-          <div class="video-page__card-content">
-            <h2 class="video-page__card-title">Быстровозводимая пристройка 13.3Ш х 42Д х 6В из ЛСТК в г. Тула, Россия</h2>
-            <div class="video-page__card-divider" aria-hidden="true"></div>
-            <p class="video-page__card-duration"><span>Продолжительность:</span><span>180 секунд</span></p>
-          </div>
-        </article><article class="video-page__card">
-        <a class="video-page__card-link" href="#/video" aria-label="Смотреть видео: Быстровозводимая пристройка из ЛСТК в Туле">
-          <div class="video-page__card-media">
-            <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/47cbb.png" alt="Видео о строительстве быстровозводимого здания" loading="eager">
-            <span class="video-page__play" aria-hidden="true">
-                <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/7c7cb.svg" alt="">
-              </span>
-          </div>
-        </a>
-        <div class="video-page__card-content">
-          <h2 class="video-page__card-title">Быстровозводимая пристройка 13.3Ш х 42Д х 6В из ЛСТК в г. Тула, Россия</h2>
-          <div class="video-page__card-divider" aria-hidden="true"></div>
-          <p class="video-page__card-duration"><span>Продолжительность:</span><span>180 секунд</span></p>
-        </div>
-      </article><article class="video-page__card">
-        <a class="video-page__card-link" href="#/video" aria-label="Смотреть видео: Быстровозводимая пристройка из ЛСТК в Туле">
-          <div class="video-page__card-media">
-            <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/47cbb.png" alt="Видео о строительстве быстровозводимого здания" loading="eager">
-            <span class="video-page__play" aria-hidden="true">
-                <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/7c7cb.svg" alt="">
-              </span>
-          </div>
-        </a>
-        <div class="video-page__card-content">
-          <h2 class="video-page__card-title">Быстровозводимая пристройка 13.3Ш х 42Д х 6В из ЛСТК в г. Тула, Россия</h2>
-          <div class="video-page__card-divider" aria-hidden="true"></div>
-          <p class="video-page__card-duration"><span>Продолжительность:</span><span>180 секунд</span></p>
-        </div>
-      </article><article class="video-page__card">
-        <a class="video-page__card-link" href="#/video" aria-label="Смотреть видео: Быстровозводимая пристройка из ЛСТК в Туле">
-          <div class="video-page__card-media">
-            <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/47cbb.png" alt="Видео о строительстве быстровозводимого здания" loading="lazy">
-            <span class="video-page__play" aria-hidden="true">
-                <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/7c7cb.svg" alt="">
-              </span>
-          </div>
-        </a>
-        <div class="video-page__card-content">
-          <h2 class="video-page__card-title">Быстровозводимая пристройка 13.3Ш х 42Д х 6В из ЛСТК в г. Тула, Россия</h2>
-          <div class="video-page__card-divider" aria-hidden="true"></div>
-          <p class="video-page__card-duration"><span>Продолжительность:</span><span>180 секунд</span></p>
-        </div>
-      </article><article class="video-page__card">
-        <a class="video-page__card-link" href="#/video" aria-label="Смотреть видео: Быстровозводимая пристройка из ЛСТК в Туле">
-          <div class="video-page__card-media">
-            <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/47cbb.png" alt="Видео о строительстве быстровозводимого здания" loading="lazy">
-            <span class="video-page__play" aria-hidden="true">
-                <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/7c7cb.svg" alt="">
-              </span>
-          </div>
-        </a>
-        <div class="video-page__card-content">
-          <h2 class="video-page__card-title">Быстровозводимая пристройка 13.3Ш х 42Д х 6В из ЛСТК в г. Тула, Россия</h2>
-          <div class="video-page__card-divider" aria-hidden="true"></div>
-          <p class="video-page__card-duration"><span>Продолжительность:</span><span>180 секунд</span></p>
-        </div>
-      </article><article class="video-page__card">
-        <a class="video-page__card-link" href="#/video" aria-label="Смотреть видео: Быстровозводимая пристройка из ЛСТК в Туле">
-          <div class="video-page__card-media">
-            <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/47cbb.png" alt="Видео о строительстве быстровозводимого здания" loading="lazy">
-            <span class="video-page__play" aria-hidden="true">
-                <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/7c7cb.svg" alt="">
-              </span>
-          </div>
-        </a>
-        <div class="video-page__card-content">
-          <h2 class="video-page__card-title">Быстровозводимая пристройка 13.3Ш х 42Д х 6В из ЛСТК в г. Тула, Россия</h2>
-          <div class="video-page__card-divider" aria-hidden="true"></div>
-          <p class="video-page__card-duration"><span>Продолжительность:</span><span>180 секунд</span></p>
-        </div>
-      </article><article class="video-page__card" hidden>
-        <a class="video-page__card-link" href="#/video" aria-label="Смотреть видео: Быстровозводимая пристройка из ЛСТК в Туле">
-          <div class="video-page__card-media">
-            <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/47cbb.png" alt="Видео о строительстве быстровозводимого здания" loading="lazy">
-            <span class="video-page__play" aria-hidden="true">
-                <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/7c7cb.svg" alt="">
-              </span>
-          </div>
-        </a>
-        <div class="video-page__card-content">
-          <h2 class="video-page__card-title">Быстровозводимая пристройка 13.3Ш х 42Д х 6В из ЛСТК в г. Тула, Россия</h2>
-          <div class="video-page__card-divider" aria-hidden="true"></div>
-          <p class="video-page__card-duration"><span>Продолжительность:</span><span>180 секунд</span></p>
-        </div>
-      </article><article class="video-page__card" hidden>
-        <a class="video-page__card-link" href="#/video" aria-label="Смотреть видео: Быстровозводимая пристройка из ЛСТК в Туле">
-          <div class="video-page__card-media">
-            <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/47cbb.png" alt="Видео о строительстве быстровозводимого здания" loading="lazy">
-            <span class="video-page__play" aria-hidden="true">
-                <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/7c7cb.svg" alt="">
-              </span>
-          </div>
-        </a>
-        <div class="video-page__card-content">
-          <h2 class="video-page__card-title">Быстровозводимая пристройка 13.3Ш х 42Д х 6В из ЛСТК в г. Тула, Россия</h2>
-          <div class="video-page__card-divider" aria-hidden="true"></div>
-          <p class="video-page__card-duration"><span>Продолжительность:</span><span>180 секунд</span></p>
-        </div>
-      </article><article class="video-page__card" hidden>
-        <a class="video-page__card-link" href="#/video" aria-label="Смотреть видео: Быстровозводимая пристройка из ЛСТК в Туле">
-          <div class="video-page__card-media">
-            <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/47cbb.png" alt="Видео о строительстве быстровозводимого здания" loading="lazy">
-            <span class="video-page__play" aria-hidden="true">
-                <img src="https://www.figma.com/api/mcp/asset/78598ca7-c6ca-4250-929d-bd6a2694fba3/7c7cb.svg" alt="">
-              </span>
-          </div>
-        </a>
-        <div class="video-page__card-content">
-          <h2 class="video-page__card-title">Быстровозводимая пристройка 13.3Ш х 42Д х 6В из ЛСТК в г. Тула, Россия</h2>
-          <div class="video-page__card-divider" aria-hidden="true"></div>
-          <p class="video-page__card-duration"><span>Продолжительность:</span><span>180 секунд</span></p>
-        </div>
-      </article>
-      </div>
-
-      <button class="video-page__load-more" type="button">
-        ПОКАЗАТЬ ЕЩЁ
-      </button>
     </div>
   </div>
 </section>

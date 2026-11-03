@@ -124,6 +124,10 @@ img {
   justify-content: center;
 }
 
+.main-color {
+  color: #324c88;
+}
+
 button {
   margin: 0;
   border: 0;
