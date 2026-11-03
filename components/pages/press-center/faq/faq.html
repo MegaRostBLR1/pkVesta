@@ -2,25 +2,33 @@
   <div class="press-faq__inner">
     <nav class="press-faq__breadcrumbs" aria-label="Хлебные крошки">
       <a class="press-faq__breadcrumb" href="#/home">Главная</a>
-      <span class="press-faq__separator" aria-hidden="true">-</span>
+      <span class="press-faq__separator" aria-hidden="true">–</span>
       <a class="press-faq__breadcrumb" href="#/press-center">Пресс-центр</a>
-      <span class="press-faq__separator" aria-hidden="true">-</span>
+      <span class="press-faq__separator" aria-hidden="true">–</span>
       <span class="press-faq__breadcrumb press-faq__breadcrumb--current" aria-current="page">F.A.Q</span>
     </nav>
 
     <h1 class="press-faq__title" id="press-faq__title">F.A.Q</h1>
 
-    <nav class="press-faq__categories" aria-label="Категории вопросов">
+    <div class="press-faq__categories" role="group" aria-label="Категории вопросов">
       <button class="press-faq__category is-active" type="button" aria-pressed="true" data-category="all">Все</button>
       <button class="press-faq__category" type="button" aria-pressed="false" data-category="export">Экспорт</button>
       <button class="press-faq__category" type="button" aria-pressed="false" data-category="factory">О заводе</button>
       <button class="press-faq__category" type="button" aria-pressed="false" data-category="websteel">WebSteel</button>
-      <button class="press-faq__category" type="button" aria-pressed="false" data-category="design">Проектирование</button>
+      <button class="press-faq__category" type="button" aria-pressed="false" data-category="design">
+        Проектирование
+      </button>
       <button class="press-faq__category" type="button" aria-pressed="false" data-category="payment">Оплата</button>
-      <button class="press-faq__category" type="button" aria-pressed="false" data-category="production">Изготовление</button>
-      <button class="press-faq__category" type="button" aria-pressed="false" data-category="installation">Монтаж</button>
-      <button class="press-faq__category" type="button" aria-pressed="false" data-category="foundation">Фундамент</button>
-    </nav>
+      <button class="press-faq__category" type="button" aria-pressed="false" data-category="production">
+        Изготовление
+      </button>
+      <button class="press-faq__category" type="button" aria-pressed="false" data-category="installation">
+        Монтаж
+      </button>
+      <button class="press-faq__category" type="button" aria-pressed="false" data-category="foundation">
+        Фундамент
+      </button>
+    </div>
   </div>
 </section>
 
@@ -30,28 +38,78 @@
       <h2 class="press-faq-group__title" id="press-faq-group__export">Экспорт зданий в другие страны</h2>
       <div class="press-faq-list">
         <article class="press-faq-item press-faq-item--expanded" data-categories="export design websteel payment">
-          <button class="press-faq-item__question" type="button" aria-expanded="true">
-            <span>Как заказать здание в ПК Веста в другую страну?</span>
-            <span class="press-faq-item__toggle" aria-hidden="true"><span class="press-faq-item__minus"></span></span>
-          </button>
-          <div class="press-faq-item__answer">
+          <h3 class="press-faq-item__heading">
+            <button
+              class="press-faq-item__question"
+              type="button"
+              aria-expanded="true"
+              aria-controls="press-faq-answer-1">
+              <span>Как заказать здание в ПК Веста в другую страну?</span>
+              <span class="press-faq-item__toggle" aria-hidden="true"><span class="press-faq-item__minus"></span></span>
+            </button>
+          </h3>
+          <div class="press-faq-item__answer" id="press-faq-answer-1">
             <div class="press-faq-item__text">
-              <div class="press-faq-item__copy">
-                <p>Вы легко можете заказать индивидуальное здание на российском заводе с доставкой в любую точку мира с учетом ваших требований.</p>
-                <p>Процесс ведения переговоров — простой. На первом этапе клиент обычно сам делает предварительный расчет бюджета строительства по месту строительства в бесплатной онлайн системе WebSteel (на данный момент многие климатические карты по базовым снеговым, ветровым и сейсмичным нагрузкам оцифрованы в Евразии, на Ближнем Востоке и в Африке). Далее он получает детальную консультацию по основным параметрам своего здания: ширина, длина, высота, тип конструкции и технологии изготовления, наличие проемов под ворота, двери и окна, цветовые решения и т. д.</p>
-                <p>Согласуются сроки проектирования, изготовления и доставки (обычно до морского порта поставщика или покупателя: FOB или EXW). При этом учитываются специфичные требования к несущим конструкциям по нагрузкам (дополнительные нагрузки на колонны, фермы и т. д.), если таковые есть. В большинстве случаев, если здание типовое и клиент знаком с реализацией строительных проектов, он ведет переговоры сам и формирует список требований с учетом общих местных требований по месту строительства. Если проект сложный и нестандартный, ему помогает местный генеральный проектировщик, формулирующий список требований к быстровозводимому зданию, которое будет строиться в другой стране.</p>
-                <p>Если все устраивает клиента, то выбирается и оговаривается схема оплаты с дальнейшей покупкой комплекта здания на российском заводе.</p>
+              <div class="press-faq-item__copy" id="press-faq-copy-1">
+                <p>
+                  Вы легко можете заказать индивидуальное здание на российском заводе с доставкой в любую точку мира с
+                  учетом ваших требований.
+                </p>
+                <p>
+                  Процесс ведения переговоров — простой. На первом этапе клиент обычно сам делает предварительный расчет
+                  бюджета строительства по месту строительства в бесплатной онлайн системе WebSteel (на данный момент
+                  многие климатические карты по базовым снеговым, ветровым и сейсмичным нагрузкам оцифрованы в Евразии,
+                  на Ближнем Востоке и в Африке). Далее он получает детальную консультацию по основным параметрам своего
+                  здания: ширина, длина, высота, тип конструкции и технологии изготовления, наличие проемов под ворота,
+                  двери и окна, цветовые решения и т. д.
+                </p>
+                <p>
+                  Согласуются сроки проектирования, изготовления и доставки (обычно до морского порта поставщика или
+                  покупателя: FOB или EXW). При этом учитываются специфичные требования к несущим конструкциям по
+                  нагрузкам (дополнительные нагрузки на колонны, фермы и т. д.), если таковые есть. В большинстве
+                  случаев, если здание типовое и клиент знаком с реализацией строительных проектов, он ведет переговоры
+                  сам и формирует список требований с учетом общих местных требований по месту строительства. Если
+                  проект сложный и нестандартный, ему помогает местный генеральный проектировщик, формулирующий список
+                  требований к быстровозводимому зданию, которое будет строиться в другой стране.
+                </p>
+                <p>
+                  Если все устраивает клиента, то выбирается и оговаривается схема оплаты с дальнейшей покупкой
+                  комплекта здания на российском заводе.
+                </p>
               </div>
-              <button class="press-faq-item__show-more" type="button" aria-expanded="false">
+              <button
+                class="press-faq-item__show-more"
+                type="button"
+                aria-expanded="false"
+                aria-controls="press-faq-copy-1">
                 <span>Показать еще</span>
-                <img src="https://www.figma.com/api/mcp/asset/adc1f39f-fa47-4dcb-bfe9-36bf496d6a9c/b2271.svg" alt="" aria-hidden="true">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  focusable="false">
+                  <path
+                    d="M6 9L12 15L18 9"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke="#324C88" />
+                </svg>
               </button>
             </div>
             <figure class="press-faq-item__media">
-              <img src="https://www.figma.com/api/mcp/asset/adc1f39f-fa47-4dcb-bfe9-36bf496d6a9c/a7b2a.png" alt="Быстровозводимое промышленное здание">
-              <button class="press-faq-item__zoom" type="button" aria-label="Открыть изображение в полном размере">
-                <img src="https://www.figma.com/api/mcp/asset/adc1f39f-fa47-4dcb-bfe9-36bf496d6a9c/675d8.svg" alt="">
-              </button>
+              <img src="/static/images/faq/question-1.jpg" alt="Быстровозводимое промышленное здание" />
+              <a
+                class="press-faq-item__zoom"
+                href="/static/images/faq/question-1.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Открыть изображение в полном размере в новой вкладке">
+                <img src="/static/images/news/news-item/loupe.svg" alt="" />
+              </a>
             </figure>
           </div>
         </article>
@@ -62,32 +120,95 @@
       <h2 class="press-faq-group__title" id="press-faq-group__company">Вопросы о компании</h2>
       <div class="press-faq-list">
         <article class="press-faq-item" data-categories="factory">
-          <button class="press-faq-item__question" type="button" aria-expanded="false">
-            <span>Сравнение завода ПК ВЕСТА с другими аналогичными фирмами?</span>
-            <span class="press-faq-item__toggle" aria-hidden="true"><span class="press-faq-item__plus"></span></span>
-          </button>
-          <div class="press-faq-item__answer" hidden></div>
+          <h3 class="press-faq-item__heading">
+            <button
+              class="press-faq-item__question"
+              type="button"
+              aria-expanded="false"
+              aria-controls="press-faq-answer-2">
+              <span>Сравнение завода ПК ВЕСТА с другими аналогичными фирмами?</span>
+              <span class="press-faq-item__toggle" aria-hidden="true"><span class="press-faq-item__plus"></span></span>
+            </button>
+          </h3>
+          <div class="press-faq-item__answer" id="press-faq-answer-2" hidden></div>
         </article>
         <article class="press-faq-item press-faq-item--expanded" data-categories="factory">
-          <button class="press-faq-item__question" type="button" aria-expanded="true">
-            <span>Сколько изготовлено и смонтировано быстровозводимых зданий и где?</span>
-            <span class="press-faq-item__toggle" aria-hidden="true"><span class="press-faq-item__minus"></span></span>
-          </button>
-          <div class="press-faq-item__answer">
-            <div class="press-faq-item__copy">
-              <p>Вы легко можете заказать индивидуальное здание на российском заводе с доставкой в любую точку мира с учетом ваших требований.</p>
-              <p>Процесс ведения переговоров — простой. На первом этапе клиент обычно сам делает предварительный расчет бюджета строительства по месту строительства в бесплатной онлайн системе WebSteel (на данный момент многие климатические карты по базовым снеговым, ветровым и сейсмичным нагрузкам оцифрованы в Евразии, на Ближнем Востоке и в Африке). Далее он получает детальную консультацию по основным параметрам своего здания: ширина, длина, высота, тип конструкции и технологии изготовления, наличие проемов под ворота, двери и окна, цветовые решения и т. д.</p>
-              <p>Согласуются сроки проектирования, изготовления и доставки (обычно до морского порта поставщика или покупателя: FOB или EXW). При этом учитываются специфичные требования к несущим конструкциям по нагрузкам (дополнительные нагрузки на колонны, фермы и т. д.), если таковые есть. В большинстве случаев, если здание типовое и клиент знаком с реализацией строительных проектов, он ведет переговоры сам и формирует список требований с учетом общих местных требований по месту строительства. Если проект сложный и нестандартный, ему помогает местный генеральный проектировщик, формулирующий список требований к быстровозводимому зданию, которое будет строиться в другой стране.</p>
-              <p>Если все устраивает клиента, то выбирается и оговаривается схема оплаты с дальнейшей покупкой комплекта здания на российском заводе.</p>
+          <h3 class="press-faq-item__heading">
+            <button
+              class="press-faq-item__question"
+              type="button"
+              aria-expanded="true"
+              aria-controls="press-faq-answer-3">
+              <span>Сколько изготовлено и смонтировано быстровозводимых зданий и где?</span>
+              <span class="press-faq-item__toggle" aria-hidden="true"><span class="press-faq-item__minus"></span></span>
+            </button>
+          </h3>
+          <div class="press-faq-item__answer" id="press-faq-answer-3">
+            <div class="press-faq-item__text">
+              <div class="press-faq-item__copy" id="press-faq-copy-2">
+                <p>
+                  Вы легко можете заказать индивидуальное здание на российском заводе с доставкой в любую точку мира с
+                  учетом ваших требований.
+                </p>
+                <p>
+                  Процесс ведения переговоров — простой. На первом этапе клиент обычно сам делает предварительный расчет
+                  бюджета строительства по месту строительства в бесплатной онлайн системе WebSteel (на данный момент
+                  многие климатические карты по базовым снеговым, ветровым и сейсмичным нагрузкам оцифрованы в Евразии,
+                  на Ближнем Востоке и в Африке). Далее он получает детальную консультацию по основным параметрам своего
+                  здания: ширина, длина, высота, тип конструкции и технологии изготовления, наличие проемов под ворота,
+                  двери и окна, цветовые решения и т. д.
+                </p>
+                <p>
+                  Согласуются сроки проектирования, изготовления и доставки (обычно до морского порта поставщика или
+                  покупателя: FOB или EXW). При этом учитываются специфичные требования к несущим конструкциям по
+                  нагрузкам (дополнительные нагрузки на колонны, фермы и т. д.), если таковые есть. В большинстве
+                  случаев, если здание типовое и клиент знаком с реализацией строительных проектов, он ведет переговоры
+                  сам и формирует список требований с учетом общих местных требований по месту строительства. Если
+                  проект сложный и нестандартный, ему помогает местный генеральный проектировщик, формулирующий список
+                  требований к быстровозводимому зданию, которое будет строиться в другой стране.
+                </p>
+                <p>
+                  Если все устраивает клиента, то выбирается и оговаривается схема оплаты с дальнейшей покупкой
+                  комплекта здания на российском заводе.
+                </p>
+              </div>
+              <button
+                class="press-faq-item__show-more"
+                type="button"
+                aria-expanded="false"
+                aria-controls="press-faq-copy-2">
+                <span>Показать еще</span>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  focusable="false">
+                  <path
+                    d="M6 9L12 15L18 9"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke="#324C88" />
+                </svg>
+              </button>
             </div>
           </div>
         </article>
         <article class="press-faq-item" data-categories="factory">
-          <button class="press-faq-item__question" type="button" aria-expanded="false">
-            <span>Сколько уже существует компания ПК Веста?</span>
-            <span class="press-faq-item__toggle" aria-hidden="true"><span class="press-faq-item__plus"></span></span>
-          </button>
-          <div class="press-faq-item__answer" hidden></div>
+          <h3 class="press-faq-item__heading">
+            <button
+              class="press-faq-item__question"
+              type="button"
+              aria-expanded="false"
+              aria-controls="press-faq-answer-4">
+              <span>Сколько уже существует компания ПК Веста?</span>
+              <span class="press-faq-item__toggle" aria-hidden="true"><span class="press-faq-item__plus"></span></span>
+            </button>
+          </h3>
+          <div class="press-faq-item__answer" id="press-faq-answer-4" hidden></div>
         </article>
       </div>
     </section>

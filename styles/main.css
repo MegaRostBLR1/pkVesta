@@ -84,6 +84,10 @@ body {
 }
 
 
+[hidden] {
+  display: none !important;
+}
+
 .container {
   margin: 0 auto;
 }
@@ -127,6 +131,10 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.main-color {
+  color: #324c88;
 }
 
 button {
@@ -13519,13 +13527,13 @@ h2 {
 /* Footer styles moved from components/layout/footer/footer.css. */
 
 /* стили для всех кнопок аккордеон */
-.accordion__btn {
+.accordion__toggle {
   position: relative;
   border-radius: 50%;
 }
 
-.accordion__btn::before,
-.accordion__btn::after {
+.accordion__toggle::before,
+.accordion__toggle::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -13533,29 +13541,19 @@ h2 {
   transform: translate(-50%, -50%);
 }
 
-.accordion__btn::before {
+.accordion__toggle::before {
   width: 0.7778rem;
   height: 0.1111rem;
 }
 
-.accordion__btn::after {
+.accordion__toggle::after {
   width: 0.1111rem;
   height: 0.7778rem;
   transition: transform 0.3s ease;
 }
 
-.accordion.active .accordion__btn::after {
+.accordion__btn[aria-expanded="true"] .accordion__toggle::after {
   transform: translate(-50%, -50%) rotate(90deg);
-}
-
-.accordion__head {
-  cursor: pointer;
-}
-.accordion__body {
-  display: none;
-}
-.accordion.active .accordion__body {
-  display: block;
 }
 
 /* footer */

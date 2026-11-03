@@ -1,10 +1,12 @@
 function initFaq() {
-    const faqRoot = document.querySelector('.press-faq');
+    const faqContent = document.querySelector('.press-faq-content');
 
-    if (!faqRoot) return;
+    if (!faqContent || faqContent.dataset.initialized === 'true') return;
+    faqContent.dataset.initialized = 'true';
 
-    const categories = faqRoot.querySelectorAll('.press-faq__category');
-    const items = document.querySelectorAll('.press-faq-item');
+    const categories = document.querySelectorAll('.press-faq__category');
+    const groups = faqContent.querySelectorAll('.press-faq-group');
+    const items = faqContent.querySelectorAll('.press-faq-item');
 
     categories.forEach((category) => {
         category.addEventListener('click', () => {
@@ -18,6 +20,10 @@ function initFaq() {
             items.forEach((item) => {
                 const itemCategories = (item.dataset.categories || '').split(/\s+/);
                 item.hidden = selectedCategory !== 'all' && !itemCategories.includes(selectedCategory);
+            });
+
+            groups.forEach((group) => {
+                group.hidden = !group.querySelector('.press-faq-item:not([hidden])');
             });
         });
     });
@@ -43,7 +49,7 @@ function initFaq() {
         });
     });
 
-    document.querySelectorAll('.press-faq-item__show-more').forEach((button) => {
+    faqContent.querySelectorAll('.press-faq-item__show-more').forEach((button) => {
         button.addEventListener('click', () => {
             const item = button.closest('.press-faq-item');
             if (!item) return;
@@ -52,13 +58,6 @@ function initFaq() {
             button.setAttribute('aria-expanded', String(isExpanded));
             const label = button.querySelector('span');
             if (label) label.textContent = isExpanded ? 'Скрыть' : 'Показать еще';
-        });
-    });
-
-    document.querySelectorAll('.press-faq-item__zoom').forEach((button) => {
-        button.addEventListener('click', () => {
-            const image = button.closest('.press-faq-item__media')?.querySelector('img');
-            if (image?.src) window.open(image.src, '_blank', 'noopener,noreferrer');
         });
     });
 }
