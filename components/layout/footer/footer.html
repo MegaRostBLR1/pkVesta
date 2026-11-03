@@ -59,7 +59,8 @@
           <div class="footer__contact-title">Центральный офис:</div>
           <div class="footer__contact-text">300028, г. Тула, Россия, ул. Торховский проезд, д.&nbsp;6</div>
           <div class="footer__contact-extra-text">
-            <span class="white-text">Режим работы:</span> пн-пт с&nbsp;8:00 до&nbsp;17:30
+            <span class="white-text">Режим работы:</span>
+            пн-пт с&nbsp;8:00 до&nbsp;17:30
           </div>
         </div>
       </address>
@@ -86,7 +87,8 @@
           </div>
           <div class="footer__contact-text">Быстровозводимые здания, сэндвич панели</div>
           <div class="footer__contact-extra-text">
-            <span class="white-text">Режим работы:</span> пн-пт с&nbsp;8:00 до&nbsp;17:30
+            <span class="white-text">Режим работы:</span>
+            пн-пт с&nbsp;8:00 до&nbsp;17:30
           </div>
         </div>
       </address>
@@ -104,82 +106,96 @@
     </div>
   </div>
   <!-- АККОРДЕОНЫ -->
-  <div class="accordion footer__section active">
-    <div class="footer-accordion__head accordion__head">
-      <div class="footer-accordion__title">Завод</div>
-      <button class="footer-accordion__btn accordion__btn" type="button" aria-label="Свернуть раздел «Завод»" aria-expanded="true"></button>
-    </div>
-    <div class="accordion__body">
-      <nav class="footer-accordion__nav">
+  <div class="footer__section">
+    <button
+      class="footer-accordion__head accordion__btn"
+      type="button"
+      aria-expanded="true"
+      aria-controls="footer-accordion-body-factory">
+      <span class="footer-accordion__title" id="footer-accordion-title-factory">Завод</span>
+      <span class="footer-accordion__icon accordion__toggle accordion__toggle--outline" aria-hidden="true"></span>
+    </button>
+    <div id="footer-accordion-body-factory">
+      <nav class="footer-accordion__nav" aria-labelledby="footer-accordion-title-factory">
         <ul class="footer-accordion__nav-list">
           <li class="footer-accordion__nav-item">
-            <a href="#" target="_blank" class="footer-accordion__nav-link">О нас</a>
+            <a href="#" class="footer-accordion__nav-link">О нас</a>
           </li>
           <li class="footer-accordion__nav-item">
-            <a href="#" target="_blank" class="footer-accordion__nav-link">Новости</a>
+            <a href="#" class="footer-accordion__nav-link">Новости</a>
           </li>
           <li class="footer-accordion__nav-item">
-            <a href="#" target="_blank" class="footer-accordion__nav-link">Пресса</a>
+            <a href="#" class="footer-accordion__nav-link">Пресса</a>
           </li>
           <li class="footer-accordion__nav-item">
-            <a href="#" target="_blank" class="footer-accordion__nav-link">Каталог зданий</a>
+            <a href="#" class="footer-accordion__nav-link">Каталог зданий</a>
           </li>
           <li class="footer-accordion__nav-item">
-            <a href="#" target="_blank" class="footer-accordion__nav-link">Наши объекты</a>
+            <a href="#" class="footer-accordion__nav-link">Наши объекты</a>
           </li>
         </ul>
       </nav>
     </div>
   </div>
-  <div class="accordion footer__section">
-    <div class="footer-accordion__head accordion__head">
-      <div class="footer-accordion__title">Клиентам</div>
-      <button class="footer-accordion__btn accordion__btn"></button>
-    </div>
-    <div class="accordion__body">
-      <nav class="footer-accordion__nav">
+
+  <div class="footer__section">
+    <button
+      class="footer-accordion__head accordion__btn"
+      type="button"
+      aria-expanded="false"
+      aria-controls="footer-accordion-body-clients">
+      <span class="footer-accordion__title" id="footer-accordion-title-clients">Клиентам</span>
+      <span class="footer-accordion__icon accordion__toggle accordion__toggle--outline" aria-hidden="true"></span>
+    </button>
+    <div id="footer-accordion-body-clients" hidden>
+      <nav class="footer-accordion__nav" aria-labelledby="footer-accordion-title-clients">
         <ul class="footer-accordion__nav-list">
           <li class="footer-accordion__nav-item">
-            <a href="#" target="_blank" class="footer-accordion__nav-link">Услуги</a>
+            <a href="#" class="footer-accordion__nav-link">Услуги</a>
           </li>
           <li class="footer-accordion__nav-item">
-            <a href="#" target="_blank" class="footer-accordion__nav-link">Решения</a>
+            <a href="#" class="footer-accordion__nav-link">Решения</a>
           </li>
           <li class="footer-accordion__nav-item">
-            <a href="#" target="_blank" class="footer-accordion__nav-link">Цены</a>
+            <a href="#" class="footer-accordion__nav-link">Цены</a>
           </li>
           <li class="footer-accordion__nav-item">
-            <a href="#" target="_blank" class="footer-accordion__nav-link">FAQ</a>
+            <a href="#" class="footer-accordion__nav-link">FAQ</a>
           </li>
           <li class="footer-accordion__nav-item">
-            <a href="#" target="_blank" class="footer-accordion__nav-link">Контакты</a>
+            <a href="#" class="footer-accordion__nav-link">Контакты</a>
           </li>
         </ul>
       </nav>
     </div>
   </div>
-  <div class="accordion footer__section">
-    <div class="footer-accordion__head accordion__head">
-      <div class="footer-accordion__title">Партнерам</div>
-      <button class="footer-accordion__btn accordion__btn"></button>
-    </div>
-    <div class="accordion__body">
-      <nav class="footer-accordion__nav">
+
+  <div class="footer__section">
+    <button
+      class="footer-accordion__head accordion__btn"
+      type="button"
+      aria-expanded="false"
+      aria-controls="footer-accordion-body-partners">
+      <span class="footer-accordion__title" id="footer-accordion-title-partners">Партнерам</span>
+      <span class="footer-accordion__icon accordion__toggle accordion__toggle--outline" aria-hidden="true"></span>
+    </button>
+    <div id="footer-accordion-body-partners" hidden>
+      <nav class="footer-accordion__nav" aria-labelledby="footer-accordion-title-partners">
         <ul class="footer-accordion__nav-list">
           <li class="footer-accordion__nav-item">
-            <a href="#" target="_blank" class="footer-accordion__nav-link">Lorem</a>
+            <a href="#" class="footer-accordion__nav-link">Lorem</a>
           </li>
           <li class="footer-accordion__nav-item">
-            <a href="#" target="_blank" class="footer-accordion__nav-link">Lorem</a>
+            <a href="#" class="footer-accordion__nav-link">Lorem</a>
           </li>
           <li class="footer-accordion__nav-item">
-            <a href="#" target="_blank" class="footer-accordion__nav-link">Lorem</a>
+            <a href="#" class="footer-accordion__nav-link">Lorem</a>
           </li>
           <li class="footer-accordion__nav-item">
-            <a href="#" target="_blank" class="footer-accordion__nav-link">Lorem</a>
+            <a href="#" class="footer-accordion__nav-link">Lorem</a>
           </li>
           <li class="footer-accordion__nav-item">
-            <a href="#" target="_blank" class="footer-accordion__nav-link">Lorem</a>
+            <a href="#" class="footer-accordion__nav-link">Lorem</a>
           </li>
         </ul>
       </nav>
@@ -192,7 +208,8 @@
       <button type="button" class="footer__subscribe-btn">Подписаться</button>
       <div class="footer__subscribe-agreement">
         Настоящим подтверждаю своё согласие на обработку персональных данных, ознакомлен и согласен с условиями -
-        <a class="footer__subscribe-agreement-link" href="#">политики конфиденциальности</a>.
+        <a class="footer__subscribe-agreement-link" href="#">политики конфиденциальности</a>
+        .
       </div>
     </div>
     <nav class="footer__bottom-legal">

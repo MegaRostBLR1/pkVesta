@@ -105,6 +105,7 @@
 
 /* аккардион в футере */
 .footer-accordion__head {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -116,17 +117,17 @@
   line-height: 2.6111rem;
 }
 
-.footer-accordion__btn {
+.footer-accordion__icon {
   width: 2.6667rem;
   height: 2.6667rem;
   border: 0.0556rem solid #ffffff66;
 }
 
-.footer-accordion__btn::before {
+.footer-accordion__icon::before {
   background-color: #ffffff;
 }
 
-.footer-accordion__btn::after {
+.footer-accordion__icon::after {
   background-color: #ffffff;
 }
 
@@ -726,11 +727,10 @@
     line-height: 32px;
   }
 
-  .footer-accordion__btn {
+  .footer-accordion__icon {
     flex: 0 0 36px;
     width: 36px;
     height: 36px;
-    border-radius: 50%;
   }
 
   .footer-accordion__nav-list {
@@ -986,7 +986,7 @@
     line-height: 32px;
   }
 
-  .footer-accordion__btn {
+  .footer-accordion__icon {
     flex: 0 0 36px;
     width: 36px;
     height: 36px;
