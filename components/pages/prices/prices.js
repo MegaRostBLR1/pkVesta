@@ -157,17 +157,22 @@ function initPricesTechAccordion() {
     );
   };
 
-  document.querySelectorAll(".accordion__btn").forEach((accordionButton) => {
-    if (accordionButton.dataset.initialized === "true") return;
-    accordionButton.dataset.initialized = "true";
+  document.querySelectorAll(".accordion__btn").forEach((btn) => {
+    if (btn.dataset.initialized === "true") return;
+    btn.dataset.initialized = "true";
 
-    const accordionBody = document.getElementById(accordionButton.getAttribute("aria-controls"));
-    if (!accordionBody) return;
+    const body = document.getElementById(btn.getAttribute("aria-controls"));
+    if (!body) return;
 
-    accordionButton.addEventListener("click", () => {
-      const isExpanded = accordionButton.getAttribute("aria-expanded") === "true";
-      accordionButton.setAttribute("aria-expanded", String(!isExpanded));
-      accordionBody.hidden = isExpanded;
+    const sync = (expanded) => {
+      btn.setAttribute("aria-expanded", String(expanded));
+      body.classList.toggle("is-open", expanded);
+    };
+
+    sync(btn.getAttribute("aria-expanded") === "true");
+
+    btn.addEventListener("click", () => {
+      sync(btn.getAttribute("aria-expanded") !== "true");
     });
   });
 }

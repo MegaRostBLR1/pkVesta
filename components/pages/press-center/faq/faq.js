@@ -28,27 +28,6 @@ function initFaq() {
     });
   });
 
-  // items.forEach((item) => {
-  //     const trigger = item.querySelector('.press-faq-item__question');
-  //     const answer = item.querySelector('.press-faq-item__answer');
-  //     if (!trigger || !answer) return;
-
-  //     trigger.addEventListener('click', () => {
-  //         const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
-  //         trigger.setAttribute('aria-expanded', String(!isExpanded));
-  //         item.classList.toggle('press-faq-item--expanded', !isExpanded);
-  //         answer.hidden = isExpanded;
-
-  //         const icon = trigger.querySelector('.press-faq-item__toggle');
-  //         if (icon) {
-  //             icon.replaceChildren();
-  //             const symbol = document.createElement('span');
-  //             symbol.className = isExpanded ? 'press-faq-item__plus' : 'press-faq-item__minus';
-  //             icon.append(symbol);
-  //         }
-  //     });
-  // });
-
   document.querySelectorAll(".accordion__btn").forEach((accordionButton) => {
     if (accordionButton.dataset.initialized === "true") return;
     accordionButton.dataset.initialized = "true";
