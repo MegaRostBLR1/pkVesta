@@ -7448,7 +7448,7 @@ h2 {
   color: #ffffff;
   text-align: center;
   background-color: #25313a;
-  background-image: linear-gradient(#00000080, #00000080), url('../static/images/home/home-advantages-factory.png');
+  background-image: linear-gradient(#00000080, #00000080), url("../static/images/home/home-advantages-factory.png");
   background-position: center;
   background-size: cover;
 }
@@ -12724,8 +12724,8 @@ h2 {
   }
 
   .services-contact__form-bottom {
-      gap: 27px;
-    }
+    gap: 27px;
+  }
 
   .services-contact__submit.btn {
     font-size: 14px;
@@ -13259,7 +13259,7 @@ h2 {
   .pices__table-container {
     gap: 24px;
   }
-  
+
   .prices-tech__title {
     font-size: 24px;
     line-height: 32px;
@@ -13317,7 +13317,7 @@ h2 {
     padding: 4px;
     color: #5d5d5d;
     font-family: "Onest-SemiBold", sans-serif;
-    background-color: #F5F8F7;
+    background-color: #f5f8f7;
     border-radius: 10px;
   }
 
@@ -13452,8 +13452,8 @@ h2 {
 
 @media (max-width: 680px) {
   .prices-tech__title {
-  font-size: 20px;
-  line-height: 28px;
+    font-size: 20px;
+    line-height: 28px;
   }
   .pices__table-container {
     gap: 17px;
@@ -13819,7 +13819,6 @@ h2 {
   width: 0.7778rem;
   height: 0.1111rem;
 }
-
 .accordion__toggle::after {
   width: 0.1111rem;
   height: 0.7778rem;
@@ -13830,5 +13829,44 @@ h2 {
   transform: translate(-50%, -50%) rotate(90deg);
 }
 
-/* footer */
+.accordion__toggle--main {
+  width: 40px;
+  height: 40px;
+  background-color: #324c881a;
+}
+.accordion__toggle--main::after,
+.accordion__toggle--main::before,
+.accordion__btn[aria-expanded="true"] .accordion__toggle--main {
+  background-color: #324c88;
+}
 
+.accordion__btn[aria-expanded="true"] .accordion__toggle--main::after {
+  background-color: #ffffff;
+}
+
+.accordion__toggle--yellow {
+  width: 40px;
+  height: 40px;
+  background-color: #FFF500;
+}
+.accordion__toggle--yellow::after,
+.accordion__toggle--yellow::before {
+  background-color: #324c88;
+}
+
+@media (max-width: 1200px) {
+  .accordion__toggle::before {
+    width: 10.5px;
+    height: 1.5px;
+  }
+  .accordion__toggle::after {
+    width: 1.5px;
+    height: 10.5px;
+  }
+  .accordion__toggle--main, .accordion__toggle--yellow {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* footer */

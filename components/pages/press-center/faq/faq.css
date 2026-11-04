@@ -228,7 +228,7 @@
 
 .press-faq-item__question:hover,
 .press-faq-item__question:focus-visible,
-.press-faq-item--expanded .press-faq-item__question {
+.press-faq-item__question[aria-expanded="true"] {
   color: #324c88;
 }
 
@@ -236,48 +236,6 @@
 .press-faq-item__zoom:focus-visible {
   outline: 2px solid #324c88;
   outline-offset: -4px;
-}
-
-.press-faq-item__toggle {
-  display: flex;
-  flex: 0 0 40px;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  border-radius: 50%;
-  background: #324c88;
-}
-
-.press-faq-item:not(.press-faq-item--expanded) .press-faq-item__toggle {
-  background: rgb(50 76 136 / 10%);
-}
-
-.press-faq-item__plus,
-.press-faq-item__minus {
-  position: relative;
-  width: 24px;
-  height: 24px;
-}
-
-.press-faq-item__plus::before,
-.press-faq-item__plus::after,
-.press-faq-item__minus::before {
-  position: absolute;
-  top: 11px;
-  left: 3px;
-  width: 18px;
-  height: 2px;
-  border-radius: 2px;
-  background: #324c88;
-  content: "";
-}
-
-.press-faq-item__plus::after {
-  transform: rotate(90deg);
-}
-
-.press-faq-item--expanded .press-faq-item__minus::before {
-  background: #ffffff;
 }
 
 .press-faq-item__answer {
@@ -363,25 +321,6 @@
     line-height: 30px;
   }
 
-  .press-faq-item__toggle {
-    flex-basis: 30px;
-    height: 30px;
-  }
-
-  .press-faq-item__plus,
-  .press-faq-item__minus {
-    width: 18px;
-    height: 18px;
-  }
-
-  .press-faq-item__plus::before,
-  .press-faq-item__plus::after,
-  .press-faq-item__minus::before {
-    top: 8px;
-    left: 2px;
-    width: 14px;
-  }
-
   .press-faq-item__answer {
     flex-direction: column;
     padding: 0 0 20px 0;
@@ -449,20 +388,6 @@
     line-height: 22px;
   }
 
-  .press-faq-item__plus,
-  .press-faq-item__minus {
-    width: 24px;
-    height: 24px;
-  }
-
-  .press-faq-item__plus::before,
-  .press-faq-item__plus::after,
-  .press-faq-item__minus::before {
-    top: 11px;
-    left: 3px;
-    width: 18px;
-  }
-
   .press-faq-item__answer {
     padding-bottom: 18px;
   }
@@ -488,10 +413,6 @@
 
   .press-faq-item__show-more {
     font-size: 16px;
-  }
-
-  .press-faq-item--expanded {
-    gap: 7px;
   }
 
   .press-faq-item__text {
