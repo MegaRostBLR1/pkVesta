@@ -1,158 +1,152 @@
 function initHome() {
   const hero = document.querySelector(".home-hero");
 
-    if (!hero) {
-        return;
-    }
+  if (!hero) {
+    return;
+  }
 
-    const contactForm = document.querySelector('.services-contact__form');
+  const contactForm = document.querySelector(".services-contact__form");
 
-    if (contactForm && !contactForm.dataset.validationInitialized) {
-        contactForm.dataset.validationInitialized = 'true';
+  if (contactForm && !contactForm.dataset.validationInitialized) {
+    contactForm.dataset.validationInitialized = "true";
 
-        const requiredFields = Array.from(contactForm.querySelectorAll('input[required]'));
+    const requiredFields = Array.from(contactForm.querySelectorAll("input[required]"));
 
-        const updateFieldValidity = (field) => {
-            const isInvalid = !field.checkValidity();
-            field.classList.toggle('is-invalid', isInvalid);
-            return isInvalid;
-        };
+    const updateFieldValidity = (field) => {
+      const isInvalid = !field.checkValidity();
+      field.classList.toggle("is-invalid", isInvalid);
+      return isInvalid;
+    };
 
-        requiredFields.forEach((field) => {
-            field.addEventListener('input', () => {
-                if (field.checkValidity()) {
-                    field.classList.remove('is-invalid');
-                }
-            });
-
-            field.addEventListener('change', () => updateFieldValidity(field));
-        });
-
-        contactForm.addEventListener('submit', (event) => {
-            const invalidFields = requiredFields.filter((field) => updateFieldValidity(field));
-
-            if (invalidFields.length > 0) {
-                event.preventDefault();
-                invalidFields[0].focus();
-            }
-        });
-    }
-
-
-    const countrySelector = document.querySelector('.services-contact__field--phone');
-
-    if (countrySelector && !countrySelector.dataset.countrySelectorInitialized) {
-        countrySelector.dataset.countrySelectorInitialized = 'true';
-
-        const countryTrigger = countrySelector.querySelector('.services-contact__phone-country');
-        const countryPopup = countrySelector.querySelector('.services-contact__country-popup');
-        const countryCode = countrySelector.querySelector('.services-contact__phone-code');
-        const countryFlag = countrySelector.querySelector('.services-contact__phone-flag');
-        const countryOptions = Array.from(countrySelector.querySelectorAll('.services-contact__country-option'));
-        const countryPopupClose = countrySelector.querySelector('.services-contact__country-popup-close');
-        const countryPopupBackButton = countrySelector.querySelector('.back-btn');
-
-        const phoneInput = countrySelector.querySelector('.services-contact__phone-input');
-
-        const updatePhoneInputPadding = () => {
-            if (!countryTrigger || !phoneInput) return;
-
-            const triggerRect = countryTrigger.getBoundingClientRect();
-            const inputRect = phoneInput.getBoundingClientRect();
-            const gap = 12;
-            const paddingLeft = Math.ceil(triggerRect.right - inputRect.left + gap);
-
-            phoneInput.style.setProperty('--phone-country-padding-left', `${paddingLeft}px`);
-        };
-
-        updatePhoneInputPadding();
-
-        if ('ResizeObserver' in window) {
-            const countrySelectorResizeObserver = new ResizeObserver(updatePhoneInputPadding);
-            countrySelectorResizeObserver.observe(countryTrigger);
-            countrySelectorResizeObserver.observe(phoneInput);
+    requiredFields.forEach((field) => {
+      field.addEventListener("input", () => {
+        if (field.checkValidity()) {
+          field.classList.remove("is-invalid");
         }
+      });
 
-        // ResizeObserver не отслеживает изменение положения элемента без изменения его размера.
-        // Поэтому пересчитываем отступ и при каждом изменении ширины/размера окна.
-        window.addEventListener('resize', updatePhoneInputPadding, { passive: true });
+      field.addEventListener("change", () => updateFieldValidity(field));
+    });
 
-        const setCountryPopupOpen = (isOpen) => {
-            countryPopup.hidden = !isOpen;
-            countryTrigger.setAttribute('aria-expanded', String(isOpen));
-            countrySelector.classList.toggle('is-country-popup-open', isOpen);
-            document.documentElement.classList.toggle('is-country-popup-open', isOpen);
-        };
+    contactForm.addEventListener("submit", (event) => {
+      const invalidFields = requiredFields.filter((field) => updateFieldValidity(field));
 
-        const closeCountryPopup = () => {
-            setCountryPopupOpen(false);
-            countryTrigger.focus();
-        };
+      if (invalidFields.length > 0) {
+        event.preventDefault();
+        invalidFields[0].focus();
+      }
+    });
+  }
 
-        countryTrigger.addEventListener('click', () => {
-            setCountryPopupOpen(countryPopup.hidden);
-        });
+  const countrySelector = document.querySelector(".services-contact__field--phone");
 
-        countryPopupClose?.addEventListener('click', closeCountryPopup);
-        countryPopupBackButton?.addEventListener('click', closeCountryPopup);
+  if (countrySelector && !countrySelector.dataset.countrySelectorInitialized) {
+    countrySelector.dataset.countrySelectorInitialized = "true";
 
-        countryOptions.forEach((option) => {
-            option.addEventListener('click', () => {
-                const selectedCode = option.dataset.code;
-                const selectedName = option.dataset.name;
-                const selectedFlag = option.querySelector('svg');
+    const countryTrigger = countrySelector.querySelector(".services-contact__phone-country");
+    const countryPopup = countrySelector.querySelector(".services-contact__country-popup");
+    const countryCode = countrySelector.querySelector(".services-contact__phone-code");
+    const countryFlag = countrySelector.querySelector(".services-contact__phone-flag");
+    const countryOptions = Array.from(countrySelector.querySelectorAll(".services-contact__country-option"));
+    const countryPopupClose = countrySelector.querySelector(".services-contact__country-popup-close");
+    const countryPopupBackButton = countrySelector.querySelector(".back-btn");
 
-                countryCode.textContent = selectedCode;
-                countryFlag.innerHTML = selectedFlag.innerHTML;
-                countryFlag.setAttribute('viewBox', selectedFlag.getAttribute('viewBox'));
-                countryTrigger.setAttribute('aria-label', `Код страны ${selectedName}, ${selectedCode}`);
+    const phoneInput = countrySelector.querySelector(".services-contact__phone-input");
 
-                countryOptions.forEach((countryOption) => {
-                    const isSelected = countryOption === option;
-                    countryOption.classList.toggle('is-selected', isSelected);
-                    countryOption.setAttribute('aria-selected', String(isSelected));
-                });
+    const updatePhoneInputPadding = () => {
+      if (!countryTrigger || !phoneInput) return;
 
-                const phoneInput = countrySelector.querySelector('.services-contact__phone-input');
-                phoneInput.dataset.countryCode = selectedCode;
-                setCountryPopupOpen(false);
-                countryTrigger.focus();
-            });
-        });
+      const triggerRect = countryTrigger.getBoundingClientRect();
+      const inputRect = phoneInput.getBoundingClientRect();
+      const gap = 12;
+      const paddingLeft = Math.ceil(triggerRect.right - inputRect.left + gap);
 
-        document.addEventListener('click', (event) => {
-            if (!countrySelector.contains(event.target)) {
-                setCountryPopupOpen(false);
-            }
-        });
+      phoneInput.style.setProperty("--phone-country-padding-left", `${paddingLeft}px`);
+    };
 
-        countrySelector.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && !countryPopup.hidden) {
-                setCountryPopupOpen(false);
-                countryTrigger.focus();
-            }
+    updatePhoneInputPadding();
 
-            if (event.key === 'ArrowDown' && event.target === countryTrigger) {
-                event.preventDefault();
-                setCountryPopupOpen(true);
-                countryOptions[0]?.focus();
-            }
-
-            if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
-                const currentIndex = countryOptions.indexOf(event.target);
-                if (currentIndex === -1) return;
-                event.preventDefault();
-                const direction = event.key === 'ArrowDown' ? 1 : -1;
-                const nextIndex = (currentIndex + direction + countryOptions.length) % countryOptions.length;
-                countryOptions[nextIndex]?.focus();
-            }
-        });
+    if ("ResizeObserver" in window) {
+      const countrySelectorResizeObserver = new ResizeObserver(updatePhoneInputPadding);
+      countrySelectorResizeObserver.observe(countryTrigger);
+      countrySelectorResizeObserver.observe(phoneInput);
     }
 
-    const processGrid = document.querySelector('.home-process__grid');
+    // ResizeObserver не отслеживает изменение положения элемента без изменения его размера.
+    // Поэтому пересчитываем отступ и при каждом изменении ширины/размера окна.
+    window.addEventListener("resize", updatePhoneInputPadding, { passive: true });
 
-    if (processGrid && !processGrid.dataset.headersEqualized) {
-        processGrid.dataset.headersEqualized = 'true';
+    const setCountryPopupOpen = (isOpen) => {
+      countryPopup.hidden = !isOpen;
+      countryTrigger.setAttribute("aria-expanded", String(isOpen));
+      countrySelector.classList.toggle("is-country-popup-open", isOpen);
+      document.documentElement.classList.toggle("is-country-popup-open", isOpen);
+    };
+
+    const closeCountryPopup = () => {
+      setCountryPopupOpen(false);
+      countryTrigger.focus();
+    };
+
+    countryTrigger.addEventListener("click", () => {
+      setCountryPopupOpen(countryPopup.hidden);
+    });
+
+    countryPopupClose?.addEventListener("click", closeCountryPopup);
+    countryPopupBackButton?.addEventListener("click", closeCountryPopup);
+
+    countryOptions.forEach((option) => {
+      option.addEventListener("click", () => {
+        const selectedCode = option.dataset.code;
+        const selectedName = option.dataset.name;
+        const selectedFlag = option.querySelector("svg");
+
+        countryCode.textContent = selectedCode;
+        countryFlag.innerHTML = selectedFlag.innerHTML;
+        countryFlag.setAttribute("viewBox", selectedFlag.getAttribute("viewBox"));
+        countryTrigger.setAttribute("aria-label", `Код страны ${selectedName}, ${selectedCode}`);
+
+        countryOptions.forEach((countryOption) => {
+          const isSelected = countryOption === option;
+          countryOption.classList.toggle("is-selected", isSelected);
+          countryOption.setAttribute("aria-selected", String(isSelected));
+        });
+
+        const phoneInput = countrySelector.querySelector(".services-contact__phone-input");
+        phoneInput.dataset.countryCode = selectedCode;
+        setCountryPopupOpen(false);
+        countryTrigger.focus();
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!countrySelector.contains(event.target)) {
+        setCountryPopupOpen(false);
+      }
+    });
+
+    countrySelector.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !countryPopup.hidden) {
+        setCountryPopupOpen(false);
+        countryTrigger.focus();
+      }
+
+      if (event.key === "ArrowDown" && event.target === countryTrigger) {
+        event.preventDefault();
+        setCountryPopupOpen(true);
+        countryOptions[0]?.focus();
+      }
+
+      if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+        const currentIndex = countryOptions.indexOf(event.target);
+        if (currentIndex === -1) return;
+        event.preventDefault();
+        const direction = event.key === "ArrowDown" ? 1 : -1;
+        const nextIndex = (currentIndex + direction + countryOptions.length) % countryOptions.length;
+        countryOptions[nextIndex]?.focus();
+      }
+    });
+  }
 
   const processGrid = document.querySelector(".home-process__grid");
 
@@ -163,9 +157,7 @@ function initHome() {
     const cardTitles = cardHeaders.map((header) => header.querySelector(".home-process__card-title")).filter(Boolean);
 
     const equalizeCardHeaders = () => {
-      cardHeaders.forEach((header) => {
-        header.style.removeProperty("height");
-      });
+      cardHeaders.forEach((header) => header.style.removeProperty("height"));
 
       const maxHeight = Math.max(0, ...cardHeaders.map((header) => header.getBoundingClientRect().height));
 
