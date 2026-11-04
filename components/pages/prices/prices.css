@@ -1,5 +1,4 @@
-/* Новая разметка аккардеона */
-
+/* Новые стили аккардеона c 4 карточками */
 .cards-accordion {
   margin: 0 auto;
   display: grid;
@@ -57,13 +56,10 @@
   color: #4d4d4dcc;
 }
 
-/* Аккордеон */
-
 .cards-accordion__accordion-item {
   padding: 26px 0px 20px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
   border-bottom: 1px solid rgb(0 0 0 / 5%);
 }
 
@@ -90,25 +86,6 @@
   text-align: left;
   text-transform: uppercase;
 }
-.cards-accordion__accordion-toggle-icon {
-  display: flex;
-  flex: 0 0 40px;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #fff500;
-}
-.cards-accordion__accordion-toggle-icon svg {
-  display: block;
-  width: 24px;
-  height: 24px;
-  fill: none;
-  stroke: #324c88;
-  stroke-linecap: round;
-  stroke-width: 2;
-}
 
 .cards-accordion__accordion-body {
   display: flex;
@@ -116,6 +93,7 @@
   gap: 14px;
   overflow: hidden;
   padding-left: 64px;
+  padding-top: 4;
 }
 .cards-accordion__accordion-body[hidden] {
   display: none;
@@ -174,62 +152,16 @@
 
   .cards-accordion__accordion-body {
     padding-left: 0;
+    padding-top: 14px;
   }
-}
 
-/* Агрокомплексы из ЛСТК — Figma 1857:26186, планшетный кадр 1024 px. */
-@media screen and (max-width: 1100px) {
   .cards-accordion__accordion-toggle {
     font-size: 18px;
   }
 
-  .cards-accordion__accordion-toggle-icon {
-    flex-basis: 30px;
-    width: 30px;
-    height: 30px;
-  }
-
-  .cards-accordion__accordion-toggle-icon svg {
-    width: 18px;
-    height: 18px;
-  }
-  .cards-accordion__accordion-item {
-    gap: 14px;
-  }
   .cards-accordion__accordion-text {
     font-size: 16px;
     padding-left: 54px;
-  }
-}
-
-@media screen and (min-width: 681px) and (max-width: 760px) {
-  .cards-accordion__accordion-list {
-    gap: 20px;
-  }
-
-  .cards-accordion__accordion-item {
-    gap: 16px;
-    padding-bottom: 16px;
-  }
-
-  .cards-accordion__accordion-toggle {
-    align-items: flex-start;
-    gap: 14px;
-    font-size: 16px;
-  }
-
-  .cards-accordion__accordion-toggle-icon {
-    flex-basis: 36px;
-    width: 36px;
-    height: 36px;
-  }
-
-  .cards-accordion__accordion-body {
-    gap: 12px;
-  }
-
-  .cards-accordion__accordion-text {
-    font-size: 15px;
   }
 }
 
@@ -240,17 +172,6 @@
   .cards-accordion__list {
     grid-template-columns: minmax(0, 1fr);
     gap: 18px;
-  }
-
-  .cards-accordion__accordion-toggle-icon {
-    flex-basis: 30px;
-    width: 30px;
-    height: 30px;
-  }
-
-  .cards-accordion__accordion-toggle-icon svg {
-    width: 18px;
-    height: 18px;
   }
 
   .cards-accordion__accordion-text {
