@@ -2,7 +2,6 @@
   margin-top: 5px;
   width: 100%;
   color: #4d4d4d;
-  background-color: black;
 }
 
 .news-item__header,
@@ -305,61 +304,15 @@
   object-fit: contain;
 }
 
-.news-gallery__zoom:focus-visible,
-.news-gallery__arrow:focus-visible {
+.news-gallery__zoom:focus-visible {
   outline: 2px solid #324c88;
   outline-offset: 3px;
 }
 
-.news-gallery__controls {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+.news-gallery__item--slider {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  min-width: 100%;
-}
-
-.news-gallery__arrow {
-  display: flex;
-  flex: 0 0 90px;
-  align-items: center;
-  justify-content: center;
-  height: 90px;
-  border-radius: 20px;
-}
-
-.news-gallery__arrow img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
-
-.news-gallery__arrow--previous img {
-  transform: rotate(90deg);
-}
-
-.news-gallery__arrow--next img {
-  transform: rotate(-90deg);
-}
-
-.news-gallery__pagination {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.news-gallery__dot {
-  flex: 0 0 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgb(50 76 136 / 20%);
-}
-
-.news-gallery__dot--active {
-  background: #324c88;
+  flex-direction: column;
+  justify-content: end;
 }
 
 @media screen and (max-width: 1600px) {
@@ -434,20 +387,6 @@
 
   .news-gallery__zoom {
     right: 19px;
-  }
-
-  .news-gallery__controls {
-    gap: 10px;
-  }
-
-  .news-gallery__arrow {
-    flex-basis: 64px;
-    height: 64px;
-  }
-
-  .news-gallery__arrow img {
-    width: 32px;
-    height: 32px;
   }
 }
 
@@ -552,6 +491,7 @@
     aspect-ratio: 16 / 9;
   }
 
+  .news-gallery__item--slider,
   .news-gallery__item--additional {
     display: none;
   }
@@ -571,22 +511,6 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 1.4;
-  }
-
-  .news-gallery__arrow {
-    flex-basis: 48px;
-    height: 48px;
-    border-radius: 10px;
-  }
-
-  .news-gallery__arrow img {
-    width: 24px;
-    height: 24px;
-  }
-
-  .news-gallery__dot {
-    flex-basis: 8px;
-    height: 8px;
   }
 }
 

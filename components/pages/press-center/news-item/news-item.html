@@ -127,11 +127,7 @@
             </div>
           </div>
 
-          <button
-            class="news-article__more"
-            type="button"
-            aria-expanded="false"
-            aria-controls="news-article-columns">
+          <button class="news-article__more" type="button" aria-expanded="false" aria-controls="news-article-columns">
             <span>Показать еще</span>
             <svg
               width="24"
@@ -240,34 +236,36 @@
           </button>
         </figure>
 
-        <div class="news-gallery__item news-gallery__item--additional">
-          <div class="news-gallery__controls" role="group" aria-label="Управление фотогалереей">
+        <div class="news-gallery__item news-gallery__item--slider">
+          <nav class="slider-controls slider-controls--dark" aria-label="Навигация по слайдам">
             <button
-              class="news-gallery__arrow news-gallery__arrow--previous"
+              class="slider-controls__arrow slider-controls__arrow--prev"
               type="button"
-              aria-label="Предыдущие фотографии">
-              <img src="/static/images/news/news-item/arrow-prev.svg" alt="" aria-hidden="true" />
+              aria-label="Предыдущий слайд"
+              disabled>
+              <svg viewBox="0 0 40 40" aria-hidden="true">
+                <path d="M24 8 12 20l12 12"></path>
+              </svg>
             </button>
-            <div class="news-gallery__pagination" role="img" aria-label="Страница 1 из 4">
-              <span class="news-gallery__dot news-gallery__dot--active"></span>
-              <span class="news-gallery__dot"></span>
-              <span class="news-gallery__dot"></span>
-              <span class="news-gallery__dot"></span>
+            <div class="slider-controls__pagination" aria-label="Слайд 1 из 4">
+              <span class="slider-controls__dot slider-controls__dot--active" aria-hidden="true"></span>
+              <span class="slider-controls__dot" aria-hidden="true"></span>
+              <span class="slider-controls__dot" aria-hidden="true"></span>
+              <span class="slider-controls__dot" aria-hidden="true"></span>
             </div>
             <button
-              class="news-gallery__arrow news-gallery__arrow--next"
+              class="slider-controls__arrow slider-controls__arrow--next"
               type="button"
-              aria-label="Следующие фотографии">
-              <img src="/static/images/news/news-item/arrow-next.svg" alt="" aria-hidden="true" />
+              aria-label="Следующий слайд"
+              disabled>
+              <svg viewBox="0 0 40 40" aria-hidden="true">
+                <path d="m16 8 12 12-12 12"></path>
+              </svg>
             </button>
-          </div>
+          </nav>
         </div>
       </div>
-      <button
-        class="news-gallery__more"
-        type="button"
-        aria-expanded="false"
-        aria-controls="news-gallery-grid">
+      <button class="news-gallery__more" type="button" aria-expanded="false" aria-controls="news-gallery-grid">
         <span>Показать еще</span>
         <svg
           width="24"
