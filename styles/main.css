@@ -7764,8 +7764,8 @@ h2 {
   }
 }
 
-/* Страница: быстровозводимые здания */
-.buildings {
+/* Страница: быстровозводимые агрокомплексы */
+/* .buildings {
   padding-bottom: 2.2222rem;
 }
 
@@ -7920,7 +7920,6 @@ h2 {
   }
 }
 
-/* Блок агрокомплексов — макет Figma 1857:39054. */
 .buildings__agro {
   position: relative;
   display: flex;
@@ -8113,7 +8112,6 @@ h2 {
   }
 }
 
-/* Figma node 1857:46319 — layout for the 1024 px frame. */
 @media (min-width: 769px) and (max-width: 1300px) {
   .buildings-gallery {
     padding: 40px;
@@ -8226,9 +8224,6 @@ h2 {
   }
 }
 
-/* Макет Figma 1857:41413 — ширина 1440 px.
-   Сохраняем desktop-композицию 1920 px и корректируем только геометрию
-   секции и навигации для целевого фрейма 1440 px. */
 @media (min-width: 1301px) and (max-width: 1600px) {
   .buildings__agro {
     min-height: 830px;
@@ -8322,8 +8317,6 @@ h2 {
   }
 }
 
-/* Макет Figma 1857:44024 — планшетный desktop 1024 px.
-   Геометрия сверена с фреймом 1024×850; правила 1440 и 1920 px сохранены отдельно. */
 @media (min-width: 769px) and (max-width: 1300px) {
   .buildings__agro {
     min-height: 840px;
@@ -8431,7 +8424,6 @@ h2 {
   }
 }
 
-/* Figma 1857:39056 — desktop 1920 px. */
 @media (min-width: 1601px) {
   .buildings__agro {
     min-height: 830px;
@@ -8535,8 +8527,6 @@ h2 {
   }
 }
 
-/* Figma 1857:46660 — мобильная версия 360 px.
-   Планшетный и desktop-макеты выше остаются независимыми. */
 @media (max-width: 680px) {
   .buildings__agro {
     min-height: 480px;
@@ -8738,10 +8728,10 @@ h2 {
   .buildings__agro-tabs {
     width: 334px;
   }
-}
+} */
 
-/* Секция «Описание» — Figma 1857:40155, фрейм 1920 × 958. */
-.buildings-description {
+
+/* .buildings-description {
   margin: 0 0.5556rem 0.5556rem;
   padding: 5.3333rem 2.2222rem;
   border-radius: 1.1111rem;
@@ -9142,7 +9132,6 @@ h2 {
   }
 }
 
-/* Адаптация блока «Описание» под макет Figma 1857:42515 (1440 px). */
 @media (min-width: 901px) and (max-width: 1600px) {
   .buildings-description {
     padding: 3.5556rem 2.2222rem;
@@ -9195,7 +9184,6 @@ h2 {
   }
 }
 
-/* Блок «Описание»: адаптация под планшетный макет Figma 1857:45126 (1024 px). */
 .buildings-description__media--tablet {
   display: none;
 }
@@ -9314,7 +9302,6 @@ h2 {
   }
 }
 
-/* Мобильный макет Figma 1857:46708 — ширина 360 px. */
 @media (max-width: 375px) {
   .buildings-description {
     margin: 0 10px 10px;
@@ -9456,7 +9443,6 @@ h2 {
   }
 }
 
-/* Блок «Преимущества» — Figma 1857:40218, desktop 1920 px. */
 .buildings-advantages {
   margin: 10px;
   padding: 64px 60px 70px;
@@ -9665,7 +9651,6 @@ h2 {
   }
 }
 
-/* Преимущества — Figma 1857:42579, desktop 1440 px. */
 .buildings-advantages {
   margin: 0 5px 5px;
   padding: 80px 50px 60px;
@@ -10040,7 +10025,6 @@ h2 {
   }
 }
 
-/* Responsive arrangement from Figma 1866:80986 (1024 px and below). */
 .buildings-advantages__item--responsive {
   display: none;
 }
@@ -10217,7 +10201,6 @@ h2 {
   }
 }
 
-/* Комплектация здания — Figma node 1866:91048. */
 .buildings-complectation {
   margin: 0 5px 5px;
   padding: 20px;
@@ -10427,7 +10410,6 @@ h2 {
   }
 }
 
-/* Фотогалерея — Figma node 1857:41326, desktop 1920 px. */
 .buildings-gallery {
   margin: 0 10px 10px;
   padding: 40px;
@@ -10586,7 +10568,7 @@ h2 {
   margin: 0 auto;
   object-fit: contain;
 }
-/* Figma node 1857:43694 — tablet/compact desktop layout, 1440 px. */
+
 @media (min-width: 1301px) and (max-width: 1600px) {
   .buildings-gallery {
     padding: 40px;
@@ -10696,8 +10678,6 @@ h2 {
   }
 }
 
-/* Figma node 1857:47901 — mobile gallery, 360 px.
-   Desktop frames (1920/1440/1024) retain their existing composition. */
 @media (max-width: 680px) {
   .buildings-gallery {
     margin: 0 10px 10px;
@@ -10767,7 +10747,6 @@ h2 {
   }
 }
 
-/* Каталог отраслей — Figma 1857:43723. */
 .buildings-catalog {
   margin: 0;
   padding: 10px;
@@ -11098,7 +11077,6 @@ h2 {
   }
 }
 
-/* Figma node 1857:46397 — точная адаптация планшетного кадра 1024 px. */
 @media (min-width: 901px) and (max-width: 1100px) {
   .buildings-catalog__panel {
     gap: 14px;
@@ -11142,7 +11120,6 @@ h2 {
   }
 }
 
-/* Страница: характеристики быстровозводимых зданий */
 .buildings-characteristics {
   padding-bottom: 2.2222rem;
 }
@@ -11213,7 +11190,6 @@ h2 {
   line-height: 1.35;
 }
 
-/* Технические характеристики — Figma 1857:94701, desktop 1920 px. */
 .buildings-characteristics__technical {
   padding: 0 10px 10px;
   border-radius: 10px;
@@ -11479,9 +11455,6 @@ h2 {
   }
 }
 
-/* Figma 1857:49331 — desktop 1440 px.
-   На 1920 px сохраняется базовая геометрия выше; этот диапазон
-   компенсирует только разницу размеров между desktop-макетами. */
 @media screen and (min-width: 1400px) and (max-width: 1600px) {
   .buildings-characteristics__technical-inner {
     gap: 50px;
@@ -11527,9 +11500,6 @@ h2 {
   }
 }
 
-/* Figma 1857:49331 — tablet viewport 1024 px.
-   Preserve the two-column composition used by the 1920/1440 layouts.
-   Grid items stretch to the row track so both cells in each row have equal height. */
 @media screen and (min-width: 681px) and (max-width: 1100px) {
   .buildings-characteristics__technical {
     padding: 0 10px 10px;
@@ -11586,7 +11556,6 @@ h2 {
   }
 }
 
-/* Technical characteristics: column order and equal-height paired cells. */
 @media screen and (min-width: 681px) {
   .buildings-characteristics__technical-panel {
     grid-auto-flow: column;
@@ -11596,7 +11565,6 @@ h2 {
   }
 }
 
-/* Figma node 1857:51974 — 1024 px. */
 @media screen and (min-width: 761px) and (max-width: 1100px) {
   .buildings-characteristics__technical-inner {
     gap: 24px;
@@ -11656,7 +11624,6 @@ h2 {
   }
 }
 
-/* Mobile 360 px — Figma 1857:53588; expanded state 2177:135633. */
 .buildings-characteristics__show-more {
   display: none;
 }
@@ -11765,7 +11732,6 @@ h2 {
   }
 }
 
-/* Процесс производства — Figma 1857:95907, desktop 1920 px. */
 .buildings-production {
   margin: 0 10px 10px;
   padding: 0 0 10px;
@@ -12057,8 +12023,6 @@ h2 {
   }
 }
 
-/* Figma 1857:50544 — desktop 1440 px.
-   Геометрия адаптируется от 1920 px: gallery 1052 + 8 + 280 px, высота 591 px. */
 @media screen and (min-width: 1400px) and (max-width: 1600px) {
   .buildings-production__panel {
     gap: 36px;
@@ -12119,8 +12083,6 @@ h2 {
   }
 }
 
-/* Figma 1857:53202 — tablet 1024 px.
-   Сохраняет desktop-композицию, адаптируя размеры под ширину внутреннего контейнера 924 px. */
 @media screen and (min-width: 1000px) and (max-width: 1100px) {
   .buildings-production__panel {
     gap: 24px;
@@ -12184,8 +12146,6 @@ h2 {
   }
 }
 
-/* Figma 1857:54814 — mobile 360 px. */
-/* Mobile layout from the 360 px Figma frame; desktop, 1440 px and 1024 px rules stay unchanged. */
 @media screen and (max-width: 375px) {
   .buildings-production {
     margin: 0 4px 10px;
@@ -12261,7 +12221,9 @@ h2 {
     font-size: 14px;
     line-height: 24px;
   }
-}
+} */
+
+/* services */
 
 .services {
   width: 100%;
@@ -12715,6 +12677,7 @@ h2 {
     transition: none;
   }
 }
+
 /* Price */
 .prices {
   margin-top: 5px;
