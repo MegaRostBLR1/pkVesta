@@ -106,62 +106,154 @@ function initBuildings() {
     });
   }
 
-  // if (description.dataset.initialized === 'true') {
-  //   return;
-  // }
+  //  аккордеон
+  const accordion = description.querySelector(".buildings-description__accordion");
+  const mainImage = description.querySelector(
+    ".buildings-description__accordion-media--main .buildings-description__image"
+  );
+  const modalOverlay = description.querySelector(".accordion-item__modal-overlay");
+  const lightboxOverlay = description.querySelector(".accordion-item__lightbox-overlay");
 
-  // description.dataset.initialized = 'true';
+  if (accordion && mainImage && modalOverlay && lightboxOverlay) {
+    const modalImage = modalOverlay.querySelector(".accordion-item__modal-image");
+    const modalTitle = modalOverlay.querySelector(".accordion-item__modal-title");
+    const modalText = modalOverlay.querySelector(".accordion-item__modal-text");
+    const modalSlider = modalOverlay.querySelector(".accordion-item__modal-slider");
+    const modalPagination = modalSlider.querySelector(".slider-controls__pagination");
+    const lightboxImage = lightboxOverlay.querySelector(".accordion-item__lightbox-image");
+    const lightboxCaption = lightboxOverlay.querySelector(".accordion-item__lightbox-caption");
+    const openedPopups = [];
+    let modalPhotos = [];
+    let photoIndex = 0;
 
-  // const accordionItems = Array.from(
-  //     description.querySelectorAll('.buildings-description__item')
-  // );
-  // accordionItems.forEach((item) => {
-  //   const trigger = item.querySelector('.buildings-description__trigger');
-  //   const panel = item.querySelector('.buildings-description__panel');
-  //   const icon = trigger?.querySelector('.buildings-description__icon img');
+    // Переносит фото вместе с большой картинкой и подписью
+    const copyPhoto = (from, to) => {
+      to.src = from.getAttribute("src");
+      to.alt = from.alt;
+      to.dataset.fullSrc = from.dataset.fullSrc || from.getAttribute("src");
+      to.dataset.caption = from.dataset.caption || "";
+    };
 
-  //   if (!trigger || !panel || !icon || !panel.textContent.trim()) {
-  //     return;
-  //   }
+    const openPopup = (overlay, opener) => {
+      overlay.classList.add("active");
+      openedPopups.push({ overlay, opener });
+      document.body.style.overflow = "hidden";
+      overlay.querySelector("[data-popup-close]").focus();
+    };
 
-  //   trigger.addEventListener('click', () => {
-  //     const shouldExpand = trigger.getAttribute('aria-expanded') !== 'true';
+    const closePopup = () => {
+      const popup = openedPopups.pop();
 
-  //     accordionItems.forEach((accordionItem) => {
-  //       const accordionTrigger = accordionItem.querySelector('.buildings-description__trigger');
-  //       const accordionPanel = accordionItem.querySelector('.buildings-description__panel');
-  //       const accordionIcon = accordionTrigger?.querySelector('.buildings-description__icon img');
+      if (!popup) {
+        return;
+      }
 
-  //       if (!accordionTrigger || !accordionPanel || !accordionIcon) {
-  //         return;
-  //       }
+      popup.overlay.classList.remove("active");
 
-  //       const isExpanded = accordionItem === item && shouldExpand;
+      if (!openedPopups.length) {
+        document.body.style.overflow = "";
+      }
 
-  //       accordionTrigger.setAttribute('aria-expanded', String(isExpanded));
-  //       accordionPanel.hidden = !isExpanded;
-  //       accordionIcon.src = isExpanded
-  //           ? 'https://www.figma.com/api/mcp/asset/b4ec6f0c-4a5e-43d7-a0da-6bd0b72e7ff1/33e3b.svg'
-  //           : 'https://www.figma.com/api/mcp/asset/b4ec6f0c-4a5e-43d7-a0da-6bd0b72e7ff1/5d936.svg';
-  //     });
-  //   });
-  // });
+      popup.opener.focus();
+    };
 
-  const zoomButtons = description.querySelectorAll(".buildings-description__zoom");
-  const lightbox = description.querySelector(".buildings-description__lightbox");
+    const showModalPhoto = (index) => {
+      photoIndex = (index + modalPhotos.length) % modalPhotos.length;
+      copyPhoto(modalPhotos[photoIndex], modalImage);
+      modalPagination.setAttribute("aria-label", `Фото ${photoIndex + 1} из ${modalPhotos.length}`);
+      modalPagination.querySelectorAll(".slider-controls__dot").forEach((dot, dotIndex) => {
+        dot.classList.toggle("slider-controls__dot--active", dotIndex === photoIndex);
+      });
+    };
 
-  if (lightbox) {
-    zoomButtons.forEach((zoomButton) => {
-      zoomButton.addEventListener("click", () => {
-        if (typeof lightbox.showModal === "function") {
-          lightbox.showModal();
+    const openModal = (item, opener) => {
+      const details = item.querySelector(".buildings-description__details");
+
+      modalTitle.textContent = item.querySelector(".buildings-description__item-title").textContent;
+      modalText.innerHTML = details.querySelector(".buildings-description__details-content").innerHTML;
+      modalPhotos = [
+        item.querySelector(".buildings-description__image"),
+        ...details.querySelectorAll(".buildings-description__details-photos img"),
+      ];
+      modalPagination.innerHTML = modalPhotos
+        .map(() => '<span class="slider-controls__dot" aria-hidden="true"></span>')
+        .join("");
+      modalSlider.hidden = modalPhotos.length < 2;
+      showModalPhoto(0);
+      openPopup(modalOverlay, opener);
+    };
+
+    const openLightbox = (image, opener) => {
+      lightboxImage.src = image.dataset.fullSrc || image.getAttribute("src");
+      lightboxImage.alt = image.alt;
+      lightboxCaption.textContent = image.dataset.caption || "";
+      lightboxCaption.hidden = !image.dataset.caption;
+      openPopup(lightboxOverlay, opener);
+    };
+
+    description.addEventListener("click", (event) => {
+      const trigger = event.target.closest(".buildings-description__accordion-trigger");
+      const more = event.target.closest(".buildings-description__more");
+      const zoom = event.target.closest(".buildings-description__zoom, .accordion-item__modal-zoom");
+      const arrow = event.target.closest(".accordion-item__modal-slider .slider-controls__arrow");
+
+      // Открыли пункт аккордеона: большое фото слева меняется на фото этого пункта
+      if (trigger && trigger.getAttribute("aria-expanded") === "true") {
+        const item = trigger.closest(".buildings-description__item");
+        copyPhoto(item.querySelector(".buildings-description__image"), mainImage);
+      }
+
+      if (more) {
+        openModal(more.closest(".buildings-description__item"), more);
+      }
+
+      if (zoom) {
+        openLightbox(zoom.parentElement.querySelector("img"), zoom);
+      }
+
+      if (arrow) {
+        showModalPhoto(photoIndex + (arrow.classList.contains("slider-controls__arrow--prev") ? -1 : 1));
+      }
+    });
+
+    [modalOverlay, lightboxOverlay].forEach((overlay) => {
+      overlay.addEventListener("click", (event) => {
+        if (event.target === overlay || event.target.closest("[data-popup-close]")) {
+          closePopup();
         }
       });
     });
 
-    lightbox.addEventListener("click", (event) => {
-      if (event.target === lightbox) {
-        lightbox.close();
+    document.addEventListener("keydown", (event) => {
+      const popup = openedPopups[openedPopups.length - 1];
+
+      if (!popup) {
+        return;
+      }
+
+      if (event.key === "Escape") {
+        closePopup();
+        return;
+      }
+
+      if (event.key !== "Tab") {
+        return;
+      }
+
+      // Tab ходит по кругу внутри открытого окна
+      const focusable = Array.from(popup.overlay.querySelectorAll("a[href], button:not([disabled])")).filter(
+        (element) => element.getClientRects().length
+      );
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      const isInside = popup.overlay.contains(document.activeElement);
+
+      if (event.shiftKey && (!isInside || document.activeElement === first)) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && (!isInside || document.activeElement === last)) {
+        event.preventDefault();
+        first.focus();
       }
     });
   }

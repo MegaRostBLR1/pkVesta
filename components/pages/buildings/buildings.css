@@ -1,3 +1,257 @@
+/* ОБЩИЕ СТИЛИ ДЛЯ ПОПАПА С УВЕЛИЧЕНИЕМ АККОРДЕОНА И КОНПКОЙ ПОДРОБНЕЕ */
+.accordion-item__lightbox {
+  max-width: 90vw;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 1.1111rem;
+  background-color: #f7f8fa;
+}
+
+.accordion-item__lightbox-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 14px;
+}
+
+.accordion-item__lightbox-close {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  color: #324c88;
+  font-size: 24px;
+  font-family: "Onest-Medium";
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.accordion-item__lightbox-close svg {
+  flex: none;
+  width: 36px;
+  height: 36px;
+}
+
+.close-btn:focus-visible {
+  outline: 0.1111rem solid currentColor;
+  outline-offset: 0.2222rem;
+}
+
+.accordion-item__lightbox-image {
+  display: block;
+  width: auto;
+  max-width: 84vw;
+  max-height: 78vh;
+  border-radius: 10px;
+}
+
+.accordion-item__lightbox-caption {
+  margin-top: 30px;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 150%;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.accordion-item__modal {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  gap: 48px;
+  width: calc(100% - 40px);
+  max-width: 88vw;
+  min-height: 83vh;
+  max-height: calc(100% - 40px);
+  margin: auto;
+  padding: 30px;
+  border-radius: 1.1111rem;
+  background: #ffffff;
+}
+
+.accordion-item__modal-close {
+  position: absolute;
+  z-index: 1;
+  top: 30px;
+  right: 30px;
+  width: 36px;
+  height: 36px;
+  color: #717171;
+}
+
+.accordion-item__modal-close svg {
+  width: 100%;
+  height: 100%;
+}
+
+.accordion-item__modal-media {
+  position: relative;
+  min-width: 0;
+  min-height: 400px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.accordion-item__modal-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  object-fit: cover;
+}
+
+.accordion-item__modal-zoom {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #ffffff0a;
+  box-shadow: inset 0 0 60px #ffffff08;
+  backdrop-filter: blur(48px);
+  color: #ffffff;
+}
+
+.accordion-item__modal-zoom svg {
+  display: block;
+  width: 36px;
+  height: 36px;
+  fill: currentColor;
+}
+
+.accordion-item__modal-slider {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.accordion-item__modal-slider[hidden] {
+  display: none;
+}
+
+.accordion-item__modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  min-width: 0;
+  padding-right: 60px;
+  overflow-y: auto;
+  color: #4d4d4d;
+}
+
+.accordion-item__modal-title {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 48px;
+  text-transform: none;
+}
+
+.accordion-item__modal-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7778rem;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.accordion-item__modal-button {
+  align-self: flex-end;
+  margin-top: auto;
+  border: 1px solid #324c88;
+  font-size: 18px;
+  line-height: 23px;
+  padding: 24px 30px;
+  min-width: 214px;
+}
+
+.accordion-item__lightbox-close:focus-visible,
+.accordion-item__modal-close:focus-visible,
+.accordion-item__modal-zoom:focus-visible {
+  outline: 0.1111rem solid #324c88;
+  outline-offset: 0.2222rem;
+}
+
+@media screen and (max-width: 1100px) {
+  .accordion-item__modal {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 24px;
+    min-height: 0;
+  }
+
+  .accordion-item__modal-media {
+    min-height: 0;
+    height: 400px;
+  }
+
+  .accordion-item__modal-content {
+    padding: 0;
+  }
+
+  .accordion-item__modal-title {
+    font-size: 1.6667rem;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .accordion-item__lightbox {
+    max-width: 96vw;
+    padding: 0.6667rem;
+  }
+
+  .accordion-item__lightbox-image {
+    max-width: 90vw;
+  }
+
+  .accordion-item__lightbox-caption {
+    font-size: 0.7778rem;
+  }
+
+  .accordion-item__modal {
+    gap: 20px;
+    width: calc(100% - 20px);
+    max-height: calc(100% - 20px);
+    padding: 10px;
+  }
+
+  .accordion-item__modal-close {
+    top: 10px;
+    right: 10px;
+  }
+
+  .accordion-item__modal-media {
+    height: 240px;
+  }
+
+  .accordion-item__modal-zoom {
+    width: 3.1111rem;
+    height: 3.1111rem;
+  }
+
+  .accordion-item__modal-zoom svg {
+    width: 1.5556rem;
+    height: 1.5556rem;
+  }
+
+  .accordion-item__modal-content {
+    gap: 14px;
+    padding-bottom: 10px;
+  }
+
+  .accordion-item__modal-title {
+    font-size: 1.1111rem;
+  }
+
+  .accordion-item__modal-text {
+    font-size: 0.7778rem;
+  }
+
+  .accordion-item__modal-button {
+    align-self: stretch;
+  }
+}
+
 /* Страница: быстровозводимые агрокомплексы */
 .buildings-agro {
   /* position: relative; */
@@ -537,7 +791,7 @@
 .buildings-description__zoom:focus-visible,
 .buildings-description__accordion-trigger:focus-visible,
 .buildings-description__more:focus-visible,
-.buildings-description__lightbox-close:focus-visible {
+.buildings-description__details-link:focus-visible {
   outline: 0.1111rem solid #324c88;
   outline-offset: 0.2222rem;
 }
@@ -612,21 +866,6 @@
   background: #324c88cc;
 }
 
-.buildings-description__lightbox {
-  width: auto;
-  max-width: 90vw;
-  max-height: 90vh;
-  padding: 1rem;
-  overflow: auto;
-  border: 0;
-  border-radius: 1.1111rem;
-  background: #f5f8f7;
-}
-
-.buildings-description__lightbox::backdrop {
-  background: #000000b3;
-}
-
 .buildings-description__lightbox-controls {
   display: flex;
   justify-content: flex-end;
@@ -652,6 +891,115 @@
   max-width: 84vw;
   max-height: 78vh;
   object-fit: contain;
+}
+
+.buildings-description__lightbox {
+  max-width: 90vw;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 1.1111rem;
+  background: #f5f8f7;
+}
+
+.buildings-description__lightbox-caption {
+  margin-top: 0.7778rem;
+  color: #4d4d4d;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.buildings-description__modal {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
+  width: calc(100% - 40px);
+  max-width: 1600px;
+  min-height: 70vh;
+  margin: auto;
+  padding: 20px;
+  border-radius: 1.1111rem;
+  background: #ffffff;
+}
+
+.buildings-description__modal-close {
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6667rem;
+  height: 2.6667rem;
+  border-radius: 0.5556rem;
+  background: #ffffff;
+  color: #4d4d4d;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.buildings-description__modal-media {
+  position: relative;
+  min-width: 0;
+  min-height: 400px;
+  overflow: hidden;
+  border-radius: 0.5556rem;
+}
+
+.buildings-description__modal-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  object-fit: cover;
+}
+
+.buildings-description__modal-slider {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.buildings-description__modal-slider[hidden] {
+  display: none;
+}
+
+.buildings-description__details-text {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: #717171;
+}
+
+.buildings-description__details-subtitle {
+  font-family: "Onest-SemiBold", sans-serif;
+  font-weight: 600;
+  color: #4d4d4d;
+}
+
+.buildings-description__details-link {
+  color: #324c88;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 160%;
+}
+
+.buildings-description__details-link:hover {
+  text-decoration: underline;
+}
+
+.buildings-description__modal-button {
+  align-self: flex-end;
+  margin-top: auto;
+  border: 1px solid #324c88;
+}
+
+.buildings-description__modal-close:focus-visible,
+.buildings-description__details-link:focus-visible {
+  outline: 0.1111rem solid #324c88;
+  outline-offset: 0.2222rem;
 }
 
 /* Адаптация блока «Описание» под макет Figma 1857:42515 (1440 px). */
@@ -788,6 +1136,25 @@
   .buildings-description__copy {
     gap: 14px;
     font-size: 16px;
+  }
+
+  .buildings-description__modal {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    min-height: 0;
+  }
+
+  .buildings-description__modal-media {
+    min-height: 0;
+    height: 400px;
+  }
+
+  .buildings-description__modal-content {
+    padding: 0;
+  }
+
+  .buildings-description__modal-title {
+    font-size: 1.6667rem;
   }
 }
 
@@ -955,10 +1322,7 @@
   .buildings-description__lightbox-image {
     max-width: 90vw;
   }
-}
 
-/* Мобильный макет Figma 1857:46708 — ширина 360 px. */
-@media screen and (max-width: 375px) {
   .buildings-description {
     margin: 0 10px 10px;
     padding: 0 4px 10px;
@@ -1066,6 +1430,42 @@
   .buildings-description__copy {
     gap: 25px;
     font-size: 14px;
+  }
+
+  .buildings-description__lightbox-caption {
+    font-size: 0.7778rem;
+  }
+
+  .buildings-description__modal {
+    gap: 20px;
+    width: calc(100% - 20px);
+    padding: 10px;
+  }
+
+  .buildings-description__modal-close {
+    top: 10px;
+    right: 10px;
+  }
+
+  .buildings-description__modal-media {
+    height: 240px;
+  }
+
+  .buildings-description__modal-content {
+    gap: 14px;
+    padding-bottom: 10px;
+  }
+
+  .buildings-description__modal-title {
+    font-size: 1.1111rem;
+  }
+
+  .buildings-description__modal-text {
+    font-size: 0.7778rem;
+  }
+
+  .buildings-description__modal-button {
+    align-self: stretch;
   }
 }
 
@@ -1183,7 +1583,7 @@
 .buildings-advantages__item-descr p {
   font-size: 18px;
   line-height: 28px;
-  color: #FFFFFFCC;
+  color: #ffffffcc;
 }
 
 .buildings-advantages__item-label {
@@ -1205,7 +1605,6 @@
     min-height: 1139px;
     background-position: 95.5% 570px;
   }
-
 }
 @media screen and (max-width: 1300px) {
   .buildings-advantages {
@@ -1846,7 +2245,7 @@
   width: 100%;
 }
 
-.buildings-catalog__card {
+.buildings-catalog__card-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1860,6 +2259,7 @@
 
 .buildings-catalog__image-wrap {
   width: 100%;
+  height: 312px;
   overflow: hidden;
   border-radius: 30px;
 }
@@ -1963,7 +2363,7 @@
     font-size: 16px;
   }
 
-  .buildings-catalog__card {
+  .buildings-catalog__card-wrapper {
     min-height: 0;
   }
 
@@ -2051,7 +2451,7 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .buildings-catalog__card {
+  .buildings-catalog__card-wrapper {
     gap: 12px;
     padding: 4px 4px 10px;
   }

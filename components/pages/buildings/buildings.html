@@ -79,17 +79,19 @@
       </div>
     </header>
     <div class="buildings-description__accordion">
-      <figure class="buildings-description__accordion-media">
+      <figure class="buildings-description__accordion-media buildings-description__accordion-media--main">
         <img
           class="buildings-description__image"
           src="./static/images/home/home-lstk.png"
-          alt="Стальной каркас быстровозводимого здания" />
+          alt="Стальной каркас быстровозводимого здания"
+          data-full-src="/static/images/bildings/full-img-accordion.jpg"
+          data-caption="Стальной каркас быстровозводимого здания" />
         <button
           class="buildings-description__zoom"
           type="button"
-          aria-label="Увеличить изображение"
-          aria-expanded="false">
-          <svg width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+          aria-label="Увеличить фотографию"
+          aria-haspopup="dialog">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M4.875 16.5C4.875 13.4169 6.09977 10.46 8.27988 8.27988C10.46 6.09977 13.4169 4.875 16.5 4.875C19.5831 4.875 22.54 6.09977 24.7201 8.27988C26.9002 10.46 28.125 13.4169 28.125 16.5C28.125 19.5831 26.9002 22.54 24.7201 24.7201C22.54 26.9002 19.5831 28.125 16.5 28.125C13.4169 28.125 10.46 26.9002 8.27988 24.7201C6.09977 22.54 4.875 19.5831 4.875 16.5ZM16.5 1.125C8.01 1.125 1.125 8.01 1.125 16.5C1.125 24.99 8.01 31.875 16.5 31.875C20.07 31.875 23.355 30.6585 25.965 28.617L31.674 34.326L34.326 31.674L28.617 25.965C30.7336 23.2646 31.881 19.9311 31.875 16.5C31.875 8.01 24.9915 1.125 16.5 1.125Z"
               fill-rule="evenodd"
@@ -125,24 +127,50 @@
                     транспортировки.
                   </p>
                 </div>
-                <a class="buildings-description__more" href="#buildings-agro-description">Подробнее</a>
+                <button class="buildings-description__more" type="button" aria-haspopup="dialog">Подробнее</button>
                 <figure class="buildings-description__accordion-media buildings-description__accordion-media--tablet">
                   <img
                     class="buildings-description__image"
                     src="./static/images/home/home-lstk.png"
                     alt="Стальной каркас быстровозводимого здания"
+                    data-full-src="/static/images/bildings/full-img-accordion.jpg"
+                    data-caption="Подпись к фотографии"
                     loading="lazy" />
                   <button
                     class="buildings-description__zoom"
                     type="button"
-                    aria-label="Увеличить изображение"
-                    aria-expanded="false">
-                    <svg viewBox="0 0 36 36" aria-hidden="true" focusable="false">
-                      <circle cx="15.5" cy="15.5" r="9.5"></circle>
-                      <path d="m22.5 22.5 7 7"></path>
+                    aria-label="Увеличить фотографию"
+                    aria-haspopup="dialog">
+                    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M4.875 16.5C4.875 13.4169 6.09977 10.46 8.27988 8.27988C10.46 6.09977 13.4169 4.875 16.5 4.875C19.5831 4.875 22.54 6.09977 24.7201 8.27988C26.9002 10.46 28.125 13.4169 28.125 16.5C28.125 19.5831 26.9002 22.54 24.7201 24.7201C22.54 26.9002 19.5831 28.125 16.5 28.125C13.4169 28.125 10.46 26.9002 8.27988 24.7201C6.09977 22.54 4.875 19.5831 4.875 16.5ZM16.5 1.125C8.01 1.125 1.125 8.01 1.125 16.5C1.125 24.99 8.01 31.875 16.5 31.875C20.07 31.875 23.355 30.6585 25.965 28.617L31.674 34.326L34.326 31.674L28.617 25.965C30.7336 23.2646 31.881 19.9311 31.875 16.5C31.875 8.01 24.9915 1.125 16.5 1.125Z"
+                        fill-rule="evenodd"
+                        clip-rule="evenodd" />
                     </svg>
                   </button>
                 </figure>
+                <div class="buildings-description__details" hidden>
+                  <div class="buildings-description__details-photos">
+                    <img
+                      src="/static/images/bildings/gallery.jpg"
+                      alt="Стальной каркас быстровозводимого здания"
+                      data-full-src="/static/images/bildings/gallery.jpg"
+                      data-caption="Подпись ко второй фотографии"
+                      loading="lazy" />
+                  </div>
+                  <div class="buildings-description__details-content">
+                    <div class="buildings-description__details-text">
+                      <p class="buildings-description__details-subtitle">Наше предложение</p>
+                      <p>
+                        Система считает металлоемкость каркаса на базе 3 базовых строительных норм: 1- Росс. нормы
+                        (СНИПы), 2 - ЕВРОКОД и 3 - Американские нормы
+                      </p>
+                    </div>
+                    <a class="buildings-description__details-link" href="#">
+                      Узнать больше про особенности агрокомплексов
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -174,24 +202,48 @@
                     транспортировки.
                   </p>
                 </div>
-                <a class="buildings-description__more" href="#buildings-agro-description">Подробнее</a>
+                <button class="buildings-description__more" type="button" aria-haspopup="dialog">Подробнее</button>
                 <figure class="buildings-description__accordion-media buildings-description__accordion-media--tablet">
                   <img
                     class="buildings-description__image"
                     src="./static/images/home/home-lstk.png"
                     alt="Стальной каркас быстровозводимого здания"
+                    data-full-src="./static/images/home/home-lstk.png"
+                    data-caption="Подпись к фотографии"
                     loading="lazy" />
                   <button
                     class="buildings-description__zoom"
                     type="button"
-                    aria-label="Увеличить изображение"
-                    aria-expanded="false">
-                    <svg viewBox="0 0 36 36" aria-hidden="true" focusable="false">
-                      <circle cx="15.5" cy="15.5" r="9.5"></circle>
-                      <path d="m22.5 22.5 7 7"></path>
+                    aria-label="Увеличить фотографию"
+                    aria-haspopup="dialog">
+                    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M4.875 16.5C4.875 13.4169 6.09977 10.46 8.27988 8.27988C10.46 6.09977 13.4169 4.875 16.5 4.875C19.5831 4.875 22.54 6.09977 24.7201 8.27988C26.9002 10.46 28.125 13.4169 28.125 16.5C28.125 19.5831 26.9002 22.54 24.7201 24.7201C22.54 26.9002 19.5831 28.125 16.5 28.125C13.4169 28.125 10.46 26.9002 8.27988 24.7201C6.09977 22.54 4.875 19.5831 4.875 16.5ZM16.5 1.125C8.01 1.125 1.125 8.01 1.125 16.5C1.125 24.99 8.01 31.875 16.5 31.875C20.07 31.875 23.355 30.6585 25.965 28.617L31.674 34.326L34.326 31.674L28.617 25.965C30.7336 23.2646 31.881 19.9311 31.875 16.5C31.875 8.01 24.9915 1.125 16.5 1.125Z"
+                        fill-rule="evenodd"
+                        clip-rule="evenodd" />
                     </svg>
                   </button>
                 </figure>
+                <div class="buildings-description__details" hidden>
+                  <div class="buildings-description__details-photos">
+                    <img
+                      src="./static/images/home/home-lstk.png"
+                      alt="Стальной каркас быстровозводимого здания"
+                      data-full-src="./static/images/home/home-lstk.png"
+                      data-caption="Подпись ко второй фотографии"
+                      loading="lazy" />
+                  </div>
+                  <div class="buildings-description__details-text">
+                    <p class="buildings-description__details-subtitle">Наше предложение</p>
+                    <p>
+                      Система считает металлоемкость каркаса на базе 3 базовых строительных норм: 1- Росс. нормы
+                      (СНИПы), 2 - ЕВРОКОД и 3 - Американские нормы
+                    </p>
+                    <a class="buildings-description__details-link" href="#">
+                      Узнать больше про особенности агрокомплексов
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -223,24 +275,46 @@
                     транспортировки.
                   </p>
                 </div>
-                <a class="buildings-description__more" href="#buildings-agro-description">Подробнее</a>
+                <button class="buildings-description__more" type="button" aria-haspopup="dialog">Подробнее</button>
                 <figure class="buildings-description__accordion-media buildings-description__accordion-media--tablet">
                   <img
                     class="buildings-description__image"
                     src="./static/images/home/home-lstk.png"
                     alt="Стальной каркас быстровозводимого здания"
+                    data-full-src="./static/images/home/home-lstk.png"
+                    data-caption="Подпись к фотографии"
                     loading="lazy" />
                   <button
                     class="buildings-description__zoom"
                     type="button"
-                    aria-label="Увеличить изображение"
-                    aria-expanded="false">
-                    <svg viewBox="0 0 36 36" aria-hidden="true" focusable="false">
-                      <circle cx="15.5" cy="15.5" r="9.5"></circle>
-                      <path d="m22.5 22.5 7 7"></path>
+                    aria-label="Увеличить фотографию"
+                    aria-haspopup="dialog">
+                    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M4.875 16.5C4.875 13.4169 6.09977 10.46 8.27988 8.27988C10.46 6.09977 13.4169 4.875 16.5 4.875C19.5831 4.875 22.54 6.09977 24.7201 8.27988C26.9002 10.46 28.125 13.4169 28.125 16.5C28.125 19.5831 26.9002 22.54 24.7201 24.7201C22.54 26.9002 19.5831 28.125 16.5 28.125C13.4169 28.125 10.46 26.9002 8.27988 24.7201C6.09977 22.54 4.875 19.5831 4.875 16.5ZM16.5 1.125C8.01 1.125 1.125 8.01 1.125 16.5C1.125 24.99 8.01 31.875 16.5 31.875C20.07 31.875 23.355 30.6585 25.965 28.617L31.674 34.326L34.326 31.674L28.617 25.965C30.7336 23.2646 31.881 19.9311 31.875 16.5C31.875 8.01 24.9915 1.125 16.5 1.125Z"
+                        fill-rule="evenodd"
+                        clip-rule="evenodd" />
                     </svg>
                   </button>
                 </figure>
+                <div class="buildings-description__details" hidden>
+                  <div class="buildings-description__details-photos">
+                    <img
+                      src="./static/images/home/home-lstk.png"
+                      alt="Стальной каркас быстровозводимого здания"
+                      data-full-src="./static/images/home/home-lstk.png"
+                      data-caption="Подпись ко второй фотографии"
+                      loading="lazy" />
+                  </div>
+                  <div class="buildings-description__details-text">
+                    <p class="buildings-description__details-subtitle">Наше предложение</p>
+                    <p>
+                      Система считает металлоемкость каркаса на базе 3 базовых строительных норм: 1- Росс. нормы
+                      (СНИПы), 2 - ЕВРОКОД и 3 - Американские нормы
+                    </p>
+                    <a class="buildings-description__details-link" href="#">Узнать больше про виды агрокомплексов</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -272,24 +346,46 @@
                     транспортировки.
                   </p>
                 </div>
-                <a class="buildings-description__more" href="#buildings-agro-description">Подробнее</a>
+                <button class="buildings-description__more" type="button" aria-haspopup="dialog">Подробнее</button>
                 <figure class="buildings-description__accordion-media buildings-description__accordion-media--tablet">
                   <img
                     class="buildings-description__image"
                     src="./static/images/home/home-lstk.png"
                     alt="Стальной каркас быстровозводимого здания"
+                    data-full-src="./static/images/home/home-lstk.png"
+                    data-caption="Подпись к фотографии"
                     loading="lazy" />
                   <button
                     class="buildings-description__zoom"
                     type="button"
-                    aria-label="Увеличить изображение"
-                    aria-expanded="false">
-                    <svg viewBox="0 0 36 36" aria-hidden="true" focusable="false">
-                      <circle cx="15.5" cy="15.5" r="9.5"></circle>
-                      <path d="m22.5 22.5 7 7"></path>
+                    aria-label="Увеличить фотографию"
+                    aria-haspopup="dialog">
+                    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M4.875 16.5C4.875 13.4169 6.09977 10.46 8.27988 8.27988C10.46 6.09977 13.4169 4.875 16.5 4.875C19.5831 4.875 22.54 6.09977 24.7201 8.27988C26.9002 10.46 28.125 13.4169 28.125 16.5C28.125 19.5831 26.9002 22.54 24.7201 24.7201C22.54 26.9002 19.5831 28.125 16.5 28.125C13.4169 28.125 10.46 26.9002 8.27988 24.7201C6.09977 22.54 4.875 19.5831 4.875 16.5ZM16.5 1.125C8.01 1.125 1.125 8.01 1.125 16.5C1.125 24.99 8.01 31.875 16.5 31.875C20.07 31.875 23.355 30.6585 25.965 28.617L31.674 34.326L34.326 31.674L28.617 25.965C30.7336 23.2646 31.881 19.9311 31.875 16.5C31.875 8.01 24.9915 1.125 16.5 1.125Z"
+                        fill-rule="evenodd"
+                        clip-rule="evenodd" />
                     </svg>
                   </button>
                 </figure>
+                <div class="buildings-description__details" hidden>
+                  <div class="buildings-description__details-photos">
+                    <img
+                      src="./static/images/home/home-lstk.png"
+                      alt="Стальной каркас быстровозводимого здания"
+                      data-full-src="./static/images/home/home-lstk.png"
+                      data-caption="Подпись ко второй фотографии"
+                      loading="lazy" />
+                  </div>
+                  <div class="buildings-description__details-text">
+                    <p class="buildings-description__details-subtitle">Наше предложение</p>
+                    <p>
+                      Система считает металлоемкость каркаса на базе 3 базовых строительных норм: 1- Росс. нормы
+                      (СНИПы), 2 - ЕВРОКОД и 3 - Американские нормы
+                    </p>
+                    <a class="buildings-description__details-link" href="#">Узнать больше про преимущества</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -297,19 +393,74 @@
       </div>
     </div>
   </div>
-  <dialog class="buildings-description__lightbox" aria-label="Фотография здания в увеличенном размере">
-    <form method="dialog" class="buildings-description__lightbox-controls">
-      <button class="buildings-description__lightbox-close" type="submit" aria-label="Закрыть увеличенную фотографию">
-        ×
+
+  <div class="modal-overlay accordion-item__modal-overlay">
+    <div class="accordion-item__modal" role="dialog" aria-modal="true" aria-labelledby="accordion-item-modal-title">
+      <button class="accordion-item__modal-close" type="button" aria-label="Закрыть" data-popup-close>
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M9.6 28.5L7.5 26.4L15.9 18L7.5 9.6L9.6 7.5L18 15.9L26.4 7.5L28.5 9.6L20.1 18L28.5 26.4L26.4 28.5L18 20.1L9.6 28.5Z"
+            fill="currentColor" />
+        </svg>
       </button>
-    </form>
-    <img
-      class="buildings-description__lightbox-image"
-      src="/static/images/buildings/agro-building.png"
-      alt="Быстровозводимое здание с синими и оранжевыми фасадными панелями"
-      width="676"
-      height="593" />
-  </dialog>
+      <div class="accordion-item__modal-media">
+        <img class="accordion-item__modal-image" alt="" />
+        <button
+          class="accordion-item__modal-zoom"
+          type="button"
+          aria-label="Увеличить фотографию"
+          aria-haspopup="dialog">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path
+              d="M4.875 16.5C4.875 13.4169 6.09977 10.46 8.27988 8.27988C10.46 6.09977 13.4169 4.875 16.5 4.875C19.5831 4.875 22.54 6.09977 24.7201 8.27988C26.9002 10.46 28.125 13.4169 28.125 16.5C28.125 19.5831 26.9002 22.54 24.7201 24.7201C22.54 26.9002 19.5831 28.125 16.5 28.125C13.4169 28.125 10.46 26.9002 8.27988 24.7201C6.09977 22.54 4.875 19.5831 4.875 16.5ZM16.5 1.125C8.01 1.125 1.125 8.01 1.125 16.5C1.125 24.99 8.01 31.875 16.5 31.875C20.07 31.875 23.355 30.6585 25.965 28.617L31.674 34.326L34.326 31.674L28.617 25.965C30.7336 23.2646 31.881 19.9311 31.875 16.5C31.875 8.01 24.9915 1.125 16.5 1.125Z"
+              fill-rule="evenodd"
+              clip-rule="evenodd" />
+          </svg>
+        </button>
+        <div class="slider-controls accordion-item__modal-slider" role="group" aria-label="Фотографии">
+          <button
+            class="slider-controls__arrow slider-controls__arrow--prev"
+            type="button"
+            aria-label="Предыдущая фотография">
+            <svg viewBox="0 0 40 40" aria-hidden="true">
+              <path d="M24 8 12 20l12 12"></path>
+            </svg>
+          </button>
+          <div class="slider-controls__pagination" role="img"></div>
+          <button
+            class="slider-controls__arrow slider-controls__arrow--next"
+            type="button"
+            aria-label="Следующая фотография">
+            <svg viewBox="0 0 40 40" aria-hidden="true">
+              <path d="m16 8 12 12-12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="accordion-item__modal-content">
+        <h3 class="accordion-item__modal-title" id="accordion-item-modal-title"></h3>
+        <div class="accordion-item__modal-text"></div>
+        <button class="btn tertiary-btn accordion-item__modal-button" type="button" data-popup-close>Закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay accordion-item__lightbox-overlay">
+    <div class="accordion-item__lightbox" role="dialog" aria-modal="true" aria-label="Увеличенная фотография">
+      <div class="accordion-item__lightbox-controls">
+        <button class="accordion-item__lightbox-close" type="button" data-popup-close>
+          Закрыть
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false">
+            <path d="M6 18L18 6M18 18L6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <figure>
+        <img class="accordion-item__lightbox-image" alt="" />
+        <figcaption class="accordion-item__lightbox-caption"></figcaption>
+      </figure>
+    </div>
+  </div>
 </section>
 
 <section class="buildings-advantages" aria-labelledby="buildings-advantages-title">
@@ -973,55 +1124,53 @@
       </div>
     </header>
     <div class="buildings-catalog__cards" id="buildings-catalog-agro">
-      <a class="buildings-catalog__card" href="#buildings-agro-description">
-        <figure>
+      <a class="buildings-catalog__card-link" href="#buildings-agro-description">
+        <figure class="buildings-catalog__card-wrapper">
           <span class="buildings-catalog__image-wrap">
             <img
               class="buildings-catalog__image"
               src="/static/images/bildings/industry-1.jpg"
-              alt=""
-              width="320"
-              height="312"
+              alt="Агрокомплексы"
               loading="lazy" />
           </span>
           <figcaption class="buildings-catalog__caption">Агрокомплексы</figcaption>
         </figure>
       </a>
-      <a class="buildings-catalog__card" href="#buildings-catalog-aquafarm">
-        <span class="buildings-catalog__image-wrap">
-          <img
-            class="buildings-catalog__image"
-            src="/static/images/bildings/industry-2.jpg"
-            alt=""
-            width="320"
-            height="312"
-            loading="lazy" />
-        </span>
-        <span class="buildings-catalog__caption">Акваферма</span>
+      <a class="buildings-catalog__card-link" href="#buildings-catalog-aquafarm">
+        <figure class="buildings-catalog__card-wrapper">
+          <span class="buildings-catalog__image-wrap">
+            <img
+              class="buildings-catalog__image"
+              src="/static/images/bildings/industry-2.jpg"
+              alt="Акваферма"
+              loading="lazy" />
+          </span>
+          <figcaption class="buildings-catalog__caption">Акваферма</figcaption>
+        </figure>
       </a>
-      <a class="buildings-catalog__card" href="#buildings-catalog-winefarm">
-        <span class="buildings-catalog__image-wrap">
-          <img
-            class="buildings-catalog__image"
-            src="/static/images/bildings/industry-3.jpg"
-            alt=""
-            width="320"
-            height="312"
-            loading="lazy" />
-        </span>
-        <span class="buildings-catalog__caption">Вино ферма</span>
+      <a class="buildings-catalog__card-link" href="#buildings-catalog-winefarm">
+        <figure class="buildings-catalog__card-wrapper">
+          <span class="buildings-catalog__image-wrap">
+            <img
+              class="buildings-catalog__image"
+              src="/static/images/bildings/industry-3.jpg"
+              alt="Вино ферма"
+              loading="lazy" />
+          </span>
+          <figcaption class="buildings-catalog__caption">Вино ферма</figcaption>
+        </figure>
       </a>
-      <a class="buildings-catalog__card" href="#buildings-catalog-mushroomfarm">
-        <span class="buildings-catalog__image-wrap">
-          <img
-            class="buildings-catalog__image"
-            src="/static/images/bildings/industry-4.jpg"
-            alt=""
-            width="320"
-            height="312"
-            loading="lazy" />
-        </span>
-        <span class="buildings-catalog__caption">Грибные фермы</span>
+      <a class="buildings-catalog__card-link" href="#buildings-catalog-mushroomfarm">
+        <figure class="buildings-catalog__card-wrapper">
+          <span class="buildings-catalog__image-wrap">
+            <img
+              class="buildings-catalog__image"
+              src="/static/images/bildings/industry-4.jpg"
+              alt="Грибные фермы"
+              loading="lazy" />
+          </span>
+          <figcaption class="buildings-catalog__caption">Грибные фермы</figcaption>
+        </figure>
       </a>
     </div>
     <nav class="slider-controls slider-controls--dark" aria-label="Навигация по карточкам каталога">
