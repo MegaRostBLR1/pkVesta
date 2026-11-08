@@ -252,9 +252,9 @@
   }
 }
 
+
 /* Страница: быстровозводимые агрокомплексы */
 .buildings-agro {
-  /* position: relative; */
   display: flex;
   justify-content: center;
   min-height: 830px;
@@ -268,7 +268,6 @@
 }
 
 .buildings-agro__inner {
-  /* position: relative; */
   padding: 68px 0 20px;
   display: flex;
   flex-direction: column;
@@ -415,9 +414,6 @@
   display: none;
 }
 
-/* Макет Figma 1857:41413 — ширина 1440 px.
-   Сохраняем desktop-композицию 1920 px и корректируем только геометрию
-   секции и навигации для целевого фрейма 1440 px. */
 @media screen and (max-width: 1600px) {
   .buildings-agro__illustration {
     left: 50%;
@@ -751,6 +747,8 @@
 .buildings-description__accordion-media {
   min-width: 0;
   padding: 4px;
+  height: 100%;
+  min-height: 593px;
   position: relative;
   overflow: hidden;
   border-radius: 10px;
@@ -763,7 +761,7 @@
 
 .buildings-description__image {
   display: block;
-  height: auto;
+  height: 100%;
   aspect-ratio: 676 / 593;
   border-radius: inherit;
   object-fit: cover;
@@ -1005,11 +1003,11 @@
 /* Адаптация блока «Описание» под макет Figma 1857:42515 (1440 px). */
 @media screen and (max-width: 1600px) {
   .buildings-description {
-    padding: 3.5556rem 2.2222rem;
+    padding: 3.5556rem 31px 105px;
   }
 
   .buildings-description__inner {
-    gap: 1.3889rem;
+    gap: 60px;
   }
 
   .buildings-description__title {
@@ -1602,8 +1600,22 @@
 
 @media screen and (max-width: 1600px) {
   .buildings-advantages {
+    margin-bottom: 5px;
     min-height: 1139px;
-    background-position: 95.5% 570px;
+    background-position: 94.5% 568px;
+    background-size: 48% 84%;
+  }
+
+  .buildings-advantages__header {
+    gap: 19px;
+  }
+
+  .buildings-advantages__inner {
+    gap: 34px;
+  }
+
+  .buildings-advantages__content {
+    gap: 24px;
   }
 }
 @media screen and (max-width: 1300px) {
@@ -2083,8 +2095,11 @@
   object-fit: contain;
 }
 
-/* Figma node 1857:43694 — tablet/compact desktop layout, 1440 px. */
 @media screen and (max-width: 1600px) {
+  .buildings-gallery__content {
+    gap: 36px;
+  }
+
   .buildings-gallery__slide {
     height: 400px;
   }
@@ -2343,6 +2358,12 @@
 .buildings-catalog__arrow:focus-visible {
   outline: 2px solid #324c88;
   outline-offset: 3px;
+}
+
+@media screen and (max-width: 1600px) {
+  .buildings-catalog {
+    margin: 0 10px;
+  }
 }
 
 @media screen and (max-width: 1300px) {
