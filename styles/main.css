@@ -201,7 +201,7 @@ button {
 }
 
 .tertiary-btn {
-  color: #324C88;
+  color: #324c88;
   background: #ffffff;
 }
 
@@ -220,7 +220,6 @@ button {
   background: #ffffff;
   cursor: not-allowed;
 }
-
 
 /* Универсальная навигация слайдера. Не привязана к конкретной странице. */
 .slider-controls {
@@ -294,19 +293,19 @@ button {
 
 /* Dark theme for slider controls on light backgrounds. */
 .slider-controls--dark .slider-controls__arrow::before {
-  border: 1px solid #4D4D4D33;
+  border: 1px solid #4d4d4d33;
 }
 
 .slider-controls--dark .slider-controls__arrow svg {
-  stroke: #4D4D4D;
+  stroke: #4d4d4d;
 }
 
 .slider-controls--dark .slider-controls__dot {
-  background: #324C8833;
+  background: #324c8833;
 }
 
 .slider-controls--dark .slider-controls__dot--active {
-  background: #324C88;
+  background: #324c88;
 }
 
 @media screen and (max-width: 1100px) {
@@ -543,8 +542,6 @@ button {
   }
 }
 
-
-
 /* стили для всех кнопок аккордеон */
 .accordion__body {
   display: grid;
@@ -610,11 +607,23 @@ button {
 .accordion__toggle--yellow {
   width: 40px;
   height: 40px;
-  background-color: #FFF500;
+  background-color: #fff500;
+  transition: background-color 0.3s ease;
 }
 .accordion__toggle--yellow::after,
 .accordion__toggle--yellow::before {
   background-color: #324c88;
+}
+
+.accordion__toggle--yellow:hover {
+  background-color: #FFF500CC;
+}
+.accordion__toggle--yellow:hover::after,
+.accordion__toggle--yellow:hover::before {
+  background-color: #324C88CC;
+}
+.accordion__toggle--yellow:active{
+  background-color: #F5EB0A;
 }
 
 @media (max-width: 1200px) {
@@ -626,7 +635,8 @@ button {
     width: 1.5px;
     height: 10.5px;
   }
-  .accordion__toggle--main, .accordion__toggle--yellow {
+  .accordion__toggle--main,
+  .accordion__toggle--yellow {
     width: 30px;
     height: 30px;
   }
@@ -638,7 +648,6 @@ button {
     transition: none;
   }
 }
-
 
 h2 {
   margin: 0;
@@ -908,7 +917,6 @@ h2 {
     font-size: 20px;
     line-height: 28px;
   }
-
 }
 
 .home-hero__mobile-break {
@@ -1069,7 +1077,7 @@ h2 {
   overflow: hidden;
   isolation: isolate;
   border-radius: 20px;
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 .home-process__card::before {
@@ -1822,7 +1830,6 @@ h2 {
     margin-left: 0;
   }
 
-
   .home-industries__panel {
     min-height: 0;
     padding: 30px;
@@ -2069,7 +2076,6 @@ h2 {
     width: 100%;
   }
 
-
   .home-industries__panel {
     gap: 18px;
     padding: 20px 10px;
@@ -2226,7 +2232,6 @@ h2 {
     font-size: 13px;
     line-height: 1.5;
   }
-
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -3493,8 +3498,8 @@ h2 {
   display: block;
   width: 100%;
   padding: 22px;
-  background: #D7E1F7;
-  color: #2555BD;
+  background: #d7e1f7;
+  color: #2555bd;
   border-radius: 10px;
 }
 
@@ -3527,7 +3532,7 @@ h2 {
   overflow-y: auto;
   border: 0.1667rem solid #f5f8f7;
   border-radius: 0.5556rem;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   box-shadow: 0 0.3333rem 1.1111rem rgb(0 0 0 / 5%);
   scrollbar-color: #4d4d4d #ffffff;
   scrollbar-width: thin;
@@ -3860,8 +3865,6 @@ h2 {
     line-height: 1.1;
   }
 
-
-
   .services-contact__phone-code {
     font-size: 0.7778rem;
   }
@@ -3995,7 +3998,7 @@ h2 {
   border-radius: 0.4444rem;
   color: #ffffff;
   background-color: #d52b1e;
-  font-family: 'Onest-Regular', sans-serif;
+  font-family: "Onest-Regular", sans-serif;
   font-size: 0.8889rem;
   font-weight: 400;
   line-height: 1.25rem;
@@ -4010,7 +4013,7 @@ h2 {
   width: 0.7778rem;
   height: 0.7778rem;
   background-color: #d52b1e;
-  content: '';
+  content: "";
   transform: rotate(45deg);
 }
 
@@ -4036,11 +4039,13 @@ h2 {
   stroke-width: 1.8;
 }
 
-.services-contact__field:has(.services-contact__input:user-invalid, .services-contact__input.is-invalid) .services-contact__tooltip {
+.services-contact__field:has(.services-contact__input:user-invalid, .services-contact__input.is-invalid)
+  .services-contact__tooltip {
   display: inline-flex;
 }
 
-.services-contact__field:has(.services-contact__input:user-invalid, .services-contact__input.is-invalid) .services-contact__input {
+.services-contact__field:has(.services-contact__input:user-invalid, .services-contact__input.is-invalid)
+  .services-contact__input {
   border-color: #d52b1e;
   outline: 1px solid #d52b1e;
 }
@@ -4552,8 +4557,6 @@ h2 {
   outline-offset: 4px;
 }
 
-
-
 @media screen and (max-width: 1600px) {
   .home-about__hero {
     min-height: 1269px;
@@ -4588,8 +4591,6 @@ h2 {
     flex-basis: 240px;
   }
 }
-
-
 
 @media screen and (max-width: 1279px) {
   .home-about__stats {
@@ -5161,7 +5162,7 @@ h2 {
   text-transform: uppercase;
 }
 
-.home-benefits__link:focus-visible{
+.home-benefits__link:focus-visible {
   outline: 2px solid #fff500;
   outline-offset: 4px;
 }
@@ -5177,7 +5178,6 @@ h2 {
 }
 
 @media screen and (max-width: 1600px) {
-
   .home-benefits__feature {
     gap: 36px;
     padding: 64px;
@@ -5199,11 +5199,7 @@ h2 {
 /* Figma: блок «О компании», desktop 1440 px (1866:74851).
    Переопределяет только промежуточный desktop; базовый layout 1920 px сохранён. */
 
-
-
-
 @media screen and (max-width: 1100px) {
-
   .home-benefits__panel {
     padding: 48px 28px;
   }
@@ -5251,11 +5247,8 @@ h2 {
   }
 }
 
-
-
-
 @media screen and (max-width: 680px) {
-  .home-benefits{
+  .home-benefits {
     padding-right: 4px;
     padding-left: 4px;
   }
@@ -5463,7 +5456,7 @@ h2 {
 }
 
 .home-advantages__tab:hover {
-  background: #324C881A;
+  background: #324c881a;
 }
 
 .home-advantages__tab--active {
@@ -7212,7 +7205,6 @@ h2 {
   line-height: 1.5;
 }
 
-
 .home-agro__item-content ul {
   display: flex;
   flex-direction: column;
@@ -7287,7 +7279,6 @@ h2 {
     font-size: 18px;
     line-height: 1.5;
   }
-
 
   .home-agro__item-content {
     gap: 14px;
@@ -8729,7 +8720,6 @@ h2 {
     width: 334px;
   }
 } */
-
 
 /* .buildings-description {
   margin: 0 0.5556rem 0.5556rem;
@@ -12225,40 +12215,6 @@ h2 {
 
 /* services */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .services-list {
   margin: 5px;
   background-color: #f5f8f7;
@@ -12367,10 +12323,7 @@ h2 {
   display: none;
 }
 
-
 @media screen and (max-width: 1300px) {
-
-
   .services-list__panel {
     padding: 1.3333rem;
   }
@@ -12384,8 +12337,6 @@ h2 {
     font-size: 1rem;
   }
 }
-
-
 
 @media screen and (max-width: 800px) {
   .services-list__grid {
@@ -12441,20 +12392,6 @@ h2 {
 }
 
 @media screen and (max-width: 680px) {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   .services-list__panel {
     padding: 0.2222rem;
     border-radius: 0.5556rem;
@@ -12481,12 +12418,6 @@ h2 {
   .services-list__more:focus-visible {
     outline: 0.1111rem solid #324c88;
     outline-offset: 0.1111rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .service-card__button.btn {
-    transition: none;
   }
 }
 
@@ -12667,8 +12598,8 @@ h2 {
   border-radius: 0.5556rem;
   appearance: none;
   background: #f5f6f8
-  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='m7 10 5 5 5-5' stroke='%234D4D4D' stroke-width='2'/%3E%3C/svg%3E")
-  no-repeat right 0.8889rem center;
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='m7 10 5 5 5-5' stroke='%234D4D4D' stroke-width='2'/%3E%3C/svg%3E")
+    no-repeat right 0.8889rem center;
   color: #272629;
   font: inherit;
   text-transform: none;
@@ -12872,7 +12803,6 @@ h2 {
   .prices__table small {
     font-size: 14px;
   }
-
 }
 
 @media (max-width: 1400px) {
@@ -12927,7 +12857,6 @@ h2 {
     max-width: 42.2222rem;
     font-size: 20px;
   }
-
 }
 
 @media (max-width: 760px) {
@@ -13033,7 +12962,6 @@ h2 {
   .prices-tech__subtitle {
     font-size: 0.8333rem;
   }
-
 }
 
 @media (max-width: 680px) {
@@ -13329,7 +13257,7 @@ h2 {
     width: 1rem;
     height: 1rem;
     background: no-repeat center / 1rem 1rem
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18' fill='none'%3E%3Cpath d='m4 9 3 3 7-7' stroke='%232555BD' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18' fill='none'%3E%3Cpath d='m4 9 3 3 7-7' stroke='%232555BD' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     content: "";
   }
 
@@ -13383,7 +13311,6 @@ h2 {
     transition: none;
   }
 }
-
 
 /* footer */
 

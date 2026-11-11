@@ -18,18 +18,10 @@ function initBuildings() {
       const link = event.target.closest(".buildings-agro__tab");
       const isExpanded = tabs.classList.contains("is-open");
 
-      if (link) {
-        if (link.getAttribute("href")?.startsWith("#/")) {
-          setExpanded(false);
-          return;
-        }
-
-        if (!isExpanded) {
-          event.preventDefault();
-          setExpanded(true);
-        }
-
-        return;
+      // В закрытом меню видна только текущая вкладка: нажатие на неё открывает список, а не переходит по ссылке.
+      // В открытом меню переход по любой вкладке закрывает список
+      if (link && !isExpanded) {
+        event.preventDefault();
       }
 
       setExpanded(!isExpanded);
@@ -156,13 +148,8 @@ function initBuildings() {
   });
 
   const description = document.querySelector(".buildings-description");
-
-  if (!description) {
-    return;
-  }
-
-  const industries = description.querySelector(".buildings-description__industries");
-  const industriesToggle = description.querySelector(".buildings-description__industries-toggle");
+  const industries = description?.querySelector(".buildings-description__industries");
+  const industriesToggle = description?.querySelector(".buildings-description__industries-toggle");
 
   if (industries && industriesToggle && industries.dataset.toggleInitialized !== "true") {
     industries.dataset.toggleInitialized = "true";
@@ -191,11 +178,11 @@ function initBuildings() {
   }
 
   //  аккордеон
-  const accordion = description.querySelector(".buildings-description__accordion");
-  const mainImage = description.querySelector(
+  const accordion = description?.querySelector(".buildings-description__accordion");
+  const mainImage = description?.querySelector(
     ".buildings-description__accordion-media--main .buildings-description__image"
   );
-  const modalOverlay = description.querySelector(".accordion-item__modal-overlay");
+  const modalOverlay = description?.querySelector(".accordion-item__modal-overlay");
 
   if (accordion && mainImage && modalOverlay && lightboxOverlay && accordion.dataset.initialized !== "true") {
     accordion.dataset.initialized = "true";
@@ -237,7 +224,7 @@ function initBuildings() {
     description.addEventListener("click", (event) => {
       const trigger = event.target.closest(".buildings-description__accordion-trigger");
       const more = event.target.closest(".buildings-description__more");
-      const zoom = event.target.closest(".buildings-description__zoom, .accordion-item__modal-zoom");
+      const zoom = event.target.closest(".zoom_button");
       const arrow = event.target.closest(".accordion-item__modal-slider .slider-controls__arrow");
 
       // Открыли пункт аккордеона: большое фото слева меняется на фото этого пункта
@@ -258,6 +245,142 @@ function initBuildings() {
         showModalPhoto(photoIndex + (arrow.classList.contains("slider-controls__arrow--prev") ? -1 : 1));
       }
     });
+  }
+
+   // «Преимущества»: стрелки листают пункты по одному. На десктопе список вертикальный, на ≤1100 — горизонтальный.
+  // На тач-экранах стрелки скрыты, пункты листают свайпом
+  const advantages = document.querySelector(".buildings-advantages");
+  const advantagesList = advantages?.querySelector(".buildings-advantages__list");
+  const advantagesPrev = advantages?.querySelector(".slider-controls__arrow--prev");
+  const advantagesNext = advantages?.querySelector(".slider-controls__arrow--next");
+
+  if (advantagesList && advantagesPrev && advantagesNext && advantages.dataset.sliderInitialized !== "true") {
+    advantages.dataset.sliderInitialized = "true";
+
+    const isVertical = () => getComputedStyle(advantagesList).flexDirection === "column";
+
+    // Стрелки активны, только когда часть пунктов не влезла
+    const updateAdvantagesArrows = () => {
+      const hasHiddenItems = isVertical()
+        ? advantagesList.scrollHeight - advantagesList.clientHeight > 1
+        : advantagesList.scrollWidth - advantagesList.clientWidth > 1;
+
+      advantagesPrev.disabled = !hasHiddenItems;
+      advantagesNext.disabled = !hasHiddenItems;
+    };
+
+    // Листает на один пункт. С последнего переходит на первый, с первого — на последний
+    const scrollAdvantages = (direction) => {
+      const side = isVertical() ? "top" : "left";
+      const position = side === "top" ? advantagesList.scrollTop : advantagesList.scrollLeft;
+      const max =
+        side === "top"
+          ? advantagesList.scrollHeight - advantagesList.clientHeight
+          : advantagesList.scrollWidth - advantagesList.clientWidth;
+      const listStart = advantagesList.getBoundingClientRect()[side];
+      // Где начинается каждый видимый пункт внутри списка
+      const starts = Array.from(advantagesList.children)
+        .filter((item) => item.getClientRects().length)
+        .map((item) => item.getBoundingClientRect()[side] - listStart + position);
+      let target;
+
+      if (direction > 0) {
+        target = position >= max - 1 ? 0 : starts.find((start) => start > position + 1) ?? max;
+      } else {
+        target = position <= 1 ? max : starts.filter((start) => start < position - 1).pop() ?? 0;
+      }
+
+      advantagesList.scrollTo({ [side]: target, behavior: "smooth" });
+    };
+
+    advantagesPrev.addEventListener("click", () => scrollAdvantages(-1));
+    advantagesNext.addEventListener("click", () => scrollAdvantages(1));
+
+    // Раскрытая карточка может быть выше списка (больше 4 пунктов) — тогда список вырастает под неё,
+    // чтобы текст не обрезался. Когда такие карточки свёрнуты, список снова высотой в 4 пункта
+    const fitOpenItems = () => {
+      advantagesList.style.maxHeight = "";
+
+      if (!isVertical()) {
+        return;
+      }
+
+      // Полная высота раскрытой карточки, даже если анимация ещё не закончилась
+      const openHeights = Array.from(advantagesList.querySelectorAll('.accordion__btn[aria-expanded="true"]'), (button) => {
+        const item = button.closest(".buildings-advantages__item");
+        const inner = item.querySelector(".accordion__inner");
+
+        return item.offsetHeight + (inner ? inner.scrollHeight - inner.clientHeight : 0);
+      });
+      const tallest = Math.max(0, ...openHeights);
+
+      if (tallest > advantagesList.clientHeight) {
+        advantagesList.style.maxHeight = `${tallest}px`;
+      }
+    };
+
+    // Пока раскрытая карточка растёт (анимация аккордеона — 0.3s), прокручиваем список вместе с ней:
+    // низ карточки не уходит за край списка, а её верх не уезжает выше списка
+    const followItem = (item) => {
+      const start = performance.now();
+
+      const step = (now) => {
+        const listRect = advantagesList.getBoundingClientRect();
+        const itemRect = item.getBoundingClientRect();
+        const shift = Math.min(itemRect.bottom - listRect.bottom, itemRect.top - listRect.top);
+
+        if (shift > 0) {
+          advantagesList.scrollTop += shift;
+        }
+
+        if (now - start < 350) {
+          requestAnimationFrame(step);
+        }
+      };
+
+      requestAnimationFrame(step);
+    };
+
+    // На десктопе высота списка меняется вместе с карточкой (transition в CSS), а раскрытая карточка не уходит за край
+    advantagesList.addEventListener("click", (event) => {
+      const button = event.target.closest(".accordion__btn");
+
+      if (!button || !isVertical()) {
+        return;
+      }
+
+      fitOpenItems();
+
+      if (button.getAttribute("aria-expanded") === "true") {
+        followItem(button.closest(".buildings-advantages__item"));
+      }
+    });
+
+    // На ≤1100 ряд карточек растягивается по высоте самой высокой карточки. Если раскрытая карточка ушла за край ленты,
+    // под видимыми карточками остаётся пустое место. Поэтому раскрытые карточки за краем ленты сворачиваем
+    const closeHiddenItems = () => {
+      if (isVertical()) {
+        return;
+      }
+
+      const listRect = advantagesList.getBoundingClientRect();
+
+      advantagesList.querySelectorAll('.accordion__btn[aria-expanded="true"]').forEach((button) => {
+        const itemRect = button.closest(".buildings-advantages__item").getBoundingClientRect();
+
+        if (itemRect.right <= listRect.left || itemRect.left >= listRect.right) {
+          button.click();
+        }
+      });
+    };
+
+    advantagesList.addEventListener("scroll", closeHiddenItems, { passive: true });
+    window.addEventListener("resize", () => {
+      fitOpenItems();
+      updateAdvantagesArrows();
+      closeHiddenItems();
+    });
+    updateAdvantagesArrows();
   }
 
   const gallery = document.querySelector(".buildings-gallery");
