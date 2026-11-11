@@ -1,57 +1,6 @@
 function initBuildings() {
-  const advantages = document.querySelector(".buildings-advantages");
-
-  if (advantages && advantages.dataset.initialized !== "true") {
-    advantages.dataset.initialized = "true";
-
-    const items = Array.from(
-      advantages.querySelectorAll(".buildings-advantages__item:not(.buildings-advantages__item--responsive)")
-    );
-    const previousButton = advantages.querySelector(".buildings-advantages__arrow--prev");
-    const nextButton = advantages.querySelector(".buildings-advantages__arrow--next");
-    let activeIndex = 0;
-
-    const setActiveItem = (index) => {
-      activeIndex = (index + items.length) % items.length;
-
-      items.forEach((item, itemIndex) => {
-        const isActive = itemIndex === activeIndex;
-        item.classList.toggle("is-active", isActive);
-
-        if (isActive) {
-          item.setAttribute("aria-current", "step");
-        } else {
-          item.removeAttribute("aria-current");
-        }
-      });
-
-      if (previousButton) {
-        previousButton.disabled = activeIndex === 0;
-      }
-
-      if (nextButton) {
-        nextButton.disabled = activeIndex === items.length - 1;
-      }
-    };
-
-    previousButton?.addEventListener("click", () => {
-      if (activeIndex > 0) {
-        setActiveItem(activeIndex - 1);
-      }
-    });
-
-    nextButton?.addEventListener("click", () => {
-      if (activeIndex < items.length - 1) {
-        setActiveItem(activeIndex + 1);
-      }
-    });
-
-    setActiveItem(0);
-  }
-
   const tabs = document.querySelector(".buildings-agro__tabs");
   const toggle = tabs?.querySelector(".buildings-agro__tabs-toggle");
-  const link = event.target.closest(".buildings-agro__tab");
   if (tabs && toggle && tabs.dataset.initialized !== "true") {
     tabs.dataset.initialized = "true";
 
@@ -85,7 +34,126 @@ function initBuildings() {
 
       setExpanded(!isExpanded);
     });
+
+    // Первый экран целиком ушёл вверх — меню прилипает к низу экрана
+    const agro = tabs.closest(".buildings-agro");
+
+    if (agro && "IntersectionObserver" in window) {
+      new IntersectionObserver(([entry]) => {
+        tabs.classList.toggle("is-fixed", !entry.isIntersecting && entry.boundingClientRect.top < 0);
+      }).observe(agro);
+    }
   }
+
+  // Кнопка «Наверх» появляется, когда пролистали больше экрана
+  const scrollTopButton = document.querySelector(".scroll-top");
+
+  if (scrollTopButton && scrollTopButton.dataset.initialized !== "true") {
+    scrollTopButton.dataset.initialized = "true";
+
+    const updateScrollTop = () => {
+      const isScrolled = window.scrollY > window.innerHeight * 2;
+
+      scrollTopButton.classList.toggle("is-visible", isScrolled);
+      tabs?.classList.toggle("is-narrow", isScrolled);
+    };
+
+    scrollTopButton.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    window.addEventListener("scroll", updateScrollTop, { passive: true });
+    updateScrollTop();
+  }
+
+  // Попапы страницы: окно «Подробнее» и увеличенное фото.
+  // Открытые попапы лежат стопкой: Esc, «Закрыть» и клик по затемнению закрывают верхний
+  const lightboxOverlay = document.querySelector(".photo-lightbox-overlay");
+  const openedPopups = [];
+
+  // Переносит фото вместе с большой картинкой и подписью
+  const copyPhoto = (from, to) => {
+    to.src = from.getAttribute("src");
+    to.alt = from.alt;
+    to.dataset.fullSrc = from.dataset.fullSrc || from.getAttribute("src");
+    to.dataset.caption = from.dataset.caption || "";
+  };
+
+  const openPopup = (overlay, opener) => {
+    overlay.classList.add("active");
+    openedPopups.push({ overlay, opener });
+    document.body.style.overflow = "hidden";
+    overlay.querySelector("[data-popup-close]").focus();
+  };
+
+  const closePopup = () => {
+    const popup = openedPopups.pop();
+
+    if (!popup) {
+      return;
+    }
+
+    popup.overlay.classList.remove("active");
+
+    if (!openedPopups.length) {
+      document.body.style.overflow = "";
+    }
+
+    popup.opener.focus();
+  };
+
+  // Увеличенное фото: большая картинка из data-full-src, подпись из data-caption
+  const openLightbox = (image, opener) => {
+    const lightboxImage = lightboxOverlay.querySelector(".photo-lightbox__image");
+    const lightboxCaption = lightboxOverlay.querySelector(".photo-lightbox__caption");
+
+    lightboxImage.src = image.dataset.fullSrc || image.getAttribute("src");
+    lightboxImage.alt = image.alt;
+    lightboxCaption.textContent = image.dataset.caption || "";
+    lightboxCaption.hidden = !image.dataset.caption;
+    openPopup(lightboxOverlay, opener);
+  };
+
+  document.addEventListener("click", (event) => {
+    const popup = openedPopups[openedPopups.length - 1];
+
+    if (popup && (event.target === popup.overlay || event.target.closest("[data-popup-close]"))) {
+      closePopup();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    const popup = openedPopups[openedPopups.length - 1];
+
+    if (!popup) {
+      return;
+    }
+
+    if (event.key === "Escape") {
+      closePopup();
+      return;
+    }
+
+    if (event.key !== "Tab") {
+      return;
+    }
+
+    // Tab ходит по кругу внутри открытого окна
+    const focusable = Array.from(popup.overlay.querySelectorAll("a[href], button:not([disabled])")).filter(
+      (element) => element.getClientRects().length
+    );
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    const isInside = popup.overlay.contains(document.activeElement);
+
+    if (event.shiftKey && (!isInside || document.activeElement === first)) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && (!isInside || document.activeElement === last)) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
 
   const description = document.querySelector(".buildings-description");
 
@@ -98,12 +166,28 @@ function initBuildings() {
 
   if (industries && industriesToggle && industries.dataset.toggleInitialized !== "true") {
     industries.dataset.toggleInitialized = "true";
+
+    const industryItems = industries.querySelectorAll(".buildings-description__industries-list li");
+
+    // Кнопка нужна, только если отрасли не влезли в одну строку:
+    // последняя отрасль начинается ниже первой строки, значит в свёрнутом виде она скрыта
+    const updateIndustriesToggle = () => {
+      const first = industryItems[0];
+      const last = industryItems[industryItems.length - 1];
+
+      industriesToggle.hidden = !last || last.offsetTop < first.offsetTop + first.offsetHeight;
+    };
+
     industriesToggle.addEventListener("click", () => {
       const expanded = industriesToggle.getAttribute("aria-expanded") !== "true";
       industries.classList.toggle("is-expanded", expanded);
       industriesToggle.setAttribute("aria-expanded", String(expanded));
       industriesToggle.querySelector("span").textContent = expanded ? "Скрыть" : "Показать еще";
     });
+
+    window.addEventListener("resize", updateIndustriesToggle);
+    document.fonts?.ready.then(updateIndustriesToggle);
+    updateIndustriesToggle();
   }
 
   //  аккордеон
@@ -112,50 +196,17 @@ function initBuildings() {
     ".buildings-description__accordion-media--main .buildings-description__image"
   );
   const modalOverlay = description.querySelector(".accordion-item__modal-overlay");
-  const lightboxOverlay = description.querySelector(".accordion-item__lightbox-overlay");
 
-  if (accordion && mainImage && modalOverlay && lightboxOverlay) {
+  if (accordion && mainImage && modalOverlay && lightboxOverlay && accordion.dataset.initialized !== "true") {
+    accordion.dataset.initialized = "true";
+
     const modalImage = modalOverlay.querySelector(".accordion-item__modal-image");
     const modalTitle = modalOverlay.querySelector(".accordion-item__modal-title");
     const modalText = modalOverlay.querySelector(".accordion-item__modal-text");
     const modalSlider = modalOverlay.querySelector(".accordion-item__modal-slider");
     const modalPagination = modalSlider.querySelector(".slider-controls__pagination");
-    const lightboxImage = lightboxOverlay.querySelector(".accordion-item__lightbox-image");
-    const lightboxCaption = lightboxOverlay.querySelector(".accordion-item__lightbox-caption");
-    const openedPopups = [];
     let modalPhotos = [];
     let photoIndex = 0;
-
-    // Переносит фото вместе с большой картинкой и подписью
-    const copyPhoto = (from, to) => {
-      to.src = from.getAttribute("src");
-      to.alt = from.alt;
-      to.dataset.fullSrc = from.dataset.fullSrc || from.getAttribute("src");
-      to.dataset.caption = from.dataset.caption || "";
-    };
-
-    const openPopup = (overlay, opener) => {
-      overlay.classList.add("active");
-      openedPopups.push({ overlay, opener });
-      document.body.style.overflow = "hidden";
-      overlay.querySelector("[data-popup-close]").focus();
-    };
-
-    const closePopup = () => {
-      const popup = openedPopups.pop();
-
-      if (!popup) {
-        return;
-      }
-
-      popup.overlay.classList.remove("active");
-
-      if (!openedPopups.length) {
-        document.body.style.overflow = "";
-      }
-
-      popup.opener.focus();
-    };
 
     const showModalPhoto = (index) => {
       photoIndex = (index + modalPhotos.length) % modalPhotos.length;
@@ -183,14 +234,6 @@ function initBuildings() {
       openPopup(modalOverlay, opener);
     };
 
-    const openLightbox = (image, opener) => {
-      lightboxImage.src = image.dataset.fullSrc || image.getAttribute("src");
-      lightboxImage.alt = image.alt;
-      lightboxCaption.textContent = image.dataset.caption || "";
-      lightboxCaption.hidden = !image.dataset.caption;
-      openPopup(lightboxOverlay, opener);
-    };
-
     description.addEventListener("click", (event) => {
       const trigger = event.target.closest(".buildings-description__accordion-trigger");
       const more = event.target.closest(".buildings-description__more");
@@ -215,102 +258,57 @@ function initBuildings() {
         showModalPhoto(photoIndex + (arrow.classList.contains("slider-controls__arrow--prev") ? -1 : 1));
       }
     });
-
-    [modalOverlay, lightboxOverlay].forEach((overlay) => {
-      overlay.addEventListener("click", (event) => {
-        if (event.target === overlay || event.target.closest("[data-popup-close]")) {
-          closePopup();
-        }
-      });
-    });
-
-    document.addEventListener("keydown", (event) => {
-      const popup = openedPopups[openedPopups.length - 1];
-
-      if (!popup) {
-        return;
-      }
-
-      if (event.key === "Escape") {
-        closePopup();
-        return;
-      }
-
-      if (event.key !== "Tab") {
-        return;
-      }
-
-      // Tab ходит по кругу внутри открытого окна
-      const focusable = Array.from(popup.overlay.querySelectorAll("a[href], button:not([disabled])")).filter(
-        (element) => element.getClientRects().length
-      );
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      const isInside = popup.overlay.contains(document.activeElement);
-
-      if (event.shiftKey && (!isInside || document.activeElement === first)) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && (!isInside || document.activeElement === last)) {
-        event.preventDefault();
-        first.focus();
-      }
-    });
   }
 
   const gallery = document.querySelector(".buildings-gallery");
+  const galleryPhotos = gallery ? Array.from(gallery.querySelectorAll(".buildings-gallery__photos img")) : [];
+  const galleryPrev = gallery?.querySelector("[data-gallery-prev]");
+  const galleryNext = gallery?.querySelector("[data-gallery-next]");
 
-  if (gallery && gallery.dataset.initialized !== "true") {
+  if (galleryPhotos.length && galleryPrev && galleryNext && gallery.dataset.initialized !== "true") {
     gallery.dataset.initialized = "true";
 
-    const slides = Array.from(gallery.querySelectorAll("[data-gallery-slide]"));
-    const dots = Array.from(gallery.querySelectorAll(".buildings-gallery__dot"));
-    const previous = gallery.querySelector("[data-gallery-prev]");
-    const next = gallery.querySelector("[data-gallery-next]");
-    const lightbox = gallery.querySelector(".buildings-gallery__lightbox");
-    const lightboxImage = gallery.querySelector(".buildings-gallery__lightbox-image");
+    // Три места на экране: слева, по центру, справа
+    const slideImages = Array.from(gallery.querySelectorAll("[data-gallery-slide] > img"));
+    const pagination = gallery.querySelector(".slider-controls__pagination");
     const zoom = gallery.querySelector(".buildings-gallery__zoom");
-    const galleryImages = ["/static/images/bildings/gallery.jpg", "/static/images/bildings/gallery.jpg"];
     let activeIndex = 0;
 
+    // Точек столько же, сколько фото
+    pagination.innerHTML = galleryPhotos
+      .map(() => '<span class="slider-controls__dot" aria-hidden="true"></span>')
+      .join("");
+
     const renderGallery = () => {
-      slides.forEach((slide, index) => {
-        const isCenter = index === 1;
-        slide.classList.toggle("buildings-gallery__slide--active", isCenter);
-        slide.classList.toggle("buildings-gallery__slide--side", !isCenter);
+      // Слева предыдущее фото, по центру текущее, справа следующее
+      [-1, 0, 1].forEach((shift, slideIndex) => {
+        const photo = galleryPhotos[(activeIndex + shift + galleryPhotos.length) % galleryPhotos.length];
+
+        copyPhoto(photo, slideImages[slideIndex]);
       });
 
-      const centerImage = slides[1]?.querySelector("img");
-      if (centerImage) {
-        centerImage.src = galleryImages[activeIndex % galleryImages.length];
-      }
-
-      dots.forEach((dot, index) => {
-        const isActive = index === activeIndex;
-        dot.classList.toggle("is-active", isActive);
-        if (isActive) dot.setAttribute("aria-current", "true");
-        else dot.removeAttribute("aria-current");
+      pagination.setAttribute("aria-label", `Слайд ${activeIndex + 1} из ${galleryPhotos.length}`);
+      Array.from(pagination.children).forEach((dot, dotIndex) => {
+        dot.classList.toggle("slider-controls__dot--active", dotIndex === activeIndex);
       });
-
-      if (centerImage && lightboxImage) {
-        lightboxImage.src = centerImage.src;
-        lightboxImage.alt = centerImage.alt;
-      }
     };
 
+    // По кругу: после последнего фото — первое, перед первым — последнее
     const move = (direction) => {
-      activeIndex = (activeIndex + direction + dots.length) % dots.length;
+      activeIndex = (activeIndex + direction + galleryPhotos.length) % galleryPhotos.length;
       renderGallery();
     };
 
-    previous?.addEventListener("click", () => move(-1));
-    next?.addEventListener("click", () => move(1));
-    zoom?.addEventListener("click", () => {
-      if (lightbox && typeof lightbox.showModal === "function") lightbox.showModal();
-    });
-    lightbox?.addEventListener("click", (event) => {
-      if (event.target === lightbox) lightbox.close();
-    });
+    galleryPrev.disabled = galleryPhotos.length < 2;
+    galleryNext.disabled = galleryPhotos.length < 2;
+    galleryPrev.addEventListener("click", () => move(-1));
+    galleryNext.addEventListener("click", () => move(1));
+
+    // Лупа открывает тот же лайтбокс, что и в «Описании», с текущим фото
+    if (zoom && lightboxOverlay) {
+      zoom.addEventListener("click", () => openLightbox(slideImages[1], zoom));
+    }
+
     renderGallery();
   }
 
@@ -332,4 +330,78 @@ function initBuildings() {
       sync(btn.getAttribute("aria-expanded") !== "true");
     });
   });
+
+  const catalog = document.querySelector(".buildings-catalog");
+  const catalogCards = catalog?.querySelector(".buildings-catalog__cards");
+  const catalogPrev = catalog?.querySelector(".slider-controls__arrow--prev");
+  const catalogNext = catalog?.querySelector(".slider-controls__arrow--next");
+
+  if (catalogCards && catalogPrev && catalogNext && catalog.dataset.sliderInitialized !== "true") {
+    catalog.dataset.sliderInitialized = "true";
+
+    // Стрелки активны, только когда часть карточек не влезла
+    const updateArrows = () => {
+      const hasHiddenCards = catalogCards.scrollWidth - catalogCards.clientWidth > 1;
+
+      catalogPrev.disabled = !hasHiddenCards;
+      catalogNext.disabled = !hasHiddenCards;
+    };
+
+    // Листает на одну карточку. С последней переходит на первую, с первой — на последнюю
+    const scrollCards = (direction) => {
+      const maxLeft = catalogCards.scrollWidth - catalogCards.clientWidth;
+      // Шаг — ширина карточки плюс отступ между карточками
+      const step =
+        catalogCards.firstElementChild.getBoundingClientRect().width +
+        parseFloat(getComputedStyle(catalogCards).columnGap);
+      let left = (Math.round(catalogCards.scrollLeft / step) + direction) * step;
+
+      if (direction > 0 && catalogCards.scrollLeft >= maxLeft - 1) {
+        left = 0;
+      } else if (direction < 0 && catalogCards.scrollLeft <= 1) {
+        left = maxLeft;
+      }
+
+      catalogCards.scrollTo({ left, behavior: "smooth" });
+    };
+
+    catalogPrev.addEventListener("click", () => scrollCards(-1));
+    catalogNext.addEventListener("click", () => scrollCards(1));
+
+    // Свайп листает ленту сам, без JS. Здесь только круг:
+    // свайп дальше последней карточки ведёт на первую, дальше первой — на последнюю
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchStartLeft = 0;
+
+    catalogCards.addEventListener(
+      "touchstart",
+      (event) => {
+        touchStartX = event.touches[0].clientX;
+        touchStartY = event.touches[0].clientY;
+        touchStartLeft = catalogCards.scrollLeft;
+      },
+      { passive: true }
+    );
+
+    catalogCards.addEventListener("touchend", (event) => {
+      const deltaX = event.changedTouches[0].clientX - touchStartX;
+      const deltaY = event.changedTouches[0].clientY - touchStartY;
+      const maxLeft = catalogCards.scrollWidth - catalogCards.clientWidth;
+
+      // Короткое или вертикальное движение пальца — не свайп по ленте
+      if (Math.abs(deltaX) < 50 || Math.abs(deltaX) < Math.abs(deltaY)) {
+        return;
+      }
+
+      if (deltaX < 0 && touchStartLeft >= maxLeft - 1) {
+        scrollCards(1);
+      } else if (deltaX > 0 && touchStartLeft <= 1) {
+        scrollCards(-1);
+      }
+    });
+
+    window.addEventListener("resize", updateArrows);
+    updateArrows();
+  }
 }

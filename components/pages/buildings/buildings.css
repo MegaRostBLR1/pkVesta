@@ -1,30 +1,46 @@
 /* ОБЩИЕ СТИЛИ ДЛЯ ПОПАПА С УВЕЛИЧЕНИЕМ АККОРДЕОНА И КОНПКОЙ ПОДРОБНЕЕ */
-.accordion-item__lightbox {
+.photo-lightbox {
   max-width: 90vw;
+  max-height: 90vh;
   margin: auto;
-  padding: 1rem;
+  padding: 1rem 36px;
   border-radius: 1.1111rem;
   background-color: #f7f8fa;
+  overflow-y: auto;
 }
 
-.accordion-item__lightbox-controls {
+.photo-lightbox::-webkit-scrollbar {
+  width: 6px;
+}
+.photo-lightbox::-webkit-scrollbar-thumb {
+  background: #c5c9d3;
+  border-radius: 3px;
+}
+@supports not selector(::-webkit-scrollbar) {
+  .photo-lightbox {
+    scrollbar-width: thin;
+    scrollbar-color: #c5c9d3 transparent;
+  }
+}
+
+.photo-lightbox__controls {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 14px;
 }
 
-.accordion-item__lightbox-close {
+.photo-lightbox__close {
   display: inline-flex;
   align-items: center;
   gap: 16px;
-  color: #324c88;
-  font-size: 24px;
+  color: #4d4d4d;
+  font-size: 20px;
   font-family: "Onest-Medium";
   font-weight: 500;
   line-height: 1.5;
 }
 
-.accordion-item__lightbox-close svg {
+.photo-lightbox__close svg {
   flex: none;
   width: 36px;
   height: 36px;
@@ -35,7 +51,7 @@
   outline-offset: 0.2222rem;
 }
 
-.accordion-item__lightbox-image {
+.photo-lightbox__image {
   display: block;
   width: auto;
   max-width: 84vw;
@@ -43,13 +59,55 @@
   border-radius: 10px;
 }
 
-.accordion-item__lightbox-caption {
+.photo-lightbox__caption {
   margin-top: 30px;
-  font-weight: 600;
-  font-size: 26px;
+  font-weight: 500;
+  font-size: 22px;
   line-height: 150%;
   text-transform: uppercase;
   text-align: center;
+  color: #4d4d4d;
+}
+
+.photo-lightbox__close:focus-visible {
+  outline: 0.1111rem solid #324c88;
+  outline-offset: 0.2222rem;
+}
+
+@media screen and (max-width: 680px) {
+  .photo-lightbox-overlay {
+    padding: 10px;
+  }
+
+  .photo-lightbox {
+    max-width: 100%;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .photo-lightbox__image {
+    max-width: 100%;
+  }
+
+  .photo-lightbox__close {
+    font-size: 16px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+  }
+
+  .photo-lightbox__close svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .photo-lightbox__caption {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #ffffff;
+  }
 }
 
 .accordion-item__modal {
@@ -165,7 +223,6 @@
   min-width: 214px;
 }
 
-.accordion-item__lightbox-close:focus-visible,
 .accordion-item__modal-close:focus-visible,
 .accordion-item__modal-zoom:focus-visible {
   outline: 0.1111rem solid #324c88;
@@ -195,29 +252,19 @@
 }
 
 @media screen and (max-width: 680px) {
-  .accordion-item__lightbox {
-    max-width: 96vw;
-    padding: 0.6667rem;
-  }
-
-  .accordion-item__lightbox-image {
-    max-width: 90vw;
-  }
-
-  .accordion-item__lightbox-caption {
-    font-size: 0.7778rem;
-  }
-
   .accordion-item__modal {
     gap: 20px;
-    width: calc(100% - 20px);
+    width: 100%;
+    max-width: 100%;
     max-height: calc(100% - 20px);
-    padding: 10px;
+    padding: 20px;
   }
 
   .accordion-item__modal-close {
-    top: 10px;
-    right: 10px;
+    top: 3px;
+    right: 3px;
+    width: 30px;
+    height: 30px;
   }
 
   .accordion-item__modal-media {
@@ -225,33 +272,34 @@
   }
 
   .accordion-item__modal-zoom {
-    width: 3.1111rem;
-    height: 3.1111rem;
+    padding: 10px;
+    right: 8px;
+    bottom: 8px;
   }
 
   .accordion-item__modal-zoom svg {
-    width: 1.5556rem;
-    height: 1.5556rem;
+    width: 24px;
+    height: 24px;
   }
 
   .accordion-item__modal-content {
-    gap: 14px;
-    padding-bottom: 10px;
+    gap: 20px;
   }
 
   .accordion-item__modal-title {
     font-size: 1.1111rem;
+    line-height: 30px;
   }
 
   .accordion-item__modal-text {
-    font-size: 0.7778rem;
+    font-size: 16px;
   }
 
   .accordion-item__modal-button {
     align-self: stretch;
+    padding: 16px 24px;
   }
 }
-
 
 /* Страница: быстровозводимые агрокомплексы */
 .buildings-agro {
@@ -261,21 +309,19 @@
   margin: 0 0.2778rem 0.2778rem;
   overflow: hidden;
   border-radius: 20px;
-  background: #292929;
+  background: #2b2b2b;
   color: #ffffff;
   text-align: center;
-  isolation: isolate;
 }
 
 .buildings-agro__inner {
-  padding: 68px 0 20px;
+  padding: 68px 20px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 1388px;
-  min-height: 762px;
+  max-width: 1500px;
   background-image: url(/static/images/bildings/hero.png);
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -283,8 +329,6 @@
 }
 
 .buildings-agro__content {
-  position: relative;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -324,7 +368,6 @@
   font-weight: 600;
   line-height: 94px;
   text-transform: uppercase;
-  white-space: nowrap;
 }
 
 .buildings-agro__description {
@@ -351,29 +394,14 @@
   white-space: nowrap;
 }
 
-.buildings-agro__illustration {
-  position: absolute;
-  z-index: 1;
-  top: 304px;
-  left: 197px;
-  width: 994px;
-  height: 1043px;
-  pointer-events: none;
-  object-fit: contain;
-}
-
 .buildings-agro__tabs {
-  /* position: absolute;
-  z-index: 3;
-  bottom: 20px;
-  left: 73px; */
-  display: grid;
-  grid-template-columns: 188px 259px 258px 195px 132px 176px;
+  display: flex;
+  flex-wrap: wrap;
   gap: 4px;
-  width: 1240px;
   height: 76px;
   padding: 6px;
   border-radius: 20px;
+  color: #ffffff;
   background: rgba(237, 237, 237, 0.2);
   -webkit-backdrop-filter: blur(70px);
   backdrop-filter: blur(70px);
@@ -391,7 +419,6 @@
   font-size: 20px;
   font-weight: 600;
   text-transform: uppercase;
-  white-space: nowrap;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
@@ -415,69 +442,68 @@
 }
 
 @media screen and (max-width: 1600px) {
-  .buildings-agro__illustration {
-    left: 50%;
-    width: 744px;
-    height: auto;
-    transform: translateX(-50%);
+  .buildings-agro__inner {
+    background-size: 744px 442px;
   }
 
-  .buildings-agro__tabs {
-    right: 0;
-    bottom: 1.1111rem;
-    left: 0;
-    grid-template-columns: 1fr 1.38fr 1.38fr 1.04fr 0.94fr 0.94fr;
-    gap: 0;
-    width: 68.8889rem;
-    max-width: 100%;
-    height: auto;
-    min-height: 4.2222rem;
-    margin: 0 auto;
-    padding: 0.3333rem;
-    border: 1px solid #ffffff1f;
-    border-radius: 1.1111rem;
-    background: #626262cc;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
+  .buildings-agro__intro {
+    gap: 36px;
   }
 
-  .buildings-agro__tab {
-    height: auto;
-    padding: 0.6667rem 0.4444rem;
-    border-radius: 1.1111rem;
-    font-size: 1.1111rem;
-    line-height: 100%;
-    white-space: normal;
+  .buildings-agro__heading {
+    gap: 34px;
   }
 
-  .buildings-agro__tab:hover {
-    background: #ffffff;
-    color: #324c88;
+  .buildings-agro__title {
+    line-height: 72px;
   }
 }
 
-/* Макет Figma 1857:44024 — планшетный desktop 1024 px.
-   Геометрия сверена с фреймом 1024×850; правила 1440 и 1920 px сохранены отдельно. */
 @media screen and (max-width: 1300px) {
   .buildings-agro {
     min-height: 840px;
   }
 
   .buildings-agro__inner {
-    max-width: 1014px;
-    min-height: 772px;
-  }
-
-  .buildings-agro__category {
-    font-size: 20px;
+    max-width: 100%;
   }
 
   .buildings-agro__title {
-    width: 100%;
-    max-width: 950px;
     font-size: 48px;
     line-height: 64px;
-    white-space: normal;
+  }
+
+  .buildings-agro__tabs {
+    max-width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    height: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .buildings-agro__tabs::-webkit-scrollbar {
+    scrollbar-width: thin;
+    display: block;
+    height: 8px;
+  }
+  .buildings-agro__tabs::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 3px;
+  }
+
+  .buildings-agro__tab {
+    flex: 0 0 auto;
+    height: 64px;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 18px;
+    line-height: normal;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .buildings-agro__category {
+    font-size: 20px;
   }
 
   .buildings-agro__description {
@@ -493,34 +519,16 @@
     line-height: 1.26;
   }
 
-  .buildings-agro__illustration {
-    top: 281px;
-    width: 700px;
+  .buildings-agro__inner {
+    background-size: 725px 471px;
   }
 
-  .buildings-agro__tabs {
-    right: auto;
-    bottom: 20px;
-    left: 50%;
-    grid-template-columns: 144px 208px 208px 151px 94px 134px;
-    gap: 4px;
-    width: 971px;
-    max-width: none;
-    height: 76px;
-    min-height: 0;
-    padding: 6px;
-    border: 0;
-    border-radius: 20px;
-    transform: translateX(-50%);
+  .buildings-agro__intro {
+    gap: 24px;
   }
 
-  .buildings-agro__tab {
-    height: 64px;
-    padding: 0 12px;
-    border-radius: 20px;
-    font-size: 16px;
-    line-height: normal;
-    white-space: nowrap;
+  .buildings-agro__heading {
+    gap: 23px;
   }
 }
 
@@ -528,13 +536,12 @@
   .buildings-agro {
     min-height: 480px;
     margin: 5px;
-    border-radius: 20px;
-    background: #2b2b2b;
   }
 
   .buildings-agro__inner {
-    min-height: 0;
-    padding: 30px 0 4px;
+    position: relative;
+    background-image: none;
+    padding: 30px 8px 68px;
   }
 
   .buildings-agro__content {
@@ -580,23 +587,43 @@
     line-height: 18px;
   }
 
-  .buildings-agro__illustration {
-    display: none;
-  }
-
   .buildings-agro__tabs {
+    position: absolute;
+    right: 8px;
     bottom: 8px;
-    display: flex;
+    left: 8px;
+    z-index: 5;
     align-items: center;
     justify-content: space-between;
     gap: 0;
-    width: 334px;
-    max-width: 100%;
-    height: 52px;
     padding: 14px 20px;
-    background: #ededed33;
-    -webkit-backdrop-filter: blur(25px);
-    backdrop-filter: blur(25px);
+  }
+
+  .buildings-agro__tabs.is-fixed {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    color: #3f3f3f;
+    background: #ededed;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    animation: buildings-agro-tabs-in 0.2s ease;
+  }
+
+  .buildings-agro__tabs.is-narrow {
+    right: 75px;
+  }
+
+  .buildings-agro__tabs.is-open {
+    right: 10px;
+    left: 10px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 18px;
+    padding: 20px;
+    border: 1px solid #ffffff1f;
   }
 
   .buildings-agro__tab {
@@ -604,7 +631,8 @@
     height: auto;
     padding: 0;
     border-radius: 0;
-    line-height: 24px;
+    line-height: 20px;
+    font-size: 16px;
   }
 
   .buildings-agro__tab.is-active {
@@ -612,7 +640,11 @@
     flex: 1 1 auto;
     justify-content: flex-start;
     background: transparent;
-    color: #ffffff;
+    color: inherit;
+  }
+
+  .buildings-agro__tab:focus-visible {
+    outline-color: currentColor;
   }
 
   .buildings-agro__tabs-toggle {
@@ -624,23 +656,9 @@
     height: 24px;
   }
 
-  .buildings-agro__tabs-toggle img {
-    width: 24px;
-    height: 24px;
-  }
-
-  .buildings-agro__tabs.is-open {
-    right: 8px;
-    left: 8px;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-    gap: 18px;
-    width: auto;
-    height: auto;
-    padding: 20px;
-    border: 1px solid #ffffff1f;
-    transform: none;
+  .buildings-agro__tabs-toggle svg {
+    width: 100%;
+    height: 100%;
   }
 
   .buildings-agro__tabs.is-open .buildings-agro__tab {
@@ -652,7 +670,7 @@
 
   .buildings-agro__tabs.is-open .buildings-agro__tab:hover {
     background: transparent;
-    color: #ffffff;
+    color: inherit;
   }
 
   .buildings-agro__tabs.is-open .buildings-agro__tab:last-of-type {
@@ -664,6 +682,23 @@
     right: 20px;
     bottom: 20px;
   }
+
+  .main-modal-btn {
+    display: none;
+  }
+}
+
+/* @media (prefers-reduced-motion: reduce) {
+  .buildings-agro__tab,
+  .buildings-agro__action {
+    transition: none;
+  }
+} */
+@keyframes buildings-agro-tabs-in {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -671,13 +706,62 @@
   .buildings-agro__action {
     transition: none;
   }
+
+  .buildings-agro__tabs.is-fixed {
+    animation: none;
+  }
 }
 
-/* Секция «Описание» — Figma 1857:40155, фрейм 1920 × 958. */
+/* Кнопка «Наверх» */
+.scroll-top {
+  position: fixed;
+  right: 14px;
+  bottom: 10px;
+  z-index: 4;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #324c88;
+  color: #ffffff;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.scroll-top:focus-visible {
+  outline: 0.1111rem solid #324c88;
+  outline-offset: 0.2222rem;
+}
+
+@media screen and (max-width: 680px) {
+  .scroll-top {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-top {
+    transition: none;
+  }
+}
+
+/* Секция «Описание» */
 .buildings-description {
   margin: 0 0.5556rem 0.5556rem;
   padding: 5.3333rem 2.2222rem 100px;
-  border-radius: 1.1111rem;
   background: #f5f8f7;
 }
 
@@ -795,16 +879,11 @@
 }
 
 .buildings-description__item {
-  padding-bottom: 1.1111rem;
+  padding: 23px 0;
   border-top: 1px solid #0000000d;
 }
-
-.buildings-description__item:first-child {
-  padding-top: 1.1111rem;
-}
-
-.buildings-description__item + .buildings-description__item {
-  padding-top: 1.4444rem;
+.buildings-description__item:last-child {
+  border-bottom: 1px solid #0000000d;
 }
 
 .buildings-description__accordion-trigger {
@@ -1000,7 +1079,6 @@
   outline-offset: 0.2222rem;
 }
 
-/* Адаптация блока «Описание» под макет Figma 1857:42515 (1440 px). */
 @media screen and (max-width: 1600px) {
   .buildings-description {
     padding: 3.5556rem 31px 105px;
@@ -1034,16 +1112,14 @@
   }
 }
 
-/* Блок «Описание»: адаптация под планшетный макет Figma 1857:45126 (1024 px). */
 @media screen and (max-width: 1100px) {
   .buildings-description {
     margin: 0 10px 10px;
     padding: 40px;
-    border-radius: 10px;
   }
 
   .buildings-description__inner {
-    gap: 25px;
+    gap: 20px;
   }
 
   .buildings-description__header {
@@ -1056,7 +1132,6 @@
   }
 
   .buildings-description__industries {
-    flex-wrap: nowrap;
     gap: 18px;
     font-size: 20px;
     white-space: nowrap;
@@ -1077,44 +1152,12 @@
 
   .buildings-description__accordion-media--tablet {
     display: block;
-    margin: 20px 0;
-    padding: 4px;
-    border-radius: 30px;
-  }
-
-  .buildings-description__accordion-media--tablet .buildings-description__image-frame {
-    height: 632px;
-    border-radius: 10px;
+    width: 100%;
+    min-height: auto;
   }
 
   .buildings-description__accordion-media--tablet .buildings-description__image {
-    height: 100%;
-    aspect-ratio: auto;
-  }
-
-  .buildings-description__accordion-media--tablet .buildings-description__zoom {
-    right: 10px;
-    bottom: 10px;
-    width: 64px;
-    height: 64px;
-    border-radius: 10px;
-  }
-
-  .buildings-description__accordion-media--tablet .buildings-description__zoom img {
-    width: 36px;
-    height: 36px;
-  }
-
-  .buildings-description__item {
-    padding-bottom: 20px;
-  }
-
-  .buildings-description__item:first-child {
-    padding-top: 0;
-  }
-
-  .buildings-description__item + .buildings-description__item {
-    padding-top: 20px;
+    aspect-ratio: 916 / 624;
   }
 
   .buildings-description__accordion-trigger {
@@ -1127,13 +1170,17 @@
 
   .buildings-description__panel {
     gap: 14px;
-    margin-left: 54px;
-    padding-top: 0;
+    padding-top: 11px;
+    margin-left: 0;
   }
 
   .buildings-description__copy {
+    padding-left: 54px;
     gap: 14px;
     font-size: 16px;
+  }
+  .buildings-description__more {
+    margin-left: 54px;
   }
 
   .buildings-description__modal {
@@ -1156,154 +1203,73 @@
   }
 }
 
-@media screen and (max-width: 900px) {
-  .buildings-description {
-    margin: 0 0.5556rem 0.5556rem;
-    padding: 3.3333rem 1.3333rem;
-    border-radius: 1.1111rem;
-  }
-
-  .buildings-description__inner {
-    gap: 2rem;
-  }
-
-  .buildings-description__header {
-    gap: 1.3333rem;
-  }
-
-  .buildings-description__title {
-    font-size: 2rem;
-    line-height: 1.27;
-  }
-
-  .buildings-description__industries {
-    flex-wrap: wrap;
-    gap: 0.5556rem;
-    font-size: 1.1111rem;
-    line-height: 1.7222rem;
-    white-space: normal;
-  }
-
-  .buildings-description__industries-list {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5556rem;
-  }
-
-  .buildings-description__accordion {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 2rem;
-    max-width: 42.6667rem;
-    padding-bottom: 0.1667rem;
-  }
-
-  .buildings-description__accordion-media:not(.buildings-description__accordion-media--tablet) {
-    display: block;
-  }
-
-  .buildings-description__accordion-media--tablet {
-    display: none;
-  }
-
-  .buildings-description__item {
-    padding-bottom: 1.1111rem;
-  }
-
-  .buildings-description__item:first-child {
-    padding-top: 1.1111rem;
-  }
-
-  .buildings-description__item + .buildings-description__item {
-    padding-top: 1.4444rem;
-  }
-
-  .buildings-description__accordion-trigger {
-    gap: 1.3333rem;
-  }
-
-  .buildings-description__item-title {
-    font-size: 1rem;
-    line-height: 1.6667rem;
-  }
-
-  .buildings-description__panel {
-    gap: 1rem;
-    margin-left: 3.5556rem;
-    padding-top: 0.2222rem;
-  }
-
-  .buildings-description__copy {
-    gap: 0.7778rem;
-    font-size: 0.8889rem;
-  }
-}
-
 @media screen and (max-width: 680px) {
   .buildings-description {
-    margin: 0 0.2778rem 0.2778rem;
-    padding: 1.7778rem 0.8889rem;
-    border-radius: 0.5556rem;
+    margin: 0 10px 10px;
+    padding: 20px 4px 0;
   }
 
   .buildings-description__inner {
-    gap: 1.3333rem;
+    gap: 25px;
   }
 
   .buildings-description__header {
-    gap: 0.8889rem;
+    gap: 14px;
   }
 
   .buildings-description__title {
-    font-size: 1.4444rem;
-    line-height: 1.3;
+    font-size: 20px;
+    line-height: 28px;
   }
 
   .buildings-description__industries {
     flex-direction: column;
-    gap: 0.3333rem;
-    font-size: 0.8889rem;
-    line-height: 1.3333rem;
+    gap: 14px;
+    font-size: 18px;
+    line-height: normal;
   }
 
   .buildings-description__industries-list {
-    row-gap: 0.3333rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-height: 20px;
+    padding: 0 12px;
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .buildings-description__industries-list li {
+    display: flex;
   }
 
   .buildings-description__accordion {
-    gap: 1.3333rem;
+    gap: 26px;
   }
 
   .buildings-description__accordion-media {
     border-radius: 1rem;
   }
 
-  .buildings-description__zoom {
-    width: 3.1111rem;
-    height: 3.1111rem;
-  }
-
-  .buildings-description__item + .buildings-description__item {
-    padding-top: 1rem;
-  }
-
   .buildings-description__accordion-trigger {
-    gap: 0.7778rem;
+    align-items: flex-start;
+    gap: 24px;
   }
 
   .buildings-description__item-title {
-    font-size: 0.8889rem;
-    line-height: 1.3333rem;
+    font-size: 16px;
+    line-height: 1.5;
   }
 
   .buildings-description__panel {
-    gap: 0.8889rem;
-    margin-left: 2.7778rem;
-    padding-top: 0.7778rem;
+    gap: 14px;
+    padding-top: 14px;
   }
 
   .buildings-description__copy {
-    gap: 0.5556rem;
+    gap: 25px;
+    font-size: 14px;
   }
 
   .buildings-description__more {
@@ -1321,47 +1287,6 @@
     max-width: 90vw;
   }
 
-  .buildings-description {
-    margin: 0 10px 10px;
-    padding: 0 4px 10px;
-    border-radius: 10px;
-  }
-
-  .buildings-description__inner {
-    gap: 25px;
-  }
-
-  .buildings-description__header {
-    gap: 14px;
-    padding-top: 20px;
-  }
-
-  .buildings-description__title {
-    font-size: 20px;
-    line-height: 28px;
-  }
-
-  .buildings-description__industries {
-    gap: 14px;
-    font-size: 18px;
-    line-height: normal;
-  }
-
-  .buildings-description__industries-label {
-    white-space: nowrap;
-  }
-
-  .buildings-description__industries-list {
-    flex-wrap: nowrap;
-    gap: 14px;
-    width: 100%;
-    height: 21px;
-    overflow: hidden;
-    font-size: 16px;
-    line-height: 21px;
-    white-space: nowrap;
-  }
-
   .buildings-description__industries-toggle {
     display: flex;
     align-items: center;
@@ -1375,59 +1300,24 @@
     line-height: 22px;
   }
 
-  .buildings-description__industries-toggle img {
+  .buildings-description__industries-toggle svg {
     flex: 0 0 24px;
     width: 24px;
     height: 24px;
-    transition: transform 0.15s ease;
+  }
+
+  .buildings-description__industries-toggle[hidden] {
+    display: none;
   }
 
   .buildings-description__industries.is-expanded .buildings-description__industries-list {
-    flex-wrap: wrap;
-    height: auto;
+    max-height: none;
     overflow: visible;
     white-space: normal;
   }
 
-  .buildings-description__industries.is-expanded .buildings-description__industries-toggle img {
+  .buildings-description__industries.is-expanded .buildings-description__industries-toggle svg {
     transform: rotate(180deg);
-  }
-
-  .buildings-description__accordion {
-    gap: 26px;
-  }
-
-  .buildings-description__item {
-    padding-bottom: 20px;
-  }
-
-  .buildings-description__item:first-child {
-    padding-top: 0;
-  }
-
-  .buildings-description__item + .buildings-description__item {
-    padding-top: 20px;
-  }
-
-  .buildings-description__accordion-trigger {
-    align-items: flex-start;
-    gap: 24px;
-  }
-
-  .buildings-description__item-title {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  .buildings-description__panel {
-    gap: 14px;
-    margin-left: 54px;
-    padding-top: 0;
-  }
-
-  .buildings-description__copy {
-    gap: 25px;
-    font-size: 14px;
   }
 
   .buildings-description__lightbox-caption {
@@ -1465,11 +1355,19 @@
   .buildings-description__modal-button {
     align-self: stretch;
   }
+
+  .buildings-description__details-link {
+    font-size: 16px;
+  }
+
+  .buildings-description__zoom svg {
+    width: 26px;
+    height: 26px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .buildings-description__more,
-  .buildings-description__industries-toggle img {
+  .buildings-description__more {
     transition: none;
   }
 }
@@ -1483,7 +1381,7 @@
   overflow: hidden;
   border-radius: 10px;
   color: #ffffff;
-  background-color: #252525;
+  background-color: #2b2b2b;
   background-image: url(/static/images/bildings/benefits.png);
   background-position: 88.5% 300px;
   background-repeat: no-repeat;
@@ -1532,7 +1430,6 @@
 }
 
 .buildings-advantages__item {
-  min-height: 108px;
   padding: 30px;
   border-radius: 20px;
   background: #363636;
@@ -1618,63 +1515,42 @@
     gap: 24px;
   }
 }
-@media screen and (max-width: 1300px) {
-  .buildings-advantages {
-    padding: 56px 32px 44px;
-  }
 
-  .buildings-advantages__title {
-    font-size: 38px;
-  }
-
-  .buildings-advantages__subtitle {
-    font-size: 20px;
-  }
-
-  .buildings-advantages__content {
-    grid-template-columns: minmax(0, 1fr) 72px;
-    gap: 12px;
-  }
-
-  .buildings-advantages__item {
-    padding: 22px;
-  }
-
-  .buildings-advantages__item-label {
-    font-size: 20px;
-  }
-}
-
-/* Responsive arrangement from Figma 1866:80986 (1024 px and below). */
 @media screen and (max-width: 1100px) {
   .buildings-advantages {
     padding: 40px;
+    min-height: 746px;
+    background-position: center;
+    background-size: 450px 436px;
+  }
+
+  .buildings-advantages__inner {
+    gap: 496px;
   }
 
   .buildings-advantages__title {
-    line-height: 1;
+    font-size: 30px;
+    line-height: 38px;
   }
 
   .buildings-advantages__subtitle {
-    line-height: 1.15;
+    font-size: 18px;
+    line-height: 23px;
   }
 
   .buildings-advantages__content {
-    display: block;
+    grid-template-columns: 1fr;
     width: 100%;
   }
 
   .buildings-advantages__list {
     flex-direction: row;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: thin;
+    align-items: flex-start;
   }
 
   .buildings-advantages__item {
     flex: 0 0 340px;
-    min-height: 76px;
+    padding: 20px;
     scroll-snap-align: start;
   }
 
@@ -1686,15 +1562,53 @@
     display: flex;
   }
 
+  .buildings-advantages__item-trigger {
+    gap: 18px;
+  }
+
+  .accordion__toggle--yellow.buildings-advantages__toggle {
+    width: 36px;
+    height: 36px;
+  }
+
   .buildings-advantages__item-label {
     font-size: 18px;
+    line-height: 29px;
     white-space: nowrap;
+  }
+
+  .buildings-advantages__content .slider-controls {
+    transform: none;
+  }
+}
+
+@media (max-width: 1100px) and (hover: none) and (pointer: coarse) {
+  .buildings-advantages__content .slider-controls {
+    display: none;
+  }
+
+  .buildings-advantages__list {
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
   }
 }
 
 @media screen and (max-width: 680px) {
   .buildings-advantages {
-    padding: 28px 16px 24px;
+    padding: 20px 10px 12px;
+    min-height: 521px;
+    display: flex;
+    flex-direction: column;
+    background-position: center 135px;
+    background-size: 296px 293px;
+  }
+
+  .buildings-advantages__inner {
+    gap: 50px;
+    justify-content: space-between;
+    flex: 1 0 auto;
   }
 
   .buildings-advantages__header {
@@ -1702,24 +1616,50 @@
   }
 
   .buildings-advantages__title {
-    font-size: 28px;
-    line-height: 1.25;
+    font-size: 22px;
+    line-height: 28px;
   }
 
   .buildings-advantages__subtitle {
-    font-size: 16px;
-    line-height: 1.45;
+    font-size: 14px;
+    line-height: 22px;
   }
 
   .buildings-advantages__item {
-    flex-basis: 280px;
-    padding: 14px;
-    border-radius: 12px;
+    flex-basis: 250px;
+    padding: 10px;
+  }
+
+  .accordion__toggle--yellow.buildings-advantages__toggle {
+    width: 30px;
+    height: 30px;
+  }
+  .accordion__toggle.buildings-advantages__toggle::before {
+    width: 14px;
+    height: 2px;
+  }
+  .accordion__toggle.buildings-advantages__toggle::after {
+    width: 2px;
+    height: 14px;
   }
 
   .buildings-advantages__item-label {
-    font-size: 12px;
-    line-height: 1.4;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .buildings-advantages__content .slider-controls {
+    display: none;
+  }
+
+  .buildings-advantages__item-descr h5 {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .buildings-advantages__item-descr p {
+    font-size: 14px;
+    line-height: 22px;
   }
 }
 
@@ -1925,7 +1865,7 @@
   }
 }
 
-/* Фотогалерея — Figma node 1857:41326, desktop 1920 px. */
+/* Фотогалерея */
 .buildings-gallery {
   margin: 0 10px 10px;
   padding: 40px 40px 30px;
@@ -1989,11 +1929,7 @@
   position: absolute;
   right: 20px;
   bottom: 20px;
-  display: grid;
-  width: 48px;
-  height: 48px;
-  place-items: center;
-  overflow: hidden;
+  padding: 12px;
   border-radius: 10px;
   background: #ffffff0a;
   box-shadow: inset 0 0 60px #ffffff08, inset 0 2px 4px #ffffff17;
@@ -2002,10 +1938,11 @@
   color: #ffffff;
 }
 
-.buildings-gallery__zoom img {
+.buildings-gallery__zoom svg {
+  display: block;
   width: 24px;
   height: 24px;
-  object-fit: contain;
+  fill: currentColor;
 }
 
 .buildings-gallery__controls {
@@ -2049,9 +1986,7 @@
   background: #324c88;
 }
 
-.buildings-gallery__arrow:focus-visible,
-.buildings-gallery__zoom:focus-visible,
-.buildings-gallery__lightbox-close:focus-visible {
+.buildings-gallery__zoom:focus-visible {
   outline: 2px solid #324c88;
   outline-offset: 3px;
 }
@@ -2110,7 +2045,7 @@
   }
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1100px) {
   .buildings-gallery {
     padding: 30px;
   }
@@ -2254,10 +2189,22 @@
 
 .buildings-catalog__cards {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-template-rows: 384px;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 3 * 10px) / 4);
   gap: 10px;
   width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.buildings-catalog__cards::-webkit-scrollbar {
+  display: none;
+}
+
+.buildings-catalog__card-link {
+  scroll-snap-align: start;
 }
 
 .buildings-catalog__card-wrapper {
@@ -2266,7 +2213,6 @@
   align-items: center;
   gap: 18px;
   min-width: 0;
-  min-height: 384px;
   padding: 4px 4px 18px;
   border-radius: 30px;
   color: #4d4d4d;
@@ -2281,6 +2227,7 @@
 
 .buildings-catalog__image {
   display: block;
+  height: 100%;
   border-radius: inherit;
   object-fit: cover;
 }
@@ -2353,11 +2300,14 @@
   background: #324c88;
 }
 
-.buildings-catalog__card:focus-visible,
-.buildings-catalog__filter:focus-visible,
-.buildings-catalog__arrow:focus-visible {
+.buildings-catalog__filter:focus-visible {
   outline: 2px solid #324c88;
   outline-offset: 3px;
+}
+
+.buildings-catalog__card-link:focus-visible {
+  outline: 2px solid #324c88;
+  outline-offset: -2px;
 }
 
 @media screen and (max-width: 1600px) {
@@ -2367,33 +2317,11 @@
 }
 
 @media screen and (max-width: 1300px) {
-  .buildings-catalog__panel {
-    padding: 30px;
-  }
-
-  .buildings-catalog__title {
-    font-size: 30px;
-  }
-
-  .buildings-catalog__filters {
-    gap: 12px;
-  }
-
-  .buildings-catalog__filter {
-    gap: 12px;
-    font-size: 16px;
-  }
-
-  .buildings-catalog__card-wrapper {
-    min-height: 0;
-  }
-
-  .buildings-catalog__caption {
-    font-size: 18px;
+  .buildings-catalog__cards {
+    grid-auto-columns: calc((100% - 2 * 10px) / 3);
   }
 }
 
-/* Figma node 1857:46397 — точная адаптация планшетного кадра 1024 px. */
 @media screen and (max-width: 1100px) {
   .buildings-catalog__panel {
     gap: 14px;
@@ -2401,19 +2329,20 @@
   }
 
   .buildings-catalog__title {
+    font-size: 30px;
     line-height: 38px;
   }
 
-  .buildings-catalog__filters {
-    gap: 4px;
-  }
-
   .buildings-catalog__filter {
-    gap: 20px;
+    font-size: 16px;
   }
 
-  .buildings-catalog__cards {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .buildings-catalog__image-wrap {
+    height: auto;
+  }
+
+  .buildings-catalog__caption {
+    font-size: 18px;
   }
 }
 
@@ -2428,7 +2357,6 @@
   }
 
   .buildings-catalog__filters {
-    justify-content: flex-start;
     gap: 12px;
   }
 
@@ -2437,15 +2365,14 @@
   }
 
   .buildings-catalog__cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-columns: calc((100% - 10px) / 2);
   }
 }
 
 @media screen and (max-width: 680px) {
   .buildings-catalog__panel {
     gap: 8px;
-    padding: 20px 14px;
-    border-radius: 20px;
+    padding: 20px 10px;
   }
 
   .buildings-catalog__header {
@@ -2463,51 +2390,13 @@
   }
 
   .buildings-catalog__filter {
-    gap: 8px;
-    font-size: 12px;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 22px;
     white-space: normal;
   }
 
   .buildings-catalog__cards {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .buildings-catalog__card-wrapper {
-    gap: 12px;
-    padding: 4px 4px 10px;
-  }
-
-  .buildings-catalog__caption {
-    font-size: 16px;
-  }
-
-  .buildings-catalog__controls {
-    min-height: 68px;
-  }
-
-  .buildings-catalog__arrow {
-    width: 68px;
-    height: 68px;
-    flex-basis: 68px;
-  }
-
-  .buildings-catalog__arrow::before {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-  }
-
-  .buildings-catalog__arrow img {
-    width: 30px;
-    height: 30px;
-  }
-
-  .buildings-catalog__pagination {
-    margin: 0 12px;
-  }
-
-  .buildings-catalog__pagination span {
-    width: 8px;
-    height: 8px;
+    grid-auto-columns: 100%;
   }
 }
