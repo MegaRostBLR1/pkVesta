@@ -1,73 +1,3 @@
-.buildings-characteristics {
-  padding-bottom: 2.2222rem;
-}
-
-.buildings-characteristics__breadcrumbs {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1.1111rem;
-  width: 100%;
-  max-width: 106.1111rem;
-  min-height: 3.4444rem;
-  margin: 0 auto;
-  padding: 0 0.2778rem;
-  color: #4d4d4d;
-  font-size: 1.1111rem;
-  line-height: 1.4444rem;
-}
-
-.buildings-characteristics__breadcrumb-link {
-  color: inherit;
-  transition: color 0.15s ease;
-}
-
-.buildings-characteristics__breadcrumb-link:hover {
-  color: #324c88;
-}
-
-.buildings-characteristics__breadcrumb-link:focus-visible {
-  outline: 0.1111rem solid currentColor;
-  outline-offset: 0.2222rem;
-}
-
-.buildings-characteristics__breadcrumb-separator {
-  color: #979a9b;
-}
-
-.buildings-characteristics__content {
-  width: 100%;
-  max-width: 106.1111rem;
-  margin: 0 auto;
-  padding: 2.2222rem;
-}
-
-.buildings-characteristics__title {
-  max-width: 75rem;
-  margin: 0 0 2.2222rem;
-  color: #25313a;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 2.6667rem;
-  font-weight: 600;
-  line-height: 1.25;
-}
-
-.buildings-characteristics__specifications {
-  min-height: 12rem;
-  padding: 2.2222rem;
-  border-radius: 1.1111rem;
-  background-color: #ffffff;
-}
-
-.buildings-characteristics__section-title {
-  margin: 0;
-  color: #25313a;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 1.7778rem;
-  font-weight: 600;
-  line-height: 1.35;
-}
-
 .buildings-characteristics__technical {
   padding: 0 10px 10px;
   border-radius: 10px;
@@ -78,10 +8,7 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  width: 100%;
   padding: 20px 40px 40px;
-  border-radius: 20px;
-  background: #ffffff;
 }
 
 .buildings-characteristics__technical-header {
@@ -89,40 +16,32 @@
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  width: 100%;
 }
 
 .buildings-characteristics__technical-title {
   width: 100%;
-  margin: 0;
   padding: 20px 40px 0;
   color: #4d4d4d;
-  font-family: "Onest-SemiBold", sans-serif;
   font-size: 48px;
-  font-weight: 600;
   line-height: 64px;
   text-align: center;
-  text-transform: uppercase;
   overflow-wrap: anywhere;
 }
 
+/* Вкладки в одну строку. Если не влезают, их можно прокрутить */
 .buildings-characteristics__tabs {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
   gap: 4px;
   max-width: 100%;
   padding: 4px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
   border-radius: 10px;
   background: #f5f8f7;
+  scrollbar-width: thin;
 }
 
 .buildings-characteristics__tab {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
   padding: 14px 18px;
   border-radius: 14px;
   color: #5d5d5d;
@@ -144,14 +63,26 @@
   outline-offset: 2px;
 }
 
+/* Карточки идут по столбцам: сначала заполняется левый, потом правый */
 .buildings-characteristics__technical-panel {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-flow: column;
   gap: 5px;
-  width: 100%;
   padding: 5px;
   border-radius: 10px;
   background: #f5f8f7;
+}
+
+/* Число строк, вариант 1: всегда 5. Подходит, только если карточек ровно 10 */
+.buildings-characteristics__technical-panel {
+  grid-template-rows: repeat(5, auto);
+}
+
+/* Число строк, вариант 2: берётся из style="--rows: 5" у панели, в Битриксе его посчитает шаблон.
+   Если --rows не задан, строк 5. Пока в файле оба варианта, работает этот. Оставьте один */
+.buildings-characteristics__technical-panel {
+  grid-template-rows: repeat(var(--rows, 5), auto);
 }
 
 .buildings-characteristics__technical-card {
@@ -159,29 +90,23 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 18px;
-  min-width: 0;
   padding: 20px;
   border-radius: 10px;
   background: #ffffff;
 }
 
 .buildings-characteristics__technical-label {
-  margin: 0;
   color: #4d4d4d;
   font-family: "Onest-SemiBold", sans-serif;
   font-size: 20px;
   font-weight: 600;
-  line-height: normal;
   overflow-wrap: anywhere;
 }
 
 .buildings-characteristics__technical-value {
   width: 100%;
-  margin: 0;
   color: #4d4d4d;
-  font-family: "Onest-Regular", sans-serif;
   font-size: 22px;
-  font-weight: 400;
   line-height: 32px;
   overflow-wrap: anywhere;
 }
@@ -196,8 +121,6 @@
 }
 
 .buildings-characteristics__show-more-icon {
-  display: block;
-  flex: 0 0 24px;
   transition: transform 0.15s ease;
 }
 
@@ -205,55 +128,7 @@
   transform: rotate(180deg);
 }
 
-@media screen and (max-width: 1600px) {
-  .buildings-characteristics__technical-inner {
-    gap: 50px;
-    padding: 20px 40px 40px;
-  }
-
-  .buildings-characteristics__technical-title {
-    padding: 20px 40px 0;
-    font-size: 48px;
-    line-height: 64px;
-  }
-
-  .buildings-characteristics__tabs {
-    gap: 4px;
-    padding: 4px;
-  }
-
-  .buildings-characteristics__tab {
-    padding: 14px 18px;
-    font-size: 20px;
-  }
-
-  .buildings-characteristics__technical-panel {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: stretch;
-    gap: 5px;
-  }
-
-  .buildings-characteristics__technical-card {
-    height: 100%;
-    gap: 18px;
-    padding: 20px;
-  }
-
-  .buildings-characteristics__technical-label {
-    font-size: 20px;
-    line-height: normal;
-  }
-
-  .buildings-characteristics__technical-value {
-    font-size: 22px;
-    line-height: 32px;
-  }
-}
-
 @media screen and (max-width: 1100px) {
-  .buildings-characteristics__technical {
-    padding: 0 10px 10px;
-  }
   .buildings-characteristics__technical-inner {
     gap: 24px;
     padding: 20px 40px;
@@ -265,46 +140,24 @@
     line-height: 38px;
   }
 
-  .buildings-characteristics__tabs {
-    flex-wrap: nowrap;
-    gap: 4px;
-    padding: 4px;
-  }
-
   .buildings-characteristics__tab {
-    padding: 14px 18px;
     font-size: 16px;
-    line-height: 1.6;
-  }
-
-  .buildings-characteristics__technical-header {
-    gap: 24px;
   }
 
   .buildings-characteristics__technical-panel {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(5, auto);
-    grid-auto-flow: column;
-    align-items: stretch;
     column-gap: 40px;
-    row-gap: 5px;
-    padding: 5px;
   }
 
   .buildings-characteristics__technical-card {
-    height: 100%;
     gap: 8px;
-    padding: 20px;
   }
 
   .buildings-characteristics__technical-label {
     font-size: 18px;
-    line-height: normal;
   }
 
   .buildings-characteristics__technical-value {
     font-size: 18px;
-    line-height: 32px;
   }
 }
 
@@ -321,17 +174,14 @@
   .buildings-characteristics__technical-header {
     gap: 16px;
   }
+
   .buildings-characteristics__technical-title {
     font-size: 20px;
+    line-height: 28px;
   }
 
   .buildings-characteristics__tabs {
-    justify-content: flex-start;
-    flex-wrap: nowrap;
     align-self: stretch;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scrollbar-width: thin;
   }
 
   .buildings-characteristics__tab {
@@ -339,10 +189,11 @@
     font-size: 13px;
   }
 
+  /* Один столбец: карточки идут по порядку, строки из базовых стилей сбрасываются */
   .buildings-characteristics__technical-panel {
     grid-template-columns: minmax(0, 1fr);
-    gap: 5px;
-    padding: 5px;
+    grid-template-rows: none;
+    grid-auto-flow: row;
   }
 
   .buildings-characteristics__technical-card {
@@ -357,6 +208,7 @@
     font-size: 16px;
     line-height: 1.5;
   }
+
   .buildings-characteristics__technical-card:nth-child(n + 5) {
     display: none;
   }
@@ -368,9 +220,7 @@
   .buildings-characteristics__show-more {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     gap: 14px;
-    min-height: 24px;
     align-self: center;
     color: #324c88;
     font-family: "Onest-Medium", sans-serif;
@@ -384,6 +234,7 @@
   .buildings-characteristics__show-more-icon {
     transition: none;
   }
+
   .buildings-characteristics__tab {
     transition: none;
   }
@@ -394,14 +245,12 @@
 .buildings-production {
   margin: 0 10px 10px;
   padding: 0 0 10px;
-  background: #f5f8f7;
 }
 
 .buildings-production__panel {
   display: flex;
   flex-direction: column;
   gap: 36px;
-  width: 100%;
   padding: 60px 40px 40px;
   border-radius: 20px;
   background: #ffffff;
@@ -412,8 +261,6 @@
   flex-direction: column;
   align-items: center;
   gap: 36px;
-  width: 100%;
-  min-width: 0;
 }
 
 .buildings-production__header {
@@ -426,39 +273,25 @@
 }
 
 .buildings-production__title {
-  margin: 0;
   color: #4d4d4d;
-  font-family: "Onest-SemiBold", sans-serif;
   font-size: 48px;
-  font-weight: 600;
-  line-height: normal;
-  text-transform: uppercase;
 }
 
 .buildings-production__subtitle {
-  margin: 0;
   color: #333333;
-  font-family: "Onest-Regular", sans-serif;
   font-size: 24px;
-  font-weight: 400;
-  line-height: normal;
 }
 
 .buildings-production__gallery {
   display: flex;
-  align-items: stretch;
   gap: 8px;
   width: 100%;
   max-width: 1736px;
-  min-width: 0;
 }
 
 .buildings-production__main-image {
-  position: relative;
   flex: 0 1 1400px;
-  min-width: 0;
   height: 787px;
-  margin: 0;
   overflow: hidden;
   border-radius: 30px;
   background: #e9eceb;
@@ -469,14 +302,10 @@
   flex: 1 1 0;
   flex-direction: column;
   gap: 8px;
-  min-width: 0;
 }
 
 .buildings-production__side-image {
-  position: relative;
   flex: 1 1 0;
-  min-height: 0;
-  margin: 0;
   overflow: hidden;
   border-radius: 30px;
   background: #e9eceb;
@@ -485,7 +314,6 @@
 .buildings-production__main-image img,
 .buildings-production__side-image img {
   display: block;
-  width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -493,6 +321,7 @@
 .buildings-production__facts {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-self: center;
   align-items: start;
   gap: 36px;
   width: 100%;
@@ -500,56 +329,27 @@
 }
 
 .buildings-production__fact {
-  min-width: 0;
   overflow: hidden;
 }
 
 .buildings-production__fact-title {
-  margin: 0 0 18px;
+  margin-bottom: 18px;
   color: #324c88;
   font-family: "Onest-SemiBold", sans-serif;
   font-size: 30px;
   font-weight: 600;
-  line-height: normal;
 }
 
 .buildings-production__fact-description {
-  margin: 0;
   color: #4d4d4d;
-  font-family: "Onest-Regular", sans-serif;
   font-size: 22px;
-  font-weight: 400;
   line-height: 32px;
   overflow-wrap: anywhere;
 }
 
 @media screen and (max-width: 1600px) {
   .buildings-production__panel {
-    gap: 36px;
     padding: 60px 40px;
-  }
-
-  .buildings-production__content {
-    gap: 36px;
-  }
-
-  .buildings-production__header {
-    gap: 24px;
-  }
-
-  .buildings-production__title {
-    font-size: 48px;
-    line-height: normal;
-  }
-
-  .buildings-production__subtitle {
-    font-size: 24px;
-    line-height: normal;
-  }
-
-  .buildings-production__gallery {
-    gap: 8px;
-    max-width: 100%;
   }
 
   .buildings-production__main-image {
@@ -559,27 +359,6 @@
 
   .buildings-production__side-images {
     flex: 1 1 280px;
-    gap: 8px;
-  }
-
-  .buildings-production__side-image {
-    flex: 1 1 0;
-  }
-
-  .buildings-production__facts {
-    gap: 36px;
-    max-width: 1389px;
-  }
-
-  .buildings-production__fact-title {
-    margin-bottom: 18px;
-    font-size: 30px;
-    line-height: normal;
-  }
-
-  .buildings-production__fact-description {
-    font-size: 22px;
-    line-height: 32px;
   }
 }
 
@@ -593,49 +372,21 @@
     gap: 24px;
   }
 
-  .buildings-production__header {
-    gap: 24px;
-  }
-
   .buildings-production__title {
     font-size: 30px;
     line-height: 38px;
   }
 
-  .buildings-production__subtitle {
-    font-size: 24px;
-    line-height: normal;
-  }
-
-  .buildings-production__gallery {
-    align-items: stretch;
-    gap: 8px;
-    width: 100%;
-  }
-
   .buildings-production__main-image {
-    flex: 1 1 0;
     aspect-ratio: 2520 / 1417;
     height: auto;
   }
 
   .buildings-production__side-images {
     flex: 0 0 170px;
-    gap: 8px;
-  }
-
-  .buildings-production__side-image {
-    flex: 1 1 0;
-  }
-
-  .buildings-production__facts {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 36px;
-    max-width: 100%;
   }
 
   .buildings-production__fact-title {
-    margin-bottom: 18px;
     font-size: 22px;
     line-height: 30px;
   }
@@ -658,10 +409,6 @@
     border-radius: 10px;
   }
 
-  .buildings-production__content {
-    gap: 24px;
-  }
-
   .buildings-production__header {
     gap: 14px;
   }
@@ -674,33 +421,23 @@
 
   .buildings-production__subtitle {
     font-size: 18px;
-    line-height: normal;
-    text-align: center;
   }
 
   .buildings-production__gallery {
     flex-direction: column;
-    gap: 8px;
   }
 
   .buildings-production__main-image {
     flex: 0 0 auto;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 2520 / 1417;
     border-radius: 20px;
   }
 
   .buildings-production__side-images {
     flex: 0 0 80px;
     flex-direction: row;
-    gap: 8px;
-    width: 100%;
   }
 
   .buildings-production__side-image {
-    flex: 1 1 0;
-    width: 0;
     height: 80px;
     border-radius: 20px;
   }
@@ -708,7 +445,6 @@
   .buildings-production__facts {
     grid-template-columns: minmax(0, 1fr);
     gap: 16px;
-    max-width: 100%;
   }
 
   .buildings-production__fact-title {
@@ -720,11 +456,5 @@
   .buildings-production__fact-description {
     font-size: 14px;
     line-height: 24px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .buildings-production__gallery img {
-    scroll-behavior: auto;
   }
 }

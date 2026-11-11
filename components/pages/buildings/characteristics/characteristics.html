@@ -46,55 +46,57 @@
 <section class="buildings-characteristics__technical" aria-labelledby="buildings-characteristics-title">
   <div class="buildings-characteristics__technical-inner">
     <header class="buildings-characteristics__technical-header">
-      <h1 class="buildings-characteristics__technical-title" id="buildings-characteristics-title">Технические характеристики:</h1>
+      <h2 class="buildings-characteristics__technical-title" id="buildings-characteristics-title">Технические характеристики:</h2>
       <div class="buildings-characteristics__tabs" role="group" aria-label="Категории технических характеристик">
         <button class="buildings-characteristics__tab" type="button" aria-pressed="false">Общее</button>
         <button class="buildings-characteristics__tab is-active" type="button" aria-pressed="true">Каркас</button>
         <button class="buildings-characteristics__tab" type="button" aria-pressed="false">Обшивка</button>
         <button class="buildings-characteristics__tab" type="button" aria-pressed="false">Проекты</button>
-        <button class="buildings-characteristics__tab" type="button" aria-pressed="false">F.A.Q</button>
+        <button class="buildings-characteristics__tab" type="button" aria-pressed="false">ЛСТК</button>
+        <button class="buildings-characteristics__tab" type="button" aria-pressed="false">ЛМК</button>
       </div>
     </header>
 
-    <div class="buildings-characteristics__technical-panel" id="buildings-characteristics-cards">
+    <!-- style нужен для варианта 2 в CSS: число строк = количество карточек / 2 с округлением вверх -->
+    <div class="buildings-characteristics__technical-panel" id="buildings-characteristics-cards" style="--rows: 5">
       <article class="buildings-characteristics__technical-card">
-        <h2 class="buildings-characteristics__technical-label">Технологии каркаса:</h2>
+        <h3 class="buildings-characteristics__technical-label">Технологии каркаса:</h3>
         <p class="buildings-characteristics__technical-value">Двухскатные, односкатные, пристройки и плоские кровли (однопролетные и многопролетные)</p>
       </article>
       <article class="buildings-characteristics__technical-card">
-        <h2 class="buildings-characteristics__technical-label">Конструкции:</h2>
+        <h3 class="buildings-characteristics__technical-label">Конструкции:</h3>
         <p class="buildings-characteristics__technical-value">Двухскатные, односкатные, пристройки и плоские кровли (однопролетные и многопролетные)</p>
       </article>
       <article class="buildings-characteristics__technical-card">
-        <h2 class="buildings-characteristics__technical-label">Металл:</h2>
+        <h3 class="buildings-characteristics__technical-label">Металл:</h3>
         <p class="buildings-characteristics__technical-value">С245, С350 или С345</p>
       </article>
       <article class="buildings-characteristics__technical-card">
-        <h2 class="buildings-characteristics__technical-label">Поставщики металла:</h2>
+        <h3 class="buildings-characteristics__technical-label">Поставщики металла:</h3>
         <p class="buildings-characteristics__technical-value">Российские Новолипецкий МК и СеверСталь</p>
       </article>
       <article class="buildings-characteristics__technical-card">
-        <h2 class="buildings-characteristics__technical-label">Уровень подготовки:</h2>
+        <h3 class="buildings-characteristics__technical-label">Уровень подготовки:</h3>
         <p class="buildings-characteristics__technical-value">Высокий (нумерация элементов с учетом резки на нужную длину, пробивка отверстий и упаковочного листа для быстрого поиска нужной пачки на месте строительства)</p>
       </article>
       <article class="buildings-characteristics__technical-card">
-        <h2 class="buildings-characteristics__technical-label">Конструктивы:</h2>
+        <h3 class="buildings-characteristics__technical-label">Конструктивы:</h3>
         <p class="buildings-characteristics__technical-value">H-обр. балки (I-Beam), C-обр. фермы/колонны (C-Channel)</p>
       </article>
       <article class="buildings-characteristics__technical-card">
-        <h2 class="buildings-characteristics__technical-label">Аксессуары:</h2>
+        <h3 class="buildings-characteristics__technical-label">Аксессуары:</h3>
         <p class="buildings-characteristics__technical-value">прилагаются все болты для каркаса (кроме анкерных), уголки, диагональные связи и соединительные элементы.</p>
       </article>
       <article class="buildings-characteristics__technical-card">
-        <h2 class="buildings-characteristics__technical-label">Класс цинкования:</h2>
+        <h3 class="buildings-characteristics__technical-label">Класс цинкования:</h3>
         <p class="buildings-characteristics__technical-value">только I (275 г/кв.м.)</p>
       </article>
       <article class="buildings-characteristics__technical-card">
-        <h2 class="buildings-characteristics__technical-label">Второстепенные элементы:</h2>
+        <h3 class="buildings-characteristics__technical-label">Второстепенные элементы:</h3>
         <p class="buildings-characteristics__technical-value">диагональные связи, прогонная система (С-обр. и Z-обр.)</p>
       </article>
       <article class="buildings-characteristics__technical-card">
-        <h2 class="buildings-characteristics__technical-label">Соединение:</h2>
+        <h3 class="buildings-characteristics__technical-label">Соединение:</h3>
         <p class="buildings-characteristics__technical-value">только 100% болтовое соединение (высокопрочные болты нормальной прочности)</p>
       </article>
     </div>
@@ -106,6 +108,7 @@
     </button>
   </div>
 </section>
+
 <section class="buildings-advantages" aria-labelledby="buildings-advantages-title">
   <div class="buildings-advantages__inner flex-col">
     <header class="buildings-advantages__header">
@@ -338,7 +341,7 @@
               height="787"
               loading="lazy">
         </figure>
-        <div class="buildings-production__side-images" aria-label="Дополнительные фотографии производства">
+        <div class="buildings-production__side-images">
           <figure class="buildings-production__side-image">
             <img
                 src="https://www.figma.com/api/mcp/asset/59076374-ebf5-4f53-8798-11812e3c7de0/c0db3.png"
@@ -381,6 +384,100 @@
         <p class="buildings-production__fact-description">Двухскатные, односкатные, пристройки и плоские кровли (однопролетные и многопролетные)</p>
       </article>
     </div>
+  </div>
+</section>
+
+<section class="buildings-catalog" aria-labelledby="buildings-catalog-title">
+  <div class="buildings-catalog__panel">
+    <header class="buildings-catalog__header">
+      <h2 class="buildings-catalog__title" id="buildings-catalog-title">Каталог отраслей</h2>
+      <div class="buildings-catalog__filters" role="group" aria-label="Категории каталога отраслей">
+        <button class="buildings-catalog__filter is-active" type="button" aria-pressed="true">
+          Сельское хозяйство
+        </button>
+        <button class="buildings-catalog__filter" type="button" aria-pressed="false">Коммерческая</button>
+        <button class="buildings-catalog__filter" type="button" aria-pressed="false">Общие здания</button>
+        <button class="buildings-catalog__filter" type="button" aria-pressed="false">Техника</button>
+        <button class="buildings-catalog__filter" type="button" aria-pressed="false">Промышленность</button>
+        <button class="buildings-catalog__filter" type="button" aria-pressed="false">Спортивная</button>
+      </div>
+    </header>
+    <div class="buildings-catalog__cards" id="buildings-catalog-agro">
+      <a class="buildings-catalog__card-link" href="#buildings-agro-description">
+        <figure class="buildings-catalog__card-wrapper">
+          <span class="buildings-catalog__image-wrap">
+            <img
+              class="buildings-catalog__image"
+              src="/static/images/bildings/industry-1.jpg"
+              alt="Агрокомплексы"
+              loading="lazy" />
+          </span>
+          <figcaption class="buildings-catalog__caption">Агрокомплексы</figcaption>
+        </figure>
+      </a>
+      <a class="buildings-catalog__card-link" href="#buildings-catalog-aquafarm">
+        <figure class="buildings-catalog__card-wrapper">
+          <span class="buildings-catalog__image-wrap">
+            <img
+              class="buildings-catalog__image"
+              src="/static/images/bildings/industry-2.jpg"
+              alt="Акваферма"
+              loading="lazy" />
+          </span>
+          <figcaption class="buildings-catalog__caption">Акваферма</figcaption>
+        </figure>
+      </a>
+      <a class="buildings-catalog__card-link" href="#buildings-catalog-winefarm">
+        <figure class="buildings-catalog__card-wrapper">
+          <span class="buildings-catalog__image-wrap">
+            <img
+              class="buildings-catalog__image"
+              src="/static/images/bildings/industry-3.jpg"
+              alt="Вино ферма"
+              loading="lazy" />
+          </span>
+          <figcaption class="buildings-catalog__caption">Вино ферма</figcaption>
+        </figure>
+      </a>
+      <a class="buildings-catalog__card-link" href="#buildings-catalog-mushroomfarm">
+        <figure class="buildings-catalog__card-wrapper">
+          <span class="buildings-catalog__image-wrap">
+            <img
+              class="buildings-catalog__image"
+              src="/static/images/bildings/industry-4.jpg"
+              alt="Грибные фермы"
+              loading="lazy" />
+          </span>
+          <figcaption class="buildings-catalog__caption">Грибные фермы</figcaption>
+        </figure>
+      </a>
+    </div>
+    <nav class="slider-controls slider-controls--dark" aria-label="Навигация по карточкам каталога">
+      <button
+        class="slider-controls__arrow slider-controls__arrow--prev"
+        type="button"
+        aria-label="Предыдущий слайд"
+        disabled>
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M24 8 12 20l12 12"></path>
+        </svg>
+      </button>
+      <div class="slider-controls__pagination" aria-label="Слайд 1 из 4">
+        <span class="slider-controls__dot slider-controls__dot--active" aria-hidden="true"></span>
+        <span class="slider-controls__dot" aria-hidden="true"></span>
+        <span class="slider-controls__dot" aria-hidden="true"></span>
+        <span class="slider-controls__dot" aria-hidden="true"></span>
+      </div>
+      <button
+        class="slider-controls__arrow slider-controls__arrow--next"
+        type="button"
+        aria-label="Следующий слайд"
+        disabled>
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <path d="m16 8 12 12-12 12"></path>
+        </svg>
+      </button>
+    </nav>
   </div>
 </section>
 
