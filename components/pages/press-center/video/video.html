@@ -27,7 +27,7 @@
         <div class="video-page__filter" aria-label="Фильтры видео">
           <span class="video-page__filter-label">Показывать:</span>
           <button
-            class="press__mobile-filter-button"
+            class="mob-filter-button"
             type="button"
             aria-haspopup="dialog"
             aria-expanded="false"
@@ -36,9 +36,9 @@
             <img src="/static/images/news/settings-ic.svg" alt="" aria-hidden="true" />
           </button>
           <div class="video-page__filter-controls">
-            <div class="video-page__filter-dropdown">
+            <div class="filter-dropdown">
               <button
-                class="video-page__filter-button"
+                class="filter-dropdown__button"
                 type="button"
                 aria-expanded="false"
                 aria-controls="video-filter-years"
@@ -50,13 +50,13 @@
                 </svg>
               </button>
               <div
-                class="video-page__filter-menu"
+                class="filter-dropdown__menu"
                 id="video-filter-years"
                 role="listbox"
                 aria-label="Выберите год"
                 hidden>
                 <button
-                  class="video-page__filter-option is-selected"
+                  class="filter-dropdown__option is-selected"
                   type="button"
                   role="option"
                   aria-selected="true"
@@ -64,15 +64,15 @@
                   Все
                 </button>
                 <button
-                  class="video-page__filter-option is-selected"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
-                  aria-selected="true"
+                  aria-selected="false"
                   data-filter-value="2026">
                   2026
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -80,7 +80,7 @@
                   2025
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -88,7 +88,7 @@
                   2024
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -96,7 +96,7 @@
                   2023
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -104,7 +104,7 @@
                   2023
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -112,7 +112,7 @@
                   2023
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -120,7 +120,7 @@
                   2023
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -128,7 +128,7 @@
                   2023
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -137,9 +137,9 @@
                 </button>
               </div>
             </div>
-            <div class="video-page__filter-dropdown">
+            <div class="filter-dropdown">
               <button
-                class="video-page__filter-button"
+                class="filter-dropdown__button"
                 type="button"
                 aria-expanded="false"
                 aria-controls="video-filter-countries"
@@ -151,13 +151,13 @@
                 </svg>
               </button>
               <div
-                class="video-page__filter-menu"
+                class="filter-dropdown__menu"
                 id="video-filter-countries"
                 role="listbox"
                 aria-label="Выберите страну"
                 hidden>
                 <button
-                  class="video-page__filter-option is-selected"
+                  class="filter-dropdown__option is-selected"
                   type="button"
                   role="option"
                   aria-selected="true"
@@ -165,7 +165,7 @@
                   Все
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="true"
@@ -173,7 +173,7 @@
                   Россия
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -181,7 +181,7 @@
                   Беларусь
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -190,9 +190,9 @@
                 </button>
               </div>
             </div>
-            <div class="video-page__filter-dropdown">
+            <div class="filter-dropdown">
               <button
-                class="video-page__filter-button"
+                class="filter-dropdown__button"
                 type="button"
                 aria-expanded="false"
                 aria-controls="video-filter-regions"
@@ -204,13 +204,13 @@
                 </svg>
               </button>
               <div
-                class="video-page__filter-menu"
+                class="filter-dropdown__menu"
                 id="video-filter-regions"
                 role="listbox"
                 aria-label="Выберите регион"
                 hidden>
                 <button
-                  class="video-page__filter-option is-selected"
+                  class="filter-dropdown__option is-selected"
                   type="button"
                   role="option"
                   aria-selected="true"
@@ -218,7 +218,7 @@
                   Все
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -226,7 +226,7 @@
                   Аксай
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -234,7 +234,7 @@
                   Алупка
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -242,7 +242,7 @@
                   Астана
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -250,7 +250,7 @@
                   Дагестанские огни
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -258,7 +258,7 @@
                   Домодедово
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -266,7 +266,7 @@
                   Егорьевск
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -275,9 +275,9 @@
                 </button>
               </div>
             </div>
-            <div class="video-page__filter-dropdown">
+            <div class="filter-dropdown">
               <button
-                class="video-page__filter-button"
+                class="filter-dropdown__button"
                 type="button"
                 aria-expanded="false"
                 aria-controls="video-filter-segments"
@@ -289,13 +289,13 @@
                 </svg>
               </button>
               <div
-                class="video-page__filter-menu"
+                class="filter-dropdown__menu"
                 id="video-filter-segments"
                 role="listbox"
                 aria-label="Выберите сегмент"
                 hidden>
                 <button
-                  class="video-page__filter-option is-selected"
+                  class="filter-dropdown__option is-selected"
                   type="button"
                   role="option"
                   aria-selected="true"
@@ -303,7 +303,7 @@
                   Все
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -312,9 +312,9 @@
                 </button>
               </div>
             </div>
-            <div class="video-page__filter-dropdown">
+            <div class="filter-dropdown">
               <button
-                class="video-page__filter-button"
+                class="filter-dropdown__button"
                 type="button"
                 aria-expanded="false"
                 aria-controls="video-filter-technology"
@@ -326,13 +326,13 @@
                 </svg>
               </button>
               <div
-                class="video-page__filter-menu"
+                class="filter-dropdown__menu"
                 id="video-filter-technology"
                 role="listbox"
                 aria-label="Выберите технологию"
                 hidden>
                 <button
-                  class="video-page__filter-option is-selected"
+                  class="filter-dropdown__option is-selected"
                   type="button"
                   role="option"
                   aria-selected="true"
@@ -340,7 +340,7 @@
                   Все
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -348,7 +348,7 @@
                   ГИБРИД
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -356,7 +356,7 @@
                   ЛМК
                 </button>
                 <button
-                  class="video-page__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -368,17 +368,23 @@
           </div>
         </div>
 
-        <div class="press__filter-overlay" id="video-mobile-filter" hidden>
+        <div class="mob-filter-overlay" id="video-mobile-filter" hidden>
           <div
-            class="press__filter-dialog"
+            class="mob-filter-dialog"
             role="dialog"
             aria-modal="true"
             aria-labelledby="video-mobile-filter-title"
             tabindex="-1">
-            <div class="press__filter-dialog-header">
-              <div class="press__filter-dialog-title" id="video-mobile-filter-title">Фильтр</div>
-              <button class="press__filter-dialog-close" type="button" aria-label="Закрыть фильтр">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="mob-filter-dialog__header">
+              <div class="mob-filter-dialog__title" id="video-mobile-filter-title">Фильтр</div>
+              <button class="mob-filter-dialog__close" type="button" aria-label="Закрыть фильтр">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
                   <path
                     d="M18 6L6 18"
                     stroke-width="2"
@@ -394,27 +400,32 @@
                 </svg>
               </button>
             </div>
-            <div class="press__filter-dialog-content">
-              <div class="press__filter-group" role="group" aria-labelledby="video-mobile-years-title">
-                <div class="press__filter-group-title" id="video-mobile-years-title">Год:</div>
-                <div class="press__filter-list" data-filter-list="years">
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2026">
+
+            <div class="mob-filter-dialog__content">
+              <div class="mob-filter-dialog__group" role="group" aria-labelledby="video-mobile-years-title">
+                <div class="mob-filter-dialog__group-title" id="video-mobile-years-title">Год:</div>
+                <div class="mob-filter-dialog__list" data-filter-list="years">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2026">
                     2026
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2025">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2025">
                     2025
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2024">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2024">
                     2024
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2023">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2023">
                     2023
                   </button>
                 </div>
-                <button class="press__filter-show-more" type="button" aria-expanded="false" data-expand-list="years">
+                <button
+                  class="mob-filter-dialog__show-more"
+                  type="button"
+                  aria-expanded="false"
+                  data-expand-list="years">
                   <span>Показать еще</span>
                   <svg
-                    class="press__filter-show-more-icon"
+                    class="mob-filter-dialog__show-more-icon"
                     aria-hidden="true"
                     width="24"
                     height="24"
@@ -430,33 +441,54 @@
                   </svg>
                 </button>
               </div>
-              <div class="press__filter-group" role="group" aria-labelledby="video-mobile-countries-title">
-                <div class="press__filter-group-title" id="video-mobile-countries-title">Страна</div>
-                <div class="press__filter-list" data-filter-list="countries">
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Россия">
+
+              <div class="mob-filter-dialog__group" role="group" aria-labelledby="video-mobile-countries-title">
+                <div class="mob-filter-dialog__group-title" id="video-mobile-countries-title">Страна:</div>
+                <div class="mob-filter-dialog__list" data-filter-list="countries">
+                  <button
+                    class="mob-filter-dialog__option"
+                    type="button"
+                    aria-pressed="false"
+                    data-filter-value="Россия">
                     Россия
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Беларусь">
+                  <button
+                    class="mob-filter-dialog__option"
+                    type="button"
+                    aria-pressed="false"
+                    data-filter-value="Беларусь">
                     Беларусь
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Узбекистан">
+                  <button
+                    class="mob-filter-dialog__option"
+                    type="button"
+                    aria-pressed="false"
+                    data-filter-value="Узбекистан">
                     Узбекистан
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Казахстан">
+                  <button
+                    class="mob-filter-dialog__option"
+                    type="button"
+                    aria-pressed="false"
+                    data-filter-value="Казахстан">
                     Казахстан
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Украина">
+                  <button
+                    class="mob-filter-dialog__option"
+                    type="button"
+                    aria-pressed="false"
+                    data-filter-value="Украина">
                     Украина
                   </button>
                 </div>
                 <button
-                  class="press__filter-show-more"
+                  class="mob-filter-dialog__show-more"
                   type="button"
                   aria-expanded="false"
                   data-expand-list="countries">
                   <span>Показать еще</span>
                   <svg
-                    class="press__filter-show-more-icon"
+                    class="mob-filter-dialog__show-more-icon"
                     aria-hidden="true"
                     width="24"
                     height="24"
@@ -472,21 +504,26 @@
                   </svg>
                 </button>
               </div>
-              <div class="press__filter-group" role="group" aria-labelledby="video-mobile-regions-title">
-                <div class="press__filter-group-title" id="video-mobile-regions-title">Регион</div>
-                <div class="press__filter-list" data-filter-list="regions">
+
+              <div class="mob-filter-dialog__group" role="group" aria-labelledby="video-mobile-regions-title">
+                <div class="mob-filter-dialog__group-title" id="video-mobile-regions-title">Регион:</div>
+                <div class="mob-filter-dialog__list" data-filter-list="regions">
                   <button
-                    class="press__filter-option"
+                    class="mob-filter-dialog__option"
                     type="button"
                     aria-pressed="false"
                     data-filter-value="Тульская область">
                     Тульская область
                   </button>
                 </div>
-                <button class="press__filter-show-more" type="button" aria-expanded="false" data-expand-list="regions">
+                <button
+                  class="mob-filter-dialog__show-more"
+                  type="button"
+                  aria-expanded="false"
+                  data-expand-list="regions">
                   <span>Показать еще</span>
                   <svg
-                    class="press__filter-show-more-icon"
+                    class="mob-filter-dialog__show-more-icon"
                     aria-hidden="true"
                     width="24"
                     height="24"
@@ -502,21 +539,26 @@
                   </svg>
                 </button>
               </div>
-              <div class="press__filter-group" role="group" aria-labelledby="video-mobile-segments-title">
-                <div class="press__filter-group-title" id="video-mobile-segments-title">Сегменты</div>
-                <div class="press__filter-list" data-filter-list="segments">
+
+              <div class="mob-filter-dialog__group" role="group" aria-labelledby="video-mobile-segments-title">
+                <div class="mob-filter-dialog__group-title" id="video-mobile-segments-title">Сегменты:</div>
+                <div class="mob-filter-dialog__list" data-filter-list="segments">
                   <button
-                    class="press__filter-option"
+                    class="mob-filter-dialog__option"
                     type="button"
                     aria-pressed="false"
                     data-filter-value="Промышленные здания">
                     Промышленные здания
                   </button>
                 </div>
-                <button class="press__filter-show-more" type="button" aria-expanded="false" data-expand-list="segments">
+                <button
+                  class="mob-filter-dialog__show-more"
+                  type="button"
+                  aria-expanded="false"
+                  data-expand-list="segments">
                   <span>Показать еще</span>
                   <svg
-                    class="press__filter-show-more-icon"
+                    class="mob-filter-dialog__show-more-icon"
                     aria-hidden="true"
                     width="24"
                     height="24"
@@ -532,21 +574,22 @@
                   </svg>
                 </button>
               </div>
-              <div class="press__filter-group" role="group" aria-labelledby="video-mobile-technology-title">
-                <div class="press__filter-group-title" id="video-mobile-technology-title">Технология</div>
-                <div class="press__filter-list" data-filter-list="technology">
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="ЛСТК">
+
+              <div class="mob-filter-dialog__group" role="group" aria-labelledby="video-mobile-technology-title">
+                <div class="mob-filter-dialog__group-title" id="video-mobile-technology-title">Технология:</div>
+                <div class="mob-filter-dialog__list" data-filter-list="technology">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="ЛСТК">
                     ЛСТК
                   </button>
                 </div>
                 <button
-                  class="press__filter-show-more"
+                  class="mob-filter-dialog__show-more"
                   type="button"
                   aria-expanded="false"
                   data-expand-list="technology">
                   <span>Показать еще</span>
                   <svg
-                    class="press__filter-show-more-icon"
+                    class="mob-filter-dialog__show-more-icon"
                     aria-hidden="true"
                     width="24"
                     height="24"
@@ -565,8 +608,8 @@
             </div>
           </div>
 
-          <div class="press__filter-back-wrapper">
-            <button class="press__filter-back" type="button">Назад</button>
+          <div class="mob-filter-overlay__back-wrapper">
+            <button class="mob-filter-overlay__back" type="button">Назад</button>
           </div>
         </div>
 

@@ -36,72 +36,162 @@
         </button>
       </aside>
 
-      <div class="pices__table-container flex-col">
-        <div class="prices__filters-modal" id="prices-filters-modal" aria-hidden="true">
-          <div class="prices__filters-backdrop" data-prices-filters-close></div>
-          <section
-            class="prices__filters-dialog"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="prices-filters-title"
-            tabindex="-1">
-            <header class="prices__filters-header">
-              <h2 class="prices__filters-title" id="prices-filters-title">Параметры</h2>
-              <button
-                class="prices__filters-close"
-                type="button"
-                aria-label="Закрыть параметры"
-                data-prices-filters-close>
-                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                </svg>
-              </button>
-            </header>
-            <form class="prices__filters" aria-label="Параметры здания">
-              <div class="prices__filter-group">
-                <fieldset class="prices__fieldset">
-                  <legend>Регион:</legend>
-                  <div class="prices__segmented" data-segmented="region">
-                    <button class="prices__option is-active" type="button" aria-pressed="true">Россия</button>
-                    <button class="prices__option" type="button" aria-pressed="false">СНГ</button>
-                    <button class="prices__option" type="button" aria-pressed="false">Африка и Ближний Восток</button>
-                  </div>
-                </fieldset>
-                <fieldset class="prices__fieldset">
-                  <legend>Кровля:</legend>
-                  <div class="prices__segmented" data-segmented="roof">
-                    <button class="prices__option is-active" type="button" aria-pressed="true">Двухскатная</button>
-                    <button class="prices__option" type="button" aria-pressed="false">Плоская</button>
-                  </div>
-                </fieldset>
+      <div class="prices__table-container flex-col">
+        <form class="prices__filters" aria-label="Параметры здания">
+          <div class="prices__filter-group">
+            <fieldset class="prices__fieldset">
+              <legend>Регион:</legend>
+              <div class="prices__segmented" data-segmented="region">
+                <button class="prices__option is-active" type="button" aria-pressed="true" data-filter-value="Россия">
+                  Россия
+                </button>
+                <button class="prices__option" type="button" aria-pressed="false" data-filter-value="СНГ">СНГ</button>
+                <button
+                  class="prices__option"
+                  type="button"
+                  aria-pressed="false"
+                  data-filter-value="Африка и Ближний Восток">
+                  Африка и Ближний Восток
+                </button>
               </div>
+            </fieldset>
+            <fieldset class="prices__fieldset">
+              <legend>Кровля:</legend>
+              <div class="prices__segmented" data-segmented="roof">
+                <button
+                  class="prices__option is-active"
+                  type="button"
+                  aria-pressed="true"
+                  data-filter-value="Двухскатная">
+                  Двухскатная
+                </button>
+                <button class="prices__option" type="button" aria-pressed="false" data-filter-value="Плоская">
+                  Плоская
+                </button>
+              </div>
+            </fieldset>
+          </div>
 
-              <div class="prices__dimensions">
-                <label class="prices__dimension">
-                  <span>Ширина:</span>
-                  <select name="width" aria-label="Ширина здания">
-                    <option>12 м</option>
-                    <option>18 м</option>
-                    <option>24 м</option>
-                    <option>30 м</option>
-                  </select>
-                </label>
-                <label class="prices__dimension">
-                  <span>Высота:</span>
-                  <select name="height" aria-label="Высота здания">
-                    <option>4 м</option>
-                    <option>5 м</option>
-                    <option>6 м</option>
-                    <option>7 м</option>
-                  </select>
-                </label>
+          <div class="prices__dimensions">
+            <div class="prices__dimension">
+              <span id="building-width-label">Ширина:</span>
+              <div class="filter-dropdown">
+                <button
+                  class="filter-dropdown__button"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="building-width"
+                  aria-labelledby="building-width-label building-width-value"
+                  data-filter-type="width"
+                  data-label="">
+                  <span id="building-width-value">12 м</span>
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path
+                      d="M23.0577 31.5782C23.3077 31.8483 23.6466 32 24 32C24.3534 32 24.6923 31.8483 24.9423 31.5782L35.61 20.0386C35.8597 19.7682 36 19.4016 36 19.0193C36 18.6371 35.8597 18.2705 35.61 18L12.39 18C12.1403 18.2705 12 18.6371 12 19.0193C12 19.4016 12.1403 19.7682 12.39 20.0386L23.0577 31.5782Z" />
+                  </svg>
+                </button>
+                <div
+                  class="filter-dropdown__menu"
+                  id="building-width"
+                  role="listbox"
+                  aria-label="Выберите ширину"
+                  hidden>
+                  <button
+                    class="filter-dropdown__option is-selected"
+                    type="button"
+                    role="option"
+                    aria-selected="true"
+                    data-filter-value="12 м">
+                    12 м
+                  </button>
+                  <button
+                    class="filter-dropdown__option"
+                    type="button"
+                    role="option"
+                    aria-selected="false"
+                    data-filter-value="18 м">
+                    18 м
+                  </button>
+                  <button
+                    class="filter-dropdown__option"
+                    type="button"
+                    role="option"
+                    aria-selected="false"
+                    data-filter-value="24 м">
+                    24 м
+                  </button>
+                  <button
+                    class="filter-dropdown__option"
+                    type="button"
+                    role="option"
+                    aria-selected="false"
+                    data-filter-value="30 м">
+                    30 м
+                  </button>
+                </div>
               </div>
-            </form>
-            <footer class="prices__filters-footer">
-              <button class="prices__filters-back" type="button" data-prices-filters-close>Назад</button>
-            </footer>
-          </section>
-        </div>
+            </div>
+
+            <div class="prices__dimension">
+              <span id="building-height-label">Высота:</span>
+              <div class="filter-dropdown">
+                <button
+                  class="filter-dropdown__button"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="building-height"
+                  aria-labelledby="building-height-label building-height-value"
+                  data-filter-type="height"
+                  data-label="">
+                  <span id="building-height-value">4 м</span>
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path
+                      d="M23.0577 31.5782C23.3077 31.8483 23.6466 32 24 32C24.3534 32 24.6923 31.8483 24.9423 31.5782L35.61 20.0386C35.8597 19.7682 36 19.4016 36 19.0193C36 18.6371 35.8597 18.2705 35.61 18L12.39 18C12.1403 18.2705 12 18.6371 12 19.0193C12 19.4016 12.1403 19.7682 12.39 20.0386L23.0577 31.5782Z" />
+                  </svg>
+                </button>
+                <div
+                  class="filter-dropdown__menu"
+                  id="building-height"
+                  role="listbox"
+                  aria-label="Выберите высоту"
+                  hidden>
+                  <button
+                    class="filter-dropdown__option is-selected"
+                    type="button"
+                    role="option"
+                    aria-selected="true"
+                    data-filter-value="4 м">
+                    4 м
+                  </button>
+                  <button
+                    class="filter-dropdown__option"
+                    type="button"
+                    role="option"
+                    aria-selected="false"
+                    data-filter-value="5 м">
+                    5 м
+                  </button>
+                  <button
+                    class="filter-dropdown__option"
+                    type="button"
+                    role="option"
+                    aria-selected="false"
+                    data-filter-value="6 м">
+                    6 м
+                  </button>
+                  <button
+                    class="filter-dropdown__option"
+                    type="button"
+                    role="option"
+                    aria-selected="false"
+                    data-filter-value="7 м">
+                    7 м
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
 
         <div class="prices__mobile-summary">
           <p class="prices__mobile-summary-title">С 20% НДС. Поставка — EXW.</p>
@@ -116,16 +206,186 @@
         </div>
 
         <button
-          class="prices__parameters-toggle"
+          class="mob-filter-button"
           type="button"
-          aria-expanded="false"
           aria-haspopup="dialog"
-          aria-controls="prices-filters-modal">
+          aria-expanded="false"
+          aria-controls="prices-filter-dialog">
           <span>Параметры</span>
-          <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M4 7h16M7 12h10m-7 5h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-          </svg>
+          <img src="/static/images/news/settings-ic.svg" alt="" aria-hidden="true" />
         </button>
+
+        <div class="mob-filter-overlay" id="prices-filter-dialog" hidden>
+          <div
+            class="mob-filter-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="prices-filter-title"
+            tabindex="-1">
+            <div class="mob-filter-dialog__header">
+              <h2 class="mob-filter-dialog__title" id="prices-filter-title">Параметры</h2>
+              <button class="mob-filter-dialog__close" type="button" aria-label="Закрыть параметры">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                  <path
+                    d="M18 6L6 18"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke="currentColor" />
+                  <path
+                    d="M6 6L18 18"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke="currentColor" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="mob-filter-dialog__content">
+              <div class="mob-filter-dialog__group" role="group" aria-labelledby="prices-region-title">
+                <div class="mob-filter-dialog__group-title" id="prices-region-title">Регион:</div>
+                <div class="mob-filter-dialog__list" data-filter-list="region">
+                  <button
+                    class="mob-filter-dialog__option is-selected"
+                    type="button"
+                    aria-pressed="true"
+                    data-filter-value="Россия">
+                    Россия
+                  </button>
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="СНГ">
+                    СНГ
+                  </button>
+                  <button
+                    class="mob-filter-dialog__option"
+                    type="button"
+                    aria-pressed="false"
+                    data-filter-value="Африка и Ближний Восток">
+                    Африка и Ближний Восток
+                  </button>
+                </div>
+              </div>
+
+              <div class="mob-filter-dialog__group" role="group" aria-labelledby="prices-width-title">
+                <div class="mob-filter-dialog__group-title" id="prices-width-title">Ширина:</div>
+                <div class="mob-filter-dialog__list" data-filter-list="width">
+                  <button
+                    class="mob-filter-dialog__option is-selected"
+                    type="button"
+                    aria-pressed="true"
+                    data-filter-value="12 м">
+                    12 м
+                  </button>
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="18 м">
+                    18 м
+                  </button>
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="24 м">
+                    24 м
+                  </button>
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="30 м">
+                    30 м
+                  </button>
+                </div>
+                <button
+                  class="mob-filter-dialog__show-more"
+                  type="button"
+                  aria-expanded="false"
+                  data-expand-list="width">
+                  <span>Показать еще</span>
+                  <svg
+                    class="mob-filter-dialog__show-more-icon"
+                    aria-hidden="true"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M6 9L12 15L18 9"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke="currentColor" />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="mob-filter-dialog__group" role="group" aria-labelledby="prices-height-title">
+                <div class="mob-filter-dialog__group-title" id="prices-height-title">Высота:</div>
+                <div class="mob-filter-dialog__list" data-filter-list="height">
+                  <button
+                    class="mob-filter-dialog__option is-selected"
+                    type="button"
+                    aria-pressed="true"
+                    data-filter-value="4 м">
+                    4 м
+                  </button>
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="5 м">
+                    5 м
+                  </button>
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="6 м">
+                    6 м
+                  </button>
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="7 м">
+                    7 м
+                  </button>
+                </div>
+                <button
+                  class="mob-filter-dialog__show-more"
+                  type="button"
+                  aria-expanded="false"
+                  data-expand-list="height">
+                  <span>Показать еще</span>
+                  <svg
+                    class="mob-filter-dialog__show-more-icon"
+                    aria-hidden="true"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M6 9L12 15L18 9"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke="currentColor" />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="mob-filter-dialog__group" role="group" aria-labelledby="prices-roof-title">
+                <div class="mob-filter-dialog__group-title" id="prices-roof-title">Кровля:</div>
+                <div class="mob-filter-dialog__list" data-filter-list="roof">
+                  <button
+                    class="mob-filter-dialog__option is-selected"
+                    type="button"
+                    aria-pressed="true"
+                    data-filter-value="Двухскатная">
+                    Двухскатная
+                  </button>
+                  <button
+                    class="mob-filter-dialog__option"
+                    type="button"
+                    aria-pressed="false"
+                    data-filter-value="Плоская">
+                    Плоская
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mob-filter-overlay__back-wrapper">
+            <button class="mob-filter-overlay__back" type="button">Назад</button>
+          </div>
+        </div>
 
         <div class="prices__table-wrap">
           <table class="prices__table">
@@ -293,8 +553,7 @@
               type="button"
               aria-expanded="true"
               aria-controls="home-agro__features">
-              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true">
-              </span>
+              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true"></span>
               <span>Технология “SMART LOADS CHOICE” (SLC)</span>
             </button>
           </h3>
@@ -349,49 +608,48 @@
               type="button"
               aria-expanded="false"
               aria-controls="home-agro__manufacturer">
-              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true">
-              </span>
+              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true"></span>
               <span>Технология “SMART TECHNOLOGY CHOICE” (StC)</span>
             </button>
           </h3>
           <div class="accordion__body" id="home-agro__manufacturer">
-              <div class="accordion__inner">
-                <div class="cards-accordion__accordion-inner">
-                  <div class="cards-accordion__accordion-text flex-col">
-                    <p>Подбор технологических решений с учетом параметров здания и требований проекта.</p>
-                  </div>
-                  <div class="cards-accordion__list accordion--tablet-visual">
-                    <figure class="cards-accordion__item flex-col-ac">
-                      <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
-                      <figcaption class="cards-accordion__descr flex-col-ac">
-                        <span class="cards-accordion__title">склады</span>
-                        <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
-                      </figcaption>
-                    </figure>
-                    <figure class="cards-accordion__item flex-col-ac">
-                      <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
-                      <figcaption class="cards-accordion__descr flex-col-ac">
-                        <span class="cards-accordion__title">склады</span>
-                        <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
-                      </figcaption>
-                    </figure>
-                    <figure class="cards-accordion__item flex-col-ac">
-                      <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
-                      <figcaption class="cards-accordion__descr flex-col-ac">
-                        <span class="cards-accordion__title">склады</span>
-                        <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
-                      </figcaption>
-                    </figure>
-                    <figure class="cards-accordion__item flex-col-ac">
-                      <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
-                      <figcaption class="cards-accordion__descr flex-col-ac">
-                        <span class="cards-accordion__title">склады</span>
-                        <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
-                      </figcaption>
-                    </figure>
-                  </div>
+            <div class="accordion__inner">
+              <div class="cards-accordion__accordion-inner">
+                <div class="cards-accordion__accordion-text flex-col">
+                  <p>Подбор технологических решений с учетом параметров здания и требований проекта.</p>
+                </div>
+                <div class="cards-accordion__list accordion--tablet-visual">
+                  <figure class="cards-accordion__item flex-col-ac">
+                    <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+                    <figcaption class="cards-accordion__descr flex-col-ac">
+                      <span class="cards-accordion__title">склады</span>
+                      <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="cards-accordion__item flex-col-ac">
+                    <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+                    <figcaption class="cards-accordion__descr flex-col-ac">
+                      <span class="cards-accordion__title">склады</span>
+                      <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="cards-accordion__item flex-col-ac">
+                    <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+                    <figcaption class="cards-accordion__descr flex-col-ac">
+                      <span class="cards-accordion__title">склады</span>
+                      <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="cards-accordion__item flex-col-ac">
+                    <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+                    <figcaption class="cards-accordion__descr flex-col-ac">
+                      <span class="cards-accordion__title">склады</span>
+                      <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+                    </figcaption>
+                  </figure>
                 </div>
               </div>
+            </div>
           </div>
         </div>
 
@@ -402,19 +660,18 @@
               type="button"
               aria-expanded="false"
               aria-controls="home-agro__benefits">
-              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true">
-              </span>
+              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true"></span>
               <span>Технология “SMART METAL CALCULATION” (SmC)</span>
             </button>
           </h3>
           <div class="accordion__body" id="home-agro__benefits">
-              <div class="accordion__inner">
-                <div class="cards-accordion__accordion-inner">
-                  <div class="cards-accordion__accordion-text flex-col">
-                    <p>Расчет металлоемкости каркаса на основе параметров здания и действующих нагрузок.</p>
-                  </div>
+            <div class="accordion__inner">
+              <div class="cards-accordion__accordion-inner">
+                <div class="cards-accordion__accordion-text flex-col">
+                  <p>Расчет металлоемкости каркаса на основе параметров здания и действующих нагрузок.</p>
                 </div>
               </div>
+            </div>
           </div>
         </div>
 
@@ -425,19 +682,18 @@
               type="button"
               aria-expanded="false"
               aria-controls="home-agro__benefits2">
-              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true">
-              </span>
+              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true"></span>
               <span>Технология “SMART INSTANT VISUALIZATION” (Siv)</span>
             </button>
           </h3>
           <div class="accordion__body" id="home-agro__benefits2">
-              <div class="accordion__inner">
-                <div class="cards-accordion__accordion-inner">
-                  <div class="cards-accordion__accordion-text flex-col">
-                    <p>Визуализация проектных решений для наглядной оценки будущего здания.</p>
-                  </div>
+            <div class="accordion__inner">
+              <div class="cards-accordion__accordion-inner">
+                <div class="cards-accordion__accordion-text flex-col">
+                  <p>Визуализация проектных решений для наглядной оценки будущего здания.</p>
                 </div>
               </div>
+            </div>
           </div>
         </div>
 
@@ -448,19 +704,18 @@
               type="button"
               aria-expanded="false"
               aria-controls="home-agro__benefits3">
-              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true">
-              </span>
+              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true"></span>
               <span>Технология “SMART DOCUMENT GENERATION” (SDG)</span>
             </button>
           </h3>
           <div class="accordion__body" id="home-agro__benefits3">
-              <div class="accordion__inner">
-                <div class="cards-accordion__accordion-inner">
-                  <div class="cards-accordion__accordion-text flex-col">
-                    <p>Формирование проектной документации на основе расчетных данных.</p>
-                  </div>
+            <div class="accordion__inner">
+              <div class="cards-accordion__accordion-inner">
+                <div class="cards-accordion__accordion-text flex-col">
+                  <p>Формирование проектной документации на основе расчетных данных.</p>
                 </div>
               </div>
+            </div>
           </div>
         </div>
 
@@ -471,19 +726,18 @@
               type="button"
               aria-expanded="false"
               aria-controls="home-agro__benefits4">
-              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true">
-              </span>
+              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true"></span>
               <span>Концепция “SMART TECHNO DESIGN” (StD)</span>
             </button>
           </h3>
           <div class="accordion__body" id="home-agro__benefits4">
-              <div class="accordion__inner">
-                <div class="cards-accordion__accordion-inner">
-                  <div class="cards-accordion__accordion-text flex-col">
-                    <p>Комплексный подход к разработке технологичного и экономически обоснованного проекта.</p>
-                  </div>
+            <div class="accordion__inner">
+              <div class="cards-accordion__accordion-inner">
+                <div class="cards-accordion__accordion-text flex-col">
+                  <p>Комплексный подход к разработке технологичного и экономически обоснованного проекта.</p>
                 </div>
               </div>
+            </div>
           </div>
         </div>
 
@@ -494,19 +748,18 @@
               type="button"
               aria-expanded="false"
               aria-controls="home-agro__benefits5">
-              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true">
-              </span>
+              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true"></span>
               <span>Технология “INSPIRING SMART SOLUTION” (ISS)</span>
             </button>
           </h3>
           <div class="accordion__body" id="home-agro__benefits5">
-              <div class="accordion__inner">
-                <div class="cards-accordion__accordion-inner">
-                  <div class="cards-accordion__accordion-text flex-col">
-                    <p>Поиск рациональных решений для индивидуальных задач заказчика.</p>
-                  </div>
+            <div class="accordion__inner">
+              <div class="cards-accordion__accordion-inner">
+                <div class="cards-accordion__accordion-text flex-col">
+                  <p>Поиск рациональных решений для индивидуальных задач заказчика.</p>
                 </div>
               </div>
+            </div>
           </div>
         </div>
       </div>
