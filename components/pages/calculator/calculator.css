@@ -622,10 +622,6 @@ h4 {
 .calculator-features {
   margin: 0 10px 10px ;
 }
-.calculator-features .home-agro__panel {
-  background: none;
-  gap: 24px;
-}
 
 .calculator-features__tabs {
   display: flex;
@@ -655,13 +651,17 @@ h4 {
   background-color: #5D5D5D;
   pointer-events: none;
 }
+.calculator-features__tabs-item:hover {
+  color: #5d5d5db2;
+}
+.calculator-features__tabs-item:active {
+  color: #5d5d5de5;
+}
+
 .calculator-features__tabs-item.calculator-features__tabs--active {
   color: #5D5D5D;
 }
 
-.calculator-features .home-agro__header {
-  gap: 24px;
-}
 .calculator-features__descr {
   max-width: 900px;
   font-size: 24px;
@@ -669,11 +669,6 @@ h4 {
   text-align: center;
 }
 
-.calculator-features .home-agro__layout {
-  grid-template-columns: minmax(0, 710px) minmax(0, 658px);
-  gap: 80px;
-  justify-content: space-between;
-}
 .calculator-features__buildings-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -729,12 +724,6 @@ h4 {
   .calculator-features__descr {
     font-size: 20px;
   }
-  .calculator-features .home-agro__layout {
-    grid-template-columns: 1fr;
-  }
-  .calculator-features .home-agro__header {
-    gap: 14px;
-  }
   .calculator-features__buildings-list {
     gap: 18px;
   }
@@ -758,13 +747,7 @@ h4 {
   }
 }
 @media screen and (max-width: 680px) {
-  .calculator-features .home-agro__header {
-    padding-top: 0;
-  }
 
-  .calculator-features .home-agro__panel {
-    padding-top: 24px;
-  }
   .calculator-features__tabs-item {
     font-size: 14px;
   }
@@ -807,7 +790,14 @@ h4 {
   gap: 24px;
 }
 .toggle__input {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.toggle__input:focus-visible + .toggle__switch {
+  outline: 2px solid #324c88;
+  outline-offset: 2px;
 }
 .toggle__switch {
   width: 84px;
@@ -882,19 +872,25 @@ h4 {
 .comparison__nav-arr:hover {
   background: #e0e0e0;
 }
+.comparison__nav-arr:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
 
+/* Колонки стоят в один ряд, видно три. Остальные листаются стрелками */
 .comparison__slider-wrapper {
   display: grid;
   justify-items: center;
   align-items: center;
-  grid-template-columns: repeat(3, var(--comparison-col-width));
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  grid-auto-columns: var(--comparison-col-width);
+  grid-auto-flow: column;
+  width: calc(3 * var(--comparison-col-width));
+  overflow: hidden;
 }
-.comparison__slider-wrapper::-webkit-scrollbar {
-  display: none;
+/* Колонки шапки и всех строк сдвигаются вместе: сдвиг задает JS в --comparison-shift у таблицы */
+.comparison__slider-wrapper > * {
+  transform: translateX(var(--comparison-shift, 0px));
+  transition: transform 0.3s ease;
 }
 
 .system-card {
@@ -934,6 +930,10 @@ h4 {
   color: #2c2c2ce5;
 }
 
+.comparison__row-btn {
+  transition: transform 0.3s ease;
+}
+
 .comparison__row-body {
   display: none;
   justify-content: center;
@@ -954,7 +954,14 @@ h4 {
 }
 .comparison__row--open .comparison__row-btn {
   transform: rotate(180deg);
-  transition: transform 0.3s;
+}
+
+/* Дополнительные строки скрыты, пока не нажата «Показать еще» */
+.comparison__row--extra {
+  display: none;
+}
+.comparison__table.is-expanded .comparison__row--extra {
+  display: block;
 }
 
 .row-content--without-title {
@@ -1181,6 +1188,12 @@ h4 {
   .dot {
     width: 12px;
     height: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .comparison__slider-wrapper > *,
+  .comparison__row-btn {
+    transition: none;
   }
 }
 
