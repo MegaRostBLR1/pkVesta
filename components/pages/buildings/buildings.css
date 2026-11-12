@@ -1683,10 +1683,6 @@
   transition: background 0.3s ease;
 }
 
-.buildings-catalog__filter.is-active {
-  color: #5d5d5d;
-}
-
 .buildings-catalog__filter.is-active::after {
   background: #5d5d5d;
 }
@@ -1700,8 +1696,11 @@
 .buildings-catalog__filter:active {
   color: #5d5d5de5;
 }
-.buildings-catalog__filter:hover::active {
+.buildings-catalog__filter:active::after {
   background: #5d5d5de5;
+}
+.buildings-catalog__filter.is-active {
+  color: #5d5d5d;
 }
 
 .buildings-catalog__cards {
