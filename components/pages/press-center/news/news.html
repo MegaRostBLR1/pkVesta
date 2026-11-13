@@ -28,11 +28,10 @@
         <div class="press-news__filter">
           <span class="press-news__filter-label">Показывать:</span>
           <div class="press-news__filter-controls">
-            <div class="press-news__filter-dropdown">
+            <div class="filter-dropdown">
               <button
-                class="press-news__filter-button"
+                class="filter-dropdown__button"
                 type="button"
-                aria-label="Фильтр по месяцам"
                 aria-expanded="false"
                 aria-controls="press-news-months"
                 data-filter-type="months">
@@ -43,13 +42,13 @@
                 </svg>
               </button>
               <div
-                class="press-news__filter-menu"
+                class="filter-dropdown__menu"
                 id="press-news-months"
                 role="listbox"
                 aria-label="Выберите месяц"
                 hidden>
                 <button
-                  class="press-news__filter-option is-selected"
+                  class="filter-dropdown__option is-selected"
                   type="button"
                   role="option"
                   aria-selected="true"
@@ -57,7 +56,7 @@
                   Январь (29)
                 </button>
                 <button
-                  class="press-news__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -65,7 +64,7 @@
                   Февраль (29)
                 </button>
                 <button
-                  class="press-news__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -73,7 +72,7 @@
                   Март (29)
                 </button>
                 <button
-                  class="press-news__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -81,7 +80,7 @@
                   Апрель (29)
                 </button>
                 <button
-                  class="press-news__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -89,7 +88,7 @@
                   Май (29)
                 </button>
                 <button
-                  class="press-news__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -97,7 +96,7 @@
                   Июнь (29)
                 </button>
                 <button
-                  class="press-news__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -105,28 +104,27 @@
                   Июль (29)
                 </button>
                 <button
-                  class="press-news__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
-                  data-filter-value="Июль">
+                  data-filter-value="Август">
                   Август (29)
                 </button>
                 <button
-                  class="press-news__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
-                  data-filter-value="Июль">
+                  data-filter-value="Сентябрь">
                   Сентябрь (29)
                 </button>
               </div>
             </div>
-            <div class="press-news__filter-dropdown">
+            <div class="filter-dropdown">
               <button
-                class="press-news__filter-button"
+                class="filter-dropdown__button"
                 type="button"
-                aria-label="Фильтр по годам"
                 aria-expanded="false"
                 aria-controls="press-news-years"
                 data-filter-type="years">
@@ -136,14 +134,9 @@
                     d="M23.0577 31.5782C23.3077 31.8483 23.6466 32 24 32C24.3534 32 24.6923 31.8483 24.9423 31.5782L35.61 20.0386C35.8597 19.7682 36 19.4016 36 19.0193C36 18.6371 35.8597 18.2705 35.61 18L12.39 18C12.1403 18.2705 12 18.6371 12 19.0193C12 19.4016 12.1403 19.7682 12.39 20.0386L23.0577 31.5782Z" />
                 </svg>
               </button>
-              <div
-                class="press-news__filter-menu press-news__filter-menu--years"
-                id="press-news-years"
-                role="listbox"
-                aria-label="Выберите год"
-                hidden>
+              <div class="filter-dropdown__menu" id="press-news-years" role="listbox" aria-label="Выберите год" hidden>
                 <button
-                  class="press-news__filter-option is-selected"
+                  class="filter-dropdown__option is-selected"
                   type="button"
                   role="option"
                   aria-selected="true"
@@ -151,7 +144,7 @@
                   2026
                 </button>
                 <button
-                  class="press-news__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -159,7 +152,7 @@
                   2025
                 </button>
                 <button
-                  class="press-news__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -167,7 +160,7 @@
                   2024
                 </button>
                 <button
-                  class="press-news__filter-option"
+                  class="filter-dropdown__option"
                   type="button"
                   role="option"
                   aria-selected="false"
@@ -178,7 +171,7 @@
             </div>
           </div>
           <button
-            class="press__mobile-filter-button"
+            class="mob-filter-button"
             type="button"
             aria-haspopup="dialog"
             aria-expanded="false"
@@ -188,17 +181,23 @@
           </button>
         </div>
 
-        <div class="press__filter-overlay" id="press-news-filter-dialog" hidden>
+        <div class="mob-filter-overlay" id="press-news-filter-dialog" hidden>
           <div
-            class="press__filter-dialog"
+            class="mob-filter-dialog"
             role="dialog"
             aria-modal="true"
             aria-labelledby="press-news-filter-title"
             tabindex="-1">
-            <div class="press__filter-dialog-header">
-              <h5 class="press__filter-dialog-title" id="press-news-filter-title">Показывать:</h5>
-              <button class="press__filter-dialog-close" type="button" aria-label="Закрыть фильтр">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="mob-filter-dialog__header">
+              <h5 class="mob-filter-dialog__title" id="press-news-filter-title">Показывать:</h5>
+              <button class="mob-filter-dialog__close" type="button" aria-label="Закрыть фильтр">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
                   <path
                     d="M18 6L6 18"
                     stroke-width="2"
@@ -214,51 +213,88 @@
                 </svg>
               </button>
             </div>
-            <div class="press__filter-dialog-content">
-              <div class="press__filter-group" role="group" aria-labelledby="press-news-months-title">
-                <div class="press__filter-group-title" id="press-news-months-title">Месяц:</div>
-                <div class="press__filter-list" data-filter-list="months">
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Январь">
+
+            <div class="mob-filter-dialog__content">
+              <div class="mob-filter-dialog__group" role="group" aria-labelledby="press-news-months-title">
+                <div class="mob-filter-dialog__group-title" id="press-news-months-title">Месяц:</div>
+                <div class="mob-filter-dialog__list" data-filter-list="months">
+                  <button
+                    class="mob-filter-dialog__option"
+                    type="button"
+                    aria-pressed="false"
+                    data-filter-value="Январь">
                     Январь (29)
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Февраль">
+                  <button
+                    class="mob-filter-dialog__option"
+                    type="button"
+                    aria-pressed="false"
+                    data-filter-value="Февраль">
                     Февраль (29)
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Март">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="Март">
                     Март (29)
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Апрель">
+                  <button
+                    class="mob-filter-dialog__option"
+                    type="button"
+                    aria-pressed="false"
+                    data-filter-value="Апрель">
                     Апрель (29)
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Май">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="Май">
                     Май (29)
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Июнь">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="Июнь">
                     Июнь (29)
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Июль">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="Июль">
                     Июль (29)
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Август">
+                  <button
+                    class="mob-filter-dialog__option"
+                    type="button"
+                    aria-pressed="false"
+                    data-filter-value="Август">
                     Август (29)
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Сентябрь">
+                  <button
+                    class="mob-filter-dialog__option"
+                    type="button"
+                    aria-pressed="false"
+                    data-filter-value="Сентябрь">
                     Сентябрь (29)
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Октябрь">
+                  <button
+                    class="mob-filter-dialog__option"
+                    type="button"
+                    aria-pressed="false"
+                    data-filter-value="Октябрь">
                     Октябрь (29)
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Ноябрь">
+                  <button
+                    class="mob-filter-dialog__option"
+                    type="button"
+                    aria-pressed="false"
+                    data-filter-value="Ноябрь">
                     Ноябрь (29)
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="Декабрь">
+                  <button
+                    class="mob-filter-dialog__option"
+                    type="button"
+                    aria-pressed="false"
+                    data-filter-value="Декабрь">
                     Декабрь (29)
                   </button>
                 </div>
-                <button class="press__filter-show-more" type="button" aria-expanded="false" data-expand-list="months">
+                <button
+                  class="mob-filter-dialog__show-more"
+                  type="button"
+                  aria-expanded="false"
+                  data-expand-list="months">
                   <span>Показать еще</span>
                   <svg
-                    class="press__filter-show-more-icon"
+                    class="mob-filter-dialog__show-more-icon"
                     aria-hidden="true"
                     width="24"
                     height="24"
@@ -274,86 +310,91 @@
                   </svg>
                 </button>
               </div>
-              <div class="press__filter-group" role="group" aria-labelledby="press-news-years-title">
-                <div class="press__filter-group-title" id="press-news-years-title">По годам:</div>
-                <div class="press__filter-list press__filter-list--years" data-filter-list="years">
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2003">
+
+              <div class="mob-filter-dialog__group" role="group" aria-labelledby="press-news-years-title">
+                <div class="mob-filter-dialog__group-title" id="press-news-years-title">По годам:</div>
+                <div class="mob-filter-dialog__list mob-filter-dialog__list--years" data-filter-list="years">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2003">
                     2003
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2004">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2004">
                     2004
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2005">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2005">
                     2005
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2006">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2006">
                     2006
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2007">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2007">
                     2007
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2008">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2008">
                     2008
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2009">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2009">
                     2009
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2010">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2010">
                     2010
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2011">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2011">
                     2011
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2012">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2012">
                     2012
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2013">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2013">
                     2013
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2014">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2014">
                     2014
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2015">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2015">
                     2015
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2016">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2016">
                     2016
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2017">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2017">
                     2017
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2018">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2018">
                     2018
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2019">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2019">
                     2019
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2020">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2020">
                     2020
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2021">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2021">
                     2021
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2022">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2022">
                     2022
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2023">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2023">
                     2023
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2024">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2024">
                     2024
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2025">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2025">
                     2025
                   </button>
-                  <button class="press__filter-option" type="button" aria-pressed="false" data-filter-value="2026">
+                  <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="2026">
                     2026
                   </button>
                 </div>
-                <button class="press__filter-show-more" type="button" aria-expanded="false" data-expand-list="years">
+                <button
+                  class="mob-filter-dialog__show-more"
+                  type="button"
+                  aria-expanded="false"
+                  data-expand-list="years">
                   <span>Показать еще</span>
                   <svg
-                    class="press__filter-show-more-icon"
+                    class="mob-filter-dialog__show-more-icon"
                     aria-hidden="true"
                     width="24"
                     height="24"
@@ -371,8 +412,9 @@
               </div>
             </div>
           </div>
-          <div class="press__filter-back-wrapper">
-            <button class="press__filter-back" type="button">Назад</button>
+
+          <div class="mob-filter-overlay__back-wrapper">
+            <button class="mob-filter-overlay__back" type="button">Назад</button>
           </div>
         </div>
 
