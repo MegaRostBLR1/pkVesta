@@ -111,26 +111,12 @@ const APP_CONFIG = {
       js: './components/pages/objects/objects.js',
       init: 'initObjects'
     },
-    'object-detail': {
+    'object-page': {
       title: 'Объект',
-      html: './components/pages/objects/object-detail/object-detail.html',
-      css: './components/pages/objects/object-detail/object-detail.css',
-      js: './components/pages/objects/object-detail/object-detail.js',
-      init: 'initObjectDetail'
-    },
-    'object-characteristics': {
-      title: 'Характеристики объекта',
-      html: './components/pages/objects/object-characteristics/object-characteristics.html',
-      css: './components/pages/objects/object-characteristics/object-characteristics.css',
-      js: './components/pages/objects/object-characteristics/object-characteristics.js',
-      init: 'initObjectCharacteristics'
-    },
-    'object-parameters': {
-      title: 'Параметры объекта',
-      html: './components/pages/objects/object-parameters/object-parameters.html',
-      css: './components/pages/objects/object-parameters/object-parameters.css',
-      js: './components/pages/objects/object-parameters/object-parameters.js',
-      init: 'initObjectParameters'
+      html: './components/pages/objects/object-page/object-page.html',
+      css: './components/pages/objects/object-page/object-page.css',
+      js: './components/pages/objects/object-page/object-page.js',
+      init: 'initObjectPage'
     },
     'press-center': {
       title: 'Пресс-центр',
@@ -221,6 +207,13 @@ const APP_CONFIG = {
 
 const loadedPageAssets = new Set();
 let renderRequestId = 0;
+let currentPageName = null;
+
+const OBJECT_SECTION_ROUTES = {
+  'object-detail': { panel: 'object-detail', title: 'Объект' },
+  'object-characteristics': { panel: 'object-characteristics', title: 'Характеристики объекта' },
+  'object-parameters': { panel: 'object-parameters', title: 'Параметры объекта' }
+};
 
 const ROUTE_ALIASES = {
   'page-1': 'objects',
@@ -290,14 +283,14 @@ function loadScript(url) {
 
 function getPageName() {
   const hashRoute = window.location.hash
-      .replace(/^#\/?/, '')
-      .split(/[?&]/, 1)[0]
-      .trim()
-      .toLowerCase();
+    .replace(/^#\/?/, '')
+    .split(/[?&]/, 1)[0]
+    .trim()
+    .toLowerCase();
 
   const route = hashRoute || APP_CONFIG.defaultPage;
 
-  if (APP_CONFIG.pages[route]) {
+  if (APP_CONFIG.pages[route] || OBJECT_SECTION_ROUTES[route]) {
     return route;
   }
 
@@ -305,14 +298,24 @@ function getPageName() {
 }
 
 async function renderPage(pageName) {
+  const isObjectSection = Boolean(OBJECT_SECTION_ROUTES[pageName]);
+  const configPageName = isObjectSection ? 'object-page' : pageName;
+
+  if (isObjectSection && currentPageName === 'object-page') {
+    setObjectPageSection(pageName);
+    document.title = `pkVesta — ${OBJECT_SECTION_ROUTES[pageName].title}`;
+    return;
+  }
+
   const requestId = ++renderRequestId;
-  const page = APP_CONFIG.pages[pageName] || APP_CONFIG.pages[APP_CONFIG.defaultPage];
+  const page = APP_CONFIG.pages[configPageName] || APP_CONFIG.pages[APP_CONFIG.defaultPage];
   const main = document.querySelector('#app-main');
 
   if (!main) {
     return;
   }
 
+  currentPageName = null;
   main.innerHTML = '<p class="loading">Загрузка страницы…</p>';
 
   try {
@@ -324,19 +327,24 @@ async function renderPage(pageName) {
 
     main.innerHTML = html;
     loadStylesheet(page.css);
+
     await loadScript(page.js);
 
     if (requestId !== renderRequestId) {
       return;
     }
 
-    document.title = `pkVesta — ${page.title}`;
+    document.title = isObjectSection
+      ? `pkVesta — ${OBJECT_SECTION_ROUTES[pageName].title}`
+      : `pkVesta — ${page.title}`;
 
     const init = window[page.init];
 
     if (typeof init === 'function') {
-      init();
+      init(pageName);
     }
+
+    currentPageName = configPageName;
   } catch (error) {
     if (requestId !== renderRequestId) {
       return;
@@ -384,14 +392,14 @@ function initNavigationRouting() {
   };
 
   document.querySelectorAll('.app-header a.nav-link, .app-header a.nav-list__nested-list-link')
-      .forEach((link) => {
-        const label = link.textContent.trim().replace(/\s+/g, ' ');
-        const route = routeByLabel[label];
+    .forEach((link) => {
+      const label = link.textContent.trim().replace(/\s+/g, ' ');
+      const route = routeByLabel[label];
 
-        if (route) {
-          link.href = `#/${route}`;
-        }
-      });
+      if (route) {
+        link.href = `#/${route}`;
+      }
+    });
 }
 
 async function initApp() {

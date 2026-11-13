@@ -218,7 +218,7 @@ function initHome() {
     const startPaddingTop = Number.parseFloat(content.style.paddingTop) || 0;
     const targetHeight = expanded
       ? content.scrollHeight -
-        (boxSizing === "border-box" ? 0 : Number.parseFloat(targetPaddingTop) + Number.parseFloat(targetPaddingBottom))
+      (boxSizing === "border-box" ? 0 : Number.parseFloat(targetPaddingTop) + Number.parseFloat(targetPaddingBottom))
       : 0;
     const animation = content.animate(
       [
