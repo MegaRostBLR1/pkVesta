@@ -31,14 +31,40 @@ function initContacts() {
             });
         });
 
-        // Additional office details are not present in the supplied design data.
         const moreButton = representations.querySelector('.contacts-representations__more');
-        moreButton?.addEventListener('click', () => {
-            representations.querySelectorAll('.contacts-representations__card[data-layout-1920]')
-                .forEach((card) => card.removeAttribute('data-layout-1920'));
 
-            moreButton.querySelector('span').textContent = 'Все представительства показаны';
-            moreButton.disabled = true;
-        });
+        if (moreButton && cards.length > 4) {
+            const moreButtonLabel = moreButton.querySelector('span');
+            let isExpanded = false;
+
+            const hasExpandableCards = () => {
+                const firstExpandableIndex = window.matchMedia('(max-width: 1440px)').matches ? 4 : 6;
+                const selectedCountry = representations.querySelector(
+                  '.contacts-representations__filter.is-active'
+                )?.dataset.country || 'all';
+
+                return cards.slice(firstExpandableIndex).some((card) => (
+                  selectedCountry === 'all' || card.dataset.country === selectedCountry
+                ));
+            };
+
+            const updateMoreButton = () => {
+                moreButtonLabel.textContent = isExpanded ? 'Свернуть' : 'Показать еще';
+                moreButton.setAttribute('aria-expanded', String(isExpanded));
+                moreButton.classList.toggle('is-expanded', isExpanded);
+                representations.classList.toggle('is-expanded', isExpanded);
+            };
+
+            updateMoreButton();
+
+            moreButton.addEventListener('click', () => {
+                if (!hasExpandableCards()) {
+                    return;
+                }
+
+                isExpanded = !isExpanded;
+                updateMoreButton();
+            });
+        }
     }
 }

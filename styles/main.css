@@ -2833,7 +2833,6 @@ body.mob-filter-open {
 }
 
 .video-trigger__label {
-  max-width: 90%;
   color: #fff;
   font-family: "Onest-SemiBold", sans-serif;
   font-size: 16px;
@@ -2845,7 +2844,7 @@ body.mob-filter-open {
 }
 
 .video-trigger--project {
-  margin: auto 0;
+  margin: 90px 0;
 }
 
 .project-card__controls,
@@ -2935,6 +2934,9 @@ body.mob-filter-open {
 }
 
 .project-card__play--compact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   z-index: 0;
   flex: 0 0 28px;
@@ -2942,6 +2944,7 @@ body.mob-filter-open {
   height: 28px;
   margin: 28px 20px 0 20px;
   border-radius: 10px;
+  background-color: #FFFFFF;
 }
 
 .project-card__play--compact::before {
@@ -3326,8 +3329,8 @@ body.mob-filter-open {
   }
 
   .video-trigger::before {
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
   }
 
   .video-trigger__label {
@@ -10722,7 +10725,6 @@ body.mob-filter-open {
   margin: 0;
   overflow: hidden;
   border-radius: 30px;
-  background: #e9eceb;
 }
 .buildings-gallery__slide--active {
   flex: 0 0 839px;
