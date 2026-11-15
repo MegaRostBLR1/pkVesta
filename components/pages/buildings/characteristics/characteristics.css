@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  padding: 20px 40px 40px;
+  padding: 40px 40px 20px;
 }
 
 .buildings-characteristics__technical-header {
@@ -20,7 +20,6 @@
 
 .buildings-characteristics__technical-title {
   width: 100%;
-  padding: 20px 40px 0;
   color: #4d4d4d;
   font-size: 48px;
   line-height: 64px;
@@ -28,7 +27,6 @@
   overflow-wrap: anywhere;
 }
 
-/* Вкладки в одну строку. Если не влезают, их можно прокрутить */
 .buildings-characteristics__tabs {
   display: flex;
   gap: 4px;
@@ -63,26 +61,17 @@
   outline-offset: 2px;
 }
 
-/* Карточки идут по столбцам: сначала заполняется левый, потом правый */
+/* Карточки идут по столбцам: сначала левый, потом правый. Число строк задаётся у панели в html в style="--rows: N",
+N = количество карточек / 2 с округлением вверх, его выводит шаблон. Без --rows строк 5 */
 .buildings-characteristics__technical-panel {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(var(--rows, 5), auto);
   grid-auto-flow: column;
   gap: 5px;
   padding: 5px;
   border-radius: 10px;
   background: #f5f8f7;
-}
-
-/* Число строк, вариант 1: всегда 5. Подходит, только если карточек ровно 10 */
-.buildings-characteristics__technical-panel {
-  grid-template-rows: repeat(5, auto);
-}
-
-/* Число строк, вариант 2: берётся из style="--rows: 5" у панели, в Битриксе его посчитает шаблон.
-   Если --rows не задан, строк 5. Пока в файле оба варианта, работает этот. Оставьте один */
-.buildings-characteristics__technical-panel {
-  grid-template-rows: repeat(var(--rows, 5), auto);
 }
 
 .buildings-characteristics__technical-card {
@@ -135,17 +124,12 @@
   }
 
   .buildings-characteristics__technical-title {
-    padding: 0 40px;
     font-size: 30px;
     line-height: 38px;
   }
 
   .buildings-characteristics__tab {
     font-size: 16px;
-  }
-
-  .buildings-characteristics__technical-panel {
-    column-gap: 40px;
   }
 
   .buildings-characteristics__technical-card {
@@ -163,12 +147,12 @@
 
 @media screen and (max-width: 680px) {
   .buildings-characteristics__technical {
-    padding: 0 5px 5px;
+    padding: 0;
   }
 
   .buildings-characteristics__technical-inner {
-    padding-right: 8px;
-    padding-left: 8px;
+    padding: 15px 10px 30px;
+    gap: 12px;
   }
 
   .buildings-characteristics__technical-header {
@@ -185,19 +169,14 @@
   }
 
   .buildings-characteristics__tab {
-    padding: 10px 12px;
-    font-size: 13px;
+    padding: 10px 14px;
+    font-size: 14px;
   }
 
-  /* Один столбец: карточки идут по порядку, строки из базовых стилей сбрасываются */
   .buildings-characteristics__technical-panel {
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: none;
     grid-auto-flow: row;
-  }
-
-  .buildings-characteristics__technical-card {
-    padding: 12px;
   }
 
   .buildings-characteristics__technical-label {
@@ -206,7 +185,7 @@
 
   .buildings-characteristics__technical-value {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 30px;
   }
 
   .buildings-characteristics__technical-card:nth-child(n + 5) {
@@ -244,14 +223,13 @@
 
 .buildings-production {
   margin: 0 10px 10px;
-  padding: 0 0 10px;
 }
 
 .buildings-production__panel {
   display: flex;
   flex-direction: column;
   gap: 36px;
-  padding: 60px 40px 40px;
+  padding: 60px 40px;
   border-radius: 20px;
   background: #ffffff;
 }
@@ -348,10 +326,6 @@
 }
 
 @media screen and (max-width: 1600px) {
-  .buildings-production__panel {
-    padding: 60px 40px;
-  }
-
   .buildings-production__main-image {
     flex: 0 1 1052px;
     height: 591px;
@@ -400,7 +374,6 @@
 @media screen and (max-width: 680px) {
   .buildings-production {
     margin: 0 4px 10px;
-    padding: 0;
   }
 
   .buildings-production__panel {
