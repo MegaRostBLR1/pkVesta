@@ -43,58 +43,153 @@
   </div>
 </section>
 
-<section class="prices" aria-labelledby="prices-title">
-  <div class="prices__panel">
-    <div class="prices__content">
-      <div class="prices__filters-modal" id="prices-filters-modal" aria-hidden="true">
-        <div class="prices__filters-backdrop" data-prices-filters-close></div>
-        <section class="prices__filters-dialog" role="dialog" aria-modal="true" aria-labelledby="prices-filters-title" tabindex="-1">
-          <header class="prices__filters-header">
-            <h2 class="prices__filters-title" id="prices-filters-title">Параметры</h2>
-            <button class="prices__filters-close" type="button" aria-label="Закрыть параметры" data-prices-filters-close>
-              <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </button>
-          </header>
-          <form class="prices__filters" aria-label="Параметры здания">
-            <div class="prices__filter-group">
-              <fieldset class="prices__fieldset">
-                <legend>Регион:</legend>
-                <div class="prices__segmented" data-segmented="region">
-                  <button class="prices__option is-active" type="button" aria-pressed="true">Россия</button>
-                  <button class="prices__option" type="button" aria-pressed="false">СНГ</button>
-                  <button class="prices__option" type="button" aria-pressed="false">Африка и Ближний Восток</button>
-                </div>
-              </fieldset>
-              <fieldset class="prices__fieldset">
-                <legend>Кровля:</legend>
-                <div class="prices__segmented" data-segmented="roof">
-                  <button class="prices__option is-active" type="button" aria-pressed="true">Двухскатная</button>
-                  <button class="prices__option" type="button" aria-pressed="false">Плоская</button>
-                </div>
-              </fieldset>
-            </div>
+<section class="buildings-prices" aria-labelledby="buildings-prices__title">
+  <div class="buildings-prices__container flex-col">
+    <h2 class="buildings-prices__title" id="buildings-prices__title">Цены</h2>
 
-            <div class="prices__dimensions">
-              <label class="prices__dimension">
-                <span>Ширина:</span>
-                <select name="width" aria-label="Ширина здания">
-                  <option>12 м</option><option>18 м</option><option>24 м</option><option>30 м</option>
-                </select>
-              </label>
-              <label class="prices__dimension">
-                <span>Высота:</span>
-                <select name="height" aria-label="Высота здания">
-                  <option>4 м</option><option>5 м</option><option>6 м</option><option>7 м</option>
-                </select>
-              </label>
+    <div class="prices__table-container flex-col">
+      <form class="prices__filters" aria-label="Параметры здания">
+        <div class="prices__filter-group">
+          <fieldset class="prices__fieldset">
+            <legend>Регион:</legend>
+            <div class="prices__segmented" data-segmented="region">
+              <button class="prices__option is-active" type="button" aria-pressed="true" data-filter-value="Россия">
+                Россия
+              </button>
+              <button class="prices__option" type="button" aria-pressed="false" data-filter-value="СНГ">СНГ</button>
+              <button
+                class="prices__option"
+                type="button"
+                aria-pressed="false"
+                data-filter-value="Африка и Ближний Восток">
+                Африка и Ближний Восток
+              </button>
             </div>
-          </form>
-          <footer class="prices__filters-footer">
-            <button class="prices__filters-back" type="button" data-prices-filters-close>Назад</button>
-          </footer>
-        </section>
-      </div>
-
+          </fieldset>
+          <fieldset class="prices__fieldset">
+            <legend>Кровля:</legend>
+            <div class="prices__segmented" data-segmented="roof">
+              <button class="prices__option is-active" type="button" aria-pressed="true" data-filter-value="Двухскатная">
+                Двухскатная
+              </button>
+              <button class="prices__option" type="button" aria-pressed="false" data-filter-value="Плоская">
+                Плоская
+              </button>
+            </div>
+          </fieldset>
+        </div>
+  
+        <div class="prices__dimensions">
+          <div class="prices__dimension">
+            <span id="building-width-label">Ширина:</span>
+            <div class="filter-dropdown">
+              <button
+                class="filter-dropdown__button"
+                type="button"
+                aria-expanded="false"
+                aria-controls="building-width"
+                aria-labelledby="building-width-label building-width-value"
+                data-filter-type="width"
+                data-label="">
+                <span id="building-width-value">12 м</span>
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path
+                    d="M23.0577 31.5782C23.3077 31.8483 23.6466 32 24 32C24.3534 32 24.6923 31.8483 24.9423 31.5782L35.61 20.0386C35.8597 19.7682 36 19.4016 36 19.0193C36 18.6371 35.8597 18.2705 35.61 18L12.39 18C12.1403 18.2705 12 18.6371 12 19.0193C12 19.4016 12.1403 19.7682 12.39 20.0386L23.0577 31.5782Z" />
+                </svg>
+              </button>
+              <div class="filter-dropdown__menu" id="building-width" role="listbox" aria-label="Выберите ширину" hidden>
+                <button
+                  class="filter-dropdown__option is-selected"
+                  type="button"
+                  role="option"
+                  aria-selected="true"
+                  data-filter-value="12 м">
+                  12 м
+                </button>
+                <button
+                  class="filter-dropdown__option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="18 м">
+                  18 м
+                </button>
+                <button
+                  class="filter-dropdown__option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="24 м">
+                  24 м
+                </button>
+                <button
+                  class="filter-dropdown__option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="30 м">
+                  30 м
+                </button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="prices__dimension">
+            <span id="building-height-label">Высота:</span>
+            <div class="filter-dropdown">
+              <button
+                class="filter-dropdown__button"
+                type="button"
+                aria-expanded="false"
+                aria-controls="building-height"
+                aria-labelledby="building-height-label building-height-value"
+                data-filter-type="height"
+                data-label="">
+                <span id="building-height-value">4 м</span>
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path
+                    d="M23.0577 31.5782C23.3077 31.8483 23.6466 32 24 32C24.3534 32 24.6923 31.8483 24.9423 31.5782L35.61 20.0386C35.8597 19.7682 36 19.4016 36 19.0193C36 18.6371 35.8597 18.2705 35.61 18L12.39 18C12.1403 18.2705 12 18.6371 12 19.0193C12 19.4016 12.1403 19.7682 12.39 20.0386L23.0577 31.5782Z" />
+                </svg>
+              </button>
+              <div class="filter-dropdown__menu" id="building-height" role="listbox" aria-label="Выберите высоту" hidden>
+                <button
+                  class="filter-dropdown__option is-selected"
+                  type="button"
+                  role="option"
+                  aria-selected="true"
+                  data-filter-value="4 м">
+                  4 м
+                </button>
+                <button
+                  class="filter-dropdown__option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="5 м">
+                  5 м
+                </button>
+                <button
+                  class="filter-dropdown__option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="6 м">
+                  6 м
+                </button>
+                <button
+                  class="filter-dropdown__option"
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  data-filter-value="7 м">
+                  7 м
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+  
       <div class="prices__mobile-summary">
         <p class="prices__mobile-summary-title">С 20% НДС. Поставка — EXW.</p>
         <div class="prices__mobile-summary-item">
@@ -106,49 +201,237 @@
           <small>(Этаж-1, кран-балки — нет, тип конструкции — двухскатная с 1 пролётом)</small>
         </div>
       </div>
-
-      <button class="prices__parameters-toggle" type="button" aria-expanded="false" aria-haspopup="dialog" aria-controls="prices-filters-modal">
-        <span>Параметры</span>
-        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M7 12h10m-7 5h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+  
+      <button
+        class="mob-filter-button"
+        type="button"
+        aria-haspopup="dialog"
+        aria-expanded="false"
+        aria-controls="prices-filter-dialog">
+        <span>Параметры <span class="mob-filter-button__values main-color">(Ш: 12м, В: 4м)</span></span>
+        <img src="/static/images/news/settings-ic.svg" alt="" aria-hidden="true" />
       </button>
-
+  
+      <div class="mob-filter-overlay" id="prices-filter-dialog" hidden>
+        <div
+          class="mob-filter-dialog"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="prices-filter-title"
+          tabindex="-1">
+          <div class="mob-filter-dialog__header">
+            <h2 class="mob-filter-dialog__title" id="prices-filter-title">Параметры</h2>
+            <button class="mob-filter-dialog__close" type="button" aria-label="Закрыть параметры">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path
+                  d="M18 6L6 18"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke="currentColor" />
+                <path
+                  d="M6 6L18 18"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke="currentColor" />
+              </svg>
+            </button>
+          </div>
+  
+          <div class="mob-filter-dialog__content">
+            <div class="mob-filter-dialog__group" role="group" aria-labelledby="prices-region-title">
+              <div class="mob-filter-dialog__group-title" id="prices-region-title">Регион:</div>
+              <div class="mob-filter-dialog__list" data-filter-list="region">
+                <button
+                  class="mob-filter-dialog__option is-selected"
+                  type="button"
+                  aria-pressed="true"
+                  data-filter-value="Россия">
+                  Россия
+                </button>
+                <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="СНГ">
+                  СНГ
+                </button>
+                <button
+                  class="mob-filter-dialog__option"
+                  type="button"
+                  aria-pressed="false"
+                  data-filter-value="Африка и Ближний Восток">
+                  Африка и Ближний Восток
+                </button>
+              </div>
+            </div>
+  
+            <div class="mob-filter-dialog__group" role="group" aria-labelledby="prices-width-title">
+              <div class="mob-filter-dialog__group-title" id="prices-width-title">Ширина:</div>
+              <div class="mob-filter-dialog__list" data-filter-list="width">
+                <button
+                  class="mob-filter-dialog__option is-selected"
+                  type="button"
+                  aria-pressed="true"
+                  data-filter-value="12 м">
+                  12 м
+                </button>
+                <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="18 м">
+                  18 м
+                </button>
+                <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="24 м">
+                  24 м
+                </button>
+                <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="30 м">
+                  30 м
+                </button>
+              </div>
+              <button class="mob-filter-dialog__show-more" type="button" aria-expanded="false" data-expand-list="width">
+                <span>Показать еще</span>
+                <svg
+                  class="mob-filter-dialog__show-more-icon"
+                  aria-hidden="true"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6 9L12 15L18 9"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke="currentColor" />
+                </svg>
+              </button>
+            </div>
+  
+            <div class="mob-filter-dialog__group" role="group" aria-labelledby="prices-height-title">
+              <div class="mob-filter-dialog__group-title" id="prices-height-title">Высота:</div>
+              <div class="mob-filter-dialog__list" data-filter-list="height">
+                <button
+                  class="mob-filter-dialog__option is-selected"
+                  type="button"
+                  aria-pressed="true"
+                  data-filter-value="4 м">
+                  4 м
+                </button>
+                <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="5 м">
+                  5 м
+                </button>
+                <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="6 м">
+                  6 м
+                </button>
+                <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="7 м">
+                  7 м
+                </button>
+              </div>
+              <button class="mob-filter-dialog__show-more" type="button" aria-expanded="false" data-expand-list="height">
+                <span>Показать еще</span>
+                <svg
+                  class="mob-filter-dialog__show-more-icon"
+                  aria-hidden="true"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6 9L12 15L18 9"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke="currentColor" />
+                </svg>
+              </button>
+            </div>
+  
+            <div class="mob-filter-dialog__group" role="group" aria-labelledby="prices-roof-title">
+              <div class="mob-filter-dialog__group-title" id="prices-roof-title">Кровля:</div>
+              <div class="mob-filter-dialog__list" data-filter-list="roof">
+                <button
+                  class="mob-filter-dialog__option is-selected"
+                  type="button"
+                  aria-pressed="true"
+                  data-filter-value="Двухскатная">
+                  Двухскатная
+                </button>
+                <button class="mob-filter-dialog__option" type="button" aria-pressed="false" data-filter-value="Плоская">
+                  Плоская
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="mob-filter-overlay__back-wrapper">
+          <button class="mob-filter-overlay__back" type="button">Назад</button>
+        </div>
+      </div>
+  
       <div class="prices__table-wrap">
         <table class="prices__table">
-          <colgroup><col class="prices__label-column"><col span="6"></colgroup>
+          <colgroup>
+            <col class="prices__label-column" />
+            <col span="6" />
+          </colgroup>
           <thead>
-          <tr>
-            <th scope="col">Виды работ</th>
-            <th scope="colgroup" colspan="6">Длина, м / с шагом колонн 6 м</th>
-          </tr>
+            <tr>
+              <th scope="col">Виды работ</th>
+              <th scope="colgroup" colspan="6">Длина, м / с шагом колонн 6 м</th>
+            </tr>
           </thead>
           <tbody>
-          <tr class="prices__subheading">
-            <th scope="row">С 20% НДС. Поставка — EXW.</th>
-            <td>30</td><td>36</td><td>42</td><td>48</td><td>54</td><td>60</td>
-          </tr>
-          <tr>
-            <th scope="row">
-              <span>Сроки проектирования и изготовления, мес</span>
-              <small>(разделы проекта — КМ, ОК (стадия Р, монтажные схемы и технический паспорт)</small>
-            </th>
-            <td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
-          </tr>
-          <tr>
-            <th scope="row">
-              <span>Несущий каркас, RUB</span>
-              <small>(Этаж-1, кран-балки — нет, тип конструкции — двухскатная с 1 пролётом)</small>
-            </th>
-            <td>891 588 RUB</td><td>1 133 396 RUB</td><td>1 290 252 RUB</td><td>1 290 252 RUB</td><td>1 290 252 RUB</td><td>1 290 252 RUB</td>
-          </tr>
+            <tr class="prices__subheading">
+              <th scope="row">С 20% НДС. Поставка — EXW.</th>
+              <td>30</td>
+              <td>36</td>
+              <td>42</td>
+              <td>48</td>
+              <td>54</td>
+              <td>60</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <span>Сроки проектирования и изготовления, мес</span>
+                <small>(разделы проекта — КМ, ОК (стадия Р, монтажные схемы и технический паспорт)</small>
+              </th>
+              <td>2.5</td>
+              <td>2.5</td>
+              <td>2.5</td>
+              <td>2.5</td>
+              <td>2.5</td>
+              <td>2.5</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <span>Несущий каркас, RUB</span>
+                <small>(Этаж-1, кран-балки — нет, тип конструкции — двухскатная с 1 пролётом)</small>
+              </th>
+              <td>891 588 RUB</td>
+              <td>1 133 396 RUB</td>
+              <td>1 290 252 RUB</td>
+              <td>1 290 252 RUB</td>
+              <td>1 290 252 RUB</td>
+              <td>1 290 252 RUB</td>
+            </tr>
           </tbody>
           <tfoot>
-          <tr>
-            <th scope="row">Итого от:</th>
-            <td>891 588 RUB</td><td>1 133 396 RUB</td><td>1 290 252 RUB</td><td>1 290 252 RUB</td><td>1 290 252 RUB</td><td>1 290 252 RUB</td>
-          </tr>
+            <tr>
+              <th scope="row">Итого от:</th>
+              <td>891 588 RUB</td>
+              <td>1 133 396 RUB</td>
+              <td>1 290 252 RUB</td>
+              <td>1 290 252 RUB</td>
+              <td>1 290 252 RUB</td>
+              <td>1 290 252 RUB</td>
+            </tr>
           </tfoot>
         </table>
-
+  
         <div class="prices__mobile-table" aria-label="Цена для длины 1 метр">
           <div class="prices__mobile-table-heading" aria-hidden="true">
             <span>Длина, м</span>
@@ -228,8 +511,16 @@
                 <p>
                   Мы не "играемся с надежностью здания" в целях понижения металлоемкости здания до критических величин и
                   понижения стоимости каркаса. Часть наших специалистов проектируют здания с 1980г. с учетом современных
-                  СНИПов. За это время ни одно здание не сложилось!
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium dolorem quidem, enim modi commodi quis quas impedit sunt sint! Natus, et consectetur molestias reiciendis laudantium delectus dignissimos id omnis deserunt. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid explicabo, sapiente dolor pariatur repellat, itaque odit magnam nihil atque provident rem! Assumenda eius accusamus praesentium tempora vitae nostrum animi temporibus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem aspernatur facere sapiente reprehenderit suscipit explicabo possimus reiciendis velit tempora! Est voluptas minima ea nisi tenetur debitis, nostrum veniam quos magnam.Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit praesentium maxime, reiciendis cumque commodi officia quis maiores consequatur dignissimos tenetur fugiat sequi at explicabo totam a numquam, labore nobis aliquam!
+                  СНИПов. За это время ни одно здание не сложилось! Lorem ipsum dolor sit amet consectetur, adipisicing
+                  elit. Praesentium dolorem quidem, enim modi commodi quis quas impedit sunt sint! Natus, et consectetur
+                  molestias reiciendis laudantium delectus dignissimos id omnis deserunt. Lorem ipsum dolor, sit amet
+                  consectetur adipisicing elit. Aliquid explicabo, sapiente dolor pariatur repellat, itaque odit magnam
+                  nihil atque provident rem! Assumenda eius accusamus praesentium tempora vitae nostrum animi
+                  temporibus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem aspernatur facere sapiente
+                  reprehenderit suscipit explicabo possimus reiciendis velit tempora! Est voluptas minima ea nisi
+                  tenetur debitis, nostrum veniam quos magnam.Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Odit praesentium maxime, reiciendis cumque commodi officia quis maiores consequatur dignissimos
+                  tenetur fugiat sequi at explicabo totam a numquam, labore nobis aliquam!
                 </p>
               </div>
             </div>
@@ -393,18 +684,12 @@
         </li>
       </ul>
       <nav class="slider-controls" role="group" aria-label="Навигация по преимуществам">
-        <button
-          class="slider-controls__arrow slider-controls__arrow--prev"
-          type="button"
-          aria-label="Предыдущий слайд">
+        <button class="slider-controls__arrow slider-controls__arrow--prev" type="button" aria-label="Предыдущий слайд">
           <svg viewBox="0 0 40 40" aria-hidden="true">
             <path d="M24 8 12 20l12 12"></path>
           </svg>
         </button>
-        <button
-          class="slider-controls__arrow slider-controls__arrow--next"
-          type="button"
-          aria-label="Следующий слайд">
+        <button class="slider-controls__arrow slider-controls__arrow--next" type="button" aria-label="Следующий слайд">
           <svg viewBox="0 0 40 40" aria-hidden="true">
             <path d="m16 8 12 12-12 12"></path>
           </svg>
@@ -414,7 +699,59 @@
   </div>
 </section>
 
-<!-- СЕКЦИЯ ГАЛЕРЕИ ИЗ ХАРАКТЕРИСТИК -->
+<section class="buildings-production" aria-labelledby="buildings-production-title">
+  <div class="buildings-production__panel">
+    <div class="buildings-production__content">
+      <header class="buildings-production__header">
+        <h2 class="buildings-production__title" id="buildings-production-title">Процесс производства</h2>
+        <p class="buildings-production__subtitle">Выберите надежного международного поставщика стальных зданий</p>
+      </header>
+
+      <div class="buildings-production__gallery">
+        <figure class="buildings-production__main-image">
+          <img
+            src="/static/images/bildings/bilding.jpg"
+            alt="Производство стальных строительных конструкций"
+            width="1400"
+            height="787"
+            loading="lazy" />
+        </figure>
+        <div class="buildings-production__side-images">
+          <figure class="buildings-production__side-image">
+            <img src="/static/images/bildings/bilding-small.jpg" alt="" width="328" height="257" loading="lazy" />
+          </figure>
+          <figure class="buildings-production__side-image">
+            <img src="/static/images/bildings/bilding-small.jpg" alt="" width="328" height="257" loading="lazy" />
+          </figure>
+          <figure class="buildings-production__side-image">
+            <img src="/static/images/bildings/bilding-small.jpg" alt="" width="328" height="257" loading="lazy" />
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="buildings-production__facts">
+      <article class="buildings-production__fact">
+        <h3 class="buildings-production__fact-title">Ключевой факт 1</h3>
+        <p class="buildings-production__fact-description">
+          Двухскатные, односкатные, пристройки и плоские кровли (однопролетные и многопролетные)
+        </p>
+      </article>
+      <article class="buildings-production__fact">
+        <h3 class="buildings-production__fact-title">Ключевой факт 2</h3>
+        <p class="buildings-production__fact-description">
+          Двухскатные, односкатные, пристройки и плоские кровли (однопролетные и многопролетные)
+        </p>
+      </article>
+      <article class="buildings-production__fact">
+        <h3 class="buildings-production__fact-title">Ключевой факт 3</h3>
+        <p class="buildings-production__fact-description">
+          Двухскатные, односкатные, пристройки и плоские кровли (однопролетные и многопролетные)
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
 
 <section class="services-contact" aria-labelledby="services-contact-title">
   <div class="services-contact__container">

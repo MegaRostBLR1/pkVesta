@@ -94,12 +94,20 @@ function initPrices() {
     });
   });
 
+  // В свёрнутом списке видны первые 3 значения, остальные прячутся.
+  // Кнопка «Показать еще» нужна, только если значений больше трёх
+  const visibleOptions = 3;
+
   const updateShowMore = () => {
     showMoreButtons?.forEach((button) => {
       const list = overlay?.querySelector('[data-filter-list="' + button.dataset.expandList + '"]');
       if (!list) return;
+      const options = list.querySelectorAll(".mob-filter-dialog__option");
       const expanded = button.getAttribute("aria-expanded") === "true";
-      button.hidden = !expanded && list.scrollHeight <= list.clientHeight;
+      button.hidden = options.length <= visibleOptions;
+      options.forEach((option, index) => {
+        option.hidden = !expanded && index >= visibleOptions;
+      });
     });
   };
 
@@ -136,6 +144,7 @@ function initPrices() {
       if (list) list.classList.toggle("is-expanded", expanded);
       const label = button.querySelector("span");
       if (label) label.textContent = expanded ? "Скрыть" : "Показать еще";
+      updateShowMore();
     });
   });
 

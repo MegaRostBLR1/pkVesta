@@ -43,7 +43,321 @@
   </div>
 </section>
 
-<!-- СЕКЦИЯ СРАВНЕНИЯ -->
+<section class="buildings-comparison">
+  <div class="buildings-comparison__container flex-col">
+    <h2 class="buildings-comparison__title">Сравнение</h2>
+    <p class="buildings-comparison__descr">
+      Быстровозводимые технологии строительства сельскохозяйственных зданий помогают сократить срок окупаемости и
+      организовать бизнес максимально рентабельно.
+    </p>
+    <div class="comparison__content flex-col-ac">
+      <!-- Таблица -->
+      <div class="comparison__table" id="comparison-table">
+        <div class="comparison__nav">
+          <button class="comparison__nav-arr comparison__nav-arr--prev comparison__nav-arr--buildings" type="button" aria-label="Назад">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M25.687 27.149L18.5203 19.999L25.687 12.849L23.3203 10.4823L13.8203 19.999L23.3203 29.5156L25.687 27.149Z"
+                fill="#4D4D4D" />
+            </svg>
+          </button>
+          <div class="comparison__slider-wrapper">
+            <div class="system-card flex-col-ac">
+              <div class="system-card__name">ЛСТК-цинк</div>
+            </div>
+            <div class="system-card flex-col-ac">
+              <div class="system-card__name">ЛМК-черный</div>
+            </div>
+            <div class="system-card flex-col-ac">
+              <div class="system-card__name">железобетон</div>
+            </div>
+            <div class="system-card flex-col-ac">
+              <div class="system-card__name">ЛМК-красный</div>
+            </div>
+          </div>
+          <button class="comparison__nav-arr comparison__nav-arr--next comparison__nav-arr--buildings" type="button" aria-label="Вперед">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M14.3208 12.8511L21.4875 20.0011L14.3208 27.1511L16.6875 29.5177L26.1875 20.0011L16.6875 10.4844L14.3208 12.8511Z"
+                fill="#4D4D4D" />
+            </svg>
+          </button>
+          <div class="comparison__slider-controls-mob">
+            <button class="comparison__nav-arr comparison__nav-arr--prev comparison__nav-arr--buildings" type="button" aria-label="Назад">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M25.687 27.149L18.5203 19.999L25.687 12.849L23.3203 10.4823L13.8203 19.999L23.3203 29.5156L25.687 27.149Z"
+                  fill="#4D4D4D" />
+              </svg>
+            </button>
+            <div class="slider-controls__dots"></div>
+            <button class="comparison__nav-arr comparison__nav-arr--next comparison__nav-arr--buildings" type="button" aria-label="Вперед">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14.3208 12.8511L21.4875 20.0011L14.3208 27.1511L16.6875 29.5177L26.1875 20.0011L16.6875 10.4844L14.3208 12.8511Z"
+                  fill="#4D4D4D" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- Строка с точками -->
+        <div class="comparison__row comparison__row--open">
+          <div class="comparison__row-header">
+            <div class="comparison__row-title">Технологии</div>
+            <button
+              class="comparison__row-btn"
+              type="button"
+              aria-label="Учет технологических"
+              aria-expanded="true"
+              aria-controls="comparison-row-3">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
+                  fill="#4D4D4D" />
+              </svg>
+            </button>
+          </div>
+          <div class="comparison__row-body flex-col" id="comparison-row-3">
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Металлоемкость каркаса</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+              </div>
+            </div>
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Несущая способность</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+              </div>
+            </div>
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Трудоемкость изготовления</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+              </div>
+            </div>
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Трудоемкость монтажа</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+              </div>
+            </div>
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Антикоррозионные свойства</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+              </div>
+            </div>
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Затраты на фундамент</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+              </div>
+            </div>
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Вместимость в транспортное средство</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+              </div>
+            </div>
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Процесс сварки</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+              </div>
+            </div>
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Предел огнестойкости</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+              </div>
+            </div>
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Частота дефектов изготовления</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="value--text">Погрешность в пробивке отверстий, резки элементов на нужную длину – низкая</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">Эффект грибовидности и серповидности после сварки на заводе- средняя/высокая</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">Сколы бетона, трещины, разрывы и смещение арматуры – низкая/средняя.</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">Сколы бетона, трещины, разрывы и смещение арматуры – низкая/средняя.</span>
+                </div>
+              </div>
+            </div>
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Частота применения в зданиях с высоким уровнем влажности и аммиачной агрессивной средой</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Закрытые строки -->
+        <div class="comparison__row">
+          <div class="comparison__row-header">
+            <div class="comparison__row-title">Сравнение с конкурентами</div>
+            <button
+              class="comparison__row-btn"
+              type="button"
+              aria-label="Учет технологических"
+              aria-expanded="false"
+              aria-controls="comparison-row-5">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
+                  fill="#4D4D4D" />
+              </svg>
+            </button>
+          </div>
+          <div class="comparison__row-body flex-col" id="comparison-row-5">
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Платные услуги</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="comparison__btn-wrapper">
+        <button
+          class="comparison__btn btn main-btn"
+          type="button"
+          aria-expanded="false"
+          aria-controls="comparison-table">
+          Показать еще
+        </button>
+      </div> -->
+    </div>
+  </div>
+</section>
 
 <section class="buildings-advantages" aria-labelledby="buildings-advantages-title">
   <div class="buildings-advantages__inner flex-col">
@@ -73,8 +387,16 @@
                 <p>
                   Мы не "играемся с надежностью здания" в целях понижения металлоемкости здания до критических величин и
                   понижения стоимости каркаса. Часть наших специалистов проектируют здания с 1980г. с учетом современных
-                  СНИПов. За это время ни одно здание не сложилось!
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium dolorem quidem, enim modi commodi quis quas impedit sunt sint! Natus, et consectetur molestias reiciendis laudantium delectus dignissimos id omnis deserunt. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid explicabo, sapiente dolor pariatur repellat, itaque odit magnam nihil atque provident rem! Assumenda eius accusamus praesentium tempora vitae nostrum animi temporibus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem aspernatur facere sapiente reprehenderit suscipit explicabo possimus reiciendis velit tempora! Est voluptas minima ea nisi tenetur debitis, nostrum veniam quos magnam.Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit praesentium maxime, reiciendis cumque commodi officia quis maiores consequatur dignissimos tenetur fugiat sequi at explicabo totam a numquam, labore nobis aliquam!
+                  СНИПов. За это время ни одно здание не сложилось! Lorem ipsum dolor sit amet consectetur, adipisicing
+                  elit. Praesentium dolorem quidem, enim modi commodi quis quas impedit sunt sint! Natus, et consectetur
+                  molestias reiciendis laudantium delectus dignissimos id omnis deserunt. Lorem ipsum dolor, sit amet
+                  consectetur adipisicing elit. Aliquid explicabo, sapiente dolor pariatur repellat, itaque odit magnam
+                  nihil atque provident rem! Assumenda eius accusamus praesentium tempora vitae nostrum animi
+                  temporibus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem aspernatur facere sapiente
+                  reprehenderit suscipit explicabo possimus reiciendis velit tempora! Est voluptas minima ea nisi
+                  tenetur debitis, nostrum veniam quos magnam.Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Odit praesentium maxime, reiciendis cumque commodi officia quis maiores consequatur dignissimos
+                  tenetur fugiat sequi at explicabo totam a numquam, labore nobis aliquam!
                 </p>
               </div>
             </div>
@@ -238,18 +560,12 @@
         </li>
       </ul>
       <nav class="slider-controls" role="group" aria-label="Навигация по преимуществам">
-        <button
-          class="slider-controls__arrow slider-controls__arrow--prev"
-          type="button"
-          aria-label="Предыдущий слайд">
+        <button class="slider-controls__arrow slider-controls__arrow--prev" type="button" aria-label="Предыдущий слайд">
           <svg viewBox="0 0 40 40" aria-hidden="true">
             <path d="M24 8 12 20l12 12"></path>
           </svg>
         </button>
-        <button
-          class="slider-controls__arrow slider-controls__arrow--next"
-          type="button"
-          aria-label="Следующий слайд">
+        <button class="slider-controls__arrow slider-controls__arrow--next" type="button" aria-label="Следующий слайд">
           <svg viewBox="0 0 40 40" aria-hidden="true">
             <path d="m16 8 12 12-12 12"></path>
           </svg>
@@ -259,7 +575,59 @@
   </div>
 </section>
 
-<!-- СЕКЦИЯ ГАЛЕРЕИ ИЗ ХАРАКТЕРИСТИК -->
+<section class="buildings-production" aria-labelledby="buildings-production-title">
+  <div class="buildings-production__panel">
+    <div class="buildings-production__content">
+      <header class="buildings-production__header">
+        <h2 class="buildings-production__title" id="buildings-production-title">Процесс производства</h2>
+        <p class="buildings-production__subtitle">Выберите надежного международного поставщика стальных зданий</p>
+      </header>
+
+      <div class="buildings-production__gallery">
+        <figure class="buildings-production__main-image">
+          <img
+            src="/static/images/bildings/bilding.jpg"
+            alt="Производство стальных строительных конструкций"
+            width="1400"
+            height="787"
+            loading="lazy" />
+        </figure>
+        <div class="buildings-production__side-images">
+          <figure class="buildings-production__side-image">
+            <img src="/static/images/bildings/bilding-small.jpg" alt="" width="328" height="257" loading="lazy" />
+          </figure>
+          <figure class="buildings-production__side-image">
+            <img src="/static/images/bildings/bilding-small.jpg" alt="" width="328" height="257" loading="lazy" />
+          </figure>
+          <figure class="buildings-production__side-image">
+            <img src="/static/images/bildings/bilding-small.jpg" alt="" width="328" height="257" loading="lazy" />
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="buildings-production__facts">
+      <article class="buildings-production__fact">
+        <h3 class="buildings-production__fact-title">Ключевой факт 1</h3>
+        <p class="buildings-production__fact-description">
+          Двухскатные, односкатные, пристройки и плоские кровли (однопролетные и многопролетные)
+        </p>
+      </article>
+      <article class="buildings-production__fact">
+        <h3 class="buildings-production__fact-title">Ключевой факт 2</h3>
+        <p class="buildings-production__fact-description">
+          Двухскатные, односкатные, пристройки и плоские кровли (однопролетные и многопролетные)
+        </p>
+      </article>
+      <article class="buildings-production__fact">
+        <h3 class="buildings-production__fact-title">Ключевой факт 3</h3>
+        <p class="buildings-production__fact-description">
+          Двухскатные, односкатные, пристройки и плоские кровли (однопролетные и многопролетные)
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
 
 <section class="services-contact" aria-labelledby="services-contact-title">
   <div class="services-contact__container">
