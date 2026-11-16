@@ -201,7 +201,7 @@ button {
 }
 
 .tertiary-btn {
-  color: #324C88;
+  color: #324c88;
   background: #ffffff;
 }
 
@@ -221,6 +221,41 @@ button {
   cursor: not-allowed;
 }
 
+h2 {
+  margin: 0;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 2.6667rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 1300px) {
+  body {
+    font-size: 0.8889rem;
+  }
+
+  h2 {
+    font-size: 1.6667rem;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .tablet-hidden {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  h2 {
+    font-size: 1.2222rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 0.7778rem;
+  }
+}
 
 /* Универсальная навигация слайдера. Не привязана к конкретной странице. */
 .slider-controls {
@@ -294,19 +329,19 @@ button {
 
 /* Dark theme for slider controls on light backgrounds. */
 .slider-controls--dark .slider-controls__arrow::before {
-  border: 1px solid #4D4D4D33;
+  border: 1px solid #4d4d4d33;
 }
 
 .slider-controls--dark .slider-controls__arrow svg {
-  stroke: #4D4D4D;
+  stroke: #4d4d4d;
 }
 
 .slider-controls--dark .slider-controls__dot {
-  background: #324C8833;
+  background: #324c8833;
 }
 
 .slider-controls--dark .slider-controls__dot--active {
-  background: #324C88;
+  background: #324c88;
 }
 
 @media screen and (max-width: 1100px) {
@@ -543,8 +578,6 @@ button {
   }
 }
 
-
-
 /* стили для всех кнопок аккордеон */
 .accordion__body {
   display: grid;
@@ -610,11 +643,23 @@ button {
 .accordion__toggle--yellow {
   width: 40px;
   height: 40px;
-  background-color: #FFF500;
+  background-color: #fff500;
+  transition: background-color 0.3s ease;
 }
 .accordion__toggle--yellow::after,
 .accordion__toggle--yellow::before {
   background-color: #324c88;
+}
+
+.accordion__toggle--yellow:hover {
+  background-color: #fff500cc;
+}
+.accordion__toggle--yellow:hover::after,
+.accordion__toggle--yellow:hover::before {
+  background-color: #324c88cc;
+}
+.accordion__toggle--yellow:active {
+  background-color: #f5eb0a;
 }
 
 @media (max-width: 1200px) {
@@ -626,7 +671,8 @@ button {
     width: 1.5px;
     height: 10.5px;
   }
-  .accordion__toggle--main, .accordion__toggle--yellow {
+  .accordion__toggle--main,
+  .accordion__toggle--yellow {
     width: 30px;
     height: 30px;
   }
@@ -639,40 +685,624 @@ button {
   }
 }
 
-
-h2 {
-  margin: 0;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 2.6667rem;
-  font-weight: 600;
-  text-transform: uppercase;
+/* Универсальный выпадающий список */
+.filter-dropdown {
+  position: relative;
+  flex: 0 0 auto;
 }
 
-@media screen and (max-width: 1300px) {
-  body {
-    font-size: 0.8889rem;
+.filter-dropdown__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 64px;
+  padding: 18px 24px;
+  border-radius: 10px;
+  background: #f5f8f7;
+  color: #4d4d4d;
+  font: 500 20px/1.6 "Onest-Medium", sans-serif;
+  white-space: nowrap;
+}
+
+.filter-dropdown__button svg {
+  display: block;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  fill: #272629;
+  transition: transform 0.2s, fill 0.2s;
+}
+
+.filter-dropdown__button:hover svg {
+  fill: #324c88;
+}
+
+.filter-dropdown__button[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.filter-dropdown__menu {
+  position: absolute;
+  z-index: 20;
+  top: 100%;
+  left: 0;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: min-content;
+  min-width: 100%;
+  max-height: 308px;
+  padding: 18px 1px 18px 24px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 10px;
+  background: #f5f8f7;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 15%);
+}
+
+.filter-dropdown__menu[hidden] {
+  display: none;
+}
+
+.filter-dropdown__menu::-webkit-scrollbar {
+  width: 23px;
+}
+.filter-dropdown__menu::-webkit-scrollbar-track {
+  margin-block: 8px;
+}
+.filter-dropdown__menu::-webkit-scrollbar-thumb {
+  background: #4d4d4d;
+  background-clip: padding-box;
+  border: 10px solid transparent;
+  border-radius: 20px;
+}
+@supports not selector(::-webkit-scrollbar) {
+  .filter-dropdown__menu {
+    scrollbar-width: thin;
+    scrollbar-color: #4d4d4d transparent;
+  }
+}
+
+.filter-dropdown__option {
+  flex: 0 0 auto;
+  color: rgb(44 44 44 / 50%);
+  font: 500 18px/26px "Onest-Medium", sans-serif;
+  text-align: left;
+  transition: color 0.2s;
+}
+
+.filter-dropdown__option:hover,
+.filter-dropdown__option.is-selected {
+  color: #4d4d4d;
+}
+
+.filter-dropdown__button:focus-visible,
+.filter-dropdown__option:focus-visible {
+  outline: 2px solid #324c88;
+  outline-offset: 4px;
+}
+
+/* Мобильное меню для фильтров */
+.mob-filter-button,
+.mob-filter-overlay {
+  display: none;
+}
+
+.mob-filter-overlay[hidden] {
+  display: none;
+}
+
+.mob-filter-button:focus-visible,
+.mob-filter-dialog button:focus-visible,
+.mob-filter-overlay__back:focus-visible {
+  outline: 2px solid #324c88;
+  outline-offset: 3px;
+}
+
+body.mob-filter-open {
+  overflow: hidden;
+}
+
+.mob-filter-button {
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: #f5f8f7;
+  color: #4d4d4d;
+  font-family: "Onest-Medium", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  text-align: left;
+}
+
+.mob-filter-button img {
+  display: block;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.mob-filter-overlay {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding-top: 28px;
+  background-color: #00000033;
+}
+
+.mob-filter-dialog {
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  border-radius: 10px;
+  background: #f8f8f8;
+  overflow: hidden;
+}
+
+.mob-filter-dialog__header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px;
+}
+
+.mob-filter-dialog__title {
+  flex: 1 1 auto;
+  color: #1d4395;
+  font-family: "Onest-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 160%;
+  text-transform: none;
+}
+
+.mob-filter-dialog__close {
+  width: 24px;
+  height: 24px;
+  color: #1d4395;
+}
+
+.mob-filter-dialog__content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #efefef;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #4d4d4d #ffffff;
+}
+
+.mob-filter-dialog__group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.mob-filter-dialog__group-title {
+  margin-bottom: 2px;
+  color: rgb(44 44 44 / 90%);
+  font-family: "Onest-Medium", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+.mob-filter-dialog__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  max-height: 130px;
+  overflow-y: hidden;
+}
+
+.mob-filter-dialog__list--years {
+  max-height: 124px;
+}
+
+.mob-filter-dialog__list.is-expanded {
+  max-height: none;
+}
+
+.mob-filter-dialog__option {
+  color: #2c2c2c80;
+  font: 500 16px/22px "Onest-Medium", sans-serif;
+}
+
+.mob-filter-dialog__option.is-selected,
+.mob-filter-dialog__option[aria-pressed="true"] {
+  color: #4d4d4d;
+}
+
+.mob-filter-dialog__show-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: #324c88;
+  font: 500 14px/1.4 "Onest-Medium", sans-serif;
+}
+
+.mob-filter-dialog__show-more[hidden] {
+  display: none;
+}
+
+.mob-filter-dialog__show-more[aria-expanded="true"] .mob-filter-dialog__show-more-icon {
+  transform: rotate(180deg);
+}
+
+.mob-filter-overlay__back-wrapper {
+  padding: 4px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.mob-filter-overlay__back {
+  width: 100%;
+  padding: 22px 24px;
+  border-radius: 10px;
+  background: #d7e1f7;
+  color: #2555bd;
+  font: 500 16px/1 "Onest-Medium", sans-serif;
+}
+
+@media screen and (max-width: 680px) {
+  .mob-filter-button,
+  .mob-filter-overlay {
+    display: flex;
   }
 
-  h2 {
+  .mob-filter-dialog__list {
+    gap: 14px;
+  }
+  .mob-filter-dialog__group {
+    gap: 12px;
+  }
+  .mob-filter-dialog__title {
+    font-size: 16px;
+  }
+  .mob-filter-dialog__group-title {
+    font-size: 18px;
+  }
+  .mob-filter-dialog__option {
+    font-size: 14px;
+  }
+}
+
+/* Кнопка лупа */
+.zoom-button {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #ffffff0a;
+  box-shadow: inset 0 0 60px #ffffff08;
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+  color: #ffffff;
+  transition: background-color 0.15s ease;
+}
+
+.zoom-button svg {
+  display: block;
+  width: 36px;
+  height: 36px;
+  fill: currentColor;
+}
+
+.zoom-button:hover {
+  background-color: #ffffff26;
+}
+
+.zoom-button:focus-visible {
+  outline: 0.1111rem solid #324c88;
+  outline-offset: 0.2222rem;
+}
+
+@media screen and (max-width: 680px) {
+  .zoom-button svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zoom-button {
+    transition: none;
+  }
+}
+
+/* ОБЩИЕ СТИЛИ ДЛЯ ПОПАПА УВЕЛИЧЕНИЯ */
+.photo-lightbox {
+  max-width: 90vw;
+  max-height: 90vh;
+  margin: auto;
+  padding: 1rem 36px;
+  border-radius: 1.1111rem;
+  background-color: #f7f8fa;
+  overflow-y: auto;
+}
+
+.photo-lightbox::-webkit-scrollbar {
+  width: 6px;
+}
+
+.photo-lightbox::-webkit-scrollbar-thumb {
+  background: #c5c9d3;
+  border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .photo-lightbox {
+    scrollbar-width: thin;
+    scrollbar-color: #c5c9d3 transparent;
+  }
+}
+
+.photo-lightbox__controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 14px;
+}
+
+.photo-lightbox__close {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  color: #4d4d4d;
+  font-size: 20px;
+  font-family: "Onest-Medium";
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.photo-lightbox__close svg {
+  flex: none;
+  width: 36px;
+  height: 36px;
+}
+
+.photo-lightbox__image {
+  display: block;
+  width: auto;
+  max-width: 84vw;
+  max-height: 78vh;
+  border-radius: 10px;
+}
+
+.photo-lightbox__caption {
+  margin-top: 30px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 150%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #4d4d4d;
+}
+
+.photo-lightbox__close:focus-visible {
+  outline: 0.1111rem solid #324c88;
+  outline-offset: 0.2222rem;
+}
+
+@media screen and (max-width: 680px) {
+  .photo-lightbox-overlay {
+    padding: 10px;
+  }
+
+  .photo-lightbox {
+    max-width: 100%;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .photo-lightbox__image {
+    max-width: 100%;
+  }
+
+  .photo-lightbox__close {
+    font-size: 16px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+  }
+
+  .photo-lightbox__close svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .photo-lightbox__caption {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #ffffff;
+  }
+}
+
+/* ОБЩИЕ СТИЛИ ДЛЯ ПОПАПА АККОРДЕОНА */
+
+.accordion-item__modal {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  gap: 48px;
+  width: calc(100% - 40px);
+  max-width: 88vw;
+  min-height: 83vh;
+  max-height: calc(100% - 40px);
+  margin: auto;
+  padding: 30px;
+  border-radius: 1.1111rem;
+  background: #ffffff;
+}
+
+.accordion-item__modal-close {
+  position: absolute;
+  z-index: 1;
+  top: 30px;
+  right: 30px;
+  width: 36px;
+  height: 36px;
+  color: #717171;
+}
+
+.accordion-item__modal-close svg {
+  width: 100%;
+  height: 100%;
+}
+
+.accordion-item__modal-media {
+  position: relative;
+  min-width: 0;
+  min-height: 400px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.accordion-item__modal-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  object-fit: cover;
+}
+
+.accordion-item__modal-slider {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.accordion-item__modal-slider[hidden] {
+  display: none;
+}
+
+.accordion-item__modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  min-width: 0;
+  padding-right: 60px;
+  overflow-y: auto;
+  color: #4d4d4d;
+}
+
+.accordion-item__modal-title {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 48px;
+}
+
+.accordion-item__modal-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7778rem;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.accordion-item__modal-button {
+  align-self: flex-end;
+  margin-top: auto;
+  border: 1px solid #324c88;
+  font-size: 18px;
+  line-height: 23px;
+  padding: 24px 30px;
+  min-width: 214px;
+}
+
+.accordion-item__modal-close:focus-visible {
+  outline: 0.1111rem solid #324c88;
+  outline-offset: 0.2222rem;
+}
+
+@media screen and (max-width: 1100px) {
+  .accordion-item__modal {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 24px;
+    min-height: 0;
+  }
+
+  .accordion-item__modal-media {
+    min-height: 0;
+    height: 400px;
+  }
+
+  .accordion-item__modal-content {
+    padding-right: 0;
+  }
+
+  .accordion-item__modal-title {
     font-size: 1.6667rem;
   }
 }
 
-@media screen and (max-width: 1025px) {
-  .tablet-hidden {
-    display: none;
-  }
-}
-
 @media screen and (max-width: 680px) {
-  h2 {
-    font-size: 1.2222rem;
+  .accordion-item__modal {
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    max-height: calc(100% - 20px);
+    padding: 20px;
   }
-}
 
-@media screen and (max-width: 480px) {
-  body {
-    font-size: 0.7778rem;
+  .accordion-item__modal-close {
+    top: 3px;
+    right: 3px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .accordion-item__modal-media {
+    height: 240px;
+  }
+
+  .accordion-item__modal-zoom {
+    padding: 10px;
+    right: 8px;
+    bottom: 8px;
+  }
+
+  .accordion-item__modal-zoom svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .accordion-item__modal-content {
+    gap: 20px;
+  }
+
+  .accordion-item__modal-title {
+    font-size: 1.1111rem;
+    line-height: 30px;
+  }
+
+  .accordion-item__modal-text {
+    font-size: 16px;
+  }
+
+  .accordion-item__modal-button {
+    align-self: stretch;
+    padding: 16px 24px;
   }
 }
 
@@ -908,7 +1538,6 @@ h2 {
     font-size: 20px;
     line-height: 28px;
   }
-
 }
 
 .home-hero__mobile-break {
@@ -1069,7 +1698,7 @@ h2 {
   overflow: hidden;
   isolation: isolate;
   border-radius: 20px;
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 .home-process__card::before {
@@ -1822,7 +2451,6 @@ h2 {
     margin-left: 0;
   }
 
-
   .home-industries__panel {
     min-height: 0;
     padding: 30px;
@@ -2069,7 +2697,6 @@ h2 {
     width: 100%;
   }
 
-
   .home-industries__panel {
     gap: 18px;
     padding: 20px 10px;
@@ -2226,7 +2853,6 @@ h2 {
     font-size: 13px;
     line-height: 1.5;
   }
-
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2664,7 +3290,7 @@ h2 {
   height: 28px;
   margin: 28px 20px 0 20px;
   border-radius: 10px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .project-card__play--compact::before {
@@ -3496,8 +4122,8 @@ h2 {
   display: block;
   width: 100%;
   padding: 22px;
-  background: #D7E1F7;
-  color: #2555BD;
+  background: #d7e1f7;
+  color: #2555bd;
   border-radius: 10px;
 }
 
@@ -3530,7 +4156,7 @@ h2 {
   overflow-y: auto;
   border: 0.1667rem solid #f5f8f7;
   border-radius: 0.5556rem;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   box-shadow: 0 0.3333rem 1.1111rem rgb(0 0 0 / 5%);
   scrollbar-color: #4d4d4d #ffffff;
   scrollbar-width: thin;
@@ -3863,8 +4489,6 @@ h2 {
     line-height: 1.1;
   }
 
-
-
   .services-contact__phone-code {
     font-size: 0.7778rem;
   }
@@ -3998,7 +4622,7 @@ h2 {
   border-radius: 0.4444rem;
   color: #ffffff;
   background-color: #d52b1e;
-  font-family: 'Onest-Regular', sans-serif;
+  font-family: "Onest-Regular", sans-serif;
   font-size: 0.8889rem;
   font-weight: 400;
   line-height: 1.25rem;
@@ -4013,7 +4637,7 @@ h2 {
   width: 0.7778rem;
   height: 0.7778rem;
   background-color: #d52b1e;
-  content: '';
+  content: "";
   transform: rotate(45deg);
 }
 
@@ -4039,11 +4663,13 @@ h2 {
   stroke-width: 1.8;
 }
 
-.services-contact__field:has(.services-contact__input:user-invalid, .services-contact__input.is-invalid) .services-contact__tooltip {
+.services-contact__field:has(.services-contact__input:user-invalid, .services-contact__input.is-invalid)
+  .services-contact__tooltip {
   display: inline-flex;
 }
 
-.services-contact__field:has(.services-contact__input:user-invalid, .services-contact__input.is-invalid) .services-contact__input {
+.services-contact__field:has(.services-contact__input:user-invalid, .services-contact__input.is-invalid)
+  .services-contact__input {
   border-color: #d52b1e;
   outline: 1px solid #d52b1e;
 }
@@ -4555,8 +5181,6 @@ h2 {
   outline-offset: 4px;
 }
 
-
-
 @media screen and (max-width: 1600px) {
   .home-about__hero {
     min-height: 1269px;
@@ -4591,8 +5215,6 @@ h2 {
     flex-basis: 240px;
   }
 }
-
-
 
 @media screen and (max-width: 1279px) {
   .home-about__stats {
@@ -5164,7 +5786,7 @@ h2 {
   text-transform: uppercase;
 }
 
-.home-benefits__link:focus-visible{
+.home-benefits__link:focus-visible {
   outline: 2px solid #fff500;
   outline-offset: 4px;
 }
@@ -5180,7 +5802,6 @@ h2 {
 }
 
 @media screen and (max-width: 1600px) {
-
   .home-benefits__feature {
     gap: 36px;
     padding: 64px;
@@ -5202,11 +5823,7 @@ h2 {
 /* Figma: блок «О компании», desktop 1440 px (1866:74851).
    Переопределяет только промежуточный desktop; базовый layout 1920 px сохранён. */
 
-
-
-
 @media screen and (max-width: 1100px) {
-
   .home-benefits__panel {
     padding: 48px 28px;
   }
@@ -5254,11 +5871,8 @@ h2 {
   }
 }
 
-
-
-
 @media screen and (max-width: 680px) {
-  .home-benefits{
+  .home-benefits {
     padding-right: 4px;
     padding-left: 4px;
   }
@@ -5466,7 +6080,7 @@ h2 {
 }
 
 .home-advantages__tab:hover {
-  background: #324C881A;
+  background: #324c881a;
 }
 
 .home-advantages__tab--active {
@@ -7215,7 +7829,6 @@ h2 {
   line-height: 1.5;
 }
 
-
 .home-agro__item-content ul {
   display: flex;
   flex-direction: column;
@@ -7290,7 +7903,6 @@ h2 {
     font-size: 18px;
     line-height: 1.5;
   }
-
 
   .home-agro__item-content {
     gap: 14px;
@@ -7767,4537 +8379,7 @@ h2 {
   }
 }
 
-/* Страница: быстровозводимые здания */
-.buildings {
-  padding-bottom: 2.2222rem;
-}
-
-.buildings__breadcrumbs {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1.1111rem;
-  width: auto;
-  max-width: 106.1111rem;
-  min-height: 3.4444rem;
-  margin: 0 0.2778rem;
-  padding: 0 0.2778rem;
-  color: #4d4d4d;
-  font-size: 1.1111rem;
-  line-height: 1.4444rem;
-}
-
-.buildings__breadcrumb-link {
-  color: inherit;
-  transition: color 0.15s ease;
-}
-
-.buildings__breadcrumb-link:hover {
-  color: #324c88;
-}
-
-.buildings__breadcrumb-link:focus-visible,
-.buildings__action:focus-visible {
-  outline: 0.1111rem solid currentColor;
-  outline-offset: 0.2222rem;
-}
-
-.buildings__breadcrumb-separator {
-  color: #979a9b;
-}
-
-.buildings__hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  min-height: 32rem;
-  margin: 0 0.2778rem;
-  padding: 2.2222rem;
-  overflow: clip;
-  border-radius: 1.1111rem;
-  color: #ffffff;
-  text-align: center;
-  background-color: #25313a;
-  background-image: linear-gradient(#00000080, #00000080), url("../static/images/home/home-advantages-factory.png");
-  background-position: center;
-  background-size: cover;
-}
-
-.buildings__hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.3333rem;
-  width: 100%;
-  max-width: 72.2222rem;
-  margin: 0 auto;
-}
-
-.buildings__title {
-  max-width: 100%;
-  margin: 0;
-  color: #ffffff;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 3.5556rem;
-  font-weight: 600;
-  line-height: 1.3;
-  text-transform: uppercase;
-}
-
-.buildings__description {
-  width: 100%;
-  max-width: 55.7222rem;
-  margin: 0;
-  color: #ffffff;
-  font-family: "Onest-Medium", sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.4444rem;
-}
-
-.buildings__actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.7778rem;
-  margin-top: 0.4444rem;
-}
-
-.buildings__action.btn {
-  min-height: 0;
-  padding: 1.3333rem 2.2222rem;
-  border-radius: 1.1111rem;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 1.1111rem;
-  font-weight: 600;
-  line-height: 1.26;
-  text-decoration: none;
-}
-
-@media (max-width: 768px) {
-  .buildings__hero {
-    min-height: 26rem;
-    padding: 2rem 1.1111rem;
-  }
-
-  .buildings__title {
-    font-size: 2.4444rem;
-  }
-
-  .buildings__actions {
-    width: 100%;
-  }
-
-  .buildings__action.btn {
-    width: 100%;
-    max-width: 24rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .buildings__breadcrumbs {
-    gap: 0.5556rem;
-    font-size: 0.8889rem;
-  }
-
-  .buildings__hero {
-    min-height: 22rem;
-    padding: 1.3333rem 0.7778rem;
-  }
-
-  .buildings__title {
-    font-size: 1.6667rem;
-    line-height: 1.4;
-  }
-
-  .buildings__description {
-    font-size: 0.8889rem;
-  }
-
-  .buildings__action.btn {
-    padding: 1rem;
-    font-size: 1rem;
-    white-space: normal;
-  }
-}
-
-/* Блок агрокомплексов — макет Figma 1857:39054. */
-.buildings__agro {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  min-height: 46.6667rem;
-  margin: 0 0.2778rem 0.2778rem;
-  padding: 3.7778rem 1.1111rem 0;
-  overflow: hidden;
-  border-radius: 0.5556rem;
-  background: #25313a;
-  color: #ffffff;
-  text-align: center;
-  isolation: isolate;
-}
-
-.buildings__agro-inner {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 77.1111rem;
-  min-height: 42.8889rem;
-}
-
-.buildings__agro-content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  width: 100%;
-}
-
-.buildings__agro-heading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.3333rem;
-  width: 100%;
-}
-
-.buildings__agro-category {
-  width: 100%;
-  margin: 0;
-  color: #fff500;
-  font-family: "Onest-Medium", sans-serif;
-  font-size: 1.3333rem;
-  font-weight: 500;
-  line-height: 1.8889rem;
-}
-
-.buildings__agro-title {
-  max-width: 100%;
-  margin: 0;
-  color: #ffffff;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 3.5556rem;
-  font-weight: 600;
-  line-height: 1.46875;
-  text-transform: uppercase;
-  overflow-wrap: normal;
-}
-
-.buildings__agro-description {
-  width: 100%;
-  max-width: 53.8889rem;
-  margin: 0;
-  color: #ffffff;
-  font-family: "Onest-Regular", sans-serif;
-  font-size: 1.3333rem;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-.buildings__agro-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.7778rem;
-  margin-top: 0;
-}
-
-.buildings__agro-action.btn {
-  min-height: 4.9444rem;
-  padding: 1.7778rem 2.2222rem;
-  border-radius: 1.1111rem;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 1.1111rem;
-  font-weight: 600;
-  line-height: 1.26;
-  text-decoration: none;
-}
-
-.buildings__agro-illustration {
-  position: absolute;
-  z-index: 1;
-  top: 16.8889rem;
-  left: 50%;
-  display: block;
-  width: 68.8889rem;
-  max-width: none;
-  height: auto;
-  transform: translateX(-50%);
-  pointer-events: none;
-  object-fit: contain;
-}
-
-.buildings__agro-tabs {
-  position: absolute;
-  z-index: 3;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: grid;
-  grid-template-columns: 1fr 1.38fr 1.38fr 1.04fr 0.94fr 0.94fr;
-  min-height: 4.2222rem;
-  padding: 0.3333rem;
-  border: 1px solid #ffffff1f;
-  border-radius: 0.5556rem;
-  background: #25313a;
-}
-
-.buildings__agro-tab {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-  padding: 0.6667rem 0.4444rem;
-  border-radius: 0.3333rem;
-  color: #ffffff;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 100%;
-  letter-spacing: 0;
-  text-align: center;
-  text-transform: uppercase;
-  transition: background-color 0.15s ease, color 0.15s ease;
-}
-
-.buildings__agro-tab:hover,
-.buildings__agro-tab.is-active {
-  background: #ffffff12;
-  color: #fff500;
-}
-
-.buildings__agro-tab:focus-visible {
-  outline: 0.1111rem solid #ffffff;
-  outline-offset: -0.1111rem;
-}
-
-.buildings__agro-tabs-toggle {
-  display: none;
-}
-
-@media (max-width: 1300px) {
-  .buildings__agro {
-    min-height: 43rem;
-    padding: 3.3333rem 1.3333rem 0;
-  }
-
-  .buildings__agro-inner {
-    min-height: 39.2222rem;
-  }
-
-  .buildings__agro-title {
-    font-size: 2.6667rem;
-    line-height: 1.3;
-  }
-
-  .buildings__agro-description {
-    max-width: 53.8889rem;
-    font-size: 1.1111rem;
-  }
-
-  .buildings__agro-illustration {
-    top: 15.5556rem;
-    width: 61.1111rem;
-  }
-
-  .buildings__agro-tabs {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-  }
-
-  .buildings__agro-tab {
-    font-size: 0.8889rem;
-  }
-}
-
-/* Figma node 1857:46319 — layout for the 1024 px frame. */
-@media (min-width: 769px) and (max-width: 1300px) {
-  .buildings-gallery {
-    padding: 40px;
-  }
-
-  .buildings-gallery__inner {
-    gap: 36px;
-  }
-
-  .buildings-gallery__content {
-    gap: 30px;
-  }
-
-  .buildings-gallery__title {
-    font-size: 48px;
-    line-height: 1.25;
-  }
-
-  .buildings-gallery__carousel {
-    gap: 20px;
-  }
-
-  .buildings-gallery__slide {
-    flex: 1 1 0;
-    height: 400px;
-  }
-
-  .buildings-gallery__slide--active {
-    flex: 0 0 580px;
-    height: 520px;
-  }
-}
-
-@media (max-width: 680px) {
-  .buildings__agro {
-    min-height: 40rem;
-    padding: 2.2222rem 1rem 0;
-  }
-
-  .buildings__agro-inner {
-    min-height: 37.7778rem;
-  }
-
-  .buildings__agro-content {
-    gap: 1.3333rem;
-  }
-
-  .buildings__agro-heading {
-    gap: 0.7778rem;
-  }
-
-  .buildings__agro-category {
-    font-size: 1rem;
-    line-height: 1.4444rem;
-  }
-
-  .buildings__agro-title {
-    font-size: 1.7778rem;
-    line-height: 1.3;
-    overflow-wrap: anywhere;
-  }
-
-  .buildings__agro-description {
-    font-size: 0.8889rem;
-    line-height: 1.5;
-  }
-
-  .buildings__agro-actions {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    gap: 0.5556rem;
-  }
-
-  .buildings__agro-action.btn {
-    width: 100%;
-    min-height: 3.1111rem;
-    padding: 0.7778rem 1rem;
-    border-radius: 0.5556rem;
-    font-size: 0.7778rem;
-    line-height: 1.4;
-  }
-
-  .buildings__agro-illustration {
-    top: 20rem;
-    width: 45rem;
-    opacity: 0.72;
-  }
-
-  .buildings__agro-tabs {
-    right: -0.1111rem;
-    left: -0.1111rem;
-    grid-template-columns: repeat(6, minmax(7.2rem, 1fr));
-    min-height: 3.5556rem;
-    overflow-x: auto;
-    border-radius: 0.4444rem;
-  }
-
-  .buildings__agro-tab {
-    padding: 0.5556rem 0.3333rem;
-    font-size: 0.7778rem;
-    white-space: nowrap;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .buildings__agro-tab,
-  .buildings__agro-action {
-    transition: none;
-  }
-}
-
-/* Макет Figma 1857:41413 — ширина 1440 px.
-   Сохраняем desktop-композицию 1920 px и корректируем только геометрию
-   секции и навигации для целевого фрейма 1440 px. */
-@media (min-width: 1301px) and (max-width: 1600px) {
-  .buildings__agro {
-    min-height: 830px;
-    padding: 68px 0 0;
-    background: #292929;
-  }
-
-  .buildings__agro-inner {
-    width: 100%;
-    max-width: 1388px;
-    min-height: 762px;
-  }
-
-  .buildings__agro-content {
-    gap: 36px;
-  }
-
-  .buildings__agro-intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    width: 100%;
-  }
-
-  .buildings__agro-heading {
-    gap: 24px;
-  }
-
-  .buildings__agro-category {
-    font-size: 24px;
-    line-height: 34px;
-  }
-
-  .buildings__agro-title {
-    font-size: 64px;
-    line-height: 94px;
-    white-space: nowrap;
-  }
-
-  .buildings__agro-description {
-    max-width: 970px;
-    font-size: 24px;
-    line-height: 36px;
-  }
-
-  .buildings__agro-actions {
-    gap: 14px;
-  }
-
-  .buildings__agro-action.btn {
-    min-height: 89px;
-    padding: 32px 40px;
-    border-radius: 20px;
-    font-size: 20px;
-    line-height: 25.2px;
-    white-space: nowrap;
-  }
-
-  .buildings__agro-illustration {
-    top: 304px;
-    left: 50%;
-    width: 744px;
-    max-width: none;
-    height: auto;
-    transform: translateX(-50%);
-  }
-
-  .buildings__agro-tabs {
-    right: 0;
-    bottom: 1.1111rem;
-    left: 0;
-    width: 68.8889rem;
-    max-width: 100%;
-    margin: 0 auto;
-    border-color: #ffffff1f;
-    border-radius: 1.1111rem;
-    background: #626262cc;
-  }
-
-  .buildings__agro-tab {
-    border-radius: 1.1111rem;
-    color: #ffffff;
-    font-size: 1.1111rem;
-  }
-
-  .buildings__agro-tab:hover,
-  .buildings__agro-tab.is-active {
-    background: #ffffff;
-    color: #324c88;
-  }
-}
-
-/* Макет Figma 1857:44024 — планшетный desktop 1024 px.
-   Геометрия сверена с фреймом 1024×850; правила 1440 и 1920 px сохранены отдельно. */
-@media (min-width: 769px) and (max-width: 1300px) {
-  .buildings__agro {
-    min-height: 840px;
-    padding: 68px 0 0;
-    background: #292929;
-  }
-
-  .buildings__agro-inner {
-    width: 100%;
-    max-width: 1014px;
-    min-height: 772px;
-  }
-
-  .buildings__agro-content {
-    gap: 36px;
-  }
-
-  .buildings__agro-intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    width: 100%;
-  }
-
-  .buildings__agro-heading {
-    gap: 24px;
-    width: 100%;
-  }
-
-  .buildings__agro-category {
-    font-size: 20px;
-    line-height: 34px;
-  }
-
-  .buildings__agro-title {
-    width: 100%;
-    max-width: 950px;
-    font-size: 48px;
-    line-height: 64px;
-    white-space: normal;
-    overflow-wrap: normal;
-  }
-
-  .buildings__agro-description {
-    width: 100%;
-    max-width: 794px;
-    font-size: 20px;
-    line-height: 30px;
-  }
-
-  .buildings__agro-actions {
-    gap: 14px;
-  }
-
-  .buildings__agro-action.btn {
-    min-height: 75px;
-    padding: 26px 32px;
-    border-radius: 20px;
-    font-size: 18px;
-    line-height: 1.26;
-    white-space: nowrap;
-  }
-
-  .buildings__agro-illustration {
-    top: 281px;
-    left: 50%;
-    width: 700px;
-    max-width: none;
-    height: auto;
-    transform: translateX(-50%);
-  }
-
-  .buildings__agro-tabs {
-    top: auto;
-    right: auto;
-    bottom: 20px;
-    left: 50%;
-    display: grid;
-    grid-template-columns: 144px 208px 208px 151px 94px 134px;
-    gap: 4px;
-    width: 971px;
-    min-height: 0;
-    height: 76px;
-    padding: 6px;
-    border: 0;
-    border-radius: 20px;
-    background: #626262cc;
-    transform: translateX(-50%);
-  }
-
-  .buildings__agro-tab {
-    height: 64px;
-    padding: 0 12px;
-    border-radius: 20px;
-    font-size: 16px;
-    line-height: normal;
-    white-space: nowrap;
-  }
-
-  .buildings__agro-tab:hover,
-  .buildings__agro-tab.is-active {
-    background: #ffffff;
-    color: #324c88;
-  }
-}
-
-/* Figma 1857:39056 — desktop 1920 px. */
-@media (min-width: 1601px) {
-  .buildings__agro {
-    min-height: 830px;
-    padding: 68px 0 0;
-    background: #292929;
-  }
-
-  .buildings__agro-inner {
-    width: 100%;
-    max-width: 1388px;
-    min-height: 762px;
-  }
-
-  .buildings__agro-content {
-    gap: 36px;
-  }
-
-  .buildings__agro-intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    width: 100%;
-  }
-
-  .buildings__agro-heading {
-    gap: 24px;
-  }
-
-  .buildings__agro-category {
-    font-size: 24px;
-    line-height: 34px;
-  }
-
-  .buildings__agro-title {
-    font-size: 64px;
-    line-height: 94px;
-    white-space: nowrap;
-  }
-
-  .buildings__agro-description {
-    max-width: 970px;
-    font-size: 24px;
-    line-height: 36px;
-  }
-
-  .buildings__agro-actions {
-    gap: 14px;
-  }
-
-  .buildings__agro-action.btn {
-    min-height: 89px;
-    padding: 32px 40px;
-    border-radius: 20px;
-    font-size: 20px;
-    line-height: 25.2px;
-    white-space: nowrap;
-  }
-
-  .buildings__agro-illustration {
-    top: 304px;
-    left: 197px;
-    width: 994px;
-    max-width: none;
-    height: 1043px;
-    object-fit: contain;
-    transform: none;
-  }
-
-  .buildings__agro-tabs {
-    top: auto;
-    right: auto;
-    bottom: 20px;
-    left: 73px;
-    display: grid;
-    grid-template-columns: 188px 259px 258px 195px 132px 176px;
-    gap: 4px;
-    width: 1240px;
-    min-height: 0;
-    height: 76px;
-    padding: 6px;
-    border: 0;
-    border-radius: 20px;
-    background: rgba(237, 237, 237, 0.2);
-    -webkit-backdrop-filter: blur(25px);
-    backdrop-filter: blur(25px);
-  }
-
-  .buildings__agro-tab {
-    height: 64px;
-    padding: 0 36px;
-    border-radius: 20px;
-    font-size: 20px;
-    line-height: normal;
-    white-space: nowrap;
-  }
-
-  .buildings__agro-tab.is-active {
-    background: #ffffff;
-    color: #324c88;
-  }
-}
-
-/* Figma 1857:46660 — мобильная версия 360 px.
-   Планшетный и desktop-макеты выше остаются независимыми. */
-@media (max-width: 680px) {
-  .buildings__agro {
-    min-height: 480px;
-    margin: 5px;
-    padding: 30px 0 0;
-    overflow: hidden;
-    border-radius: 20px;
-    background: #2b2b2b;
-  }
-
-  .buildings__agro-inner {
-    width: 100%;
-    min-height: 0;
-    padding: 0 4px;
-  }
-
-  .buildings__agro-content {
-    gap: 24px;
-    width: 100%;
-  }
-
-  .buildings__agro-intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    width: 100%;
-  }
-
-  .buildings__agro-heading {
-    gap: 12px;
-    width: 100%;
-  }
-
-  .buildings__agro-category {
-    width: 100%;
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  .buildings__agro-title {
-    width: 100%;
-    max-width: 342px;
-    font-size: 22px;
-    line-height: 30px;
-    overflow-wrap: normal;
-  }
-
-  .buildings__agro-description {
-    width: 100%;
-    max-width: 342px;
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  .buildings__agro-actions {
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    width: 100%;
-    margin: 0;
-  }
-
-  .buildings__agro-action.btn {
-    width: 286px;
-    max-width: 100%;
-    min-height: 54px;
-    padding: 18px 24px;
-    border-radius: 20px;
-    font-size: 14px;
-    line-height: 18px;
-    white-space: nowrap;
-  }
-
-  .buildings__agro-illustration {
-    display: none;
-  }
-
-  .buildings__agro-tabs {
-    top: auto;
-    right: auto;
-    bottom: 8px;
-    left: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 334px;
-    max-width: 100%;
-    min-height: 52px;
-    height: 52px;
-    padding: 14px 20px;
-    overflow: visible;
-    border: 0;
-    border-radius: 20px;
-    background: #ededed33;
-    -webkit-backdrop-filter: blur(25px);
-    backdrop-filter: blur(25px);
-    transform: translateX(-50%);
-  }
-
-  .buildings__agro-tab {
-    display: none;
-    height: auto;
-    padding: 0;
-    border-radius: 0;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: left;
-    white-space: nowrap;
-  }
-
-  .buildings__agro-tab.is-active {
-    display: flex;
-    flex: 1 1 auto;
-    justify-content: flex-start;
-    background: transparent;
-    color: #ffffff;
-  }
-
-  .buildings__agro-tabs-toggle {
-    display: flex;
-    flex: 0 0 24px;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    padding: 0;
-    color: #ffffff;
-  }
-
-  .buildings__agro-tabs-toggle img {
-    display: block;
-    width: 24px;
-    height: 24px;
-  }
-
-  .buildings__agro-tabs.is-open {
-    top: auto;
-    right: 8px;
-    bottom: 8px;
-    left: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-    gap: 18px;
-    width: auto;
-    max-width: none;
-    height: auto;
-    min-height: 0;
-    padding: 20px;
-    border: 1px solid #ffffff1f;
-    border-radius: 20px;
-    background: #ededed33;
-    -webkit-backdrop-filter: blur(25px);
-    backdrop-filter: blur(25px);
-    transform: none;
-  }
-
-  .buildings__agro-tabs.is-open .buildings__agro-tab {
-    display: flex;
-    flex: 0 0 auto;
-    justify-content: flex-start;
-    width: 100%;
-    padding: 0;
-    border-radius: 0;
-    color: #ffffff;
-    font-family: "Onest-SemiBold", sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.2;
-    text-align: left;
-    white-space: nowrap;
-  }
-
-  .buildings__agro-tabs.is-open .buildings__agro-tab.is-active,
-  .buildings__agro-tabs.is-open .buildings__agro-tab:hover {
-    background: transparent;
-    color: #ffffff;
-  }
-
-  .buildings__agro-tabs.is-open .buildings__agro-tab:last-of-type {
-    padding-right: 44px;
-  }
-
-  .buildings__agro-tabs.is-open .buildings__agro-tabs-toggle {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-  }
-}
-
-@media (max-width: 375px) {
-  .buildings__agro-title {
-    font-size: 22px;
-    line-height: 30px;
-  }
-
-  .buildings__agro-tabs {
-    width: 334px;
-  }
-}
-
-/* Секция «Описание» — Figma 1857:40155, фрейм 1920 × 958. */
-.buildings-description {
-  margin: 0 0.5556rem 0.5556rem;
-  padding: 5.3333rem 2.2222rem;
-  border-radius: 1.1111rem;
-  background: #f5f8f7;
-  color: #4d4d4dcc;
-}
-.buildings-description__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  width: 100%;
-  max-width: 101.1111rem;
-  margin: 0 auto;
-}
-.buildings-description__header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.3333rem;
-  width: 100%;
-}
-.buildings-description__title {
-  width: 100%;
-  margin: 0;
-  color: #4d4d4d;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 2.6667rem;
-  font-weight: 600;
-  line-height: 1.27;
-  text-align: center;
-  text-transform: uppercase;
-}
-.buildings-description__industries {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  width: 100%;
-  font-family: "Onest-Regular", sans-serif;
-  font-size: 1.3333rem;
-  font-weight: 400;
-  line-height: 1.7222rem;
-}
-.buildings-description__industries-label {
-  color: #4d4d4dcc;
-}
-.buildings-description__industries-list {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.7778rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.buildings-description__industry {
-  color: #324c88;
-  text-decoration: underline;
-  text-underline-offset: 0.1111rem;
-}
-.buildings-description__content {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
-  gap: 7.7778rem;
-  width: 100%;
-  max-width: 83.7778rem;
-  padding-bottom: 0.1667rem;
-}
-.buildings-description__media {
-  min-width: 0;
-  padding: 0.2222rem;
-  border-radius: 1.6667rem;
-  background: #ffffff;
-}
-.buildings-description__image-frame {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.5556rem;
-  isolation: isolate;
-}
-.buildings-description__image {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 676 / 593;
-  border-radius: inherit;
-  object-fit: cover;
-}
-.buildings-description__zoom {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.5556rem;
-  height: 3.5556rem;
-  padding: 0.1111rem;
-  border-radius: 0.5556rem 0 0.5556rem 0;
-  background: #ffffff0a;
-  box-shadow: inset 0 0 3.3333rem #ffffff08;
-  -webkit-backdrop-filter: blur(1.3333rem);
-  backdrop-filter: blur(1.3333rem);
-  color: #ffffff;
-}
-.buildings-description__zoom img {
-  display: block;
-  width: 2rem;
-  height: 2rem;
-}
-.buildings-description__zoom:focus-visible,
-.buildings-description__trigger:focus-visible,
-.buildings-description__more:focus-visible,
-.buildings-description__lightbox-close:focus-visible {
-  outline: 0.1111rem solid #324c88;
-  outline-offset: 0.2222rem;
-}
-.buildings-description__accordion {
-  min-width: 0;
-  width: 100%;
-  color: #4d4d4dcc;
-}
-.buildings-description__item {
-  padding-bottom: 1.1111rem;
-  border-top: 1px solid #0000000d;
-}
-.buildings-description__item:first-child {
-  padding-top: 1.1111rem;
-}
-.buildings-description__item:first-child .buildings-description__trigger {
-  align-items: flex-start;
-}
-.buildings-description__item + .buildings-description__item {
-  padding-top: 1.4444rem;
-}
-.buildings-description__trigger {
-  display: flex;
-  align-items: center;
-  gap: 1.3333rem;
-  width: 100%;
-  min-width: 0;
-  padding: 0;
-  color: #4d4d4d;
-  text-align: left;
-}
-.buildings-description__icon {
-  display: flex;
-  flex: 0 0 2.2222rem;
-  align-items: center;
-  justify-content: center;
-  width: 2.2222rem;
-  height: 2.2222rem;
-  border-radius: 50%;
-  background: #fff500;
-}
-.buildings-description__icon img {
-  display: block;
-  width: 1.3333rem;
-  height: 1.3333rem;
-}
-.buildings-description__item-title {
-  display: block;
-  min-width: 0;
-  color: #4d4d4d;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 1.1111rem;
-  font-weight: 600;
-  line-height: 1.6667rem;
-  text-transform: uppercase;
-}
-.buildings-description__panel {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-left: 3.5556rem;
-  padding-top: 0.2222rem;
-}
-.buildings-description__panel[hidden] {
-  display: none;
-}
-.buildings-description__copy {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7778rem;
-  width: 100%;
-  color: #4d4d4dcc;
-  font-family: "Onest-Regular", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-}
-.buildings-description__copy p {
-  margin: 0;
-}
-.buildings-description__more {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 3.3333rem;
-  padding: 1rem 1.6667rem;
-  border-radius: 0.5556rem;
-  background: #324c88;
-  color: #ffffff;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 0.8333rem;
-  font-weight: 600;
-  line-height: 1.3333rem;
-  text-transform: uppercase;
-  transition: background-color 0.15s ease;
-}
-.buildings-description__more:hover {
-  background: #324c88cc;
-}
-.buildings-description__lightbox {
-  width: auto;
-  max-width: 90vw;
-  max-height: 90vh;
-  padding: 1rem;
-  overflow: auto;
-  border: 0;
-  border-radius: 1.1111rem;
-  background: #f5f8f7;
-}
-.buildings-description__lightbox::backdrop {
-  background: #000000b3;
-}
-.buildings-description__lightbox-controls {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 0.5556rem;
-}
-.buildings-description__lightbox-close {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.6667rem;
-  height: 2.6667rem;
-  border-radius: 0.5556rem;
-  background: #ffffff;
-  color: #324c88;
-  font-size: 2rem;
-  line-height: 1;
-}
-.buildings-description__lightbox-image {
-  display: block;
-  width: auto;
-  max-width: 84vw;
-  max-height: 78vh;
-  object-fit: contain;
-}
-@media (max-width: 1600px) {
-  .buildings-description {
-    padding: 4rem 2.2222rem;
-  }
-  .buildings-description__content {
-    gap: 3.3333rem;
-  }
-  .buildings-description__title {
-    font-size: 2.3333rem;
-  }
-  .buildings-description__industries {
-    font-size: 1.1111rem;
-    line-height: 1.7222rem;
-  }
-  .buildings-description__item-title {
-    font-size: 1rem;
-  }
-  .buildings-description__copy {
-    font-size: 0.8889rem;
-  }
-}
-@media (max-width: 900px) {
-  .buildings-description {
-    padding: 3.3333rem 1.3333rem;
-  }
-  .buildings-description__inner {
-    gap: 2rem;
-  }
-  .buildings-description__content {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 2rem;
-    max-width: 42.6667rem;
-  }
-  .buildings-description__media {
-    width: 100%;
-  }
-  .buildings-description__title {
-    font-size: 2rem;
-  }
-  .buildings-description__industries {
-    gap: 0.5556rem;
-  }
-  .buildings-description__industries-list {
-    justify-content: center;
-    gap: 0.5556rem;
-  }
-}
-@media (max-width: 680px) {
-  .buildings-description {
-    margin: 0 0.2778rem 0.2778rem;
-    padding: 1.7778rem 0.8889rem;
-    border-radius: 0.5556rem;
-  }
-  .buildings-description__inner {
-    gap: 1.3333rem;
-  }
-  .buildings-description__header {
-    gap: 0.8889rem;
-  }
-  .buildings-description__title {
-    font-size: 1.4444rem;
-    line-height: 1.3;
-  }
-  .buildings-description__industries {
-    flex-direction: column;
-    gap: 0.3333rem;
-    font-size: 0.8889rem;
-    line-height: 1.3333rem;
-  }
-  .buildings-description__industries-list {
-    gap: 0.3333rem 0.5556rem;
-  }
-  .buildings-description__content {
-    gap: 1.3333rem;
-  }
-  .buildings-description__media {
-    padding: 0.2222rem;
-    border-radius: 1rem;
-  }
-  .buildings-description__zoom {
-    width: 3.1111rem;
-    height: 3.1111rem;
-  }
-  .buildings-description__zoom img {
-    width: 1.5556rem;
-    height: 1.5556rem;
-  }
-  .buildings-description__item + .buildings-description__item {
-    padding-top: 1rem;
-  }
-  .buildings-description__trigger {
-    gap: 0.7778rem;
-  }
-  .buildings-description__icon {
-    flex-basis: 2rem;
-    width: 2rem;
-    height: 2rem;
-  }
-  .buildings-description__icon img {
-    width: 1.1111rem;
-    height: 1.1111rem;
-  }
-  .buildings-description__item-title {
-    font-size: 0.8889rem;
-    line-height: 1.3333rem;
-  }
-  .buildings-description__panel {
-    gap: 0.8889rem;
-    margin-left: 2.7778rem;
-    padding-top: 0.7778rem;
-  }
-  .buildings-description__copy {
-    gap: 0.5556rem;
-    font-size: 0.8889rem;
-  }
-  .buildings-description__more {
-    min-height: 2.6667rem;
-    padding: 0.6667rem 1.1111rem;
-    font-size: 0.7778rem;
-  }
-  .buildings-description__lightbox {
-    max-width: 96vw;
-    padding: 0.6667rem;
-  }
-  .buildings-description__lightbox-image {
-    max-width: 90vw;
-  }
-}
-@media (max-width: 375px) {
-  .buildings-description {
-    padding-right: 0.6667rem;
-    padding-left: 0.6667rem;
-  }
-  .buildings-description__industries-list {
-    column-gap: 0.4444rem;
-  }
-  .buildings-description__item-title {
-    font-size: 0.8333rem;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .buildings-description__more {
-    transition: none;
-  }
-}
-
-/* Адаптация блока «Описание» под макет Figma 1857:42515 (1440 px). */
-@media (min-width: 901px) and (max-width: 1600px) {
-  .buildings-description {
-    padding: 3.5556rem 2.2222rem;
-  }
-
-  .buildings-description__inner {
-    gap: 1.3889rem;
-    max-width: 100%;
-  }
-
-  .buildings-description__header {
-    gap: 1.3333rem;
-  }
-
-  .buildings-description__title {
-    font-size: 2.6667rem;
-    line-height: 1.25;
-  }
-
-  .buildings-description__industries {
-    gap: 1rem;
-    font-size: 1.3333rem;
-    line-height: 1.5;
-  }
-
-  .buildings-description__industries-list {
-    gap: 0.7778rem;
-  }
-
-  .buildings-description__content {
-    grid-template-columns: minmax(0, 684fr) minmax(0, 594fr);
-    gap: 4.4444rem;
-    max-width: 75.4444rem;
-    padding-bottom: 0;
-  }
-
-  .buildings-description__item-title {
-    font-size: 1.1111rem;
-    line-height: 1.5;
-  }
-
-  .buildings-description__copy {
-    font-size: 1rem;
-    line-height: 1.5;
-    gap: 1.3889rem;
-  }
-
-  .buildings-description__panel {
-    gap: 1rem;
-  }
-}
-
-/* Блок «Описание»: адаптация под планшетный макет Figma 1857:45126 (1024 px). */
-.buildings-description__media--tablet {
-  display: none;
-}
-
-@media screen and (min-width: 901px) and (max-width: 1100px) {
-  .buildings-description {
-    margin: 0 10px 10px;
-    padding: 40px;
-    border-radius: 10px;
-  }
-
-  .buildings-description__inner {
-    gap: 25px;
-    max-width: none;
-  }
-  .buildings-description__header {
-    gap: 14px;
-  }
-  .buildings-description__title {
-    font-size: 30px;
-    line-height: 38px;
-  }
-
-  .buildings-description__industries {
-    flex-wrap: nowrap;
-    gap: 18px;
-    font-size: 20px;
-    line-height: 1.5;
-    white-space: nowrap;
-  }
-
-  .buildings-description__industries-list {
-    flex-wrap: nowrap;
-    gap: 14px;
-  }
-  .buildings-description__content {
-    display: block;
-    max-width: none;
-    padding-bottom: 0;
-  }
-  .buildings-description__media:not(.buildings-description__media--tablet) {
-    display: none;
-  }
-
-  .buildings-description__media--tablet {
-    display: block;
-    width: 100%;
-    margin: 20px 0;
-    padding: 4px;
-    border-radius: 30px;
-  }
-
-  .buildings-description__media--tablet .buildings-description__image-frame {
-    height: 632px;
-    border-radius: 10px;
-  }
-
-  .buildings-description__media--tablet .buildings-description__image {
-    width: 100%;
-    height: 100%;
-    aspect-ratio: auto;
-    object-fit: cover;
-  }
-
-  .buildings-description__media--tablet .buildings-description__zoom {
-    right: 10px;
-    bottom: 10px;
-    width: 64px;
-    height: 64px;
-    border-radius: 10px;
-  }
-
-  .buildings-description__media--tablet .buildings-description__zoom img {
-    width: 36px;
-    height: 36px;
-  }
-
-  .buildings-description__accordion {
-    display: flex;
-    flex-direction: column;
-  }
-  .buildings-description__item {
-    padding-bottom: 20px;
-  }
-  .buildings-description__item:first-child {
-    padding-top: 0;
-  }
-  .buildings-description__item + .buildings-description__item {
-    padding-top: 20px;
-  }
-  .buildings-description__trigger {
-    gap: 24px;
-  }
-  .buildings-description__icon {
-    flex-basis: 30px;
-    width: 30px;
-    height: 30px;
-  }
-  .buildings-description__icon img {
-    width: 24px;
-    height: 24px;
-  }
-  .buildings-description__item-title {
-    font-size: 18px;
-    line-height: 1.5;
-  }
-  .buildings-description__panel {
-    gap: 14px;
-    margin-left: 54px;
-    padding-top: 0;
-  }
-  .buildings-description__copy {
-    gap: 14px;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-}
-
-/* Мобильный макет Figma 1857:46708 — ширина 360 px. */
-@media (max-width: 375px) {
-  .buildings-description {
-    margin: 0 10px 10px;
-    padding: 0 4px 10px;
-    border-radius: 10px;
-  }
-
-  .buildings-description__inner {
-    gap: 25px;
-  }
-
-  .buildings-description__header {
-    gap: 14px;
-    padding-top: 20px;
-  }
-
-  .buildings-description__title {
-    font-size: 20px;
-    line-height: 28px;
-  }
-
-  .buildings-description__industries {
-    gap: 14px;
-    font-size: 18px;
-    line-height: normal;
-  }
-
-  .buildings-description__industries-label {
-    white-space: nowrap;
-  }
-
-  .buildings-description__industries-list {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    gap: 14px;
-    width: 100%;
-    height: 21px;
-    overflow: hidden;
-    font-size: 16px;
-    line-height: 21px;
-    white-space: nowrap;
-  }
-
-  .buildings-description__industries-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    min-height: 24px;
-    color: #324c88;
-    font-family: "Onest-Medium", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 22px;
-  }
-
-  .buildings-description__industries-toggle img {
-    display: block;
-    flex: 0 0 24px;
-    width: 24px;
-    height: 24px;
-    transition: transform 0.15s ease;
-  }
-
-  .buildings-description__industries.is-expanded .buildings-description__industries-list {
-    flex-wrap: wrap;
-    height: auto;
-    overflow: visible;
-    white-space: normal;
-  }
-
-  .buildings-description__industries.is-expanded .buildings-description__industries-toggle img {
-    transform: rotate(180deg);
-  }
-
-  .buildings-description__content {
-    gap: 26px;
-  }
-
-  .buildings-description__accordion {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .buildings-description__item {
-    padding-bottom: 20px;
-  }
-
-  .buildings-description__item:first-child {
-    padding-top: 0;
-  }
-
-  .buildings-description__item + .buildings-description__item {
-    padding-top: 20px;
-  }
-
-  .buildings-description__trigger {
-    align-items: flex-start;
-    gap: 24px;
-  }
-
-  .buildings-description__icon {
-    flex-basis: 30px;
-    width: 30px;
-    height: 30px;
-  }
-
-  .buildings-description__icon img {
-    width: 24px;
-    height: 24px;
-  }
-
-  .buildings-description__item-title {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  .buildings-description__panel {
-    gap: 14px;
-    margin-left: 54px;
-    padding-top: 0;
-  }
-
-  .buildings-description__copy {
-    gap: 25px;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  .buildings-description__media--tablet {
-    display: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .buildings-description__industries-toggle img {
-    transition: none;
-  }
-}
-
-/* Блок «Преимущества» — Figma 1857:40218, desktop 1920 px. */
-.buildings-advantages {
-  margin: 10px;
-  padding: 64px 60px 70px;
-  border-radius: 20px;
-  background: #292929;
-  color: #ffffff;
-}
-.buildings-advantages__inner {
-  width: 100%;
-  max-width: 1800px;
-  margin: 0 auto;
-}
-.buildings-advantages__header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid #4d4d4d33;
-  text-align: center;
-}
-.buildings-advantages__title {
-  margin: 0;
-  color: #ffffff;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 1.25;
-  text-transform: uppercase;
-}
-.buildings-advantages__subtitle {
-  margin: 0;
-  color: #ffffffcc;
-  font-family: "Onest-Regular", sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 1.5;
-}
-.buildings-advantages__content {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1.12fr);
-  align-items: center;
-  gap: 28px;
-  padding-top: 40px;
-}
-.buildings-advantages__list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  min-width: 0;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.buildings-advantages__item {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  min-height: 120px;
-  padding: 24px 30px;
-  border-radius: 20px;
-  background: #363636;
-}
-.buildings-advantages__icon {
-  display: flex;
-  flex: 0 0 48px;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: #fff500;
-}
-.buildings-advantages__icon img {
-  display: block;
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-}
-.buildings-advantages__label {
-  display: block;
-  min-width: 0;
-  color: #ffffff;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.6;
-  text-transform: uppercase;
-}
-.buildings-advantages__connector {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.buildings-advantages__connector img {
-  display: block;
-  width: 44px;
-  height: 44px;
-  object-fit: contain;
-}
-.buildings-advantages__visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-}
-.buildings-advantages__visual img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-@media (max-width: 1300px) {
-  .buildings-advantages {
-    padding: 48px 32px;
-  }
-  .buildings-advantages__content {
-    grid-template-columns: minmax(0, 1fr) 32px minmax(0, 1fr);
-    gap: 20px;
-  }
-  .buildings-advantages__item {
-    gap: 20px;
-    padding: 20px;
-  }
-  .buildings-advantages__label {
-    font-size: 20px;
-  }
-}
-@media (max-width: 900px) {
-  .buildings-advantages {
-    padding: 40px 24px;
-  }
-  .buildings-advantages__title {
-    font-size: 36px;
-  }
-  .buildings-advantages__subtitle {
-    font-size: 20px;
-  }
-  .buildings-advantages__content {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
-  }
-  .buildings-advantages__list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .buildings-advantages__item {
-    min-height: 100px;
-  }
-  .buildings-advantages__connector {
-    display: none;
-  }
-  .buildings-advantages__visual {
-    max-width: 700px;
-    margin: 0 auto;
-  }
-}
-@media (max-width: 600px) {
-  .buildings-advantages {
-    margin: 5px;
-    padding: 28px 16px;
-    border-radius: 10px;
-  }
-  .buildings-advantages__header {
-    gap: 12px;
-    padding-bottom: 20px;
-  }
-  .buildings-advantages__title {
-    font-size: 24px;
-    line-height: 1.3;
-  }
-  .buildings-advantages__subtitle {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  .buildings-advantages__content {
-    padding-top: 20px;
-  }
-  .buildings-advantages__list {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 12px;
-  }
-  .buildings-advantages__item {
-    min-height: 84px;
-    gap: 16px;
-    padding: 16px;
-    border-radius: 12px;
-  }
-  .buildings-advantages__icon {
-    flex-basis: 40px;
-    width: 40px;
-    height: 40px;
-  }
-  .buildings-advantages__icon img {
-    width: 30px;
-    height: 30px;
-  }
-  .buildings-advantages__label {
-    font-size: 16px;
-    line-height: 1.4;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .buildings-advantages * {
-    scroll-behavior: auto;
-  }
-}
-
-/* Преимущества — Figma 1857:42579, desktop 1440 px. */
-.buildings-advantages {
-  margin: 0 5px 5px;
-  padding: 80px 50px 60px;
-  overflow: hidden;
-  border-radius: 4px;
-  color: #ffffff;
-  background: #252525;
-}
-
-.buildings-advantages__inner {
-  width: 100%;
-  max-width: 1330px;
-  margin: 0 auto;
-}
-
-.buildings-advantages__header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.buildings-advantages__title {
-  color: #ffffff;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 1.25;
-  text-transform: uppercase;
-}
-
-.buildings-advantages__subtitle {
-  max-width: 100%;
-  color: #ffffffcc;
-  font-family: "Onest-Regular", sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 1.3;
-}
-
-.buildings-advantages__content {
-  display: grid;
-  grid-template-columns: minmax(0, 710px) minmax(0, 1fr);
-  align-items: start;
-  gap: 0;
-}
-
-.buildings-advantages__services {
-  display: grid;
-  grid-template-columns: minmax(0, 597px) 90px;
-  align-items: center;
-  gap: 24px;
-  min-width: 0;
-}
-
-.buildings-advantages__list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  min-width: 0;
-}
-
-.buildings-advantages__item {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  min-width: 0;
-  min-height: 98px;
-  padding: 25px 30px;
-  border-radius: 20px;
-  background: #363636;
-  transition: background-color 0.2s ease;
-}
-
-.buildings-advantages__item:first-child,
-.buildings-advantages__item:nth-child(3),
-.buildings-advantages__item:nth-child(4) {
-  min-height: 108px;
-}
-
-.buildings-advantages__item.is-active {
-  background: #414141;
-}
-
-.buildings-advantages__icon {
-  display: grid;
-  flex: 0 0 48px;
-  width: 48px;
-  height: 48px;
-  place-items: center;
-  border-radius: 50%;
-  background: #fff500;
-}
-
-.buildings-advantages__icon img {
-  display: block;
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-}
-
-.buildings-advantages__item:nth-child(2) .buildings-advantages__icon {
-  flex-basis: 36px;
-  width: 36px;
-  height: 36px;
-}
-
-.buildings-advantages__item:nth-child(2) .buildings-advantages__icon img {
-  width: 24px;
-  height: 24px;
-}
-
-.buildings-advantages__label {
-  min-width: 0;
-  color: #ffffff;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.6;
-  text-transform: uppercase;
-  overflow-wrap: anywhere;
-}
-
-.buildings-advantages__pagination {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  min-height: 452px;
-}
-
-.buildings-advantages__arrow {
-  display: grid;
-  flex: 0 0 64px;
-  width: 64px;
-  height: 64px;
-  place-items: center;
-  border: 1px solid #ffffff33;
-  border-radius: 20px;
-  color: #ffffff;
-  transition: border-color 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
-}
-
-.buildings-advantages__arrow:hover:not(:disabled) {
-  border-color: #fff500;
-  background: #ffffff0a;
-}
-
-.buildings-advantages__arrow:focus-visible {
-  outline: 2px solid #fff500;
-  outline-offset: 3px;
-}
-
-.buildings-advantages__arrow:disabled {
-  cursor: default;
-  opacity: 0.4;
-}
-
-.buildings-advantages__arrow img {
-  display: block;
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
-
-.buildings-advantages__arrow--prev img {
-  transform: rotate(180deg);
-}
-
-.buildings-advantages__visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-  min-height: 685px;
-}
-
-.buildings-advantages__visual img {
-  display: block;
-  width: 100%;
-  max-width: 684px;
-  height: auto;
-  object-fit: contain;
-}
-
-@media (max-width: 1300px) {
-  .buildings-advantages {
-    padding: 56px 32px 44px;
-  }
-
-  .buildings-advantages__title {
-    font-size: 38px;
-  }
-
-  .buildings-advantages__subtitle {
-    font-size: 20px;
-  }
-
-  .buildings-advantages__content {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
-  }
-
-  .buildings-advantages__services {
-    grid-template-columns: minmax(0, 1fr) 72px;
-    gap: 12px;
-  }
-
-  .buildings-advantages__item {
-    gap: 20px;
-    padding: 22px;
-    border-radius: 16px;
-  }
-
-  .buildings-advantages__label {
-    font-size: 20px;
-  }
-
-  .buildings-advantages__pagination {
-    min-height: 360px;
-  }
-
-  .buildings-advantages__arrow {
-    flex-basis: 56px;
-    width: 56px;
-    height: 56px;
-    border-radius: 16px;
-  }
-
-  .buildings-advantages__arrow img {
-    width: 32px;
-    height: 32px;
-  }
-
-  .buildings-advantages__visual {
-    min-height: 560px;
-  }
-}
-
-@media (max-width: 900px) {
-  .buildings-advantages {
-    padding: 44px 24px 36px;
-  }
-
-  .buildings-advantages__content {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .buildings-advantages__services {
-    grid-template-columns: minmax(0, 1fr) 64px;
-  }
-
-  .buildings-advantages__pagination {
-    min-height: 100%;
-  }
-
-  .buildings-advantages__visual {
-    min-height: 0;
-    margin-top: 28px;
-  }
-
-  .buildings-advantages__visual img {
-    max-width: 620px;
-  }
-}
-
-@media (max-width: 680px) {
-  .buildings-advantages {
-    margin: 0 5px 5px;
-    padding: 32px 16px 24px;
-  }
-
-  .buildings-advantages__header {
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-
-  .buildings-advantages__title {
-    font-size: 28px;
-  }
-
-  .buildings-advantages__subtitle {
-    font-size: 16px;
-    line-height: 1.45;
-  }
-
-  .buildings-advantages__services {
-    grid-template-columns: minmax(0, 1fr) 48px;
-    gap: 8px;
-  }
-
-  .buildings-advantages__list {
-    gap: 8px;
-  }
-
-  .buildings-advantages__item,
-  .buildings-advantages__item:first-child,
-  .buildings-advantages__item:nth-child(3),
-  .buildings-advantages__item:nth-child(4) {
-    gap: 12px;
-    min-height: 76px;
-    padding: 14px;
-    border-radius: 12px;
-  }
-
-  .buildings-advantages__icon {
-    flex-basis: 36px;
-    width: 36px;
-    height: 36px;
-  }
-
-  .buildings-advantages__icon img {
-    width: 26px;
-    height: 26px;
-  }
-
-  .buildings-advantages__label {
-    font-size: 14px;
-    line-height: 1.4;
-  }
-
-  .buildings-advantages__pagination {
-    gap: 8px;
-  }
-
-  .buildings-advantages__arrow {
-    flex-basis: 40px;
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-  }
-
-  .buildings-advantages__arrow img {
-    width: 24px;
-    height: 24px;
-  }
-
-  .buildings-advantages__visual {
-    margin-top: 20px;
-  }
-}
-
-@media (max-width: 360px) {
-  .buildings-advantages {
-    padding-right: 12px;
-    padding-left: 12px;
-  }
-
-  .buildings-advantages__services {
-    grid-template-columns: minmax(0, 1fr) 40px;
-  }
-
-  .buildings-advantages__item,
-  .buildings-advantages__item:first-child,
-  .buildings-advantages__item:nth-child(3),
-  .buildings-advantages__item:nth-child(4) {
-    gap: 8px;
-    padding: 10px;
-  }
-
-  .buildings-advantages__label {
-    font-size: 12px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .buildings-advantages__item,
-  .buildings-advantages__arrow {
-    transition: none;
-  }
-}
-
-/* Responsive arrangement from Figma 1866:80986 (1024 px and below). */
-.buildings-advantages__item--responsive {
-  display: none;
-}
-
-@media (min-width: 681px) and (max-width: 1100px) {
-  .buildings-advantages {
-    padding: 40px;
-  }
-
-  .buildings-advantages__inner {
-    max-width: none;
-  }
-
-  .buildings-advantages__header {
-    gap: 18px;
-    margin-bottom: 30px;
-  }
-
-  .buildings-advantages__title {
-    font-size: 38px;
-    line-height: 1;
-  }
-
-  .buildings-advantages__subtitle {
-    font-size: 20px;
-    line-height: 1.15;
-  }
-
-  .buildings-advantages__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .buildings-advantages__visual {
-    order: -1;
-    width: 100%;
-    min-height: 0;
-    margin: 0;
-  }
-
-  .buildings-advantages__visual img {
-    width: 450px;
-    max-width: 100%;
-    height: 437px;
-    object-fit: cover;
-  }
-
-  .buildings-advantages__services {
-    display: block;
-    width: 100%;
-  }
-
-  .buildings-advantages__list {
-    flex-direction: row;
-    gap: 10px;
-    width: 100%;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: thin;
-  }
-
-  .buildings-advantages__item,
-  .buildings-advantages__item:first-child,
-  .buildings-advantages__item:nth-child(3),
-  .buildings-advantages__item:nth-child(4) {
-    flex: 0 0 340px;
-    gap: 18px;
-    min-height: 76px;
-    padding: 20px;
-    border-radius: 20px;
-    scroll-snap-align: start;
-  }
-
-  .buildings-advantages__item:nth-child(4) {
-    display: none;
-  }
-
-  .buildings-advantages__item--responsive {
-    display: flex;
-  }
-
-  .buildings-advantages__icon,
-  .buildings-advantages__item:nth-child(2) .buildings-advantages__icon {
-    flex: 0 0 36px;
-    width: 36px;
-    height: 36px;
-  }
-
-  .buildings-advantages__icon img,
-  .buildings-advantages__item:nth-child(2) .buildings-advantages__icon img {
-    width: 24px;
-    height: 24px;
-  }
-
-  .buildings-advantages__label {
-    font-size: 18px;
-    line-height: 1.6;
-    white-space: nowrap;
-    overflow-wrap: normal;
-  }
-
-  .buildings-advantages__pagination {
-    display: none;
-  }
-}
-
-@media (max-width: 680px) {
-  .buildings-advantages {
-    padding: 28px 16px 24px;
-  }
-
-  .buildings-advantages__content {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .buildings-advantages__visual {
-    order: -1;
-    width: 100%;
-    min-height: 0;
-    margin: 0;
-  }
-
-  .buildings-advantages__visual img {
-    width: 100%;
-    max-width: 450px;
-    height: auto;
-    object-fit: contain;
-  }
-
-  .buildings-advantages__services {
-    display: block;
-    width: 100%;
-  }
-
-  .buildings-advantages__list {
-    flex-direction: row;
-    gap: 10px;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: thin;
-  }
-
-  .buildings-advantages__item,
-  .buildings-advantages__item:first-child,
-  .buildings-advantages__item:nth-child(3),
-  .buildings-advantages__item:nth-child(4) {
-    flex: 0 0 280px;
-    min-height: 76px;
-    padding: 14px;
-    scroll-snap-align: start;
-  }
-
-  .buildings-advantages__item:nth-child(4) {
-    display: none;
-  }
-
-  .buildings-advantages__item--responsive {
-    display: flex;
-  }
-
-  .buildings-advantages__pagination {
-    display: none;
-  }
-
-  .buildings-advantages__label {
-    white-space: nowrap;
-    overflow-wrap: normal;
-  }
-}
-
-/* Комплектация здания — Figma node 1866:91048. */
-.buildings-complectation {
-  margin: 0 5px 5px;
-  padding: 20px;
-  overflow: hidden;
-  border-radius: 10px;
-  color: #ffffff;
-  background: #2b2b2b;
-}
-.buildings-complectation__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
-}
-.buildings-complectation__header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  width: 100%;
-  text-align: center;
-}
-.buildings-complectation__title {
-  margin: 0;
-  color: #ffffff;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 1.27;
-  text-transform: uppercase;
-}
-.buildings-complectation__subtitle {
-  max-width: 100%;
-  color: #ffffffcc;
-  font-family: "Onest-Regular", sans-serif;
-  font-size: 20px;
-  line-height: 1.4;
-}
-.buildings-complectation__illustration {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-width: 0;
-}
-.buildings-complectation__illustration img {
-  display: block;
-  width: 100%;
-  max-width: 700px;
-  height: auto;
-  object-fit: contain;
-}
-.buildings-complectation__items {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  width: 100%;
-}
-.buildings-complectation__item {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  min-width: 0;
-  min-height: 76px;
-  padding: 10px;
-  overflow: hidden;
-  border-radius: 20px;
-  background: #363636;
-}
-.buildings-complectation__icon {
-  display: grid;
-  flex: 0 0 36px;
-  width: 36px;
-  height: 36px;
-  place-items: center;
-  border-radius: 50%;
-  background: #fff500;
-}
-.buildings-complectation__icon img {
-  display: block;
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-}
-.buildings-complectation__label {
-  min-width: 0;
-  margin: 0;
-  color: #ffffff;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.6;
-  text-transform: uppercase;
-  overflow-wrap: anywhere;
-}
-@media (max-width: 1300px) {
-  .buildings-complectation {
-    padding: 40px;
-  }
-  .buildings-complectation__title {
-    font-size: 38px;
-  }
-  .buildings-complectation__subtitle {
-    font-size: 20px;
-  }
-  .buildings-complectation__illustration img {
-    max-width: 620px;
-  }
-  .buildings-complectation__items {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .buildings-complectation__item {
-    gap: 14px;
-  }
-  .buildings-complectation__label {
-    font-size: 18px;
-  }
-}
-@media (max-width: 1100px) {
-  .buildings-complectation__inner {
-    gap: 24px;
-  }
-  .buildings-complectation__illustration img {
-    max-width: 450px;
-  }
-  .buildings-complectation__items {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: thin;
-  }
-  .buildings-complectation__item {
-    flex: 0 0 250px;
-    scroll-snap-align: start;
-  }
-}
-@media (max-width: 680px) {
-  .buildings-complectation {
-    height: 521px;
-    padding: 20px 10px 14px;
-    border-radius: 10px;
-  }
-  .buildings-complectation__inner {
-    gap: 30px;
-  }
-  .buildings-complectation__header {
-    gap: 14px;
-  }
-  .buildings-complectation__title {
-    font-size: 22px;
-    line-height: 28px;
-    white-space: nowrap;
-  }
-  .buildings-complectation__subtitle {
-    font-size: 14px;
-    line-height: 22px;
-  }
-  .buildings-complectation__illustration img {
-    width: 300px;
-    max-width: 100%;
-    height: 291px;
-    object-fit: contain;
-  }
-  .buildings-complectation__items {
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-  }
-  .buildings-complectation__items::-webkit-scrollbar {
-    display: none;
-  }
-  .buildings-complectation__item {
-    flex: 0 0 250px;
-    min-height: 50px;
-    padding: 10px;
-    border-radius: 20px;
-    scroll-snap-align: start;
-  }
-  .buildings-complectation__icon {
-    flex-basis: 30px;
-    width: 30px;
-    height: 30px;
-  }
-  .buildings-complectation__icon img {
-    width: 24px;
-    height: 24px;
-  }
-  .buildings-complectation__label {
-    font-size: 14px;
-    line-height: 22px;
-    white-space: nowrap;
-    overflow-wrap: normal;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .buildings-complectation__item {
-    scroll-behavior: auto;
-  }
-}
-
-/* Фотогалерея — Figma node 1857:41326, desktop 1920 px. */
-.buildings-gallery {
-  margin: 0 10px 10px;
-  padding: 40px;
-  border-radius: 10px;
-  background: #ffffff;
-}
-.buildings-gallery__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 36px;
-  width: 100%;
-  margin: 0 auto;
-}
-.buildings-gallery__content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  width: 100%;
-  min-width: 0;
-}
-.buildings-gallery__title {
-  margin: 0;
-  color: #4d4d4d;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 1.25;
-  text-align: center;
-  text-transform: uppercase;
-}
-.buildings-gallery__carousel {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
-  min-width: 0;
-}
-.buildings-gallery__slide {
-  position: relative;
-  flex: 1 1 0;
-  min-width: 0;
-  height: 440px;
-  margin: 0;
-  overflow: hidden;
-  border-radius: 30px;
-}
-.buildings-gallery__slide--active {
-  flex: 0 0 839px;
-  height: 580px;
-}
-.buildings-gallery__slide > img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.buildings-gallery__zoom {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  display: grid;
-  width: 48px;
-  height: 48px;
-  place-items: center;
-  overflow: hidden;
-  border-radius: 10px;
-  background: #ffffff0a;
-  box-shadow: inset 0 0 60px #ffffff08, inset 0 2px 4px #ffffff17;
-  -webkit-backdrop-filter: blur(24px);
-  backdrop-filter: blur(24px);
-  color: #ffffff;
-}
-.buildings-gallery__zoom img {
-  display: block;
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-}
-.buildings-gallery__controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-}
-.buildings-gallery__arrow {
-  display: grid;
-  flex: 0 0 64px;
-  width: 64px;
-  height: 64px;
-  place-items: center;
-  border: 1px solid #4d4d4d33;
-  border-radius: 20px;
-}
-.buildings-gallery__arrow img {
-  display: block;
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
-.buildings-gallery__pagination {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.buildings-gallery__dot {
-  display: block;
-  flex: 0 0 10px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #324c8833;
-}
-.buildings-gallery__dot.is-active {
-  background: #324c88;
-}
-.buildings-gallery__arrow:focus-visible,
-.buildings-gallery__zoom:focus-visible,
-.buildings-gallery__lightbox-close:focus-visible {
-  outline: 2px solid #324c88;
-  outline-offset: 3px;
-}
-.buildings-gallery__lightbox {
-  width: 90vw;
-  max-width: 1200px;
-  max-height: 90vh;
-  margin: auto;
-  padding: 16px;
-  overflow: auto;
-  border: 0;
-  border-radius: 20px;
-  background: #ffffff;
-}
-.buildings-gallery__lightbox::backdrop {
-  background: #000000b3;
-}
-.buildings-gallery__lightbox-controls {
-  display: flex;
-  justify-content: flex-end;
-}
-.buildings-gallery__lightbox-close {
-  display: grid;
-  width: 44px;
-  height: 44px;
-  place-items: center;
-  border-radius: 10px;
-  font-size: 32px;
-}
-.buildings-gallery__lightbox-image {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  max-height: 78vh;
-  margin: 0 auto;
-  object-fit: contain;
-}
-/* Figma node 1857:43694 — tablet/compact desktop layout, 1440 px. */
-@media (min-width: 1301px) and (max-width: 1600px) {
-  .buildings-gallery {
-    padding: 40px;
-  }
-
-  .buildings-gallery__inner {
-    gap: 36px;
-  }
-
-  .buildings-gallery__content {
-    gap: 30px;
-  }
-
-  .buildings-gallery__title {
-    font-size: 48px;
-    line-height: 1.25;
-  }
-
-  .buildings-gallery__carousel {
-    gap: 20px;
-  }
-
-  .buildings-gallery__slide {
-    height: 400px;
-  }
-
-  .buildings-gallery__slide--active {
-    flex: 0 0 580px;
-    height: 520px;
-  }
-}
-
-@media (max-width: 1300px) {
-  .buildings-gallery {
-    padding: 30px;
-  }
-  .buildings-gallery__title {
-    font-size: 38px;
-  }
-  .buildings-gallery__slide--active {
-    flex-basis: 44%;
-  }
-  .buildings-gallery__slide {
-    height: 320px;
-  }
-  .buildings-gallery__slide--active {
-    height: 420px;
-  }
-}
-@media (max-width: 680px) {
-  .buildings-gallery {
-    margin: 0 5px 5px;
-    padding: 24px 10px;
-    border-radius: 10px;
-  }
-  .buildings-gallery__inner {
-    gap: 24px;
-  }
-  .buildings-gallery__content {
-    gap: 24px;
-  }
-  .buildings-gallery__title {
-    font-size: 22px;
-    line-height: 1.3;
-  }
-  .buildings-gallery__carousel {
-    gap: 10px;
-  }
-  .buildings-gallery__slide {
-    display: none;
-  }
-  .buildings-gallery__slide--active {
-    display: block;
-    flex: 1 1 100%;
-    height: 320px;
-    border-radius: 20px;
-  }
-  .buildings-gallery__zoom {
-    right: 12px;
-    bottom: 12px;
-    width: 44px;
-    height: 44px;
-  }
-  .buildings-gallery__controls {
-    gap: 16px;
-  }
-  .buildings-gallery__arrow {
-    flex-basis: 48px;
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-  }
-  .buildings-gallery__arrow img {
-    width: 32px;
-    height: 32px;
-  }
-}
-@media (max-width: 480px) {
-  .buildings-gallery__slide--active {
-    height: 240px;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .buildings-gallery__arrow,
-  .buildings-gallery__zoom {
-    transition: none;
-  }
-}
-
-/* Figma node 1857:47901 — mobile gallery, 360 px.
-   Desktop frames (1920/1440/1024) retain their existing composition. */
-@media (max-width: 680px) {
-  .buildings-gallery {
-    margin: 0 10px 10px;
-    padding: 20px 14px;
-    border-radius: 10px;
-  }
-
-  .buildings-gallery__inner {
-    gap: 18px;
-  }
-
-  .buildings-gallery__content {
-    gap: 18px;
-  }
-
-  .buildings-gallery__title {
-    font-size: 18px;
-    line-height: 26px;
-    white-space: nowrap;
-  }
-
-  .buildings-gallery__carousel {
-    gap: 0;
-  }
-
-  .buildings-gallery__slide {
-    display: none;
-  }
-
-  .buildings-gallery__slide--active {
-    display: block;
-    flex: 1 1 100%;
-    height: 226px;
-    border-radius: 30px;
-  }
-
-  .buildings-gallery__zoom {
-    right: 19px;
-    bottom: 20px;
-    width: 48px;
-    height: 48px;
-    border-radius: 10px;
-  }
-
-  .buildings-gallery__controls {
-    gap: 24px;
-  }
-
-  .buildings-gallery__arrow {
-    display: grid;
-    flex: 0 0 48px;
-    width: 48px;
-    height: 48px;
-    place-items: center;
-    border-radius: 20px;
-  }
-
-  .buildings-gallery__arrow img {
-    width: 30px;
-    height: 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .buildings-gallery__slide--active {
-    height: 226px;
-  }
-}
-
-/* Каталог отраслей — Figma 1857:43723. */
-.buildings-catalog {
-  margin: 0;
-  padding: 10px;
-  background: #f5f8f7;
-}
-
-.buildings-catalog__panel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
-  width: 100%;
-  padding: 40px;
-  border-radius: 21px;
-  background: #ffffff;
-}
-
-.buildings-catalog__header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  width: 100%;
-}
-
-.buildings-catalog__title {
-  margin: 0;
-  color: #4d4d4d;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 1.2;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.buildings-catalog__filters {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  max-width: 100%;
-  padding: 4px 18px;
-  border-radius: 4px;
-  background: #ffffff;
-}
-
-.buildings-catalog__filter {
-  display: inline-flex;
-  align-items: center;
-  gap: 20px;
-  color: #5d5d5d4d;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.6;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.buildings-catalog__filter:not(:last-child)::after {
-  width: 4px;
-  height: 4px;
-  flex: 0 0 4px;
-  border-radius: 50%;
-  background: #cfcfcf;
-  content: "";
-}
-
-.buildings-catalog__filter.is-active {
-  color: #5d5d5d;
-}
-
-.buildings-catalog__filter.is-active::after {
-  background: #5d5d5d;
-}
-
-.buildings-catalog__cards {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  align-items: start;
-  gap: 10px;
-  width: 100%;
-}
-
-.buildings-catalog__card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-  min-width: 0;
-  min-height: 384px;
-  padding: 4px 4px 18px;
-  border-radius: 30px;
-  color: #4d4d4d;
-}
-
-.buildings-catalog__image-wrap {
-  position: relative;
-  display: block;
-  width: 100%;
-  aspect-ratio: 319.5 / 312;
-  flex: 0 0 auto;
-  overflow: hidden;
-  border-radius: 30px;
-  background: #f5f8f7;
-}
-
-.buildings-catalog__image,
-.buildings-catalog__image-overlay {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  object-fit: cover;
-}
-
-.buildings-catalog__image-overlay {
-  position: absolute;
-  inset: 0;
-}
-
-.buildings-catalog__caption {
-  color: #4d4d4d;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.6;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.buildings-catalog__controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 90.51px;
-}
-
-.buildings-catalog__controls > * {
-  flex: 0 0 auto;
-}
-
-.buildings-catalog__arrow {
-  position: relative;
-  display: grid;
-  width: 90.51px;
-  height: 90.51px;
-  flex: 0 0 90.51px;
-  place-items: center;
-  border: 0;
-  border-radius: 0;
-}
-
-.buildings-catalog__arrow::before {
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  border: 1px solid #4d4d4d33;
-  border-radius: 20px;
-  content: "";
-  transform: rotate(45deg);
-}
-
-.buildings-catalog__arrow img {
-  position: relative;
-  display: block;
-  width: 40px;
-  height: 40px;
-}
-
-.buildings-catalog__arrow:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-
-.buildings-catalog__pagination {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin: 0 24px;
-}
-
-.buildings-catalog__pagination span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #324c8833;
-}
-
-.buildings-catalog__pagination span.is-active {
-  background: #324c88;
-}
-
-.buildings-catalog__card:focus-visible,
-.buildings-catalog__filter:focus-visible,
-.buildings-catalog__arrow:focus-visible {
-  outline: 2px solid #324c88;
-  outline-offset: 3px;
-}
-
-@media (min-width: 1301px) {
-  .buildings-catalog__cards {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 1300px) {
-  .buildings-catalog__panel {
-    padding: 30px;
-  }
-
-  .buildings-catalog__title {
-    font-size: 30px;
-  }
-
-  .buildings-catalog__filters {
-    gap: 12px;
-  }
-
-  .buildings-catalog__filter {
-    gap: 12px;
-    font-size: 16px;
-  }
-
-  .buildings-catalog__card {
-    min-height: 0;
-  }
-
-  .buildings-catalog__caption {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 900px) {
-  .buildings-catalog__cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-  }
-
-  .buildings-catalog__filters {
-    justify-content: flex-start;
-  }
-}
-
-@media (max-width: 680px) {
-  .buildings-catalog {
-    padding: 10px;
-  }
-
-  .buildings-catalog__panel {
-    gap: 8px;
-    padding: 20px 14px;
-    border-radius: 20px;
-  }
-
-  .buildings-catalog__title {
-    font-size: 22px;
-    line-height: 1.4;
-  }
-
-  .buildings-catalog__header {
-    gap: 12px;
-  }
-
-  .buildings-catalog__filters {
-    gap: 8px;
-    padding: 2px;
-  }
-
-  .buildings-catalog__filter {
-    gap: 8px;
-    font-size: 12px;
-    white-space: normal;
-  }
-
-  .buildings-catalog__cards {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 10px;
-  }
-
-  .buildings-catalog__card {
-    gap: 12px;
-    min-height: 0;
-    padding: 4px 4px 10px;
-  }
-
-  .buildings-catalog__caption {
-    font-size: 16px;
-  }
-
-  .buildings-catalog__controls {
-    min-height: 68px;
-  }
-
-  .buildings-catalog__arrow {
-    width: 68px;
-    height: 68px;
-    flex-basis: 68px;
-  }
-
-  .buildings-catalog__arrow::before {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-  }
-
-  .buildings-catalog__arrow img {
-    width: 30px;
-    height: 30px;
-  }
-
-  .buildings-catalog__pagination {
-    gap: 4px;
-    margin: 0 12px;
-  }
-
-  .buildings-catalog__pagination span {
-    width: 8px;
-    height: 8px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .buildings-catalog__arrow {
-    transition: none;
-  }
-}
-
-/* Figma node 1857:46397 — точная адаптация планшетного кадра 1024 px. */
-@media (min-width: 901px) and (max-width: 1100px) {
-  .buildings-catalog__panel {
-    gap: 14px;
-    padding: 40px;
-  }
-
-  .buildings-catalog__title {
-    font-size: 30px;
-    line-height: 38px;
-  }
-
-  .buildings-catalog__header {
-    gap: 24px;
-  }
-
-  .buildings-catalog__filters {
-    justify-content: center;
-    gap: 4px;
-    padding: 4px 18px;
-  }
-
-  .buildings-catalog__filter {
-    gap: 20px;
-    font-size: 16px;
-    line-height: 1.6;
-  }
-
-  .buildings-catalog__cards {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
-  }
-
-  .buildings-catalog__card {
-    gap: 18px;
-    padding: 4px 4px 18px;
-  }
-
-  .buildings-catalog__caption {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-}
-
-/* Страница: характеристики быстровозводимых зданий */
-.buildings-characteristics {
-  padding-bottom: 2.2222rem;
-}
-
-.buildings-characteristics__breadcrumbs {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1.1111rem;
-  width: 100%;
-  max-width: 106.1111rem;
-  min-height: 3.4444rem;
-  margin: 0 auto;
-  padding: 0 0.2778rem;
-  color: #4d4d4d;
-  font-size: 1.1111rem;
-  line-height: 1.4444rem;
-}
-
-.buildings-characteristics__breadcrumb-link {
-  color: inherit;
-  transition: color 0.15s ease;
-}
-
-.buildings-characteristics__breadcrumb-link:hover {
-  color: #324c88;
-}
-
-.buildings-characteristics__breadcrumb-link:focus-visible {
-  outline: 0.1111rem solid currentColor;
-  outline-offset: 0.2222rem;
-}
-
-.buildings-characteristics__breadcrumb-separator {
-  color: #979a9b;
-}
-
-.buildings-characteristics__content {
-  width: 100%;
-  max-width: 106.1111rem;
-  margin: 0 auto;
-  padding: 2.2222rem;
-}
-
-.buildings-characteristics__title {
-  max-width: 75rem;
-  margin: 0 0 2.2222rem;
-  color: #25313a;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 2.6667rem;
-  font-weight: 600;
-  line-height: 1.25;
-}
-
-.buildings-characteristics__specifications {
-  min-height: 12rem;
-  padding: 2.2222rem;
-  border-radius: 1.1111rem;
-  background-color: #ffffff;
-}
-
-.buildings-characteristics__section-title {
-  margin: 0;
-  color: #25313a;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 1.7778rem;
-  font-weight: 600;
-  line-height: 1.35;
-}
-
-/* Технические характеристики — Figma 1857:94701, desktop 1920 px. */
-.buildings-characteristics__technical {
-  padding: 0 10px 10px;
-  border-radius: 10px;
-  background: #ffffff;
-}
-
-.buildings-characteristics__technical-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  width: 100%;
-  padding: 20px 40px 40px;
-  border-radius: 20px;
-  background: #ffffff;
-}
-
-.buildings-characteristics__technical-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  width: 100%;
-}
-
-.buildings-characteristics__technical-title {
-  width: 100%;
-  margin: 0;
-  padding: 20px 40px 0;
-  color: #4d4d4d;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 64px;
-  text-align: center;
-  text-transform: uppercase;
-  overflow-wrap: anywhere;
-}
-
-.buildings-characteristics__tabs {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 4px;
-  max-width: 100%;
-  padding: 4px;
-  border-radius: 10px;
-  background: #f5f8f7;
-}
-
-.buildings-characteristics__tab {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  padding: 14px 18px;
-  border-radius: 14px;
-  color: #5d5d5d;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.6;
-  text-transform: uppercase;
-  white-space: nowrap;
-  transition: background-color 0.15s ease;
-}
-
-.buildings-characteristics__tab.is-active {
-  background: #fff500;
-}
-
-.buildings-characteristics__tab:focus-visible {
-  outline: 2px solid #324c88;
-  outline-offset: 2px;
-}
-
-.buildings-characteristics__technical-panel {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 5px;
-  width: 100%;
-  padding: 5px;
-  border-radius: 10px;
-  background: #f5f8f7;
-}
-
-.buildings-characteristics__technical-card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 18px;
-  min-width: 0;
-  padding: 20px;
-  border-radius: 10px;
-  background: #ffffff;
-}
-
-.buildings-characteristics__technical-label {
-  margin: 0;
-  color: #4d4d4d;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: normal;
-  overflow-wrap: anywhere;
-}
-
-.buildings-characteristics__technical-value {
-  width: 100%;
-  margin: 0;
-  color: #4d4d4d;
-  font-family: "Onest-Regular", sans-serif;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 32px;
-  overflow-wrap: anywhere;
-}
-
-@media screen and (max-width: 1600px) {
-  .buildings-characteristics__technical-inner {
-    gap: 36px;
-    padding: 20px 30px 30px;
-  }
-
-  .buildings-characteristics__technical-title {
-    font-size: 40px;
-    line-height: 1.3;
-  }
-
-  .buildings-characteristics__tabs {
-    gap: 4px;
-  }
-
-  .buildings-characteristics__tab {
-    padding: 12px 14px;
-    font-size: 18px;
-  }
-
-  .buildings-characteristics__technical-card {
-    padding: 18px;
-  }
-
-  .buildings-characteristics__technical-label {
-    font-size: 18px;
-  }
-
-  .buildings-characteristics__technical-value {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .buildings-characteristics__technical-inner {
-    gap: 28px;
-    padding: 20px;
-  }
-
-  .buildings-characteristics__technical-title {
-    padding: 10px 10px 0;
-    font-size: 32px;
-    line-height: 1.3;
-  }
-
-  .buildings-characteristics__tabs {
-    gap: 4px;
-  }
-
-  .buildings-characteristics__tab {
-    padding: 10px 12px;
-    font-size: 16px;
-  }
-
-  .buildings-characteristics__technical-card {
-    gap: 12px;
-    padding: 14px;
-  }
-
-  .buildings-characteristics__technical-label {
-    font-size: 16px;
-  }
-
-  .buildings-characteristics__technical-value {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-}
-
-@media screen and (max-width: 680px) {
-  .buildings-characteristics__technical {
-    padding: 0 5px 5px;
-  }
-
-  .buildings-characteristics__technical-inner {
-    gap: 24px;
-    padding: 20px 10px;
-    border-radius: 10px;
-  }
-
-  .buildings-characteristics__technical-header {
-    gap: 16px;
-  }
-
-  .buildings-characteristics__technical-title {
-    padding: 0;
-    font-size: 22px;
-    line-height: 1.3;
-  }
-
-  .buildings-characteristics__tabs {
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    align-self: stretch;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scrollbar-width: thin;
-  }
-
-  .buildings-characteristics__tab {
-    padding: 10px 12px;
-    font-size: 13px;
-  }
-
-  .buildings-characteristics__technical-panel {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 5px;
-    padding: 5px;
-  }
-
-  .buildings-characteristics__technical-card {
-    gap: 10px;
-    padding: 14px;
-  }
-
-  .buildings-characteristics__technical-label {
-    font-size: 16px;
-  }
-
-  .buildings-characteristics__technical-value {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .buildings-characteristics__technical-inner {
-    padding-right: 8px;
-    padding-left: 8px;
-  }
-
-  .buildings-characteristics__technical-title {
-    font-size: 20px;
-  }
-
-  .buildings-characteristics__technical-card {
-    padding: 12px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .buildings-characteristics__tab {
-    transition: none;
-  }
-}
-
-/* Figma 1857:49331 — desktop 1440 px.
-   На 1920 px сохраняется базовая геометрия выше; этот диапазон
-   компенсирует только разницу размеров между desktop-макетами. */
-@media screen and (min-width: 1400px) and (max-width: 1600px) {
-  .buildings-characteristics__technical-inner {
-    gap: 50px;
-    padding: 20px 40px 40px;
-  }
-
-  .buildings-characteristics__technical-title {
-    padding: 20px 40px 0;
-    font-size: 48px;
-    line-height: 64px;
-  }
-
-  .buildings-characteristics__tabs {
-    gap: 4px;
-    padding: 4px;
-  }
-
-  .buildings-characteristics__tab {
-    padding: 14px 18px;
-    font-size: 20px;
-  }
-
-  .buildings-characteristics__technical-panel {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: stretch;
-    gap: 5px;
-  }
-
-  .buildings-characteristics__technical-card {
-    height: 100%;
-    gap: 18px;
-    padding: 20px;
-  }
-
-  .buildings-characteristics__technical-label {
-    font-size: 20px;
-    line-height: normal;
-  }
-
-  .buildings-characteristics__technical-value {
-    font-size: 22px;
-    line-height: 32px;
-  }
-}
-
-/* Figma 1857:49331 — tablet viewport 1024 px.
-   Preserve the two-column composition used by the 1920/1440 layouts.
-   Grid items stretch to the row track so both cells in each row have equal height. */
-@media screen and (min-width: 681px) and (max-width: 1100px) {
-  .buildings-characteristics__technical {
-    padding: 0 10px 10px;
-  }
-
-  .buildings-characteristics__technical-inner {
-    gap: 28px;
-    padding: 20px;
-  }
-
-  .buildings-characteristics__technical-header {
-    gap: 24px;
-  }
-
-  .buildings-characteristics__technical-title {
-    padding: 10px 10px 0;
-    font-size: 32px;
-    line-height: 1.3;
-  }
-
-  .buildings-characteristics__tabs {
-    flex-wrap: wrap;
-    gap: 4px;
-    padding: 4px;
-  }
-
-  .buildings-characteristics__tab {
-    padding: 10px 12px;
-    font-size: 16px;
-    line-height: 1.6;
-  }
-
-  .buildings-characteristics__technical-panel {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: stretch;
-    gap: 5px;
-    padding: 5px;
-  }
-
-  .buildings-characteristics__technical-card {
-    height: 100%;
-    gap: 12px;
-    padding: 14px;
-  }
-
-  .buildings-characteristics__technical-label {
-    font-size: 16px;
-    line-height: 1.4;
-  }
-
-  .buildings-characteristics__technical-value {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-}
-
-/* Technical characteristics: column order and equal-height paired cells. */
-@media screen and (min-width: 681px) {
-  .buildings-characteristics__technical-panel {
-    grid-auto-flow: column;
-    grid-template-rows: repeat(5, auto);
-    column-gap: 40px;
-    row-gap: 5px;
-  }
-}
-
-/* Figma node 1857:51974 — 1024 px. */
-@media screen and (min-width: 761px) and (max-width: 1100px) {
-  .buildings-characteristics__technical-inner {
-    gap: 24px;
-    padding: 20px 40px;
-  }
-
-  .buildings-characteristics__technical-title {
-    padding: 0 40px;
-    font-size: 30px;
-    line-height: 38px;
-  }
-
-  .buildings-characteristics__tabs {
-    flex-wrap: nowrap;
-    gap: 4px;
-    padding: 4px;
-  }
-
-  .buildings-characteristics__tab {
-    padding: 14px 18px;
-    font-size: 16px;
-    line-height: 1.6;
-  }
-
-  .buildings-characteristics__technical-panel {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(5, auto);
-    grid-auto-flow: column;
-    align-items: stretch;
-    column-gap: 40px;
-    row-gap: 5px;
-    padding: 5px;
-  }
-
-  .buildings-characteristics__technical-card {
-    height: 100%;
-    gap: 8px;
-    padding: 20px;
-  }
-
-  .buildings-characteristics__technical-label {
-    font-size: 18px;
-    line-height: normal;
-  }
-
-  .buildings-characteristics__technical-value {
-    font-size: 18px;
-    line-height: 32px;
-  }
-}
-
-@media screen and (max-width: 680px) {
-  .buildings-characteristics__technical-panel {
-    grid-auto-flow: row;
-    grid-template-rows: none;
-    column-gap: 5px;
-  }
-}
-
-/* Mobile 360 px — Figma 1857:53588; expanded state 2177:135633. */
-.buildings-characteristics__show-more {
-  display: none;
-}
-
-.buildings-characteristics__show-more:focus-visible {
-  outline: 2px solid #324c88;
-  outline-offset: 4px;
-}
-
-.buildings-characteristics__show-more-icon {
-  display: block;
-  flex: 0 0 24px;
-  transition: transform 0.15s ease;
-}
-
-.buildings-characteristics__show-more[aria-expanded="true"] .buildings-characteristics__show-more-icon {
-  transform: rotate(180deg);
-}
-
-@media screen and (max-width: 680px) {
-  .buildings-characteristics__technical {
-    padding: 0 10px 10px;
-  }
-
-  .buildings-characteristics__technical-inner {
-    gap: 14px;
-    padding: 20px 0 10px;
-  }
-
-  .buildings-characteristics__technical-header {
-    gap: 14px;
-  }
-
-  .buildings-characteristics__technical-title {
-    font-size: 20px;
-    line-height: 28px;
-  }
-
-  .buildings-characteristics__tabs {
-    width: 340px;
-    max-width: 100%;
-    gap: 4px;
-    padding: 4px;
-    overflow-x: auto;
-    border-radius: 10px;
-  }
-
-  .buildings-characteristics__tab {
-    padding: 10px 14px;
-    border-radius: 14px;
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .buildings-characteristics__technical-panel {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding: 5px;
-  }
-
-  .buildings-characteristics__technical-card {
-    display: flex;
-    min-height: 0;
-    gap: 8px;
-    padding: 20px;
-    border-radius: 10px;
-  }
-
-  .buildings-characteristics__technical-card:nth-child(n + 5) {
-    display: none;
-  }
-
-  .buildings-characteristics__technical-panel.is-expanded .buildings-characteristics__technical-card:nth-child(n + 5) {
-    display: flex;
-  }
-
-  .buildings-characteristics__technical-label {
-    font-size: 16px;
-    line-height: normal;
-  }
-
-  .buildings-characteristics__technical-value {
-    font-size: 16px;
-    line-height: 30px;
-  }
-
-  .buildings-characteristics__show-more {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    min-height: 24px;
-    align-self: center;
-    color: #324c88;
-    font-family: "Onest-Medium", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.4;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .buildings-characteristics__show-more-icon {
-    transition: none;
-  }
-}
-
-/* Процесс производства — Figma 1857:95907, desktop 1920 px. */
-.buildings-production {
-  margin: 0 10px 10px;
-  padding: 0 0 10px;
-  background: #f5f8f7;
-}
-
-.buildings-production__panel {
-  display: flex;
-  flex-direction: column;
-  gap: 36px;
-  width: 100%;
-  padding: 60px 40px 40px;
-  border-radius: 20px;
-  background: #ffffff;
-}
-
-.buildings-production__content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 36px;
-  width: 100%;
-  min-width: 0;
-}
-
-.buildings-production__header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  width: 100%;
-  text-align: center;
-}
-
-.buildings-production__title {
-  margin: 0;
-  color: #4d4d4d;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 48px;
-  font-weight: 600;
-  line-height: normal;
-  text-transform: uppercase;
-}
-
-.buildings-production__subtitle {
-  margin: 0;
-  color: #333333;
-  font-family: "Onest-Regular", sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.buildings-production__gallery {
-  display: flex;
-  align-items: stretch;
-  gap: 8px;
-  width: 100%;
-  max-width: 1736px;
-  min-width: 0;
-}
-
-.buildings-production__main-image {
-  position: relative;
-  flex: 0 1 1400px;
-  min-width: 0;
-  height: 787px;
-  margin: 0;
-  overflow: hidden;
-  border-radius: 30px;
-  background: #e9eceb;
-}
-
-.buildings-production__side-images {
-  display: flex;
-  flex: 1 1 0;
-  flex-direction: column;
-  gap: 8px;
-  min-width: 0;
-}
-
-.buildings-production__side-image {
-  position: relative;
-  flex: 1 1 0;
-  min-height: 0;
-  margin: 0;
-  overflow: hidden;
-  border-radius: 30px;
-  background: #e9eceb;
-}
-
-.buildings-production__main-image img,
-.buildings-production__side-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.buildings-production__facts {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: start;
-  gap: 36px;
-  width: 100%;
-  max-width: 1389px;
-}
-
-.buildings-production__fact {
-  min-width: 0;
-  overflow: hidden;
-}
-
-.buildings-production__fact-title {
-  margin: 0 0 18px;
-  color: #324c88;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 30px;
-  font-weight: 600;
-  line-height: normal;
-}
-
-.buildings-production__fact-description {
-  margin: 0;
-  color: #4d4d4d;
-  font-family: "Onest-Regular", sans-serif;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 32px;
-  overflow-wrap: anywhere;
-}
-
-@media screen and (max-width: 1600px) {
-  .buildings-production__panel {
-    gap: 30px;
-    padding: 40px 30px 30px;
-  }
-
-  .buildings-production__content {
-    gap: 30px;
-  }
-
-  .buildings-production__title {
-    font-size: 40px;
-  }
-
-  .buildings-production__subtitle {
-    font-size: 20px;
-  }
-
-  .buildings-production__main-image {
-    height: 560px;
-  }
-
-  .buildings-production__fact-title {
-    font-size: 24px;
-  }
-
-  .buildings-production__fact-description {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  .buildings-production__panel {
-    gap: 24px;
-    padding: 30px 20px;
-  }
-
-  .buildings-production__gallery {
-    max-width: 100%;
-  }
-
-  .buildings-production__main-image {
-    flex-basis: 72%;
-    height: 480px;
-  }
-
-  .buildings-production__side-images {
-    flex-basis: 0;
-  }
-
-  .buildings-production__side-image {
-    min-height: 0;
-  }
-
-  .buildings-production__facts {
-    gap: 20px;
-  }
-
-  .buildings-production__fact-title {
-    font-size: 20px;
-  }
-
-  .buildings-production__fact-description {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-}
-
-@media screen and (max-width: 680px) {
-  .buildings-production {
-    margin: 0 10px 10px;
-    padding: 0;
-  }
-
-  .buildings-production__panel {
-    gap: 24px;
-    padding: 24px 14px;
-    border-radius: 10px;
-  }
-
-  .buildings-production__content {
-    gap: 18px;
-  }
-
-  .buildings-production__header {
-    gap: 12px;
-  }
-
-  .buildings-production__title {
-    font-size: 22px;
-    line-height: 1.3;
-  }
-
-  .buildings-production__subtitle {
-    font-size: 16px;
-    line-height: 1.4;
-  }
-
-  .buildings-production__gallery {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .buildings-production__main-image {
-    flex: 0 0 auto;
-    width: 100%;
-    height: 260px;
-    border-radius: 20px;
-  }
-
-  .buildings-production__side-images {
-    flex-direction: row;
-    gap: 8px;
-  }
-
-  .buildings-production__side-image {
-    flex: 1 1 0;
-    height: 92px;
-    border-radius: 12px;
-  }
-
-  .buildings-production__facts {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
-  }
-
-  .buildings-production__fact-title {
-    margin-bottom: 8px;
-    font-size: 18px;
-  }
-
-  .buildings-production__fact-description {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .buildings-production__panel {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-
-  .buildings-production__main-image {
-    height: 220px;
-  }
-
-  .buildings-production__side-image {
-    height: 76px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .buildings-production__gallery img {
-    scroll-behavior: auto;
-  }
-}
-
-/* Figma 1857:50544 — desktop 1440 px.
-   Геометрия адаптируется от 1920 px: gallery 1052 + 8 + 280 px, высота 591 px. */
-@media screen and (min-width: 1400px) and (max-width: 1600px) {
-  .buildings-production__panel {
-    gap: 36px;
-    padding: 60px 40px;
-  }
-
-  .buildings-production__content {
-    gap: 36px;
-  }
-
-  .buildings-production__header {
-    gap: 24px;
-  }
-
-  .buildings-production__title {
-    font-size: 48px;
-    line-height: normal;
-  }
-
-  .buildings-production__subtitle {
-    font-size: 24px;
-    line-height: normal;
-  }
-
-  .buildings-production__gallery {
-    gap: 8px;
-    max-width: 100%;
-  }
-
-  .buildings-production__main-image {
-    flex: 0 1 1052px;
-    height: 591px;
-  }
-
-  .buildings-production__side-images {
-    flex: 1 1 280px;
-    gap: 8px;
-  }
-
-  .buildings-production__side-image {
-    flex: 1 1 0;
-  }
-
-  .buildings-production__facts {
-    gap: 36px;
-    max-width: 1389px;
-  }
-
-  .buildings-production__fact-title {
-    margin-bottom: 18px;
-    font-size: 30px;
-    line-height: normal;
-  }
-
-  .buildings-production__fact-description {
-    font-size: 22px;
-    line-height: 32px;
-  }
-}
-
-/* Figma 1857:53202 — tablet 1024 px.
-   Сохраняет desktop-композицию, адаптируя размеры под ширину внутреннего контейнера 924 px. */
-@media screen and (min-width: 1000px) and (max-width: 1100px) {
-  .buildings-production__panel {
-    gap: 24px;
-    padding: 40px;
-  }
-
-  .buildings-production__content {
-    gap: 24px;
-  }
-
-  .buildings-production__header {
-    gap: 24px;
-  }
-
-  .buildings-production__title {
-    font-size: 30px;
-    line-height: 38px;
-  }
-
-  .buildings-production__subtitle {
-    font-size: 24px;
-    line-height: normal;
-  }
-
-  .buildings-production__gallery {
-    align-items: stretch;
-    gap: 8px;
-    width: 100%;
-  }
-
-  .buildings-production__main-image {
-    flex: 1 1 0;
-    aspect-ratio: 2520 / 1417;
-    height: auto;
-  }
-
-  .buildings-production__side-images {
-    flex: 0 0 170px;
-    gap: 8px;
-  }
-
-  .buildings-production__side-image {
-    flex: 1 1 0;
-  }
-
-  .buildings-production__facts {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 36px;
-    max-width: 100%;
-  }
-
-  .buildings-production__fact-title {
-    margin-bottom: 18px;
-    font-size: 22px;
-    line-height: 30px;
-  }
-
-  .buildings-production__fact-description {
-    font-size: 18px;
-    line-height: 28px;
-  }
-}
-
-/* Figma 1857:54814 — mobile 360 px. */
-/* Mobile layout from the 360 px Figma frame; desktop, 1440 px and 1024 px rules stay unchanged. */
-@media screen and (max-width: 375px) {
-  .buildings-production {
-    margin: 0 4px 10px;
-    padding: 0;
-  }
-
-  .buildings-production__panel {
-    gap: 17px;
-    padding: 30px 10px;
-    border-radius: 10px;
-  }
-
-  .buildings-production__content {
-    gap: 24px;
-  }
-
-  .buildings-production__header {
-    gap: 14px;
-  }
-
-  .buildings-production__title {
-    font-size: 20px;
-    line-height: 28px;
-    white-space: nowrap;
-  }
-
-  .buildings-production__subtitle {
-    font-size: 18px;
-    line-height: normal;
-    text-align: center;
-  }
-
-  .buildings-production__gallery {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .buildings-production__main-image {
-    flex: 0 0 auto;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 2520 / 1417;
-    border-radius: 20px;
-  }
-
-  .buildings-production__side-images {
-    flex: 0 0 80px;
-    flex-direction: row;
-    gap: 8px;
-    width: 100%;
-  }
-
-  .buildings-production__side-image {
-    flex: 1 1 0;
-    width: 0;
-    height: 80px;
-    border-radius: 20px;
-  }
-
-  .buildings-production__facts {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 16px;
-    max-width: 100%;
-  }
-
-  .buildings-production__fact-title {
-    margin-bottom: 8px;
-    font-size: 18px;
-    line-height: 26px;
-  }
-
-  .buildings-production__fact-description {
-    font-size: 14px;
-    line-height: 24px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* services */
 
 .services-list {
   margin: 5px;
@@ -12407,10 +8489,7 @@ h2 {
   display: none;
 }
 
-
 @media screen and (max-width: 1300px) {
-
-
   .services-list__panel {
     padding: 1.3333rem;
   }
@@ -12424,8 +8503,6 @@ h2 {
     font-size: 1rem;
   }
 }
-
-
 
 @media screen and (max-width: 800px) {
   .services-list__grid {
@@ -12588,10 +8665,12 @@ h2 {
   text-underline-offset: 0.1667rem;
 }
 
-.pices__table-container {
+.prices__table-container {
   gap: 20px;
   width: 100%;
 }
+
+/* ===== Фильтры (десктоп) ===== */
 
 .prices__filters {
   display: flex;
@@ -12662,8 +8741,7 @@ h2 {
   background: #ffffff;
 }
 
-.prices__option:focus-visible,
-.prices__dimension select:focus-visible {
+.prices__option:focus-visible {
   outline: 0.1111rem solid #324c88;
   outline-offset: 0.1111rem;
 }
@@ -12680,20 +8758,12 @@ h2 {
   white-space: nowrap;
 }
 
-.prices__dimension select {
-  min-width: 117px;
-  padding: 1rem 1.3333rem;
-  border: 0;
-  border-radius: 0.5556rem;
-  appearance: none;
-  background: #f5f6f8
-  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='m7 10 5 5 5-5' stroke='%234D4D4D' stroke-width='2'/%3E%3C/svg%3E")
-  no-repeat right 0.8889rem center;
+.prices__dimension .filter-dropdown__button {
+  background: #324c880a;
   color: #272629;
-  font: inherit;
-  text-transform: none;
-  cursor: pointer;
 }
+
+/* ===== Таблица ===== */
 
 .prices__table-wrap {
   width: 100%;
@@ -12778,26 +8848,15 @@ h2 {
   border-bottom-right-radius: 0.7778rem;
 }
 
+/* ===== Мобильные блоки (скрыты на десктопе) ===== */
+
 .prices__notice-toggle,
-.prices__parameters-toggle,
 .prices__mobile-summary,
 .prices__mobile-table {
   display: none;
 }
 
-.prices__filters-modal {
-  width: 100%;
-}
-
-.prices__filters-backdrop,
-.prices__filters-header,
-.prices__filters-footer {
-  display: none;
-}
-
-.prices__filters-title {
-  margin: 0;
-}
+/* ===== Технологии ===== */
 
 .prices-tech {
   padding: 0 0.5556rem 0.5556rem;
@@ -12831,6 +8890,7 @@ h2 {
   font-size: 1.3333rem;
   line-height: 1.6;
 }
+
 /* ===== Медиа-запросы: от широких условий к узким ===== */
 
 @media (max-width: 1660px) {
@@ -12866,13 +8926,6 @@ h2 {
     font-size: 0.8889rem;
   }
 
-  .prices__dimension select {
-    min-width: 0;
-    padding: 0.6667rem 48px 0.6667rem 0.7778rem;
-    background-position: right 0.6667rem center;
-    font-size: 0.8889rem;
-  }
-
   .prices__table {
     font-size: 0.8889rem;
   }
@@ -12880,11 +8933,13 @@ h2 {
   .prices__label-column {
     width: 540px;
   }
+
   .prices__table td,
   .prices__table tfoot td {
     padding-left: 12px;
     padding-right: 12px;
   }
+
   .prices__table thead th {
     font-size: 1rem;
   }
@@ -12892,7 +8947,6 @@ h2 {
   .prices__table small {
     font-size: 14px;
   }
-
 }
 
 @media (max-width: 1400px) {
@@ -12922,35 +8976,60 @@ h2 {
     font-size: 18px;
     line-height: 30px;
   }
+
   .prices__filters {
-    gap: 20px;
+    display: none;
   }
 
-  .prices__table thead th {
+  .prices__table-container .mob-filter-button {
+    display: flex;
+  }
+
+  .prices__table-container .mob-filter-overlay:not([hidden]) {
+    display: flex;
+  }
+
+  body.prices-filters-open {
+    overflow: hidden;
+  }
+
+  .prices__mobile-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8333rem 36px;
+    width: 100%;
+    color: #2c2c2c;
+    font-family: "Onest-SemiBold", sans-serif;
     font-size: 16px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-transform: uppercase;
   }
 
-  .pices__table-container {
-    gap: 24px;
+  .prices__mobile-summary p {
+    margin: 0;
   }
 
-  .prices-tech__title {
-    font-size: 24px;
-    line-height: 32px;
+  .prices__mobile-summary-title {
+    grid-column: 1 / -1;
+    line-height: 1.2222rem;
   }
 
-  .prices-tech__header {
-    gap: 0.7778rem;
+  .prices__mobile-summary-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5556rem;
   }
 
-  .prices-tech__subtitle {
-    max-width: 42.2222rem;
-    font-size: 20px;
+  .prices__mobile-summary-item small {
+    color: #2c2c2c80;
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.6;
+    text-transform: none;
   }
 
-}
-
-@media (max-width: 760px) {
   .prices__table-wrap {
     overflow: visible;
   }
@@ -12971,7 +9050,7 @@ h2 {
 
   .prices__mobile-table-heading {
     display: grid;
-    grid-template-columns: 5.5556rem minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
     gap: 0.1111rem;
     margin-bottom: 0.1111rem;
   }
@@ -13002,7 +9081,7 @@ h2 {
 
   .prices__mobile-table-row {
     display: grid;
-    grid-template-columns: 5.5556rem minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
     gap: 0.1111rem;
     margin-bottom: 0.2222rem;
   }
@@ -13041,6 +9120,22 @@ h2 {
     border-bottom-right-radius: 0.7778rem;
   }
 
+  .prices-tech__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .prices-tech__header {
+    gap: 0.7778rem;
+  }
+
+  .prices-tech__subtitle {
+    max-width: 42.2222rem;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 760px) {
   .prices-tech {
     padding: 35px 0.7778rem 0.5556rem;
   }
@@ -13053,53 +9148,20 @@ h2 {
   .prices-tech__subtitle {
     font-size: 0.8333rem;
   }
-
 }
 
 @media (max-width: 680px) {
-  .prices-tech__title {
-    font-size: 20px;
-    line-height: 28px;
-  }
-  .pices__table-container {
-    gap: 17px;
-  }
-
-  .prices__notice-extra {
-    display: none;
-  }
-
-  .prices__content {
-    align-items: stretch;
-    gap: 1.1111rem;
-  }
-
-  .prices__segmented {
-    max-width: 100%;
-    flex-wrap: wrap;
-    padding: 0;
-    background: transparent;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.5556rem;
-    width: 100%;
-    color: #2c2c2c;
-    font-family: "Onest-Medium", sans-serif;
-    font-weight: 500;
-    text-transform: none;
-    white-space: normal;
-  }
-
-  .prices__dimension {
-    justify-content: space-between;
-  }
-
   .prices {
     border-radius: 0;
   }
 
   .prices__panel {
     padding: 1.1111rem 0.7778rem;
+  }
+
+  .prices__content {
+    align-items: stretch;
+    gap: 1.1111rem;
   }
 
   .prices__breadcrumbs {
@@ -13112,6 +9174,11 @@ h2 {
     line-height: 1.7778rem;
   }
 
+  .prices__table-container {
+    gap: 17px;
+  }
+
+  /* уведомление */
   .prices__notice {
     font-size: 0.7778rem;
     line-height: 1.2222rem;
@@ -13122,6 +9189,10 @@ h2 {
     overflow: hidden;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 11;
+  }
+
+  .prices__notice-extra {
+    display: none;
   }
 
   .prices__notice.is-expanded p:first-child {
@@ -13139,15 +9210,11 @@ h2 {
     justify-content: center;
     align-self: center;
     gap: 0.7778rem;
-    padding: 0;
-    border: 0;
-    background: transparent;
     color: #324c88;
     font-family: "Onest-Medium", sans-serif;
     font-size: 0.8889rem;
     font-weight: 500;
     line-height: 1.4;
-    cursor: pointer;
   }
 
   .prices__notice-toggle svg {
@@ -13159,238 +9226,23 @@ h2 {
     transform: rotate(180deg);
   }
 
-  .prices__parameters-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0.6667rem 1rem;
-    border-radius: 0.5556rem;
-    background: #f5f8f7;
-    color: #4d4d4d;
-    font-family: "Onest-Medium", sans-serif;
-    font-size: 0.8889rem;
-    font-weight: 500;
-    line-height: 1.2222rem;
-    text-align: left;
-    cursor: pointer;
-  }
-
-  .prices__parameters-toggle svg {
-    flex: 0 0 1.3333rem;
-  }
-
   .prices__mobile-summary {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8333rem;
-    width: 100%;
-    color: #2c2c2c;
-    font-family: "Onest-SemiBold", sans-serif;
-    font-size: 0.7778rem;
-    font-weight: 600;
-    line-height: 1.6;
-    text-transform: uppercase;
-  }
-
-  .prices__mobile-summary p {
-    margin: 0;
-  }
-
-  .prices__mobile-summary-title {
-    line-height: 1.2222rem;
-  }
-
-  .prices__mobile-summary-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5556rem;
+    grid-template-columns: minmax(0, 1fr);
+    font-size: 14px;
   }
 
   .prices__mobile-summary-item small {
-    color: #2c2c2c80;
-    font-family: "Onest-Medium", sans-serif;
-    font-size: 0.7222rem;
-    font-weight: 500;
-    line-height: 1.5;
-    text-transform: none;
+    font-size: 13px;
   }
 
-  .prices__filters-modal {
-    position: fixed;
-    z-index: 1000;
-    inset: 0;
-    display: none;
-    align-items: stretch;
-    justify-content: center;
-    background: #1d253561;
+  .prices__mobile-table-heading,
+  .prices__mobile-table-row {
+    grid-template-columns: 5.5556rem minmax(0, 1fr);
   }
 
-  .prices__filters-modal.is-open {
-    display: flex;
-  }
-
-  .prices__filters-backdrop {
-    position: absolute;
-    inset: 0;
-    display: block;
-    background: transparent;
-  }
-
-  .prices__filters-dialog {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    max-height: 100dvh;
-    padding: 0.1111rem;
-    overflow: hidden;
-    border-radius: 0.5556rem;
-    background: #f8f8f8;
-  }
-
-  .prices__filters-header {
-    display: flex;
-    flex: 0 0 auto;
-    align-items: center;
-    gap: 0.7778rem;
-    min-height: 3.1111rem;
-    padding: 0.7778rem;
-    border-bottom: 0.1111rem solid #ffffff;
-  }
-
-  .prices__filters-title {
-    flex: 1 1 auto;
-    color: #1d4395;
-    font-family: "Onest-Medium", sans-serif;
-    font-size: 0.8889rem;
-    font-weight: 500;
-    line-height: 1.6;
-  }
-
-  .prices__filters-close {
-    display: flex;
-    flex: 0 0 1.3333rem;
-    align-items: center;
-    justify-content: center;
-    width: 1.3333rem;
-    height: 1.3333rem;
-    color: #4d4d4d;
-  }
-
-  .prices__filters-close:focus-visible,
-  .prices__filters-back:focus-visible {
-    outline: 0.1111rem solid #2555bd;
-    outline-offset: 0.1111rem;
-  }
-
-  .prices__filters {
-    flex: 1 1 auto;
-    align-items: stretch;
-    justify-content: flex-start;
-    gap: 0.7778rem;
-    min-height: 0;
-    padding: 0.6667rem 1.5556rem 0.6667rem 0.7778rem;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    border-radius: 0.5556rem;
-    background: #efefef;
-  }
-
-  .prices__filter-group,
-  .prices__dimensions {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.7778rem;
-    width: 100%;
-  }
-
-  .prices__fieldset {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.7778rem;
-    width: 100%;
-  }
-
-  .prices__fieldset legend {
-    float: none;
-    color: #2c2c2ce6;
-    font-family: "Onest-Medium", sans-serif;
-    font-weight: 500;
-    line-height: 1.4444rem;
-    text-transform: none;
-  }
-
-  .prices__option {
-    justify-content: space-between;
-    gap: 0.6667rem;
-    width: 100%;
-    min-height: 1.2222rem;
-    padding: 0;
-    border-radius: 0;
-    color: #2c2c2c;
-    font-family: "Onest-Medium", sans-serif;
-    font-size: 0.7778rem;
-    font-weight: 500;
-    line-height: 1.2222rem;
-    text-align: left;
-    text-transform: none;
-    white-space: normal;
-  }
-
-  .prices__option.is-active {
-    background: transparent;
-  }
-
-  .prices__option.is-active::after {
-    flex: 0 0 1rem;
-    width: 1rem;
-    height: 1rem;
-    background: no-repeat center / 1rem 1rem
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18' fill='none'%3E%3Cpath d='m4 9 3 3 7-7' stroke='%232555BD' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    content: "";
-  }
-
-  .prices__dimension select {
-    width: 100%;
-    min-width: 0;
-    padding: 0.5556rem 2.2222rem 0.5556rem 0;
-    border-radius: 0;
-    border-bottom: 0.0556rem solid #2c2c2c1f;
-    background-color: transparent;
-    background-position: right 0.2222rem center;
-    font-size: 0.7778rem;
-  }
-
-  .prices__filters-footer {
-    display: flex;
-    flex: 0 0 auto;
-    align-items: center;
-    justify-content: center;
-    padding: 0.2222rem;
-    background: #f8f8f8;
-  }
-
-  .prices__filters-back {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 3.5556rem;
-    padding: 1.2222rem 3.5556rem;
-    border-radius: 0.5556rem;
-    background: #d7e1f7;
-    color: #2555bd;
-    font-family: "Onest-Medium", sans-serif;
-    font-size: 0.8889rem;
-    font-weight: 500;
-    line-height: 1.2;
-  }
-
-  body.prices-filters-open {
-    overflow: hidden;
+  .prices-tech__title {
+    font-size: 20px;
+    line-height: 28px;
   }
 }
 
@@ -13404,6 +9256,1795 @@ h2 {
   }
 }
 
+
+/* Страница: быстровозводимые агрокомплексы */
+.buildings-agro {
+  display: flex;
+  justify-content: center;
+  min-height: 830px;
+  margin: 0 0.2778rem 0.2778rem;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #2b2b2b;
+  color: #ffffff;
+  text-align: center;
+}
+
+.buildings-agro__inner {
+  padding: 68px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1500px;
+  background-image: url(/static/images/bildings/hero.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 993px auto;
+}
+
+.buildings-agro__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  width: 100%;
+}
+
+.buildings-agro__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.buildings-agro__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.buildings-agro__category {
+  width: 100%;
+  color: #fff500;
+  font-family: "Onest-Medium", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 34px;
+}
+
+.buildings-agro__title {
+  max-width: 100%;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 94px;
+  text-transform: uppercase;
+}
+
+.buildings-agro__description {
+  max-width: 970px;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.buildings-agro__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.buildings-agro__action.btn {
+  min-height: 89px;
+  padding: 32px 40px;
+  border-radius: 20px;
+  font-size: 20px;
+  line-height: 25.2px;
+  white-space: nowrap;
+}
+
+.buildings-agro__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 6px;
+  border-radius: 20px;
+  background: rgba(237, 237, 237, 0.2);
+  -webkit-backdrop-filter: blur(70px);
+  backdrop-filter: blur(70px);
+}
+
+.buildings-agro__tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: 64px;
+  padding: 0 36px;
+  border-radius: 20px;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.buildings-agro__tab:hover {
+  background: #ffffff12;
+  color: #fff500;
+}
+
+.buildings-agro__tab.is-active {
+  background: #ffffff;
+  color: #324c88;
+}
+
+.buildings-agro__tab:focus-visible {
+  outline: 0.1111rem solid #ffffff;
+  outline-offset: -0.1111rem;
+}
+
+.buildings-agro__tabs-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 1600px) {
+  .buildings-agro__inner {
+    background-size: 744px 442px;
+  }
+
+  .buildings-agro__intro {
+    gap: 36px;
+  }
+
+  .buildings-agro__heading {
+    gap: 34px;
+  }
+
+  .buildings-agro__title {
+    line-height: 72px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .buildings-agro {
+    min-height: 840px;
+  }
+
+  .buildings-agro__inner {
+    max-width: 100%;
+  }
+
+  .buildings-agro__title {
+    font-size: 48px;
+    line-height: 64px;
+  }
+
+  .buildings-agro__tabs {
+    max-width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .buildings-agro__tabs::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .buildings-agro__tabs::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 3px;
+  }
+
+  .buildings-agro__tab {
+    flex: 0 0 auto;
+    padding: 20px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .buildings-agro__category {
+    font-size: 20px;
+  }
+
+  .buildings-agro__description {
+    max-width: 794px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .buildings-agro__action.btn {
+    min-height: 75px;
+    padding: 26px 32px;
+    font-size: 18px;
+    line-height: 1.26;
+  }
+
+  .buildings-agro__inner {
+    background-size: 725px 471px;
+  }
+
+  .buildings-agro__intro {
+    gap: 24px;
+  }
+
+  .buildings-agro__heading {
+    gap: 23px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .buildings-agro {
+    min-height: 480px;
+    margin: 5px;
+  }
+
+  .buildings-agro__inner {
+    position: relative;
+    background-image: none;
+    padding: 30px 8px 68px;
+  }
+
+  .buildings-agro__content {
+    gap: 24px;
+  }
+
+  .buildings-agro__intro {
+    gap: 14px;
+  }
+
+  .buildings-agro__heading {
+    gap: 12px;
+  }
+
+  .buildings-agro__category {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .buildings-agro__title {
+    max-width: 342px;
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .buildings-agro__description {
+    max-width: 342px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .buildings-agro__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .buildings-agro__action.btn {
+    width: 286px;
+    max-width: 100%;
+    min-height: 54px;
+    padding: 18px 24px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .buildings-agro__tabs {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    z-index: 5;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    padding: 14px 20px;
+  }
+
+  .buildings-agro__tabs.is-fixed {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    color: #3f3f3f;
+    background: #ededed;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    animation: buildings-agro-tabs-in 0.2s ease;
+  }
+
+  .buildings-agro__tabs.is-narrow {
+    right: 75px;
+  }
+
+  .buildings-agro__tabs.is-open {
+    right: 10px;
+    left: 10px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 18px;
+    padding: 20px;
+    border: 1px solid #ffffff1f;
+  }
+
+  .buildings-agro__tab {
+    display: none;
+    height: auto;
+    padding: 0;
+    border-radius: 0;
+    line-height: 20px;
+    font-size: 16px;
+  }
+
+  .buildings-agro__tab.is-active {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: flex-start;
+    background: transparent;
+    color: inherit;
+  }
+
+  .buildings-agro__tab:focus-visible {
+    outline-color: currentColor;
+  }
+
+  .buildings-agro__tabs-toggle {
+    display: flex;
+    flex: 0 0 24px;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+  }
+
+  .buildings-agro__tabs-toggle svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .buildings-agro__tabs.is-open .buildings-agro__tab {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: flex-start;
+    line-height: 1.2;
+  }
+
+  .buildings-agro__tabs.is-open .buildings-agro__tab:hover {
+    background: transparent;
+    color: inherit;
+  }
+
+  .buildings-agro__tabs.is-open .buildings-agro__tab:last-of-type {
+    padding-right: 44px;
+  }
+
+  .buildings-agro__tabs.is-open .buildings-agro__tabs-toggle {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .main-modal-btn {
+    display: none;
+  }
+}
+
+@keyframes buildings-agro-tabs-in {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buildings-agro__tab,
+  .buildings-agro__action {
+    transition: none;
+  }
+
+  .buildings-agro__tabs.is-fixed {
+    animation: none;
+  }
+}
+
+/* Кнопка «Наверх» */
+.scroll-top {
+  position: fixed;
+  right: 14px;
+  bottom: 10px;
+  z-index: 4;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #324c88;
+  color: #ffffff;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.scroll-top:focus-visible {
+  outline: 0.1111rem solid #324c88;
+  outline-offset: 0.2222rem;
+}
+
+@media screen and (max-width: 680px) {
+  .scroll-top {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-top {
+    transition: none;
+  }
+}
+
+/* Секция «Описание» */
+.buildings-description {
+  margin: 0 0.5556rem 0.5556rem;
+  padding: 5.3333rem 2.2222rem 100px;
+  background: #f5f8f7;
+}
+
+.buildings-description__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 101.1111rem;
+  margin: 0 auto;
+}
+
+.buildings-description__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.3333rem;
+  width: 100%;
+}
+
+.buildings-description__title {
+  width: 100%;
+  color: #4d4d4d;
+  font-size: 2.6667rem;
+  line-height: 1.27;
+  text-align: center;
+}
+
+.buildings-description__industries {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  font-size: 1.3333rem;
+  line-height: 1.7222rem;
+}
+
+.buildings-description__industries-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.7778rem;
+}
+
+.buildings-description__industries-list li {
+  display: flex;
+}
+
+.buildings-description__industry {
+  color: #324c88;
+  text-decoration: underline;
+  text-underline-offset: 0.1111rem;
+}
+
+.buildings-description__industries-toggle {
+  display: none;
+}
+
+.buildings-description__accordion {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 7.7778rem;
+  width: 100%;
+  max-width: 83.7778rem;
+  padding-bottom: 0.1667rem;
+}
+
+.buildings-description__accordion-media {
+  min-width: 0;
+  padding: 4px;
+  height: 100%;
+  min-height: 593px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  isolation: isolate;
+}
+
+.buildings-description__accordion-media--tablet {
+  display: none;
+}
+
+.buildings-description__image {
+  display: block;
+  height: 100%;
+  aspect-ratio: 676 / 593;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.buildings-description__accordion-trigger:focus-visible,
+.buildings-description__more:focus-visible,
+.buildings-description__details-link:focus-visible {
+  outline: 0.1111rem solid #324c88;
+  outline-offset: 0.2222rem;
+}
+
+.buildings-description__item {
+  padding: 23px 0;
+  border-top: 1px solid #0000000d;
+}
+
+.buildings-description__item:last-child {
+  border-bottom: 1px solid #0000000d;
+}
+
+.buildings-description__accordion-trigger {
+  display: flex;
+  align-items: center;
+  gap: 1.3333rem;
+  width: 100%;
+  color: #4d4d4d;
+  text-align: left;
+}
+
+.buildings-description__item-title {
+  min-width: 0;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 1.1111rem;
+  font-weight: 600;
+  line-height: 1.6667rem;
+  text-transform: uppercase;
+}
+
+.buildings-description__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-left: 3.5556rem;
+  padding-top: 0.2222rem;
+}
+
+.buildings-description__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7778rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.buildings-description__more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.3333rem;
+  padding: 1rem 1.6667rem;
+  border-radius: 0.5556rem;
+  background: #324c88;
+  color: #ffffff;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 0.8333rem;
+  font-weight: 600;
+  line-height: 1.3333rem;
+  text-transform: uppercase;
+  transition: background-color 0.15s ease;
+}
+
+.buildings-description__more:hover {
+  background: #324c88cc;
+}
+
+.buildings-description__details-text {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: #717171;
+}
+
+.buildings-description__details-subtitle {
+  font-family: "Onest-SemiBold", sans-serif;
+  font-weight: 600;
+  color: #4d4d4d;
+}
+
+.buildings-description__details-link {
+  color: #324c88;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 160%;
+}
+
+.buildings-description__details-link:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1600px) {
+  .buildings-description {
+    padding: 3.5556rem 31px 105px;
+  }
+
+  .buildings-description__inner {
+    gap: 60px;
+  }
+
+  .buildings-description__title {
+    line-height: 1.25;
+  }
+
+  .buildings-description__industries {
+    line-height: 1.5;
+  }
+
+  .buildings-description__accordion {
+    grid-template-columns: minmax(0, 684fr) minmax(0, 594fr);
+    gap: 4.4444rem;
+    max-width: 75.4444rem;
+    padding-bottom: 0;
+  }
+
+  .buildings-description__item-title {
+    line-height: 1.5;
+  }
+
+  .buildings-description__copy {
+    gap: 1.3889rem;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .buildings-description {
+    margin: 0 10px 10px;
+    padding: 40px;
+  }
+
+  .buildings-description__inner {
+    gap: 20px;
+  }
+
+  .buildings-description__header {
+    gap: 14px;
+  }
+
+  .buildings-description__title {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .buildings-description__industries {
+    gap: 18px;
+    font-size: 20px;
+    white-space: nowrap;
+  }
+
+  .buildings-description__industries-list {
+    flex-wrap: nowrap;
+    gap: 14px;
+  }
+
+  .buildings-description__accordion {
+    display: block;
+  }
+
+  .buildings-description__accordion-media:not(.buildings-description__accordion-media--tablet) {
+    display: none;
+  }
+
+  .buildings-description__accordion-media--tablet {
+    display: block;
+    width: 100%;
+    min-height: auto;
+  }
+
+  .buildings-description__accordion-media--tablet .buildings-description__image {
+    aspect-ratio: 916 / 624;
+  }
+
+  .buildings-description__accordion-trigger {
+    gap: 24px;
+  }
+
+  .buildings-description__item-title {
+    font-size: 18px;
+  }
+
+  .buildings-description__panel {
+    gap: 14px;
+    padding-top: 11px;
+    margin-left: 0;
+  }
+
+  .buildings-description__copy {
+    padding-left: 54px;
+    gap: 14px;
+    font-size: 16px;
+  }
+
+  .buildings-description__more {
+    margin-left: 54px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .buildings-description {
+    padding: 20px 4px 0;
+  }
+
+  .buildings-description__inner {
+    gap: 25px;
+  }
+
+  .buildings-description__title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .buildings-description__industries {
+    flex-direction: column;
+    gap: 14px;
+    font-size: 18px;
+    line-height: normal;
+  }
+
+  .buildings-description__industries-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-height: 20px;
+    padding: 0 12px;
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .buildings-description__accordion-media {
+    border-radius: 1rem;
+  }
+
+  .buildings-description__accordion-trigger {
+    align-items: flex-start;
+  }
+
+  .buildings-description__item-title {
+    font-size: 16px;
+  }
+
+  .buildings-description__panel {
+    padding-top: 14px;
+  }
+
+  .buildings-description__copy {
+    gap: 25px;
+    font-size: 14px;
+  }
+
+  .buildings-description__more {
+    min-height: 2.6667rem;
+    padding: 0.6667rem 1.1111rem;
+    font-size: 0.7778rem;
+  }
+
+  .buildings-description__industries-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 24px;
+    color: #324c88;
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+  }
+
+  .buildings-description__industries-toggle svg {
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .buildings-description__industries-toggle[hidden] {
+    display: none;
+  }
+
+  .buildings-description__industries.is-expanded .buildings-description__industries-list {
+    max-height: none;
+    overflow: visible;
+    white-space: normal;
+  }
+
+  .buildings-description__industries.is-expanded .buildings-description__industries-toggle svg {
+    transform: rotate(180deg);
+  }
+
+  .buildings-description__details-link {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buildings-description__more {
+    transition: none;
+  }
+}
+
+/* buildings-advantages */
+
+.buildings-advantages {
+  margin: 0 5px 15px;
+  padding: 80px 50px 48px;
+  min-height: 970px;
+  overflow: hidden;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: #2b2b2b;
+  background-image: url(/static/images/bildings/benefits.png);
+  background-position: 88.5% 300px;
+  background-repeat: no-repeat;
+  background-size: 46% auto;
+}
+
+.buildings-advantages__inner {
+  gap: 61px;
+}
+
+.buildings-advantages__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+  border-bottom: 1px solid #4d4d4d33;
+  text-align: center;
+}
+
+.buildings-advantages__title {
+  font-size: 48px;
+  line-height: 1.25;
+}
+
+.buildings-advantages__subtitle {
+  max-width: 100%;
+  color: #ffffffcc;
+  font-size: 24px;
+  line-height: 31px;
+}
+
+.buildings-advantages__content {
+  display: grid;
+  grid-template-columns: minmax(0, 597px) 90px;
+  align-items: center;
+  gap: 36px;
+  min-width: 0;
+}
+
+.buildings-advantages__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  max-height: calc(4 * (48px + 2 * 30px) + 3 * 10px);
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.buildings-advantages__item {
+  border-radius: 20px;
+  background-color: #363636;
+  transition: background-color 0.2s ease;
+}
+
+.buildings-advantages__item:hover {
+  background-color: #454545;
+}
+
+.buildings-advantages__item-trigger {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.accordion__toggle--yellow.buildings-advantages__toggle {
+  width: 48px;
+  height: 48px;
+}
+
+.accordion__toggle.buildings-advantages__toggle::before {
+  width: 21px;
+  height: 3px;
+}
+
+.accordion__toggle.buildings-advantages__toggle::after {
+  width: 3px;
+  height: 21px;
+}
+
+.buildings-advantages__item-descr {
+  padding: 0px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.buildings-advantages__item-descr h5 {
+  font-family: "Onest-SemiBold", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 160%;
+  text-transform: uppercase;
+}
+
+.buildings-advantages__item-descr p {
+  font-size: 18px;
+  line-height: 28px;
+  color: #ffffffcc;
+}
+
+.buildings-advantages__item-label {
+  min-width: 0;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: left;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.buildings-advantages__content .slider-controls {
+  transform: rotate(90deg);
+}
+
+@media screen and (max-width: 1600px) {
+  .buildings-advantages {
+    margin-bottom: 5px;
+    min-height: 1139px;
+    background-position: 94.5% 568px;
+    background-size: 48% 84%;
+  }
+
+  .buildings-advantages__header {
+    gap: 19px;
+  }
+
+  .buildings-advantages__inner {
+    gap: 34px;
+  }
+
+  .buildings-advantages__content {
+    gap: 24px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .buildings-advantages {
+    padding: 40px;
+    min-height: 746px;
+    background-position: center 150px;
+    background-size: 450px 436px;
+  }
+
+  .buildings-advantages__inner {
+    gap: 496px;
+  }
+
+  .buildings-advantages__title {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .buildings-advantages__subtitle {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .buildings-advantages__content {
+    grid-template-columns: 1fr;
+  }
+
+  .buildings-advantages__list {
+    flex-direction: row;
+    align-items: flex-start;
+    max-height: none;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .buildings-advantages__list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .buildings-advantages__item {
+    flex: 0 0 auto;
+    min-width: 340px;
+    max-width: 100%;
+    scroll-snap-align: start;
+  }
+
+  .buildings-advantages__item-trigger {
+    gap: 18px;
+    padding: 20px;
+  }
+
+  .accordion__toggle--yellow.buildings-advantages__toggle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .buildings-advantages__item-label {
+    font-size: 18px;
+    line-height: 29px;
+  }
+  .buildings-advantages__item-descr {
+    padding: 10px 20px 20px;
+    width: 0;
+    min-width: 100%;
+  }
+  .buildings-advantages__content .slider-controls {
+    transform: none;
+  }
+}
+
+@media (max-width: 1100px) and (hover: none) and (pointer: coarse) {
+  .buildings-advantages__content .slider-controls {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .buildings-advantages {
+    padding: 20px 10px 12px;
+    min-height: 521px;
+    background-position: center 135px;
+    background-size: 296px 293px;
+  }
+
+  .buildings-advantages__inner {
+    gap: 350px;
+  }
+
+  .buildings-advantages__header {
+    gap: 12px;
+  }
+
+  .buildings-advantages__title {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .buildings-advantages__subtitle {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .buildings-advantages__item {
+    min-width: 250px;
+  }
+
+  .buildings-advantages__item-trigger {
+    padding: 10px;
+  }
+
+  .buildings-advantages__item-descr {
+    padding: 5px 15px 10px;
+  }
+
+  .accordion__toggle--yellow.buildings-advantages__toggle {
+    width: 30px;
+    height: 30px;
+  }
+
+  .accordion__toggle.buildings-advantages__toggle::before {
+    width: 14px;
+    height: 2px;
+  }
+
+  .accordion__toggle.buildings-advantages__toggle::after {
+    width: 2px;
+    height: 14px;
+  }
+
+  .buildings-advantages__item-label {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .buildings-advantages__content .slider-controls {
+    display: none;
+  }
+
+  .buildings-advantages__item-descr h5 {
+    font-size: 12px;
+    line-height: 22px;
+  }
+
+  .buildings-advantages__item-descr p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buildings-advantages__list,
+  .buildings-advantages__item {
+    transition: none;
+  }
+}
+
+/* Фотогалерея */
+.buildings-gallery {
+  margin: 0 10px 10px;
+  padding: 40px 40px 30px;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.buildings-gallery__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+
+.buildings-gallery__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  min-width: 0;
+}
+
+.buildings-gallery__title {
+  color: #4d4d4d;
+  font-size: 48px;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.buildings-gallery__carousel {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  min-width: 0;
+}
+
+.buildings-gallery__slide {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 440px;
+  overflow: hidden;
+  border-radius: 30px;
+  background: #e9eceb;
+}
+
+.buildings-gallery__slide--active {
+  flex: 0 0 839px;
+  height: 580px;
+}
+
+.buildings-gallery__slide > img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+}
+
+.buildings-gallery__zoom {
+  right: 20px;
+  bottom: 20px;
+  padding: 12px;
+}
+
+.buildings-gallery__zoom svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (max-width: 1600px) {
+  .buildings-gallery__content {
+    gap: 36px;
+  }
+
+  .buildings-gallery__slide {
+    height: 400px;
+  }
+
+  .buildings-gallery__slide--active {
+    flex-basis: 580px;
+    height: 520px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .buildings-gallery {
+    padding: 30px;
+  }
+
+  .buildings-gallery__title {
+    font-size: 38px;
+  }
+
+  .buildings-gallery__slide {
+    height: 320px;
+  }
+
+  .buildings-gallery__slide--active {
+    flex-basis: 44%;
+    height: 420px;
+  }
+}
+
+/* Figma node 1857:47901 — mobile gallery, 360 px.
+   Desktop frames (1920/1440/1024) retain their existing composition. */
+@media screen and (max-width: 680px) {
+  .buildings-gallery {
+    padding: 20px 14px;
+  }
+
+  .buildings-gallery__inner {
+    gap: 18px;
+  }
+
+  .buildings-gallery__content {
+    gap: 18px;
+  }
+
+  .buildings-gallery__title {
+    font-size: 18px;
+    line-height: 26px;
+    white-space: nowrap;
+  }
+
+  .buildings-gallery__carousel {
+    gap: 0;
+  }
+
+  .buildings-gallery__slide {
+    display: none;
+  }
+
+  .buildings-gallery__slide--active {
+    display: block;
+    flex: 1 1 100%;
+    height: 226px;
+  }
+
+  .buildings-gallery__zoom {
+    right: 19px;
+  }
+}
+
+/* Каталог отраслей */
+.buildings-catalog {
+  margin: 0 4px;
+}
+
+.buildings-catalog__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 40px;
+  border-radius: 21px;
+  background: #ffffff;
+}
+
+.buildings-catalog__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.buildings-catalog__title {
+  color: #4d4d4d;
+  font-size: 48px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.buildings-catalog__filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 100%;
+  padding: 4px 18px;
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+.buildings-catalog__filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  color: #5d5d5d4d;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.buildings-catalog__filter:not(:last-child)::after {
+  width: 4px;
+  height: 4px;
+  flex: 0 0 4px;
+  border-radius: 50%;
+  background: #cfcfcf;
+  content: "";
+  transition: background 0.3s ease;
+}
+
+.buildings-catalog__filter.is-active::after {
+  background: #5d5d5d;
+}
+
+.buildings-catalog__filter:hover {
+  color: #5d5d5db2;
+}
+.buildings-catalog__filter:hover::after {
+  background: #5d5d5db2;
+}
+.buildings-catalog__filter:active {
+  color: #5d5d5de5;
+}
+.buildings-catalog__filter:active::after {
+  background: #5d5d5de5;
+}
+.buildings-catalog__filter.is-active {
+  color: #5d5d5d;
+}
+
+.buildings-catalog__cards {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 3 * 10px) / 4);
+  gap: 10px;
+  width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.buildings-catalog__cards::-webkit-scrollbar {
+  display: none;
+}
+
+.buildings-catalog__card-link {
+  scroll-snap-align: start;
+}
+
+.buildings-catalog__card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 4px 4px 18px;
+  border-radius: 30px;
+  color: #4d4d4d;
+}
+
+.buildings-catalog__image-wrap {
+  width: 100%;
+  height: 312px;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.buildings-catalog__image {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.buildings-catalog__caption {
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.buildings-catalog__filter:focus-visible {
+  outline: 2px solid #324c88;
+  outline-offset: 3px;
+}
+
+.buildings-catalog__card-link:focus-visible {
+  outline: 2px solid #324c88;
+  outline-offset: -2px;
+}
+
+@media screen and (max-width: 1600px) {
+  .buildings-catalog {
+    margin: 0 10px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .buildings-catalog__cards {
+    grid-auto-columns: calc((100% - 2 * 10px) / 3);
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .buildings-catalog__panel {
+    gap: 14px;
+  }
+
+  .buildings-catalog__title {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .buildings-catalog__filter {
+    font-size: 16px;
+  }
+
+  .buildings-catalog__image-wrap {
+    height: auto;
+  }
+
+  .buildings-catalog__caption {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .buildings-catalog__panel {
+    gap: 25px;
+    padding: 30px;
+  }
+
+  .buildings-catalog__title {
+    line-height: 1.2;
+  }
+
+  .buildings-catalog__filters {
+    gap: 12px;
+  }
+
+  .buildings-catalog__filter {
+    gap: 12px;
+  }
+
+  .buildings-catalog__cards {
+    grid-auto-columns: calc((100% - 10px) / 2);
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .buildings-catalog__panel {
+    gap: 8px;
+    padding: 20px 10px;
+  }
+
+  .buildings-catalog__header {
+    gap: 12px;
+  }
+
+  .buildings-catalog__title {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  .buildings-catalog__filters {
+    gap: 8px;
+    padding: 2px;
+  }
+
+  .buildings-catalog__filter {
+    gap: 10px;
+    font-size: 14px;
+    line-height: 22px;
+    white-space: normal;
+  }
+
+  .buildings-catalog__cards {
+    grid-auto-columns: 100%;
+  }
+}
+
+/* Процесс производства */
+.buildings-production {
+  margin: 0 10px 10px;
+}
+
+.buildings-production__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding: 60px 40px;
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+.buildings-production__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+
+.buildings-production__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  text-align: center;
+}
+
+.buildings-production__title {
+  color: #4d4d4d;
+  font-size: 48px;
+}
+
+.buildings-production__subtitle {
+  color: #333333;
+  font-size: 24px;
+}
+
+.buildings-production__gallery {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  max-width: 1736px;
+}
+
+.buildings-production__main-image {
+  flex: 0 1 1400px;
+  height: 787px;
+  overflow: hidden;
+  border-radius: 30px;
+  background: #e9eceb;
+}
+
+.buildings-production__side-images {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.buildings-production__side-image {
+  flex: 1 1 0;
+  overflow: hidden;
+  border-radius: 30px;
+  background: #e9eceb;
+}
+
+.buildings-production__main-image img,
+.buildings-production__side-image img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+}
+
+.buildings-production__facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-self: center;
+  align-items: start;
+  gap: 36px;
+  width: 100%;
+  max-width: 1389px;
+}
+
+.buildings-production__fact {
+  overflow: hidden;
+}
+
+.buildings-production__fact-title {
+  margin-bottom: 18px;
+  color: #324c88;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.buildings-production__fact-description {
+  color: #4d4d4d;
+  font-size: 22px;
+  line-height: 32px;
+  overflow-wrap: anywhere;
+}
+
+@media screen and (max-width: 1600px) {
+  .buildings-production__main-image {
+    flex: 0 1 1052px;
+    height: 591px;
+  }
+
+  .buildings-production__side-images {
+    flex: 1 1 280px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .buildings-production__panel {
+    gap: 24px;
+    padding: 40px;
+  }
+
+  .buildings-production__content {
+    gap: 24px;
+  }
+
+  .buildings-production__title {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .buildings-production__main-image {
+    aspect-ratio: 2520 / 1417;
+    height: auto;
+  }
+
+  .buildings-production__side-images {
+    flex: 0 0 170px;
+  }
+
+  .buildings-production__fact-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .buildings-production__fact-description {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .buildings-production {
+    margin: 0 4px 10px;
+  }
+
+  .buildings-production__panel {
+    gap: 17px;
+    padding: 30px 10px;
+    border-radius: 10px;
+  }
+
+  .buildings-production__header {
+    gap: 14px;
+  }
+
+  .buildings-production__title {
+    font-size: 20px;
+    line-height: 28px;
+    white-space: nowrap;
+  }
+
+  .buildings-production__subtitle {
+    font-size: 18px;
+  }
+
+  .buildings-production__gallery {
+    flex-direction: column;
+  }
+
+  .buildings-production__main-image {
+    flex: 0 0 auto;
+    border-radius: 20px;
+  }
+
+  .buildings-production__side-images {
+    flex: 0 0 80px;
+    flex-direction: row;
+  }
+
+  .buildings-production__side-image {
+    height: 80px;
+    border-radius: 20px;
+  }
+
+  .buildings-production__facts {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .buildings-production__fact-title {
+    margin-bottom: 8px;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .buildings-production__fact-description {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+.buildings-prices {
+  color: #4d4d4d;
+  background: #ffffff;
+  border-radius: 0.5556rem;
+}
+
+.buildings-prices__container {
+  padding: 60px 40px;
+  gap: 36px;
+}
+
+.buildings-prices__title {
+  color: #2C2C2CE5;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.buildings-prices .prices__option.is-active {
+  background: #fff500;
+}
+
+@media (max-width: 1200px) {
+  .buildings-prices__container {
+    padding: 40px;
+    gap: 20px;
+  }
+  .buildings-prices__title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+
+@media (max-width: 680px) {
+  .buildings-prices__container {
+    padding: 15px 0.7778rem 20px;
+  }
+  .buildings-prices__title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
 
 /* footer */
 

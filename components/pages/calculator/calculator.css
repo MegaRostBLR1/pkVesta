@@ -62,7 +62,6 @@ h4 {
 .calculator-hero__header {
   gap: 14px;
   margin-bottom: 36px;
-
 }
 .calculator-hero__content {
   max-width: 1218px;
@@ -620,11 +619,7 @@ h4 {
 
 /* calculator-features */
 .calculator-features {
-  margin: 0 10px 10px ;
-}
-.calculator-features .home-agro__panel {
-  background: none;
-  gap: 24px;
+  margin: 0 10px 10px;
 }
 
 .calculator-features__tabs {
@@ -632,7 +627,6 @@ h4 {
   justify-content: center;
   align-items: center;
   gap: 44px;
-
 }
 
 .calculator-features__tabs-item {
@@ -641,7 +635,7 @@ h4 {
   font-weight: 600;
   line-height: 160%;
   text-transform: uppercase;
-  color: #5D5D5D4D;
+  color: #5d5d5d4d;
 }
 
 .calculator-features__tabs-item + .calculator-features__tabs-item::before {
@@ -652,16 +646,19 @@ h4 {
   width: 4px;
   height: 4px;
   transform: translateY(-50%);
-  background-color: #5D5D5D;
+  background-color: #5d5d5d;
   pointer-events: none;
 }
+.calculator-features__tabs-item:hover {
+  color: #5d5d5db2;
+}
+.calculator-features__tabs-item:active {
+  color: #5d5d5de5;
+}
 .calculator-features__tabs-item.calculator-features__tabs--active {
-  color: #5D5D5D;
+  color: #5d5d5d;
 }
 
-.calculator-features .home-agro__header {
-  gap: 24px;
-}
 .calculator-features__descr {
   max-width: 900px;
   font-size: 24px;
@@ -669,11 +666,6 @@ h4 {
   text-align: center;
 }
 
-.calculator-features .home-agro__layout {
-  grid-template-columns: minmax(0, 710px) minmax(0, 658px);
-  gap: 80px;
-  justify-content: space-between;
-}
 .calculator-features__buildings-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -713,7 +705,7 @@ h4 {
 .buildings-item__price {
   font-size: 18px;
   line-height: 150%;
-  color: #4D4D4DCC;
+  color: #4d4d4dcc;
 }
 .calculator__tablet-visual {
   display: none;
@@ -728,12 +720,6 @@ h4 {
   }
   .calculator-features__descr {
     font-size: 20px;
-  }
-  .calculator-features .home-agro__layout {
-    grid-template-columns: 1fr;
-  }
-  .calculator-features .home-agro__header {
-    gap: 14px;
   }
   .calculator-features__buildings-list {
     gap: 18px;
@@ -758,13 +744,6 @@ h4 {
   }
 }
 @media screen and (max-width: 680px) {
-  .calculator-features .home-agro__header {
-    padding-top: 0;
-  }
-
-  .calculator-features .home-agro__panel {
-    padding-top: 24px;
-  }
   .calculator-features__tabs-item {
     font-size: 14px;
   }
@@ -772,7 +751,6 @@ h4 {
     font-size: 15px;
   }
 }
-
 
 /* comparison */
 :root {
@@ -807,7 +785,14 @@ h4 {
   gap: 24px;
 }
 .toggle__input {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.toggle__input:focus-visible + .toggle__switch {
+  outline: 2px solid #324c88;
+  outline-offset: 2px;
 }
 .toggle__switch {
   width: 84px;
@@ -827,9 +812,7 @@ h4 {
   height: 36px;
   background-color: #324c881a;
   border-radius: 50%;
-  transition:
-          transform 0.3s ease,
-          background-color 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 .toggle__input:checked + .toggle__switch::after {
   background-color: #324c88;
@@ -857,7 +840,6 @@ h4 {
   grid-template-columns: 91px auto 91px;
   gap: 24px;
   margin-bottom: 24px;
-  min-height: 108px;
   justify-content: end;
   position: relative;
 }
@@ -882,25 +864,31 @@ h4 {
 .comparison__nav-arr:hover {
   background: #e0e0e0;
 }
+.comparison__nav-arr:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
 
+/* Колонки стоят в один ряд, видно три. Остальные листаются стрелками */
 .comparison__slider-wrapper {
   display: grid;
   justify-items: center;
   align-items: center;
-  grid-template-columns: repeat(3, var(--comparison-col-width));
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  grid-auto-columns: var(--comparison-col-width);
+  grid-auto-flow: column;
+  width: calc(3 * var(--comparison-col-width));
+  overflow: hidden;
 }
-.comparison__slider-wrapper::-webkit-scrollbar {
-  display: none;
+/* Колонки шапки и всех строк сдвигаются вместе: сдвиг задает JS в --comparison-shift у таблицы */
+.comparison__slider-wrapper > * {
+  transform: translateX(var(--comparison-shift, 0px));
+  transition: transform 0.3s ease;
 }
 
 .system-card {
   text-align: center;
   width: 100%;
-  padding: 10px 20px;
+  padding: 20px;
   gap: 8px;
 }
 .system-card__name {
@@ -934,6 +922,16 @@ h4 {
   color: #2c2c2ce5;
 }
 
+.comparison__row-btn {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+.comparison__row-btn svg {
+  width: 100%;
+  height: 100%;
+}
+
 .comparison__row-body {
   display: none;
   justify-content: center;
@@ -947,14 +945,22 @@ h4 {
 
 .comparison__row-content {
   display: flex;
-  padding-right: 115px;
+  gap: 25px;
+  padding: 10px 115px 10px 0;
   min-height: 112px;
   align-items: center;
   justify-content: space-between;
 }
 .comparison__row--open .comparison__row-btn {
   transform: rotate(180deg);
-  transition: transform 0.3s;
+}
+
+/* Дополнительные строки скрыты, пока не нажата «Показать еще» */
+.comparison__row--extra {
+  display: none;
+}
+.comparison__table.is-expanded .comparison__row--extra {
+  display: block;
 }
 
 .row-content--without-title {
@@ -962,6 +968,7 @@ h4 {
 }
 
 .row-content__title {
+  max-width: 489px;
   font-weight: 400;
   font-size: 24px;
   line-height: 36px;
@@ -1007,7 +1014,7 @@ h4 {
 .comparison__slider-controls-mob {
   display: none;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   max-width: 300px;
   width: 100%;
 }
@@ -1034,7 +1041,7 @@ h4 {
     --comparison-col-width: 230px;
   }
   .row-content__value {
-    padding: 5px;
+    padding: 0 5px;
   }
   .comparison__nav {
     gap: 0px;
@@ -1044,7 +1051,7 @@ h4 {
     height: 48px;
   }
   .system-card {
-    padding: 0 5px;
+    padding: 10px 5px;
   }
   .system-card__name {
     font-size: 18px;
@@ -1059,11 +1066,21 @@ h4 {
   }
 }
 @media (max-width: 1100px) {
+  :root {
+    --comparison-col-width: 220px;
+  }
   .comparison__container {
     padding: 40px 40px;
   }
+  .buildings-comparison__title {
+    line-height: 38px;
+  }
   .comparison__slider-wrapper {
     width: 455px;
+    gap: 15px;
+  }
+  .row-content__value {
+    padding: 0;
   }
   .comparison__row-header {
     min-height: 82px;
@@ -1090,6 +1107,10 @@ h4 {
   }
   .value--text {
     font-size: 16px;
+  }
+  .dot {
+    width: 14px;
+    height: 14px;
   }
 }
 @media (max-width: 850px) {
@@ -1119,10 +1140,11 @@ h4 {
     display: block;
   }
   .comparison__row-content {
-    padding-right: 0;
+    padding: 0;
   }
   .row-content__value-wrapper {
     align-self: center;
+    padding: 10px 0;
   }
 }
 @media (max-width: 567px) {
@@ -1130,13 +1152,15 @@ h4 {
     padding: 20px 10px;
   }
   :root {
-    --comparison-col-width: 50%;
+    --comparison-col-width: calc((100% - 15px) / 2);
   }
   .comparison__slider-wrapper {
     width: 100%;
   }
   .comparison__title {
     margin-bottom: 18px;
+    font-size: 20px;
+    line-height: 28px;
   }
   .toggle {
     flex-direction: column-reverse;
@@ -1153,15 +1177,27 @@ h4 {
   .toggle__input:checked + .toggle__switch::after {
     transform: translate(-27px);
   }
+  .comparison__nav {
+    gap: 28px;
+    margin-bottom: 9px;
+  }
+  .system-card {
+    padding: 0;
+  }
   .comparison__row-header {
     min-height: 68px;
+    padding: 12px 0;
+  }
+  .comparison__row-btn {
+    width: 28px;
+    height: 28px;
   }
   .comparison__row-content {
     min-height: 62px;
   }
   .comparison__row-body {
     gap: 8px;
-    padding: 8px 0;
+    padding: 10px 0;
   }
   .comparison__row-title {
     font-size: 16px;
@@ -1177,10 +1213,17 @@ h4 {
   }
   .value--text {
     font-size: 12px;
+    line-height: 18px;
   }
   .dot {
     width: 12px;
     height: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .comparison__slider-wrapper > *,
+  .comparison__row-btn {
+    transition: none;
   }
 }
 
@@ -1350,5 +1393,4 @@ h4 {
   .calculator-support__descr {
     font-size: 14px;
   }
-
 }

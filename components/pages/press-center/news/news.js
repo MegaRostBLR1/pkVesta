@@ -1,10 +1,10 @@
 function initNews() {
-  const filterButtons = document.querySelectorAll(".press-news__filter-button[data-filter-type]");
-  const mobileButton = document.querySelector(".press__mobile-filter-button");
+  const filterButtons = document.querySelectorAll(".filter-dropdown__button[data-filter-type]");
+  const mobileButton = document.querySelector(".mob-filter-button"); // ←
   const overlay = document.querySelector("#press-news-filter-dialog");
-  const dialog = overlay?.querySelector(".press__filter-dialog");
-  const closeButton = overlay?.querySelector(".press__filter-dialog-close");
-  const backButton = overlay?.querySelector(".press__filter-back");
+  const dialog = overlay?.querySelector(".mob-filter-dialog"); // ←
+  const closeButton = overlay?.querySelector(".mob-filter-dialog__close"); // ←
+  const backButton = overlay?.querySelector(".mob-filter-overlay__back"); // ←
   const showMoreButtons = overlay?.querySelectorAll("[data-expand-list]");
   let previousFocus = null;
   const selected = { months: "", years: "" };
@@ -26,7 +26,7 @@ function initNews() {
   };
 
   const syncDesktopLabel = (type, value) => {
-    const button = document.querySelector('[data-filter-type="' + type + '"]');
+    const button = document.querySelector('.filter-dropdown__button[data-filter-type="' + type + '"]');
     const label = button?.querySelector("span");
     if (label) {
       const prefix = type === "months" ? "По месяцам:" : "По годам:";
@@ -43,10 +43,10 @@ function initNews() {
       button.setAttribute("aria-expanded", String(shouldOpen));
       if (menu) menu.hidden = !shouldOpen;
     });
-    menu?.querySelectorAll(".press-news__filter-option").forEach((option) => {
+    menu?.querySelectorAll(".filter-dropdown__option").forEach((option) => {
       option.addEventListener("click", () => {
         const value = option.dataset.filterValue || "";
-        menu.querySelectorAll(".press-news__filter-option").forEach((item) => {
+        menu.querySelectorAll(".filter-dropdown__option").forEach((item) => {
           const active = item === option;
           item.classList.toggle("is-selected", active);
           item.setAttribute("aria-selected", String(active));
@@ -58,12 +58,22 @@ function initNews() {
     });
   });
 
-  const openDialog = () => {
+   const updateShowMore = () => {
+    showMoreButtons?.forEach((button) => {
+      const list = overlay?.querySelector('[data-filter-list="' + button.dataset.expandList + '"]');
+      if (!list) return;
+      const expanded = button.getAttribute("aria-expanded") === "true";
+      button.hidden = !expanded && list.scrollHeight <= list.clientHeight;
+    });
+  };
+
+    const openDialog = () => {
     if (!overlay || !dialog) return;
     previousFocus = document.activeElement;
     overlay.hidden = false;
     mobileButton?.setAttribute("aria-expanded", "true");
-    document.body.classList.add("press-filter-open");
+    document.body.classList.add("mob-filter-open");
+    updateShowMore();
     closeButton?.focus();
   };
 
@@ -71,7 +81,7 @@ function initNews() {
     if (!overlay) return;
     overlay.hidden = true;
     mobileButton?.setAttribute("aria-expanded", "false");
-    document.body.classList.remove("press-filter-open");
+    document.body.classList.remove("mob-filter-open");
     if (previousFocus instanceof HTMLElement) previousFocus.focus();
   };
 
@@ -84,10 +94,10 @@ function initNews() {
 
   overlay?.querySelectorAll("[data-filter-list]").forEach((list) => {
     const type = list.dataset.filterList;
-    list.querySelectorAll(".press__filter-option").forEach((option) => {
+    list.querySelectorAll(".mob-filter-dialog__option").forEach((option) => { // ←
       option.addEventListener("click", () => {
         const value = option.dataset.filterValue || "";
-        list.querySelectorAll(".press__filter-option").forEach((item) => {
+        list.querySelectorAll(".mob-filter-dialog__option").forEach((item) => { // ←
           const active = item === option;
           item.classList.toggle("is-selected", active);
           item.setAttribute("aria-pressed", String(active));
@@ -105,14 +115,13 @@ function initNews() {
       const expanded = button.getAttribute("aria-expanded") !== "true";
       button.setAttribute("aria-expanded", String(expanded));
       if (list) list.classList.toggle("is-expanded", expanded);
-      if (list) list.style.maxHeight = expanded ? "none" : type === "months" ? "166px" : "130px";
       const label = button.querySelector("span");
       if (label) label.textContent = expanded ? "Скрыть" : "Показать еще";
     });
   });
 
   document.addEventListener("click", (event) => {
-    if (!event.target.closest(".press-news__filter-dropdown")) closeMenus();
+    if (!event.target.closest(".filter-dropdown")) closeMenus();
   });
 
   document.addEventListener("keydown", (event) => {
@@ -120,8 +129,8 @@ function initNews() {
       closeMenus();
       if (overlay && !overlay.hidden) closeDialog();
     }
-    if (event.key === "Tab" && overlay && !overlay.hidden && dialog) {
-      const focusable = dialog.querySelectorAll(
+    if (event.key === "Tab" && overlay && !overlay.hidden) {
+      const focusable = overlay.querySelectorAll( // ← overlay вместо dialog
         'button, [href], input, textarea, select, [tabindex]:not([tabindex="-1"])'
       );
       if (!focusable.length) return;
