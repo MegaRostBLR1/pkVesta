@@ -73,7 +73,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 36px;
     width: 100%;
 }
 
@@ -132,98 +132,8 @@
     object-fit: cover;
 }
 
-@media screen and (max-width: 1300px) {
-    .about {
-        padding: 48px 30px;
-    }
-
-    .about__title {
-        font-size: 48px;
-        line-height: 1.3;
-    }
-
-    .about__description {
-        font-size: 20px;
-    }
-
-    .about__button.btn {
-        min-height: 76px;
-        padding: 24px 28px;
-    }
-
-    .about__media-frame {
-        aspect-ratio: 16 / 9;
-    }
-}
-
-@media screen and (max-width: 680px) {
-    .about {
-        padding: 32px 10px;
-    }
-
-    .about__container,
-    .about__intro {
-        gap: 24px;
-    }
-
-    .about__title {
-        font-size: 28px;
-        line-height: 1.25;
-    }
-
-    .about__description {
-        font-size: 16px;
-        line-height: 1.5;
-    }
-
-    .about__actions {
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-    }
-
-    .about__button.btn {
-        width: 100%;
-        min-width: 0;
-        min-height: 54px;
-        padding: 14px 18px;
-        border-radius: 14px;
-        font-size: 14px;
-        line-height: 1.4;
-    }
-
-    .about__media {
-        gap: 12px;
-    }
-
-    .about__media-switch {
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .about__media-tab {
-        padding: 10px 0;
-        font-size: 12px;
-    }
-
-    .about__media-frame {
-        aspect-ratio: 4 / 3;
-        border-radius: 16px;
-    }
-}
-
-@media screen and (max-width: 360px) {
-    .about__media-switch {
-        gap: 8px;
-    }
-
-    .about__media-tab {
-        font-size: 11px;
-    }
-}
-
 /* Figma: About, desktop frame 1440 px (1857:129646). */
-@media screen and (min-width: 1301px) and (max-width: 1600px) {
+@media screen and (max-width: 1600px) {
     .about {
         padding: 64px 60px;
         border-radius: 0 0 30px 30px;
@@ -293,8 +203,42 @@
     }
 }
 
+/* Общая адаптация для ширины до 1300 px. */
+@media screen and (max-width: 1300px) {
+    .about {
+        padding: 48px 30px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .about__container {
+        max-width: none;
+    }
+
+    .about__title {
+        max-width: 1338px;
+        font-size: 48px;
+        line-height: 1.3;
+    }
+
+    .about__description {
+        max-width: 1052px;
+        font-size: 20px;
+    }
+
+    .about__button.btn {
+        min-height: 76px;
+        padding: 24px 28px;
+    }
+
+    .about__media-frame {
+        max-width: 1700px;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+}
+
 /* Figma: About, responsive frame 1024 px (1857:133156). */
-@media screen and (min-width: 681px) and (max-width: 1100px) {
+@media screen and (max-width: 1100px) {
     .about {
         padding: 40px;
         border-radius: 0 0 10px 10px;
@@ -340,6 +284,7 @@
 
     .about__media-frame {
         max-width: none;
+        height: auto;
         aspect-ratio: 1220 / 600;
         border-radius: 20px;
     }
@@ -424,200 +369,91 @@
 
     .about__media-frame {
         max-width: none;
+        height: auto;
         aspect-ratio: 1220 / 600;
         border-radius: 20px;
     }
 }
 
+@media screen and (max-width: 360px) {
+    .about__media-switch {
+        gap: 8px;
+    }
 
-/* Figma: About history block, desktop 1920 px (1857:126148). */
+    .about__media-tab {
+        font-size: 11px;
+    }
+}
+
+
+
+/* Figma: «Вместе с 1991 г.», layouts 1920 / 1440 / 1024 / 360 px. */
 .about-history {
-    position: relative;
-    padding: 4.444rem 2.222rem;
-    border-radius: 1.167rem;
-    background: #f5f8f7;
+    padding: 80px 40px;
+    border-radius: 21px;
+    background: #F5F8F7;
 }
 
 .about-history__layout {
-    position: relative;
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1000px) minmax(0, 1fr);
+    grid-template-rows: minmax(952px, auto);
     align-items: center;
-    min-height: 52.889rem;
-}
-
-.about-history__visual {
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    right: 0;
-    width: 64%;
-    height: 57.056rem;
-    transform: translateY(-50%);
-}
-
-.about-history__background {
-    position: absolute;
-    top: -5.5rem;
-    right: -1.111rem;
-    display: block;
-    width: 67.833rem;
-    max-width: none;
-    height: 57.056rem;
-    object-fit: cover;
-    mix-blend-mode: multiply;
-    pointer-events: none;
-}
-
-.about-history__tiles {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 31.806rem;
-    height: 31.806rem;
-    transform: translate(-50%, -35%);
-}
-
-.about-history__tile {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 11.111rem;
-    height: 11.111rem;
-    border-radius: 0.556rem;
-    color: #324c88;
-    text-decoration: none;
-    transform: rotate(45deg);
-    transition: box-shadow 180ms ease, background-color 180ms ease;
-}
-
-.about-history__tile--video {
-    background: rgb(255 255 255 / 92%);
-    backdrop-filter: blur(2px);
-}
-
-.about-history__tile--download {
-    top: 57%;
-    left: 0;
-    color: #fff;
-    background: #324c88;
-}
-
-.about-history__tile--video-30 {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%) rotate(45deg);
-}
-
-.about-history__tile--video-25 {
-    top: 29%;
-    right: 0;
-}
-
-.about-history__tile--video-35 {
-    top: 29%;
-    left: 0;
-}
-
-.about-history__tile-icon {
-    position: absolute;
-    top: 1.111rem;
-    left: 1.111rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.667rem;
-    height: 2.667rem;
-    border-radius: 1.111rem;
-    background: #324c88;
-    transform: rotate(-45deg);
-}
-
-.about-history__tile-icon--light {
-    background: #fff;
-}
-
-.about-history__tile-icon img {
-    display: block;
-    width: 1.333rem;
-    height: 1.333rem;
-}
-
-.about-history__tile-icon--light img {
-    width: 1.333rem;
-    height: 1.333rem;
-}
-
-.about-history__tile-label {
-    display: block;
-    width: 9.833rem;
-    font-family: "Onest-SemiBold", sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.444rem;
-    text-align: center;
-    text-transform: uppercase;
-    transform: rotate(-45deg);
-}
-
-.about-history__tile:hover,
-.about-history__tile:focus-visible {
-    box-shadow: 0 0.333rem 1.111rem rgb(50 76 136 / 18%);
-}
-
-.about-history__tile:focus-visible {
-    outline: 2px solid #324c88;
-    outline-offset: 4px;
+    width: 100%;
+    max-width: 1830px;
+    margin: 0 auto;
+    padding-bottom: 111px;
 }
 
 .about-history__content {
-    position: relative;
+    grid-column: 1;
+    grid-row: 1;
     z-index: 2;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    gap: 1.333rem;
-    width: 55.556%;
-    padding: 3.333rem;
-    border-radius: 1.111rem;
-    background: #fff;
+    gap: 24px;
+    width: 100%;
+    min-width: 0;
+    padding: 60px;
+    border-radius: 20px;
+    background: #FFFFFF;
 }
 
 .about-history__heading {
     display: flex;
     flex-direction: column;
-    gap: 1.667rem;
+    gap: 30px;
 }
 
 .about-history__eyebrow {
     margin: 0;
-    color: #4d4d4de6;
+    color: #4D4D4DE6;
     font-family: "Onest-SemiBold", sans-serif;
-    font-size: 1.333rem;
+    font-size: 24px;
     font-weight: 600;
-    line-height: 1.5;
+    line-height: 31px;
     text-transform: uppercase;
 }
 
 .about-history__title {
     margin: 0;
-    text-transform: none;
-    color: #4d4d4d;
+    color: #4D4D4D;
     font-family: "Onest-SemiBold", sans-serif;
-    font-size: 2.667rem;
+    font-size: 48px;
     font-weight: 600;
-    line-height: 1.333;
+    line-height: 64px;
+    text-transform: none;
 }
 
 .about-history__text {
     display: flex;
     flex-direction: column;
-    gap: 1.333rem;
-    color: #4d4d4de6;
+    gap: 24px;
+    color: #4D4D4DE6;
     font-family: "Onest-Regular", sans-serif;
-    font-size: 1.333rem;
+    font-size: 24px;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 36px;
 }
 
 .about-history__text p {
@@ -629,66 +465,199 @@
     font-weight: 600;
 }
 
-@media screen and (min-width: 1101px) and (max-width: 1600px) {
+.about-history__visual {
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    grid-template-areas: "history-visual";
+    align-self: center;
+    justify-self: center;
+    max-width: none;
+    pointer-events: none;
+}
+
+.about-history__background {
+    grid-area: history-visual;
+    align-self: start;
+    justify-self: end;
+    display: block;
+    max-width: none;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
+.about-history__tiles {
+    grid-area: history-visual;
+    align-self: end;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: repeat(3, 145px);
+    grid-template-rows: repeat(3, 145px);
+    width: 435px;
+    height: 435px;
+    margin: 0 -25px -185px 0;
+    pointer-events: auto;
+}
+
+.about-history__tile {
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    color: #324C88;
+    text-decoration: none;
+    transform: rotate(45deg);
+    transition: box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.about-history__tile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    transform: rotate(-45deg);
+}
+
+.about-history__tile--video {
+    background: rgb(255 255 255 / 92%);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+}
+
+.about-history__tile--download {
+    grid-area: 3 / 2;
+    color: #FFFFFF;
+    background: #324C88;
+}
+
+.about-history__tile--video-35 {
+    grid-area: 1 / 2;
+}
+
+.about-history__tile--video-30 {
+    grid-area: 2 / 3;
+}
+
+.about-history__tile--video-25 {
+    grid-area: 2 / 1;
+}
+
+.about-history__tile-icon {
+    display: flex;
+    flex: 0 0 48px;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 20px;
+    background: #324C88;
+}
+
+.about-history__tile-icon--light {
+    background: #FFFFFF;
+}
+
+.about-history__tile-icon img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    max-width: none;
+}
+
+.about-history__tile-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 177px;
+    min-height: 52px;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.about-history__tile:hover {
+    box-shadow: 0 6px 20px rgb(50 76 136 / 18%);
+}
+
+.about-history__tile:focus-visible {
+    outline: 2px solid #324C88;
+    outline-offset: 5px;
+}
+
+/* Figma: «Вместе с 1991 г.», desktop 1440 px. */
+@media screen and (max-width: 1600px) {
     .about-history {
-        padding: 4.444rem 2.222rem;
+        border-radius: 0;
     }
 
     .about-history__layout {
-        min-height: 52.889rem;
+        grid-template-columns: minmax(0, 636px) minmax(0, 1fr);
+    }
+
+}
+
+/* Перестроение about-history в вертикальную компоновку без изменения размеров элементов. */
+@media screen and (max-width: 1280px) {
+    .about-history__layout {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto auto;
+        align-items: start;
+        padding-bottom: 0;
     }
 
     .about-history__content {
-        width: 46.7%;
-        padding: 3.333rem;
+        grid-column: 1;
+        grid-row: 1;
     }
 
     .about-history__visual {
-        right: 0;
-        width: 89.6%;
-        height: 52.889rem;
-        transform: translateY(-50%);
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: center;
+        width: min(813px, 100%);
+        max-width: 100%;
+        aspect-ratio: 813 / 853;
     }
 
     .about-history__background {
-        top: -5.5rem;
-        right: -1.111rem;
-        width: 67.833rem;
-        height: 57.056rem;
+        width: 83.27%;
+        height: 66.82%;
+        margin-top: -3.75%;
+        justify-self: center;
     }
 
     .about-history__tiles {
-        left: 40%;
-        transform: translate(-50%, -35%);
-    }
-
-    .about-history__title {
-        font-size: 2.667rem;
-    }
-
-    .about-history__text {
-        font-size: 1.333rem;
-        line-height: 1.5;
+        width: auto;
+        height: auto;
+        margin: 0;
+        transform: translateY(-115px);
     }
 }
 
-/* Figma: блок «Вместе с 1991 г.», планшетный кадр 1024 px (1857:133240). */
-@media screen and (min-width: 681px) and (max-width: 1100px) {
+/* Figma: «Вместе с 1991 г.», tablet 1024 px. */
+@media screen and (max-width: 1100px) {
     .about-history {
         padding: 40px;
         border-radius: 10px;
     }
 
     .about-history__layout {
-        display: flex;
-        align-items: flex-start;
-        min-height: 1097px;
+        min-height: 0;
     }
 
     .about-history__content {
-        width: 100%;
         padding: 40px;
-        border-radius: 20px;
+        gap: 14px;
     }
 
     .about-history__heading {
@@ -712,106 +681,54 @@
     }
 
     .about-history__visual {
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 952px;
-        transform: none;
-        pointer-events: none;
-    }
-
-    .about-history__background {
-        top: 390px;
-        right: 50px;
-        width: 677px;
-        max-width: 100%;
-        height: 570px;
-        object-fit: contain;
+        align-self: start;
+        margin-top: -48px;
     }
 
     .about-history__tiles {
-        top: 227px;
-        left: auto;
-        right: 100px;
-        width: 572px;
-        height: 573px;
+        align-self: start;
+        justify-self: center;
+        grid-template-columns: repeat(3, 123px);
+        grid-template-rows: repeat(3, 123px);
+        width: 369px;
+        height: 369px;
+        margin-top: 284px;
         transform: none;
-        pointer-events: auto;
     }
 
     .about-history__tile {
         width: 170px;
         height: 170px;
-        border-radius: 10px;
-    }
-
-    .about-history__tile--download {
-        top: 240px;
-        left: 238px;
-    }
-
-    .about-history__tile--video-30 {
-        top: 120px;
-        right: 42px;
-        left: auto;
-        transform: rotate(45deg);
-    }
-
-    .about-history__tile--video-25 {
-        top: 120px;
-        right: 287px;
-    }
-
-    .about-history__tile--video-35 {
-        top: 0;
-        right: 165px;
-        left: auto;
-    }
-
-    .about-history__tile-icon {
-        top: 18px;
-        left: 18px;
-        width: 48px;
-        height: 48px;
-        border-radius: 20px;
-    }
-
-    .about-history__tile-icon img {
-        width: 24px;
-        height: 24px;
+        gap: 20px;
     }
 
     .about-history__tile-label {
         width: 157px;
+        min-height: 44px;
         font-size: 16px;
-        line-height: 22px;
+        line-height: 1.375;
+    }
+
+}
+
+/* Дополнительное пространство для выступающих плиток на узких tablet-экранах. */
+@media screen and (min-width: 681px) and (max-width: 740px) {
+    .about-history__layout {
+        padding-bottom: 90px;
     }
 }
 
-
-/* Figma: About history, mobile frame 360 px (1857:136758). */
+/* Figma: «Вместе с 1991 г.», mobile 360 px. */
 @media screen and (max-width: 680px) {
     .about-history {
         padding: 20px 10px;
         border-radius: 10px;
     }
 
-    .about-history__layout {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        min-height: 0;
-    }
-
     .about-history__content {
-        order: 0;
-        gap: 14px;
-        width: 100%;
         padding: 20px;
         border-radius: 20px;
+        gap: 14px;
     }
 
     .about-history__heading {
@@ -835,68 +752,37 @@
     }
 
     .about-history__visual {
-        position: relative;
-        order: 1;
-        top: auto;
-        right: auto;
-        width: 100%;
-        height: 496px;
-        margin-top: 0;
-        transform: none;
-        pointer-events: auto;
+        width: min(348px, calc(100vw - 12px));
+        max-width: none;
+        margin-top: -32px;
+        aspect-ratio: 348 / 496;
     }
 
     .about-history__background {
-        top: 0;
-        right: 0;
         width: 100%;
-        max-width: none;
-        height: 293px;
-        object-fit: contain;
+        height: 59.07%;
+        margin-top: 0;
+        object-position: center;
     }
 
     .about-history__tiles {
-        top: 0;
-        left: 50%;
-        width: 348px;
-        height: 496px;
-        transform: translateX(-50%);
+        align-self: end;
+        grid-template-columns: repeat(3, 87px);
+        grid-template-rows: repeat(3, 87px);
+        width: 261px;
+        height: 261px;
+        margin: 39.8% 0 0;
+        transform: translateY(-60px);
     }
 
     .about-history__tile {
         width: 120px;
         height: 120px;
-        border-radius: 10px;
-    }
-
-    .about-history__tile--download {
-        top: 326px;
-        left: auto;
-        right: 87px;
-    }
-
-    .about-history__tile--video-30 {
-        top: 241px;
-        right: 0;
-        left: auto;
-        transform: rotate(45deg);
-    }
-
-    .about-history__tile--video-25 {
-        top: 241px;
-        right: 174px;
-        left: auto;
-    }
-
-    .about-history__tile--video-35 {
-        top: 156px;
-        right: 87px;
-        left: auto;
+        gap: 16px;
     }
 
     .about-history__tile-icon {
-        top: 12px;
-        left: 12px;
+        flex-basis: 28px;
         width: 28px;
         height: 28px;
         border-radius: 12px;
@@ -909,11 +795,59 @@
 
     .about-history__tile-label {
         width: 115px;
+        min-height: 36px;
         font-size: 12px;
-        line-height: 18px;
+        line-height: 1.5;
+    }
+
+    .about-history__tile--download .about-history__tile-label {
+        width: 138px;
     }
 }
 
+/* Дополнительная адаптация about-history для узких экранов до 340 px. */
+@media screen and (max-width: 340px) {
+    .about-history__tiles {
+        grid-template-columns: repeat(3, 75px);
+        grid-template-rows: repeat(3, 75px);
+        width: 225px;
+        height: 225px;
+        transform: translateY(-52px);
+    }
+
+    .about-history__tile {
+        width: 104px;
+        height: 104px;
+        gap: 12px;
+    }
+
+    .about-history__tile-container {
+        gap: 12px;
+    }
+
+    .about-history__tile-icon {
+        flex-basis: 24px;
+        width: 24px;
+        height: 24px;
+        border-radius: 10px;
+    }
+
+    .about-history__tile-icon img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .about-history__tile-label {
+        width: 99px;
+        min-height: 31px;
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+    .about-history__tile--download .about-history__tile-label {
+        width: 119px;
+    }
+}
 
 /* Figma: About timeline, desktop frame 1920 px (1857:126762). */
 .about-timeline {
@@ -1027,40 +961,38 @@
 }
 
 .about-timeline__arrow {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 0 0 90.51px;
-    width: 90.51px;
-    height: 90.51px;
-    border-radius: 20px;
-}
-
-.about-timeline__arrow::before {
-    position: absolute;
     width: 64px;
     height: 64px;
+    padding: 0;
     border: 1px solid #FFFFFF80;
     border-radius: 20px;
     background: #FFFFFF;
-    content: '';
+    cursor: pointer;
 }
 
-.about-timeline__arrow img {
-    position: relative;
-    z-index: 1;
+.about-timeline__arrow-icon {
     display: block;
+    flex: 0 0 40px;
     width: 40px;
     height: 40px;
-    object-fit: contain;
 }
 
-.about-timeline__arrow--previous img {
-    transform: rotate(-45deg);
+.about-timeline__arrow--previous {
+    transform: rotate(45deg);
 }
 
-.about-timeline__arrow--next img {
+.about-timeline__arrow-icon--previous {
+    transform: rotate(-135deg);
+}
+
+.about-timeline__arrow--next {
+    transform: rotate(45deg);
+}
+
+.about-timeline__arrow-icon--next {
     transform: rotate(45deg);
 }
 
@@ -1086,8 +1018,51 @@
     align-items: center;
     gap: 36px;
     width: 100%;
-    padding: 0;
+    padding: 0 5px 24px;
     list-style: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+}
+
+.about-timeline__years::-webkit-scrollbar {
+    display: none;
+}
+
+.about-timeline__years:focus-visible {
+    outline: 2px solid #FFFFFF;
+    outline-offset: 4px;
+}
+
+.about-timeline__scrollbar {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    margin-top: -13px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: rgb(255 255 255 / 10%);
+}
+
+.about-timeline__scrollbar-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-radius: 10px;
+    background: #FFFFFF;
+    cursor: grab;
+    touch-action: none;
+}
+
+.about-timeline__scrollbar-thumb:active {
+    cursor: grabbing;
+}
+
+.about-timeline__scrollbar-thumb:focus-visible {
+    outline: 2px solid #FFFFFF;
+    outline-offset: 3px;
 }
 
 .about-timeline__milestone {
@@ -1118,11 +1093,43 @@
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+}
+
+.about-timeline__milestone-mark::before,
+.about-timeline__milestone-mark::after {
+    position: absolute;
+    z-index: 1;
+    top: 48.66%;
+    width: 3.51%;
+    height: 3.36%;
+    border-radius: 50%;
+    background: #FFFFFF;
+    content: '';
+}
+
+.about-timeline__milestone-mark::before {
+    left: -0.88%;
+}
+
+.about-timeline__milestone-mark::after {
+    right: -0.88%;
+}
+
+.about-timeline__milestone.is-active .about-timeline__milestone-mark img {
+    inset: 0 auto auto -2.29%;
+    width: auto;
+    height: 100%;
+    max-width: none;
+}
+
+.about-timeline__milestone.is-active .about-timeline__milestone-mark::before,
+.about-timeline__milestone.is-active .about-timeline__milestone-mark::after {
+    background: #324C88;
 }
 
 .about-timeline__milestone-mark span {
     position: relative;
+    z-index: 2;
     color: #FFFFFF;
     font-family: 'Onest-SemiBold', sans-serif;
     font-size: 24px;
@@ -1148,190 +1155,7 @@
     outline-offset: 4px;
 }
 
-@media screen and (max-width: 1300px) {
-    .about-timeline__panel {
-        padding: 56px 32px;
-    }
-
-    .about-timeline__container {
-        gap: 64px;
-    }
-
-    .about-timeline__story {
-        gap: 28px;
-    }
-
-    .about-timeline__year {
-        font-size: 88px;
-    }
-
-    .about-timeline__story-title {
-        font-size: 28px;
-    }
-
-    .about-timeline__description p {
-        font-size: 18px;
-        line-height: 1.5;
-    }
-
-    .about-timeline__image {
-        flex-basis: 48%;
-    }
-
-    .about-timeline__years,
-    .about-timeline__milestone {
-        gap: 16px;
-    }
-
-    .about-timeline__milestone-mark {
-        flex-basis: 86px;
-        width: 86px;
-        height: 90px;
-    }
-
-    .about-timeline__milestone-mark span {
-        font-size: 18px;
-    }
-}
-
-@media screen and (max-width: 680px) {
-    .about-timeline {
-        padding: 5px;
-    }
-
-    .about-timeline__panel {
-        gap: 20px;
-        padding: 20px;
-        border-radius: 21px;
-    }
-
-    .about-timeline__container {
-        gap: 24px;
-    }
-
-    .about-timeline__header {
-        gap: 24px;
-    }
-
-    .about-timeline__eyebrow {
-        margin: 0;
-        font-size: 16px;
-        line-height: 1.4;
-    }
-
-    .about-timeline__title {
-        margin: 0;
-        font-size: 22px;
-        line-height: 32px;
-    }
-
-    .about-timeline__divider {
-        flex: 0 0 2px;
-    }
-
-    .about-timeline__story {
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: flex-start;
-        gap: 24px;
-    }
-
-    .about-timeline__story-content {
-        flex: 0 0 auto;
-        gap: 18px;
-        width: 100%;
-    }
-
-    .about-timeline__year {
-        font-size: 40px;
-        line-height: 1.2;
-    }
-
-    .about-timeline__description {
-        gap: 14px;
-    }
-
-    .about-timeline__story-title {
-        margin: 0;
-        font-size: 20px;
-        line-height: 26px;
-    }
-
-    .about-timeline__description p {
-        margin: 0;
-        font-size: 14px;
-        line-height: 22px;
-    }
-
-    .about-timeline__controls {
-        display: none;
-    }
-
-    .about-timeline__arrow {
-        flex-basis: 64px;
-        width: 64px;
-        height: 64px;
-    }
-
-    .about-timeline__arrow::before {
-        width: 48px;
-        height: 48px;
-        border-radius: 14px;
-    }
-
-    .about-timeline__arrow img {
-        width: 28px;
-        height: 28px;
-    }
-
-    .about-timeline__image {
-        flex: 0 0 auto;
-        width: 100%;
-        aspect-ratio: 801 / 549;
-        margin: 0;
-    }
-
-    .about-timeline__years {
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-    }
-
-    .about-timeline__milestone {
-        flex: 0 0 auto;
-        gap: 10px;
-    }
-
-    .about-timeline__milestone-mark {
-        flex-basis: 74px;
-        width: 74px;
-        height: 75px;
-    }
-
-    .about-timeline__milestone-mark span {
-        font-size: 16px;
-        line-height: 1;
-    }
-
-    .about-timeline__milestone-line {
-        flex: 0 0 36px;
-        min-width: 0;
-    }
-
-    .about-timeline__milestone:last-child {
-        flex: 0 0 auto;
-    }
-}
-
-
-/* Figma: About timeline, desktop frame 1440 px (1857:130352).
-   Отдельная адаптация сохраняет геометрию исходного кадра 1920 px выше этого диапазона. */
-@media screen and (min-width: 1301px) and (max-width: 1600px) {
+@media screen and (max-width: 1600px) {
     .about-timeline__panel {
         padding: 40px;
     }
@@ -1401,14 +1225,7 @@
     }
 }
 
-
-/* Figma: About timeline, tablet frame 1024 px (1857:133862).
-   На планшете текст и изображение располагаются вертикально; desktop-кадры 1440/1920 сохраняют свои правила. */
-@media screen and (min-width: 681px) and (max-width: 1300px) {
-    .about-timeline {
-        padding: 5px;
-    }
-
+@media screen and (max-width: 1300px) {
     .about-timeline__panel {
         padding: 40px;
         border-radius: 21px;
@@ -1494,6 +1311,120 @@
     .about-timeline__milestone-mark span {
         font-size: 24px;
     }
+}
+
+@media screen and (max-width: 1024px) {
+    .about-timeline__years {
+        flex-wrap: nowrap;
+        gap: 10px;
+        margin: 0;
+    }
+
+    .about-timeline__milestone {
+        flex: 1 0 auto;
+        gap: 10px;
+    }
+
+    .about-timeline__milestone-line {
+        flex: 1 1 36px;
+        min-width: 12px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .about-timeline__panel {
+        gap: 20px;
+        padding: 20px;
+        border-radius: 21px;
+    }
+
+    .about-timeline__container {
+        gap: 24px;
+    }
+
+    .about-timeline__header {
+        gap: 24px;
+    }
+
+    .about-timeline__eyebrow {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .about-timeline__title {
+        margin: 0;
+        font-size: 22px;
+        line-height: 32px;
+    }
+
+    .about-timeline__story {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 24px;
+    }
+
+    .about-timeline__story-content {
+        flex: 0 0 auto;
+        gap: 18px;
+        width: 100%;
+    }
+
+    .about-timeline__year {
+        font-size: 40px;
+        line-height: 1.2;
+    }
+
+    .about-timeline__description {
+        gap: 14px;
+    }
+
+    .about-timeline__story-title {
+        margin: 0;
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .about-timeline__description p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .about-timeline__controls {
+        display: none;
+    }
+
+    .about-timeline__image {
+        flex: 0 0 auto;
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        margin: 0;
+        overflow: visible;
+        border-radius: 0;
+        background: transparent;
+    }
+
+    .about-timeline__image img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .about-timeline__milestone-mark {
+        flex-basis: 74px;
+        width: 74px;
+        height: 75px;
+    }
+
+    .about-timeline__milestone-mark span {
+        font-size: 16px;
+        line-height: 1;
+    }
+
 }
 
 
@@ -1616,11 +1547,87 @@
 }
 
 .about-team__arrow--previous {
+    position: relative;
+    flex: 0 0 90.51px;
+    width: 90.51px;
+    height: 90.51px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    font-size: 0;
+    transform: none;
+}
+
+.about-team__arrow--previous::before {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 64px;
+    height: 64px;
+    border: 1px solid #FFFFFF80;
+    border-radius: 20px;
+    background: #FFFFFF;
+    content: "";
     transform: rotate(-45deg);
 }
 
+.about-team__arrow--previous img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    flex: 0 0 auto;
+    width: auto;
+    height: auto;
+    max-width: none;
+}
+
+.about-team__arrow--previous:focus-visible {
+    outline: 2px solid #324C88;
+    outline-offset: 5px;
+    border-radius: 50%;
+}
+
 .about-team__arrow--next {
+    position: relative;
+    flex: 0 0 90.51px;
+    width: 90.51px;
+    height: 90.51px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    font-size: 0;
+    transform: none;
+}
+
+.about-team__arrow--next::before {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 64px;
+    height: 64px;
+    border: 1px solid #FFFFFF80;
+    border-radius: 20px;
+    background: #FFFFFF;
+    content: "";
     transform: rotate(45deg);
+}
+
+.about-team__arrow--next img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    flex: 0 0 auto;
+    width: auto;
+    height: auto;
+    max-width: none;
+}
+
+.about-team__arrow--next:focus-visible {
+    outline: 2px solid #324C88;
+    outline-offset: 5px;
+    border-radius: 50%;
 }
 
 .about-team__arrow span {
@@ -1643,139 +1650,16 @@
     background: #E5E8EC;
 }
 
-@media screen and (min-width: 1301px) and (max-width: 1600px) {
+/* Figma: «Лица компании», desktop 1440 px (1857:130420). */
+@media screen and (max-width: 1600px) {
     .about-team__panel {
-        padding: 48px 30px;
-    }
-
-    .about-team__featured,
-    .about-team__featured--peek {
-        height: 540px;
-    }
-
-    .about-team__thumbnail {
-        height: 240px;
-    }
-}
-
-@media screen and (min-width: 681px) and (max-width: 1300px) {
-    .about-team__panel {
-        padding: 40px;
-    }
-
-    .about-team__title {
-        font-size: 36px;
-    }
-
-    .about-team__subtitle {
-        font-size: 18px;
-    }
-
-    .about-team__featured,
-    .about-team__featured--peek {
-        flex-basis: 75%;
-        height: 420px;
-    }
-
-    .about-team__thumbnail {
-        height: 180px;
-        border-radius: 20px;
-    }
-
-    .about-team__arrow {
-        width: 52px;
-        height: 52px;
-        border-radius: 16px;
-    }
-}
-
-@media screen and (max-width: 680px) {
-    .about-team {
-        padding: 10px;
-    }
-
-    .about-team__panel {
-        padding: 30px 10px;
-        border-radius: 10px;
-    }
-
-    .about-team__content {
-        gap: 24px;
-    }
-
-    .about-team__header {
-        gap: 14px;
-    }
-
-    .about-team__title {
-        font-size: 24px;
-        line-height: 1.3;
-    }
-
-    .about-team__subtitle {
-        max-width: 320px;
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-    .about-team__featured-row {
-        gap: 12px;
-    }
-
-    .about-team__featured,
-    .about-team__featured--peek {
-        flex-basis: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
-        border-radius: 20px;
-    }
-
-    .about-team__featured--peek {
-        display: none;
-    }
-
-    .about-team__controls {
-        inset: 0 12px;
-    }
-
-    .about-team__arrow {
-        width: 44px;
-        height: 44px;
-        border-radius: 14px;
-        font-size: 34px;
-    }
-
-    .about-team__thumbnails {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-    }
-
-    .about-team__thumbnail {
-        height: auto;
-        aspect-ratio: 4 / 3;
-        border-radius: 16px;
-    }
-}
-
-
-/* Figma 1857:130420 — layout adjustment for the 1440px frame. */
-@media screen and (min-width: 1301px) and (max-width: 1600px) {
-    .about-team__panel {
+        width: auto;
+        margin: 0 10px;
         padding: 60px 40px;
     }
 
-    .about-team__header {
-        gap: 24px;
-    }
-
-    .about-team__title {
-        font-size: 48px;
-        line-height: 1.2;
-    }
-
-    .about-team__subtitle {
-        font-size: 24px;
-        line-height: 1.4;
+    .about-team__gallery {
+        max-width: none;
     }
 
     .about-team__featured-row {
@@ -1795,97 +1679,10 @@
     .about-team__thumbnails {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-
-    .about-team__thumbnail {
-        height: 300px;
-        border-radius: 30px;
-    }
 }
 
-
-/* Figma 1857:130420 — responsive layout for 1440px and 1024px.
-   The extra 10px inset matches the nested frame in Figma without changing 1920px. */
-@media screen and (min-width: 1301px) and (max-width: 1600px) {
-    .about-team__panel {
-        width: auto;
-        margin: 0 10px;
-        padding: 60px 40px;
-    }
-
-    .about-team__gallery {
-        max-width: none;
-    }
-
-    .about-team__featured,
-    .about-team__featured--peek {
-        height: 649px;
-    }
-
-    .about-team__thumbnails {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
-
-@media screen and (min-width: 681px) and (max-width: 1300px) {
-    .about-team__panel {
-        width: auto;
-        margin: 0 10px;
-        padding: 40px;
-    }
-
-    .about-team__content {
-        gap: 24px;
-    }
-
-    .about-team__header {
-        gap: 18px;
-    }
-
-    .about-team__title {
-        font-size: 36px;
-        line-height: 1.3;
-    }
-
-    .about-team__subtitle {
-        max-width: 100%;
-        font-size: 18px;
-        line-height: 1.5;
-    }
-
-    .about-team__featured-row {
-        overflow-x: auto;
-        overflow-y: hidden;
-    }
-
-    .about-team__featured,
-    .about-team__featured--peek {
-        flex: 0 0 100%;
-        height: 420px;
-    }
-
-    .about-team__featured--peek {
-        display: none;
-    }
-
-    .about-team__controls {
-        inset: 0 20px;
-    }
-
-    .about-team__thumbnails {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-    }
-
-    .about-team__thumbnail {
-        height: 180px;
-        border-radius: 20px;
-    }
-}
-
-
-/* Figma 1857:133930 — «Лица компании», tablet frame 1024 px.
-   Изменяется только tablet layout; desktop frames 1440/1920 остаются без изменений. */
-@media screen and (min-width: 681px) and (max-width: 1300px) {
+/* Figma: «Лица компании», tablet 1024 px (1857:133930). */
+@media screen and (max-width: 1100px) {
     .about-team__panel {
         padding: 40px 20px;
         border-radius: 10px;
@@ -1909,10 +1706,6 @@
         line-height: 1.4;
     }
 
-    .about-team__gallery {
-        gap: 20px;
-    }
-
     .about-team__featured-row {
         position: relative;
         display: block;
@@ -1925,13 +1718,6 @@
         height: auto;
         aspect-ratio: 2520 / 1417;
         border-radius: 30px;
-    }
-
-    .about-team__featured img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
     }
 
     .about-team__featured--peek {
@@ -1999,12 +1785,6 @@
 
     .about-team__thumbnails {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 20px;
-    }
-
-    .about-team__thumbnail {
-        height: 300px;
-        border-radius: 30px;
     }
 
     .about-team__thumbnail:nth-child(n + 4) {
@@ -2012,9 +1792,7 @@
     }
 }
 
-
-/* Figma 1857:137434 — «Лица компании», mobile frame 360 px.
-   Desktop 1920/1440 and tablet 1024 rules above remain unchanged. */
+/* Figma: «Лица компании», mobile 360 px (1857:137434). */
 @media screen and (max-width: 680px) {
     .about-team {
         padding: 0 4px 10px;
@@ -2207,7 +1985,8 @@
     background: #edf0f6;
 }
 
-.about-reasons__icon img {
+.about-reasons__icon img,
+.about-reasons__icon svg {
     display: block;
     width: 36px;
     height: 36px;
@@ -2224,7 +2003,7 @@
     margin: 0;
     color: #324c88;
     font-family: "Onest-SemiBold", sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     line-height: 32px;
     text-transform: uppercase;
@@ -2234,7 +2013,7 @@
     margin: 0;
     color: #4d4d4d;
     font-family: "Onest-SemiBold", sans-serif;
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 600;
     line-height: 64px;
     text-transform: uppercase;
@@ -2245,9 +2024,9 @@
     margin: 0;
     color: #5d5d5d;
     font-family: "Onest-Regular", sans-serif;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 400;
-    line-height: 33px;
+    line-height: 38px;
 }
 
 .about-reasons__link {
@@ -2262,7 +2041,7 @@
     color: #ffffff;
     background: #324c88;
     font-family: "Onest-SemiBold", sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     line-height: 24px;
     text-align: center;
@@ -2290,6 +2069,7 @@
     pointer-events: none;
 }
 
+/* Figma: «Почему завод ПК Веста», desktop 1440 px (1857:130447). */
 @media screen and (max-width: 1600px) {
     .about-reasons {
         padding: 64px 10px 74px;
@@ -2299,10 +2079,6 @@
         padding: 0 40px;
     }
 
-    .about-reasons__header {
-        margin-bottom: 48px;
-    }
-
     .about-reasons__panel {
         min-height: 620px;
     }
@@ -2310,205 +2086,20 @@
     .about-reasons__content {
         flex: 0 0 567px;
         width: 567px;
-        gap: 36px;
         margin: 60px 0 60px 86px;
-    }
-
-    .about-reasons__heading {
-        font-size: 36px;
-        line-height: 64px;
     }
 
     .about-reasons__description {
         max-width: 567px;
-        font-size: 20px;
-        line-height: 33px;
     }
 
     .about-reasons__map {
-        top: -40px;
         right: -104px;
-        width: 1047px;
-        height: 700px;
     }
 }
 
+/* Figma: «Почему завод ПК Веста», tablet 1024 px (1857:133956). */
 @media screen and (max-width: 1100px) {
-    .about-reasons {
-        padding: 40px;
-    }
-
-    .about-reasons__inner {
-        padding: 0;
-    }
-
-    .about-reasons__title {
-        font-size: 36px;
-        line-height: 48px;
-    }
-
-    .about-reasons__subtitle {
-        font-size: 20px;
-        line-height: 30px;
-    }
-
-    .about-reasons__tabs {
-        min-height: 72px;
-        margin-bottom: 24px;
-        border-radius: 20px;
-    }
-
-    .about-reasons__tab {
-        min-height: 64px;
-        padding: 16px 10px;
-        font-size: 14px;
-        line-height: 22px;
-        white-space: normal;
-    }
-
-    .about-reasons__tab.is-active {
-        font-size: 16px;
-    }
-
-    .about-reasons__panel {
-        min-height: 700px;
-    }
-
-    .about-reasons__content {
-        flex-basis: 62%;
-        width: 62%;
-        gap: 24px;
-        margin: 40px;
-    }
-
-    .about-reasons__heading {
-        font-size: 30px;
-        line-height: 42px;
-    }
-
-    .about-reasons__description {
-        font-size: 16px;
-        line-height: 26px;
-    }
-
-    .about-reasons__map {
-        top: auto;
-        right: -80px;
-        bottom: -30px;
-        width: 650px;
-        height: 440px;
-    }
-}
-
-@media screen and (max-width: 680px) {
-    .about-reasons {
-        padding: 32px 10px;
-    }
-
-    .about-reasons__header {
-        gap: 14px;
-        margin-bottom: 28px;
-    }
-
-    .about-reasons__title {
-        font-size: 24px;
-        line-height: 32px;
-    }
-
-    .about-reasons__subtitle {
-        font-size: 16px;
-        line-height: 24px;
-    }
-
-    .about-reasons__tabs {
-        flex-wrap: wrap;
-        gap: 4px;
-        min-height: 0;
-        margin-bottom: 16px;
-        border-radius: 14px;
-    }
-
-    .about-reasons__tab,
-    .about-reasons__tab.is-active {
-        flex: 1 1 48%;
-        min-height: 48px;
-        padding: 10px 8px;
-        border-radius: 10px;
-        font-size: 12px;
-        line-height: 18px;
-        white-space: normal;
-    }
-
-    .about-reasons__panel {
-        flex-direction: column;
-        min-height: 0;
-        padding: 24px 20px 0;
-        border-radius: 20px;
-    }
-
-    .about-reasons__content {
-        flex: 0 1 auto;
-        gap: 20px;
-        width: 100%;
-        margin: 0;
-    }
-
-    .about-reasons__icon {
-        flex-basis: 48px;
-        width: 48px;
-        height: 48px;
-        border-radius: 14px;
-    }
-
-    .about-reasons__icon img {
-        width: 28px;
-        height: 28px;
-    }
-
-    .about-reasons__copy {
-        gap: 12px;
-    }
-
-    .about-reasons__eyebrow {
-        font-size: 14px;
-        line-height: 22px;
-    }
-
-    .about-reasons__heading {
-        font-size: 22px;
-        line-height: 30px;
-    }
-
-    .about-reasons__description {
-        font-size: 14px;
-        line-height: 22px;
-    }
-
-    .about-reasons__link {
-        min-width: 130px;
-        min-height: 48px;
-        padding: 12px 20px;
-        font-size: 12px;
-        line-height: 18px;
-    }
-
-    .about-reasons__map {
-        position: relative;
-        top: auto;
-        right: auto;
-        bottom: auto;
-        align-self: center;
-        width: 120%;
-        max-width: 420px;
-        height: auto;
-        margin: 0 -20px;
-    }
-}
-
-
-/* Figma 1857:133956 — «Почему завод ПК Веста», tablet frame 1024 px.
-   Desktop 1920/1440 rules above are preserved; the content changes to a vertical flow. */
-@media screen and (min-width: 681px) and (max-width: 1100px) {
     .about-reasons {
         padding: 40px 10px;
     }
@@ -2528,7 +2119,9 @@
     }
 
     .about-reasons__subtitle {
-        font-size: 20px;
+        width: 810px;
+        max-width: 100%;
+        font-size: 18px;
         line-height: 29px;
     }
 
@@ -2548,15 +2141,11 @@
     .about-reasons__tab.is-active {
         flex: initial;
         min-height: 54px;
-        padding: 12px 8px;
+        padding: 14px 18px;
         border-radius: 14px;
-        font-size: 14px;
-        line-height: 26px;
+        font-size: 16px;
+        line-height: 1.6;
         white-space: nowrap;
-    }
-
-    .about-reasons__tab.is-active {
-        font-size: 14px;
     }
 
     .about-reasons__panel {
@@ -2579,29 +2168,29 @@
     }
 
     .about-reasons__eyebrow {
-        font-size: 18px;
+        font-size: 20px;
         line-height: 32px;
     }
 
     .about-reasons__heading {
         width: 100%;
-        font-size: 32px;
+        font-size: 30px;
         line-height: 48px;
     }
 
     .about-reasons__description {
         max-width: none;
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 20px;
+        line-height: 32px;
     }
 
     .about-reasons__link {
         width: 100%;
         min-width: 0;
         min-height: 54px;
-        padding: 15px 30px;
-        font-size: 14px;
-        line-height: 24px;
+        padding: 17px 32px;
+        font-size: 16px;
+        line-height: 20px;
     }
 
     .about-reasons__map {
@@ -2617,8 +2206,7 @@
     }
 }
 
-
-/* Figma 1857:137459 — mobile layout at 360 px. */
+/* Figma: «Почему завод ПК Веста», mobile 360 px (1857:137459). */
 @media screen and (max-width: 680px) {
     .about-reasons {
         padding: 20px 10px 10px;
@@ -2646,7 +2234,6 @@
     }
 
     .about-reasons__tabs {
-        display: flex;
         flex-wrap: nowrap;
         justify-content: flex-start;
         gap: 4px;
@@ -2670,13 +2257,9 @@
         min-height: 42px;
         padding: 10px 14px;
         border-radius: 10px;
-        font-size: 12px;
-        line-height: 22px;
+        font-size: 14px;
+        line-height: 1.6;
         white-space: nowrap;
-    }
-
-    .about-reasons__tab.is-active {
-        font-size: 12px;
     }
 
     .about-reasons__panel {
@@ -2700,7 +2283,8 @@
         border-radius: 10px;
     }
 
-    .about-reasons__icon img {
+    .about-reasons__icon img,
+    .about-reasons__icon svg {
         width: 18px;
         height: 18px;
     }
@@ -2717,6 +2301,7 @@
 
     .about-reasons__heading {
         width: 100%;
+        margin-bottom: -6px;
         font-size: 20px;
         line-height: 32px;
     }
@@ -2732,7 +2317,6 @@
         width: 100%;
         min-width: 0;
         min-height: 54px;
-        margin-top: 0;
         padding: 18px 24px;
         border-radius: 10px;
         font-size: 14px;
@@ -2803,7 +2387,7 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     column-gap: 5px;
-    row-gap: 24px;
+    row-gap: 5px;
     width: 100%;
 }
 
@@ -2814,7 +2398,7 @@
     justify-content: center;
     gap: 20px;
     min-width: 0;
-    min-height: 244px;
+    min-height: 198px;
     padding: 30px 20px;
     border-radius: 10px;
     background: #FFFFFF;
@@ -2857,197 +2441,6 @@
     line-height: 1.4;
 }
 
-@media screen and (max-width: 1300px) {
-    .about-documents {
-        padding: 60px 24px;
-    }
-
-    .about-documents__grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .about-documents__card {
-        min-height: 220px;
-        gap: 16px;
-        padding: 24px 16px;
-    }
-
-    .about-documents__title {
-        font-size: 32px;
-    }
-}
-
-@media screen and (max-width: 900px) {
-    .about-documents__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .about-documents__eyebrow {
-        font-size: 18px;
-    }
-
-    .about-documents__name {
-        font-size: 18px;
-    }
-}
-
-@media screen and (max-width: 680px) {
-    .about-documents {
-        padding: 40px 10px 20px;
-    }
-
-    .about-documents__container {
-        gap: 24px;
-    }
-
-    .about-documents__header {
-        gap: 14px;
-    }
-
-    .about-documents__eyebrow {
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-    .about-documents__title {
-        font-size: 20px;
-        line-height: 1.4;
-    }
-
-    .about-documents__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 5px;
-    }
-
-    .about-documents__card {
-        gap: 14px;
-        min-height: 190px;
-        padding: 20px 12px;
-        border-radius: 10px;
-    }
-
-    .about-documents__icon {
-        flex-basis: 36px;
-        width: 36px;
-        height: 36px;
-    }
-
-    .about-documents__name {
-        font-size: 14px;
-        line-height: 1.4;
-    }
-
-    .about-documents__meta {
-        font-size: 12px;
-        line-height: 1.4;
-    }
-}
-
-@media screen and (max-width: 360px) {
-    .about-documents__card {
-        padding: 18px 8px;
-    }
-}
-
-
-/* Figma 1857:133001 — desktop frame 1440 px; preserve the 1920 px base layout. */
-@media screen and (min-width: 1301px) and (max-width: 1600px) {
-    .about-documents {
-        padding: 80px 45px;
-    }
-
-    .about-documents__container {
-        max-width: 1350px;
-    }
-
-    .about-documents__title {
-        font-size: 44px;
-        line-height: 1.4;
-    }
-
-    .about-documents__grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        column-gap: 5px;
-        row-gap: 24px;
-    }
-
-    .about-documents__card {
-        min-height: 244px;
-        padding: 30px 20px;
-        gap: 20px;
-    }
-
-    .about-documents__name {
-        font-size: 20px;
-        line-height: 1.4;
-    }
-
-    .about-documents__meta {
-        font-size: 16px;
-        line-height: 1.4;
-    }
-}
-
-
-/* Figma 1857:136507 — документы и сертификаты, адаптация планшетного кадра 1024 px. */
-@media screen and (min-width: 681px) and (max-width: 1100px) {
-    .about-documents {
-        padding: 40px;
-    }
-
-    .about-documents__container {
-        gap: 24px;
-        max-width: none;
-    }
-
-    .about-documents__header {
-        gap: 17px;
-    }
-
-    .about-documents__eyebrow {
-        font-size: 20px;
-        line-height: 1.5;
-    }
-
-    .about-documents__title {
-        font-size: 30px;
-        line-height: 38px;
-    }
-
-    .about-documents__grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        grid-template-rows: repeat(2, minmax(244px, 1fr));
-        column-gap: 5px;
-        row-gap: 5px;
-        height: 512px;
-    }
-
-    .about-documents__card {
-        gap: 20px;
-        min-height: 0;
-        padding: 30px 20px;
-        border-radius: 10px;
-    }
-
-    .about-documents__icon {
-        flex-basis: 48px;
-        width: 48px;
-        height: 48px;
-    }
-
-    .about-documents__name {
-        font-size: 18px;
-        line-height: 1.4;
-    }
-
-    .about-documents__meta {
-        font-size: 16px;
-        line-height: 1.4;
-    }
-}
-
-
-/* Figma 1857:140010 — mobile documents frame, 360 px. */
 .about-documents__more {
     display: flex;
     align-items: center;
@@ -3088,13 +2481,45 @@
     transform: rotate(45deg);
 }
 
-@media screen and (max-width: 680px) {
+/* Figma 1857:133001 — desktop frame 1440 px. */
+@media screen and (max-width: 1600px) {
+    .about-documents__container {
+        max-width: 1350px;
+    }
+}
+
+/* Figma 1857:136507 — tablet frame 1024 px. */
+@media screen and (max-width: 1100px) {
     .about-documents {
-        padding: 20px 10px;
+        padding: 40px;
     }
 
     .about-documents__container {
-        gap: 24px;
+        max-width: none;
+    }
+
+    .about-documents__title {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .about-documents__card {
+        min-height: 0;
+    }
+
+    .about-documents__name {
+        font-size: 18px;
+    }
+
+    .about-documents__more {
+        font-size: 18px;
+    }
+}
+
+/* Figma 1857:140010 — mobile frame 360 px. */
+@media screen and (max-width: 680px) {
+    .about-documents {
+        padding: 20px 10px;
     }
 
     .about-documents__header {
@@ -3121,13 +2546,6 @@
         gap: 14px;
         min-height: 0;
         padding: 30px 20px;
-        border-radius: 10px;
-    }
-
-    .about-documents__icon {
-        flex-basis: 48px;
-        width: 48px;
-        height: 48px;
     }
 
     .about-documents__name {
@@ -3149,23 +2567,11 @@
     }
 
     .about-documents__more {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 14px;
-        padding: 0;
-        color: #324C88;
-        font-family: "Onest-Medium", sans-serif;
         font-size: 18px;
-        font-weight: 500;
         line-height: 25px;
     }
 
-    .about-documents__more-icon {
-        transform: rotate(180deg);
-    }
-
     .about-documents__more[aria-expanded="true"] .about-documents__more-icon {
-        transform: none;
+        transform: rotate(180deg);
     }
 }
