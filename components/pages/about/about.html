@@ -637,7 +637,7 @@
               Тула с большим желанием создавать что-то новое в сложившихся рыночных условиях.</p>
           </div>
           <div class="about-timeline__controls" aria-label="Навигация по истории компании">
-            <button class="about-timeline__arrow about-timeline__arrow--previous" type="button"
+            <button class="about-timeline__arrow about-timeline__arrow--previous" type="button" disabled
                     aria-label="Предыдущий этап">
               <svg class="about-timeline__arrow-icon about-timeline__arrow-icon--previous" width="40" height="40"
                    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -660,31 +660,171 @@
 
       <ol class="about-timeline__years" aria-label="Основные годы истории компании" tabindex="0">
         <li class="about-timeline__milestone is-active" aria-current="step">
-          <span class="about-timeline__milestone-mark">
-            <img src="../../../static/images/about-timeline-milestone-mark.svg" alt="" aria-hidden="true">
+          <button class="about-timeline__milestone-mark" type="button" aria-pressed="true">
+            <svg class="about-timeline__milestone-icon" width="120" height="120" aria-hidden="true" focusable="false" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <path
+                        id="diamond-1991"
+                        d="M45.4551 5.85742C53.2656 -1.95304 65.9298 -1.95305 73.7402 5.85742L113.338 45.4561C121.148 53.2665 121.148 65.9298 113.338 73.7402L73.7402 113.338C65.9297 121.148 53.2656 121.148 45.4551 113.338L5.85742 73.7402C-1.95302 65.9298 -1.95292 53.2665 5.85742 45.4561L45.4551 5.85742Z"
+                />
+
+                <mask id="border-mask-1991">
+                  <rect width="120" height="120" fill="white"/>
+                  <rect x="0" y="49.7158" width="8" height="20" fill="black"/>
+                  <rect x="112" y="49.7158" width="8" height="20" fill="black"/>
+                </mask>
+
+                <clipPath id="diamond-clip-1991">
+                  <use href="#diamond-1991"/>
+                </clipPath>
+              </defs>
+
+              <!-- Фон -->
+              <use class="about-timeline__milestone-background" href="#diamond-1991" fill="white"/>
+
+              <!-- Бордер внутри контура фона -->
+              <use
+                      href="#diamond-1991"
+                      fill="none"
+                      stroke="white"
+                      stroke-opacity="0.5"
+                      stroke-width="2"
+                      mask="url(#border-mask-1991)"
+                      clip-path="url(#diamond-clip-1991)"
+              />
+
+              <!-- Боковые маркеры -->
+              <rect class="about-timeline__milestone-dot" x="113.609" y="58" width="4" height="4" rx="2" fill="#324C88"/>
+              <rect class="about-timeline__milestone-dot" x="1.60938" y="58" width="4" height="4" rx="2" fill="#324C88"/>
+            </svg>
             <span>1991</span>
-          </span>
+          </button>
           <span class="about-timeline__milestone-line" aria-hidden="true"></span>
         </li>
         <li class="about-timeline__milestone">
-          <span class="about-timeline__milestone-mark">
-            <img src="../../../static/images/about-timeline-milestone-mark-1994.svg" alt="" aria-hidden="true">
+          <button class="about-timeline__milestone-mark" type="button" aria-pressed="false">
+            <svg class="about-timeline__milestone-icon" width="120" height="120" aria-hidden="true" focusable="false" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <path
+                        id="diamond-1994"
+                        d="M45.4551 5.85742C53.2656 -1.95304 65.9298 -1.95305 73.7402 5.85742L113.338 45.4561C121.148 53.2665 121.148 65.9298 113.338 73.7402L73.7402 113.338C65.9297 121.148 53.2656 121.148 45.4551 113.338L5.85742 73.7402C-1.95302 65.9298 -1.95292 53.2665 5.85742 45.4561L45.4551 5.85742Z"
+                />
+
+                <mask id="border-mask-1994">
+                  <rect width="120" height="120" fill="white"/>
+                  <rect x="0" y="49.7158" width="8" height="20" fill="black"/>
+                  <rect x="112" y="49.7158" width="8" height="20" fill="black"/>
+                </mask>
+
+                <clipPath id="diamond-clip-1994">
+                  <use href="#diamond-1994"/>
+                </clipPath>
+              </defs>
+
+              <!-- Фон -->
+              <use class="about-timeline__milestone-background" href="#diamond-1994" fill="white"/>
+
+              <!-- Бордер внутри контура фона -->
+              <use
+                      href="#diamond-1994"
+                      fill="none"
+                      stroke="white"
+                      stroke-opacity="0.5"
+                      stroke-width="2"
+                      mask="url(#border-mask-1994)"
+                      clip-path="url(#diamond-clip-1994)"
+              />
+
+              <!-- Боковые маркеры -->
+              <rect class="about-timeline__milestone-dot" x="113.609" y="58" width="4" height="4" rx="2" fill="#324C88"/>
+              <rect class="about-timeline__milestone-dot" x="1.60938" y="58" width="4" height="4" rx="2" fill="#324C88"/>
+            </svg>
             <span>1994</span>
-          </span>
+          </button>
           <span class="about-timeline__milestone-line" aria-hidden="true"></span>
         </li>
         <li class="about-timeline__milestone">
-          <span class="about-timeline__milestone-mark">
-            <img src="../../../static/images/about-timeline-milestone-mark-1996.svg" alt="" aria-hidden="true">
+          <button class="about-timeline__milestone-mark" type="button" aria-pressed="false">
+            <svg class="about-timeline__milestone-icon" width="120" height="120" aria-hidden="true" focusable="false" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <path
+                        id="diamond-1996"
+                        d="M45.4551 5.85742C53.2656 -1.95304 65.9298 -1.95305 73.7402 5.85742L113.338 45.4561C121.148 53.2665 121.148 65.9298 113.338 73.7402L73.7402 113.338C65.9297 121.148 53.2656 121.148 45.4551 113.338L5.85742 73.7402C-1.95302 65.9298 -1.95292 53.2665 5.85742 45.4561L45.4551 5.85742Z"
+                />
+
+                <mask id="border-mask-1996">
+                  <rect width="120" height="120" fill="white"/>
+                  <rect x="0" y="49.7158" width="8" height="20" fill="black"/>
+                  <rect x="112" y="49.7158" width="8" height="20" fill="black"/>
+                </mask>
+
+                <clipPath id="diamond-clip-1996">
+                  <use href="#diamond-1996"/>
+                </clipPath>
+              </defs>
+
+              <!-- Фон -->
+              <use class="about-timeline__milestone-background" href="#diamond-1996" fill="white"/>
+
+              <!-- Бордер внутри контура фона -->
+              <use
+                      href="#diamond-1996"
+                      fill="none"
+                      stroke="white"
+                      stroke-opacity="0.5"
+                      stroke-width="2"
+                      mask="url(#border-mask-1996)"
+                      clip-path="url(#diamond-clip-1996)"
+              />
+
+              <!-- Боковые маркеры -->
+              <rect class="about-timeline__milestone-dot" x="113.609" y="58" width="4" height="4" rx="2" fill="#324C88"/>
+              <rect class="about-timeline__milestone-dot" x="1.60938" y="58" width="4" height="4" rx="2" fill="#324C88"/>
+            </svg>
             <span>1996</span>
-          </span>
+          </button>
           <span class="about-timeline__milestone-line" aria-hidden="true"></span>
         </li>
         <li class="about-timeline__milestone">
-          <span class="about-timeline__milestone-mark">
-            <img src="../../../static/images/about-timeline-milestone-mark-1998.svg" alt="" aria-hidden="true">
+          <button class="about-timeline__milestone-mark" type="button" aria-pressed="false">
+            <svg class="about-timeline__milestone-icon" width="120" height="120" aria-hidden="true" focusable="false" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <path
+                        id="diamond-1998"
+                        d="M45.4551 5.85742C53.2656 -1.95304 65.9298 -1.95305 73.7402 5.85742L113.338 45.4561C121.148 53.2665 121.148 65.9298 113.338 73.7402L73.7402 113.338C65.9297 121.148 53.2656 121.148 45.4551 113.338L5.85742 73.7402C-1.95302 65.9298 -1.95292 53.2665 5.85742 45.4561L45.4551 5.85742Z"
+                />
+
+                <mask id="border-mask-1998">
+                  <rect width="120" height="120" fill="white"/>
+                  <rect x="0" y="49.7158" width="8" height="20" fill="black"/>
+                  <rect x="112" y="49.7158" width="8" height="20" fill="black"/>
+                </mask>
+
+                <clipPath id="diamond-clip-1998">
+                  <use href="#diamond-1998"/>
+                </clipPath>
+              </defs>
+
+              <!-- Фон -->
+              <use class="about-timeline__milestone-background" href="#diamond-1998" fill="white"/>
+
+              <!-- Бордер внутри контура фона -->
+              <use
+                      href="#diamond-1998"
+                      fill="none"
+                      stroke="white"
+                      stroke-opacity="0.5"
+                      stroke-width="2"
+                      mask="url(#border-mask-1998)"
+                      clip-path="url(#diamond-clip-1998)"
+              />
+
+              <!-- Боковые маркеры -->
+              <rect class="about-timeline__milestone-dot" x="113.609" y="58" width="4" height="4" rx="2" fill="#324C88"/>
+              <rect class="about-timeline__milestone-dot" x="1.60938" y="58" width="4" height="4" rx="2" fill="#324C88"/>
+            </svg>
             <span>1998</span>
-          </span>
+          </button>
         </li>
       </ol>
       <div class="about-timeline__scrollbar" aria-hidden="true">
@@ -1209,4 +1349,5 @@
       </article>
     </div>
   </div>
+
 </section>

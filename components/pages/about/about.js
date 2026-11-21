@@ -36,6 +36,85 @@ function initAbout() {
     });
 
     const timelineYears = document.querySelector('.about-timeline__years');
+    const timelineMilestones = timelineYears
+      ? Array.from(timelineYears.querySelectorAll('.about-timeline__milestone'))
+      : [];
+    const previousTimelineButton = document.querySelector('.about-timeline__arrow--previous');
+    const nextTimelineButton = document.querySelector('.about-timeline__arrow--next');
+
+    if (timelineYears && timelineMilestones.length) {
+        let activeMilestoneIndex = timelineMilestones.findIndex((milestone) =>
+          milestone.classList.contains('is-active')
+        );
+
+        if (activeMilestoneIndex < 0) {
+            activeMilestoneIndex = 0;
+        }
+
+        const setActiveMilestone = (nextIndex, scrollIntoView = false) => {
+            activeMilestoneIndex = Math.max(0, Math.min(nextIndex, timelineMilestones.length - 1));
+
+            timelineMilestones.forEach((milestone, index) => {
+                const isActive = index === activeMilestoneIndex;
+                const markerButton = milestone.querySelector('.about-timeline__milestone-mark');
+
+                milestone.classList.toggle('is-active', isActive);
+
+                if (isActive) {
+                    milestone.setAttribute('aria-current', 'step');
+                } else {
+                    milestone.removeAttribute('aria-current');
+                }
+
+                markerButton?.setAttribute('aria-pressed', String(isActive));
+            });
+
+            if (previousTimelineButton) {
+                previousTimelineButton.disabled = activeMilestoneIndex === 0;
+            }
+
+            if (nextTimelineButton) {
+                nextTimelineButton.disabled = activeMilestoneIndex === timelineMilestones.length - 1;
+            }
+
+            if (scrollIntoView) {
+                const activeMilestone = timelineMilestones[activeMilestoneIndex];
+                const containerRect = timelineYears.getBoundingClientRect();
+                const milestoneRect = activeMilestone.getBoundingClientRect();
+                const scrollPadding = 16;
+                let scrollOffset = 0;
+
+                if (milestoneRect.left < containerRect.left + scrollPadding) {
+                    scrollOffset = milestoneRect.left - containerRect.left - scrollPadding;
+                } else if (milestoneRect.right > containerRect.right - scrollPadding) {
+                    scrollOffset = milestoneRect.right - containerRect.right + scrollPadding;
+                }
+
+                if (scrollOffset !== 0) {
+                    timelineYears.scrollBy({ left: scrollOffset, behavior: 'smooth' });
+                }
+            }
+        };
+
+        timelineMilestones.forEach((milestone, index) => {
+            const markerButton = milestone.querySelector('.about-timeline__milestone-mark');
+
+            markerButton?.addEventListener('click', () => {
+                setActiveMilestone(index);
+            });
+        });
+
+        previousTimelineButton?.addEventListener('click', () => {
+            setActiveMilestone(activeMilestoneIndex - 1, true);
+        });
+
+        nextTimelineButton?.addEventListener('click', () => {
+            setActiveMilestone(activeMilestoneIndex + 1, true);
+        });
+
+        setActiveMilestone(activeMilestoneIndex);
+    }
+
     const timelineScrollbar = document.querySelector('.about-timeline__scrollbar');
     const timelineThumb = document.querySelector('.about-timeline__scrollbar-thumb');
 

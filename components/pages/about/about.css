@@ -1085,9 +1085,22 @@
     justify-content: center;
     width: 114px;
     height: 119px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    appearance: none;
 }
 
-.about-timeline__milestone-mark img {
+.about-timeline__milestone-mark:focus-visible {
+    outline: 2px solid #FFFFFF;
+    outline-offset: 4px;
+    border-radius: 10px;
+}
+
+.about-timeline__milestone-mark svg {
     position: absolute;
     inset: 0;
     display: block;
@@ -1095,36 +1108,12 @@
     height: 100%;
 }
 
-.about-timeline__milestone-mark::before,
-.about-timeline__milestone-mark::after {
-    position: absolute;
-    z-index: 1;
-    top: 48.66%;
-    width: 3.51%;
-    height: 3.36%;
-    border-radius: 50%;
-    background: #FFFFFF;
-    content: '';
+.about-timeline__milestone:not(.is-active) .about-timeline__milestone-background {
+    fill: transparent;
 }
 
-.about-timeline__milestone-mark::before {
-    left: -0.88%;
-}
-
-.about-timeline__milestone-mark::after {
-    right: -0.88%;
-}
-
-.about-timeline__milestone.is-active .about-timeline__milestone-mark img {
-    inset: 0 auto auto -2.29%;
-    width: auto;
-    height: 100%;
-    max-width: none;
-}
-
-.about-timeline__milestone.is-active .about-timeline__milestone-mark::before,
-.about-timeline__milestone.is-active .about-timeline__milestone-mark::after {
-    background: #324C88;
+.about-timeline__milestone:not(.is-active) .about-timeline__milestone-dot {
+    fill: #FFFFFF;
 }
 
 .about-timeline__milestone-mark span {
@@ -1145,7 +1134,7 @@
 .about-timeline__milestone-line {
     flex: 1 1 auto;
     height: 2px;
-    min-width: 12px;
+    min-width: 36px;
     border-radius: 10px;
     background: #FFFFFF80;
 }
@@ -1153,6 +1142,11 @@
 .about-timeline__arrow:focus-visible {
     outline: 2px solid #FFFFFF;
     outline-offset: 4px;
+}
+
+.about-timeline__arrow:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
 }
 
 @media screen and (max-width: 1600px) {
@@ -1327,7 +1321,6 @@
 
     .about-timeline__milestone-line {
         flex: 1 1 36px;
-        min-width: 12px;
     }
 }
 
