@@ -1,6 +1,389 @@
-<section class="objects">
-  <div class="container">
-    <h1>Объекты</h1>
-    <p>Базовый HTML-контент страницы объектов. Здесь будет размещён основной интерфейс.</p>
+<section class="objects" aria-labelledby="objects-title">
+  <div class="objects__panel">
+    <nav class="objects__breadcrumbs" aria-label="Хлебные крошки">
+      <a class="objects__breadcrumb-link" href="#/">Главная</a>
+      <span class="objects__breadcrumb-separator" aria-hidden="true">-</span>
+      <span aria-current="page">Каталог зданий</span>
+    </nav>
+
+    <h1 class="objects__title" id="objects-title">
+      <span>Наши обьекты</span>
+      <span class="objects__count">(9)</span>
+    </h1>
+
+    <div class="objects__toolbar">
+      <form class="objects__search-group" role="search">
+        <label class="objects__label" for="objects-project-id">Поиск:</label>
+        <div class="objects__search-field">
+          <svg class="objects__search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+          <input
+                  class="objects__search-input"
+                  id="objects-project-id"
+                  name="project-id"
+                  type="search"
+                  placeholder="Введите ID проекта"
+                  autocomplete="off"
+          >
+        </div>
+      </form>
+
+      <div class="objects__view-group">
+        <span class="objects__label">Отображение:</span>
+        <div class="objects__view-options" role="group" aria-label="Способ отображения объектов">
+          <div class="objects__view-option">
+            <span class="objects__view-name">Карточки</span>
+            <button class="objects__view-control" type="button" data-objects-view="cards" aria-label="Показать объекты карточками" aria-pressed="false">
+              <svg class="objects__view-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+                <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+              </svg>
+            </button>
+          </div>
+
+          <div class="objects__view-option">
+            <span class="objects__view-name">На карте</span>
+            <button class="objects__view-control is-active" type="button" data-objects-view="map" aria-label="Показать объекты на карте" aria-pressed="true">
+              <svg class="objects__view-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Z"></path>
+                <path d="M9 3v15M15 6v15"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <section class="objects-map" aria-label="Карта объектов">
+    <div class="objects-catalog" aria-label="Объекты карточками" hidden><div class="objects-catalog__grid"><article class="objects-catalog__card">
+      <div class="objects-catalog__image-wrap"><img class="objects-catalog__image" src="../../../static/images/copter.png" alt="Быстровозводимый цех по ремонту вагонных колес" loading="lazy"><span class="objects-catalog__project-id">ID проекта: 34345334</span><span class="objects-catalog__area">72 м<sup>2</sup></span></div>
+      <div class="objects-catalog__content"><h3 class="objects-catalog__title">Быстровозводимый цех по ремонту вагонных колес</h3><div class="objects-catalog__divider"></div><ul class="objects-catalog__features">
+        <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/b5d07.svg" alt=""></span><span>24ш х 62д х 6в</span></li>
+        <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/88733.svg" alt=""></span><span>ЛСТК</span></li>
+        <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/242f3.svg" alt=""></span><span>2019</span></li>
+        <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/94bc0.svg" alt=""></span><span>г. Венев, Россия</span></li>
+      </ul></div></article>
+      <article class="objects-catalog__card">
+        <div class="objects-catalog__image-wrap"><img class="objects-catalog__image" src="../../../static/images/copter.png" alt="Быстровозводимый склад из ЛСТК" loading="lazy"><span class="objects-catalog__project-id">ID проекта: 34345335</span><span class="objects-catalog__area">72 м<sup>2</sup></span></div>
+        <div class="objects-catalog__content"><h3 class="objects-catalog__title">Быстровозводимый склад из ЛСТК</h3><div class="objects-catalog__divider"></div><ul class="objects-catalog__features">
+          <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/b5d07.svg" alt=""></span><span>18ш х 42д х 5.5в</span></li>
+          <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/88733.svg" alt=""></span><span>ЛСТК</span></li>
+          <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/242f3.svg" alt=""></span><span>2022</span></li>
+          <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/94bc0.svg" alt=""></span><span>г. Лосино-Петровский, Россия</span></li>
+        </ul></div></article>
+      <article class="objects-catalog__card">
+        <div class="objects-catalog__image-wrap"><img class="objects-catalog__image" src="../../../static/images/copter.png" alt="Производственный корпус" loading="lazy"><span class="objects-catalog__project-id">ID проекта: 34345336</span><span class="objects-catalog__area">72 м<sup>2</sup></span></div>
+        <div class="objects-catalog__content"><h3 class="objects-catalog__title">Производственный корпус</h3><div class="objects-catalog__divider"></div><ul class="objects-catalog__features">
+          <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/b5d07.svg" alt=""></span><span>24ш х 62д х 6в</span></li>
+          <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/88733.svg" alt=""></span><span>Металлоконструкции</span></li>
+          <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/242f3.svg" alt=""></span><span>2021</span></li>
+          <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/94bc0.svg" alt=""></span><span>Казахстан</span></li>
+        </ul></div></article>
+      <article class="objects-catalog__card">
+        <div class="objects-catalog__image-wrap"><img class="objects-catalog__image" src="../../../static/images/copter.png" alt="Производственный цех из ЛСТК" loading="lazy"><span class="objects-catalog__project-id">ID проекта: 34345337</span><span class="objects-catalog__area">72 м<sup>2</sup></span></div>
+        <div class="objects-catalog__content"><h3 class="objects-catalog__title">Быстровозводимый цех по ремонту вагонных колес</h3><div class="objects-catalog__divider"></div><ul class="objects-catalog__features">
+          <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/b5d07.svg" alt=""></span><span>24ш х 62д х 6в</span></li>
+          <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/88733.svg" alt=""></span><span>ЛСТК</span></li>
+          <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/242f3.svg" alt=""></span><span>2019</span></li>
+          <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/94bc0.svg" alt=""></span><span>г. Венев, Россия</span></li>
+        </ul></div></article>
+      <article class="objects-catalog__card">
+        <div class="objects-catalog__image-wrap"><img class="objects-catalog__image" src="../../../static/images/copter.png" alt="Складской комплекс из ЛСТК" loading="lazy"><span class="objects-catalog__project-id">ID проекта: 34345338</span><span class="objects-catalog__area">72 м<sup>2</sup></span></div>
+        <div class="objects-catalog__content"><h3 class="objects-catalog__title">Быстровозводимый склад из ЛСТК</h3><div class="objects-catalog__divider"></div><ul class="objects-catalog__features">
+          <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/b5d07.svg" alt=""></span><span>18ш х 42д х 5.5в</span></li>
+          <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/88733.svg" alt=""></span><span>ЛСТК</span></li>
+          <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/242f3.svg" alt=""></span><span>2022</span></li>
+          <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/94bc0.svg" alt=""></span><span>г. Лосино-Петровский, Россия</span></li>
+        </ul></div></article>
+      <article class="objects-catalog__card">
+        <div class="objects-catalog__image-wrap"><img class="objects-catalog__image" src="../../../static/images/copter.png" alt="Промышленное здание из металлоконструкций" loading="lazy"><span class="objects-catalog__project-id">ID проекта: 34345339</span><span class="objects-catalog__area">72 м<sup>2</sup></span></div>
+        <div class="objects-catalog__content"><h3 class="objects-catalog__title">Производственный корпус</h3><div class="objects-catalog__divider"></div><ul class="objects-catalog__features">
+          <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/b5d07.svg" alt=""></span><span>24ш х 62д х 6в</span></li>
+          <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/88733.svg" alt=""></span><span>Металлоконструкции</span></li>
+          <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/242f3.svg" alt=""></span><span>2021</span></li>
+          <li><span class="objects-catalog__feature-icon"><img src="https://www.figma.com/api/mcp/asset/313474ec-e6ce-4027-861c-a576e684950a/94bc0.svg" alt=""></span><span>Казахстан</span></li>
+        </ul></div></article></div></div>
+    <iframe
+            class="objects-map__frame"
+            title="Расположение объектов на Яндекс Картах"
+            src="https://yandex.ru/map-widget/v1/?ll=75.3229%2C51.7237&z=12&pt=75.3229%2C51.7237%2Cpm2rdm"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+    ></iframe>
+
+    <form class="objects-map__filters" aria-label="Фильтры объектов">
+      <div class="objects-map__filters-heading">
+        <h2 class="objects-map__filters-title">Фильтры:</h2>
+        <button class="objects-map__filters-close" type="button" aria-label="Закрыть фильтры">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="m18 6-12 12M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <button class="objects-map__mobile-toggle" type="button" aria-expanded="false" aria-controls="objects-map-filter-fields">
+        <span>Фильтры</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg>
+      </button>
+
+      <div class="objects-map__filter-fields" id="objects-map-filter-fields">
+        <label class="objects-map__filter">
+          <span class="objects-map__filter-label">Год:</span>
+          <select name="year">
+            <option value="">Все</option>
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+          </select>
+        </label>
+
+        <label class="objects-map__filter">
+          <span class="objects-map__filter-label">Страна:</span>
+          <select name="country">
+            <option value="">Все</option>
+            <option value="Казахстан">Казахстан</option>
+            <option value="Россия">Россия</option>
+          </select>
+        </label>
+
+        <label class="objects-map__filter">
+          <span class="objects-map__filter-label">Регион:</span>
+          <select name="region">
+            <option value="">Все</option>
+            <option value="Павлодарская область">Павлодарская область</option>
+          </select>
+        </label>
+
+        <label class="objects-map__filter">
+          <span class="objects-map__filter-label">Сегменты:</span>
+          <select name="segment">
+            <option value="">Все</option>
+            <option value="Промышленность">Промышленность</option>
+            <option value="Транспорт">Транспорт</option>
+          </select>
+        </label>
+
+        <label class="objects-map__filter">
+          <span class="objects-map__filter-label">Технология:</span>
+          <select name="technology">
+            <option value="">Все</option>
+            <option value="Металлоконструкции">Металлоконструкции</option>
+          </select>
+        </label>
+
+        <button class="objects-map__more" type="button" aria-expanded="false" aria-controls="objects-map-extra-filters">
+          <span>Еще фильтры</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+        </button>
+      </div>
+
+      <div class="objects-map__extra-filters" id="objects-map-extra-filters" hidden>
+        <div class="objects-map__extra-filters-heading">
+          <button class="objects-map__extra-filters-close" type="button" aria-label="Вернуться к основным фильтрам">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"></path></svg>
+          </button>
+          <h3 class="objects-map__extra-filters-title">Дополнительные фильтры:</h3>
+        </div>
+
+        <div class="objects-map__extra-filters-content">
+          <fieldset class="objects-map__range-filter" data-range-filter>
+            <legend>Ширина, м</legend>
+            <div class="objects-map__range-values">
+              <label class="objects-map__range-value">от <input type="number" name="width-min" value="200" min="0" max="1000" data-range-number="min" aria-label="Минимальная ширина"></label>
+              <span class="objects-map__range-separator" aria-hidden="true"></span>
+              <label class="objects-map__range-value">до <input type="number" name="width-max" value="400" min="0" max="1000" data-range-number="max" aria-label="Максимальная ширина"></label>
+            </div>
+            <div class="objects-map__range-slider">
+              <div class="objects-map__range-track"></div>
+              <input type="range" min="0" max="1000" value="200" data-range-min aria-label="Минимальная ширина">
+              <input type="range" min="0" max="1000" value="400" data-range-max aria-label="Максимальная ширина">
+            </div>
+          </fieldset>
+
+          <fieldset class="objects-map__range-filter" data-range-filter>
+            <legend>Длина, м</legend>
+            <div class="objects-map__range-values">
+              <label class="objects-map__range-value">от <input type="number" name="length-min" value="200" min="0" max="1000" data-range-number="min" aria-label="Минимальная длина"></label>
+              <span class="objects-map__range-separator" aria-hidden="true"></span>
+              <label class="objects-map__range-value">до <input type="number" name="length-max" value="400" min="0" max="1000" data-range-number="max" aria-label="Максимальная длина"></label>
+            </div>
+            <div class="objects-map__range-slider">
+              <div class="objects-map__range-track"></div>
+              <input type="range" min="0" max="1000" value="200" data-range-min aria-label="Минимальная длина">
+              <input type="range" min="0" max="1000" value="400" data-range-max aria-label="Максимальная длина">
+            </div>
+          </fieldset>
+
+          <fieldset class="objects-map__range-filter" data-range-filter>
+            <legend>Высота, м</legend>
+            <div class="objects-map__range-values">
+              <label class="objects-map__range-value">от <input type="number" name="height-min" value="200" min="0" max="1000" data-range-number="min" aria-label="Минимальная высота"></label>
+              <span class="objects-map__range-separator" aria-hidden="true"></span>
+              <label class="objects-map__range-value">до <input type="number" name="height-max" value="400" min="0" max="1000" data-range-number="max" aria-label="Максимальная высота"></label>
+            </div>
+            <div class="objects-map__range-slider">
+              <div class="objects-map__range-track"></div>
+              <input type="range" min="0" max="1000" value="200" data-range-min aria-label="Минимальная высота">
+              <input type="range" min="0" max="1000" value="400" data-range-max aria-label="Максимальная высота">
+            </div>
+          </fieldset>
+
+          <fieldset class="objects-map__range-filter" data-range-filter>
+            <legend>Площадь, кв. м.</legend>
+            <div class="objects-map__range-values">
+              <label class="objects-map__range-value">от <input type="number" name="area-min" value="200" min="0" max="1000" data-range-number="min" aria-label="Минимальная площадь"></label>
+              <span class="objects-map__range-separator" aria-hidden="true"></span>
+              <label class="objects-map__range-value">до <input type="number" name="area-max" value="400" min="0" max="1000" data-range-number="max" aria-label="Максимальная площадь"></label>
+            </div>
+            <div class="objects-map__range-slider">
+              <div class="objects-map__range-track"></div>
+              <input type="range" min="0" max="1000" value="200" data-range-min aria-label="Минимальная площадь">
+              <input type="range" min="0" max="1000" value="400" data-range-max aria-label="Максимальная площадь">
+            </div>
+          </fieldset>
+
+          <fieldset class="objects-map__choice-filter">
+            <legend>Этажность</legend>
+            <div class="objects-map__choice-options">
+              <label><input type="radio" name="storeys" value="1"><span>1</span></label>
+              <label><input type="radio" name="storeys" value="2"><span>2</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="objects-map__choice-filter">
+            <legend>Утепление</legend>
+            <div class="objects-map__choice-options">
+              <label><input type="radio" name="insulation" value="cold"><span>Холодный</span></label>
+              <label><input type="radio" name="insulation" value="warm"><span>Теплый</span></label>
+            </div>
+          </fieldset>
+
+          <label class="objects-map__extra-filter-input">
+            <span>Номер проекта</span>
+            <input type="search" name="project-number" placeholder="Введите номер проекта">
+          </label>
+
+          <fieldset class="objects-map__choice-filter">
+            <legend>Тип кровли</legend>
+            <div class="objects-map__choice-options">
+              <label><input type="radio" name="roof-type" value="one-slope"><span>1</span></label>
+              <label><input type="radio" name="roof-type" value="two-slopes"><span>2 ската</span></label>
+              <label><input type="radio" name="roof-type" value="flat"><span>Плоская кровля</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="objects-map__choice-filter">
+            <legend>Кран-балка</legend>
+            <div class="objects-map__choice-options">
+              <label><input type="radio" name="crane-beam" value="yes"><span>Есть</span></label>
+              <label><input type="radio" name="crane-beam" value="no"><span>Нет</span></label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="objects-map__extra-filters-footer">
+          <button class="objects-map__extra-filters-submit" type="button">Показать</button>
+        </div>
+      </div>
+
+      <button class="objects-map__submit" type="submit">Показать</button>
+    </form>
+
+    <article class="objects-map__card" aria-label="Информация об объекте">
+      <div class="objects-map__card-image" role="img" aria-label="Промышленный объект"></div>
+      <div class="objects-map__card-content">
+        <div class="objects-map__card-heading">
+          <h3 class="objects-map__card-title">Быстровозводимый цех для ремонта вагонных колес</h3>
+          <button class="objects-map__card-close" type="button" aria-label="Скрыть карточку объекта">×</button>
+        </div>
+        <dl class="objects-map__details">
+          <div>
+            <dt>Размеры</dt>
+            <dd>10Ш × 54Д × 6.5В</dd>
+          </div>
+          <div>
+            <dt>Локация</dt>
+            <dd>г. Экибастуз, Казахстан</dd>
+          </div>
+        </dl>
+        <a class="objects-map__details-link" href="#/object-detail">Подробнее</a>
+      </div>
+    </article>
+  </section>
+
+  <section class="objects-video" aria-labelledby="objects-video-title" data-node-id="1857:30736">
+    <div class="objects-video__heading">
+      <h2 class="objects-video__title" id="objects-video-title">Видео</h2>
+      <a class="objects-video__all" href="#/videos">Все видео</a>
+    </div>
+    <div class="objects-video__divider" aria-hidden="true"></div>
+    <div class="objects-video__content">
+      <a class="objects-video__feature" href="#/videos/warehouse-losino-petrovsky" aria-label="Смотреть видео: Быстровозводимый склад 18Ш х 42Д х 5.5В из ЛСТК в г. Лосино-Петровский, Россия">
+        <img class="objects-video__image" src="../../../static/images/angar.png" alt="" loading="lazy">
+        <span class="objects-video__shade" aria-hidden="true"></span>
+        <span class="objects-video__feature-content">
+          <span class="objects-video__feature-title">Быстровозводимый склад 18Ш х 42Д х 5.5В из ЛСТК в г. Лосино-Петровский, Россия</span>
+          <button class="video-trigger video-trigger--project" type="button" aria-label="Смотреть видео проекта">
+            <span class="video-trigger__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="m9 6 10 6-10 6V6Z" />
+              </svg>
+            </span>
+            <span class="video-trigger__label">Смотреть видео</span>
+          </button>
+        </span>
+      </a>
+      <div class="objects-video__navigation" aria-label="Навигация по видео">
+        <button class="objects-video__arrow objects-video__arrow--previous" type="button" aria-label="Предыдущее видео" disabled><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="m23 9-11 11 11 11"></path></svg></button>
+        <div class="objects-video__pagination" aria-label="Слайд 1 из 4">
+          <button class="objects-video__dot is-active" type="button" aria-label="Видео 1" aria-current="true"></button>
+          <button class="objects-video__dot" type="button" aria-label="Видео 2"></button>
+          <button class="objects-video__dot" type="button" aria-label="Видео 3"></button>
+          <button class="objects-video__dot" type="button" aria-label="Видео 4"></button>
+        </div>
+        <button class="objects-video__arrow objects-video__arrow--next" type="button" aria-label="Следующее видео"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="m17 9 11 11-11 11"></path></svg></button>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="objects-drawings" aria-labelledby="objects-drawings-title" data-node-id="1857:30594">
+    <h2 class="objects-drawings__title" id="objects-drawings-title">Чертежи</h2>
+    <div class="objects-drawings__divider" aria-hidden="true"></div>
+    <div class="objects-drawings__grid">
+      <a class="objects-drawings__card objects-drawings__card--first" href="https://www.figma.com/api/mcp/asset/ca91a887-a3da-430a-b64c-97ecff670794/b848f.png" target="_blank" rel="noopener noreferrer">
+        <img class="objects-drawings__image" src="../../../static/images/plan_1.png" alt="Чертёж расположения обшивки на здании" loading="lazy">
+        <span class="objects-drawings__caption">Расположение обшивки на здании</span>
+      </a>
+      <a class="objects-drawings__card objects-drawings__card--second" href="https://www.figma.com/api/mcp/asset/ca91a887-a3da-430a-b64c-97ecff670794/bf9f7.png" target="_blank" rel="noopener noreferrer">
+        <img class="objects-drawings__image" src="../../../static/images/plan_2.png" alt="3D-модель в чертежах с сэндвич-панелями" loading="lazy">
+        <span class="objects-drawings__caption">3D модель в чертежах с сэндвич панелями</span>
+      </a>
+      <a class="objects-drawings__card objects-drawings__card--third" href="https://www.figma.com/api/mcp/asset/ca91a887-a3da-430a-b64c-97ecff670794/b848f.png" target="_blank" rel="noopener noreferrer">
+        <img class="objects-drawings__image" src="../../../static/images/plan_3.png" alt="Чертёж расположения обшивки на здании" loading="lazy">
+        <span class="objects-drawings__caption">Расположение обшивки на здании</span>
+      </a>
+      <a class="objects-drawings__card objects-drawings__card--fourth" href="https://www.figma.com/api/mcp/asset/ca91a887-a3da-430a-b64c-97ecff670794/bf9f7.png" target="_blank" rel="noopener noreferrer">
+        <img class="objects-drawings__image" src="../../../static/images/plan_4.png" alt="3D-модель в чертежах с сэндвич-панелями" loading="lazy">
+        <span class="objects-drawings__caption">3D модель в чертежах с сэндвич панелями</span>
+      </a>
+    </div>
+    <div class="objects-drawings__navigation" aria-label="Навигация по чертежам">
+      <button class="objects-drawings__arrow objects-drawings__arrow--previous" type="button" aria-label="Предыдущие чертежи" disabled><svg viewBox="0 0 40 40" aria-hidden="true"><path d="m23 9-11 11 11 11"></path></svg></button>
+      <div class="objects-drawings__pagination" aria-label="Слайд 1 из 4">
+        <button class="objects-drawings__dot is-active" type="button" aria-label="Чертежи 1" aria-current="true"></button>
+        <button class="objects-drawings__dot" type="button" aria-label="Чертежи 2"></button>
+        <button class="objects-drawings__dot" type="button" aria-label="Чертежи 3"></button>
+        <button class="objects-drawings__dot" type="button" aria-label="Чертежи 4"></button>
+      </div>
+      <button class="objects-drawings__arrow objects-drawings__arrow--next" type="button" aria-label="Следующие чертежи"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="m17 9 11 11-11 11"></path></svg></button>
+    </div>
+  </section>
+
 </section>

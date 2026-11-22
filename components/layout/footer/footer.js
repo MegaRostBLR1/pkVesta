@@ -1,8 +1,19 @@
-const accordionHeads = document.querySelectorAll(".accordion__head");
+document.querySelectorAll(".app-footer .footer-accordion__head").forEach((button) => {
+  if (button.dataset.initialized === "true") return;
 
-accordionHeads.forEach((item) => {
-  item.addEventListener("click", () => {
-    const accordion = item.closest(".accordion");
-    accordion.classList.toggle("active");
+  const body = document.getElementById(button.getAttribute("aria-controls"));
+  if (!body) return;
+
+  button.dataset.initialized = "true";
+
+  const syncExpandedState = (expanded) => {
+    button.setAttribute("aria-expanded", String(expanded));
+    body.classList.toggle("is-open", expanded);
+  };
+
+  syncExpandedState(button.getAttribute("aria-expanded") === "true");
+
+  button.addEventListener("click", () => {
+    syncExpandedState(button.getAttribute("aria-expanded") !== "true");
   });
 });

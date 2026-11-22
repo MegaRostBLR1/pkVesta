@@ -9,7 +9,23 @@ const APP_CONFIG = {
     css: './components/layout/footer/footer.css',
     js: './components/layout/footer/footer.js'
   },
-  defaultPage: 'home',
+  cookies: {
+    html: './components/layout/popups/cookies/cookies.html',
+    css: './components/layout/popups/cookies/cookies.css',
+    js: './components/layout/popups/cookies/cookies.js'
+  },
+  subscribe: {
+    html: './components/layout/popups/subscribe/subscribe.html',
+    css: './components/layout/popups/subscribe/subscribe.css',
+    js: './components/layout/popups/subscribe/subscribe.js'
+  },
+  modal: {
+    html: './components/layout/popups/main-modal/main-modal.html',
+    css: './components/layout/popups/main-modal/main-modal.css',
+    js: './components/layout/popups/main-modal/main-modal.js',
+    init: 'initMainModal'
+  },
+  defaultPage: 'calculator',
   pages: {
     'home': {
       title: 'Главная',
@@ -25,12 +41,82 @@ const APP_CONFIG = {
       js: './components/pages/services/services.js',
       init: 'initServices'
     },
+    'laser': {
+      title: 'Лазерная резка металла',
+      html: './components/pages/services/laser/laser.html',
+      css: './components/pages/services/laser/laser.css',
+      js: './components/pages/services/laser/laser.js',
+      init: 'initLaser'
+    },
+    'buildings': {
+      title: 'Быстровозводимые здания',
+      html: './components/pages/buildings/buildings.html',
+      css: './components/pages/buildings/buildings.css',
+      js: './components/pages/buildings/buildings.js',
+      init: 'initBuildings'
+    },
+    'fast-buildings': {
+      title: 'Быстровозводимые здания',
+      html: './components/pages/fast-buildings/fast-buildings.html',
+      css: './components/pages/fast-buildings/fast-buildings.css',
+      js: './components/pages/fast-buildings/fast-buildings.js',
+      init: 'initFastBuildings'
+    },
+    'buildings-directory': {
+      title: 'Каталог зданий',
+      html: './components/pages/buildings/buildings-directory/buildings-directory.html',
+      css: './components/pages/buildings/buildings-directory/buildings-directory.css',
+      js: './components/pages/buildings/buildings-directory/buildings-directory.js',
+      init: 'initBuildingsDirectory'
+    },
+    'buildings-characteristics': {
+      title: 'Характеристики быстровозводимых зданий',
+      html: './components/pages/buildings/characteristics/characteristics.html',
+      css: './components/pages/buildings/characteristics/characteristics.css',
+      js: './components/pages/buildings/characteristics/characteristics.js',
+      init: 'initBuildingsCharacteristics'
+    },
+    'buildings-why-pk-vesta': {
+      title: 'Почему PK Vesta',
+      html: './components/pages/buildings/why-pk-vesta/why-pk-vesta.html',
+      css: './components/pages/buildings/why-pk-vesta/why-pk-vesta.css',
+      js: './components/pages/buildings/why-pk-vesta/why-pk-vesta.js',
+      init: 'initBuildingsWhyPkVesta'
+    },
+    'buildings-comparison': {
+      title: 'Сравнение',
+      html: './components/pages/buildings/comparison/comparison.html',
+      css: './components/pages/buildings/comparison/comparison.css',
+      js: './components/pages/buildings/comparison/comparison.js',
+      init: 'initBuildingsComparison'
+    },
+    'buildings-prices': {
+      title: 'Цены',
+      html: './components/pages/buildings/buildings-prices/buildings-prices.html',
+      css: './components/pages/buildings/buildings-prices/buildings-prices.css',
+      js: './components/pages/buildings/buildings-prices/buildings-prices.js',
+      init: 'initBuildingsPrices'
+    },
+    'buildings-faq': {
+      title: 'Вопросы',
+      html: './components/pages/buildings/buildings-faq/buildings-faq.html',
+      css: './components/pages/buildings/buildings-faq/buildings-faq.css',
+      js: './components/pages/buildings/buildings-faq/buildings-faq.js',
+      init: 'initBuildingsFaq'
+    },
     'objects': {
       title: 'Объекты',
       html: './components/pages/objects/objects.html',
       css: './components/pages/objects/objects.css',
       js: './components/pages/objects/objects.js',
       init: 'initObjects'
+    },
+    'object-page': {
+      title: 'Объект',
+      html: './components/pages/objects/object-page/object-page.html',
+      css: './components/pages/objects/object-page/object-page.css',
+      js: './components/pages/objects/object-page/object-page.js',
+      init: 'initObjectPage'
     },
     'press-center': {
       title: 'Пресс-центр',
@@ -74,6 +160,13 @@ const APP_CONFIG = {
       js: './components/pages/press-center/articles/articles.js',
       init: 'initArticles'
     },
+    'article-item': {
+      title: 'Статья',
+      html: './components/pages/press-center/article-item/article-item.html',
+      css: './components/pages/press-center/article-item/article-item.css',
+      js: './components/pages/press-center/article-item/article-item.js',
+      init: 'initArticleItem'
+    },
     'about': {
       title: 'О компании',
       html: './components/pages/about/about.html',
@@ -88,18 +181,39 @@ const APP_CONFIG = {
       js: './components/pages/prices/prices.js',
       init: 'initPrices'
     },
+    'calculator': {
+      title: 'Онлайн калькулятор',
+      html: './components/pages/calculator/calculator.html',
+      css: './components/pages/calculator/calculator.css',
+      js: './components/pages/calculator/calculator.js',
+      init: 'initCalculator'
+    },
     'contacts': {
       title: 'Контакты',
       html: './components/pages/contacts/contacts.html',
       css: './components/pages/contacts/contacts.css',
       js: './components/pages/contacts/contacts.js',
       init: 'initContacts'
+    },
+    'search-result': {
+      title: 'Результаты поиска',
+      html: './components/pages/search-result/search-result.html',
+      css: './components/pages/search-result/search-result.css',
+      js: './components/pages/search-result/search-result.js',
+      init: 'initSearchResult'
     }
   }
 };
 
 const loadedPageAssets = new Set();
 let renderRequestId = 0;
+let currentPageName = null;
+
+const OBJECT_SECTION_ROUTES = {
+  'object-detail': { panel: 'object-detail', title: 'Объект' },
+  'object-characteristics': { panel: 'object-characteristics', title: 'Характеристики объекта' },
+  'object-parameters': { panel: 'object-parameters', title: 'Параметры объекта' }
+};
 
 const ROUTE_ALIASES = {
   'page-1': 'objects',
@@ -123,7 +237,9 @@ async function loadHtml(url) {
 
 async function loadComponent(target, component) {
   target.innerHTML = await loadHtml(component.html);
-  loadStylesheet(component.css);
+  if (component.css) {
+    loadStylesheet(component.css);
+  }
   await loadScript(component.js);
 }
 
@@ -167,14 +283,14 @@ function loadScript(url) {
 
 function getPageName() {
   const hashRoute = window.location.hash
-      .replace(/^#\/?/, '')
-      .split(/[?&]/, 1)[0]
-      .trim()
-      .toLowerCase();
+    .replace(/^#\/?/, '')
+    .split(/[?&]/, 1)[0]
+    .trim()
+    .toLowerCase();
 
   const route = hashRoute || APP_CONFIG.defaultPage;
 
-  if (APP_CONFIG.pages[route]) {
+  if (APP_CONFIG.pages[route] || OBJECT_SECTION_ROUTES[route]) {
     return route;
   }
 
@@ -182,14 +298,24 @@ function getPageName() {
 }
 
 async function renderPage(pageName) {
+  const isObjectSection = Boolean(OBJECT_SECTION_ROUTES[pageName]);
+  const configPageName = isObjectSection ? 'object-page' : pageName;
+
+  if (isObjectSection && currentPageName === 'object-page') {
+    setObjectPageSection(pageName);
+    document.title = `pkVesta — ${OBJECT_SECTION_ROUTES[pageName].title}`;
+    return;
+  }
+
   const requestId = ++renderRequestId;
-  const page = APP_CONFIG.pages[pageName] || APP_CONFIG.pages[APP_CONFIG.defaultPage];
+  const page = APP_CONFIG.pages[configPageName] || APP_CONFIG.pages[APP_CONFIG.defaultPage];
   const main = document.querySelector('#app-main');
 
   if (!main) {
     return;
   }
 
+  currentPageName = null;
   main.innerHTML = '<p class="loading">Загрузка страницы…</p>';
 
   try {
@@ -201,19 +327,24 @@ async function renderPage(pageName) {
 
     main.innerHTML = html;
     loadStylesheet(page.css);
+
     await loadScript(page.js);
 
     if (requestId !== renderRequestId) {
       return;
     }
 
-    document.title = `pkVesta — ${page.title}`;
+    document.title = isObjectSection
+      ? `pkVesta — ${OBJECT_SECTION_ROUTES[pageName].title}`
+      : `pkVesta — ${page.title}`;
 
     const init = window[page.init];
 
     if (typeof init === 'function') {
-      init();
+      init(pageName);
     }
+
+    currentPageName = configPageName;
   } catch (error) {
     if (requestId !== renderRequestId) {
       return;
@@ -226,15 +357,21 @@ async function renderPage(pageName) {
 
 
 function initNavigationRouting() {
+  const calculatorLink = document.querySelector('.app-header .header-bottom__action-calculation');
+
+  if (calculatorLink) {
+    calculatorLink.href = '#/calculator';
+  }
+
   const routeByLabel = {
-    'Продукция': 'objects',
-    'Быстровозводимые здания': 'objects',
+    'Продукция': 'buildings',
+    'Быстровозводимые здания': 'fast-buildings',
     'Легкие металлоконструкции': 'objects',
     'Сэндвич панели': 'objects',
     'Комплектующие для ворот': 'objects',
     'Оцинкованный профиль': 'objects',
     'Услуги': 'services',
-    'Лазерная резка': 'services',
+    'Лазерная резка': 'laser',
     'Лизинг зданий': 'services',
     'Консалтинг': 'services',
     'Проектирование': 'services',
@@ -255,25 +392,39 @@ function initNavigationRouting() {
   };
 
   document.querySelectorAll('.app-header a.nav-link, .app-header a.nav-list__nested-list-link')
-      .forEach((link) => {
-        const label = link.textContent.trim().replace(/\s+/g, ' ');
-        const route = routeByLabel[label];
+    .forEach((link) => {
+      const label = link.textContent.trim().replace(/\s+/g, ' ');
+      const route = routeByLabel[label];
 
-        if (route) {
-          link.href = `#/${route}`;
-        }
-      });
+      if (route) {
+        link.href = `#/${route}`;
+      }
+    });
 }
 
 async function initApp() {
   const header = document.querySelector('#app-header');
   const footer = document.querySelector('#app-footer');
+  const cookies = document.querySelector('#app-cookies');
+  const subscribe = document.querySelector('#app-subscribe');
+  const mainModal = document.querySelector('#app-main-modal');
 
   try {
     await Promise.all([
       loadComponent(header, APP_CONFIG.header),
-      loadComponent(footer, APP_CONFIG.footer)
+      loadComponent(footer, APP_CONFIG.footer),
+      loadComponent(cookies, APP_CONFIG.cookies),
+      loadComponent(subscribe, APP_CONFIG.subscribe),
+      mainModal ? loadComponent(mainModal, APP_CONFIG.modal) : Promise.resolve()
     ]);
+
+    if (mainModal && APP_CONFIG.modal.init) {
+      const initMainModal = window[APP_CONFIG.modal.init];
+
+      if (typeof initMainModal === 'function') {
+        initMainModal();
+      }
+    }
   } catch (error) {
     console.error(error);
   }

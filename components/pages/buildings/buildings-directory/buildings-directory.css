@@ -1,0 +1,507 @@
+/* Каталог зданий — карточки по макетам Figma 1857:29109, 1857:29304, 1857:29624 и 1857:29967. */
+.buildings-directory {
+  margin: 0 5px 5px;
+  padding: 0 40px 40px;
+  background: #FFFFFF;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.buildings-directory__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.buildings-directory__card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  padding: 5px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.buildings-directory__image {
+  display: block;
+  width: 100%;
+  height: 280px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.buildings-directory__card-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 10px;
+}
+
+.buildings-directory__card-title {
+  width: 100%;
+  margin: 0;
+  color: #4d4d4d;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 38px;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.buildings-directory__card-description {
+  width: 100%;
+  margin: 0;
+  color: #4d4d4d;
+  font-size: 22px;
+  line-height: 30px;
+  overflow-wrap: anywhere;
+}
+
+.buildings-directory__card-divider {
+  flex: 0 0 1px;
+  width: 100%;
+  height: 1px;
+  background: rgb(77 77 77 / 20%);
+}
+
+.buildings-directory__price {
+  margin: 0;
+  color: #4d4d4d;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.buildings-directory__card-actions {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+}
+
+.buildings-directory__details {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 79px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #324c88;
+  color: #fff;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.26;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.buildings-directory__details:hover {
+  background: #28427e;
+}
+
+.buildings-directory__compare {
+  display: flex;
+  flex: 0 0 80px;
+  align-items: center;
+  justify-content: center;
+  min-height: 79px;
+  padding: 18px;
+  border: 2px solid #324c88;
+  border-radius: 10px;
+  color: #324c88;
+}
+
+.buildings-directory__compare svg {
+  display: block;
+  width: 36px;
+  height: 36px;
+}
+
+.buildings-directory__details:focus-visible,
+.buildings-directory__compare:focus-visible,
+.buildings-directory__show-more:focus-visible {
+  outline: 2px solid #324c88;
+  outline-offset: 3px;
+}
+
+.buildings-directory__card[hidden],
+.buildings-directory__show-more[hidden] {
+  display: none;
+}
+
+.buildings-directory__show-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 86px;
+  padding: 27px 36px;
+  border: 0;
+  border-radius: 10px;
+  background: rgb(50 76 136 / 10%);
+  color: #324c88;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.buildings-directory__show-more:hover {
+  background: rgb(50 76 136 / 16%);
+}
+
+@media screen and (max-width: 1100px) {
+  .buildings-directory {
+    padding-right: 20px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+  }
+
+  .buildings-directory__image {
+    height: 192px;
+  }
+
+  .buildings-directory__card-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .buildings-directory__card-description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .buildings-directory__price {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .buildings-directory__details,
+  .buildings-directory__compare {
+    min-height: 48px;
+  }
+
+  .buildings-directory__details {
+    padding: 14px 12px;
+    font-size: 14px;
+  }
+
+  .buildings-directory__compare {
+    flex-basis: 48px;
+    padding: 10px;
+  }
+
+  .buildings-directory__compare svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .buildings-directory {
+    padding: 0 14px 20px;
+  }
+
+  .buildings-directory__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .buildings-directory__card {
+    gap: 5px;
+  }
+
+  .buildings-directory__card-content {
+    gap: 8px;
+  }
+
+  .buildings-directory__show-more {
+    width: 332px;
+    max-width: 100%;
+    min-height: 49px;
+    padding: 12px 24px;
+    font-size: 14px;
+    line-height: 25px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .buildings-directory__card-title {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .buildings-directory__card-description {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .buildings-directory__price {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+/* Figma 1857:29269 / 29518 / 29897 / 30169 — SEO-блок каталога зданий. */
+.buildings-directory-seo {
+  margin: 0 5px 5px;
+  padding: 60px 62px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #4d4d4d;
+}
+
+.buildings-directory-seo__content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 30px;
+  width: 100%;
+  min-width: 0;
+}
+
+.buildings-directory-seo__title {
+  width: 100%;
+  margin: 0;
+  color: #4d4d4d;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 56px;
+  text-align: center;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+}
+
+.buildings-directory-seo__divider {
+  flex: 0 0 1px;
+  width: 100%;
+  height: 1px;
+  background: rgb(77 77 77 / 20%);
+}
+
+.buildings-directory-seo__text {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  min-width: 0;
+  color: #5d5d5d;
+  font-family: "Onest-Regular", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.buildings-directory-seo__text p {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+/* 1440 px */
+@media screen and (max-width: 1600px) {
+  .buildings-directory-seo__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+/* 1024 px и промежуточные планшетные ширины */
+@media screen and (max-width: 1100px) {
+  .buildings-directory-seo {
+    margin: 0;
+    padding: 60px 40px;
+  }
+
+  .buildings-directory-seo__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .buildings-directory-seo__text {
+    flex-direction: column;
+    gap: 24px;
+    font-size: 18px;
+  }
+
+  .buildings-directory-seo__text p {
+    width: 100%;
+  }
+}
+
+/* 360 px и мобильные ширины */
+@media screen and (max-width: 480px) {
+  .buildings-directory-seo {
+    padding: 20px 14px;
+  }
+
+  .buildings-directory-seo__content {
+    gap: 18px;
+  }
+
+  .buildings-directory-seo__title {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .buildings-directory-seo__text {
+    gap: 24px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+/* Особенности конструкции — Figma 1857:29281 / 29529 / 29906 / 30179. */
+.buildings-directory-features {
+  margin: 0 5px 5px;
+  padding: 60px 62px;
+  border-radius: 10px;
+  background: #fff;
+  color: #4d4d4d;
+}
+
+.buildings-directory-features__content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 30px;
+  width: 100%;
+  min-width: 0;
+}
+
+.buildings-directory-features__title {
+  width: 100%;
+  margin: 0;
+  color: #4d4d4d;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 56px;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.buildings-directory-features__divider {
+  flex: 0 0 1px;
+  width: 100%;
+  height: 1px;
+  background: rgb(77 77 77 / 20%);
+}
+
+.buildings-directory-features__body {
+  width: 100%;
+  min-width: 0;
+  color: rgb(77 77 77 / 80%);
+  font-family: "Onest-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.buildings-directory-features__column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+  width: 100%;
+  min-width: 0;
+}
+
+.buildings-directory-features__lead {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.buildings-directory-features__body p {
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.buildings-directory-features__list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  margin: 0;
+  padding-left: 30px;
+  list-style: disc;
+}
+
+.buildings-directory-features__list li {
+  padding-left: 0;
+  line-height: 1.5;
+}
+
+/* 1440 px */
+@media screen and (max-width: 1600px) {
+  .buildings-directory-features__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+/* 1024 px */
+@media screen and (max-width: 1100px) {
+  .buildings-directory-features {
+    padding: 24px 40px;
+  }
+
+  .buildings-directory-features__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .buildings-directory-features__body {
+    font-size: 18px;
+  }
+
+  .buildings-directory-features__list {
+    padding-left: 27px;
+  }
+}
+
+/* 360 px */
+@media screen and (max-width: 480px) {
+  .buildings-directory-features {
+    margin: 0;
+    padding: 24px 14px;
+  }
+
+  .buildings-directory-features__content {
+    gap: 18px;
+  }
+
+  .buildings-directory-features__title {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .buildings-directory-features__body {
+    font-size: 14px;
+  }
+
+  .buildings-directory-features__list {
+    padding-left: 21px;
+  }
+}

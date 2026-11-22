@@ -1,0 +1,525 @@
+/* ТУТ СДУБЛИРОВАННЫЕ СТИЛИ СО СТРАНИЦЫ ОЛНАЙН КАЛЬКУЛЯТОР
+
+ВНИЗУ стили для этой страницы, которые отличаются, но должны идти после 
+стилей онлайн калькулятора
+*/
+
+:root {
+  --comparison-col-width: 310px;
+}
+
+.comparison__content {
+  align-items: stretch;
+  gap: 24px;
+}
+.comparison__toggle-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 24px;
+}
+.toggle__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.toggle__input:focus-visible + .toggle__switch {
+  outline: 2px solid #324c88;
+  outline-offset: 2px;
+}
+.toggle__switch {
+  width: 84px;
+  height: 44px;
+  position: relative;
+  background-color: #fff;
+  border-radius: 18px;
+  border: 1px solid #e6e6e6;
+  transition: background-color 0.3s;
+}
+.toggle__switch::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 4px;
+  width: 36px;
+  height: 36px;
+  background-color: #324c881a;
+  border-radius: 50%;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.toggle__input:checked + .toggle__switch::after {
+  background-color: #324c88;
+  transform: translateX(-39px);
+}
+
+.toggle__text {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  color: #4d4d4d;
+}
+
+.comparison__table {
+  margin: 0 auto;
+  max-width: 1690px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.comparison__nav {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 91px auto 91px;
+  gap: 24px;
+  margin-bottom: 24px;
+  justify-content: end;
+  position: relative;
+}
+
+.comparison__nav-arr {
+  background: #f5f5f5;
+  border: none;
+  border-radius: 20px;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  flex-shrink: 0;
+  transform: rotate(45deg);
+}
+.comparison__nav-arr svg {
+  transform: rotate(-45deg);
+}
+.comparison__nav-arr:hover {
+  background: #e0e0e0;
+}
+.comparison__nav-arr:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+/* Колонки стоят в один ряд, видно три. Остальные листаются стрелками */
+.comparison__slider-wrapper {
+  flex: 0 0 auto;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-auto-columns: var(--comparison-col-width);
+  grid-auto-flow: column;
+  width: calc(3 * var(--comparison-col-width));
+  overflow: hidden;
+}
+/* Колонки шапки и всех строк сдвигаются вместе: сдвиг задает JS в --comparison-shift у таблицы */
+.comparison__slider-wrapper > * {
+  transform: translateX(var(--comparison-shift, 0px));
+  transition: transform 0.3s ease;
+}
+
+.system-card {
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  gap: 8px;
+}
+.system-card__name {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: #4d4d4d;
+}
+.system-card__year {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #4d4d4dcc;
+}
+
+.comparison__row-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 19px 0;
+  min-height: 112px;
+  cursor: pointer;
+  border-bottom: 1px solid #31313126;
+}
+
+.comparison__row-title {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 36px;
+  color: #2c2c2ce5;
+}
+
+.comparison__row-btn {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+.comparison__row-btn svg {
+  width: 100%;
+  height: 100%;
+}
+
+.comparison__row-body {
+  display: none;
+  justify-content: center;
+  gap: 14px;
+  padding: 14px 0;
+}
+.comparison__row--open .comparison__row-body {
+  display: flex;
+  border-bottom: 1px solid #31313126;
+}
+
+.comparison__row-content {
+  display: flex;
+  gap: 25px;
+  padding: 10px 115px 10px 0;
+  min-height: 112px;
+  align-items: center;
+  justify-content: space-between;
+}
+.comparison__row--open .comparison__row-btn {
+  transform: rotate(180deg);
+}
+
+/* Дополнительные строки скрыты, пока не нажата «Показать еще» */
+.comparison__row--extra {
+  display: none;
+}
+.comparison__table.is-expanded .comparison__row--extra {
+  display: block;
+}
+
+.row-content--without-title {
+  justify-content: end;
+}
+
+.row-content__title {
+  max-width: 489px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: #00000099;
+}
+
+.row-content__value {
+  justify-self: center;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.value--text {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+}
+.value--big-text {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  color: #4d4d4dcc;
+}
+
+.dot {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+.dot--filled {
+  background-color: #324c88;
+}
+.dot--empty {
+  background-color: #324c881a;
+}
+
+.comparison__btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.comparison__slider-controls-mob {
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: 300px;
+  width: 100%;
+}
+.slider-controls__dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.slider-controls__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #324c8833;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+.slider-controls__dot--active {
+  background-color: #324c88;
+}
+
+@media (max-width: 1400px) {
+  :root {
+    --comparison-col-width: 230px;
+  }
+  .row-content__value {
+    padding: 0 5px;
+  }
+  .comparison__nav {
+    gap: 0px;
+  }
+  .comparison__nav-arr {
+    width: 48px;
+    height: 48px;
+  }
+  .system-card {
+    padding: 10px 5px;
+  }
+  .system-card__name {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .comparison__row-title {
+    font-size: 20px;
+    line-height: 36px;
+  }
+  .comparison__row-content {
+    padding-right: 91px;
+  }
+}
+@media (max-width: 1100px) {
+  :root {
+    --comparison-col-width: 220px;
+  }
+  .comparison__slider-wrapper {
+    width: 455px;
+    gap: 15px;
+  }
+  .comparison__row-header {
+    min-height: 82px;
+  }
+  .comparison__row-content {
+    min-height: 68px;
+  }
+  .toggle__text {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .system-card__year {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .comparison__row-title,
+  .row-content__title {
+    font-size: 20px;
+    line-height: 36px;
+  }
+  .row-content__value {
+    padding: 0;
+  }
+  .value--big-text {
+    font-size: 14px;
+    line-height: 26px;
+  }
+  .value--text {
+    font-size: 16px;
+  }
+  .dot {
+    width: 14px;
+    height: 14px;
+  }
+}
+@media (max-width: 850px) {
+  .comparison__row-content {
+    flex-direction: column;
+    align-items: start;
+    min-height: auto;
+    gap: 8px;
+  }
+  .row-content__value-wrapper {
+    align-self: self-end;
+  }
+}
+@media (max-width: 740px) {
+  .comparison__nav-arr {
+    display: none;
+  }
+  .comparison__nav {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 18px;
+  }
+  .comparison__slider-controls-mob {
+    display: flex;
+  }
+  .comparison__slider-controls-mob .comparison__nav-arr {
+    display: block;
+  }
+  .comparison__row-content {
+    padding: 0;
+  }
+  .row-content__value-wrapper {
+    align-self: center;
+    padding: 10px 0;
+  }
+}
+@media (max-width: 567px) {
+  :root {
+    --comparison-col-width: calc((100% - 15px) / 2);
+  }
+  .system-card {
+    padding: 0;
+  }
+  .comparison__slider-wrapper {
+    width: 100%;
+  }
+  .toggle {
+    flex-direction: column-reverse;
+    gap: 14px;
+  }
+  .toggle__switch {
+    width: 60px;
+    height: 32px;
+  }
+  .toggle__switch::after {
+    width: 24px;
+    height: 24px;
+  }
+  .toggle__input:checked + .toggle__switch::after {
+    transform: translate(-27px);
+  }
+  .comparison__nav {
+    gap: 28px;
+    margin-bottom: 9px;
+  }
+  .comparison__row-header {
+    min-height: 68px;
+    padding: 12px 0;
+  }
+  .comparison__row-btn {
+    width: 28px;
+    height: 28px;
+  }
+  .comparison__row-content {
+    min-height: 62px;
+  }
+  .comparison__row-body {
+    gap: 8px;
+    padding: 10px 0;
+  }
+  .comparison__row-title {
+    font-size: 16px;
+    line-height: 36px;
+  }
+  .row-content__title {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .value--big-text {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .value--text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .dot {
+    width: 12px;
+    height: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .comparison__slider-wrapper > *,
+  .comparison__row-btn {
+    transition: none;
+  }
+}
+
+/* стили имеено на странице быстровозводимых агрокомплексов */
+.buildings-comparison {
+  margin: 0px 5px 5px;
+}
+
+.buildings-comparison__container {
+  padding: 80px 40px;
+  gap: 24px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.buildings-comparison__title {
+  margin-bottom: 12px;
+  font-weight: 600;
+  line-height: 61px;
+  color: #4d4d4d;
+  text-align: center;
+}
+
+.buildings-comparison__descr {
+  margin: 0 auto;
+  max-width: 974px;
+  font-size: 22px;
+  line-height: 140%;
+  text-align: center;
+}
+
+.comparison__nav-arr--buildings.comparison__nav-arr {
+  background: transparent;
+  border: 1px solid #4d4d4d33;
+}
+@media (max-width: 1100px) {
+  .buildings-comparison__container {
+    padding: 40px 40px;
+  }
+
+  .buildings-comparison__title {
+    line-height: 38px;
+    margin-bottom: 0;
+  }
+
+  .buildings-comparison__descr {
+    max-width: 780px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .buildings-comparison .comparison__nav {
+    min-height: 68px;
+  }
+}
+
+@media (max-width: 567px) {
+  .buildings-comparison__container {
+    padding: 15px 10px 20px;
+    gap: 17px;
+  }
+  .buildings-comparison__title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .buildings-comparison__descr {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .buildings-comparison .comparison__content {
+    margin-top: 10px;
+  }
+}

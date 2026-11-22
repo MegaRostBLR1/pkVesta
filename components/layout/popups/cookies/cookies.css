@@ -1,0 +1,570 @@
+/* Cookie consent popup — Figma nodes 2484:55588 (desktop) and 2484:55741 (360 px). */
+.cookies {
+  position: fixed;
+  z-index: 1000;
+  right: 24px;
+  bottom: 30px;
+  left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: auto;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 30px;
+  color: #4D4D4D;
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px #0000001A;
+}
+
+.cookies[hidden] {
+  display: none;
+}
+
+.cookies__content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.cookies__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cookies__title {
+  min-width: 0;
+  color: #4D4D4D;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 26px;
+  text-transform: none;
+}
+
+.cookies__close {
+  display: flex;
+  flex: 0 0 36px;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  color: #4D4D4D;
+  border-radius: 8px;
+}
+
+.cookies__close-icon {
+  display: block;
+  width: 36px;
+  height: 36px;
+}
+
+.cookies__description {
+  margin: 0;
+  color: #2C2C2C80;
+  font-family: 'Onest-Medium', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  overflow-wrap: break-word;
+}
+
+.cookies__link {
+  color: #324C88;
+  text-decoration: none;
+}
+
+.cookies__link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cookies__actions {
+  display: flex;
+  align-items: stretch;
+  gap: 14px;
+  min-width: 0;
+}
+
+.cookies__button {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 48px;
+  padding: 12px 24px;
+  border: 1px solid #324C88;
+  border-radius: 20px;
+  color: #324C88;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.cookies__button--settings,
+.cookies__button--block {
+  background: #FFFFFF;
+}
+
+.cookies__button--accept {
+  color: #FFFFFF;
+  background: #324C88;
+}
+
+.cookies__button--settings:hover,
+.cookies__button--block:hover {
+  background: #F5F8F7;
+}
+
+.cookies__button--accept:hover {
+  background: #28427E;
+}
+
+.cookies__button:focus-visible,
+.cookies__close:focus-visible {
+  outline: 2px solid #324C88;
+  outline-offset: 3px;
+}
+
+@media screen and (min-width: 1150px) {
+  .cookies {
+    right: 0;
+    left: 0;
+    width: 1080px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .cookies {
+    right: 24px;
+    bottom: 20px;
+    left: 24px;
+    width: auto;
+    max-width: none;
+    padding: 30px;
+  }
+
+  .cookies__header {
+    gap: 16px;
+  }
+
+  .cookies__actions {
+    gap: 12px;
+  }
+
+  .cookies__button {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .cookies {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    gap: 24px;
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .cookies__header {
+    gap: 12px;
+  }
+
+  .cookies__title {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .cookies__close {
+    flex-basis: 24px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .cookies__close-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .cookies__description {
+    font-size: 14px;
+    line-height: 25px;
+  }
+
+  .cookies__actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cookies__button {
+    flex: 0 0 auto;
+    width: 100%;
+    min-height: 36px;
+    padding: 7px 48px;
+    border-radius: 20px;
+    font-size: 14px;
+    line-height: 22px;
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cookies__button {
+    transition: none;
+  }
+}
+
+
+/* Полноэкранное окно настроек по макету Figma 2484:55450. */
+.cookies-settings {
+  position: fixed;
+  z-index: 1001;
+  width: min(1080px, 100%);
+  height: min(776px, 100%);
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 320px;
+  min-height: 0;
+  padding: 30px;
+  overflow: hidden;
+  color: #4D4D4D;
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px #0000001A;
+}
+
+.cookies-settings[hidden] {
+  display: none;
+}
+
+.cookies-settings__header {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cookies-settings__title {
+  min-width: 0;
+  color: #4D4D4D;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 26px;
+  text-transform: none;
+}
+
+.cookies-settings__close {
+  display: flex;
+  flex: 0 0 36px;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  color: #777777;
+  border-radius: 8px;
+}
+
+.cookies-settings__close-icon {
+  display: block;
+  width: 36px;
+  height: 36px;
+}
+
+.cookies-settings__body {
+  display: flex;
+  flex: 1 1 auto;
+  gap: 24px;
+  min-width: 0;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-color: #2555BD #EBF0FB;
+  scrollbar-width: thin;
+}
+
+.cookies-settings__body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cookies-settings__body::-webkit-scrollbar-track {
+  background: #EBF0FB;
+  border-radius: 10px;
+}
+
+.cookies-settings__body::-webkit-scrollbar-thumb {
+  background: #2555BD;
+  border-radius: 10px;
+}
+
+.cookies-settings__text {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+  color: #2C2C2C80;
+  font-family: 'Onest-Medium', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  overflow-wrap: break-word;
+}
+
+.cookies-settings__paragraph {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+}
+
+.cookies-settings__section-title {
+  margin: 0;
+  color: #2C2C2CE6;
+  font-family: 'Onest-Regular', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-transform: none;
+}
+
+.cookies-settings__link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookies-settings__actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 14px;
+  min-width: 0;
+}
+
+.cookies-settings__button {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 50px;
+  padding: 14px 48px;
+  border: 1px solid #324C88;
+  border-radius: 20px;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.cookies-settings__button--block {
+  color: #324C88;
+  background: #FFFFFF;
+}
+
+.cookies-settings__button--accept {
+  color: #FFFFFF;
+  background: #324C88;
+}
+
+.cookies-settings__button--block:hover {
+  background: #F5F8F7;
+}
+
+.cookies-settings__button--accept:hover {
+  background: #28427E;
+}
+
+.cookies-settings__button:focus-visible,
+.cookies-settings__close:focus-visible {
+  outline: 2px solid #324C88;
+  outline-offset: 3px;
+}
+
+@media screen and (max-width: 680px) {
+  .cookies-settings {
+    gap: 14px;
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .cookies-settings__title {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .cookies-settings__close,
+  .cookies-settings__close-icon {
+    flex-basis: 24px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .cookies-settings__text {
+    gap: 14px;
+    font-size: 14px;
+    line-height: 25px;
+  }
+
+  .cookies-settings__section-title {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .cookies-settings__actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cookies-settings__button {
+    flex: 0 0 auto;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 16px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cookies-settings__button {
+    transition: none;
+  }
+}
+
+/* Tablet settings dialog — Figma 2484:55713 (1024 px).
+   Desktop geometry remains unchanged above 1100 px. */
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+  .cookies-settings {
+    right: 48px;
+    bottom: 30px;
+    left: 48px;
+    width: auto;
+    height: 757px;
+    transform: none;
+  }
+
+  .cookies-settings__title {
+    font-size: 22px;
+    line-height: 24px;
+  }
+
+  .cookies-settings__text {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .cookies-settings__section-title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .cookies-settings__actions {
+    position: relative;
+    z-index: 1;
+    gap: 14px;
+  }
+
+  .cookies-settings__button {
+    min-height: 48px;
+    padding: 12px 24px;
+    line-height: 24px;
+  }
+}
+
+
+/* Mobile cookie settings — Figma node 2484:55828 (360 px). */
+@media screen and (max-width: 680px) {
+  .cookies-settings {
+    top: auto;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    width: auto;
+    height: 538px;
+    max-height: 90vh;
+    min-width: 0;
+    padding: 18px;
+    transform: none;
+    gap: 14px;
+  }
+
+  .cookies-settings__header {
+    gap: 12px;
+  }
+
+  .cookies-settings__body {
+    flex: 1 1 auto;
+    width: 100%;
+    gap: 14px;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .cookies-settings__text {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 14px;
+    line-height: 25px;
+    gap: 14px;
+    overflow-wrap: anywhere;
+  }
+
+  .cookies-settings__actions {
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cookies-settings__button {
+    flex: 0 0 auto;
+    width: 100%;
+    min-height: 36px;
+    padding: 7px 16px;
+    font-size: 14px;
+    line-height: 22px;
+    white-space: normal;
+  }
+}
+
+@media screen and (max-width: 359px) {
+  .cookies-settings {
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    padding: 16px;
+  }
+
+  .cookies-settings__title {
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  .cookies-settings__button {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+}
