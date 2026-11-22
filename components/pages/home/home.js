@@ -737,6 +737,186 @@ function initHomeNewsSlider() {
 
   updateSlider();
 }
+function initHomeAgro() {
+  const section = document.querySelector(".home-agro");
+
+  if (!section || section.dataset.initialized === "true") {
+    return;
+  }
+
+  const desktopVisual = section.querySelector(".home-agro__visual");
+  const items = Array.from(section.querySelectorAll(".home-agro__item"));
+  const entries = items
+    .map((item) => {
+      const visual = item.querySelector(".home-agro__item-visual");
+      const toggle = item.querySelector(".home-agro__toggle");
+
+      if (!visual || !toggle) {
+        return null;
+      }
+
+      return { visual, toggle };
+    })
+    .filter(Boolean);
+
+  if (
+    !desktopVisual ||
+    entries.length !== items.length ||
+    entries.some(({ visual }) => !visual.parentNode)
+  ) {
+    return;
+  }
+
+  entries.forEach(({ visual }, index) => {
+    const placeholder = document.createComment("home-agro-item-visual");
+    visual.parentNode.insertBefore(placeholder, visual);
+    entries[index].placeholder = placeholder;
+  });
+
+  section.dataset.initialized = "true";
+
+  let selectedEntry = entries.find(
+    ({ toggle }) => toggle.getAttribute("aria-expanded") === "true"
+  ) || entries[0];
+
+  const desktopMedia = window.matchMedia("(min-width: 1101px)");
+
+  const restoreItemVisual = ({ visual, placeholder }) => {
+    if (placeholder.parentNode) {
+      placeholder.parentNode.insertBefore(visual, placeholder);
+    }
+  };
+
+  const showSelectedVisual = () => {
+    const currentVisual = desktopVisual.querySelector(".home-agro__item-visual");
+
+    if (currentVisual === selectedEntry.visual) {
+      return;
+    }
+
+    const currentEntry = entries.find(({ visual }) => visual === currentVisual);
+
+    if (currentEntry) {
+      restoreItemVisual(currentEntry);
+    }
+
+    desktopVisual.replaceChildren(selectedEntry.visual);
+  };
+
+  const restoreAllItemVisuals = () => {
+    entries.forEach(restoreItemVisual);
+    desktopVisual.replaceChildren();
+  };
+
+  const syncVisualPlacement = () => {
+    if (desktopMedia.matches) {
+      showSelectedVisual();
+      return;
+    }
+
+    restoreAllItemVisuals();
+  };
+
+  entries.forEach((entry) => {
+    entry.toggle.addEventListener("click", () => {
+      selectedEntry = entry;
+
+      if (desktopMedia.matches) {
+        showSelectedVisual();
+      }
+    });
+  });
+
+  const handleVisualBreakpointChange = () => {
+    if (!section.isConnected) {
+      if (typeof desktopMedia.removeEventListener === "function") {
+        desktopMedia.removeEventListener("change", handleVisualBreakpointChange);
+      } else {
+        desktopMedia.removeListener(handleVisualBreakpointChange);
+      }
+
+      return;
+    }
+
+    syncVisualPlacement();
+  };
+
+  if (typeof desktopMedia.addEventListener === "function") {
+    desktopMedia.addEventListener("change", handleVisualBreakpointChange);
+  } else {
+    desktopMedia.addListener(handleVisualBreakpointChange);
+  }
+
+  syncVisualPlacement();
+
+  const zoomButtons = section.querySelectorAll(".home-agro__zoom");
+  const lightbox = section.querySelector(".home-agro__lightbox");
+  const lightboxImage = lightbox?.querySelector(".home-agro__lightbox-image");
+  const lightboxCloseButton = lightbox?.querySelector(".home-agro__lightbox-close");
+
+  if (
+    !lightbox ||
+    !lightboxImage ||
+    !lightboxCloseButton ||
+    typeof lightbox.showModal !== "function"
+  ) {
+    return;
+  }
+
+  let activeZoomButton = null;
+
+  const resetZoomButtons = () => {
+    zoomButtons.forEach((button) => {
+      button.setAttribute("aria-expanded", "false");
+    });
+  };
+
+  const closeLightbox = () => {
+    if (lightbox.open) {
+      lightbox.close();
+    }
+  };
+
+  zoomButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const visual = button.closest(".home-agro__item-visual");
+      const image = visual?.querySelector(".home-agro__image");
+
+      if (!image) {
+        return;
+      }
+
+      activeZoomButton = button;
+      lightboxImage.src = image.currentSrc || image.src;
+      lightboxImage.alt = image.alt;
+      resetZoomButtons();
+      button.setAttribute("aria-expanded", "true");
+
+      if (!lightbox.open) {
+        lightbox.showModal();
+      }
+    });
+  });
+
+  lightboxCloseButton.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  lightbox.addEventListener("close", () => {
+    resetZoomButtons();
+    lightboxImage.removeAttribute("src");
+    lightboxImage.alt = "";
+
+    const trigger = activeZoomButton;
+    activeZoomButton = null;
+    trigger?.focus();
+  });
+}
+
 function initHome() {
   const hero = document.querySelector(".home-hero");
 
@@ -749,70 +929,7 @@ function initHome() {
   initHomeProjectsSlider();
   initServicesContact();
   initHomeProcessCards();
-
-  const accordionAnimations = new WeakMap();
-  const animateAccordionContent = (content, expanded) => {
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const wasHidden = content.hidden;
-    const computed = window.getComputedStyle(content);
-    const currentHeight = computed.height;
-    const currentPaddingTop = computed.paddingTop;
-    const targetPaddingTop = computed.paddingTop;
-    const targetPaddingBottom = computed.paddingBottom;
-    const boxSizing = computed.boxSizing;
-
-    accordionAnimations.get(content)?.cancel();
-
-    if (expanded) {
-      content.hidden = false;
-    }
-
-    if (reducedMotion.matches) {
-      content.hidden = !expanded;
-      content.style.removeProperty("height");
-      content.style.removeProperty("overflow");
-      content.style.removeProperty("padding-top");
-      accordionAnimations.delete(content);
-      return;
-    }
-
-    if (expanded && wasHidden) {
-      content.style.height = "0px";
-      content.style.paddingTop = "0px";
-    } else {
-      content.style.height = currentHeight;
-      content.style.paddingTop = currentPaddingTop;
-    }
-    content.style.overflow = "hidden";
-
-    const startHeight = Number.parseFloat(content.style.height) || 0;
-    const startPaddingTop = Number.parseFloat(content.style.paddingTop) || 0;
-    const targetHeight = expanded
-      ? content.scrollHeight -
-      (boxSizing === "border-box" ? 0 : Number.parseFloat(targetPaddingTop) + Number.parseFloat(targetPaddingBottom))
-      : 0;
-    const animation = content.animate(
-      [
-        { height: `${startHeight}px`, paddingTop: `${startPaddingTop}px` },
-        { height: `${Math.max(0, targetHeight)}px`, paddingTop: expanded ? targetPaddingTop : "0px" },
-      ],
-      { duration: 300, easing: "ease-in-out" }
-    );
-
-    accordionAnimations.set(content, animation);
-    animation.addEventListener(
-      "finish",
-      () => {
-        if (accordionAnimations.get(content) !== animation) return;
-        accordionAnimations.delete(content);
-        content.hidden = !expanded;
-        content.style.removeProperty("height");
-        content.style.removeProperty("overflow");
-        content.style.removeProperty("padding-top");
-      },
-      { once: true }
-    );
-  };
+  initHomeAgro();
 
   document.querySelectorAll(".accordion__btn").forEach((btn) => {
     if (btn.dataset.initialized === "true") return;
@@ -826,10 +943,41 @@ function initHome() {
       body.classList.toggle("is-open", expanded);
     };
 
-    sync(btn.getAttribute("aria-expanded") === "true");
+    const exclusiveSection = btn.closest(".home-agro, .home-faq");
+    const isInitiallyExpanded = btn.getAttribute("aria-expanded") === "true";
+
+    if (isInitiallyExpanded && exclusiveSection) {
+      exclusiveSection.querySelectorAll('.accordion__btn[aria-expanded="true"]').forEach((openBtn) => {
+        if (openBtn === btn) {
+          return;
+        }
+
+        openBtn.setAttribute("aria-expanded", "false");
+
+        const openBody = document.getElementById(openBtn.getAttribute("aria-controls"));
+        openBody?.classList.remove("is-open");
+      });
+    }
+
+    sync(isInitiallyExpanded);
 
     btn.addEventListener("click", () => {
-      sync(btn.getAttribute("aria-expanded") !== "true");
+      const shouldExpand = btn.getAttribute("aria-expanded") !== "true";
+
+      if (shouldExpand && exclusiveSection) {
+        exclusiveSection.querySelectorAll('.accordion__btn[aria-expanded="true"]').forEach((openBtn) => {
+          if (openBtn === btn) {
+            return;
+          }
+
+          openBtn.setAttribute("aria-expanded", "false");
+
+          const openBody = document.getElementById(openBtn.getAttribute("aria-controls"));
+          openBody?.classList.remove("is-open");
+        });
+      }
+
+      sync(shouldExpand);
     });
   });
 }

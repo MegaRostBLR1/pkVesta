@@ -4468,7 +4468,6 @@
 }
 
 .home-news__image-link {
-  position: static;
   display: block;
   flex: 0 0 320px;
   width: 100%;
@@ -4476,7 +4475,6 @@
   overflow: hidden;
   border-radius: 14px;
 }
-
 
 .home-news__image-link::after {
   position: absolute;
@@ -4793,5 +4791,735 @@
 @media (prefers-reduced-motion: reduce) {
   .home-news__grid {
     transition: none;
+  }
+}
+
+/* Агрокомплексы из ЛСТК — Figma 1857:24647 */
+.home-agro {
+  width: 100%;
+  padding: 0 10px 10px;
+  color: #4d4d4d;
+  background: #f5f8f7;
+}
+
+.home-agro__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  width: 100%;
+  padding: 96px 40px;
+  border-radius: 20px;
+}
+
+.home-agro__header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.home-agro__title {
+  width: 100%;
+  max-width: 1276px;
+  color: #4d4d4d;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.home-agro__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 684fr) minmax(0, 714fr);
+  justify-content: center;
+  gap: clamp(40px, 6.875vw, 110px);
+  width: 100%;
+  max-width: 1508px;
+  min-width: 0;
+}
+
+.home-agro__visual {
+  position: relative;
+  min-width: 0;
+  aspect-ratio: 684 / 523;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.home-agro__visual .home-agro__item-visual {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+}
+
+.home-agro__item-visual {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  height: 498px;
+  min-width: 0;
+  margin: 20px 0 0;
+  overflow: hidden;
+  padding: 14px;
+  border: 4px solid #ffffff;
+  border-radius: 30px;
+  background: #ffffff;
+}
+
+.home-agro__image {
+  position: absolute;
+  inset: 4px;
+  display: block;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.home-agro__zoom {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 0 0 64px;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border: 1px solid rgb(255 255 255 / 8%);
+  border-radius: 10px;
+  color: #ffffff;
+  background: rgb(255 255 255 / 4%);
+  backdrop-filter: blur(24px);
+  box-shadow: inset 0 0 60px rgb(255 255 255 / 3%);
+  cursor: pointer;
+}
+
+.home-agro__zoom svg {
+  display: block;
+  width: 36px;
+  height: 36px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.home-agro__zoom:focus-visible,
+.home-agro__toggle:focus-visible {
+  outline: 2px solid #324c88;
+  outline-offset: 4px;
+}
+
+.home-agro__accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  min-width: 0;
+}
+
+.home-agro__item {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(0 0 0 / 5%);
+}
+
+.home-agro__item-heading {
+  margin: 0;
+  font: inherit;
+}
+
+.home-agro__toggle {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  min-width: 0;
+  color: #4d4d4d;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.home-agro__toggle > span:last-child {
+  min-width: 0;
+}
+
+.home-agro__item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px 0 0 64px;
+  color: #4d4d4dcc;
+  font-family: "Onest-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.home-agro__item-content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-left: 30px;
+  list-style: disc;
+}
+
+.home-agro__item-copy {
+  min-width: 0;
+}
+
+.home-agro__lightbox {
+  --lightbox-gutter-x: 32px;
+  --lightbox-gutter-top: 76px;
+  --lightbox-gutter-bottom: 24px;
+
+  position: fixed;
+  inset: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: var(--lightbox-gutter-top) var(--lightbox-gutter-x) var(--lightbox-gutter-bottom);
+  overflow: hidden;
+  border: 0;
+  color: #ffffff;
+  background: transparent;
+}
+
+.home-agro__lightbox[open] {
+  display: grid;
+  place-items: center;
+}
+
+.home-agro__lightbox::backdrop {
+  background: rgb(0 0 0 / 88%);
+  backdrop-filter: blur(4px);
+}
+
+.home-agro__lightbox-image {
+  display: block;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  min-height: 0;
+  max-width: calc(100vw - var(--lightbox-gutter-x) * 2);
+  max-height: calc(100dvh - var(--lightbox-gutter-top) - var(--lightbox-gutter-bottom));
+  object-fit: contain;
+}
+
+.home-agro__lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  z-index: 1;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 30%);
+  border-radius: 50%;
+  color: #ffffff;
+  background: rgb(255 255 255 / 12%);
+  cursor: pointer;
+}
+
+.home-agro__lightbox-close svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+
+.home-agro__lightbox-close:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+/* Пропорции десктопной композиции для макета 1440 px. */
+@media screen and (max-width: 1600px) {
+  .home-agro__layout {
+    align-items: start;
+  }
+}
+
+/* Планшетная композиция Figma 1857:26186 (1024 px). */
+@media screen and (max-width: 1100px) {
+  .home-agro__panel {
+    gap: 25px;
+    padding: 40px;
+    border-radius: 10px;
+  }
+
+  .home-agro__title {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .home-agro__layout {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .home-agro__visual {
+    display: none;
+  }
+
+  .home-agro__accordion {
+    width: 100%;
+  }
+
+  .home-agro__toggle {
+    font-size: 18px;
+  }
+
+  .home-agro__item-content {
+    padding-left: 0;
+    font-size: 16px;
+  }
+
+  .home-agro__item-copy {
+    margin-left: 54px;
+  }
+
+  .home-agro__item-copy ul {
+    display: none;
+  }
+
+}
+
+/* Промежуточная мобильная ширина. */
+@media screen and (max-width: 760px) {
+  .home-agro {
+    padding: 0 5px 5px;
+  }
+
+  .home-agro__panel {
+    gap: 28px;
+    padding: 36px 16px;
+    border-radius: 12px;
+  }
+
+  .home-agro__title {
+    font-size: 28px;
+  }
+
+  .home-agro__item-copy {
+    margin-left: 0;
+  }
+
+  .home-agro__item-copy ul {
+    display: flex;
+  }
+
+  .home-agro__zoom {
+    flex-basis: 48px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .home-agro__zoom svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .home-agro__accordion {
+    gap: 20px;
+  }
+
+  .home-agro__item {
+    padding-bottom: 16px;
+  }
+
+  .home-agro__toggle {
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 16px;
+  }
+
+  .home-agro__item-content {
+    gap: 12px;
+    padding-top: 16px;
+    font-size: 15px;
+  }
+
+  .home-agro__item-content ul {
+    gap: 8px;
+    padding-left: 24px;
+  }
+
+  .home-agro__item-visual {
+    height: auto;
+    aspect-ratio: 684 / 523;
+  }
+}
+
+/* Мобильная композиция Figma 1857:26849 (360 px). */
+@media screen and (max-width: 680px) {
+  .home-agro {
+    padding: 0 10px 10px;
+  }
+
+  .home-agro__panel {
+    align-items: stretch;
+    gap: 25px;
+    padding: 0 4px 10px;
+    border-radius: 10px;
+  }
+
+  .home-agro__header {
+    padding-top: 20px;
+  }
+
+  .home-agro__title {
+    max-width: none;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .home-agro__accordion {
+    gap: 26px;
+  }
+
+  .home-agro__item {
+    padding-bottom: 20px;
+  }
+
+  .home-agro__toggle {
+    align-items: center;
+    gap: 24px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .home-agro__item-content {
+    padding-top: 20px;
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .home-agro__item-copy {
+    margin-left: 54px;
+  }
+
+  .home-agro__item-copy ul {
+    display: none;
+  }
+
+  .home-agro__item-visual {
+    height: 265px;
+    aspect-ratio: auto;
+    padding: 4px;
+    border: 0;
+    border-radius: 30px;
+  }
+
+  .home-agro__item-visual .home-agro__image {
+    border-radius: 30px;
+  }
+
+  .home-agro__item-visual .home-agro__zoom svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .home-agro__lightbox {
+    --lightbox-gutter-x: 12px;
+    --lightbox-gutter-top: 68px;
+    --lightbox-gutter-bottom: 12px;
+
+    padding: var(--lightbox-gutter-top) var(--lightbox-gutter-x) var(--lightbox-gutter-bottom);
+  }
+
+  .home-agro__lightbox-close {
+    top: 12px;
+    right: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-agro__panel {
+    padding: 28px 12px;
+  }
+
+  .home-agro__title {
+    font-size: 22px;
+  }
+
+  .home-agro__toggle {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .home-agro__title {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .home-agro__toggle {
+    gap: 24px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+/* Вопросы о компании — Figma 1857:24696 (1920 px), 1857:25201 (1440 px),
+   1857:26229 (1024 px), 1857:26891 (360 px). */
+.home-faq {
+  width: 100%;
+}
+
+.home-faq__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 30px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 10px;
+  background: #f5f8f7;
+}
+
+.home-faq__title {
+  align-self: center;
+  margin: 0;
+  color: #4d4d4d;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 56px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.home-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.home-faq__item {
+  min-width: 0;
+  padding: 30px;
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+.home-faq__heading {
+  margin: 0;
+  font: inherit;
+}
+
+.home-faq__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.home-faq__toggle:focus-visible {
+  outline: 2px solid #324c88;
+  outline-offset: 4px;
+}
+
+.home-faq__question {
+  min-width: 0;
+  margin: 0;
+  color: #4d4d4d;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  overflow-wrap: anywhere;
+  text-transform: uppercase;
+}
+
+.home-faq__answer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow: hidden;
+  padding-top: 20px;
+  color: #4d4d4dcc;
+  font-family: "Onest-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Figma desktop frame 1440 px: H3 Semibold 36/44. */
+@media screen and (max-width: 1440px) {
+  .home-faq__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .home-faq {
+    padding-right: 28px;
+    padding-left: 28px;
+  }
+
+  .home-faq__panel {
+    padding: 32px;
+  }
+
+  .home-faq__question {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .home-faq__item {
+    padding: 24px;
+  }
+
+  .home-faq__answer {
+    font-size: 16px;
+  }
+}
+
+/* Figma tablet frame 1024 px. */
+@media screen and (max-width: 1100px) {
+  .home-faq {
+    padding: 0 10px 10px;
+  }
+
+  .home-faq__panel {
+    gap: 30px;
+    padding: 40px;
+  }
+
+  .home-faq__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .home-faq__item {
+    padding: 20px;
+  }
+
+  .home-faq__question {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+
+/* Сохраняем исходный промежуточный диапазон ниже tablet-breakpoint. */
+@media screen and (max-width: 760px) {
+  .home-faq {
+    padding-right: 28px;
+    padding-left: 28px;
+  }
+
+  .home-faq__panel {
+    padding: 32px;
+  }
+
+  .home-faq__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .home-faq__item {
+    padding: 24px;
+  }
+
+  .home-faq__question {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+/* Figma mobile frame 360 px. */
+@media screen and (max-width: 680px) {
+  .home-faq {
+    padding: 0 10px 10px;
+  }
+
+  .home-faq__panel {
+    gap: 20px;
+    padding: 24px 12px;
+  }
+
+  .home-faq__title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .home-faq__item {
+    padding: 16px 12px;
+    border-radius: 12px;
+  }
+
+  .home-faq__question {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .home-faq__answer {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .home-faq {
+    padding: 0;
+  }
+
+  .home-faq__panel {
+    gap: 30px;
+    padding: 20px 24px;
+    border-radius: 0;
+  }
+
+  .home-faq__title {
+    font-size: 18px;
+    line-height: 26px;
+    white-space: nowrap;
+  }
+
+  .home-faq__item {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .home-faq__question {
+    font-size: 16px;
+    line-height: 22px;
   }
 }

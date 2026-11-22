@@ -1624,31 +1624,20 @@
 <section class="home-agro" aria-labelledby="home-agro__title">
   <div class="home-agro__panel">
     <header class="home-agro__header">
-      <h2 class="home-agro__title" id="home-agro__title">Название блока</h2>
+      <h2 class="home-agro__title" id="home-agro__title">Агрокомплексы из ЛСТК</h2>
     </header>
 
     <div class="home-agro__layout">
-      <figure class="home-agro__visual">
-        <img
-                class="home-agro__image"
-                src="./static/images/home/home-lstk.png"
-                alt="Стальной каркас быстровозводимого здания" />
-        <button class="home-agro__zoom" type="button" aria-label="Увеличить изображение" aria-expanded="false">
-          <svg viewBox="0 0 36 36" aria-hidden="true" focusable="false">
-            <circle cx="15.5" cy="15.5" r="9.5"></circle>
-            <path d="m22.5 22.5 7 7"></path>
-          </svg>
-        </button>
-      </figure>
+      <div class="home-agro__visual" role="group" aria-label="Изображение выбранного раздела"></div>
 
       <div class="home-agro__accordion">
         <div class="home-agro__item">
           <h3 class="home-agro__item-heading">
             <button
-                    class="home-agro__toggle accordion__btn"
-                    type="button"
-                    aria-expanded="false"
-                    aria-controls="home-agro__features">
+              class="home-agro__toggle accordion__btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="home-agro__features">
               <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true"></span>
               <span>Особенности агрокомплексов из ЛСТК</span>
             </button>
@@ -1665,6 +1654,25 @@
                   решения подбираются под необходимые пролёты, нагрузки и условия эксплуатации.
                 </p>
               </div>
+              <figure class="home-agro__item-visual">
+                <img
+                  class="home-agro__image"
+                  src="./static/images/home/home-lstk.png"
+                  alt="Каркас сельскохозяйственного здания из ЛСТК"
+                  loading="lazy" />
+                <button
+                  class="home-agro__zoom"
+                  type="button"
+                  aria-label="Увеличить изображение"
+                  aria-haspopup="dialog"
+                  aria-controls="home-agro__lightbox"
+                  aria-expanded="false">
+                  <svg viewBox="0 0 36 36" aria-hidden="true" focusable="false">
+                    <circle cx="15.5" cy="15.5" r="9.5"></circle>
+                    <path d="m22.5 22.5 7 7"></path>
+                  </svg>
+                </button>
+              </figure>
             </div>
           </div>
         </div>
@@ -1672,10 +1680,10 @@
         <div class="home-agro__item">
           <h3 class="home-agro__item-heading">
             <button
-                    class="home-agro__toggle accordion__btn"
-                    type="button"
-                    aria-expanded="false"
-                    aria-controls="home-agro__manufacturer">
+              class="home-agro__toggle accordion__btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="home-agro__manufacturer">
               <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true"></span>
               <span>БВЗ от производителя</span>
             </button>
@@ -1697,24 +1705,26 @@
                     <li>Спортивных</li>
                   </ul>
                 </div>
-                <figure class="home-agro__tablet-visual">
-                  <img
-                          class="home-agro__image"
-                          src="./static/images/home/home-lstk.png"
-                          alt="Стальной каркас быстровозводимого здания"
-                          loading="lazy" />
-                  <button
-                          class="home-agro__zoom"
-                          type="button"
-                          aria-label="Увеличить изображение"
-                          aria-expanded="false">
-                    <svg viewBox="0 0 36 36" aria-hidden="true" focusable="false">
-                      <circle cx="15.5" cy="15.5" r="9.5"></circle>
-                      <path d="m22.5 22.5 7 7"></path>
-                    </svg>
-                  </button>
-                </figure>
               </div>
+              <figure class="home-agro__item-visual">
+                <img
+                  class="home-agro__image"
+                  src="./static/images/home/industries-small-img.png"
+                  alt="Современное сельскохозяйственное здание"
+                  loading="lazy" />
+                <button
+                  class="home-agro__zoom"
+                  type="button"
+                  aria-label="Увеличить изображение"
+                  aria-haspopup="dialog"
+                  aria-controls="home-agro__lightbox"
+                  aria-expanded="false">
+                  <svg viewBox="0 0 36 36" aria-hidden="true" focusable="false">
+                    <circle cx="15.5" cy="15.5" r="9.5"></circle>
+                    <path d="m22.5 22.5 7 7"></path>
+                  </svg>
+                </button>
+              </figure>
             </div>
           </div>
         </div>
@@ -1722,10 +1732,10 @@
         <div class="home-agro__item">
           <h3 class="home-agro__item-heading">
             <button
-                    class="home-agro__toggle accordion__btn"
-                    type="button"
-                    aria-expanded="false"
-                    aria-controls="home-agro__benefits">
+              class="home-agro__toggle accordion__btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="home-agro__benefits">
               <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true"></span>
               <span>Почему 100% свободная планировка внутри здания</span>
             </button>
@@ -1742,12 +1752,39 @@
                   нагрузки, чтобы эффективнее использовать площадь здания.
                 </p>
               </div>
+              <figure class="home-agro__item-visual">
+                <img
+                  class="home-agro__image"
+                  src="./static/images/home/industries-big-img.png"
+                  alt="Ангар для сельскохозяйственного производства"
+                  loading="lazy" />
+                <button
+                  class="home-agro__zoom"
+                  type="button"
+                  aria-label="Увеличить изображение"
+                  aria-haspopup="dialog"
+                  aria-controls="home-agro__lightbox"
+                  aria-expanded="false">
+                  <svg viewBox="0 0 36 36" aria-hidden="true" focusable="false">
+                    <circle cx="15.5" cy="15.5" r="9.5"></circle>
+                    <path d="m22.5 22.5 7 7"></path>
+                  </svg>
+                </button>
+              </figure>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <dialog class="home-agro__lightbox" id="home-agro__lightbox" aria-label="Просмотр изображения">
+    <button class="home-agro__lightbox-close" type="button" aria-label="Закрыть изображение">
+      <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <path d="m8 8 16 16M24 8 8 24"></path>
+      </svg>
+    </button>
+    <img class="home-agro__lightbox-image" alt="" />
+  </dialog>
 </section>
 
 <section class="home-faq" aria-labelledby="home-faq__title">
