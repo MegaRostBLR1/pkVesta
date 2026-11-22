@@ -245,18 +245,6 @@ function resolveStaticImageUrl(value) {
 
   let imagePath = value.slice(imagePathIndex);
 
-  // These files are absent from the repository; use the existing gallery image.
-  imagePath = imagePath.replace(
-    /^static\/images\/bildings\/gallery-(?:2|4)\.jpg(?=[?#]|$)/i,
-    'static/images/bildings/gallery.jpg'
-  );
-
-  // world.svg contains PNG data and is served with an incompatible MIME type.
-  imagePath = imagePath.replace(
-    /^static\/images\/world\.svg(?=[?#]|$)/i,
-    'static/images/world.png'
-  );
-
   return new URL(imagePath, APP_BASE_URL).href;
 }
 
