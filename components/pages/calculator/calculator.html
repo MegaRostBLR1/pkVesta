@@ -67,11 +67,11 @@
   </div>
 </section>
 
-<section class="calculator-value section__container">
+<section class="calculator-value">
   <div class="calculator-value__container flex-center">
-    <div class="calculator-value__content flex-col-ac">
+    <div class="calculator-value__content flex-col">
       <header class="calculator-value__header flex-col-ac">
-        <h2 class="calculator-value__title">Клиент&nbsp;&mdash; это дизайнер в&nbsp;Websteel</h2>
+        <h2 class="calculator-value__title">Клиент&nbsp;&ndash; это дизайнер в&nbsp;Websteel</h2>
         <p class="calculator-value__descr">
           Система позволяет клиенту проектировать и рассчитывать здания в режиме онлайн во многих странах с учетом
           технологических возможностей завода или партнеров
@@ -152,7 +152,7 @@
   </div>
 </section>
 
-<section class="home-advantages" aria-labelledby="home-advantages__title">
+<section class="calculator-popularity" aria-labelledby="home-advantages__title">
   <div class="home-advantages__inner">
     <header class="home-advantages__heading">
       <h2 class="home-advantages__title" id="home-advantages__title">В чем популярноcть системы Websteel</h2>
@@ -163,7 +163,7 @@
     </header>
 
     <div class="home-advantages__content">
-      <ul class="home-advantages__tabs mw-1150" aria-label="Преимущества завода">
+      <ul class="home-advantages__tabs" aria-label="Преимущества завода">
         <li class="home-advantages__tab home-advantages__tab--active" aria-current="true">3d -визуализация</li>
         <li class="home-advantages__tab">Онлайн расчет</li>
         <li class="home-advantages__tab">Онлайн документация</li>
@@ -185,20 +185,21 @@
             </p>
           </div>
         </div>
-        <img
-            class="home-advantages__image"
-            src="./static/images/home/home-lstk.png"
-            alt="Строение"
-            width="650"
-            height="490" />
+
+        <img class="home-advantages__image"
+        src="./static/images/home/home-lstk.png"
+        alt="Строение"
+        width="650"
+        height="490" />
       </article>
     </div>
   </div>
 </section>
 
 <section class="calculator-features" aria-labelledby="home-agro__title">
-  <div class="home-agro__panel">
-    <nav class="calculator-features__tabs">
+  <div class="prices-tech__inner flex-col">
+    <header class="prices-tech__header">
+      <nav class="calculator-features__tabs">
       <a
           href="#"
           class="calculator-features__tabs-item calculator-features__tabs--active"
@@ -208,222 +209,270 @@
       </a>
       <a href="#" class="calculator-features__tabs-item" role="tab" aria-selected="false">Для партнеров</a>
     </nav>
-    <header class="home-agro__header flex-col-ac">
-      <h2 class="home-agro__title" id="home-agro__title">
+      <h2 class="prices-tech__title" id="prices-tech-title">
         Вы проектируете.
         <br />
-        завод делает здание под заказ
+        Завод делает здание под заказ
       </h2>
-      <p class="calculator-features__descr">
-        Применяются самые последние информационные технологии в&nbsp;визуализации и&nbsp;рассчетной&nbsp;части системы
+      <p class="prices-tech__subtitle">
+        Применяются самые последние информационные технологии в визуализации и расчетной части системы
       </p>
     </header>
 
-    <div class="home-agro__layout">
-      <div class="calculator-features__buildings-list calculator__visual">
-        <figure class="buildings-item flex-col-ac">
-          <img class="buildings-item__image" src="./static/images/calculator/building.png" alt="Здание" />
-          <figcaption class="buildings-item__descr flex-col-ac">
-            <span class="buildings-item__title">склады</span>
-            <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
+    <div class="cards-accordion">
+      <div class="cards-accordion__list accodion--desk-visual">
+        <figure class="cards-accordion__item flex-col-ac">
+          <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+          <figcaption class="cards-accordion__descr flex-col-ac">
+            <span class="cards-accordion__title">склады</span>
+            <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
           </figcaption>
         </figure>
-        <figure class="buildings-item flex-col-ac">
-          <img class="buildings-item__image" src="./static/images/calculator/building.png" alt="Здание" />
-          <figcaption class="buildings-item__descr flex-col-ac">
-            <span class="buildings-item__title">склады</span>
-            <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
+        <figure class="cards-accordion__item flex-col-ac">
+          <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+          <figcaption class="cards-accordion__descr flex-col-ac">
+            <span class="cards-accordion__title">склады</span>
+            <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
           </figcaption>
         </figure>
-        <figure class="buildings-item flex-col-ac">
-          <img class="buildings-item__image" src="./static/images/calculator/building.png" alt="Здание" />
-          <figcaption class="buildings-item__descr flex-col-ac">
-            <span class="buildings-item__title">склады</span>
-            <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
+        <figure class="cards-accordion__item flex-col-ac">
+          <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+          <figcaption class="cards-accordion__descr flex-col-ac">
+            <span class="cards-accordion__title">склады</span>
+            <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
           </figcaption>
         </figure>
-        <figure class="buildings-item flex-col-ac">
-          <img class="buildings-item__image" src="./static/images/calculator/building.png" alt="Здание" />
-          <figcaption class="buildings-item__descr flex-col-ac">
-            <span class="buildings-item__title">склады</span>
-            <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
+        <figure class="cards-accordion__item flex-col-ac">
+          <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+          <figcaption class="cards-accordion__descr flex-col-ac">
+            <span class="cards-accordion__title">склады</span>
+            <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
           </figcaption>
         </figure>
       </div>
 
-      <div class="home-agro__accordion">
-        <div class="home-agro__item">
-          <h3 class="home-agro__item-heading">
-            <button class="home-agro__toggle" type="button" aria-expanded="false" aria-controls="home-agro__features">
-              <span class="home-agro__toggle-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
-              </span>
-              <span>Особенности агрокомплексов из ЛСТК</span>
-            </button>
-          </h3>
-          <div class="home-agro__item-content" id="home-agro__features" hidden>
-            <p>
-              Каркас из лёгких стальных тонкостенных конструкций помогает возводить сельскохозяйственные здания с учётом
-              назначения объекта и особенностей участка.
-            </p>
-            <p>
-              Такая технология подходит для ферм, складов кормов, зернохранилищ и помещений для техники. Проектные
-              решения подбираются под необходимые пролёты, нагрузки и условия эксплуатации.
-            </p>
-          </div>
-        </div>
-
-        <div class="home-agro__item is-open">
-          <h3 class="home-agro__item-heading">
+      <div class="cards-accordion__accordion-list flex-col">
+        <div class="cards-accordion__accordion-item">
+          <h3 class="cards-accordion__accordion-heading">
             <button
-                class="home-agro__toggle"
-                type="button"
-                aria-expanded="true"
-                aria-controls="home-agro__manufacturer">
-              <span class="home-agro__toggle-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M5 12h14"></path></svg>
+              class="cards-accordion__accordion-toggle accordion__btn"
+              type="button"
+              aria-expanded="true"
+              aria-controls="home-agro__features">
+              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true">
               </span>
-              <span>БВЗ от производителя</span>
+              <span>Технология “SMART LOADS CHOICE” (SLC)</span>
             </button>
           </h3>
-          <div class="home-agro__item-content" id="home-agro__manufacturer">
-            <div class="home-agro__item-copy">
-              <p>
-                В системе базовые районированные карты в Евразии, Африке и Ближнем Востоке - оцифрованы на базе
-                нормативных нагрузок (снег, ветер и сейсмика) для дальнейшего расчета металлоемкости каркаса
-              </p>
-            </div>
-            <div class="calculator-features__buildings-list calculator__tablet-visual">
-              <figure class="buildings-item flex-col-ac">
-                <img class="buildings-item__image" src="./static/images/calculator/building.png" alt="Здание" />
-                <figcaption class="buildings-item__descr flex-col-ac">
-                  <span class="buildings-item__title">склады</span>
-                  <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
-                </figcaption>
-              </figure>
-              <figure class="buildings-item flex-col-ac">
-                <img class="buildings-item__image" src="./static/images/calculator/building.png" alt="Здание" />
-                <figcaption class="buildings-item__descr flex-col-ac">
-                  <span class="buildings-item__title">склады</span>
-                  <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
-                </figcaption>
-              </figure>
-              <figure class="buildings-item flex-col-ac">
-                <img class="buildings-item__image" src="./static/images/calculator/building.png" alt="Здание" />
-                <figcaption class="buildings-item__descr flex-col-ac">
-                  <span class="buildings-item__title">склады</span>
-                  <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
-                </figcaption>
-              </figure>
-              <figure class="buildings-item flex-col-ac">
-                <img class="buildings-item__image" src="./static/images/calculator/building.png" alt="Здание" />
-                <figcaption class="buildings-item__descr flex-col-ac">
-                  <span class="buildings-item__title">склады</span>
-                  <span class="buildings-item__price">от 5 000 руб./кв.м.</span>
-                </figcaption>
-              </figure>
+          <div class="accordion__body" id="home-agro__features">
+            <div class="accordion__inner">
+              <div class="cards-accordion__accordion-inner">
+                <div class="cards-accordion__accordion-text flex-col">
+                  <p>
+                    В системе базовые районированные карты в Евразии, Африке и Ближнем Востоке оцифрованы на базе
+                    нормативных нагрузок (снег, ветер и сейсмика) для дальнейшего расчета металлоемкос.
+                  </p>
+                </div>
+                <div class="cards-accordion__list accordion--tablet-visual">
+                  <figure class="cards-accordion__item flex-col-ac">
+                    <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+                    <figcaption class="cards-accordion__descr flex-col-ac">
+                      <span class="cards-accordion__title">склады</span>
+                      <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="cards-accordion__item flex-col-ac">
+                    <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+                    <figcaption class="cards-accordion__descr flex-col-ac">
+                      <span class="cards-accordion__title">склады</span>
+                      <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="cards-accordion__item flex-col-ac">
+                    <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+                    <figcaption class="cards-accordion__descr flex-col-ac">
+                      <span class="cards-accordion__title">склады</span>
+                      <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="cards-accordion__item flex-col-ac">
+                    <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+                    <figcaption class="cards-accordion__descr flex-col-ac">
+                      <span class="cards-accordion__title">склады</span>
+                      <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="home-agro__item">
-          <h3 class="home-agro__item-heading">
-            <button class="home-agro__toggle" type="button" aria-expanded="false" aria-controls="home-agro__benefits">
-              <span class="home-agro__toggle-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+        <div class="cards-accordion__accordion-item">
+          <h3 class="cards-accordion__accordion-heading">
+            <button
+              class="cards-accordion__accordion-toggle accordion__btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="home-agro__manufacturer">
+              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true">
               </span>
-              <span>Почему 100% свободная планировка внутри здания</span>
+              <span>Технология “SMART TECHNOLOGY CHOICE” (StC)</span>
             </button>
           </h3>
-          <div class="home-agro__item-content" id="home-agro__benefits" hidden>
-            <p>
-              Стальной каркас позволяет организовать внутреннее пространство без лишних несущих перегородок. Это
-              упрощает размещение оборудования, техники и технологических зон.
-            </p>
-            <p>
-              Планировку можно заранее адаптировать под производственные процессы и предусмотренные проектом нагрузки,
-              чтобы эффективнее использовать площадь здания.
-            </p>
+          <div class="accordion__body" id="home-agro__manufacturer">
+              <div class="accordion__inner">
+                <div class="cards-accordion__accordion-inner">
+                  <div class="cards-accordion__accordion-text flex-col">
+                    <p>Подбор технологических решений с учетом параметров здания и требований проекта.</p>
+                  </div>
+                  <div class="cards-accordion__list accordion--tablet-visual">
+                    <figure class="cards-accordion__item flex-col-ac">
+                      <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+                      <figcaption class="cards-accordion__descr flex-col-ac">
+                        <span class="cards-accordion__title">склады</span>
+                        <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+                      </figcaption>
+                    </figure>
+                    <figure class="cards-accordion__item flex-col-ac">
+                      <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+                      <figcaption class="cards-accordion__descr flex-col-ac">
+                        <span class="cards-accordion__title">склады</span>
+                        <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+                      </figcaption>
+                    </figure>
+                    <figure class="cards-accordion__item flex-col-ac">
+                      <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+                      <figcaption class="cards-accordion__descr flex-col-ac">
+                        <span class="cards-accordion__title">склады</span>
+                        <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+                      </figcaption>
+                    </figure>
+                    <figure class="cards-accordion__item flex-col-ac">
+                      <img class="cards-accordion__image" src="/static/images/calculator/building.png" alt="Здание" />
+                      <figcaption class="cards-accordion__descr flex-col-ac">
+                        <span class="cards-accordion__title">склады</span>
+                        <span class="cards-accordion__price">от 5 000 руб./кв.м.</span>
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
-        <div class="home-agro__item">
-          <h3 class="home-agro__item-heading">
-            <button class="home-agro__toggle" type="button" aria-expanded="false" aria-controls="home-agro__benefits">
-              <span class="home-agro__toggle-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+
+        <div class="cards-accordion__accordion-item">
+          <h3 class="cards-accordion__accordion-heading">
+            <button
+              class="cards-accordion__accordion-toggle accordion__btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="home-agro__benefits">
+              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true">
               </span>
-              <span>Почему 100% свободная планировка внутри здания</span>
+              <span>Технология “SMART METAL CALCULATION” (SmC)</span>
             </button>
           </h3>
-          <div class="home-agro__item-content" id="home-agro__benefits2" hidden>
-            <p>
-              Стальной каркас позволяет организовать внутреннее пространство без лишних несущих перегородок. Это
-              упрощает размещение оборудования, техники и технологических зон.
-            </p>
-            <p>
-              Планировку можно заранее адаптировать под производственные процессы и предусмотренные проектом нагрузки,
-              чтобы эффективнее использовать площадь здания.
-            </p>
+          <div class="accordion__body" id="home-agro__benefits">
+              <div class="accordion__inner">
+                <div class="cards-accordion__accordion-inner">
+                  <div class="cards-accordion__accordion-text flex-col">
+                    <p>Расчет металлоемкости каркаса на основе параметров здания и действующих нагрузок.</p>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
-        <div class="home-agro__item">
-          <h3 class="home-agro__item-heading">
-            <button class="home-agro__toggle" type="button" aria-expanded="false" aria-controls="home-agro__benefits">
-              <span class="home-agro__toggle-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+
+        <div class="cards-accordion__accordion-item">
+          <h3 class="cards-accordion__accordion-heading">
+            <button
+              class="cards-accordion__accordion-toggle accordion__btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="home-agro__benefits2">
+              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true">
               </span>
-              <span>Почему 100% свободная планировка внутри здания</span>
+              <span>Технология “SMART INSTANT VISUALIZATION” (Siv)</span>
             </button>
           </h3>
-          <div class="home-agro__item-content" id="home-agro__benefits3" hidden>
-            <p>
-              Стальной каркас позволяет организовать внутреннее пространство без лишних несущих перегородок. Это
-              упрощает размещение оборудования, техники и технологических зон.
-            </p>
-            <p>
-              Планировку можно заранее адаптировать под производственные процессы и предусмотренные проектом нагрузки,
-              чтобы эффективнее использовать площадь здания.
-            </p>
+          <div class="accordion__body" id="home-agro__benefits2">
+              <div class="accordion__inner">
+                <div class="cards-accordion__accordion-inner">
+                  <div class="cards-accordion__accordion-text flex-col">
+                    <p>Визуализация проектных решений для наглядной оценки будущего здания.</p>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
-        <div class="home-agro__item">
-          <h3 class="home-agro__item-heading">
-            <button class="home-agro__toggle" type="button" aria-expanded="false" aria-controls="home-agro__benefits">
-              <span class="home-agro__toggle-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+
+        <div class="cards-accordion__accordion-item">
+          <h3 class="cards-accordion__accordion-heading">
+            <button
+              class="cards-accordion__accordion-toggle accordion__btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="home-agro__benefits3">
+              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true">
               </span>
-              <span>Почему 100% свободная планировка внутри здания</span>
+              <span>Технология “SMART DOCUMENT GENERATION” (SDG)</span>
             </button>
           </h3>
-          <div class="home-agro__item-content" id="home-agro__benefits4" hidden>
-            <p>
-              Стальной каркас позволяет организовать внутреннее пространство без лишних несущих перегородок. Это
-              упрощает размещение оборудования, техники и технологических зон.
-            </p>
-            <p>
-              Планировку можно заранее адаптировать под производственные процессы и предусмотренные проектом нагрузки,
-              чтобы эффективнее использовать площадь здания.
-            </p>
+          <div class="accordion__body" id="home-agro__benefits3">
+              <div class="accordion__inner">
+                <div class="cards-accordion__accordion-inner">
+                  <div class="cards-accordion__accordion-text flex-col">
+                    <p>Формирование проектной документации на основе расчетных данных.</p>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
-        <div class="home-agro__item">
-          <h3 class="home-agro__item-heading">
-            <button class="home-agro__toggle" type="button" aria-expanded="false" aria-controls="home-agro__benefits">
-              <span class="home-agro__toggle-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+
+        <div class="cards-accordion__accordion-item">
+          <h3 class="cards-accordion__accordion-heading">
+            <button
+              class="cards-accordion__accordion-toggle accordion__btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="home-agro__benefits4">
+              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true">
               </span>
-              <span>Почему 100% свободная планировка внутри здания</span>
+              <span>Концепция “SMART TECHNO DESIGN” (StD)</span>
             </button>
           </h3>
-          <div class="home-agro__item-content" id="home-agro__benefits5" hidden>
-            <p>
-              Стальной каркас позволяет организовать внутреннее пространство без лишних несущих перегородок. Это
-              упрощает размещение оборудования, техники и технологических зон.
-            </p>
-            <p>
-              Планировку можно заранее адаптировать под производственные процессы и предусмотренные проектом нагрузки,
-              чтобы эффективнее использовать площадь здания.
-            </p>
+          <div class="accordion__body" id="home-agro__benefits4">
+              <div class="accordion__inner">
+                <div class="cards-accordion__accordion-inner">
+                  <div class="cards-accordion__accordion-text flex-col">
+                    <p>Комплексный подход к разработке технологичного и экономически обоснованного проекта.</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="cards-accordion__accordion-item">
+          <h3 class="cards-accordion__accordion-heading">
+            <button
+              class="cards-accordion__accordion-toggle accordion__btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="home-agro__benefits5">
+              <span class="accordion__toggle accordion__toggle--yellow" aria-hidden="true">
+              </span>
+              <span>Технология “INSPIRING SMART SOLUTION” (ISS)</span>
+            </button>
+          </h3>
+          <div class="accordion__body" id="home-agro__benefits5">
+              <div class="accordion__inner">
+                <div class="cards-accordion__accordion-inner">
+                  <div class="cards-accordion__accordion-text flex-col">
+                    <p>Поиск рациональных решений для индивидуальных задач заказчика.</p>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
       </div>
@@ -463,9 +512,9 @@
         </label>
       </div>
       <!-- Таблица -->
-      <div class="comparison__table">
+      <div class="comparison__table" id="comparison-table">
         <div class="comparison__nav">
-          <button class="comparison__nav-arr comparison__nav-arr--prev" aria-label="Назад">
+          <button class="comparison__nav-arr comparison__nav-arr--prev" type="button" aria-label="Назад">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                   d="M25.687 27.149L18.5203 19.999L25.687 12.849L23.3203 10.4823L13.8203 19.999L23.3203 29.5156L25.687 27.149Z"
@@ -494,8 +543,15 @@
                 <b class="main-color">2020-2025</b>
               </div>
             </div>
+            <div class="system-card flex-col-ac">
+              <div class="system-card__name">WEBSTEEL V8</div>
+              <div class="system-card__year">
+                Год:
+                <b class="main-color">2026</b>
+              </div>
+            </div>
           </div>
-          <button class="comparison__nav-arr comparison__nav-arr--next" aria-label="Вперед">
+          <button class="comparison__nav-arr comparison__nav-arr--next" type="button" aria-label="Вперед">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                   d="M14.3208 12.8511L21.4875 20.0011L14.3208 27.1511L16.6875 29.5177L26.1875 20.0011L16.6875 10.4844L14.3208 12.8511Z"
@@ -503,20 +559,15 @@
             </svg>
           </button>
           <div class="comparison__slider-controls-mob">
-            <button class="comparison__nav-arr comparison__nav-arr--prev" aria-label="Назад">
+            <button class="comparison__nav-arr comparison__nav-arr--prev" type="button" aria-label="Назад">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M25.687 27.149L18.5203 19.999L25.687 12.849L23.3203 10.4823L13.8203 19.999L23.3203 29.5156L25.687 27.149Z"
                     fill="#4D4D4D" />
               </svg>
             </button>
-            <div class="slider-controls__dots">
-              <button class="slider-controls__dot slider-controls__dot--active" aria-label="Слайд 1"></button>
-              <button class="slider-controls__dot" aria-label="Слайд 2"></button>
-              <button class="slider-controls__dot" aria-label="Слайд 3"></button>
-              <button class="slider-controls__dot" aria-label="Слайд 4"></button>
-            </div>
-            <button class="comparison__nav-arr comparison__nav-arr--next" aria-label="Вперед">
+            <div class="slider-controls__dots"></div>
+            <button class="comparison__nav-arr comparison__nav-arr--next" type="button" aria-label="Вперед">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M14.3208 12.8511L21.4875 20.0011L14.3208 27.1511L16.6875 29.5177L26.1875 20.0011L16.6875 10.4844L14.3208 12.8511Z"
@@ -529,19 +580,12 @@
         <div class="comparison__row">
           <div class="comparison__row-header">
             <div class="comparison__row-title">Описание</div>
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                  d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
-                  fill="#4D4D4D" />
-            </svg>
-          </div>
-          <div class="comparison__row-body flex-col"></div>
-        </div>
-        <!-- Строка с текстом -->
-        <div class="comparison__row comparison__row--open">
-          <div class="comparison__row-header">
-            <span class="comparison__row-title">Платные услуги</span>
-            <button class="comparison__row-btn">
+            <button
+                class="comparison__row-btn"
+                type="button"
+                aria-label="Описание"
+                aria-expanded="false"
+                aria-controls="comparison-row-1">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
@@ -549,7 +593,51 @@
               </svg>
             </button>
           </div>
-          <div class="comparison__row-body flex-col">
+          <div class="comparison__row-body flex-col" id="comparison-row-1">
+            <div class="comparison__row-content row-content row-content--without-title">
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <p class="value--big-text">
+                    Базовый калькулятор металлоемкости каркаса
+                  </p>
+                </div>
+                <div class="row-content__value">
+                  <p class="value--big-text">
+                    Калькулятор с выбором конструкций и цвета
+                  </p>
+                </div>
+                <div class="row-content__value">
+                  <p class="value--big-text">
+                    Онлайн система с 3D-визуализацией и расчетом нагрузок
+                  </p>
+                </div>
+                <div class="row-content__value">
+                  <p class="value--big-text">
+                    Облачная платформа для клиентов, партнеров и заводов
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Строка с текстом -->
+        <div class="comparison__row comparison__row--open">
+          <div class="comparison__row-header">
+            <span class="comparison__row-title">Платные услуги</span>
+            <button
+                class="comparison__row-btn"
+                type="button"
+                aria-label="Платные услуги"
+                aria-expanded="true"
+                aria-controls="comparison-row-2">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
+                    fill="#4D4D4D" />
+              </svg>
+            </button>
+          </div>
+          <div class="comparison__row-body flex-col" id="comparison-row-2">
             <div class="comparison__row-content row-content row-content--without-title">
               <div class="comparison__slider-wrapper row-content__value-wrapper">
                 <div class="row-content__value">
@@ -567,6 +655,11 @@
                     Первый бесплатный запатентованный наиболее продаваемый по качеству визуализатор нежилых зданий
                   </p>
                 </div>
+                <div class="row-content__value">
+                  <p class="value--big-text">
+                    Расчет нагрузок, 3D-модель и коммерческое предложение в одном окне
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -575,7 +668,12 @@
         <div class="comparison__row comparison__row--open">
           <div class="comparison__row-header">
             <div class="comparison__row-title">Учет технологических</div>
-            <button class="comparison__row-btn">
+            <button
+                class="comparison__row-btn"
+                type="button"
+                aria-label="Учет технологических"
+                aria-expanded="true"
+                aria-controls="comparison-row-3">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
@@ -583,7 +681,7 @@
               </svg>
             </button>
           </div>
-          <div class="comparison__row-body flex-col">
+          <div class="comparison__row-body flex-col" id="comparison-row-3">
             <div class="comparison__row-content row-content">
               <div class="row-content__title">Платные услуги</div>
               <div class="comparison__slider-wrapper row-content__value-wrapper">
@@ -592,6 +690,9 @@
                 </div>
                 <div class="row-content__value">
                   <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
                 </div>
                 <div class="row-content__value">
                   <span class="dot dot--filled"></span>
@@ -610,11 +711,17 @@
                 <div class="row-content__value">
                   <span class="dot dot--filled"></span>
                 </div>
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
               </div>
             </div>
             <div class="comparison__row-content row-content">
               <div class="row-content__title">Платные услуги</div>
               <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
                 <div class="row-content__value">
                   <span class="dot dot--filled"></span>
                 </div>
@@ -632,7 +739,12 @@
         <div class="comparison__row comparison__row--open">
           <div class="comparison__row-header">
             <span class="comparison__row-title">Учет технологических</span>
-            <button class="comparison__row-btn">
+            <button
+                class="comparison__row-btn"
+                type="button"
+                aria-label="Учет технологических"
+                aria-expanded="true"
+                aria-controls="comparison-row-4">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
@@ -640,7 +752,7 @@
               </svg>
             </button>
           </div>
-          <div class="comparison__row-body flex-col">
+          <div class="comparison__row-body flex-col" id="comparison-row-4">
             <div class="comparison__row-content row-content">
               <div class="row-content__title">Платные услуги</div>
               <div class="comparison__slider-wrapper row-content__value-wrapper">
@@ -652,6 +764,9 @@
                 </div>
                 <div class="row-content__value">
                   <span class="value--text">12</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">24</span>
                 </div>
               </div>
             </div>
@@ -667,6 +782,9 @@
                 <div class="row-content__value">
                   <span class="value--text">12</span>
                 </div>
+                <div class="row-content__value">
+                  <span class="value--text">7</span>
+                </div>
               </div>
             </div>
             <div class="comparison__row-content row-content">
@@ -680,6 +798,9 @@
                 </div>
                 <div class="row-content__value">
                   <span class="value--text">12</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">31</span>
                 </div>
               </div>
             </div>
@@ -689,61 +810,342 @@
         <div class="comparison__row">
           <div class="comparison__row-header">
             <div class="comparison__row-title">Учет технологических</div>
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                  d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
-                  fill="#4D4D4D" />
-            </svg>
+            <button
+                class="comparison__row-btn"
+                type="button"
+                aria-label="Учет технологических"
+                aria-expanded="false"
+                aria-controls="comparison-row-5">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
+                    fill="#4D4D4D" />
+              </svg>
+            </button>
           </div>
-          <div class="comparison__row-body flex-col"></div>
+          <div class="comparison__row-body flex-col" id="comparison-row-5">
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Платные услуги</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="comparison__row">
           <div class="comparison__row-header">
             <div class="comparison__row-title">Онлайн личный</div>
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                  d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
-                  fill="#4D4D4D" />
-            </svg>
+            <button
+                class="comparison__row-btn"
+                type="button"
+                aria-label="Онлайн личный"
+                aria-expanded="false"
+                aria-controls="comparison-row-6">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
+                    fill="#4D4D4D" />
+              </svg>
+            </button>
           </div>
-          <div class="comparison__row-body flex-col"></div>
+          <div class="comparison__row-body flex-col" id="comparison-row-6">
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Платные услуги</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="value--text">3</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">5</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">8</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">12</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="comparison__row">
           <div class="comparison__row-header">
             <div class="comparison__row-title">модуль визуализации</div>
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                  d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
-                  fill="#4D4D4D" />
-            </svg>
+            <button
+                class="comparison__row-btn"
+                type="button"
+                aria-label="модуль визуализации"
+                aria-expanded="false"
+                aria-controls="comparison-row-7">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
+                    fill="#4D4D4D" />
+              </svg>
+            </button>
           </div>
-          <div class="comparison__row-body flex-col"></div>
+          <div class="comparison__row-body flex-col" id="comparison-row-7">
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Платные услуги</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="comparison__row">
           <div class="comparison__row-header">
             <div class="comparison__row-title">Модуль генерации</div>
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                  d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
-                  fill="#4D4D4D" />
-            </svg>
+            <button
+                class="comparison__row-btn"
+                type="button"
+                aria-label="Модуль генерации"
+                aria-expanded="false"
+                aria-controls="comparison-row-8">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
+                    fill="#4D4D4D" />
+              </svg>
+            </button>
           </div>
-          <div class="comparison__row-body flex-col"></div>
+          <div class="comparison__row-body flex-col" id="comparison-row-8">
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Платные услуги</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="value--text">1</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">2</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">4</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">6</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="comparison__row">
           <div class="comparison__row-header">
             <div class="comparison__row-title">модуль оцифровки</div>
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                  d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
-                  fill="#4D4D4D" />
-            </svg>
+            <button
+                class="comparison__row-btn"
+                type="button"
+                aria-label="модуль оцифровки"
+                aria-expanded="false"
+                aria-controls="comparison-row-9">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
+                    fill="#4D4D4D" />
+              </svg>
+            </button>
           </div>
-          <div class="comparison__row-body flex-col"></div>
+          <div class="comparison__row-body flex-col" id="comparison-row-9">
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Платные услуги</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Скрытые строки: появляются по кнопке «Показать еще» -->
+        <div class="comparison__row comparison__row--extra comparison__row--open">
+          <div class="comparison__row-header">
+            <div class="comparison__row-title">Техническая поддержка</div>
+            <button
+                class="comparison__row-btn"
+                type="button"
+                aria-label="Техническая поддержка"
+                aria-expanded="true"
+                aria-controls="comparison-row-10">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
+                    fill="#4D4D4D" />
+              </svg>
+            </button>
+          </div>
+          <div class="comparison__row-body flex-col" id="comparison-row-10">
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Консультации</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+              </div>
+            </div>
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Обучение</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="dot dot--empty"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+                <div class="row-content__value">
+                  <span class="dot dot--filled"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="comparison__row comparison__row--extra">
+          <div class="comparison__row-header">
+            <div class="comparison__row-title">Интеграции</div>
+            <button
+                class="comparison__row-btn"
+                type="button"
+                aria-label="Интеграции"
+                aria-expanded="false"
+                aria-controls="comparison-row-11">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
+                    fill="#4D4D4D" />
+              </svg>
+            </button>
+          </div>
+          <div class="comparison__row-body flex-col" id="comparison-row-11">
+            <div class="comparison__row-content row-content row-content--without-title">
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <p class="value--big-text">
+                    Нет
+                  </p>
+                </div>
+                <div class="row-content__value">
+                  <p class="value--big-text">
+                    Выгрузка в Excel
+                  </p>
+                </div>
+                <div class="row-content__value">
+                  <p class="value--big-text">
+                    Выгрузка в Excel и 1С
+                  </p>
+                </div>
+                <div class="row-content__value">
+                  <p class="value--big-text">
+                    Открытый API для CRM и 1С
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="comparison__row comparison__row--extra comparison__row--open">
+          <div class="comparison__row-header">
+            <div class="comparison__row-title">Хранение проектов</div>
+            <button
+                class="comparison__row-btn"
+                type="button"
+                aria-label="Хранение проектов"
+                aria-expanded="true"
+                aria-controls="comparison-row-12">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M27.149 14.3169L19.999 21.4836L12.849 14.3169L10.4823 16.6836L19.999 26.1836L29.5156 16.6836L27.149 14.3169Z"
+                    fill="#4D4D4D" />
+              </svg>
+            </button>
+          </div>
+          <div class="comparison__row-body flex-col" id="comparison-row-12">
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Лет хранения</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="value--text">1</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">3</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">5</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">10</span>
+                </div>
+              </div>
+            </div>
+            <div class="comparison__row-content row-content">
+              <div class="row-content__title">Проектов в аккаунте</div>
+              <div class="comparison__slider-wrapper row-content__value-wrapper">
+                <div class="row-content__value">
+                  <span class="value--text">10</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">50</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">200</span>
+                </div>
+                <div class="row-content__value">
+                  <span class="value--text">1000</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="comparison__btn-wrapper">
-        <button class="comparison__btn btn main-btn">Показать еще</button>
+        <button
+            class="comparison__btn btn main-btn"
+            type="button"
+            aria-expanded="false"
+            aria-controls="comparison-table">
+          Показать еще
+        </button>
       </div>
     </div>
   </div>
@@ -767,7 +1169,7 @@
         </p>
       </div>
       <div class="calculator-support__contact flex-col">
-        <a href="" class="calculator-support__contact-tel flex-center">
+        <a href="tel:+78003333741" class="calculator-support__contact-tel flex-center">
           <img src="./static/images/calculator/ic-tel.svg" alt="Телефон" />
           +7 (800) 333-37-41
         </a>
@@ -823,65 +1225,83 @@
   </div>
 </section>
 
-<section class="home-faq" aria-labelledby="home-faq__title">
-  <div class="home-faq__panel">
-    <h2 class="home-faq__title" id="home-faq__title">Вопросы о компании</h2>
+<section class="calculator-faq" aria-labelledby="home-faq__title">
+  <div class="calculator-faq__container flex-col">
+    <h2 class="calculator-faq__title" id="home-faq__title">Вопросы о компании</h2>
     <div class="home-faq__list">
       <article class="home-faq__item">
         <h3 class="home-faq__heading">
-          <button class="home-faq__toggle" type="button" aria-expanded="false" aria-controls="home-faq__answer-1">
+          <button
+                  class="home-faq__toggle accordion__btn"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="home-faq__answer-1">
             <span class="home-faq__question">Сравнение завода ПК ВЕСТА с другими аналогичными фирмами?</span>
-            <span class="home-faq__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 5v14M5 12h14"></path></svg>
-            </span>
+            <span class="accordion__toggle accordion__toggle--main" aria-hidden="true"></span>
           </button>
         </h3>
-        <div class="home-faq__answer" id="home-faq__answer-1" hidden>
-          <p>
-            ПК ВЕСТА специализируется на проектировании и производстве быстровозводимых зданий из лёгких стальных
-            тонкостенных конструкций. Решения подбираются под задачи проекта, требования к эксплуатации и условия
-            площадки.
-          </p>
-          <p>
-            При сравнении поставщиков важно учитывать не только стоимость каркаса, но и технологию производства,
-            комплектность поставки, проектную поддержку и логистику.
-          </p>
+        <div class="accordion__body" id="home-faq__answer-1">
+          <div class="accordion__inner">
+            <div class="home-faq__answer">
+              <p>
+                ПК ВЕСТА специализируется на проектировании и производстве быстровозводимых зданий из лёгких стальных
+                тонкостенных конструкций. Решения подбираются под задачи проекта, требования к эксплуатации и условия
+                площадки.
+              </p>
+              <p>
+                При сравнении поставщиков важно учитывать не только стоимость каркаса, но и технологию производства,
+                комплектность поставки, проектную поддержку и логистику.
+              </p>
+            </div>
+          </div>
         </div>
       </article>
       <article class="home-faq__item">
         <h3 class="home-faq__heading">
-          <button class="home-faq__toggle" type="button" aria-expanded="false" aria-controls="home-faq__answer-2">
+          <button
+                  class="home-faq__toggle accordion__btn"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="home-faq__answer-2">
             <span class="home-faq__question">Сколько изготовлено и смонтировано быстровозводимых зданий и где?</span>
-            <span class="home-faq__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 5v14M5 12h14"></path></svg>
-            </span>
+            <span class="accordion__toggle accordion__toggle--main" aria-hidden="true"></span>
           </button>
         </h3>
-        <div class="home-faq__answer" id="home-faq__answer-2" hidden>
-          <p>
-            Количество реализованных объектов и география поставок зависят от периода и типа проекта. Актуальные данные
-            по конкретным объектам лучше уточнять у специалистов ПК ВЕСТА.
-          </p>
-          <p>
-            При обсуждении проекта можно запросить примеры зданий с похожим назначением, параметрами и условиями
-            монтажа.
-          </p>
+        <div class="accordion__body" id="home-faq__answer-2">
+          <div class="accordion__inner">
+            <div class="home-faq__answer">
+              <p>
+                Количество реализованных объектов и география поставок зависят от периода и типа проекта. Актуальные
+                данные по конкретным объектам лучше уточнять у специалистов ПК ВЕСТА.
+              </p>
+              <p>
+                При обсуждении проекта можно запросить примеры зданий с похожим назначением, параметрами и условиями
+                монтажа.
+              </p>
+            </div>
+          </div>
         </div>
       </article>
       <article class="home-faq__item">
         <h3 class="home-faq__heading">
-          <button class="home-faq__toggle" type="button" aria-expanded="false" aria-controls="home-faq__answer-3">
+          <button
+                  class="home-faq__toggle accordion__btn"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="home-faq__answer-3">
             <span class="home-faq__question">Сколько уже существует компания ПК Веста?</span>
-            <span class="home-faq__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 5v14M5 12h14"></path></svg>
-            </span>
+            <span class="accordion__toggle accordion__toggle--main" aria-hidden="true"></span>
           </button>
         </h3>
-        <div class="home-faq__answer" id="home-faq__answer-3" hidden>
-          <p>
-            Историю компании и дату основания лучше подтвердить по официальным регистрационным данным. Это позволит
-            назвать точный срок работы без риска указать устаревшую информацию.
-          </p>
+        <div class="accordion__body" id="home-faq__answer-3">
+          <div class="accordion__inner">
+            <div class="home-faq__answer">
+              <p>
+                Историю компании и дату основания лучше подтвердить по официальным регистрационным данным. Это позволит
+                назвать точный срок работы без риска указать устаревшую информацию.
+              </p>
+            </div>
+          </div>
         </div>
       </article>
     </div>

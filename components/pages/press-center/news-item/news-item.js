@@ -1,24 +1,36 @@
 function initNewsItem() {
-    const gallery = document.querySelector('.news-gallery');
+  const root = document.querySelector(".news-item");
 
-    if (!gallery) {
-        return;
-    }
+  if (!root || root.dataset.initialized === "true") return;
+  root.dataset.initialized = "true";
 
-    const moreButton = gallery.querySelector('.news-gallery__more');
+  const galleryGrid = root.querySelector(".news-gallery__grid");
+  const moreButton = root.querySelector(".news-gallery__more");
 
-    if (!moreButton) {
-        return;
-    }
+  if (galleryGrid && moreButton) {
+    const moreButtonText = moreButton.querySelector("span");
 
-    moreButton.addEventListener('click', () => {
-        const isExpanded = moreButton.getAttribute('aria-expanded') === 'true';
+    moreButton.addEventListener("click", () => {
+      const isExpanded = moreButton.getAttribute("aria-expanded") === "true";
 
-        gallery.querySelectorAll('.news-gallery__item--additional').forEach((item) => {
-            item.style.display = isExpanded ? '' : 'block';
-        });
-
-        moreButton.setAttribute('aria-expanded', String(!isExpanded));
-        moreButton.textContent = isExpanded ? 'Показать еще' : 'Скрыть';
+      galleryGrid.classList.toggle("is-expanded", !isExpanded);
+      moreButton.setAttribute("aria-expanded", String(!isExpanded));
+      moreButtonText.textContent = isExpanded ? "Показать еще" : "Скрыть";
     });
+  }
+
+  const articles = root.querySelector(".news-article__columns");
+  const moreButtonArticle = root.querySelector(".news-article__more");
+
+  if (moreButtonArticle && articles) {
+    const moreButtonArticleText = moreButtonArticle.querySelector("span");
+
+    moreButtonArticle.addEventListener("click", () => {
+      const isExpanded = moreButtonArticle.getAttribute("aria-expanded") === "true";
+
+      articles.classList.toggle("is-expanded", !isExpanded);
+      moreButtonArticle.setAttribute("aria-expanded", String(!isExpanded));
+      moreButtonArticleText.textContent = isExpanded ? "Показать еще" : "Скрыть";
+    });
+  }
 }

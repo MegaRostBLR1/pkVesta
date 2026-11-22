@@ -18,8 +18,13 @@ function initObjects() {
 
     const filtersForm = root.querySelector('.objects-map__filters');
     const mobileFiltersToggle = root.querySelector('.objects-map__mobile-toggle');
+    const closeFiltersButton = root.querySelector('.objects-map__filters-close');
+    const filtersSubmitButton = root.querySelector('.objects-map__submit');
     const moreFiltersButton = root.querySelector('.objects-map__more');
     const extraFilters = root.querySelector('.objects-map__extra-filters');
+    const extraFiltersCloseButton = root.querySelector('.objects-map__extra-filters-close');
+    const extraFiltersSubmitButton = root.querySelector('.objects-map__extra-filters-submit');
+    const mapSection = root.querySelector('.objects-map');
     const mapCard = root.querySelector('.objects-map__card');
     const closeCardButton = root.querySelector('.objects-map__card-close');
 
@@ -33,16 +38,99 @@ function initObjects() {
         const filterSelects = Array.from(filtersForm.querySelectorAll('.objects-map__filter select'));
         let openDropdown = null;
 
+        document.querySelector('.objects-map__select-popup')?.remove();
+
+        const popupOverlay = document.createElement('div');
+        popupOverlay.className = 'objects-map__select-overlay';
+        popupOverlay.hidden = true;
+        popupOverlay.setAttribute('aria-hidden', 'true');
+
+        const mobilePopup = document.createElement('div');
+        mobilePopup.className = 'objects-map__select-popup';
+        mobilePopup.hidden = true;
+        mobilePopup.setAttribute('role', 'dialog');
+        mobilePopup.setAttribute('aria-modal', 'true');
+        mobilePopup.setAttribute('aria-labelledby', 'objects-map-select-popup-title');
+
+        const popupHeader = document.createElement('div');
+        popupHeader.className = 'objects-map__select-popup-header';
+
+        const popupTitle = document.createElement('h2');
+        popupTitle.className = 'objects-map__select-popup-title';
+        popupTitle.id = 'objects-map-select-popup-title';
+
+        const popupClose = document.createElement('button');
+        popupClose.className = 'objects-map__select-popup-close';
+        popupClose.type = 'button';
+        popupClose.setAttribute('aria-label', 'Закрыть список значений');
+        popupClose.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m18 6-12 12M6 6l12 12"></path></svg>';
+
+        const popupContent = document.createElement('div');
+        popupContent.className = 'objects-map__select-popup-content';
+
+        const popupFooter = document.createElement('div');
+        popupFooter.className = 'objects-map__select-popup-footer';
+
+        const popupBack = document.createElement('button');
+        popupBack.className = 'objects-map__select-popup-back';
+        popupBack.type = 'button';
+        popupBack.textContent = 'Назад';
+
+        popupHeader.append(popupTitle, popupClose);
+        popupFooter.append(popupBack);
+        mobilePopup.append(popupHeader, popupContent, popupFooter);
+        document.body.append(popupOverlay, mobilePopup);
+
         const closeDropdown = (dropdown, returnFocus = false) => {
             if (!dropdown) return;
             const trigger = dropdown.querySelector('.objects-map__select-trigger');
-            const options = dropdown.querySelector('.objects-map__select-options');
+            const options = dropdown.querySelector('.objects-map__select-options')
+              || (openDropdown === dropdown ? popupContent.querySelector('.objects-map__select-options') : null);
+
+            if (options && options.parentElement === popupContent) {
+                dropdown.append(options);
+            }
+
             dropdown.classList.remove('is-open');
             if (trigger) trigger.setAttribute('aria-expanded', 'false');
             if (options) options.hidden = true;
+            mobilePopup.hidden = true;
+            popupOverlay.hidden = true;
+            document.documentElement.classList.remove('objects-select-open');
             if (returnFocus && trigger) trigger.focus();
             if (openDropdown === dropdown) openDropdown = null;
         };
+
+        popupClose.addEventListener('click', () => closeDropdown(openDropdown, true));
+        popupBack.addEventListener('click', () => closeDropdown(openDropdown, true));
+        popupOverlay.addEventListener('click', () => closeDropdown(openDropdown, true));
+
+        mobilePopup.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                event.preventDefault();
+                closeDropdown(openDropdown, true);
+                return;
+            }
+
+            if (event.key !== 'Tab') return;
+
+            const focusable = Array.from(mobilePopup.querySelectorAll('button:not([disabled])'));
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last?.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first?.focus();
+            }
+        });
+
+        const mobileBreakpoint = window.matchMedia('(max-width: 680px)');
+        mobileBreakpoint.addEventListener('change', () => {
+            if (openDropdown) closeDropdown(openDropdown);
+        });
 
         filterSelects.forEach((select, index) => {
             const filter = select.closest('.objects-map__filter');
@@ -88,7 +176,17 @@ function initObjects() {
                 item.type = 'button';
                 item.setAttribute('role', 'option');
                 item.dataset.value = option.value;
-                item.textContent = option.textContent;
+
+                const label = document.createElement('span');
+                label.className = 'objects-map__select-option-label';
+                label.textContent = option.textContent;
+
+                const check = document.createElement('span');
+                check.className = 'objects-map__select-option-check';
+                check.setAttribute('aria-hidden', 'true');
+                check.innerHTML = '<svg viewBox="0 0 18 18" focusable="false"><path d="m3.5 9 3.4 3.4 7.6-7.6"></path></svg>';
+
+                item.append(label, check);
                 item.setAttribute('aria-selected', String(option.selected));
                 item.tabIndex = -1;
                 if (option.selected) item.classList.add('is-selected');
@@ -107,10 +205,11 @@ function initObjects() {
                     else if (event.key === 'End') nextIndex = optionButtons.length - 1;
                     else if (event.key === 'Escape') {
                         event.preventDefault();
+                        event.stopPropagation();
                         closeDropdown(dropdown, true);
                         return;
                     } else if (event.key === 'Tab') {
-                        closeDropdown(dropdown);
+                        if (mobilePopup.hidden) closeDropdown(dropdown);
                         return;
                     } else return;
                     event.preventDefault();
@@ -129,6 +228,16 @@ function initObjects() {
                 openDropdown = dropdown;
                 dropdown.classList.add('is-open');
                 trigger.setAttribute('aria-expanded', 'true');
+
+                if (mobileBreakpoint.matches) {
+                    const filterLabel = filter.querySelector('.objects-map__filter-label');
+                    popupTitle.textContent = filterLabel ? filterLabel.textContent.replace(/:$/, '') : 'Выберите значение';
+                    popupContent.append(options);
+                    popupOverlay.hidden = false;
+                    mobilePopup.hidden = false;
+                    document.documentElement.classList.add('objects-select-open');
+                }
+
                 options.hidden = false;
                 const selected = optionButtons.find((item) => item.getAttribute('aria-selected') === 'true');
                 (selected || optionButtons[0])?.focus();
@@ -140,6 +249,7 @@ function initObjects() {
                     else optionButtons[0]?.focus();
                 } else if (event.key === 'Escape' && !options.hidden) {
                     event.preventDefault();
+                    event.stopPropagation();
                     closeDropdown(dropdown, true);
                 }
             });
@@ -154,7 +264,9 @@ function initObjects() {
         });
 
         document.addEventListener('click', (event) => {
-            if (openDropdown && !openDropdown.contains(event.target)) closeDropdown(openDropdown);
+            if (openDropdown && !openDropdown.contains(event.target) && !mobilePopup.contains(event.target)) {
+                closeDropdown(openDropdown);
+            }
         });
         filtersForm.addEventListener('keydown', (event) => {
             if (event.key === 'Escape' && openDropdown) closeDropdown(openDropdown, true);
@@ -162,21 +274,128 @@ function initObjects() {
     }
 
     if (mobileFiltersToggle && filtersForm) {
+        const setMobileFiltersExpanded = (expanded) => {
+            if (!expanded) setExtraFiltersOpen(false);
+            filtersForm.classList.toggle('is-expanded', expanded);
+            mobileFiltersToggle.setAttribute('aria-expanded', String(expanded));
+            document.documentElement.classList.toggle('objects-filters-open', expanded);
+            document.body.classList.toggle('objects-filters-open', expanded);
+
+            if (filtersSubmitButton) {
+                filtersSubmitButton.textContent = expanded ? 'Назад' : 'Показать';
+            }
+
+            if (expanded) {
+                closeFiltersButton?.focus();
+            } else {
+                mobileFiltersToggle.focus();
+            }
+        };
+
         mobileFiltersToggle.addEventListener('click', () => {
             const expanded = mobileFiltersToggle.getAttribute('aria-expanded') === 'true';
-            mobileFiltersToggle.setAttribute('aria-expanded', String(!expanded));
-            filtersForm.classList.toggle('is-expanded', !expanded);
-            if (extraFilters) {
-                extraFilters.hidden = expanded;
+            setMobileFiltersExpanded(!expanded);
+        });
+
+        closeFiltersButton?.addEventListener('click', () => {
+            setMobileFiltersExpanded(false);
+        });
+
+        filtersSubmitButton?.addEventListener('click', () => {
+            if (filtersForm.classList.contains('is-expanded')) {
+                setMobileFiltersExpanded(false);
+            }
+        });
+
+        filtersForm.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && filtersForm.classList.contains('is-expanded')) {
+                event.preventDefault();
+                setMobileFiltersExpanded(false);
+            }
+        });
+    }
+
+    const setExtraFiltersOpen = (isOpen) => {
+        if (!moreFiltersButton || !extraFilters) return;
+
+        moreFiltersButton.setAttribute('aria-expanded', String(isOpen));
+        extraFilters.hidden = !isOpen;
+        mapSection?.classList.toggle('is-extra-filters-open', isOpen);
+
+        if (isOpen) {
+            extraFiltersCloseButton?.focus({ preventScroll: true });
+        } else {
+            moreFiltersButton.focus({ preventScroll: true });
+        }
+    };
+
+    if (extraFilters) {
+        const rangeFilters = Array.from(extraFilters.querySelectorAll('[data-range-filter]'));
+
+        rangeFilters.forEach((rangeFilter) => {
+            const minRange = rangeFilter.querySelector('[data-range-min]');
+            const maxRange = rangeFilter.querySelector('[data-range-max]');
+            const minNumber = rangeFilter.querySelector('[data-range-number="min"]');
+            const maxNumber = rangeFilter.querySelector('[data-range-number="max"]');
+
+            if (!minRange || !maxRange || !minNumber || !maxNumber) return;
+
+            const updateRange = (source) => {
+                if (Number(minRange.value) > Number(maxRange.value)) {
+                    if (source === minRange || source === minNumber) {
+                        maxRange.value = minRange.value;
+                    } else {
+                        minRange.value = maxRange.value;
+                    }
+                }
+
+                minNumber.value = minRange.value;
+                maxNumber.value = maxRange.value;
+
+                const min = Number(minRange.min);
+                const max = Number(minRange.max);
+                const span = max - min || 1;
+                const start = ((Number(minRange.value) - min) / span) * 100;
+                const end = ((Number(maxRange.value) - min) / span) * 100;
+
+                rangeFilter.style.setProperty('--range-start', `${start}%`);
+                rangeFilter.style.setProperty('--range-end', `${end}%`);
+            };
+
+            [minRange, maxRange].forEach((input) => {
+                input.addEventListener('input', () => updateRange(input));
+            });
+            [minNumber, maxNumber].forEach((input) => {
+                input.addEventListener('input', () => {
+                    const target = input === minNumber ? minRange : maxRange;
+                    target.value = input.value;
+                    updateRange(input);
+                });
+            });
+
+            updateRange();
+        });
+
+        extraFilters.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !extraFilters.hidden) {
+                event.preventDefault();
+                event.stopPropagation();
+                setExtraFiltersOpen(false);
             }
         });
     }
 
     if (moreFiltersButton && extraFilters) {
         moreFiltersButton.addEventListener('click', () => {
-            const expanded = moreFiltersButton.getAttribute('aria-expanded') === 'true';
-            moreFiltersButton.setAttribute('aria-expanded', String(!expanded));
-            extraFilters.hidden = expanded;
+            setExtraFiltersOpen(moreFiltersButton.getAttribute('aria-expanded') !== 'true');
+        });
+
+        extraFiltersCloseButton?.addEventListener('click', () => {
+            setExtraFiltersOpen(false);
+        });
+
+        extraFiltersSubmitButton?.addEventListener('click', () => {
+            setExtraFiltersOpen(false);
         });
     }
 
@@ -186,8 +405,33 @@ function initObjects() {
         });
     }
 
-    const mapSection = root.querySelector('.objects-map');
     const catalog = root.querySelector('.objects-catalog');
+    const catalogTitles = Array.from(catalog?.querySelectorAll('.objects-catalog__title') || []);
+    let titleSyncFrame = 0;
+
+    const syncCatalogTitleHeights = () => {
+        if (!catalogTitles.length || catalog?.hidden) return;
+
+        catalogTitles.forEach((title) => {
+            title.style.minHeight = '';
+        });
+
+        const maxTitleHeight = Math.max(...catalogTitles.map((title) => title.getBoundingClientRect().height));
+        catalogTitles.forEach((title) => {
+            title.style.minHeight = `${maxTitleHeight}px`;
+        });
+    };
+
+    const scheduleCatalogTitleSync = () => {
+        if (titleSyncFrame) cancelAnimationFrame(titleSyncFrame);
+        titleSyncFrame = requestAnimationFrame(() => {
+            titleSyncFrame = 0;
+            syncCatalogTitleHeights();
+        });
+    };
+
+    window.addEventListener('resize', scheduleCatalogTitleSync);
+    document.fonts?.ready.then(scheduleCatalogTitleSync);
 
     viewControls.forEach((control) => {
         control.addEventListener('click', () => {
@@ -202,6 +446,7 @@ function initObjects() {
 
             if (mapSection) mapSection.classList.toggle('is-cards-view', showCards);
             if (catalog) catalog.hidden = !showCards;
+            if (showCards) scheduleCatalogTitleSync();
         });
     });
 

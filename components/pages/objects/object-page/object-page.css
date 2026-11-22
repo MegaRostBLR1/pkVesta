@@ -1,0 +1,1552 @@
+/* Shared object page styles. Consolidated from the former detail, parameters and characteristics stylesheets. */
+
+/* Breadcrumbs */
+.object-detail__breadcrumbs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  min-height: 62px;
+  padding: 18px 10px;
+  color: #4D4D4D;
+  font-family: "Onest-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+}
+
+.object-detail__breadcrumb-link {
+  color: inherit;
+  transition: color 0.15s ease;
+}
+
+.object-detail__breadcrumb-link:hover {
+  color: #324C88;
+}
+
+.object-detail__breadcrumb-link:focus-visible,
+.object-detail__video-link:focus-visible,
+.object-detail__project-id:focus-visible {
+  outline: 2px solid #324C88;
+  outline-offset: 4px;
+}
+
+.object-detail__breadcrumb-separator {
+  color: #979A9B;
+}
+
+/* Hero */
+.object-detail__hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 839px;
+  padding: 40px 20px 40px 60px;
+  overflow: clip;
+  border-radius: 10px;
+  color: #FFFFFF;
+  background-color: #25313A;
+  background-image: linear-gradient(#00000080, #00000080), url("../../../../static/images/oil-workshop.png");
+  background-position: center;
+  background-size: cover;
+  margin: 0 5px 5px;
+}
+
+.object-detail__hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  width: 100%;
+  max-width: 1278px;
+  margin: 0 auto;
+}
+
+.object-detail__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.object-detail__title {
+  width: 100%;
+  margin: 0;
+  color: #FFFFFF;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 94px;
+  text-align: center;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.object-detail__project-id {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 100%;
+  padding: 2px 20px 2px 2px;
+  overflow: hidden;
+  border-radius: 10px;
+  color: #FFFFFF;
+  background: #FFFFFF0A;
+  box-shadow: inset 0 0 60px #FFFFFF08;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.object-detail__project-id-label {
+  display: flex;
+  flex: 0 0 48px;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  color: #354E8A;
+  background: #FFF500;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.object-detail__project-id-value {
+  font-family: "Onest-Medium", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  white-space: nowrap;
+}
+
+.object-detail__video-link {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 282.843px;
+  height: 282.843px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.object-detail__video-diamond {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  background: #FFFFFF1A;
+  transform: rotate(45deg);
+}
+
+.object-detail__video-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  transform: rotate(-45deg);
+}
+
+.object-detail__video-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 20px;
+  color: #324C88;
+  background: #FFFFFF;
+}
+
+.object-detail__video-icon svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.object-detail__video-label {
+  color: #FFFFFF;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Tablet — Figma 1857:105325 (1024 px). */
+@media screen and (max-width: 1100px) {
+  .object-detail__breadcrumbs {
+    font-size: 16px;
+  }
+
+  .object-detail__intro {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .object-detail__title {
+    font-size: 48px;
+    line-height: 64px;
+  }
+}
+
+/* Mobile — Figma 1857:107339 (360 px). */
+@media screen and (max-width: 680px) {
+  .object-detail__breadcrumbs {
+    gap: 10px;
+    min-height: 0;
+    padding: 24px 8px;
+    font-size: 14px;
+    line-height: normal;
+  }
+
+  .object-detail__hero {
+    min-height: 480px;
+    padding: 40px 20px;
+  }
+
+  .object-detail__intro {
+    gap: 24px;
+  }
+
+  .object-detail__title {
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 36px;
+  }
+
+  .object-detail__project-id-value {
+    font-size: 14px;
+  }
+
+  .object-detail__video-link {
+    width: 198px;
+    height: 198px;
+  }
+
+  .object-detail__video-diamond {
+    width: 140px;
+    height: 140px;
+  }
+
+  .object-detail__video-content {
+    gap: 12px;
+  }
+
+  .object-detail__video-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  .object-detail__video-label {
+    font-size: 12px;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .object-detail__breadcrumb-link {
+    transition: none;
+  }
+}
+
+/* Object overview — Figma node 1857:104495 */
+.object-detail__overview {
+  padding: 40px;
+  border-radius: 10px;
+  background: #FFFFFF;
+  margin: 0 5px 5px;
+}
+
+.object-detail__overview-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 20px 62px;
+}
+.object-detail__read-more:focus-visible{
+  outline: 2px solid #324C88;
+  outline-offset: 3px;
+}
+
+.object-divider {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 1px;
+  background: #4D4D4D33;
+}
+
+.object-detail__facts {
+  display: grid;
+  grid-template-columns: 200px max-content 200px 200px;
+  align-items: stretch;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+  margin: 0;
+}
+
+.object-detail__fact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 18px 20px;
+  border: 1px solid rgba(77, 77, 77, 0.1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: inset 0 0 60px rgba(255, 255, 255, 0.03);
+  text-align: center;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.object-detail__fact-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: #5D5D5D;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+  overflow-wrap: anywhere;
+}
+
+.object-detail__fact-icon {
+  display: flex;
+  flex: 0 0 48px;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: #FFF500;
+}
+
+.object-detail__fact-icon img {
+  display: block;
+  width: 48px;
+  height: 48px;
+}
+
+.object-detail__fact-value {
+  margin: 0;
+  color: #5D5D5D;
+  font-family: "Onest-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  overflow-wrap: anywhere;
+}
+
+.object-detail__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.object-detail__description-text {
+  width: 100%;
+  max-width: 852px;
+  margin: 0;
+  color: #5D5D5D;
+  font-family: "Onest-Regular", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.object-detail__read-more {
+  color: #324C88;
+  font-family: "Onest-Medium", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Desktop — Figma 1857:104669 (1440 px). */
+@media screen and (max-width: 1600px) {
+  .object-detail__overview {
+    padding: 40px;
+  }
+
+  .object-detail__overview-inner {
+    gap: 30px;
+    padding: 0 12px;
+  }
+
+  .object-detail__facts {
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .object-detail__fact {
+    gap: 20px;
+    padding: 18px 20px;
+  }
+
+  .object-detail__fact-label {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .object-detail__fact-value {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .object-detail__description {
+    gap: 30px;
+  }
+
+  .object-detail__description-text,
+  .object-detail__read-more {
+    font-size: 22px;
+  }
+}
+
+/* Tablet — Figma 1857:105359 (1024 px). */
+@media screen and (max-width: 1100px) {
+  .object-detail__overview {
+    padding: 20px;
+  }
+
+  .object-detail__overview-inner {
+    gap: 30px;
+    padding: 0 28px;
+  }
+
+  .object-detail__facts {
+    grid-template-columns: 200px 231px 200px 200px;
+    justify-content: center;
+    gap: 18px;
+    width: 100%;
+  }
+
+  .object-detail__fact {
+    gap: 20px;
+    padding: 18px 20px;
+  }
+
+  .object-detail__fact-label {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .object-detail__fact-value {
+    font-size: 16px;
+    line-height: 26px;
+    white-space: nowrap;
+  }
+
+  .object-detail__description {
+    gap: 30px;
+  }
+
+  .object-detail__description-text {
+    max-width: 852px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .object-detail__read-more {
+    font-size: 22px;
+    line-height: 31px;
+  }
+}
+
+/* Mobile — Figma 1857:107373 (360 px). */
+@media screen and (max-width: 680px) {
+  .object-detail__overview {
+    margin-top: 0;
+    padding: 20px 14px;
+    border-radius: 10px;
+  }
+
+  .object-detail__overview-inner {
+    gap: 30px;
+    padding: 0;
+  }
+
+  .object-detail__facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .object-detail__fact {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    min-width: 0;
+    padding: 18px 8px;
+    text-align: center;
+  }
+
+  .object-detail__fact-label {
+    flex: 0 1 auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .object-detail__fact-icon {
+    flex-basis: 48px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .object-detail__fact-value {
+    flex: 0 1 auto;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+  }
+
+  .object-detail__description {
+    gap: 30px;
+  }
+
+  .object-detail__description-text {
+    max-width: none;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+  }
+
+  .object-detail__read-more {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+/* Customer review — Figma node 1857:104551 */
+.object-detail__review {
+  border-radius: 0.5556rem;
+  background: #F5F8F7;
+  margin: 0 5px 5px;
+}
+
+.object-detail__review-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  padding: 3.5556rem 2.2222rem;
+  border-radius: 1.1111rem;
+}
+
+.object-detail__review-title {
+  width: 100%;
+  max-width: 52.5rem;
+  margin: 0;
+  color: #4D4D4D;
+  font-family: "Onest-Medium", sans-serif;
+  font-size: 2.6667rem;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.object-detail__review-content {
+  display: grid;
+  grid-template-columns: 22.2222rem minmax(0, 1fr);
+  align-items: stretch;
+  gap: 4rem;
+  width: 100%;
+  max-width: 1233px;
+}
+
+.object-detail__review-photo {
+  min-width: 0;
+  min-height: 31.1111rem;
+  padding: 0.4444rem;
+  border-radius: 1.6667rem;
+  background: #FFFFFF;
+}
+
+.object-detail__review-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 30.2222rem;
+  border-radius: 1.6667rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.object-detail__review-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  min-width: 0;
+  padding: 0;
+}
+
+.object-detail__review-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  min-width: 0;
+}
+
+.object-detail__review-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.3333rem;
+  min-width: 0;
+  width: 100%;
+}
+
+.object-detail__review-quote {
+  display: block;
+  height: 3.8889rem;
+  color: #4D4D4D;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 5.3333rem;
+  font-weight: 600;
+  line-height: 0.8;
+}
+
+.object-detail__review-text {
+  width: 100%;
+  max-width: 42.2778rem;
+  max-height: 6.4em;
+  margin: 0;
+  overflow: hidden;
+  color: #5D5D5D;
+  font-family: "Onest-Regular", sans-serif;
+  font-size: 1.3333rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.object-detail__review-text.is-expanded {
+  max-height: none;
+  overflow: visible;
+}
+
+.object-detail__review-more {
+  padding: 0;
+  border: 0;
+  color: #324C88;
+  background: transparent;
+  font-family: "Onest-Medium", sans-serif;
+  font-size: 1.2222rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+}
+
+.object-detail__review-more:focus-visible,
+.object-detail__review-arrow:focus-visible {
+  outline: 0.1111rem solid #324C88;
+  outline-offset: 0.2222rem;
+}
+
+.object-detail__review-author {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.object-detail__review-name,
+.object-detail__review-position {
+  margin: 0;
+  color: #4D4D4D;
+  font-family: "Onest-Bold", sans-serif;
+  font-size: 1.3333rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.object-detail__review-position {
+  color: #5D5D5D;
+  font-family: "Onest-Regular", sans-serif;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.object-detail__review-controls {
+  justify-content: flex-start;
+}
+
+/* Figma 1857:104725 — shared review layout for 1920px and 1440px frames. */
+@media screen and (max-width: 1600px) {
+  .object-detail__review-inner {
+    padding: 3.5556rem 2.2222rem;
+  }
+
+  .object-detail__review-title {
+    font-size: 2.6667rem;
+  }
+
+  .object-detail__review-content {
+    grid-template-columns: minmax(0, 22.2222rem) minmax(0, 1fr);
+    column-gap: 4rem;
+  }
+
+  .object-detail__review-photo {
+    min-height: 31.1111rem;
+  }
+
+  .object-detail__review-details {
+    min-width: 0;
+  }
+
+  .object-detail__review-text {
+    max-width: 100%;
+  }
+
+  .object-detail__review-navigation {
+    max-width: 100%;
+  }
+}
+
+/* Figma 1857:105417 — customer review at 1024px.
+   The desktop rules remain unchanged; this override restores the tablet frame geometry. */
+@media screen and (max-width: 1100px) {
+  .object-detail__review {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .object-detail__review-inner {
+    align-items: center;
+    gap: 36px;
+    padding: 40px;
+    border-radius: 20px;
+  }
+
+  .object-detail__review-title {
+    max-width: 945px;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+  }
+
+  .object-detail__review-content {
+    grid-template-columns: 341px minmax(0, 1fr);
+    align-items: start;
+    column-gap: 72px;
+    width: 100%;
+    max-width: none;
+  }
+
+  .object-detail__review-photo {
+    width: 341px;
+    height: 345px;
+    min-height: 345px;
+    padding: 8px;
+    border-radius: 30px;
+  }
+
+  .object-detail__review-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    border-radius: 30px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .object-detail__review-details {
+    justify-content: flex-start;
+    gap: 36px;
+    min-width: 0;
+    padding: 0;
+  }
+
+  .object-detail__review-main {
+    gap: 36px;
+  }
+
+  .object-detail__review-copy {
+    gap: 24px;
+  }
+
+  .object-detail__review-quote {
+    height: 70px;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 96px;
+    font-weight: 600;
+    line-height: 0.8;
+  }
+
+  .object-detail__review-text {
+    width: 100%;
+    max-width: none;
+    max-height: 6.4em;
+    font-family: "Onest-Regular", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .object-detail__review-more {
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .object-detail__review-author {
+    gap: 18px;
+  }
+
+  .object-detail__review-name {
+    font-family: "Onest-Bold", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .object-detail__review-position {
+    font-family: "Onest-Regular", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .object-detail__review-navigation {
+    justify-content: flex-start;
+    gap: 24px;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .object-detail__review-arrow {
+    position: relative;
+    display: flex;
+    flex: 0 0 90.51px;
+    align-items: center;
+    justify-content: center;
+    width: 90.51px;
+    height: 90.51px;
+    border: 0;
+    border-radius: 0;
+    opacity: 1;
+    overflow: visible;
+  }
+
+  .object-detail__review-arrow::before {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border: 1px solid rgba(77, 77, 77, 0.2);
+    border-radius: 20px;
+    content: "";
+    transform: rotate(45deg);
+  }
+
+  .object-detail__review-arrow svg {
+    position: relative;
+    width: 40px;
+    height: 40px;
+  }
+
+  .object-detail__review-pagination {
+    gap: 4px;
+  }
+
+  .object-detail__review-pagination span {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Figma 1857:107455 — mobile customer review (360px). */
+@media screen and (max-width: 680px) {
+  .object-detail__review {
+    margin-top: 10px;
+    padding: 0 5px 5px;
+    border-radius: 10px;
+    background: #F5F8F7;
+  }
+
+  .object-detail__review-inner {
+    align-items: center;
+    gap: 24px;
+    padding: 24px 14px;
+    border-radius: 20px;
+    background: #FFFFFF;
+  }
+
+  .object-detail__review-title {
+    max-width: 100%;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+    text-align: center;
+  }
+
+  .object-detail__review-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .object-detail__review-photo {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 253px;
+    min-height: 0;
+    padding: 8px;
+    border-radius: 30px;
+    background: #FFFFFF;
+  }
+
+  .object-detail__review-image {
+    display: block;
+    width: 100%;
+    height: 237px;
+    min-height: 0;
+    border-radius: 30px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .object-detail__review-details {
+    justify-content: flex-start;
+    gap: 36px;
+    min-width: 0;
+    padding: 0;
+  }
+
+  .object-detail__review-main {
+    gap: 36px;
+  }
+
+  .object-detail__review-copy {
+    gap: 14px;
+  }
+
+  .object-detail__review-quote {
+    height: 34px;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 72px;
+  }
+
+  .object-detail__review-text {
+    width: 100%;
+    max-width: none;
+    max-height: 6.4em;
+    font-family: "Onest-Regular", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+
+  .object-detail__review-more {
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+  }
+
+  .object-detail__review-author {
+    gap: 18px;
+  }
+
+  .object-detail__review-name {
+    font-family: "Onest-Bold", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    text-transform: uppercase;
+  }
+
+  .object-detail__review-position {
+    font-family: "Onest-Regular", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+  }
+
+  .object-detail__review-navigation {
+    justify-content: flex-start;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .object-detail__review-arrow {
+    position: relative;
+    flex: 0 0 67.882px;
+    width: 67.882px;
+    height: 67.882px;
+    border: 0;
+    border-radius: 0;
+    opacity: 1;
+    overflow: visible;
+  }
+
+  .object-detail__review-arrow::before {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(77, 77, 77, 0.2);
+    border-radius: 20px;
+    content: "";
+    transform: rotate(45deg);
+  }
+
+  .object-detail__review-arrow svg {
+    position: relative;
+    width: 30px;
+    height: 30px;
+  }
+
+  .object-detail__review-pagination {
+    flex: 0 0 auto;
+    gap: 4px;
+  }
+
+  .object-detail__review-pagination span {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Shared object section header — detail, characteristics and parameters. */
+.object-section__header{display:flex;flex-direction:column;align-items:center;gap:30px;width:100%;min-width:0}
+.object-section__title{width:100%;margin:0;color:#4D4D4D;font-family:"Onest-SemiBold",sans-serif;font-size:48px;font-weight:600;line-height:1.5;text-align:center;text-transform:uppercase;overflow-wrap:anywhere}
+.object-section__tabs{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px;max-width:100%;padding:4px;border-radius:10px;background:#F5F8F7}
+.object-section__tab{display:inline-flex;flex:0 0 auto;align-items:center;justify-content:center;min-height:54px;padding:14px 18px;border-radius:14px;color:#5D5D5D;font-family:"Onest-SemiBold",sans-serif;font-size:18px;font-weight:600;line-height:1.6;text-align:center;text-transform:uppercase;white-space:nowrap;transition:background-color .15s ease}
+.object-section__tab:hover,.object-section__tab:focus-visible{background:#FFFFFF}
+.object-section__tab.is-active{background:#FFF505}
+.object-section__tab:focus-visible{outline:2px solid #324C88;outline-offset:3px}
+@media screen and (max-width:1300px){.object-section__title{font-size:24px;line-height:32px}.object-section__tabs{flex-wrap:nowrap}.object-section__tab{min-height:54px;padding:14px 18px;font-size:16px;line-height:26px}}
+@media screen and (max-width:760px){
+  .object-section__tabs{
+    flex-wrap:nowrap;
+    justify-content:flex-start;
+    width:320px;
+    max-width:100%;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+  }
+  .object-section__tabs::-webkit-scrollbar{display:none}
+}
+@media screen and (max-width:680px){.object-section__title{font-size:18px;line-height:26px;overflow-wrap:break-word}.object-section__tabs{display:flex;flex:0 0 auto;flex-wrap:nowrap;justify-content:flex-start;align-self:center;gap:4px;width:320px;max-width:100%;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch}.object-section__tabs::-webkit-scrollbar{display:none}.object-section__tab{min-height:48px;padding:12px 18px;font-size:14px;line-height:22px}}
+@media screen and (prefers-reduced-motion:reduce){.object-section__tab,.object-section__tabs{scroll-behavior:auto;transition:none}}
+
+.object-parameters {
+  width: 100%;
+  min-width: 0;
+  padding: 0 0.2778rem 0.5556rem;
+  color: #4D4D4D;
+}
+
+.object-parameters__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6667rem;
+  width: 100%;
+  min-width: 0;
+  padding: 40px;
+  border-radius: 1.1111rem;
+  background: #FFFFFF;
+}
+
+.object-parameters__show-more:focus-visible{
+  outline: 0.1111rem solid #324C88;
+  outline-offset: 0.1667rem;
+}
+
+.object-parameters__details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(7, minmax(4rem, auto));
+  grid-auto-flow: column;
+  align-content: start;
+  gap: 0.2778rem;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0.2778rem;
+  background: #F5F8F7;
+}
+
+.object-parameters__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.1111rem;
+  min-width: 0;
+  min-height: 4rem;
+  padding: 1.1111rem;
+  border-radius: 0.5556rem;
+  background: #FFFFFF;
+}
+
+.object-parameters__item[hidden] {
+  display: none;
+}
+
+.object-parameters__label,
+.object-parameters__value {
+  min-width: 0;
+  margin: 0;
+  font-size: 1.1111rem;
+  line-height: 1.25;
+}
+
+.object-parameters__label {
+  color: #4D4D4DCC;
+  font-family: 'Onest-Medium', sans-serif;
+  font-weight: 500;
+}
+
+.object-parameters__value {
+  color: #4D4D4D;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-weight: 600;
+  text-align: right;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.object-parameters__value sup {
+  font-size: 0.7167rem;
+  line-height: 0;
+  vertical-align: super;
+}
+
+.object-parameters__show-more {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7778rem;
+  padding: 0;
+  color: #324C88;
+  font-family: 'Onest-Medium', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.object-parameters__show-more-icon {
+  display: block;
+  flex: 0 0 auto;
+  width: 1.3333rem;
+  height: 1.3333rem;
+  transition: transform 0.15s ease;
+}
+
+.object-parameters__show-more-icon.is-expanded {
+  transform: rotate(180deg);
+}
+
+.object-parameters__show-more[hidden] {
+  display: none;
+}
+
+@media screen and (max-width: 1300px) {
+  .object-parameters__inner {
+    gap: 1.6667rem;
+    padding: 2.2222rem 1.1111rem;
+  }
+
+  .object-parameters__details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(7, minmax(4rem, auto));
+    grid-auto-flow: column;
+    gap: 0.2778rem;
+    padding: 0.2778rem;
+  }
+
+  .object-parameters__item {
+    gap: 0.2778rem;
+    min-height: 4rem;
+    padding: 1.1111rem;
+  }
+
+  .object-parameters__label,
+  .object-parameters__value {
+    font-size: 0.8889rem;
+    line-height: 1.25;
+  }
+
+  .object-parameters__value sup {
+    font-size: 0.5733rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .object-parameters__inner {
+    gap: 1.3333rem;
+    padding: 1.1111rem;
+  }
+
+  .object-parameters__item {
+    gap: 0.6667rem;
+    padding: 0.8889rem;
+  }
+
+  .object-parameters__details {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    grid-auto-flow: row;
+    gap: 0.2778rem;
+  }
+
+  .object-parameters__item {
+    min-height: 4.3333rem;
+  }
+
+  .object-parameters__show-more {
+    display: inline-flex;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .object-parameters {
+    padding: 0 0.2778rem 0.5556rem;
+  }
+
+  .object-parameters__inner {
+    gap: 1.6667rem;
+    padding: 1.1111rem 0.7778rem;
+    border-radius: 0.5556rem;
+  }
+
+  .object-parameters__details {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    grid-auto-flow: row;
+    gap: 0.2778rem;
+    padding: 0.2778rem;
+  }
+
+  .object-parameters__item {
+    align-items: center;
+    gap: 0.7778rem;
+    min-height: 4rem;
+    padding: 1.1111rem;
+  }
+
+  .object-parameters__label,
+  .object-parameters__value {
+    font-size: 0.7778rem;
+    line-height: 1.25;
+  }
+
+  .object-parameters__value sup {
+    font-size: 0.5017rem;
+  }
+
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .object-parameters__show-more-icon {
+    transition: none;
+  }
+}
+
+@media screen and (max-width:1100px){.object-parameters__inner{padding:1.1111rem}}
+
+.object-characteristics {
+  width: 100%;
+  min-width: 0;
+  padding: 0 0.2778rem 0.5556rem;
+  color: #4D4D4D;
+}
+
+.object-characteristics__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6667rem;
+  width: 100%;
+  min-width: 0;
+  padding: 40px;
+  border-radius: 1.1111rem;
+  background: #FFFFFF;
+}
+
+.object-characteristics__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(8, minmax(4rem, auto));
+  grid-auto-flow: column;
+  align-items: stretch;
+  gap: 0.2778rem;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0.2778rem;
+  border-radius: 0.5556rem;
+  background: #F5F8F7;
+}
+
+.object-characteristics__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.1111rem;
+  min-width: 0;
+  min-height: 4rem;
+  padding: 1.1111rem;
+  border-radius: 0.5556rem;
+  background: #FFFFFF;
+}
+
+.object-characteristics__item--id {
+  padding: 0.3333rem 0.2778rem 0.3333rem 1.1111rem;
+}
+
+.object-characteristics__label,
+.object-characteristics__value,
+.object-characteristics__id-value {
+  min-width: 0;
+  margin: 0;
+  font-size: 1.1111rem;
+  line-height: 1.25;
+}
+
+.object-characteristics__label {
+  color: #4D4D4DCC;
+  font-family: 'Onest-Medium', sans-serif;
+  font-weight: 500;
+}
+
+.object-characteristics__value {
+  color: #4D4D4D;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-weight: 600;
+  text-align: right;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.object-characteristics__id-value {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.6111rem;
+  min-height: 3.3333rem;
+  padding: 1.1111rem 1.6667rem;
+  border-radius: 0.5556rem;
+  background: #CAFFDA;
+  color: #38A953;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.object-characteristics__item[hidden],
+.object-characteristics__show-more[hidden] {
+  display: none;
+}
+
+.object-characteristics__show-more {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7778rem;
+  align-self: center;
+  margin-top: 1.1111rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #324C88;
+  font-family: 'Onest-Medium', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.object-characteristics__show-more-icon {
+  width: 1.3333rem;
+  height: 1.3333rem;
+  flex: 0 0 auto;
+  transition: transform 0.15s ease;
+}
+
+.object-characteristics__show-more-icon.is-expanded {
+  transform: rotate(180deg);
+}
+
+.object-characteristics__show-more:focus-visible {
+  outline: 0.1111rem solid #324C88;
+  outline-offset: 0.2222rem;
+  border-radius: 0.2222rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .object-characteristics__label,
+  .object-characteristics__value,
+  .object-characteristics__id-value {
+    font-size: 0.8889rem;
+  }
+
+  .object-characteristics__inner {
+    gap: 1.6667rem;
+    padding: 2.2222rem 1.1111rem;
+    border-radius: 0.5556rem;
+  }
+
+  .object-characteristics__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(8, minmax(4rem, auto));
+    grid-auto-flow: column;
+    gap: 0.2778rem;
+  }
+
+  .object-characteristics__item {
+    min-height: 4rem;
+  }
+
+  .object-characteristics__item--id {
+    padding: 0.3333rem 0.2778rem 0.3333rem 1.1111rem;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .object-characteristics {
+    padding: 0 0.7778rem 0.5556rem;
+  }
+
+  .object-characteristics__inner {
+    gap: 1.1111rem;
+    padding: 1.1111rem 0.7778rem;
+    border-radius: 0.5556rem;
+  }
+
+  .object-characteristics__grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    grid-auto-flow: row;
+    padding: 0.2778rem;
+  }
+
+  .object-characteristics__item {
+    align-items: center;
+    gap: 0.5556rem;
+    padding: 0.7778rem;
+  }
+
+  .object-characteristics__label,
+  .object-characteristics__value,
+  .object-characteristics__id-value {
+    font-size: 0.7778rem;
+  }
+
+  .object-characteristics__item--id .object-characteristics__id-value,
+  .object-characteristics__item:nth-child(3) .object-characteristics__label {
+    font-size: 0.8889rem;
+  }
+
+  .object-characteristics__value {
+    max-width: 58%;
+  }
+
+  .object-characteristics__id-value {
+    min-width: 3.3333rem;
+    min-height: 2.4444rem;
+    padding: 0.5556rem 0.7778rem;
+  }
+
+  .object-characteristics__show-more {
+    display: inline-flex;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .object-characteristics__item {
+    align-items: flex-start;
+  }
+
+  .object-characteristics__value {
+    max-width: 58%;
+    text-align: right;
+  }
+
+  .object-characteristics__item--id {
+    align-items: center;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+.object-characteristics__show-more-icon{
+    transition: none;
+  }
+}
+
+@media screen and (max-width:1100px){.object-characteristics__inner{padding:1.1111rem}}
+
+.object-page__panels {
+  width: 100%;
+  min-width: 0;
+}
+
+.object-page__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6667rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.object-page__panel[hidden] {
+  display: none !important;
+}
+
+.object-page__panel .object-parameters,
+.object-page__panel .object-characteristics {
+  padding: 0;
+}
+
+.object-page__panel .object-parameters__inner,
+.object-page__panel .object-characteristics__inner {
+  padding: 0;
+}

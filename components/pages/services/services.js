@@ -1,5 +1,5 @@
 function initServices() {
-    const categories = document.querySelectorAll('.services__category');
+    const categories = document.querySelectorAll('.listing-header__category');
 
     categories.forEach((category) => {
         category.addEventListener('click', () => {

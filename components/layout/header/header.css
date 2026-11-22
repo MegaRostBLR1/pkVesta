@@ -1,6 +1,4 @@
-/* Header component styles. */
-
-.app-header {
+.app-header-component {
     background: #324C88;
 }
 .header-top {
@@ -413,7 +411,13 @@
     }
 
 }
+html.is-header-menu-open,
+html.is-header-menu-open body {
+    overflow: hidden;
+}
+
 @media screen and (max-width: 1300px) {
+
     .header-top {
         height: 2.7778rem;
     }
@@ -436,87 +440,11 @@
     .header-bottom__action-text {
         font-size: 0.875rem;
     }
-
-}
-@media screen and (max-width: 1024px) {
-    .header-top {
-        height: 3.125rem;
-    }
-    .header-burger {
-        top: -2.9rem;
-        font-size: 0.875rem;
-    }
-    .header-bottom__logo-image {
-        width: 7.875rem;
-    }
-    .header-bottom__search {
-        display: none;
-    }
-    .header-bottom__action-search {
-        display: flex;
-    }
-    .header-bottom__action-calculation {
-        width: 100%;
-    }
-
-}
-@media screen and (max-width: 900px) {
-    .header-top,
-    .header-bottom__actions,
-    .header-bottom__solutions {
-        display: none;
-    }
-    .header-bottom {
-        border-radius: 0;
-    }
-    .header-bottom__action-calculation {
-        max-width: 11.6667rem;
-    }
-    .header-bottom {
-        justify-content: flex-start;
-        gap: 0;
-    }
-    .header-burger {
-        position: static;
-        margin: 0.5556rem;
-        padding-left: 0.625rem;
-    }
-    .burger {
-        gap: 0.4rem;
-    }
-    .header-burger__title {
-        display: none;
-    }
-    .burger-line {
-        width: 1.5rem;
-        background: #2C2C2C;
-    }
-    .header-bottom__logo {
-        margin-right: auto;
-        padding-left: 0;
-    }
-
-}
-@media screen and (max-width: 480px) {
-    .header-bottom {
-        padding: 0.7143rem;
-    }
-    .header-bottom__action-calculation {
-        max-width: 9.5714rem;
-        gap: 0.3571rem;
-    }
-    .header-bottom__action-calculation svg {
-        width: 1.2857rem;
-    }
-
-}
-@media screen and (max-width: 1300px) {
-    .app-header {
+.app-header-component {
         display: grid;
         grid-template-columns: minmax(0, 1fr);
-        background: #FFFFFF;
     }
-    .app-header::before {
+    .app-header-component::before {
         content: "";
         grid-column: 1;
         grid-row: 1;
@@ -527,9 +455,15 @@
         display: contents;
     }
     .header__location,
-    .header__contacts {
+    .header__contacts,
+    .header__contacts .arrow-svg {
         display: none;
     }
+
+    .header__tel-number {
+        display: none;
+    }
+
     .header__nav {
         display: block;
         grid-column: 1;
@@ -624,10 +558,79 @@
     .nav-list__item--press:hover > .nav-list__nested-list--press {
         display: none;
     }
+}
+@media screen and (max-width: 1024px) {
+    .header-top {
+        height: 3.125rem;
+    }
+
+    .header-bottom__logo-image {
+        width: 7.875rem;
+    }
+    .header-bottom__search {
+        display: none;
+    }
+    .header-bottom__action-search {
+        display: flex;
+    }
+    .header-bottom__action-calculation {
+        width: 100%;
+    }
 
 }
 @media screen and (max-width: 900px) {
-    .app-header::before {
+    .header-top,
+    .header-bottom__actions,
+    .header-bottom__solutions {
+        display: none;
+    }
+    .header-bottom {
+        border-radius: 0;
+    }
+    .header-bottom__action-calculation {
+        max-width: 11.6667rem;
+    }
+    .header-bottom {
+        justify-content: flex-start;
+        gap: 0;
+    }
+    .header-burger {
+        position: static;
+        margin: 0.5556rem;
+        padding-left: 0.625rem;
+    }
+    .burger {
+        gap: 0.4rem;
+    }
+    .header-burger__title {
+        display: none;
+    }
+    .burger-line {
+        width: 1.5rem;
+        background: #2C2C2C;
+    }
+    .header-bottom__logo {
+        margin-right: auto;
+        padding-left: 0;
+    }
+
+}
+@media screen and (max-width: 480px) {
+    .header-bottom {
+        padding: 0.7143rem;
+    }
+    .header-bottom__action-calculation {
+        max-width: 9.5714rem;
+        gap: 0.3571rem;
+    }
+    .header-bottom__action-calculation svg {
+        width: 1.2857rem;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    .app-header-component::before {
         min-height: 1.375rem;
     }
     .header-top {
@@ -887,8 +890,6 @@
         display: flex;
     }
 
-}
-@media screen and (max-width: 900px) {
     .header__location-country {
         order: 1;
     }
@@ -904,13 +905,12 @@
     .header__location-choice-title {
         display: block;
     }
-
 }
 
 
 /* Desktop header: размеры контрольного Figma-фрейма 1920 × 164. */
 @media screen and (min-width: 1521px) {
-    .app-header {
+    .app-header-component {
         background: #324C88;
     }
 
@@ -1012,9 +1012,7 @@
         min-width: 100px;
         background: #324C881A;
     }
-}
 
-@media screen and (min-width: 1521px) {
     .header-bottom__search {
         flex: 0 1 988px;
         width: 988px;
@@ -1022,10 +1020,12 @@
     }
 }
 
+
+
 /* Tablet header: Figma frame 1024 px. Keep desktop layout at 1440/1920
    and switch to the compact header only within the tablet range. */
 @media screen and (min-width: 901px) and (max-width: 1300px) {
-    .app-header {
+    .app-header-component {
         display: grid;
         grid-template-columns: minmax(0, 1fr);
         background: #FFFFFF;
@@ -1176,14 +1176,14 @@
 
 /* Mobile navigation: Figma frame 1868:98693 (360px). */
 @media screen and (max-width: 760px) {
-    .app-header {
+    .app-header-component {
         display: grid;
         grid-template-columns: minmax(0, 1fr);
         align-content: start;
         background: #324C88;
     }
 
-    .app-header::before {
+    .app-header-component::before {
         display: none;
     }
 
@@ -1321,7 +1321,7 @@
     .nav-list__item {
         display: flex;
         align-items: center;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         gap: 12px;
         min-width: 0;
         padding: 24px 30px;
@@ -1639,5 +1639,338 @@
     .header-bottom__search-input {
         transition: none;
     }
+
+    .app-header-component .header-burger,
+    .app-header-component .header__nav {
+        transition: none;
+    }
 }
 
+@media screen and (max-width: 1300px) {
+    .app-header-component.is-menu-open {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        width: 100%;
+        height: 100dvh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    .app-header-component:not(.is-menu-open) .header__nav,
+    .app-header-component:not(.is-menu-open) .header__contacts,
+    .app-header-component:not(.is-menu-open) .header__location {
+        display: none;
+    }
+
+    .app-header-component.is-menu-open .header__nav {
+        display: block;
+        grid-column: 1;
+        grid-row: 3;
+        min-width: 0;
+        padding-bottom: 4px;
+        background: #324C88;
+    }
+
+    .app-header-component.is-menu-open .header__contacts {
+        display: flex;
+        grid-column: 1;
+        grid-row: 4;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 24px;
+        min-width: 0;
+        padding: 24px 18px;
+        background: #324C88;
+        color: #FFFFFF;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-phone {
+        align-self: stretch;
+        padding: 0;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice {
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+        width: 100%;
+        min-width: 0;
+        padding: 0;
+        border-radius: 0;
+        background: transparent;
+        color: #FFFFFF;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice-region {
+        min-width: 0;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice-region:not(:last-child) {
+        margin-bottom: 0;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice-title {
+        padding: 0 0 18px;
+        border-bottom: 1px solid #FFFFFF1A;
+        color: #FFFFFF;
+        font-family: 'Onest-SemiBold', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.25;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice-list {
+        gap: 18px;
+        padding-top: 18px;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice-item {
+        align-items: flex-start;
+        min-width: 0;
+        padding: 0;
+        background: transparent;
+        border-radius: 0;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice-icon {
+        flex: 0 0 34px;
+        width: 34px;
+        height: 34px;
+        padding: 5px;
+        margin-right: 14px;
+        border-radius: 4px;
+        background: #FFF500;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice-info {
+        gap: 8px;
+        min-width: 0;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice-phone,
+    .app-header-component.is-menu-open .header__contacts-choice-email {
+        color: #FFFFFF;
+        font-size: 16px;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice-description {
+        color: #FFFFFFB2;
+        font-size: 14px;
+        line-height: 18px;
+        overflow-wrap: anywhere;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-social {
+        display: flex;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .app-header-component.is-menu-open .header__location {
+        display: flex;
+        grid-column: 1;
+        grid-row: 5;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        min-width: 0;
+        padding: 12px 18px 24px;
+        background: #324C88;
+        color: #FFFFFF;
+    }
+
+    .app-header-component.is-menu-open .header__location-choice {
+        position: static;
+        display: flex;
+        flex: 0 0 100%;
+        width: 100%;
+        min-width: 0;
+        padding: 4px;
+        gap: 6px;
+        border-radius: 6px;
+        background: #FFFFFF12;
+    }
+
+    .app-header-component.is-menu-open .header__location-choice-title {
+        color: #FFFFFFB2;
+    }
+
+    .app-header-component.is-menu-open .header__location-choice-item {
+        min-width: 0;
+        background: #FFFFFF12;
+    }
+
+    .app-header-component.is-menu-open .header-burger {
+        cursor: pointer;
+    }
+
+    .app-header-component.is-menu-open .header-burger:focus-visible {
+        outline: 2px solid #FFFFFF;
+        outline-offset: 4px;
+        border-radius: 4px;
+    }
+
+    .app-header-component.is-menu-open .header__nav > .nav-list {
+        background: #FFFFFF;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .app-header-component.is-menu-open .nav-list__item:last-child {
+        border-bottom: 0;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .app-header-component.is-menu-open .header__location-country,
+    .app-header-component.is-menu-open .header__location-money,
+    .app-header-component.is-menu-open .header__location-country-code {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
+        padding: 0;
+        color: #FFFFFF;
+        font-size: 12px;
+    }
+
+    .app-header-component.is-menu-open .header__location-current {
+        flex: 0 0 100%;
+        color: #FFFFFFB2;
+        font-family: 'Onest-Regular', sans-serif;
+        font-size: 11px;
+        text-transform: none;
+    }
+
+    .app-header-component.is-menu-open .header__location-country > .arrow-svg,
+    .app-header-component.is-menu-open .header__location-money > .arrow-svg,
+    .app-header-component.is-menu-open .header__location-country-code > .arrow-svg {
+        display: none;
+    }
+
+    .app-header-component.is-menu-open .header__location-choice-country {
+        min-width: 0;
+        color: #FFFFFF;
+        font-size: 11px;
+        white-space: normal;
+        text-wrap: wrap;
+    }
+
+    .app-header-component.is-menu-open .header__location-choice-name {
+        white-space: normal;
+    }
+
+    .app-header-component.is-menu-open .header__location-choice-item > svg {
+        display: none;
+        flex: 0 0 auto;
+    }
+
+    .app-header-component.is-menu-open .header__location-choice-item--selected > svg {
+        display: block;
+    }
+
+    .app-header-component.is-menu-open .nav-list__nested-list {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .app-header-component.is-menu-open .header__contacts {
+        gap: 18px;
+        padding: 24px 10px;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice-title {
+        padding-bottom: 10px;
+        font-size: 13px;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice-list {
+        gap: 12px;
+        padding-top: 10px;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice-icon {
+        flex-basis: 24px;
+        width: 24px;
+        height: 24px;
+        padding: 4px;
+        margin-right: 6px;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice-phone,
+    .app-header-component.is-menu-open .header__contacts-choice-email {
+        font-size: 11px;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice-description {
+        font-size: 10px;
+        line-height: 1.35;
+    }
+
+    .app-header-component.is-menu-open .header__location {
+        grid-row: 4;
+        padding: 12px 10px 18px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .app-header-component.is-menu-open .header__nav {
+        grid-row: 2;
+    }
+
+    .app-header-component.is-menu-open .header__contacts {
+        grid-row: 3;
+    }
+
+    .app-header-component.is-menu-open .header__location {
+        grid-row: 4;
+    }
+}
+
+/* Final layout refinements for the opened tablet menu. */
+@media screen and (min-width: 901px) and (max-width: 1300px) {
+    .app-header-component.is-menu-open .header__contacts {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .app-header-component.is-menu-open .header__contacts-phone {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-choice {
+        width: 100%;
+    }
+
+    .app-header-component.is-menu-open .header__contacts-social {
+        grid-column: 1;
+        align-self: start;
+    }
+}
+
+@media screen and (min-width: 761px) and (max-width: 1300px) {
+    .app-header-component::before {
+        min-height: 52px;
+    }
+}
+
+@media screen and (min-width: 761px) and (max-width: 900px) {
+    .app-header-component.is-menu-open .header__contacts {
+        grid-row: 4;
+    }
+
+    .app-header-component.is-menu-open .header__location {
+        grid-row: 5;
+    }
+}

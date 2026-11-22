@@ -1,20 +1,24 @@
 function initArticles() {
-    const root = document.querySelector('.articles');
+  const loadMoreButton = document.querySelector(".press-center__load-more");
+  const cardsContainer = document.querySelector(".articles__list");
 
-    if (!root || root.dataset.initialized === 'true') return;
-    root.dataset.initialized = 'true';
+  if (loadMoreButton && cardsContainer) {
+    function checkButtonVisibility() {
+      const totalCards = cardsContainer.querySelectorAll(".articles__card").length;
 
-    const categories = root.querySelectorAll('.articles__category');
+      let visibleByDefault = 3;
+      loadMoreButton.hidden = totalCards <= visibleByDefault;
+    }
 
-    categories.forEach((category) => {
-        category.addEventListener('click', () => {
-            categories.forEach((item) => {
-                item.classList.remove('is-active');
-                item.removeAttribute('aria-current');
-            });
+    loadMoreButton.addEventListener("click", () => {
+      const isExpanded = loadMoreButton.getAttribute("aria-expanded") === "true";
+      loadMoreButton.setAttribute("aria-expanded", String(!isExpanded));
+      loadMoreButton.textContent = isExpanded ? "Показать еще" : "Скрыть";
 
-            category.classList.add('is-active');
-            category.setAttribute('aria-current', 'page');
-        });
+      cardsContainer.classList.toggle("is-expanded", !isExpanded);
     });
+
+    checkButtonVisibility();
+    window.addEventListener("resize", checkButtonVisibility);
+  }
 }

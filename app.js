@@ -10,14 +10,20 @@ const APP_CONFIG = {
     js: './components/layout/footer/footer.js'
   },
   cookies: {
-    html: './components/popupiks/cookies/cookies.html',
-    css: './components/popupiks/cookies/cookies.css',
-    js: './components/popupiks/cookies/cookies.js'
+    html: './components/layout/popups/cookies/cookies.html',
+    css: './components/layout/popups/cookies/cookies.css',
+    js: './components/layout/popups/cookies/cookies.js'
   },
   subscribe: {
-    html: './components/popupiks/subscribe/subscribe.html',
-    css: './components/popupiks/subscribe/subscribe.css',
-    js: './components/popupiks/subscribe/subscribe.js'
+    html: './components/layout/popups/subscribe/subscribe.html',
+    css: './components/layout/popups/subscribe/subscribe.css',
+    js: './components/layout/popups/subscribe/subscribe.js'
+  },
+  modal: {
+    html: './components/layout/popups/main-modal/main-modal.html',
+    css: './components/layout/popups/main-modal/main-modal.css',
+    js: './components/layout/popups/main-modal/main-modal.js',
+    init: 'initMainModal'
   },
   defaultPage: 'home',
   pages: {
@@ -105,26 +111,12 @@ const APP_CONFIG = {
       js: './components/pages/objects/objects.js',
       init: 'initObjects'
     },
-    'object-detail': {
+    'object-page': {
       title: 'Объект',
-      html: './components/pages/objects/object-detail/object-detail.html',
-      css: './components/pages/objects/object-detail/object-detail.css',
-      js: './components/pages/objects/object-detail/object-detail.js',
-      init: 'initObjectDetail'
-    },
-    'object-characteristics': {
-      title: 'Характеристики объекта',
-      html: './components/pages/objects/object-characteristics/object-characteristics.html',
-      css: './components/pages/objects/object-characteristics/object-characteristics.css',
-      js: './components/pages/objects/object-characteristics/object-characteristics.js',
-      init: 'initObjectCharacteristics'
-    },
-    'object-parameters': {
-      title: 'Параметры объекта',
-      html: './components/pages/objects/object-parameters/object-parameters.html',
-      css: './components/pages/objects/object-parameters/object-parameters.css',
-      js: './components/pages/objects/object-parameters/object-parameters.js',
-      init: 'initObjectParameters'
+      html: './components/pages/objects/object-page/object-page.html',
+      css: './components/pages/objects/object-page/object-page.css',
+      js: './components/pages/objects/object-page/object-page.js',
+      init: 'initObjectPage'
     },
     'press-center': {
       title: 'Пресс-центр',
@@ -215,6 +207,13 @@ const APP_CONFIG = {
 
 const loadedPageAssets = new Set();
 let renderRequestId = 0;
+let currentPageName = null;
+
+const OBJECT_SECTION_ROUTES = {
+  'object-detail': { panel: 'object-detail', title: 'Объект' },
+  'object-characteristics': { panel: 'object-characteristics', title: 'Характеристики объекта' },
+  'object-parameters': { panel: 'object-parameters', title: 'Параметры объекта' }
+};
 
 const ROUTE_ALIASES = {
   'page-1': 'objects',
@@ -226,6 +225,72 @@ const ROUTE_ALIASES = {
   'page-7': 'contacts'
 };
 
+const APP_BASE_URL = new URL(
+  './',
+  document.currentScript?.src ||
+    document.querySelector('script[src*="app.js"]')?.src ||
+    window.location.href
+);
+
+function resolveStaticImageUrl(value) {
+  if (!value || /^(?:https?:|\/\/|data:|blob:|#)/i.test(value)) {
+    return value;
+  }
+
+  const imagePathIndex = value.indexOf('static/images/');
+
+  if (imagePathIndex === -1) {
+    return value;
+  }
+
+  let imagePath = value.slice(imagePathIndex);
+
+  return new URL(imagePath, APP_BASE_URL).href;
+}
+
+function rewriteStaticImageUrls(html) {
+  const template = document.createElement('template');
+  template.innerHTML = html;
+
+  template.content
+    .querySelectorAll('[src], [href], [poster], [data-src], [data-lazy-src], [data-original]')
+    .forEach((element) => {
+      ['src', 'href', 'poster', 'data-src', 'data-lazy-src', 'data-original'].forEach((attribute) => {
+        const value = element.getAttribute(attribute);
+
+        if (value) {
+          element.setAttribute(attribute, resolveStaticImageUrl(value));
+        }
+      });
+    });
+
+  template.content.querySelectorAll('[srcset]').forEach((element) => {
+    const srcset = element.getAttribute('srcset');
+
+    element.setAttribute(
+      'srcset',
+      srcset.replace(/((?:\.\.?\/|\/)*static\/images\/[^,\s]+)/g, resolveStaticImageUrl)
+    );
+  });
+
+  template.content.querySelectorAll('[style], style').forEach((element) => {
+    const attribute = element.hasAttribute('style') ? 'style' : null;
+    const value = attribute ? element.getAttribute(attribute) : element.textContent;
+    const rewritten = value.replace(
+      /(url\(\s*['"]?)([^'")]+)(['"]?\s*\))/gi,
+      (match, prefix, url, suffix) => prefix + resolveStaticImageUrl(url) + suffix
+    );
+
+    if (attribute) {
+      element.setAttribute(attribute, rewritten);
+    } else {
+      element.textContent = rewritten;
+    }
+  });
+
+  return template.innerHTML;
+}
+
 async function loadHtml(url) {
   const response = await fetch(url);
 
@@ -233,7 +298,7 @@ async function loadHtml(url) {
     throw new Error(`Не удалось загрузить ${url}: HTTP ${response.status}`);
   }
 
-  return response.text();
+  return rewriteStaticImageUrls(await response.text());
 }
 
 async function loadComponent(target, component) {
@@ -284,14 +349,14 @@ function loadScript(url) {
 
 function getPageName() {
   const hashRoute = window.location.hash
-      .replace(/^#\/?/, '')
-      .split(/[?&]/, 1)[0]
-      .trim()
-      .toLowerCase();
+    .replace(/^#\/?/, '')
+    .split(/[?&]/, 1)[0]
+    .trim()
+    .toLowerCase();
 
   const route = hashRoute || APP_CONFIG.defaultPage;
 
-  if (APP_CONFIG.pages[route]) {
+  if (APP_CONFIG.pages[route] || OBJECT_SECTION_ROUTES[route]) {
     return route;
   }
 
@@ -299,14 +364,24 @@ function getPageName() {
 }
 
 async function renderPage(pageName) {
+  const isObjectSection = Boolean(OBJECT_SECTION_ROUTES[pageName]);
+  const configPageName = isObjectSection ? 'object-page' : pageName;
+
+  if (isObjectSection && currentPageName === 'object-page') {
+    setObjectPageSection(pageName);
+    document.title = `pkVesta — ${OBJECT_SECTION_ROUTES[pageName].title}`;
+    return;
+  }
+
   const requestId = ++renderRequestId;
-  const page = APP_CONFIG.pages[pageName] || APP_CONFIG.pages[APP_CONFIG.defaultPage];
+  const page = APP_CONFIG.pages[configPageName] || APP_CONFIG.pages[APP_CONFIG.defaultPage];
   const main = document.querySelector('#app-main');
 
   if (!main) {
     return;
   }
 
+  currentPageName = null;
   main.innerHTML = '<p class="loading">Загрузка страницы…</p>';
 
   try {
@@ -318,19 +393,24 @@ async function renderPage(pageName) {
 
     main.innerHTML = html;
     loadStylesheet(page.css);
+
     await loadScript(page.js);
 
     if (requestId !== renderRequestId) {
       return;
     }
 
-    document.title = `pkVesta — ${page.title}`;
+    document.title = isObjectSection
+      ? `pkVesta — ${OBJECT_SECTION_ROUTES[pageName].title}`
+      : `pkVesta — ${page.title}`;
 
     const init = window[page.init];
 
     if (typeof init === 'function') {
-      init();
+      init(pageName);
     }
+
+    currentPageName = configPageName;
   } catch (error) {
     if (requestId !== renderRequestId) {
       return;
@@ -378,14 +458,14 @@ function initNavigationRouting() {
   };
 
   document.querySelectorAll('.app-header a.nav-link, .app-header a.nav-list__nested-list-link')
-      .forEach((link) => {
-        const label = link.textContent.trim().replace(/\s+/g, ' ');
-        const route = routeByLabel[label];
+    .forEach((link) => {
+      const label = link.textContent.trim().replace(/\s+/g, ' ');
+      const route = routeByLabel[label];
 
-        if (route) {
-          link.href = `#/${route}`;
-        }
-      });
+      if (route) {
+        link.href = `#/${route}`;
+      }
+    });
 }
 
 async function initApp() {
@@ -393,14 +473,24 @@ async function initApp() {
   const footer = document.querySelector('#app-footer');
   const cookies = document.querySelector('#app-cookies');
   const subscribe = document.querySelector('#app-subscribe');
+  const mainModal = document.querySelector('#app-main-modal');
 
   try {
     await Promise.all([
       loadComponent(header, APP_CONFIG.header),
       loadComponent(footer, APP_CONFIG.footer),
       loadComponent(cookies, APP_CONFIG.cookies),
-      loadComponent(subscribe, APP_CONFIG.subscribe)
+      loadComponent(subscribe, APP_CONFIG.subscribe),
+      mainModal ? loadComponent(mainModal, APP_CONFIG.modal) : Promise.resolve()
     ]);
+
+    if (mainModal && APP_CONFIG.modal.init) {
+      const initMainModal = window[APP_CONFIG.modal.init];
+
+      if (typeof initMainModal === 'function') {
+        initMainModal();
+      }
+    }
   } catch (error) {
     console.error(error);
   }
