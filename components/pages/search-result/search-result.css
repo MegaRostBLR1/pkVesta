@@ -1,0 +1,771 @@
+.search-result {
+  width: 100%;
+  color: #4d4d4d;
+  background: #fff;
+}
+
+.search-result__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1111rem;
+  width: 100%;
+  padding: 1.1111rem;
+  background: #fff;
+}
+
+.search-result__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.3333rem;
+  padding-left: 0.5556rem;
+}
+
+.search-result__title {
+  margin: 0;
+  color: #4d4d4d;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.search-result__clear {
+  display: flex;
+  flex: 0 0 3.3333rem;
+  align-items: center;
+  justify-content: center;
+  width: 3.3333rem;
+  height: 3.3333rem;
+  border-radius: 0.4444rem;
+}
+
+.search-result__clear img {
+  display: block;
+  width: 3.3333rem;
+  height: 3.3333rem;
+}
+
+.search-result__divider {
+  flex: 0 0 0.0556rem;
+  width: 100%;
+  background: #dbdbdb;
+}
+
+.search-result__layout {
+  display: grid;
+  grid-template-columns: 20.5556rem minmax(0, 1fr);
+  align-items: start;
+  gap: 2.7778rem;
+  min-width: 0;
+}
+
+.search-result__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3333rem;
+  min-width: 0;
+  padding-top: 0.2222rem;
+}
+
+.search-result__suggestion-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5556rem;
+  padding: 0.2222rem;
+}
+
+.search-result__group-title {
+  margin: 0;
+  color: #4d4d4d;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 1.1111rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.search-result__suggestions {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.search-result__suggestions li {
+  min-width: 0;
+  border-bottom: 0.0556rem solid #f7f8fa;
+}
+
+.search-result__suggestion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6667rem;
+  padding: 1.1111rem 0;
+  color: #717171;
+  font-family: 'Onest-Medium', sans-serif;
+  font-size: 0.8889rem;
+  line-height: 1.4;
+}
+
+.search-result__suggestion a {
+  min-width: 0;
+}
+
+.search-result__suggestion button {
+  display: flex;
+  flex: 0 0 1rem;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+}
+
+.search-result__suggestion button img {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+}
+
+.search-result__popular-link {
+  display: flex;
+  align-items: center;
+  gap: 0.7778rem;
+  padding: 1.1111rem 0;
+  color: #717171;
+  font-family: 'Onest-Medium', sans-serif;
+  font-size: 0.8889rem;
+  line-height: 1.4;
+}
+
+.search-result__popular-link img {
+  display: block;
+  flex: 0 0 1rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+.search-result__results {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  min-width: 0;
+}
+
+.search-result__projects,
+.search-result__news {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1111rem;
+  min-width: 0;
+}
+
+.search-result__project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.2778rem;
+  min-width: 0;
+}
+
+.search-result__project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5556rem;
+  min-width: 0;
+  min-height: 20rem;
+  padding: 1.3333rem 1.1111rem 1.1111rem;
+  overflow: hidden;
+  border-radius: 0.5556rem;
+  color: #fff;
+  isolation: isolate;
+}
+
+.search-result__project-image,
+.search-result__project-overlay {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.search-result__project-image {
+  object-fit: cover;
+}
+
+.search-result__project-overlay {
+  z-index: -1;
+  background: #14141466;
+}
+
+.search-result__project-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.1111rem;
+}
+
+.search-result__project-name {
+  min-width: 0;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 1.5556rem;
+  font-weight: 600;
+  line-height: 1.43;
+  text-transform: uppercase;
+}
+
+.search-result__play {
+  display: flex;
+  flex: 0 0 2.7778rem;
+  align-items: center;
+  justify-content: center;
+  width: 2.7778rem;
+  height: 2.7778rem;
+  border-radius: 0.5556rem;
+  background: #FFFFFF1A;
+  transform: rotate(45deg);
+}
+
+.search-result__play img {
+  display: block;
+  width: 1.5556rem;
+  height: 1.5556rem;
+  padding: 0.4444rem;
+  border-radius: 0.4444rem;
+  background: #fff;
+  transform: rotate(-45deg);
+}
+
+.search-result__project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.8333rem;
+}
+
+.search-result__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6667rem;
+  min-height: 1.8889rem;
+  padding: 0.1111rem 0.5556rem 0.1111rem 0.1111rem;
+  border-radius: 0.5556rem;
+  color: #fff;
+  background: #FFFFFF0A;
+  font-family: 'Onest-Medium', sans-serif;
+  font-size: 0.8889rem;
+  line-height: 1.4444rem;
+  white-space: nowrap;
+}
+
+.search-result__tag img {
+  display: block;
+  width: 1.6667rem;
+  height: 1.6667rem;
+  padding: 0.3333rem;
+  border-radius: 0.5556rem;
+  background: #38528b;
+}
+
+.search-result__news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.3333rem;
+}
+
+.search-result__news-card {
+  display: grid;
+  grid-template-columns: minmax(10rem, 42%) minmax(0, 1fr);
+  gap: 1.1111rem;
+  min-width: 0;
+  padding: 0.2222rem;
+  border-radius: 0.5556rem;
+  background: #f9fafb;
+}
+
+.search-result__news-image {
+  display: block;
+  width: 100%;
+  height: 12.2222rem;
+  border-radius: 0.5556rem;
+  object-fit: cover;
+}
+
+.search-result__news-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6667rem;
+  min-width: 0;
+  padding: 0.4444rem 0.2222rem;
+}
+
+.search-result__news-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4444rem;
+  color: #717171;
+  font-family: 'Onest-Medium', sans-serif;
+  font-size: 0.7778rem;
+  line-height: 1.4;
+}
+
+.search-result__news-meta span {
+  padding: 0.3333rem 0.5556rem;
+  border-radius: 0.5556rem;
+  background: #f1f2f4;
+}
+
+.search-result__news-title {
+  color: #4d4d4d;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 1.3333rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.search-result__news-description {
+  color: #4D4D4DB3;
+  font-family: 'Onest-Medium', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5556rem;
+}
+
+.search-result a:focus-visible,
+.search-result button:focus-visible {
+  outline: 0.1111rem solid #324c88;
+  outline-offset: 0.1667rem;
+}
+
+@media screen and (max-width: 1600px) {
+  .search-result__layout {
+    grid-template-columns: 17.7778rem minmax(0, 1fr);
+    gap: 1.7778rem;
+  }
+
+  .search-result__title {
+    font-size: 1.6667rem;
+  }
+
+  .search-result__project-name {
+    font-size: 1.2222rem;
+  }
+
+  .search-result__project-card {
+    min-height: 17.7778rem;
+  }
+
+  .search-result__tag {
+    font-size: 0.7778rem;
+  }
+
+  .search-result__news-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Макет поиска для ширины Figma 1440px. Базовые desktop-стили выше остаются вариантом 1920px. */
+@media screen and (min-width: 1301px) and (max-width: 1440px) {
+  .search-result__container {
+    padding: 1.1111rem;
+  }
+
+  .search-result__layout {
+    grid-template-columns: 17.7778rem minmax(0, 1fr);
+    gap: 1.7778rem;
+  }
+
+  .search-result__project-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .search-result__project-card {
+    min-height: 17.7778rem;
+  }
+
+  .search-result__project-name {
+    font-size: 1.2222rem;
+  }
+
+  .search-result__news-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .search-result__container {
+    padding: 1.1111rem;
+  }
+
+  .search-result__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.7778rem;
+  }
+
+  .search-result__sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.1111rem;
+  }
+
+  .search-result__project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .search-result__title {
+    font-size: 1.4444rem;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .search-result__container {
+    gap: 0.8889rem;
+    padding: 0.8889rem;
+  }
+
+  .search-result__heading {
+    align-items: flex-start;
+    padding-left: 0;
+  }
+
+  .search-result__title {
+    font-size: 1.1111rem;
+    line-height: 1.35;
+  }
+
+  .search-result__clear,
+  .search-result__clear img {
+    flex-basis: 2rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .search-result__sidebar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .search-result__project-grid,
+  .search-result__news-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .search-result__project-card {
+    min-height: 16.6667rem;
+  }
+
+  .search-result__project-name {
+    font-size: 1.2222rem;
+  }
+
+  .search-result__news-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .search-result__news-image {
+    height: 10.5556rem;
+  }
+
+  .search-result__news-title {
+    font-size: 1.1111rem;
+  }
+
+  .search-result__news-description {
+    font-size: 0.8889rem;
+    line-height: 1.3333rem;
+  }
+}
+
+/* Планшетный макет Figma 1024px (2265:83604). */
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+  .search-result__container {
+    gap: 1.1111rem;
+    padding: 1.1111rem;
+  }
+
+  .search-result__heading {
+    align-items: center;
+    gap: 1.1111rem;
+    padding-left: 0.5556rem;
+  }
+
+  .search-result__title {
+    font-size: 1.3333rem;
+    line-height: 1.4;
+  }
+
+  .search-result__clear,
+  .search-result__clear img {
+    flex-basis: 3.3333rem;
+    width: 3.3333rem;
+    height: 3.3333rem;
+  }
+
+  .search-result__layout {
+    grid-template-columns: 13.2222rem minmax(0, 1fr);
+    align-items: start;
+    gap: 1.3333rem;
+  }
+
+  .search-result__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3333rem;
+    padding-top: 0;
+  }
+
+  .search-result__suggestion-group {
+    gap: 0.5556rem;
+    padding: 0.2222rem;
+  }
+
+  .search-result__group-title {
+    font-size: 1rem;
+    line-height: 1.3333;
+  }
+
+  .search-result__suggestion {
+    gap: 0.5556rem;
+    padding: 1.1111rem 0;
+    font-size: 0.7778rem;
+    line-height: 1.5714;
+  }
+
+  .search-result__suggestion button,
+  .search-result__suggestion button img,
+  .search-result__popular-link img {
+    flex-basis: 1rem;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .search-result__popular-link {
+    gap: 0.7778rem;
+    padding: 1.1111rem 0;
+    font-size: 0.7778rem;
+  }
+
+  .search-result__results {
+    gap: 2.5rem;
+  }
+
+  .search-result__projects,
+  .search-result__news {
+    gap: 1.1111rem;
+  }
+
+  .search-result__project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.2222rem;
+  }
+
+  .search-result__project-card {
+    min-height: 17.7778rem;
+    padding: 1.3333rem 1.1111rem 1.1111rem;
+  }
+
+  .search-result__project-name {
+    font-size: 1.3333rem;
+    line-height: 1.6667;
+  }
+
+  .search-result__project-heading {
+    gap: 0.7778rem;
+  }
+
+  .search-result__play {
+    position: relative;
+    flex-basis: 3.9284rem;
+    width: 3.9284rem;
+    height: 3.9284rem;
+    background: transparent;
+    transform: none;
+  }
+
+  .search-result__play::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2.7778rem;
+    height: 2.7778rem;
+    border-radius: 0.5556rem;
+    background: #ffffff1a;
+    content: "";
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .search-result__play img {
+    position: relative;
+    width: 1.5556rem;
+    height: 1.5556rem;
+    transform: none;
+  }
+
+  .search-result__tag {
+    font-size: 0.7778rem;
+  }
+
+  .search-result__news-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+/* Мобильный макет Figma 360px (2265:83857). */
+@media screen and (max-width: 680px) {
+  .search-result__container {
+    gap: 1.1111rem;
+    padding: 1.1111rem 0.2778rem 0.2778rem;
+  }
+
+  .search-result__heading {
+    align-items: center;
+    gap: 0.5556rem;
+    padding: 0 0.5556rem;
+  }
+
+  .search-result__title {
+    font-size: 0.8889rem;
+    line-height: 1.5556rem;
+  }
+
+  .search-result__clear,
+  .search-result__clear img {
+    flex-basis: 1.3333rem;
+    width: 1.3333rem;
+    height: 1.3333rem;
+  }
+
+  .search-result__divider {
+    flex-basis: 0.0556rem;
+  }
+
+  .search-result__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.3333rem;
+  }
+
+  .search-result__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3333rem;
+    padding: 0 0.2222rem;
+  }
+
+  .search-result__suggestion-group {
+    gap: 0.5556rem;
+    padding: 0.2222rem;
+  }
+
+  .search-result__group-title {
+    font-size: 0.7778rem;
+    line-height: 1.4444rem;
+  }
+
+  .search-result__suggestion {
+    gap: 0.5556rem;
+    padding: 0.5556rem 0;
+    font-size: 0.6667rem;
+    line-height: 1.3333rem;
+  }
+
+  .search-result__suggestion a {
+    overflow-wrap: anywhere;
+  }
+
+  .search-result__suggestion button,
+  .search-result__suggestion button img {
+    flex-basis: 1rem;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .search-result__popular-link {
+    gap: 0.7778rem;
+    padding: 0.5556rem 0;
+    font-size: 0.6667rem;
+    line-height: 1.3333rem;
+  }
+
+  .search-result__popular-link img {
+    flex-basis: 1rem;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .search-result__results {
+    gap: 2.5rem;
+  }
+
+  .search-result__projects,
+  .search-result__news {
+    gap: 0.7778rem;
+  }
+
+  .search-result__project-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.2222rem;
+  }
+
+  .search-result__project-card {
+    gap: 0.7778rem;
+    min-height: 0;
+    padding: 0.7778rem;
+    border-radius: 0.5556rem;
+  }
+
+  .search-result__project-heading {
+    align-items: flex-start;
+    gap: 0.5556rem;
+  }
+
+  .search-result__project-name {
+    flex: 1 1 auto;
+    font-size: 1.2222rem;
+    line-height: 1.6667rem;
+  }
+
+  .search-result__play {
+    flex-basis: 2.7778rem;
+    width: 2.7778rem;
+    height: 2.7778rem;
+  }
+
+  .search-result__project-meta {
+    gap: 0.8333rem;
+  }
+
+  .search-result__tag {
+    gap: 0.3333rem;
+    padding: 0.1111rem 0.5556rem 0.1111rem 0.1111rem;
+    font-size: 0.7778rem;
+    line-height: 1.4444rem;
+  }
+
+  .search-result__tag img {
+    flex-basis: 2rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .search-result__news-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .search-result__news-image {
+    height: 10.5556rem;
+  }
+
+  .search-result__news-title {
+    font-size: 1.1111rem;
+  }
+
+  .search-result__news-description {
+    font-size: 0.8889rem;
+    line-height: 1.3333rem;
+  }
+}

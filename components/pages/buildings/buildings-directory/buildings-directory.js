@@ -18,7 +18,7 @@ function initBuildingsDirectory() {
 
   function renderCards() {
     const matchingCards = cards.filter((card) => (
-      selectedCategory === 'all' || card.dataset.category === selectedCategory
+        selectedCategory === 'all' || card.dataset.category === selectedCategory
     ));
 
     cards.forEach((card) => {

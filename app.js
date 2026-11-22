@@ -9,6 +9,16 @@ const APP_CONFIG = {
     css: './components/layout/footer/footer.css',
     js: './components/layout/footer/footer.js'
   },
+  cookies: {
+    html: './components/popupiks/cookies/cookies.html',
+    css: './components/popupiks/cookies/cookies.css',
+    js: './components/popupiks/cookies/cookies.js'
+  },
+  subscribe: {
+    html: './components/popupiks/subscribe/subscribe.html',
+    css: './components/popupiks/subscribe/subscribe.css',
+    js: './components/popupiks/subscribe/subscribe.js'
+  },
   defaultPage: 'home',
   pages: {
     'home': {
@@ -38,6 +48,13 @@ const APP_CONFIG = {
       css: './components/pages/buildings/buildings.css',
       js: './components/pages/buildings/buildings.js',
       init: 'initBuildings'
+    },
+    'fast-buildings': {
+      title: 'Быстровозводимые здания',
+      html: './components/pages/fast-buildings/fast-buildings.html',
+      css: './components/pages/fast-buildings/fast-buildings.css',
+      js: './components/pages/fast-buildings/fast-buildings.js',
+      init: 'initFastBuildings'
     },
     'buildings-directory': {
       title: 'Каталог зданий',
@@ -151,6 +168,13 @@ const APP_CONFIG = {
       js: './components/pages/press-center/articles/articles.js',
       init: 'initArticles'
     },
+    'article-item': {
+      title: 'Статья',
+      html: './components/pages/press-center/article-item/article-item.html',
+      css: './components/pages/press-center/article-item/article-item.css',
+      js: './components/pages/press-center/article-item/article-item.js',
+      init: 'initArticleItem'
+    },
     'about': {
       title: 'О компании',
       html: './components/pages/about/about.html',
@@ -165,12 +189,26 @@ const APP_CONFIG = {
       js: './components/pages/prices/prices.js',
       init: 'initPrices'
     },
+    'calculator': {
+      title: 'Онлайн калькулятор',
+      html: './components/pages/calculator/calculator.html',
+      css: './components/pages/calculator/calculator.css',
+      js: './components/pages/calculator/calculator.js',
+      init: 'initCalculator'
+    },
     'contacts': {
       title: 'Контакты',
       html: './components/pages/contacts/contacts.html',
       css: './components/pages/contacts/contacts.css',
       js: './components/pages/contacts/contacts.js',
       init: 'initContacts'
+    },
+    'search-result': {
+      title: 'Результаты поиска',
+      html: './components/pages/search-result/search-result.html',
+      css: './components/pages/search-result/search-result.css',
+      js: './components/pages/search-result/search-result.js',
+      init: 'initSearchResult'
     }
   }
 };
@@ -200,7 +238,9 @@ async function loadHtml(url) {
 
 async function loadComponent(target, component) {
   target.innerHTML = await loadHtml(component.html);
-  loadStylesheet(component.css);
+  if (component.css) {
+    loadStylesheet(component.css);
+  }
   await loadScript(component.js);
 }
 
@@ -303,9 +343,15 @@ async function renderPage(pageName) {
 
 
 function initNavigationRouting() {
+  const calculatorLink = document.querySelector('.app-header .header-bottom__action-calculation');
+
+  if (calculatorLink) {
+    calculatorLink.href = '#/calculator';
+  }
+
   const routeByLabel = {
-    'Продукция': 'objects',
-    'Быстровозводимые здания': 'buildings',
+    'Продукция': 'buildings',
+    'Быстровозводимые здания': 'fast-buildings',
     'Легкие металлоконструкции': 'objects',
     'Сэндвич панели': 'objects',
     'Комплектующие для ворот': 'objects',
@@ -345,11 +391,15 @@ function initNavigationRouting() {
 async function initApp() {
   const header = document.querySelector('#app-header');
   const footer = document.querySelector('#app-footer');
+  const cookies = document.querySelector('#app-cookies');
+  const subscribe = document.querySelector('#app-subscribe');
 
   try {
     await Promise.all([
       loadComponent(header, APP_CONFIG.header),
-      loadComponent(footer, APP_CONFIG.footer)
+      loadComponent(footer, APP_CONFIG.footer),
+      loadComponent(cookies, APP_CONFIG.cookies),
+      loadComponent(subscribe, APP_CONFIG.subscribe)
     ]);
   } catch (error) {
     console.error(error);

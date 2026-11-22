@@ -1,6 +1,189 @@
-<section class="contacts">
-  <div class="container">
-    <h1>Контакты</h1>
-    <p>Базовый HTML-контент страницы контактов. Здесь будет размещён основной интерфейс.</p>
+<section class="contacts" aria-labelledby="contacts-title">
+  <div class="contacts__container">
+    <nav class="contacts__breadcrumbs" aria-label="Хлебные крошки">
+      <a href="#/">Главная</a><span aria-hidden="true">-</span><span aria-current="page">Контакты</span>
+    </nav>
+    <h1 class="contacts__title" id="contacts-title">Контакты</h1>
+    <div class="contacts__layout">
+      <div class="contacts__details">
+        <section class="contacts__panel" aria-labelledby="contacts-office-title">
+          <h2 class="contacts__panel-title" id="contacts-office-title">Главный офис, производство ПК «Веста» в г. Тула, Россия</h2>
+          <div class="contacts__office-data">
+            <div class="contacts__address-card">
+              <h3 class="contacts__label">Юридический адрес:</h3>
+              <p class="contacts__value">Юридический адрес: 300004, Тульская область, г. Тула, Торховский проезд, дом 6, ком.1, административно-бытовой блок 1</p>
+            </div>
+            <div class="contacts__requisites">
+              <div class="contacts__requisite"><h3 class="contacts__label">Почтовый адрес:</h3><p class="contacts__value">300028, г. Тула, а/я 2496</p></div>
+              <div class="contacts__requisite"><h3 class="contacts__label">ОГРН:</h3><p class="contacts__value">1027100739192</p></div>
+              <div class="contacts__requisite"><h3 class="contacts__label">ИНН:</h3><p class="contacts__value">7106006132</p></div>
+              <a class="contacts__download" href="https://www.figma.com/design/1N1oZKJBDmVLm5rGPOO401/" target="_blank" rel="noopener noreferrer" aria-label="Скачать реквизиты — временная ссылка"><svg class="contacts__download-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 17v3h14v-3" /></svg><span>Скачать реквизиты</span></a>
+            </div>
+          </div>
+        </section>
+        <section class="contacts__panel contacts__phones" aria-labelledby="contacts-phones-title">
+          <h2 class="contacts__panel-title" id="contacts-phones-title">Телефоны для связи:</h2>
+          <div class="contacts__phone-grid">
+            <article class="contacts__phone-card"><div class="contacts__phone-copy"><a class="contacts__phone-number" href="tel:+74872701777">+7 (4872) 701-777</a><p class="contacts__value">Общий: с 8:00 до 17:30</p></div><span class="contacts__language">Ru</span></article>
+            <article class="contacts__phone-card"><div class="contacts__phone-copy"><a class="contacts__phone-number" href="tel:+79109434966">+7 (910) 943-49-66</a><p class="contacts__value">с 9:00 до 20:00.</p><p class="contacts__value">Денис. Заместитель директора по развитию</p></div><div class="contacts__languages"><span class="contacts__language">Ru</span><span class="contacts__language">En</span></div></article>
+            <article class="contacts__phone-card"><div class="contacts__phone-copy"><a class="contacts__phone-number" href="tel:+79107000167">+7 (910) 7000-167</a><p class="contacts__value">с 8:00 до 16:30.</p><p class="contacts__value">Ольга. Консультант</p></div><div class="contacts__languages"><span class="contacts__language">Ru</span><span class="contacts__language">En</span></div></article>
+          </div>
+        </section>
+      </div>
+      <div class="contacts__visual">
+        <iframe class="contacts__map" src="https://yandex.ru/map-widget/v1/?ll=37.674106%2C54.220577&z=16&pt=37.674106%2C54.220577%2Cpm2rdm" title="Яндекс Карты — завод ПК «Веста», Торховский проезд, 6, Тула" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </div>
+    <section class="contacts-links" aria-labelledby="contacts-links-title">
+      <h2 class="contacts-links__title" id="contacts-links-title">Телефоны для связи:</h2>
+      <div class="contacts-links__frame">
+        <div class="contacts-links__cards">
+          <article class="contacts-links__card"><h3 class="contacts-links__label">E-mail:</h3><a class="contacts-links__value" href="mailto:info@pkvesta.ru">info@pkvesta.ru</a></article>
+          <article class="contacts-links__card"><h3 class="contacts-links__label">Web:</h3><a class="contacts-links__value" href="https://www.pkvesta.ru/" target="_blank" rel="noopener noreferrer">www.pkvesta.ru</a></article>
+          <article class="contacts-links__card"><h3 class="contacts-links__label">Cистема WebSteel®:</h3><a class="contacts-links__value" href="https://www.websteel.pkvesta.ru/" target="_blank" rel="noopener noreferrer">www.websteel.pkvesta.ru</a></article>
+          <article class="contacts-links__card contacts-links__card--social">
+            <h3 class="contacts-links__label">Социальные сети:</h3>
+            <div class="contacts-links__socials" aria-label="Социальные сети">
+              <a class="contacts-links__social-link" href="https://vk.com/" aria-label="ВКонтакте" target="_blank" rel="noopener noreferrer"><img src="https://www.figma.com/api/mcp/asset/5173fe4c-48ea-4bb1-959c-1cc91af0a823/8346b.png" alt="" width="20" height="20" loading="lazy"></a>
+              <a class="contacts-links__social-link" href="https://t.me/" aria-label="Telegram" target="_blank" rel="noopener noreferrer"><img src="https://www.figma.com/api/mcp/asset/5173fe4c-48ea-4bb1-959c-1cc91af0a823/dc858.png" alt="" width="20" height="20" loading="lazy"></a>
+              <a class="contacts-links__social-link" href="https://www.youtube.com/" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><img src="https://www.figma.com/api/mcp/asset/5173fe4c-48ea-4bb1-959c-1cc91af0a823/fa238.png" alt="" width="20" height="20" loading="lazy"></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contacts-representations" aria-labelledby="contacts-representations-title" data-node-id="1857:103685">
+      <h2 class="contacts-representations__title" id="contacts-representations-title">Представительства:</h2>
+      <div class="contacts-representations__filters" role="group" aria-label="Фильтр представительств">
+        <button class="contacts-representations__filter is-active" type="button" data-country="all" aria-pressed="true">Все</button>
+        <button class="contacts-representations__filter" type="button" data-country="russia" aria-pressed="false">Россия</button>
+        <button class="contacts-representations__filter" type="button" data-country="kazakhstan" aria-pressed="false">Казахстан</button>
+        <button class="contacts-representations__filter" type="button" data-country="uzbekistan" aria-pressed="false">Узбекистан</button>
+        <button class="contacts-representations__filter" type="button" data-country="all" aria-pressed="false">Проектирование</button>
+        <button class="contacts-representations__filter" type="button" data-country="all" aria-pressed="false">Оплата</button>
+        <button class="contacts-representations__filter" type="button" data-country="all" aria-pressed="false">Изготовление</button>
+        <button class="contacts-representations__filter" type="button" data-country="all" aria-pressed="false">Монтаж</button>
+        <button class="contacts-representations__filter" type="button" data-country="all" aria-pressed="false">Фундамент</button>
+      </div>
+      <p class="contacts-representations__hotline">Для клиентов в России: <a href="tel:88003333741">8-800-333-37-41</a> (звонок бесплатный) с 8:00 до 17:30 (МСК), Пн.-Пт.</p>
+      <div class="contacts-representations__frame"><div class="contacts-representations__grid"><article class="contacts-representations__card" data-country="russia"><h3 class="contacts-representations__card-title">ОФИС В Г. МОСКВА, РОССИЯ</h3><p class="contacts-representations__address">115054, Россия, г. Москва, ул. Дубининская, д. 57, стр. 1, пом. I, ком. 7б</p><div class="contacts-representations__contacts"><a class="contacts-representations__contact" href="tel:+74997034469"><strong>+7 (499) 703-44-69</strong> <span>(с 9:00 до 18:00)</span></a><a class="contacts-representations__contact" href="tel:+74997034469"><strong>+7 (499) 703-44-69</strong> <span>(с 9:00 до 18:00)</span></a><a class="contacts-representations__contact" href="mailto:moscow@pkvesta.ru">E-mail: moscow@pkvesta.ru</a><a class="contacts-representations__contact" href="https://pkvest.ru/" target="_blank" rel="noopener noreferrer">pkvest.ru</a></div></article><article class="contacts-representations__card" data-country="russia"><h3 class="contacts-representations__card-title">ОФИС В Г. МОСКВА, РОССИЯ</h3><p class="contacts-representations__address">115054, Россия, г. Москва, ул. Дубининская, д. 57, стр. 1, пом. I, ком. 7б</p><div class="contacts-representations__contacts"><a class="contacts-representations__contact" href="tel:+74997034469"><strong>+7 (499) 703-44-69</strong> <span>(с 9:00 до 18:00)</span></a><a class="contacts-representations__contact" href="tel:+74997034469"><strong>+7 (499) 703-44-69</strong> <span>(с 9:00 до 18:00)</span></a><a class="contacts-representations__contact" href="mailto:moscow@pkvesta.ru">E-mail: moscow@pkvesta.ru</a><a class="contacts-representations__contact" href="https://pkvest.ru/" target="_blank" rel="noopener noreferrer">pkvest.ru</a></div></article><article class="contacts-representations__card" data-country="russia"><h3 class="contacts-representations__card-title">ОФИС В Г. МОСКВА, РОССИЯ</h3><p class="contacts-representations__address">115054, Россия, г. Москва, ул. Дубининская, д. 57, стр. 1, пом. I, ком. 7б</p><div class="contacts-representations__contacts"><a class="contacts-representations__contact" href="tel:+74997034469"><strong>+7 (499) 703-44-69</strong> <span>(с 9:00 до 18:00)</span></a><a class="contacts-representations__contact" href="tel:+74997034469"><strong>+7 (499) 703-44-69</strong> <span>(с 9:00 до 18:00)</span></a><a class="contacts-representations__contact" href="mailto:moscow@pkvesta.ru">E-mail: moscow@pkvesta.ru</a><a class="contacts-representations__contact" href="https://pkvest.ru/" target="_blank" rel="noopener noreferrer">pkvest.ru</a></div></article><article class="contacts-representations__card" data-country="russia"><h3 class="contacts-representations__card-title">ОФИС В Г. МОСКВА, РОССИЯ</h3><p class="contacts-representations__address">115054, Россия, г. Москва, ул. Дубининская, д. 57, стр. 1, пом. I, ком. 7б</p><div class="contacts-representations__contacts"><a class="contacts-representations__contact" href="tel:+74997034469"><strong>+7 (499) 703-44-69</strong> <span>(с 9:00 до 18:00)</span></a><a class="contacts-representations__contact" href="tel:+74997034469"><strong>+7 (499) 703-44-69</strong> <span>(с 9:00 до 18:00)</span></a><a class="contacts-representations__contact" href="mailto:moscow@pkvesta.ru">E-mail: moscow@pkvesta.ru</a><a class="contacts-representations__contact" href="https://pkvest.ru/" target="_blank" rel="noopener noreferrer">pkvest.ru</a></div></article><article class="contacts-representations__card" data-country="russia" data-layout-1920><h3 class="contacts-representations__card-title">ОФИС В Г. МОСКВА, РОССИЯ</h3><p class="contacts-representations__address">115054, Россия, г. Москва, ул. Дубининская, д. 57, стр. 1, пом. I, ком. 7б</p><div class="contacts-representations__contacts"><a class="contacts-representations__contact" href="tel:+74997034469"><strong>+7 (499) 703-44-69</strong> <span>(с 9:00 до 18:00)</span></a><a class="contacts-representations__contact" href="tel:+74997034469"><strong>+7 (499) 703-44-69</strong> <span>(с 9:00 до 18:00)</span></a><a class="contacts-representations__contact" href="mailto:moscow@pkvesta.ru">E-mail: moscow@pkvesta.ru</a><a class="contacts-representations__contact" href="https://pkvest.ru/" target="_blank" rel="noopener noreferrer">pkvest.ru</a></div></article><article class="contacts-representations__card" data-country="russia" data-layout-1920><h3 class="contacts-representations__card-title">ОФИС В Г. МОСКВА, РОССИЯ</h3><p class="contacts-representations__address">115054, Россия, г. Москва, ул. Дубининская, д. 57, стр. 1, пом. I, ком. 7б</p><div class="contacts-representations__contacts"><a class="contacts-representations__contact" href="tel:+74997034469"><strong>+7 (499) 703-44-69</strong> <span>(с 9:00 до 18:00)</span></a><a class="contacts-representations__contact" href="tel:+74997034469"><strong>+7 (499) 703-44-69</strong> <span>(с 9:00 до 18:00)</span></a><a class="contacts-representations__contact" href="mailto:moscow@pkvesta.ru">E-mail: moscow@pkvesta.ru</a><a class="contacts-representations__contact" href="https://pkvest.ru/" target="_blank" rel="noopener noreferrer">pkvest.ru</a></div></article></div></div>
+      <button class="contacts-representations__more" type="button"><span>Показать еще</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+    </section>
+  </div>
+</section>
+
+<section class="home-faq" aria-labelledby="home-faq__title">
+  <div class="home-faq__panel">
+    <h2 class="home-faq__title" id="home-faq__title">Вопросы о компании</h2>
+    <div class="home-faq__list">
+      <article class="home-faq__item">
+        <h3 class="home-faq__heading">
+          <button class="home-faq__toggle" type="button" aria-expanded="false" aria-controls="home-faq__answer-1">
+            <span class="home-faq__question">Сравнение завода ПК ВЕСТА с другими аналогичными фирмами?</span>
+            <span class="home-faq__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 5v14M5 12h14"></path></svg></span>
+          </button>
+        </h3>
+        <div class="home-faq__answer" id="home-faq__answer-1" hidden>
+          <p>ПК ВЕСТА специализируется на проектировании и производстве быстровозводимых зданий из лёгких стальных тонкостенных конструкций. Решения подбираются под задачи проекта, требования к эксплуатации и условия площадки.</p>
+          <p>При сравнении поставщиков важно учитывать не только стоимость каркаса, но и технологию производства, комплектность поставки, проектную поддержку и логистику.</p>
+        </div>
+      </article>
+      <article class="home-faq__item">
+        <h3 class="home-faq__heading">
+          <button class="home-faq__toggle" type="button" aria-expanded="false" aria-controls="home-faq__answer-2">
+            <span class="home-faq__question">Сколько изготовлено и смонтировано быстровозводимых зданий и где?</span>
+            <span class="home-faq__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 5v14M5 12h14"></path></svg></span>
+          </button>
+        </h3>
+        <div class="home-faq__answer" id="home-faq__answer-2" hidden>
+          <p>Количество реализованных объектов и география поставок зависят от периода и типа проекта. Актуальные данные по конкретным объектам лучше уточнять у специалистов ПК ВЕСТА.</p>
+          <p>При обсуждении проекта можно запросить примеры зданий с похожим назначением, параметрами и условиями монтажа.</p>
+        </div>
+      </article>
+      <article class="home-faq__item">
+        <h3 class="home-faq__heading">
+          <button class="home-faq__toggle" type="button" aria-expanded="false" aria-controls="home-faq__answer-3">
+            <span class="home-faq__question">Сколько уже существует компания ПК Веста?</span>
+            <span class="home-faq__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 5v14M5 12h14"></path></svg></span>
+          </button>
+        </h3>
+        <div class="home-faq__answer" id="home-faq__answer-3" hidden>
+          <p>Историю компании и дату основания лучше подтвердить по официальным регистрационным данным. Это позволит назвать точный срок работы без риска указать устаревшую информацию.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="services-contact" aria-labelledby="services-contact-title">
+  <div class="services-contact__container">
+    <div class="services-contact__intro">
+      <div class="services-contact__heading">
+        <p class="services-contact__eyebrow">Задать вопрос или заказать расчет</p>
+        <h2 class="services-contact__title" id="services-contact-title">Оставьте заявку и мы ответим вам в
+          ближайшее время</h2>
+        <p class="services-contact__description">Оставьте заявку и мы ответим вам в ближайшее время</p>
+      </div>
+      <div class="services-contact__illustration" aria-hidden="true">
+        <img src=./static/images/application.png alt="">
+      </div>
+    </div>
+
+    <form class="services-contact__form" action="#" method="post" enctype="multipart/form-data">
+      <div class="services-contact__fields">
+        <div class="services-contact__field">
+          <label class="services-contact__label" for="services-contact-name">Имя</label>
+          <input class="services-contact__input" id="services-contact-name" name="name" type="text"
+                 placeholder="Иван Петров" autocomplete="name" required>
+        </div>
+        <div class="services-contact__field">
+          <label class="services-contact__label" for="services-contact-email">E-mail</label>
+          <input class="services-contact__input" id="services-contact-email" name="email" type="email"
+                 placeholder="ivan.petrov@mail.ru" autocomplete="email" required>
+        </div>
+        <div class="services-contact__field services-contact__field--phone">
+          <label class="services-contact__label" for="services-contact-phone">Телефон</label>
+          <input class="services-contact__input" id="services-contact-phone" name="phone" type="tel"
+                 placeholder="+7 999 123-45-24" autocomplete="tel" required>
+        </div>
+      </div>
+
+      <div class="services-contact__form-bottom">
+        <div class="services-contact__field">
+          <label class="services-contact__label" for="services-contact-comment">Комментарий</label>
+          <textarea class="services-contact__input services-contact__textarea" id="services-contact-comment"
+                    name="comment" placeholder="Ваш комментарий"></textarea>
+        </div>
+
+        <div class="services-contact__upload">
+          <label class="services-contact__upload-button" for="services-contact-file">
+            <span class="services-contact__file-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M14 22H10C6.229 22 4.343 22 3.172 20.828C2.001 19.656 2 17.771 2 14V10C2 6.229 2 4.343 3.172 3.172C4.344 2.001 6.239 2 10.03 2C10.636 2 11.121 2 11.53 2.017C11.5167 2.097 11.51 2.17833 11.51 2.261L11.5 5.095C11.5 6.192 11.5 7.162 11.605 7.943C11.719 8.79 11.98 9.637 12.672 10.329C13.362 11.019 14.21 11.281 15.057 11.395C15.838 11.5 16.808 11.5 17.905 11.5H21.957C22 12.034 22 12.69 22 13.563V14C22 17.771 22 19.657 20.828 20.828C19.656 21.999 17.771 22 14 22Z"
+                    fill-rule="evenodd" clip-rule="evenodd" fill="#324C88"/>
+                <path
+                    d="M19.352 7.61662L15.392 4.05362C14.265 3.03862 13.702 2.53062 13.009 2.26562L13 4.99962C13 7.35663 13 8.53562 13.732 9.26762C14.464 9.99962 15.643 9.99963 18 9.99963H21.58C21.218 9.29563 20.568 8.71163 19.352 7.61662Z"
+                    fill="#324C88"/>
+              </svg>
+            </span>
+            <span>Выберите файл</span>
+          </label>
+          <input class="services-contact__file-input" id="services-contact-file" name="attachment" type="file"
+                 aria-describedby="services-contact-file-help">
+          <p class="services-contact__upload-help" id="services-contact-file-help">Прикрепите/перетащите файл,
+            max 50 mb</p>
+        </div>
+
+        <div class="services-contact__submit-group">
+          <button class="btn main-btn services-contact__submit" type="submit">Отправить</button>
+          <label class="services-contact__consent">
+            <input class="services-contact__checkbox" type="checkbox" name="personal-data-consent" required>
+            <span>Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных</span>
+          </label>
+        </div>
+      </div>
+    </form>
   </div>
 </section>
