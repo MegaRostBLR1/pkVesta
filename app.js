@@ -43,7 +43,6 @@ const APP_CONFIG = {
     'services': {
       title: 'Услуги',
       html: './components/pages/services/services.html',
-      css: './components/pages/services/services.css',
       js: './components/pages/services/services.js',
       init: 'initServices'
     },
@@ -211,7 +210,9 @@ const APP_CONFIG = {
   }
 };
 
-const loadedPageAssets = new Set();
+const loadedScripts = new Map();
+const loadedStylesheets = new Map();
+
 let renderRequestId = 0;
 let currentPageName = null;
 
@@ -231,6 +232,34 @@ const ROUTE_ALIASES = {
   'page-7': 'contacts'
 };
 
+const NAVIGATION_ROUTES = {
+  'Продукция': 'buildings',
+  'Быстровозводимые здания': 'fast-buildings',
+  'Легкие металлоконструкции': 'objects',
+  'Сэндвич панели': 'objects',
+  'Комплектующие для ворот': 'objects',
+  'Оцинкованный профиль': 'objects',
+  'Услуги': 'services',
+  'Лазерная резка': 'laser',
+  'Лизинг зданий': 'services',
+  'Консалтинг': 'services',
+  'Проектирование': 'services',
+  'Изготовление': 'services',
+  'Фундамент': 'services',
+  'Доставка': 'services',
+  'Монтаж': 'services',
+  'Объекты': 'objects',
+  'Пресс-центр': 'press-center',
+  'Новости': 'news',
+  'Видео': 'video',
+  'F.A.Q.': 'faq',
+  'Telegram канал': 'press-center',
+  'Статьи': 'articles',
+  'Завод': 'about',
+  'Цены': 'prices',
+  'Контакты': 'contacts'
+};
+
 async function loadHtml(url) {
   const response = await fetch(url);
 
@@ -241,50 +270,82 @@ async function loadHtml(url) {
   return response.text();
 }
 
-async function loadComponent(target, component) {
-  target.innerHTML = await loadHtml(component.html);
-  if (component.css) {
-    loadStylesheet(component.css);
-  }
-  await loadScript(component.js);
-}
-
 function loadStylesheet(url) {
+  if (!url) {
+    return Promise.resolve();
+  }
+
+  if (loadedStylesheets.has(url)) {
+    return loadedStylesheets.get(url);
+  }
+
   const existingLink = document.querySelector(`link[data-page-style="${url}"]`);
 
   if (existingLink) {
-    return;
+    return Promise.resolve();
   }
 
   const link = document.createElement('link');
   link.rel = 'stylesheet';
   link.href = url;
   link.dataset.pageStyle = url;
+
+  const promise = new Promise((resolve, reject) => {
+    link.addEventListener('load', resolve, { once: true });
+
+    link.addEventListener('error', () => {
+      link.remove();
+      loadedStylesheets.delete(url);
+      reject(new Error(`Не удалось загрузить таблицу стилей: ${url}`));
+    }, { once: true });
+  });
+
+  loadedStylesheets.set(url, promise);
   document.head.append(link);
+
+  return promise;
 }
 
 function loadScript(url) {
-  if (loadedPageAssets.has(url)) {
+  if (!url) {
     return Promise.resolve();
   }
 
-  return new Promise((resolve, reject) => {
-    const script = document.createElement('script');
+  if (loadedScripts.has(url)) {
+    return loadedScripts.get(url);
+  }
 
-    script.src = url;
-    script.async = false;
+  const script = document.createElement('script');
+  script.src = url;
+  script.async = false;
 
-    script.onload = () => {
-      loadedPageAssets.add(url);
-      resolve();
-    };
+  const promise = new Promise((resolve, reject) => {
+    script.addEventListener('load', resolve, { once: true });
 
-    script.onerror = () => {
-      reject(new Error(`Не удалось загрузить ${url}`));
-    };
-
-    document.body.append(script);
+    script.addEventListener('error', () => {
+      script.remove();
+      loadedScripts.delete(url);
+      reject(new Error(`Не удалось загрузить скрипт: ${url}`));
+    }, { once: true });
   });
+
+  loadedScripts.set(url, promise);
+  document.body.append(script);
+
+  return promise;
+}
+
+async function loadComponent(target, component) {
+  if (!target || !component?.html) {
+    return;
+  }
+
+  target.innerHTML = await loadHtml(component.html);
+
+  await Promise.all([
+    loadStylesheet(component.css),
+    loadScript(component.js)
+  ]);
 }
 
 function getPageName() {
@@ -303,9 +364,24 @@ function getPageName() {
   return ROUTE_ALIASES[route] || APP_CONFIG.defaultPage;
 }
 
-async function renderPage(pageName) {
+function getPageConfig(pageName) {
   const isObjectSection = Boolean(OBJECT_SECTION_ROUTES[pageName]);
   const configPageName = isObjectSection ? 'object-page' : pageName;
+  const page = APP_CONFIG.pages[configPageName] || APP_CONFIG.pages[APP_CONFIG.defaultPage];
+
+  return { isObjectSection, configPageName, page };
+}
+
+function initializePage(page, pageName) {
+  const initializer = page.init ? window[page.init] : null;
+
+  if (typeof initializer === 'function') {
+    initializer(pageName);
+  }
+}
+
+async function renderPage(pageName) {
+  const { isObjectSection, configPageName, page } = getPageConfig(pageName);
 
   if (isObjectSection && currentPageName === 'object-page') {
     setObjectPageSection(pageName);
@@ -314,10 +390,10 @@ async function renderPage(pageName) {
   }
 
   const requestId = ++renderRequestId;
-  const page = APP_CONFIG.pages[configPageName] || APP_CONFIG.pages[APP_CONFIG.defaultPage];
   const main = document.querySelector('#app-main');
 
   if (!main) {
+    console.error('Не найден контейнер страницы #app-main.');
     return;
   }
 
@@ -332,23 +408,21 @@ async function renderPage(pageName) {
     }
 
     main.innerHTML = html;
-    loadStylesheet(page.css);
 
-    await loadScript(page.js);
+    await Promise.all([
+      loadStylesheet(page.css),
+      loadScript(page.js)
+    ]);
 
     if (requestId !== renderRequestId) {
       return;
     }
 
+    initializePage(page, pageName);
+
     document.title = isObjectSection
       ? `pkVesta — ${OBJECT_SECTION_ROUTES[pageName].title}`
       : `pkVesta — ${page.title}`;
-
-    const init = window[page.init];
-
-    if (typeof init === 'function') {
-      init(pageName);
-    }
 
     currentPageName = configPageName;
   } catch (error) {
@@ -357,10 +431,9 @@ async function renderPage(pageName) {
     }
 
     console.error(error);
-    main.innerHTML = '<p class="error">Не удалось загрузить страницу. Проверьте путь к файлам и запустите проект через локальный HTTP-сервер.</p>';
+    main.innerHTML = '<p class="error">Не удалось загрузить страницу. Проверьте пути к файлам и запустите проект через локальный HTTP-сервер.</p>';
   }
 }
-
 
 function initNavigationRouting() {
   const calculatorLink = document.querySelector('.app-header .header-bottom__action-calculation');
@@ -369,81 +442,55 @@ function initNavigationRouting() {
     calculatorLink.href = '#/calculator';
   }
 
-  const routeByLabel = {
-    'Продукция': 'buildings',
-    'Быстровозводимые здания': 'fast-buildings',
-    'Легкие металлоконструкции': 'objects',
-    'Сэндвич панели': 'objects',
-    'Комплектующие для ворот': 'objects',
-    'Оцинкованный профиль': 'objects',
-    'Услуги': 'services',
-    'Лазерная резка': 'laser',
-    'Лизинг зданий': 'services',
-    'Консалтинг': 'services',
-    'Проектирование': 'services',
-    'Изготовление': 'services',
-    'Фундамент': 'services',
-    'Доставка': 'services',
-    'Монтаж': 'services',
-    'Объекты': 'objects',
-    'Пресс-центр': 'press-center',
-    'Новости': 'news',
-    'Видео': 'video',
-    'F.A.Q.': 'faq',
-    'Telegram канал': 'press-center',
-    'Статьи': 'articles',
-    'Завод': 'about',
-    'Цены': 'prices',
-    'Контакты': 'contacts'
-  };
+  const navigationLinks = document.querySelectorAll(
+    '.app-header a.nav-link, .app-header a.nav-list__nested-list-link'
+  );
 
-  document.querySelectorAll('.app-header a.nav-link, .app-header a.nav-list__nested-list-link')
-    .forEach((link) => {
-      const label = link.textContent.trim().replace(/\s+/g, ' ');
-      const route = routeByLabel[label];
+  navigationLinks.forEach((link) => {
+    const label = link.textContent.trim().replace(/\s+/g, ' ');
+    const route = NAVIGATION_ROUTES[label];
 
-      if (route) {
-        link.href = `#/${route}`;
-      }
-    });
+    if (route) {
+      link.href = `#/${route}`;
+    }
+  });
+}
+
+function initializeConfiguredComponent(component, target) {
+  if (!target || !component?.init) {
+    return;
+  }
+
+  const initializer = window[component.init];
+
+  if (typeof initializer === 'function') {
+    initializer();
+  }
 }
 
 async function initApp() {
-  const header = document.querySelector('#app-header');
-  const footer = document.querySelector('#app-footer');
-  const cookies = document.querySelector('#app-cookies');
-  const subscribe = document.querySelector('#app-subscribe');
-  const mainModal = document.querySelector('#app-main-modal');
-  const callbackModal = document.querySelector('#app-callback-modal');
+  const components = [
+    { target: document.querySelector('#app-header'), config: APP_CONFIG.header },
+    { target: document.querySelector('#app-footer'), config: APP_CONFIG.footer },
+    { target: document.querySelector('#app-cookies'), config: APP_CONFIG.cookies },
+    { target: document.querySelector('#app-subscribe'), config: APP_CONFIG.subscribe },
+    { target: document.querySelector('#app-main-modal'), config: APP_CONFIG.modal },
+    { target: document.querySelector('#app-callback-modal'), config: APP_CONFIG.callbackModal }
+  ];
 
-  try {
-    await Promise.all([
-      loadComponent(header, APP_CONFIG.header),
-      loadComponent(footer, APP_CONFIG.footer),
-      loadComponent(cookies, APP_CONFIG.cookies),
-      loadComponent(subscribe, APP_CONFIG.subscribe),
-      mainModal ? loadComponent(mainModal, APP_CONFIG.modal) : Promise.resolve(),
-      callbackModal ? loadComponent(callbackModal, APP_CONFIG.callbackModal) : Promise.resolve()
-    ]);
+  const results = await Promise.allSettled(
+    components.map(({ target, config }) => loadComponent(target, config))
+  );
 
-    if (mainModal && APP_CONFIG.modal.init) {
-      const initMainModal = window[APP_CONFIG.modal.init];
-
-      if (typeof initMainModal === 'function') {
-        initMainModal();
-      }
+  results.forEach((result) => {
+    if (result.status === 'rejected') {
+      console.error(result.reason);
     }
+  });
 
-    if (callbackModal && APP_CONFIG.callbackModal.init) {
-      const initCallbackModal = window[APP_CONFIG.callbackModal.init];
-
-      if (typeof initCallbackModal === 'function') {
-        initCallbackModal();
-      }
-    }
-  } catch (error) {
-    console.error(error);
-  }
+  components.forEach(({ target, config }) => {
+    initializeConfiguredComponent(config, target);
+  });
 
   initNavigationRouting();
   await renderPage(getPageName());
