@@ -67,11 +67,11 @@
   </div>
 </section>
 
-<section class="calculator-value section__container">
+<section class="calculator-value">
   <div class="calculator-value__container flex-center">
-    <div class="calculator-value__content flex-col-ac">
+    <div class="calculator-value__content flex-col">
       <header class="calculator-value__header flex-col-ac">
-        <h2 class="calculator-value__title">Клиент&nbsp;&mdash; это дизайнер в&nbsp;Websteel</h2>
+        <h2 class="calculator-value__title">Клиент&nbsp;&ndash; это дизайнер в&nbsp;Websteel</h2>
         <p class="calculator-value__descr">
           Система позволяет клиенту проектировать и рассчитывать здания в режиме онлайн во многих странах с учетом
           технологических возможностей завода или партнеров
@@ -152,7 +152,7 @@
   </div>
 </section>
 
-<section class="home-advantages" aria-labelledby="home-advantages__title">
+<section class="calculator-popularity" aria-labelledby="home-advantages__title">
   <div class="home-advantages__inner">
     <header class="home-advantages__heading">
       <h2 class="home-advantages__title" id="home-advantages__title">В чем популярноcть системы Websteel</h2>
@@ -163,7 +163,7 @@
     </header>
 
     <div class="home-advantages__content">
-      <ul class="home-advantages__tabs mw-1150" aria-label="Преимущества завода">
+      <ul class="home-advantages__tabs" aria-label="Преимущества завода">
         <li class="home-advantages__tab home-advantages__tab--active" aria-current="true">3d -визуализация</li>
         <li class="home-advantages__tab">Онлайн расчет</li>
         <li class="home-advantages__tab">Онлайн документация</li>
@@ -185,12 +185,12 @@
             </p>
           </div>
         </div>
-        <img
-            class="home-advantages__image"
-            src="./static/images/home/home-lstk.png"
-            alt="Строение"
-            width="650"
-            height="490" />
+
+        <img class="home-advantages__image"
+        src="./static/images/home/home-lstk.png"
+        alt="Строение"
+        width="650"
+        height="490" />
       </article>
     </div>
   </div>
@@ -1169,7 +1169,7 @@
         </p>
       </div>
       <div class="calculator-support__contact flex-col">
-        <a href="" class="calculator-support__contact-tel flex-center">
+        <a href="tel:+78003333741" class="calculator-support__contact-tel flex-center">
           <img src="./static/images/calculator/ic-tel.svg" alt="Телефон" />
           +7 (800) 333-37-41
         </a>
@@ -1225,65 +1225,83 @@
   </div>
 </section>
 
-<section class="home-faq" aria-labelledby="home-faq__title">
-  <div class="home-faq__panel">
-    <h2 class="home-faq__title" id="home-faq__title">Вопросы о компании</h2>
+<section class="calculator-faq" aria-labelledby="home-faq__title">
+  <div class="calculator-faq__container flex-col">
+    <h2 class="calculator-faq__title" id="home-faq__title">Вопросы о компании</h2>
     <div class="home-faq__list">
       <article class="home-faq__item">
         <h3 class="home-faq__heading">
-          <button class="home-faq__toggle" type="button" aria-expanded="false" aria-controls="home-faq__answer-1">
+          <button
+                  class="home-faq__toggle accordion__btn"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="home-faq__answer-1">
             <span class="home-faq__question">Сравнение завода ПК ВЕСТА с другими аналогичными фирмами?</span>
-            <span class="home-faq__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 5v14M5 12h14"></path></svg>
-            </span>
+            <span class="accordion__toggle accordion__toggle--main" aria-hidden="true"></span>
           </button>
         </h3>
-        <div class="home-faq__answer" id="home-faq__answer-1" hidden>
-          <p>
-            ПК ВЕСТА специализируется на проектировании и производстве быстровозводимых зданий из лёгких стальных
-            тонкостенных конструкций. Решения подбираются под задачи проекта, требования к эксплуатации и условия
-            площадки.
-          </p>
-          <p>
-            При сравнении поставщиков важно учитывать не только стоимость каркаса, но и технологию производства,
-            комплектность поставки, проектную поддержку и логистику.
-          </p>
+        <div class="accordion__body" id="home-faq__answer-1">
+          <div class="accordion__inner">
+            <div class="home-faq__answer">
+              <p>
+                ПК ВЕСТА специализируется на проектировании и производстве быстровозводимых зданий из лёгких стальных
+                тонкостенных конструкций. Решения подбираются под задачи проекта, требования к эксплуатации и условия
+                площадки.
+              </p>
+              <p>
+                При сравнении поставщиков важно учитывать не только стоимость каркаса, но и технологию производства,
+                комплектность поставки, проектную поддержку и логистику.
+              </p>
+            </div>
+          </div>
         </div>
       </article>
       <article class="home-faq__item">
         <h3 class="home-faq__heading">
-          <button class="home-faq__toggle" type="button" aria-expanded="false" aria-controls="home-faq__answer-2">
+          <button
+                  class="home-faq__toggle accordion__btn"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="home-faq__answer-2">
             <span class="home-faq__question">Сколько изготовлено и смонтировано быстровозводимых зданий и где?</span>
-            <span class="home-faq__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 5v14M5 12h14"></path></svg>
-            </span>
+            <span class="accordion__toggle accordion__toggle--main" aria-hidden="true"></span>
           </button>
         </h3>
-        <div class="home-faq__answer" id="home-faq__answer-2" hidden>
-          <p>
-            Количество реализованных объектов и география поставок зависят от периода и типа проекта. Актуальные данные
-            по конкретным объектам лучше уточнять у специалистов ПК ВЕСТА.
-          </p>
-          <p>
-            При обсуждении проекта можно запросить примеры зданий с похожим назначением, параметрами и условиями
-            монтажа.
-          </p>
+        <div class="accordion__body" id="home-faq__answer-2">
+          <div class="accordion__inner">
+            <div class="home-faq__answer">
+              <p>
+                Количество реализованных объектов и география поставок зависят от периода и типа проекта. Актуальные
+                данные по конкретным объектам лучше уточнять у специалистов ПК ВЕСТА.
+              </p>
+              <p>
+                При обсуждении проекта можно запросить примеры зданий с похожим назначением, параметрами и условиями
+                монтажа.
+              </p>
+            </div>
+          </div>
         </div>
       </article>
       <article class="home-faq__item">
         <h3 class="home-faq__heading">
-          <button class="home-faq__toggle" type="button" aria-expanded="false" aria-controls="home-faq__answer-3">
+          <button
+                  class="home-faq__toggle accordion__btn"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="home-faq__answer-3">
             <span class="home-faq__question">Сколько уже существует компания ПК Веста?</span>
-            <span class="home-faq__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 5v14M5 12h14"></path></svg>
-            </span>
+            <span class="accordion__toggle accordion__toggle--main" aria-hidden="true"></span>
           </button>
         </h3>
-        <div class="home-faq__answer" id="home-faq__answer-3" hidden>
-          <p>
-            Историю компании и дату основания лучше подтвердить по официальным регистрационным данным. Это позволит
-            назвать точный срок работы без риска указать устаревшую информацию.
-          </p>
+        <div class="accordion__body" id="home-faq__answer-3">
+          <div class="accordion__inner">
+            <div class="home-faq__answer">
+              <p>
+                Историю компании и дату основания лучше подтвердить по официальным регистрационным данным. Это позволит
+                назвать точный срок работы без риска указать устаревшую информацию.
+              </p>
+            </div>
+          </div>
         </div>
       </article>
     </div>
