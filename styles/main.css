@@ -1,0 +1,192 @@
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: 'Onest-Bold';
+  font-weight: 700;
+  src: url('../static/fonts/Onest-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Onest-SemiBold';
+  font-weight: 600;
+  src: url('../static/fonts/Onest-SemiBold.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Onest-Medium';
+  font-weight: 500;
+  src: url('../static/fonts/Onest-Medium.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Onest-Regular';
+  font-weight: 400;
+  src: url('../static/fonts/Onest-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Onest-Light';
+  font-weight: 300;
+  src: url('../static/fonts/Onest-Light.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato-Regular';
+  font-weight: 400;
+  src: url('../static/fonts/Lato-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter-Regular';
+  font-weight: 400;
+  src: url('../static/fonts/Inter-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Onest-Regular, sans-serif;
+  font-weight: 400;
+  color: #4D4D4DCC;
+  background: #F5F8F7;
+  min-width: 320px;
+  font-size: 18px;
+}
+
+body {
+  font-size: 1rem;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.white-text {
+  color: #ffffff;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5556rem 2.6667rem;
+  font-family: 'Onest-SemiBold', sans-serif;
+  font-size: 1.1111rem;
+  font-weight: 600;
+  line-height: 1.5556rem;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: #324C88;
+  border: none;
+  border-radius: 1.1111rem;
+  cursor: pointer;
+  transition: color 0.1s ease, background-color 0.1s ease;
+}
+
+.main-btn {
+  color: #FFFFFF;
+  background: #324C88;
+}
+
+.main-btn:hover {
+  background: #324C88CC;
+}
+
+.main-btn:active {
+  background: #28427E;
+}
+
+.main-btn:disabled {
+  color: #28427E33;
+  background: #28427E33;
+  cursor: default;
+}
+
+.secondary-btn {
+  color: #324C88;
+  background: #FFF500;
+}
+
+.secondary-btn:hover {
+  color: #324C88CC;
+  background: #FFF500CC;
+}
+
+.secondary-btn:active {
+  color: #28427E;
+  background: #F5EB0A;
+}
+
+.secondary-btn:disabled {
+  color: #324C8833;
+  background: #F5EB0A33;
+  cursor: default;
+}
+
+.tertiary-btn {
+  color: #324C88;
+  background: #FFFFFF;
+}
+
+.tertiary-btn:hover {
+  color: #324C88CC;
+  background: #FFFFFF;
+}
+
+.tertiary-btn:active {
+  color: #28427E;
+  background: #FFFFFF;
+}
+
+.tertiary-btn:disabled {
+  color: #28427E33;
+  background: #FFFFFF33;
+  cursor: default;
+}
+
+@media screen and (max-width: 1300px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+footer {
+  display: none;
+}
