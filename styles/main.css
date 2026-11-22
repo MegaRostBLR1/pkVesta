@@ -87,12 +87,6 @@ body {
   margin: 0 auto;
 }
 
-.section__container {
-  padding: 2.2222rem;
-  border-radius: 0.5556rem;
-  background-color: #ffffff;
-}
-
 ul {
   list-style: none;
 }
@@ -149,7 +143,7 @@ button {
   font-family: "Onest-SemiBold", sans-serif;
   font-size: 1.1111rem;
   font-weight: 600;
-  line-height: 1.5556rem;
+  line-height: 126%;
   text-transform: uppercase;
   border-radius: 1.1111rem;
   transition: color 0.1s ease, background-color 0.1s ease;
@@ -237,6 +231,10 @@ h2 {
   h2 {
     font-size: 1.6667rem;
   }
+
+  .btn {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (max-width: 1025px) {
@@ -254,6 +252,10 @@ h2 {
 @media screen and (max-width: 480px) {
   body {
     font-size: 0.7778rem;
+  }
+
+  .btn {
+    font-size: 0,7778rem;
   }
 }
 
