@@ -1526,14 +1526,15 @@
 
     <div class="home-news__divider" aria-hidden="true"></div>
 
-    <div class="home-news__grid">
-      <article class="home-news__card">
+    <div class="home-news__viewport" id="home-news__viewport" tabindex="0" aria-label="Новости. Используйте стрелки клавиатуры для просмотра карточек">
+      <div class="home-news__grid">
+        <article class="home-news__card">
         <a class="home-news__image-link" href="#/news" aria-label="Читать новость о выставке UzBUILD">
           <img class="home-news__image" src="../../../static/images/news1.png" alt="" loading="lazy" />
         </a>
         <div class="home-news__body">
           <div class="home-news__meta">
-            <span class="home-news__tag">27 апреля 20026 года</span>
+            <span class="home-news__tag">27 апреля 2026 года</span>
             <span class="home-news__tag">Новость</span>
           </div>
           <h3 class="home-news__card-title">Приглашаем клиентов и партнеров на строительную выставку UzBUILD</h3>
@@ -1550,7 +1551,7 @@
         </a>
         <div class="home-news__body">
           <div class="home-news__meta">
-            <span class="home-news__tag">27 апреля 20026 года</span>
+            <span class="home-news__tag">27 апреля 2026 года</span>
             <span class="home-news__tag">Новость</span>
           </div>
           <h3 class="home-news__card-title">Спешите! Тульский завод ПК Веста объявляет о создании сети</h3>
@@ -1561,13 +1562,13 @@
         </div>
       </article>
 
-      <article class="home-news__card home-news__card--tablet-hidden">
+      <article class="home-news__card">
         <a class="home-news__image-link" href="#/news" aria-label="Читать новость о Новом годе">
           <img class="home-news__image" src="../../../static/images/news3.png" alt="" loading="lazy" />
         </a>
         <div class="home-news__body">
           <div class="home-news__meta">
-            <span class="home-news__tag">27 апреля 20026 года</span>
+            <span class="home-news__tag">27 апреля 2026 года</span>
             <span class="home-news__tag">Новость</span>
           </div>
           <h3 class="home-news__card-title">Поздравляем всех с предстоящим Новым 2026г!</h3>
@@ -1577,29 +1578,39 @@
           </p>
         </div>
       </article>
+
+      <article class="home-news__card">
+        <a class="home-news__image-link" href="#/news-item" aria-label="Читать новость о заказе ремонтных боксов для биостанции">
+          <img class="home-news__image" src="../../../static/images/news/news-item/main-news.jpg" alt="" loading="lazy" />
+        </a>
+        <div class="home-news__body">
+          <div class="home-news__meta">
+            <span class="home-news__tag">22 сентября 2026 года</span>
+            <span class="home-news__tag">Новость</span>
+          </div>
+          <h3 class="home-news__card-title">Завод PK Vesta изготовит два ремонтных бокса для уникальной биостанции</h3>
+          <p class="home-news__description">
+            Два быстровозводимых ремонтных бокса из ЛСТК предназначены для обслуживания оборудования и техники на биостанции
+          </p>
+        </div>
+      </article>
+      </div>
     </div>
 
-    <nav class="slider-controls slider-controls--dark" aria-label="Навигация по слайдам">
+    <nav class="slider-controls slider-controls--dark" aria-label="Навигация по новостям">
       <button
               class="slider-controls__arrow slider-controls__arrow--prev"
               type="button"
-              aria-label="Предыдущий слайд"
-              disabled>
+              aria-label="Предыдущие новости">
         <svg viewBox="0 0 40 40" aria-hidden="true">
           <path d="M24 8 12 20l12 12"></path>
         </svg>
       </button>
-      <div class="slider-controls__pagination" aria-label="Слайд 1 из 4">
-        <span class="slider-controls__dot slider-controls__dot--active" aria-hidden="true"></span>
-        <span class="slider-controls__dot" aria-hidden="true"></span>
-        <span class="slider-controls__dot" aria-hidden="true"></span>
-        <span class="slider-controls__dot" aria-hidden="true"></span>
-      </div>
+      <div class="slider-controls__pagination" role="group" aria-label="Пагинация новостей"></div>
       <button
               class="slider-controls__arrow slider-controls__arrow--next"
               type="button"
-              aria-label="Следующий слайд"
-              disabled>
+              aria-label="Следующие новости">
         <svg viewBox="0 0 40 40" aria-hidden="true">
           <path d="m16 8 12 12-12 12"></path>
         </svg>
