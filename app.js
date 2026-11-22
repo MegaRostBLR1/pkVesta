@@ -233,7 +233,7 @@ const APP_BASE_URL = new URL(
 );
 
 function resolveStaticImageUrl(value) {
-  if (!value || /^(?:https?:|\\/\\/|data:|blob:|#)/i.test(value)) {
+  if (!value || /^(?:https?:|\/\/|data:|blob:|#)/i.test(value)) {
     return value;
   }
 
@@ -245,15 +245,15 @@ function resolveStaticImageUrl(value) {
 
   let imagePath = value.slice(imagePathIndex);
 
-  // These files are not present in the repository; use the existing gallery image.
+  // These files are absent from the repository; use the existing gallery image.
   imagePath = imagePath.replace(
-    /^static\\/images\\/bildings\\/gallery-(?:2|4)\\.jpg(?=([?#]|$)/i,
+    /^static\/images\/bildings\/gallery-(?:2|4)\.jpg(?=[?#]|$)/i,
     'static/images/bildings/gallery.jpg'
   );
 
-  // world.svg contains the same PNG data as world.png and is served with the wrong MIME type.
+  // world.svg contains PNG data and is served with an incompatible MIME type.
   imagePath = imagePath.replace(
-    /^static\\/images\\/world\\.svg(?=([?#]|$)/i,
+    /^static\/images\/world\.svg(?=[?#]|$)/i,
     'static/images/world.png'
   );
 
@@ -281,7 +281,7 @@ function rewriteStaticImageUrls(html) {
 
     element.setAttribute(
       'srcset',
-      srcset.replace(/((?:\\.\\.?\\/|\\/)*static\\/images\\/[^,\\s]+)/g, resolveStaticImageUrl)
+      srcset.replace(/((?:\.\.?\/|\/)*static\/images\/[^,\s]+)/g, resolveStaticImageUrl)
     );
   });
 
@@ -289,8 +289,8 @@ function rewriteStaticImageUrls(html) {
     const attribute = element.hasAttribute('style') ? 'style' : null;
     const value = attribute ? element.getAttribute(attribute) : element.textContent;
     const rewritten = value.replace(
-      /(url\\(\\s*['"]?)([^'")]+)(['"]?\\s*\\))/gi,
-      (match, prefix, url, suffix) => `${prefix}${resolveStaticImageUrl(url)}${suffix}`
+      /(url\(\s*['"]?)([^'")]+)(['"]?\s*\))/gi,
+      (match, prefix, url, suffix) => prefix + resolveStaticImageUrl(url) + suffix
     );
 
     if (attribute) {
