@@ -1,3 +1,3 @@
 function initHome() {
-  // JavaScript logic for the home page.
+  // Home page behavior will be added when CTA actions are connected to application flows.
 }

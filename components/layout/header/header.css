@@ -14,9 +14,6 @@
 
 .header__location,
 .nav-list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 1.6667rem;
     color: #FFFFFF;
     text-transform: uppercase;
@@ -57,6 +54,7 @@
     border-radius: 0.5556rem;
     text-transform: none;
     min-width: 12.0556rem;
+    width: max-content;
     z-index: 2;
 }
 
@@ -103,9 +101,6 @@
 }
 
 .header__location-choice-flag {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-shrink: 0;
 }
 
@@ -171,9 +166,6 @@
 
 .nav-list__nested-list-icon,
 .header__contacts-choice-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 0.5556rem;
     margin-right: 0.7778rem;
     background: #FFFFFF;
@@ -203,9 +195,6 @@
 }
 
 .header__contacts-social {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 1.1111rem;
 }
 
@@ -279,8 +268,6 @@
 }
 
 .header-burger {
-    align-items: center;
-    justify-content: center;
     text-transform: uppercase;
     padding: 0.7778rem 0;
     gap: 0.5556rem;
@@ -379,11 +366,8 @@
 }
 
 .header-bottom__action {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
     text-align: center;
-    align-items: center;
     border-radius: 0.8333rem;
     padding: 0.5rem 1.1111rem;
     gap: 0.5556rem;
