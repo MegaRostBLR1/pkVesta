@@ -4983,7 +4983,6 @@
 }
 
 .home-agro__lightbox {
-  --lightbox-gutter-x: 32px;
   --lightbox-gutter-top: 76px;
   --lightbox-gutter-bottom: 24px;
 
@@ -4991,7 +4990,6 @@
   inset: 0;
   box-sizing: border-box;
   width: 100vw;
-  height: 100vh;
   height: 100dvh;
   max-width: none;
   max-height: none;

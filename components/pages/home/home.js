@@ -177,7 +177,7 @@ function initHomeHeroSlider(hero) {
   updateControls();
 }
 
-function initHomeProcessCards() {
+function initHomeProcessCards(signal) {
   const processGrid = document.querySelector(".home-process__grid");
 
   if (!processGrid || processGrid.dataset.headersEqualized === "true") {
@@ -198,6 +198,10 @@ function initHomeProcessCards() {
   }
 
   const equalizeCardHeaders = () => {
+    if (!processGrid.isConnected) {
+      return;
+    }
+
     cardHeaders.forEach((header) => header.style.removeProperty("height"));
 
     const maxHeight = Math.max(
@@ -215,15 +219,16 @@ function initHomeProcessCards() {
   if ("ResizeObserver" in window) {
     const headerResizeObserver = new ResizeObserver(equalizeCardHeaders);
     cardTitles.forEach((title) => headerResizeObserver.observe(title));
+    signal?.addEventListener("abort", () => headerResizeObserver.disconnect(), { once: true });
   } else {
-    window.addEventListener("resize", equalizeCardHeaders, { passive: true });
+    window.addEventListener("resize", equalizeCardHeaders, { passive: true, signal });
   }
 
   document.fonts?.ready.then(equalizeCardHeaders);
 }
 
 
-function initHomeProjectsSlider() {
+function initHomeProjectsSlider(signal) {
   const section = document.querySelector(".home-projects");
   const viewport = section?.querySelector(".home-projects__cards-viewport");
   const track = viewport?.querySelector(".home-projects__cards");
@@ -282,6 +287,10 @@ function initHomeProjectsSlider() {
   };
 
   const updateSlider = () => {
+    if (!section.isConnected) {
+      return;
+    }
+
     const nextCardsPerPage = getCardsPerPage();
     const currentFirstCardIndex = activePage * cardsPerPage;
 
@@ -372,15 +381,17 @@ function initHomeProjectsSlider() {
   if ("ResizeObserver" in window) {
     const sliderResizeObserver = new ResizeObserver(updateSlider);
     sliderResizeObserver.observe(viewport);
+    signal?.addEventListener("abort", () => sliderResizeObserver.disconnect(), { once: true });
+  } else {
+    window.addEventListener("resize", updateSlider, { passive: true, signal });
   }
 
-  window.addEventListener("resize", updateSlider, { passive: true });
   document.fonts?.ready.then(updateSlider);
 
   updateSlider();
 }
 
-function initServicesContact() {
+function initServicesContact(signal) {
   const section = document.querySelector(".services-contact");
 
   if (!section || section.dataset.initialized === "true") {
@@ -390,7 +401,7 @@ function initServicesContact() {
   section.dataset.initialized = "true";
 
   initServicesContactValidation(section);
-  initServicesContactCountrySelector(section);
+  initServicesContactCountrySelector(section, signal);
 }
 
 function initServicesContactValidation(section) {
@@ -443,7 +454,7 @@ function initServicesContactValidation(section) {
   });
 }
 
-function initServicesContactCountrySelector(section) {
+function initServicesContactCountrySelector(section, signal) {
   const countrySelector = section.querySelector(".services-contact__field--phone");
 
   if (!countrySelector || countrySelector.dataset.countrySelectorInitialized === "true") {
@@ -549,7 +560,7 @@ function initServicesContactCountrySelector(section) {
     if (!countrySelector.contains(event.target) && !countryPopup.hidden) {
       closeCountryPopup({ restoreFocus: false });
     }
-  });
+  }, { signal });
 
   countrySelector.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && !countryPopup.hidden) {
@@ -593,9 +604,12 @@ function initServicesContactCountrySelector(section) {
     const countrySelectorResizeObserver = new ResizeObserver(updatePhoneInputPadding);
     countrySelectorResizeObserver.observe(countryTrigger);
     countrySelectorResizeObserver.observe(phoneInput);
+    signal?.addEventListener("abort", () => countrySelectorResizeObserver.disconnect(), { once: true });
+  } else {
+    window.addEventListener("resize", updatePhoneInputPadding, { passive: true, signal });
   }
 
-  window.addEventListener("resize", updatePhoneInputPadding, { passive: true });
+  signal?.addEventListener("abort", () => setCountryPopupOpen(false), { once: true });
 
   if (selectedOption) {
     renderCountrySelection(selectedOption);
@@ -604,7 +618,7 @@ function initServicesContactCountrySelector(section) {
   updatePhoneInputPadding();
 }
 
-function initHomeNewsSlider() {
+function initHomeNewsSlider(signal) {
   const section = document.querySelector(".home-news");
   const viewport = section?.querySelector(".home-news__viewport");
   const track = viewport?.querySelector(".home-news__grid");
@@ -645,13 +659,13 @@ function initHomeNewsSlider() {
     return Number.isInteger(parsedValue) && parsedValue > 0 ? parsedValue : 1;
   };
 
-  const renderPagination = () => {
-    paginationDots = Array.from({ length: cards.length }, (_, index) => {
+  const renderPagination = (dotCount) => {
+    paginationDots = Array.from({ length: dotCount }, (_, index) => {
       const dot = document.createElement("button");
 
       dot.className = "slider-controls__dot";
       dot.type = "button";
-      dot.setAttribute("aria-label", "Показать новость " + (index + 1));
+      dot.setAttribute("aria-label", "Показать новости начиная с карточки " + (index + 1));
       dot.setAttribute("aria-controls", viewport.id);
       dot.addEventListener("click", () => setActiveIndex(index));
 
@@ -668,11 +682,12 @@ function initHomeNewsSlider() {
 
     const visibleCards = getVisibleCards();
     const lastIndex = Math.max(0, cards.length - visibleCards);
+    const dotCount = lastIndex + 1;
 
     activeIndex = Math.min(Math.max(activeIndex, 0), lastIndex);
 
-    if (paginationDots.length !== cards.length) {
-      renderPagination();
+    if (paginationDots.length !== dotCount) {
+      renderPagination(dotCount);
     }
 
     const activeCard = cards[activeIndex];
@@ -722,22 +737,19 @@ function initHomeNewsSlider() {
     }
   });
 
-  const handleResize = () => {
-    if (!section.isConnected) {
-      window.removeEventListener("resize", handleResize);
-      return;
-    }
-
-    updateSlider();
-  };
-
-  window.addEventListener("resize", handleResize, { passive: true });
+  if ("ResizeObserver" in window) {
+    const newsResizeObserver = new ResizeObserver(updateSlider);
+    newsResizeObserver.observe(viewport);
+    signal?.addEventListener("abort", () => newsResizeObserver.disconnect(), { once: true });
+  } else {
+    window.addEventListener("resize", updateSlider, { passive: true, signal });
+  }
 
   document.fonts?.ready.then(updateSlider);
 
   updateSlider();
 }
-function initHomeAgro() {
+function initHomeAgro(signal) {
   const section = document.querySelector(".home-agro");
 
   if (!section || section.dataset.initialized === "true") {
@@ -843,8 +855,14 @@ function initHomeAgro() {
 
   if (typeof desktopMedia.addEventListener === "function") {
     desktopMedia.addEventListener("change", handleVisualBreakpointChange);
+    signal?.addEventListener("abort", () => {
+      desktopMedia.removeEventListener("change", handleVisualBreakpointChange);
+    }, { once: true });
   } else {
     desktopMedia.addListener(handleVisualBreakpointChange);
+    signal?.addEventListener("abort", () => {
+      desktopMedia.removeListener(handleVisualBreakpointChange);
+    }, { once: true });
   }
 
   syncVisualPlacement();
@@ -924,14 +942,32 @@ function initHome() {
     return;
   }
 
-  initHomeHeroSlider(hero);
-  initHomeNewsSlider();
-  initHomeProjectsSlider();
-  initServicesContact();
-  initHomeProcessCards();
-  initHomeAgro();
+  const pageRoot = hero.closest("#app-main");
+  const pageController = new AbortController();
+  const { signal } = pageController;
 
-  document.querySelectorAll(".accordion__btn").forEach((btn) => {
+  if (pageRoot && "MutationObserver" in window) {
+    const pageObserver = new MutationObserver(() => {
+      if (!hero.isConnected) {
+        pageController.abort();
+        pageObserver.disconnect();
+      }
+    });
+
+    pageObserver.observe(pageRoot, { childList: true });
+    signal.addEventListener("abort", () => pageObserver.disconnect(), { once: true });
+  }
+
+  initHomeHeroSlider(hero);
+  initHomeNewsSlider(signal);
+  initHomeProjectsSlider(signal);
+  initServicesContact(signal);
+  initHomeProcessCards(signal);
+  initHomeAgro(signal);
+
+  const page = pageRoot || document;
+
+  page.querySelectorAll(".accordion__btn").forEach((btn) => {
     if (btn.dataset.initialized === "true") return;
     btn.dataset.initialized = "true";
 
@@ -946,17 +982,23 @@ function initHome() {
     const exclusiveSection = btn.closest(".home-agro, .home-faq");
     const isInitiallyExpanded = btn.getAttribute("aria-expanded") === "true";
 
-    if (isInitiallyExpanded && exclusiveSection) {
+    const closeOtherItems = () => {
+      if (!exclusiveSection) {
+        return;
+      }
+
       exclusiveSection.querySelectorAll('.accordion__btn[aria-expanded="true"]').forEach((openBtn) => {
         if (openBtn === btn) {
           return;
         }
 
         openBtn.setAttribute("aria-expanded", "false");
-
-        const openBody = document.getElementById(openBtn.getAttribute("aria-controls"));
-        openBody?.classList.remove("is-open");
+        document.getElementById(openBtn.getAttribute("aria-controls"))?.classList.remove("is-open");
       });
+    };
+
+    if (isInitiallyExpanded) {
+      closeOtherItems();
     }
 
     sync(isInitiallyExpanded);
@@ -964,17 +1006,8 @@ function initHome() {
     btn.addEventListener("click", () => {
       const shouldExpand = btn.getAttribute("aria-expanded") !== "true";
 
-      if (shouldExpand && exclusiveSection) {
-        exclusiveSection.querySelectorAll('.accordion__btn[aria-expanded="true"]').forEach((openBtn) => {
-          if (openBtn === btn) {
-            return;
-          }
-
-          openBtn.setAttribute("aria-expanded", "false");
-
-          const openBody = document.getElementById(openBtn.getAttribute("aria-controls"));
-          openBody?.classList.remove("is-open");
-        });
+      if (shouldExpand) {
+        closeOtherItems();
       }
 
       sync(shouldExpand);
