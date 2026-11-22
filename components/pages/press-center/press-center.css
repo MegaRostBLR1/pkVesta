@@ -217,7 +217,7 @@
   border: 1px solid rgb(0 0 0 / 10%);
   border-radius: 20px;
   background-color: #fff;
-  background-image: url(/static/images/application.png);
+  background-image: url(../../../static/images/application.png);
   background-size: 143% auto;
   background-position: left 162%;
   background-repeat: no-repeat;
