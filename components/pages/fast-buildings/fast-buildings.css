@@ -4150,7 +4150,7 @@
     left: calc(33.148rem + var(--visual-gap));
     width: min(53.6111rem, calc(100% - 33.148rem - var(--visual-gap)));
     aspect-ratio: 965 / 782;
-    background-image: url("/static/images/fast-buildings-complectation/complectation-desktop.png");
+    background-image: url("../../../static/images/fast-buildings-complectation/complectation-desktop.png");
     background-repeat: no-repeat;
     background-position: top left;
     background-size: 100% 100%;
@@ -4260,7 +4260,7 @@
         left: calc(33.148rem + 3rem);
         width: min(38rem, calc(100% - 33.148rem - 3rem + 0.2778rem));
         aspect-ratio: 684 / 575;
-        background-image: url("/static/images/fast-buildings-complectation/complectation-1440.png");
+        background-image: url("../../../static/images/fast-buildings-complectation/complectation-1440.png");
     }
 }
 
@@ -4307,7 +4307,7 @@
         max-width: 100%;
         aspect-ratio: 450 / 437;
         margin: 0 auto;
-        background-image: url("/static/images/fast-buildings-complectation/complectation-tablet.png");
+        background-image: url("../../../static/images/fast-buildings-complectation/complectation-tablet.png");
     }
 
     .fast-buildings-complectation__list-area {
@@ -4468,7 +4468,7 @@
         aspect-ratio: 300 / 291;
         margin-left: 0.8333rem;
         margin-right: 0;
-        background-image: url("/static/images/fast-buildings-complectation/complectation-mobile.png");
+        background-image: url("../../../static/images/fast-buildings-complectation/complectation-mobile.png");
     }
 
     .fast-buildings-complectation__list-area {
