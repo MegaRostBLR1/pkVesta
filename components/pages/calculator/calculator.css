@@ -609,65 +609,22 @@
   color: #5d5d5d;
 }
 
-.calculator-popularity__tabs {
-  display: flex;
-  gap: 4px;
-  width: fit-content;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 4px;
-  border-radius: 10px;
-  background: #f7f8fa;
-  overflow: auto;
-}
-
-.calculator-popularity__tab {
-  display: flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  min-width: 282.5px;
-  max-width: 320px;
-  padding: 24px 16px;
-  border-radius: 14px;
-  color: #5d5d5d;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.6;
-  text-align: center;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.calculator-popularity__tab:hover {
-  background: #324c881a;
-}
-
-.calculator-popularity__tab--active {
-  background: #fff500;
-  color: #324c88;
-  font-size: 20px;
-}
-
-.calculator-popularity__tab--active:hover {
-  background: #fff500;
-  color: #324c88;
-}
-
 .calculator-popularity .home-advantages__card {
   padding: 65px 96px;
 }
 
-@media screen and (max-width: 1100px) {
-  .calculator-popularity__tab {
-    min-width: auto;
-    padding: 14px 18px;
-    font-size: 16px;
-  }
-
+@media screen and (max-width: 1200px) {
   .calculator-popularity .home-advantages__card {
     padding: 64px 40px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .calculator-popularity {
+    margin: 0 5px;
+  }
+  .calculator-popularity .home-advantages__card {
+    padding: 18px;
   }
 }
 
@@ -713,28 +670,6 @@
   color: #5d5d5d;
 }
 
-.calculator-features__descr {
-  max-width: 900px;
-  font-size: 24px;
-  line-height: 160%;
-  text-align: center;
-}
-
-.calculator-features__buildings-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: max-content max-content;
-  gap: 36px 20px;
-  padding: 24px;
-  background-color: #ffffff;
-  align-content: center;
-  height: 100%;
-  border-radius: 30px;
-}
-
-.calculator__tablet-visual {
-  display: none;
-}
 @media screen and (max-width: 1600px) {
   .calculator-features {
     margin-bottom: 4px;
@@ -744,21 +679,6 @@
 @media screen and (max-width: 1100px) {
   .calculator-features {
     margin-bottom: 10px;
-  }
-  .calculator__tablet-visual {
-    display: grid;
-  }
-  .calculator__visual {
-    display: none;
-  }
-  .calculator-features__descr {
-    font-size: 20px;
-  }
-  .calculator-features__buildings-list {
-    gap: 18px;
-  }
-  .buildings-item__image {
-    width: 105px;
   }
   .calculator-features__tabs-item {
     font-size: 18px;
@@ -776,11 +696,22 @@
   }
 }
 @media screen and (max-width: 680px) {
+  .calculator-features {
+    margin: 0;
+  }
+  .calculator-features .prices-tech__inner {
+    padding: 20px 14px 10px;
+  }
+  .calculator-features .prices-tech__header {
+    gap: 14px;
+  }
   .calculator-features__tabs-item {
     font-size: 14px;
+    line-height: 30px;
   }
-  .calculator-features__descr {
-    font-size: 15px;
+  .calculator-features .prices-tech__title {
+    font-size: 18px;
+    line-height: 26px;
   }
 }
 
@@ -1105,6 +1036,7 @@
   }
   .btn.comparison__btn {
     padding: 20px 36px;
+    font-size: 18px;
   }
 }
 @media (max-width: 1100px) {
@@ -1392,13 +1324,14 @@
   }
   .calculator-support__container {
     padding: 0px 30px;
+    gap: 24px;
   }
   .calculator-support__content-wrapper {
     min-width: 100%;
   }
   .support-cards {
     max-width: 100%;
-    gap: 18px;
+    gap: 25px 18px;
   }
 }
 
@@ -1421,10 +1354,17 @@
   }
   .calculator-support__container {
     padding: 0;
-    gap: 24px;
   }
   .calculator-support__content-wrapper {
-    gap: 18px;
+    gap: 24px;
+  }
+  .calculator-support__title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .calculator-support__subtitle {
+    font-size: 20px;
   }
   .calculator-support__content {
     gap: 14px;
@@ -1432,6 +1372,7 @@
 
   .support-cards {
     grid-template-columns: 1fr;
+    gap: 27px;
   }
   .support-card__content {
     gap: 8px;
@@ -1477,5 +1418,24 @@
   }
   .calculator-faq__container {
     gap: 25px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .calculator-faq__title {
+    font-size: 30px;
+    line-height: 38px;
+  }
+}
+
+@media (max-width: 680px) {
+  .calculator-faq__container {
+    padding: 20px 5px;
+    gap: 18px;
+  }
+
+  .calculator-faq__title {
+    font-size: 18px;
+    line-height: 26px;
   }
 }
