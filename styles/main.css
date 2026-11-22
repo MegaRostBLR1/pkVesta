@@ -87,6 +87,12 @@ body {
   margin: 0 auto;
 }
 
+.section__container {
+  padding: 2.2222rem;
+  border-radius: 0.5556rem;
+  background-color: #ffffff;
+}
+
 ul {
   list-style: none;
 }
@@ -143,7 +149,7 @@ button {
   font-family: "Onest-SemiBold", sans-serif;
   font-size: 1.1111rem;
   font-weight: 600;
-  line-height: 126%;
+  line-height: 1.5556rem;
   text-transform: uppercase;
   border-radius: 1.1111rem;
   transition: color 0.1s ease, background-color 0.1s ease;
@@ -4666,12 +4672,12 @@ body.mob-filter-open {
 }
 
 .services-contact__field:has(.services-contact__input:user-invalid, .services-contact__input.is-invalid)
-  .services-contact__tooltip {
+.services-contact__tooltip {
   display: inline-flex;
 }
 
 .services-contact__field:has(.services-contact__input:user-invalid, .services-contact__input.is-invalid)
-  .services-contact__input {
+.services-contact__input {
   border-color: #d52b1e;
   outline: 1px solid #d52b1e;
 }
@@ -6361,7 +6367,9 @@ body.mob-filter-open {
 
   .home-advantages__information {
     flex: 0 1 auto;
+    gap: 36px;
     width: 100%;
+    max-width: none;
   }
 
   .home-advantages__icon {
@@ -6450,8 +6458,13 @@ body.mob-filter-open {
   }
 
   .home-advantages__card {
+    gap: 24px;
     padding: 24px;
     border-radius: 20px;
+  }
+
+  .home-advantages__information {
+    gap: 24px;
   }
 
   .home-advantages__icon {
@@ -6491,6 +6504,16 @@ body.mob-filter-open {
     border-radius: 10px;
     font-size: 14px;
     line-height: 1.6;
+  }
+
+  .home-advantages__image {
+    flex: 0 1 auto;
+    align-self: center;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    aspect-ratio: 650 / 490;
+    border-radius: 20px;
   }
 }
 
@@ -6549,6 +6572,11 @@ body.mob-filter-open {
     gap: 24px;
   }
 
+  .home-advantages__tabs {
+    align-self: stretch;
+    max-width: 100%;
+  }
+
   .home-advantages__tab,
   .home-advantages__tab--active {
     padding: 12px 14px;
@@ -6563,7 +6591,9 @@ body.mob-filter-open {
   }
 
   .home-advantages__information {
+    align-items: stretch;
     gap: 36px;
+    max-width: none;
   }
 
   .home-advantages__icon {
@@ -6609,7 +6639,13 @@ body.mob-filter-open {
   }
 
   .home-advantages__image {
+    flex: 0 0 auto;
+    align-self: stretch;
+    width: 100%;
+    max-width: none;
     height: 208px;
+    aspect-ratio: auto;
+    border-radius: 30px;
   }
 }
 
@@ -8354,6 +8390,10 @@ body.mob-filter-open {
   .home-faq__item {
     padding: 18px;
     border-radius: 20px;
+  }
+
+  .home-faq__item:nth-child(2) {
+    display: none;
   }
 
   .home-faq__question {

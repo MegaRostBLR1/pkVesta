@@ -25,6 +25,12 @@ const APP_CONFIG = {
     js: './components/layout/popups/main-modal/main-modal.js',
     init: 'initMainModal'
   },
+  callbackModal: {
+    html: './components/layout/popups/callback-modal/callback-modal.html',
+    css: './components/layout/popups/callback-modal/callback-modal.css',
+    js: './components/layout/popups/callback-modal/callback-modal.js',
+    init: 'initCallbackModal'
+  },
   defaultPage: 'home',
   pages: {
     'home': {
@@ -225,72 +231,6 @@ const ROUTE_ALIASES = {
   'page-7': 'contacts'
 };
 
-const APP_BASE_URL = new URL(
-  './',
-  document.currentScript?.src ||
-    document.querySelector('script[src*="app.js"]')?.src ||
-    window.location.href
-);
-
-function resolveStaticImageUrl(value) {
-  if (!value || /^(?:https?:|\/\/|data:|blob:|#)/i.test(value)) {
-    return value;
-  }
-
-  const imagePathIndex = value.indexOf('static/images/');
-
-  if (imagePathIndex === -1) {
-    return value;
-  }
-
-  let imagePath = value.slice(imagePathIndex);
-
-  return new URL(imagePath, APP_BASE_URL).href;
-}
-
-function rewriteStaticImageUrls(html) {
-  const template = document.createElement('template');
-  template.innerHTML = html;
-
-  template.content
-    .querySelectorAll('[src], [href], [poster], [data-src], [data-lazy-src], [data-original]')
-    .forEach((element) => {
-      ['src', 'href', 'poster', 'data-src', 'data-lazy-src', 'data-original'].forEach((attribute) => {
-        const value = element.getAttribute(attribute);
-
-        if (value) {
-          element.setAttribute(attribute, resolveStaticImageUrl(value));
-        }
-      });
-    });
-
-  template.content.querySelectorAll('[srcset]').forEach((element) => {
-    const srcset = element.getAttribute('srcset');
-
-    element.setAttribute(
-      'srcset',
-      srcset.replace(/((?:\.\.?\/|\/)*static\/images\/[^,\s]+)/g, resolveStaticImageUrl)
-    );
-  });
-
-  template.content.querySelectorAll('[style], style').forEach((element) => {
-    const attribute = element.hasAttribute('style') ? 'style' : null;
-    const value = attribute ? element.getAttribute(attribute) : element.textContent;
-    const rewritten = value.replace(
-      /(url\(\s*['"]?)([^'")]+)(['"]?\s*\))/gi,
-      (match, prefix, url, suffix) => prefix + resolveStaticImageUrl(url) + suffix
-    );
-
-    if (attribute) {
-      element.setAttribute(attribute, rewritten);
-    } else {
-      element.textContent = rewritten;
-    }
-  });
-
-  return template.innerHTML;
-}
-
 async function loadHtml(url) {
   const response = await fetch(url);
 
@@ -298,7 +238,7 @@ async function loadHtml(url) {
     throw new Error(`Не удалось загрузить ${url}: HTTP ${response.status}`);
   }
 
-  return rewriteStaticImageUrls(await response.text());
+  return response.text();
 }
 
 async function loadComponent(target, component) {
@@ -474,6 +414,7 @@ async function initApp() {
   const cookies = document.querySelector('#app-cookies');
   const subscribe = document.querySelector('#app-subscribe');
   const mainModal = document.querySelector('#app-main-modal');
+  const callbackModal = document.querySelector('#app-callback-modal');
 
   try {
     await Promise.all([
@@ -481,7 +422,8 @@ async function initApp() {
       loadComponent(footer, APP_CONFIG.footer),
       loadComponent(cookies, APP_CONFIG.cookies),
       loadComponent(subscribe, APP_CONFIG.subscribe),
-      mainModal ? loadComponent(mainModal, APP_CONFIG.modal) : Promise.resolve()
+      mainModal ? loadComponent(mainModal, APP_CONFIG.modal) : Promise.resolve(),
+      callbackModal ? loadComponent(callbackModal, APP_CONFIG.callbackModal) : Promise.resolve()
     ]);
 
     if (mainModal && APP_CONFIG.modal.init) {
@@ -489,6 +431,14 @@ async function initApp() {
 
       if (typeof initMainModal === 'function') {
         initMainModal();
+      }
+    }
+
+    if (callbackModal && APP_CONFIG.callbackModal.init) {
+      const initCallbackModal = window[APP_CONFIG.callbackModal.init];
+
+      if (typeof initCallbackModal === 'function') {
+        initCallbackModal();
       }
     }
   } catch (error) {

@@ -1,5 +1,3 @@
-/* Subscribe popup — desktop/tablet plus mobile bottom sheet (Figma 2269:144378).
-   Uses global Onest font faces and project button primitives. */
 .subscribe {
   position: fixed;
   z-index: 1001;
@@ -7,7 +5,7 @@
   display: grid;
   place-items: center;
   padding: 24px;
-  background: #00000066;
+  background: rgba(64, 64, 64, 0.6);
 }
 
 .subscribe[hidden] { display: none; }
@@ -40,7 +38,7 @@
   font-family: 'Onest-SemiBold', sans-serif;
   font-size: 36px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 26px;
   text-transform: none;
 }
 
@@ -54,7 +52,7 @@
   border-radius: 6px;
 }
 
-.subscribe__close img { display: block; width: 36px; height: 36px; }
+.subscribe__close svg { display: block; width: 36px; height: 36px; }
 
 .subscribe__form {
   display: flex;
@@ -83,7 +81,7 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 1.3;
-  background: #F7F8FA;
+  background: rgba(50, 76, 136, 0.04);
   border: 0;
   border-radius: 10px;
 }
@@ -116,20 +114,44 @@
 }
 
 .subscribe__checkbox {
+  display: grid;
   flex: 0 0 24px;
+  place-items: center;
   width: 24px;
   height: 24px;
   margin: 0;
-  accent-color: #324C88;
+  appearance: none;
+  border: 1px solid #324C88;
+  border-radius: 10px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+
+.subscribe__checkbox::after {
+  width: 9px;
+  height: 5px;
+  border: solid #FFFFFF;
+  border-width: 0 0 2px 2px;
+  content: "";
+  opacity: 0;
+  transform: translateY(-1px) rotate(-45deg);
+}
+
+.subscribe__checkbox:checked {
+  background: #324C88;
+}
+
+.subscribe__checkbox:checked::after {
+  opacity: 1;
 }
 
 .subscribe__consent-text {
   min-width: 0;
-  color: #2C2C2C80;
-  font-family: 'Onest-Medium', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
+  color: #4D4D4D;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 .subscribe__close:focus-visible,
@@ -143,23 +165,27 @@
 
 .subscribe__mobile-footer { display: none; }
 
-@media screen and (min-width: 681px) and (max-width: 1300px) {
-  .subscribe__content { gap: 14px; padding: 24px; }
-  .subscribe__title { font-size: 24px; line-height: 26px; }
-  .subscribe__close,
-  .subscribe__close img { width: 24px; height: 24px; }
-  .subscribe__close { flex-basis: 24px; }
+@media screen and (max-width: 1300px) {
+  .subscribe__title {
+    font-size: 24px;
+    line-height: 26px;
+  }
+
   .subscribe__input {
     min-height: 56px;
     padding: 16px 18px;
     font-size: 16px;
     line-height: 24px;
-    background: #324C880A;
   }
-  .subscribe__form { gap: 14px; }
-  .subscribe__button.btn { min-height: 58px; padding: 18px 40px; font-size: 16px; }
-  .subscribe__consent { gap: 18px; }
-  .subscribe__consent-text { font-size: 12px; line-height: 20px; }
+
+  .subscribe__consent {
+    gap: 18px;
+  }
+
+  .subscribe__consent-text {
+    font-size: 14px;
+    line-height: 1.6;
+  }
 }
 
 @media screen and (max-width: 680px) {
@@ -167,42 +193,66 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
+
   .subscribe__content {
     gap: 14px;
+    flex: 0 0 auto;
     width: 100%;
     max-width: none;
+    margin-top: auto;
     padding: 20px 14px;
     border-radius: 20px 20px 0 0;
   }
+
   .subscribe__handle {
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     display: block;
-    margin-inline: auto;
     width: 57px;
     height: 3px;
+    margin-inline: auto;
     border-radius: 0 0 10px 10px;
     background: #2555BD;
   }
-  .subscribe__header { gap: 12px; }
-  .subscribe__title { font-size: 20px; line-height: 26px; }
+
+  .subscribe__header {
+    gap: 12px;
+  }
+
+  .subscribe__title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
   .subscribe__close,
-  .subscribe__close img { width: 24px; height: 24px; }
-  .subscribe__close { flex-basis: 24px; }
-  .subscribe__form { gap: 14px; }
+  .subscribe__close svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .subscribe__close {
+    flex-basis: 24px;
+  }
+
+  .subscribe__form {
+    gap: 14px;
+  }
+
   .subscribe__input {
     min-height: 52px;
     padding: 16px 18px;
     font-size: 16px;
     line-height: 20px;
-    background: #324C880A;
     border-radius: 10px;
   }
+
   .subscribe__button.btn {
     min-height: 58px;
     padding: 18px 20px;
@@ -210,11 +260,26 @@
     line-height: 20px;
     border-radius: 20px;
   }
-  .subscribe__consent { gap: 18px; }
-  .subscribe__checkbox { flex-basis: 24px; }
-  .subscribe__consent-text { font-size: 12px; line-height: 20px; }
+
+  .subscribe__consent {
+    gap: 18px;
+  }
+
+  .subscribe__checkbox {
+    flex-basis: 24px;
+  }
+
+  .subscribe__consent-text {
+    color: rgba(44, 44, 44, 0.5);
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
   .subscribe__mobile-footer {
     display: flex;
+    flex: 0 0 68px;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -222,6 +287,7 @@
     padding: 4px;
     background: #FFFFFF;
   }
+
   .subscribe__back {
     display: flex;
     flex: 1 1 auto;
@@ -231,15 +297,11 @@
     min-height: 60px;
     padding: 18px 24px;
     color: #2555BD;
-    font-family: 'Onest-Medium', sans-serif;
+    font-family: "Onest-Medium", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 20px;
     background: #D7E1F7;
     border-radius: 10px;
   }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .subscribe__button.btn { transition: none; }
 }
