@@ -1,9 +1,284 @@
+const HOME_HERO_SLIDES = [
+  "./static/images/home/featured.png",
+  "./static/images/home/home-about.png",
+  "./static/images/home/home-lstk.png",
+  "./static/images/home/home-advantages-factory.png"
+];
+
+function initHomeHeroSlider(hero) {
+  const background = hero.querySelector(".home-hero__background");
+  const controls = hero.querySelector(".slider-controls");
+  const pagination = controls?.querySelector(".slider-controls__pagination");
+  const previousButton = controls?.querySelector(".slider-controls__arrow--prev");
+  const nextButton = controls?.querySelector(".slider-controls__arrow--next");
+
+  if (
+    !background ||
+    !pagination ||
+    !previousButton ||
+    !nextButton ||
+    controls.dataset.initialized === "true"
+  ) {
+    return;
+  }
+
+  controls.dataset.initialized = "true";
+
+  let activeIndex = 0;
+
+  // Изображения загружаются по запросу и кешируются, не создавая лишнюю сетевую нагрузку.
+  const imageCache = new Map();
+
+  const loadImage = (src) => {
+    if (!imageCache.has(src)) {
+      const imagePromise = new Promise((resolve) => {
+        const image = new Image();
+
+        image.addEventListener("load", () => resolve(true), { once: true });
+        image.addEventListener("error", () => resolve(false), { once: true });
+
+        image.src = src;
+      });
+
+      imageCache.set(src, imagePromise);
+    }
+
+    return imageCache.get(src);
+  };
+
+  const dots = HOME_HERO_SLIDES.map((_, index) => {
+    const dot = document.createElement("button");
+
+    dot.className = "slider-controls__dot";
+    dot.type = "button";
+    dot.setAttribute("aria-label", `Показать слайд ${index + 1}`);
+    dot.addEventListener("click", () => setActiveSlide(index));
+
+    return dot;
+  });
+
+  pagination.replaceChildren(...dots);
+
+  function setActiveSlide(index) {
+    const nextIndex = (index + HOME_HERO_SLIDES.length) % HOME_HERO_SLIDES.length;
+    activeIndex = nextIndex;
+
+    if (nextIndex === 0) {
+      background.style.backgroundImage = `url("${HOME_HERO_SLIDES[0]}")`;
+    } else {
+      loadImage(HOME_HERO_SLIDES[nextIndex]).then((isLoaded) => {
+        if (isLoaded && activeIndex === nextIndex) {
+          background.style.backgroundImage = `url("${HOME_HERO_SLIDES[nextIndex]}")`;
+        }
+      });
+    }
+
+    dots.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === activeIndex;
+
+      dot.classList.toggle("slider-controls__dot--active", isActive);
+
+      if (isActive) {
+        dot.setAttribute("aria-current", "true");
+      } else {
+        dot.removeAttribute("aria-current");
+      }
+    });
+
+    pagination.setAttribute(
+      "aria-label",
+      `Слайд ${activeIndex + 1} из ${HOME_HERO_SLIDES.length}`
+    );
+  }
+
+  previousButton.addEventListener("click", () => setActiveSlide(activeIndex - 1));
+  nextButton.addEventListener("click", () => setActiveSlide(activeIndex + 1));
+
+  setActiveSlide(0);
+}
+
+function initHomeProcessCards() {
+  const processGrid = document.querySelector(".home-process__grid");
+
+  if (!processGrid || processGrid.dataset.headersEqualized === "true") {
+    return;
+  }
+
+  processGrid.dataset.headersEqualized = "true";
+
+  const cardHeaders = Array.from(
+    processGrid.querySelectorAll(".home-process__card-header")
+  );
+  const cardTitles = cardHeaders
+    .map((header) => header.querySelector(".home-process__card-title"))
+    .filter(Boolean);
+
+  if (cardHeaders.length < 2) {
+    return;
+  }
+
+  const equalizeCardHeaders = () => {
+    cardHeaders.forEach((header) => header.style.removeProperty("height"));
+
+    const maxHeight = Math.max(
+      0,
+      ...cardHeaders.map((header) => header.getBoundingClientRect().height)
+    );
+
+    cardHeaders.forEach((header) => {
+      header.style.height = `${maxHeight}px`;
+    });
+  };
+
+  equalizeCardHeaders();
+
+  if ("ResizeObserver" in window) {
+    const headerResizeObserver = new ResizeObserver(equalizeCardHeaders);
+    cardTitles.forEach((title) => headerResizeObserver.observe(title));
+  } else {
+    window.addEventListener("resize", equalizeCardHeaders, { passive: true });
+  }
+
+  document.fonts?.ready.then(equalizeCardHeaders);
+}
+
+
+function initHomeProjectsSlider() {
+  const section = document.querySelector(".home-projects");
+  const viewport = section?.querySelector(".home-projects__cards-viewport");
+  const track = viewport?.querySelector(".home-projects__cards");
+  const controls = section?.querySelector(".slider-controls--dark");
+  const pagination = controls?.querySelector(".slider-controls__pagination");
+  const previousButton = controls?.querySelector(".slider-controls__arrow--prev");
+  const nextButton = controls?.querySelector(".slider-controls__arrow--next");
+
+  if (
+    !viewport ||
+    !track ||
+    !pagination ||
+    !previousButton ||
+    !nextButton ||
+    track.dataset.initialized === "true"
+  ) {
+    return;
+  }
+
+  const cards = Array.from(track.querySelectorAll(":scope > .project-card--compact"));
+
+  if (cards.length === 0) {
+    return;
+  }
+
+  track.dataset.initialized = "true";
+
+  let cardsPerPage = 0;
+  let activePage = 0;
+  let paginationDots = [];
+
+  const getCardsPerPage = () => {
+    const value = window
+      .getComputedStyle(track)
+      .getPropertyValue("--projects-visible-cards")
+      .trim();
+    const parsedValue = Number.parseInt(value, 10);
+
+    return Number.isInteger(parsedValue) && parsedValue > 0 ? parsedValue : 1;
+  };
+
+  const renderPagination = (pageCount) => {
+    paginationDots = Array.from({ length: pageCount }, (_, index) => {
+      const dot = document.createElement("button");
+
+      dot.className = "slider-controls__dot";
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Показать группу проектов ${index + 1} из ${pageCount}`);
+      dot.addEventListener("click", () => setActivePage(index));
+
+      return dot;
+    });
+
+    pagination.replaceChildren(...paginationDots);
+  };
+
+  const updateSlider = () => {
+    const nextCardsPerPage = getCardsPerPage();
+    const currentFirstCardIndex = activePage * cardsPerPage;
+
+    if (nextCardsPerPage !== cardsPerPage) {
+      cardsPerPage = nextCardsPerPage;
+      activePage = Math.floor(currentFirstCardIndex / cardsPerPage);
+    }
+
+    const pageCount = Math.ceil(cards.length / cardsPerPage);
+    activePage = Math.min(Math.max(activePage, 0), pageCount - 1);
+
+    if (paginationDots.length !== pageCount) {
+      renderPagination(pageCount);
+    }
+
+    const firstVisibleCard = cards[activePage * cardsPerPage];
+    const trackOffset = firstVisibleCard.getBoundingClientRect().left -
+      track.getBoundingClientRect().left;
+
+    track.style.transform = `translate3d(${-trackOffset}px, 0, 0)`;
+    previousButton.disabled = activePage === 0;
+    nextButton.disabled = activePage === pageCount - 1;
+
+    paginationDots.forEach((dot, index) => {
+      const isActive = index === activePage;
+
+      dot.classList.toggle("slider-controls__dot--active", isActive);
+
+      if (isActive) {
+        dot.setAttribute("aria-current", "true");
+      } else {
+        dot.removeAttribute("aria-current");
+      }
+    });
+
+    pagination.setAttribute("aria-label", `Группа ${activePage + 1} из ${pageCount}`);
+  };
+
+  const setActivePage = (page) => {
+    activePage = page;
+    updateSlider();
+  };
+
+  previousButton.addEventListener("click", () => setActivePage(activePage - 1));
+  nextButton.addEventListener("click", () => setActivePage(activePage + 1));
+
+  viewport.addEventListener("keydown", (event) => {
+    if (event.target !== viewport) {
+      return;
+    }
+
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+      event.preventDefault();
+      setActivePage(activePage + (event.key === "ArrowRight" ? 1 : -1));
+    }
+  });
+
+  if ("ResizeObserver" in window) {
+    const sliderResizeObserver = new ResizeObserver(updateSlider);
+    sliderResizeObserver.observe(viewport);
+  }
+
+  window.addEventListener("resize", updateSlider, { passive: true });
+  document.fonts?.ready.then(updateSlider);
+
+  updateSlider();
+}
+
 function initHome() {
   const hero = document.querySelector(".home-hero");
 
   if (!hero) {
     return;
   }
+
+  initHomeHeroSlider(hero);
+  initHomeProjectsSlider();
+
 
   const contactForm = document.querySelector(".services-contact__form");
 
@@ -148,36 +423,7 @@ function initHome() {
     });
   }
 
-  const processGrid = document.querySelector(".home-process__grid");
-
-  if (processGrid && !processGrid.dataset.headersEqualized) {
-    processGrid.dataset.headersEqualized = "true";
-
-    const cardHeaders = Array.from(processGrid.querySelectorAll(".home-process__card-header"));
-    const cardTitles = cardHeaders.map((header) => header.querySelector(".home-process__card-title")).filter(Boolean);
-
-    const equalizeCardHeaders = () => {
-      cardHeaders.forEach((header) => header.style.removeProperty("height"));
-
-      const maxHeight = Math.max(0, ...cardHeaders.map((header) => header.getBoundingClientRect().height));
-
-      cardHeaders.forEach((header) => {
-        header.style.height = `${maxHeight}px`;
-      });
-    };
-
-    equalizeCardHeaders();
-
-    if ("ResizeObserver" in window) {
-      const headerResizeObserver = new ResizeObserver(equalizeCardHeaders);
-      cardTitles.forEach((title) => headerResizeObserver.observe(title));
-    }
-
-    window.addEventListener("resize", equalizeCardHeaders, { passive: true });
-    document.fonts?.ready.then(equalizeCardHeaders);
-  }
-
-  // Навигация слайдера остаётся неактивной, пока в проект не добавлены остальные слайды.
+  initHomeProcessCards();
 
   const accordionAnimations = new WeakMap();
   const animateAccordionContent = (content, expanded) => {
