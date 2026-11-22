@@ -1,5 +1,228 @@
-<section class="press-page">
-  <div class="container">
-    <h1>Новости</h1>
+<section class="press-news" aria-labelledby="press-news-title">
+  <div class="press-news__container">
+    <div class="press-news__content">
+      <nav class="press-news__breadcrumbs" aria-label="Хлебные крошки">
+        <a class="press-news__breadcrumb" href="#/home">Главная</a>
+        <span class="press-news__breadcrumb-separator" aria-hidden="true">-</span>
+        <a class="press-news__breadcrumb" href="#/press-center">Пресс-центр</a>
+        <span class="press-news__breadcrumb-separator" aria-hidden="true">-</span>
+        <span class="press-news__breadcrumb press-news__breadcrumb--current" aria-current="page">Новости</span>
+      </nav>
+      <h1 class="press-news__title" id="press-news-title">
+        Новости <span class="press-news__count">(2000)</span>
+      </h1>
+      <nav class="press-news__categories" aria-label="Разделы пресс-центра">
+        <a class="press-news__category" href="#/press-center">Все</a>
+        <a class="press-news__category is-active" href="#/news" aria-current="page">Новости</a>
+        <a class="press-news__category press-news__category--mobile-only" href="#/about">О заводе</a>
+        <a class="press-news__category" href="#/video">Видео</a>
+        <a class="press-news__category" href="#/articles">Статьи</a>
+        <a class="press-news__category" href="#/faq">F.A.Q</a>
+      </nav>
+    </div>
+
+    <div class="press-news__archive">
+      <div class="press-news__filter">
+        <p class="press-news__filter-label">Показывать:</p>
+        <div class="press-news__filter-controls">
+          <div class="press-news__filter-dropdown">
+            <button class="press-news__filter-button" type="button" aria-label="Фильтр по месяцам" aria-expanded="false" aria-controls="press-news-months" data-filter-type="months">
+              <span>По месяцам:</span>
+              <img src="https://www.figma.com/api/mcp/asset/5d0af646-84b2-4994-9a71-a94ddcca11c4/2a347.svg" alt="" aria-hidden="true">
+            </button>
+            <div class="press-news__filter-menu" id="press-news-months" role="listbox" aria-label="Выберите месяц" hidden>
+              <button class="press-news__filter-option is-selected" type="button" role="option" aria-selected="true" data-filter-value="Январь">Январь (29)</button>
+              <button class="press-news__filter-option" type="button" role="option" aria-selected="false" data-filter-value="Февраль">Февраль (29)</button>
+              <button class="press-news__filter-option" type="button" role="option" aria-selected="false" data-filter-value="Март">Март (29)</button>
+              <button class="press-news__filter-option" type="button" role="option" aria-selected="false" data-filter-value="Апрель">Апрель (29)</button>
+              <button class="press-news__filter-option" type="button" role="option" aria-selected="false" data-filter-value="Май">Май (29)</button>
+              <button class="press-news__filter-option" type="button" role="option" aria-selected="false" data-filter-value="Июнь">Июнь (29)</button>
+              <button class="press-news__filter-option" type="button" role="option" aria-selected="false" data-filter-value="Июль">Июль (29)</button>
+            </div>
+          </div>
+          <div class="press-news__filter-dropdown">
+            <button class="press-news__filter-button" type="button" aria-label="Фильтр по годам" aria-expanded="false" aria-controls="press-news-years" data-filter-type="years">
+              <span>По годам:</span>
+              <img src="https://www.figma.com/api/mcp/asset/5d0af646-84b2-4994-9a71-a94ddcca11c4/2a347.svg" alt="" aria-hidden="true">
+            </button>
+            <div class="press-news__filter-menu press-news__filter-menu--years" id="press-news-years" role="listbox" aria-label="Выберите год" hidden>
+              <button class="press-news__filter-option is-selected" type="button" role="option" aria-selected="true" data-filter-value="2026">2026</button>
+              <button class="press-news__filter-option" type="button" role="option" aria-selected="false" data-filter-value="2025">2025</button>
+              <button class="press-news__filter-option" type="button" role="option" aria-selected="false" data-filter-value="2024">2024</button>
+              <button class="press-news__filter-option" type="button" role="option" aria-selected="false" data-filter-value="2023">2023</button>
+            </div>
+          </div>
+        </div>
+        <button class="press-news__mobile-filter-button" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="press-news-filter-dialog">
+          <span>Фильтр</span>
+          <img src="https://www.figma.com/api/mcp/asset/943a0af9-c8f7-468c-8283-fa4df40a128a/21205.svg" alt="" aria-hidden="true">
+        </button>
+      </div>
+
+      <div class="press-news__filter-overlay" id="press-news-filter-dialog" hidden>
+        <section class="press-news__filter-dialog" role="dialog" aria-modal="true" aria-labelledby="press-news-filter-title" tabindex="-1">
+          <div class="press-news__filter-dialog-header">
+            <h2 class="press-news__filter-dialog-title" id="press-news-filter-title">Показывать:</h2>
+            <button class="press-news__filter-dialog-close" type="button" aria-label="Закрыть фильтр">×</button>
+          </div>
+          <div class="press-news__filter-dialog-content">
+            <section class="press-news__filter-group" aria-labelledby="press-news-months-title">
+              <h3 class="press-news__filter-group-title" id="press-news-months-title">Месяц:</h3>
+              <div class="press-news__filter-list press-news__filter-list--months" data-filter-list="months">
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="Январь">Январь (29)</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="Февраль">Февраль (29)</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="Март">Март (29)</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="Апрель">Апрель (29)</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="Май">Май (29)</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="Июнь">Июнь (29)</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="Июль">Июль (29)</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="Август">Август (29)</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="Сентябрь">Сентябрь (29)</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="Октябрь">Октябрь (29)</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="Ноябрь">Ноябрь (29)</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="Декабрь">Декабрь (29)</button>
+              </div>
+              <button class="press-news__filter-show-more" type="button" aria-expanded="false" data-expand-list="months">
+                <span>Показать еще</span><span class="press-news__filter-show-more-icon" aria-hidden="true">⌄</span>
+              </button>
+            </section>
+            <section class="press-news__filter-group" aria-labelledby="press-news-years-title">
+              <h3 class="press-news__filter-group-title" id="press-news-years-title">По годам:</h3>
+              <div class="press-news__filter-list press-news__filter-list--years" data-filter-list="years">
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2003">2003</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2004">2004</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2005">2005</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2006">2006</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2007">2007</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2008">2008</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2009">2009</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2010">2010</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2011">2011</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2012">2012</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2013">2013</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2014">2014</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2015">2015</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2016">2016</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2017">2017</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2018">2018</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2019">2019</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2020">2020</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2021">2021</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2022">2022</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2023">2023</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2024">2024</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2025">2025</button>
+                <button class="press-news__filter-option" type="button" aria-pressed="false" data-filter-value="2026">2026</button>
+              </div>
+              <button class="press-news__filter-show-more" type="button" aria-expanded="false" data-expand-list="years">
+                <span>Показать еще</span><span class="press-news__filter-show-more-icon" aria-hidden="true">⌄</span>
+              </button>
+            </section>
+          </div>
+          <button class="press-news__filter-back" type="button">Назад</button>
+        </section>
+      </div>
+
+      <div class="press-news__grid">
+        <article class="press-news__card">
+          <div class="press-news__card-media">
+            <img src="https://www.figma.com/api/mcp/asset/5d0af646-84b2-4994-9a71-a94ddcca11c4/b6ddc.png" alt="" loading="lazy">
+            <img src="https://www.figma.com/api/mcp/asset/5d0af646-84b2-4994-9a71-a94ddcca11c4/47cbb.png" alt="" loading="lazy">
+          </div>
+          <div class="press-news__card-content">
+            <div class="press-news__card-meta">
+              <span class="press-news__card-tag">27 апреля 2026 года</span>
+              <span class="press-news__card-tag">Новость</span>
+            </div>
+            <div class="press-news__card-copy">
+              <h2 class="press-news__card-title"><a class="press-news__card-link" href="#/news-item">Завод PK Vesta объявляет о заказе двух быстровозводимых ремонтных боксов для уникальной биостанции</a></h2>
+              <p class="press-news__card-description">Приглашаем клиентов и партнеров на строительную выставку UzBUILD в г. Ташкент, Узбекистан. Приглашаем клиентов и партнеров</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="press-news__card">
+          <div class="press-news__card-media">
+            <img src="https://www.figma.com/api/mcp/asset/5d0af646-84b2-4994-9a71-a94ddcca11c4/60c3a.png" alt="" loading="lazy">
+            <img src="https://www.figma.com/api/mcp/asset/5d0af646-84b2-4994-9a71-a94ddcca11c4/b289c.png" alt="" loading="lazy">
+          </div>
+          <div class="press-news__card-content">
+            <div class="press-news__card-meta">
+              <span class="press-news__card-tag">27 апреля 2026 года</span>
+              <span class="press-news__card-tag">Новость</span>
+            </div>
+            <div class="press-news__card-copy">
+              <h2 class="press-news__card-title"><a class="press-news__card-link" href="#/news-item">Приглашаем клиентов и партнеров на строительную выставку UzBUILD</a></h2>
+              <p class="press-news__card-description">Приглашаем клиентов и партнеров на строительную выставку UzBUILD в г. Ташкент, Узбекистан. Приглашаем клиентов и партнеров</p>
+            </div>
+          </div>
+        </article>
+        <article class="press-news__card">
+          <div class="press-news__card-media">
+            <img src="https://www.figma.com/api/mcp/asset/5d0af646-84b2-4994-9a71-a94ddcca11c4/60c3a.png" alt="" loading="lazy">
+            <img src="https://www.figma.com/api/mcp/asset/5d0af646-84b2-4994-9a71-a94ddcca11c4/7e9c1.png" alt="" loading="lazy">
+          </div>
+          <div class="press-news__card-content">
+            <div class="press-news__card-meta">
+              <span class="press-news__card-tag">27 апреля 2026 года</span>
+              <span class="press-news__card-tag">Новость</span>
+            </div>
+            <div class="press-news__card-copy">
+              <h2 class="press-news__card-title"><a class="press-news__card-link" href="#/news-item">Приглашаем клиентов и партнеров на строительную выставку UzBUILD</a></h2>
+              <p class="press-news__card-description">Приглашаем клиентов и партнеров на строительную выставку UzBUILD в г. Ташкент, Узбекистан. Приглашаем клиентов и партнеров</p>
+            </div>
+          </div>
+        </article>
+        <article class="press-news__card">
+          <div class="press-news__card-media">
+            <img src="https://www.figma.com/api/mcp/asset/5d0af646-84b2-4994-9a71-a94ddcca11c4/b6ddc.png" alt="" loading="lazy">
+            <img src="https://www.figma.com/api/mcp/asset/5d0af646-84b2-4994-9a71-a94ddcca11c4/47cbb.png" alt="" loading="lazy">
+          </div>
+          <div class="press-news__card-content">
+            <div class="press-news__card-meta">
+              <span class="press-news__card-tag">27 апреля 2026 года</span>
+              <span class="press-news__card-tag">Новость</span>
+            </div>
+            <div class="press-news__card-copy">
+              <h2 class="press-news__card-title"><a class="press-news__card-link" href="#/news-item">Приглашаем клиентов и партнеров на строительную выставку UzBUILD</a></h2>
+              <p class="press-news__card-description">Приглашаем клиентов и партнеров на строительную выставку UzBUILD в г. Ташкент, Узбекистан. Приглашаем клиентов и партнеров</p>
+            </div>
+          </div>
+        </article>
+        <article class="press-news__card">
+          <div class="press-news__card-media">
+            <img src="https://www.figma.com/api/mcp/asset/5d0af646-84b2-4994-9a71-a94ddcca11c4/60c3a.png" alt="" loading="lazy">
+            <img src="https://www.figma.com/api/mcp/asset/5d0af646-84b2-4994-9a71-a94ddcca11c4/b289c.png" alt="" loading="lazy">
+          </div>
+          <div class="press-news__card-content">
+            <div class="press-news__card-meta">
+              <span class="press-news__card-tag">27 апреля 2026 года</span>
+              <span class="press-news__card-tag">Новость</span>
+            </div>
+            <div class="press-news__card-copy">
+              <h2 class="press-news__card-title"><a class="press-news__card-link" href="#/news-item">Приглашаем клиентов и партнеров на строительную выставку UzBUILD</a></h2>
+              <p class="press-news__card-description">Приглашаем клиентов и партнеров на строительную выставку UzBUILD в г. Ташкент, Узбекистан. Приглашаем клиентов и партнеров</p>
+            </div>
+          </div>
+        </article>
+        <article class="press-news__card">
+          <div class="press-news__card-media">
+            <img src="https://www.figma.com/api/mcp/asset/5d0af646-84b2-4994-9a71-a94ddcca11c4/60c3a.png" alt="" loading="lazy">
+            <img src="https://www.figma.com/api/mcp/asset/5d0af646-84b2-4994-9a71-a94ddcca11c4/7e9c1.png" alt="" loading="lazy">
+          </div>
+          <div class="press-news__card-content">
+            <div class="press-news__card-meta">
+              <span class="press-news__card-tag">27 апреля 2026 года</span>
+              <span class="press-news__card-tag">Новость</span>
+            </div>
+            <div class="press-news__card-copy">
+              <h2 class="press-news__card-title"><a class="press-news__card-link" href="#/news-item">Приглашаем клиентов и партнеров на строительную выставку UzBUILD</a></h2>
+              <p class="press-news__card-description">Приглашаем клиентов и партнеров на строительную выставку UzBUILD в г. Ташкент, Узбекистан. Приглашаем клиентов и партнеров</p>
+            </div>
+          </div>
+        </article>
+      </div>
+      <button class="press-news__load-more" type="button">Показать еще</button>
+    </div>
   </div>
 </section>

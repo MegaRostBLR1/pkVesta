@@ -25,12 +25,89 @@ const APP_CONFIG = {
       js: './components/pages/services/services.js',
       init: 'initServices'
     },
+    'laser': {
+      title: 'Лазерная резка металла',
+      html: './components/pages/services/laser/laser.html',
+      css: './components/pages/services/laser/laser.css',
+      js: './components/pages/services/laser/laser.js',
+      init: 'initLaser'
+    },
+    'buildings': {
+      title: 'Быстровозводимые здания',
+      html: './components/pages/buildings/buildings.html',
+      css: './components/pages/buildings/buildings.css',
+      js: './components/pages/buildings/buildings.js',
+      init: 'initBuildings'
+    },
+    'buildings-directory': {
+      title: 'Каталог зданий',
+      html: './components/pages/buildings/buildings-directory/buildings-directory.html',
+      css: './components/pages/buildings/buildings-directory/buildings-directory.css',
+      js: './components/pages/buildings/buildings-directory/buildings-directory.js',
+      init: 'initBuildingsDirectory'
+    },
+    'buildings-characteristics': {
+      title: 'Характеристики быстровозводимых зданий',
+      html: './components/pages/buildings/characteristics/characteristics.html',
+      css: './components/pages/buildings/characteristics/characteristics.css',
+      js: './components/pages/buildings/characteristics/characteristics.js',
+      init: 'initBuildingsCharacteristics'
+    },
+    'buildings-why-pk-vesta': {
+      title: 'Почему PK Vesta',
+      html: './components/pages/buildings/why-pk-vesta/why-pk-vesta.html',
+      css: './components/pages/buildings/why-pk-vesta/why-pk-vesta.css',
+      js: './components/pages/buildings/why-pk-vesta/why-pk-vesta.js',
+      init: 'initBuildingsWhyPkVesta'
+    },
+    'buildings-comparison': {
+      title: 'Сравнение',
+      html: './components/pages/buildings/comparison/comparison.html',
+      css: './components/pages/buildings/comparison/comparison.css',
+      js: './components/pages/buildings/comparison/comparison.js',
+      init: 'initBuildingsComparison'
+    },
+    'buildings-prices': {
+      title: 'Цены',
+      html: './components/pages/buildings/buildings-prices/buildings-prices.html',
+      css: './components/pages/buildings/buildings-prices/buildings-prices.css',
+      js: './components/pages/buildings/buildings-prices/buildings-prices.js',
+      init: 'initBuildingsPrices'
+    },
+    'buildings-faq': {
+      title: 'Вопросы',
+      html: './components/pages/buildings/buildings-faq/buildings-faq.html',
+      css: './components/pages/buildings/buildings-faq/buildings-faq.css',
+      js: './components/pages/buildings/buildings-faq/buildings-faq.js',
+      init: 'initBuildingsFaq'
+    },
     'objects': {
       title: 'Объекты',
       html: './components/pages/objects/objects.html',
       css: './components/pages/objects/objects.css',
       js: './components/pages/objects/objects.js',
       init: 'initObjects'
+    },
+    'object-detail': {
+      title: 'Объект',
+      html: './components/pages/objects/object-detail/object-detail.html',
+      css: './components/pages/objects/object-detail/object-detail.css',
+      js: './components/pages/objects/object-detail/object-detail.js',
+      init: 'initObjectDetail'
+    },
+    'object-characteristics': {
+      title: 'Характеристики объекта',
+      html: './components/pages/objects/object-characteristics/object-characteristics.html',
+      css: './components/pages/objects/object-characteristics/object-characteristics.css',
+      js: './components/pages/objects/object-characteristics/object-characteristics.js',
+      init: 'initObjectCharacteristics'
+    },
+    'object-parameters': {
+      title: 'Параметры объекта',
+      html: './components/pages/objects/object-parameters/object-parameters.html',
+      css: './components/pages/objects/object-parameters/object-parameters.css',
+      js: './components/pages/objects/object-parameters/object-parameters.js',
+      init: 'initObjectParameters'
     },
     'press-center': {
       title: 'Пресс-центр',
@@ -99,6 +176,17 @@ const APP_CONFIG = {
 };
 
 const loadedPageAssets = new Set();
+let renderRequestId = 0;
+
+const ROUTE_ALIASES = {
+  'page-1': 'objects',
+  'page-2': 'services',
+  'page-3': 'objects',
+  'page-4': 'press-center',
+  'page-5': 'about',
+  'page-6': 'prices',
+  'page-7': 'contacts'
+};
 
 async function loadHtml(url) {
   const response = await fetch(url);
@@ -155,21 +243,47 @@ function loadScript(url) {
 }
 
 function getPageName() {
-  return window.location.hash.replace(/^#\/?/, '') || APP_CONFIG.defaultPage;
+  const hashRoute = window.location.hash
+      .replace(/^#\/?/, '')
+      .split(/[?&]/, 1)[0]
+      .trim()
+      .toLowerCase();
+
+  const route = hashRoute || APP_CONFIG.defaultPage;
+
+  if (APP_CONFIG.pages[route]) {
+    return route;
+  }
+
+  return ROUTE_ALIASES[route] || APP_CONFIG.defaultPage;
 }
 
 async function renderPage(pageName) {
+  const requestId = ++renderRequestId;
   const page = APP_CONFIG.pages[pageName] || APP_CONFIG.pages[APP_CONFIG.defaultPage];
   const main = document.querySelector('#app-main');
+
+  if (!main) {
+    return;
+  }
 
   main.innerHTML = '<p class="loading">Загрузка страницы…</p>';
 
   try {
     const html = await loadHtml(page.html);
 
+    if (requestId !== renderRequestId) {
+      return;
+    }
+
     main.innerHTML = html;
     loadStylesheet(page.css);
     await loadScript(page.js);
+
+    if (requestId !== renderRequestId) {
+      return;
+    }
+
     document.title = `pkVesta — ${page.title}`;
 
     const init = window[page.init];
@@ -178,9 +292,54 @@ async function renderPage(pageName) {
       init();
     }
   } catch (error) {
+    if (requestId !== renderRequestId) {
+      return;
+    }
+
     console.error(error);
     main.innerHTML = '<p class="error">Не удалось загрузить страницу. Проверьте путь к файлам и запустите проект через локальный HTTP-сервер.</p>';
   }
+}
+
+
+function initNavigationRouting() {
+  const routeByLabel = {
+    'Продукция': 'objects',
+    'Быстровозводимые здания': 'buildings',
+    'Легкие металлоконструкции': 'objects',
+    'Сэндвич панели': 'objects',
+    'Комплектующие для ворот': 'objects',
+    'Оцинкованный профиль': 'objects',
+    'Услуги': 'services',
+    'Лазерная резка': 'laser',
+    'Лизинг зданий': 'services',
+    'Консалтинг': 'services',
+    'Проектирование': 'services',
+    'Изготовление': 'services',
+    'Фундамент': 'services',
+    'Доставка': 'services',
+    'Монтаж': 'services',
+    'Объекты': 'objects',
+    'Пресс-центр': 'press-center',
+    'Новости': 'news',
+    'Видео': 'video',
+    'F.A.Q.': 'faq',
+    'Telegram канал': 'press-center',
+    'Статьи': 'articles',
+    'Завод': 'about',
+    'Цены': 'prices',
+    'Контакты': 'contacts'
+  };
+
+  document.querySelectorAll('.app-header a.nav-link, .app-header a.nav-list__nested-list-link')
+      .forEach((link) => {
+        const label = link.textContent.trim().replace(/\s+/g, ' ');
+        const route = routeByLabel[label];
+
+        if (route) {
+          link.href = `#/${route}`;
+        }
+      });
 }
 
 async function initApp() {
@@ -196,6 +355,7 @@ async function initApp() {
     console.error(error);
   }
 
+  initNavigationRouting();
   await renderPage(getPageName());
 }
 

@@ -1,0 +1,1232 @@
+/* Каталог зданий — Figma 1857:29109 (1920 px) + 1857:29304 (1440 px). Один responsive layout. */
+.buildings-directory {
+  padding: 5px;
+  color: #4d4d4d;
+}
+
+.buildings-directory__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
+  padding: 40px;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.buildings-directory__breadcrumbs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  color: #4d4d4d;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.buildings-directory__breadcrumb-link {
+  color: inherit;
+  transition: color 0.15s ease;
+}
+
+.buildings-directory__breadcrumb-link:hover {
+  color: #324c88;
+}
+
+.buildings-directory__breadcrumb-link:focus-visible,
+.buildings-directory__filter:focus-visible,
+.buildings-directory__details:focus-visible,
+.buildings-directory__compare:focus-visible {
+  outline: 2px solid #324c88;
+  outline-offset: 3px;
+}
+
+.buildings-directory__breadcrumb-separator {
+  color: #979a9b;
+}
+
+.buildings-directory__header {
+  text-align: center;
+}
+
+.buildings-directory__title {
+  margin: 0;
+  color: #4d4d4d;
+  font-family: "Onest-Medium", sans-serif;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 72px;
+  text-transform: uppercase;
+}
+
+.buildings-directory__title span {
+  color: #324c88;
+}
+
+.buildings-directory__filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 100%;
+  padding: 4px;
+  border-radius: 10px;
+  background: #f5f8f7;
+}
+
+.buildings-directory__filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 18px;
+  border-radius: 14px;
+  color: #5d5d5d;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color 0.15s ease;
+}
+
+.buildings-directory__filter.is-active {
+  background: #fff500;
+}
+
+.buildings-directory__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 10px;
+  width: 100%;
+}
+
+.buildings-directory__card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  padding: 5px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.buildings-directory__image {
+  display: block;
+  width: 100%;
+  height: 280px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.buildings-directory__card-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 10px;
+}
+
+.buildings-directory__card-title {
+  width: 100%;
+  margin: 0;
+  color: #4d4d4d;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 38px;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.buildings-directory__card-description {
+  width: 100%;
+  margin: 0;
+  color: #4d4d4d;
+  font-size: 22px;
+  line-height: 30px;
+  overflow-wrap: anywhere;
+}
+
+.buildings-directory__card-divider {
+  flex: 0 0 1px;
+  width: 100%;
+  height: 1px;
+  background: rgb(77 77 77 / 20%);
+}
+
+.buildings-directory__price {
+  margin: 0;
+  color: #4d4d4d;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.buildings-directory__card-actions {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+}
+
+.buildings-directory__details {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 79px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #324c88;
+  color: #fff;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.26;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color 0.15s ease;
+}
+
+.buildings-directory__details:hover {
+  background: #28427e;
+}
+
+.buildings-directory__compare {
+  display: flex;
+  flex: 0 0 80px;
+  align-items: center;
+  justify-content: center;
+  min-height: 79px;
+  padding: 18px;
+  border: 2px solid #324c88;
+  border-radius: 10px;
+  color: #324c88;
+}
+
+.buildings-directory__compare img {
+  display: block;
+  width: 36px;
+  height: 36px;
+}
+
+.buildings-directory__card[hidden] {
+  display: none;
+}
+
+@media screen and (max-width: 1100px) {
+  .buildings-directory__panel {
+    padding: 24px;
+  }
+
+  .buildings-directory__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .buildings-directory__breadcrumbs {
+    font-size: 16px;
+  }
+
+  .buildings-directory__filters {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .buildings-directory {
+    padding: 0 5px 5px;
+  }
+
+  .buildings-directory__panel {
+    gap: 18px;
+    padding: 20px 10px;
+    border-radius: 10px;
+  }
+
+  .buildings-directory__breadcrumbs {
+    justify-content: flex-start;
+    align-self: stretch;
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .buildings-directory__title {
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  .buildings-directory__filters {
+    justify-content: flex-start;
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .buildings-directory__filter {
+    flex: 0 0 auto;
+    padding: 10px 12px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .buildings-directory__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .buildings-directory__image {
+    height: auto;
+    aspect-ratio: 1.9;
+  }
+
+  .buildings-directory__card-content {
+    gap: 10px;
+    padding: 8px;
+  }
+
+  .buildings-directory__card-title {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .buildings-directory__card-description {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .buildings-directory__price {
+    font-size: 18px;
+  }
+
+  .buildings-directory__details {
+    min-height: 54px;
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .buildings-directory__compare {
+    flex-basis: 58px;
+    min-height: 54px;
+    padding: 10px;
+  }
+
+  .buildings-directory__compare img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .buildings-directory__title {
+    font-size: 24px;
+  }
+
+  .buildings-directory__card-title {
+    font-size: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buildings-directory__breadcrumb-link,
+  .buildings-directory__filter,
+  .buildings-directory__details {
+    transition: none;
+  }
+}
+
+
+/* Figma 1857:29623 — tablet frame 1024 px.
+   Сохраняем трёхколоночную сетку desktop, уменьшая внутренние размеры карточек. */
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+  .buildings-directory__panel {
+    gap: 20px;
+    padding: 40px 20px;
+  }
+
+  .buildings-directory__breadcrumbs {
+    gap: 20px;
+    font-size: 20px;
+  }
+
+  .buildings-directory__title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .buildings-directory__title span {
+    font-size: 64px;
+    line-height: 72px;
+  }
+
+  .buildings-directory__filters {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-self: stretch;
+    width: 100%;
+    overflow: clip;
+  }
+
+  .buildings-directory__filter {
+    flex: 0 0 auto;
+    padding: 14px 18px;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  .buildings-directory__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .buildings-directory__card {
+    gap: 10px;
+  }
+
+  .buildings-directory__image {
+    height: 192px;
+  }
+
+  .buildings-directory__card-content {
+    gap: 14px;
+    padding: 10px;
+  }
+
+  .buildings-directory__card-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .buildings-directory__card-description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .buildings-directory__price {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .buildings-directory__details {
+    min-height: 48px;
+    padding: 14px 12px;
+    font-size: 14px;
+  }
+
+  .buildings-directory__compare {
+    flex: 0 0 48px;
+    min-height: 48px;
+    padding: 10px;
+  }
+
+  .buildings-directory__compare img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+/* Breadcrumbs and heading form one Figma intro group on desktop and tablet. */
+.buildings-directory__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  max-width: 100%;
+}
+
+
+/* Figma 1857:29966 — mobile 360 px. Desktop/tablet layout remains unchanged. */
+@media screen and (max-width: 480px) {
+  .buildings-directory__panel {
+    gap: 20px;
+    padding: 20px 14px;
+  }
+
+  .buildings-directory__intro {
+    gap: 30px;
+    width: 100%;
+  }
+
+  .buildings-directory__breadcrumbs {
+    justify-content: center;
+    align-self: auto;
+    gap: 20px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .buildings-directory__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .buildings-directory__title span {
+    font-size: 64px;
+    line-height: 72px;
+  }
+
+  .buildings-directory__filters {
+    align-self: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 320px;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 4px;
+  }
+
+  .buildings-directory__filter {
+    flex: 0 0 auto;
+    padding: 12px 18px;
+    font-size: 14px;
+    line-height: 1.6;
+    white-space: nowrap;
+  }
+
+  .buildings-directory__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .buildings-directory__card {
+    gap: 5px;
+    padding: 5px;
+  }
+
+  .buildings-directory__image {
+    height: 192px;
+    aspect-ratio: auto;
+  }
+
+  .buildings-directory__card-content {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .buildings-directory__card-title {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .buildings-directory__card-description {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .buildings-directory__price {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .buildings-directory__details {
+    min-height: 48px;
+    padding: 14px 12px;
+    font-size: 14px;
+  }
+
+  .buildings-directory__compare {
+    flex: 0 0 48px;
+    min-height: 48px;
+    padding: 10px;
+  }
+
+  .buildings-directory__compare img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+/* Horizontal category navigation and progressive card disclosure. */
+.buildings-directory__filters {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.buildings-directory__filters::-webkit-scrollbar {
+  display: none;
+}
+
+.buildings-directory__show-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 332px;
+  max-width: 100%;
+  min-height: 49px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  background: rgb(50 76 136 / 10%);
+  color: #324c88;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 25px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color 0.15s ease;
+}
+
+.buildings-directory__show-more:hover {
+  background: rgb(50 76 136 / 16%);
+}
+
+.buildings-directory__show-more:focus-visible {
+  outline: 2px solid #324c88;
+  outline-offset: 3px;
+}
+
+.buildings-directory__show-more[hidden] {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buildings-directory__show-more {
+    transition: none;
+  }
+}
+
+/* Figma 1857:29279 — конструктивные особенности, desktop frame 1920 px. */
+.buildings-directory-seo {
+  margin: 0 5px 5px;
+  padding: 60px 62px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #4d4d4d;
+}
+
+.buildings-directory-seo__content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 30px;
+  width: 100%;
+  min-width: 0;
+}
+
+.buildings-directory-seo__title {
+  width: 100%;
+  margin: 0;
+  color: #4d4d4d;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 56px;
+  text-align: center;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+}
+
+.buildings-directory-seo__divider {
+  flex: 0 0 1px;
+  width: 100%;
+  height: 1px;
+  background: rgb(77 77 77 / 20%);
+}
+
+.buildings-directory-seo__text {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  min-width: 0;
+  color: rgb(77 77 77 / 80%);
+  font-family: "Onest-Regular", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.buildings-directory-seo__column,
+.buildings-directory-seo__secondary {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.buildings-directory-seo__column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.buildings-directory-seo__lead {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.buildings-directory-seo__text p {
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.buildings-directory-seo__list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  padding-left: 30px;
+  list-style: disc;
+}
+
+.buildings-directory-seo__list li {
+  padding-left: 0;
+  line-height: 1.5;
+}
+
+.buildings-directory-seo__separator {
+  flex: 0 0 1px;
+  width: 1px;
+  height: 217px;
+  background: rgb(77 77 77 / 20%);
+  opacity: 0;
+}
+
+.buildings-directory-seo__secondary {
+  color: #5d5d5d;
+  font-size: 22px;
+  line-height: 1.4;
+  opacity: 0;
+}
+
+/* Figma 1857:29519 — desktop frame 1440 px. Keep the 1920 px typography above. */
+@media screen and (min-width: 1101px) and (max-width: 1600px) {
+  .buildings-directory-seo__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+/* Tablet layout follows the corresponding Figma frame. */
+@media screen and (min-width: 901px) and (max-width: 1100px) {
+  .buildings-directory-seo {
+    padding: 60px 40px;
+  }
+
+  .buildings-directory-seo__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .buildings-directory-seo__text {
+    flex-direction: column;
+    gap: 24px;
+    font-size: 18px;
+  }
+
+  .buildings-directory-seo__separator,
+  .buildings-directory-seo__secondary {
+    display: none;
+  }
+
+  .buildings-directory-seo__column {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 681px) and (max-width: 900px) {
+  .buildings-directory-seo {
+    padding: 40px 24px;
+  }
+
+  .buildings-directory-seo__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .buildings-directory-seo__text {
+    flex-direction: column;
+    gap: 24px;
+    font-size: 18px;
+  }
+
+  .buildings-directory-seo__separator,
+  .buildings-directory-seo__secondary {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .buildings-directory-seo {
+    margin: 0 5px 5px;
+    padding: 24px 14px;
+  }
+
+  .buildings-directory-seo__content {
+    gap: 20px;
+  }
+
+  .buildings-directory-seo__title {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .buildings-directory-seo__text {
+    flex-direction: column;
+    gap: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .buildings-directory-seo__column {
+    gap: 16px;
+  }
+
+  .buildings-directory-seo__list {
+    gap: 12px;
+    padding-left: 22px;
+  }
+
+  .buildings-directory-seo__separator,
+  .buildings-directory-seo__secondary {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .buildings-directory-seo {
+    padding: 20px 14px;
+  }
+
+  .buildings-directory-seo__content {
+    gap: 18px;
+  }
+
+  .buildings-directory-seo__title {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .buildings-directory-seo__text {
+    gap: 24px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+
+/* Figma 1857:29897 — tablet frame 1024 px.
+   Exact target geometry; desktop 1920/1440 rules remain the source for wider screens. */
+@media screen and (min-width: 901px) and (max-width: 1100px) {
+  .buildings-directory-seo {
+    margin: 0;
+    padding: 60px 40px;
+  }
+
+  .buildings-directory-seo__content {
+    gap: 30px;
+  }
+
+  .buildings-directory-seo__title {
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    overflow-wrap: break-word;
+  }
+
+  .buildings-directory-seo__divider {
+    flex-basis: 1px;
+  }
+
+  .buildings-directory-seo__text {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    font-family: "Onest-Regular", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .buildings-directory-seo__text p {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+
+/* Figma 1857:30169 — mobile frame 360 px. */
+@media screen and (max-width: 480px) {
+  .buildings-directory-seo {
+    margin: 0 5px 5px;
+    padding: 20px 14px;
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  .buildings-directory-seo__content {
+    gap: 18px;
+  }
+
+  .buildings-directory-seo__title {
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+    text-align: center;
+    overflow-wrap: break-word;
+  }
+
+  .buildings-directory-seo__divider {
+    flex-basis: 1px;
+  }
+
+  .buildings-directory-seo__text {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    font-family: "Onest-Regular", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .buildings-directory-seo__text p {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Figma 1857:29279 — особенности конструкции, desktop 1920 px. */
+.buildings-directory-features {
+  margin: 0 5px 5px;
+  padding: 60px 62px;
+  border-radius: 10px;
+  background: #fff;
+  color: #4d4d4d;
+}
+
+.buildings-directory-features__content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 30px;
+  width: 100%;
+  min-width: 0;
+}
+
+.buildings-directory-features__title {
+  width: 100%;
+  margin: 0;
+  color: #4d4d4d;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 56px;
+  text-align: center;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+}
+
+.buildings-directory-features__divider {
+  flex: 0 0 1px;
+  width: 100%;
+  height: 1px;
+  background: rgb(77 77 77 / 20%);
+}
+
+.buildings-directory-features__body {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  min-width: 0;
+  color: rgb(77 77 77 / 80%);
+  font-family: "Onest-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.buildings-directory-features__column,
+.buildings-directory-features__secondary {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.buildings-directory-features__column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.buildings-directory-features__lead {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.buildings-directory-features__body p {
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.buildings-directory-features__list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  padding-left: 30px;
+  list-style: disc;
+}
+
+.buildings-directory-features__list li {
+  padding-left: 0;
+  line-height: 1.5;
+}
+
+.buildings-directory-features__separator {
+  flex: 0 0 1px;
+  width: 1px;
+  height: 217px;
+  background: rgb(77 77 77 / 20%);
+  opacity: 0;
+}
+
+.buildings-directory-features__secondary {
+  color: #5d5d5d;
+  font-size: 22px;
+  line-height: 1.4;
+  opacity: 0;
+}
+
+@media screen and (min-width: 1101px) and (max-width: 1600px) {
+  .buildings-directory-features__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+  .buildings-directory-features {
+    padding: 60px 40px;
+  }
+
+  .buildings-directory-features__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .buildings-directory-features__body {
+    flex-direction: column;
+    gap: 24px;
+    font-size: 18px;
+  }
+
+  .buildings-directory-features__separator,
+  .buildings-directory-features__secondary {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .buildings-directory-features {
+    margin: 0 5px 5px;
+    padding: 24px 14px;
+  }
+
+  .buildings-directory-features__content {
+    gap: 20px;
+  }
+
+  .buildings-directory-features__title {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .buildings-directory-features__body {
+    flex-direction: column;
+    gap: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .buildings-directory-features__column {
+    gap: 16px;
+  }
+
+  .buildings-directory-features__list {
+    gap: 12px;
+    padding-left: 22px;
+  }
+
+  .buildings-directory-features__separator,
+  .buildings-directory-features__secondary {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buildings-directory-features * {
+    scroll-behavior: auto;
+    transition: none;
+  }
+}
+
+
+/* Figma 1857:29528 — особенности конструкции, desktop 1440 px.
+   Основной текст занимает ширину макета; скрытый SEO-текст не резервирует колонку. */
+.buildings-directory-features__secondary {
+  display: none;
+}
+
+@media screen and (min-width: 1601px) {
+  .buildings-directory-features__title {
+    font-size: 48px;
+    line-height: 56px;
+  }
+}
+
+@media screen and (min-width: 1101px) and (max-width: 1600px) {
+  .buildings-directory-features {
+    padding: 60px 62px;
+  }
+
+  .buildings-directory-features__content {
+    gap: 30px;
+  }
+
+  .buildings-directory-features__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .buildings-directory-features__body {
+    gap: 24px;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  .buildings-directory-features__column {
+    flex: 1 1 auto;
+    gap: 25px;
+  }
+
+  .buildings-directory-features__separator {
+    flex-basis: 1px;
+    height: 217px;
+  }
+}
+
+
+
+/* Figma 1857:29907 — особенности конструкции, tablet frame 1024 px.
+   Сохраняем desktop 1920/1440 и задаём отдельную геометрию планшета. */
+@media screen and (min-width: 901px) and (max-width: 1100px) {
+  .buildings-directory-features {
+    margin: 0 5px 5px;
+    padding: 24px 40px;
+  }
+
+  .buildings-directory-features__content {
+    gap: 30px;
+  }
+
+  .buildings-directory-features__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .buildings-directory-features__body {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .buildings-directory-features__column {
+    flex: 1 1 auto;
+    width: 100%;
+    gap: 25px;
+  }
+
+  .buildings-directory-features__list {
+    gap: 15px;
+    padding-left: 27px;
+  }
+
+  .buildings-directory-features__separator,
+  .buildings-directory-features__secondary {
+    display: none;
+  }
+}
+
+/* Figma 1857:30179 — mobile frame 360 × 620.
+   Desktop 1920/1440 and tablet 1024 layouts remain unchanged. */
+@media screen and (max-width: 480px) {
+  .buildings-directory-features {
+    margin: 0;
+    padding: 24px 14px;
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  .buildings-directory-features__content {
+    gap: 18px;
+  }
+
+  .buildings-directory-features__title {
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .buildings-directory-features__divider {
+    flex-basis: 1px;
+  }
+
+  .buildings-directory-features__body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .buildings-directory-features__column {
+    flex: 1 1 auto;
+    gap: 25px;
+    width: 100%;
+  }
+
+  .buildings-directory-features__lead {
+    gap: 0;
+  }
+
+  .buildings-directory-features__list {
+    gap: 15px;
+    padding-left: 21px;
+  }
+
+  .buildings-directory-features__list li {
+    line-height: 1.5;
+  }
+
+  .buildings-directory-features__separator,
+  .buildings-directory-features__secondary {
+    display: none;
+  }
+}
+

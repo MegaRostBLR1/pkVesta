@@ -1,3 +1,1662 @@
 .objects {
-  /* Objects page styles. */
+    width: 100%;
+    min-width: 0;
+    border-radius: 0.5556rem;
+    background: #FFFFFF;
+    color: #4D4D4D;
+}
+
+.objects__panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6667rem;
+    width: 100%;
+    min-width: 0;
+    padding: 2.2222rem 2.2222rem 1.1111rem;
+    border-radius: 1.1111rem;
+}
+
+.objects__breadcrumbs {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.1111rem;
+    max-width: 100%;
+    color: #4D4D4D;
+    font-family: "Onest-Regular", sans-serif;
+    font-size: 1.1111rem;
+    font-weight: 400;
+    line-height: 1.4444rem;
+    white-space: nowrap;
+}
+
+.objects__breadcrumb-link {
+    color: inherit;
+    transition: color 0.15s ease;
+}
+
+.objects__breadcrumb-link:hover {
+    color: #324C88;
+}
+
+.objects__breadcrumb-link:focus-visible,
+.objects__search-input:focus-visible,
+.objects__view-control:focus-visible {
+    outline: 0.1111rem solid #324C88;
+    outline-offset: 0.1667rem;
+}
+
+.objects__breadcrumb-separator {
+    flex: 0 0 auto;
+}
+
+.objects__title {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.2778rem;
+    max-width: 100%;
+    margin: 0;
+    color: #4D4D4D;
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 3.8333rem;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.objects__count {
+    color: #324C88;
+    font-size: 1.935rem;
+    font-weight: 500;
+    line-height: 2.3333rem;
+}
+
+.objects__toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.6667rem;
+    width: 54.8889rem;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.objects__search-group {
+    display: flex;
+    flex: 0 0 20.4444rem;
+    align-items: center;
+    gap: 1.3333rem;
+    min-width: 0;
+    margin: 0;
+}
+
+.objects__label {
+    flex: 0 0 auto;
+    color: #2C2C2CE6;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 1.2222rem;
+    font-weight: 600;
+    line-height: 1.6;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.objects__search-group .objects__label {
+    flex-basis: 4.7778rem;
+}
+
+.objects__view-group > .objects__label {
+    flex-basis: 9.7778rem;
+}
+
+.objects__search-field {
+    display: flex;
+    flex: 0 0 14.3333rem;
+    align-items: center;
+    gap: 0.7778rem;
+    min-width: 0;
+    height: 3.3333rem;
+    padding: 0.2222rem 1.3333rem;
+    border-radius: 0.5556rem;
+    background: #F5F8F7;
+}
+
+.objects__search-icon {
+    display: block;
+    flex: 0 0 1.3333rem;
+    width: 1.3333rem;
+    height: 1.3333rem;
+    fill: none;
+    stroke: #2C2C2CE6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+}
+
+.objects__search-input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #2C2C2CE6;
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2778rem;
+}
+
+.objects__search-input::placeholder {
+    color: #2C2C2CE6;
+    opacity: 1;
+}
+
+.objects__search-input::-webkit-search-cancel-button {
+    cursor: pointer;
+}
+
+.objects__view-group {
+    display: flex;
+    flex: 0 0 31.7778rem;
+    align-items: center;
+    gap: 2rem;
+    min-width: 0;
+}
+
+.objects__view-options {
+    display: flex;
+    align-items: center;
+    gap: 1.3333rem;
+    min-width: 0;
+}
+
+.objects__view-option {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 1.1111rem;
+}
+
+.objects__view-name {
+    color: #2C2C2CE6;
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.6;
+    white-space: nowrap;
+}
+
+.objects__view-control {
+    display: flex;
+    flex: 0 0 3.7778rem;
+    align-items: center;
+    justify-content: center;
+    width: 3.7778rem;
+    height: 3.3333rem;
+    padding: 0.2222rem;
+    border-radius: 0.1111rem;
+    background: #F5F8F7;
+    color: #2C2C2CE6;
+}
+
+.objects__view-control:hover .objects__view-icon {
+    color: #324C88;
+}
+
+.objects__view-icon {
+    display: block;
+    flex: 0 0 3.3333rem;
+    width: 3.3333rem;
+    height: 2.8889rem;
+    padding: 0.7778rem 1rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+}
+
+.objects__view-control.is-active .objects__view-icon {
+    border-radius: 0.2222rem;
+    background: #FFFFFF;
+    color: #2C2C2CE6;
+}
+
+@media screen and (min-width: 1101px) and (max-width: 1600px) {
+    .objects__title {
+        font-size: 2.6667rem;
+        line-height: 3.1111rem;
+    }
+
+    .objects__count {
+        font-size: 2.6667rem;
+        line-height: 3.1111rem;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .objects__panel {
+        gap: 1.3333rem;
+        padding: 2.2222rem 1.3333rem 1.1111rem;
+    }
+
+    .objects__toolbar {
+        flex-wrap: wrap;
+        gap: 1.3333rem 2rem;
+        width: auto;
+    }
+
+    .objects__search-group,
+    .objects__view-group {
+        flex-basis: auto;
+    }
+
+    .objects__title {
+        font-size: 2.2222rem;
+        line-height: 2.6667rem;
+    }
+
+    .objects__count {
+        font-size: 1.4444rem;
+        line-height: 1.8889rem;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .objects__panel {
+        align-items: stretch;
+        gap: 1.1111rem;
+        padding: 1.3333rem 0.7778rem 1.1111rem;
+    }
+
+    .objects__breadcrumbs {
+        align-self: center;
+        gap: 0.6667rem;
+        font-size: 0.7778rem;
+        line-height: 1.1111rem;
+        white-space: normal;
+    }
+
+    .objects__title {
+        flex-wrap: wrap;
+        gap: 0.2222rem;
+        font-size: 1.5556rem;
+        line-height: 1.8889rem;
+        white-space: normal;
+    }
+
+    .objects__count {
+        font-size: 1.1111rem;
+        line-height: 1.5556rem;
+    }
+
+    .objects__toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.1111rem;
+        width: 100%;
+    }
+
+    .objects__search-group,
+    .objects__view-group {
+        flex-wrap: wrap;
+        gap: 0.6667rem;
+        width: 100%;
+    }
+
+    .objects__label {
+        font-size: 0.8889rem;
+    }
+
+    .objects__search-field {
+        flex: 1 1 12rem;
+        width: 100%;
+    }
+
+    .objects__view-group {
+        justify-content: space-between;
+    }
+
+    .objects__view-options {
+        flex-wrap: wrap;
+        gap: 0.6667rem;
+    }
+
+    .objects__view-option {
+        gap: 0.5556rem;
+    }
+
+    .objects__view-name {
+        font-size: 0.7778rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .objects__breadcrumb-link {
+        transition: none;
+    }
+}
+
+/* Figma 1857:31433 — tablet header/toolbar at 1024 px.
+   Desktop layout remains the source for 1440/1920 px; only the tablet
+   composition is adjusted here. */
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+    .objects__panel {
+        align-items: center;
+        gap: 18px;
+        padding: 40px 40px 20px;
+    }
+
+    .objects__breadcrumbs {
+        align-items: flex-start;
+        gap: 20px;
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .objects__title {
+        align-items: baseline;
+        gap: 4px;
+        font-family: "Onest-SemiBold", sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+    }
+
+    .objects__count {
+        font-family: "Onest-SemiBold", sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+    }
+
+    .objects__toolbar {
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: 48px;
+        width: auto;
+    }
+
+    .objects__search-group {
+        flex: 0 0 auto;
+        gap: 24px;
+    }
+
+    .objects__search-group .objects__label,
+    .objects__view-group > .objects__label {
+        flex-basis: auto;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .objects__search-field {
+        flex: 0 0 auto;
+        width: auto;
+        height: 60px;
+        gap: 14px;
+        padding: 4px 24px;
+        border-radius: 10px;
+    }
+
+    .objects__search-icon {
+        flex-basis: 24px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .objects__search-input {
+        font-size: 16px;
+        line-height: normal;
+    }
+
+    .objects__view-group {
+        flex: 0 0 auto;
+        gap: 36px;
+    }
+
+    .objects__view-options {
+        gap: 24px;
+    }
+
+    .objects__view-option {
+        gap: 20px;
+    }
+
+    .objects__view-name {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .objects__view-control {
+        flex-basis: 68px;
+        width: 68px;
+        height: 60px;
+        padding: 4px;
+        border-radius: 2px;
+    }
+
+    .objects__view-icon {
+        flex-basis: 60px;
+        width: 60px;
+        height: 52px;
+        padding: 14px 18px;
+    }
+
+    .objects__view-control.is-active .objects__view-icon {
+        border-radius: 4px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .objects__view-control {
+        transition: none;
+    }
+}
+
+
+
+/* Figma 1857:31661 — mobile toolbar at 360 px. */
+@media screen and (max-width: 680px) {
+    .objects__panel {
+        gap: 18px;
+        padding: 20px 14px;
+    }
+
+    .objects__breadcrumbs {
+        gap: 20px;
+        font-size: 14px;
+        line-height: normal;
+    }
+
+    .objects__title {
+        gap: 4px;
+        font-family: "Onest-SemiBold", sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 26px;
+        white-space: nowrap;
+    }
+
+    .objects__count {
+        font-family: "Onest-SemiBold", sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 26px;
+    }
+
+    .objects__toolbar {
+        gap: 14px;
+    }
+
+    .objects__view-group {
+        order: 1;
+        justify-content: center;
+        gap: 24px;
+    }
+
+    .objects__view-group > .objects__label {
+        flex: 0 0 auto;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .objects__view-options {
+        gap: 4px;
+    }
+
+    .objects__view-option {
+        gap: 0;
+    }
+
+    .objects__view-name {
+        display: none;
+    }
+
+    .objects__view-control {
+        flex-basis: 36px;
+        width: 36px;
+        height: 32px;
+        padding: 2px;
+        border-radius: 2px;
+    }
+
+    .objects__view-icon {
+        flex-basis: 32px;
+        width: 32px;
+        height: 28px;
+        padding: 7px 9px;
+    }
+
+    .objects__view-control.is-active .objects__view-icon {
+        border-radius: 4px;
+    }
+
+    .objects__search-group {
+        order: 2;
+        gap: 0;
+    }
+
+    .objects__search-group > .objects__label {
+        display: none;
+    }
+
+    .objects__search-field {
+        flex: 1 1 auto;
+        width: 100%;
+        height: 48px;
+        gap: 14px;
+        padding: 15px 14px;
+        border-radius: 10px;
+    }
+
+    .objects__search-icon {
+        flex-basis: 18px;
+        width: 18px;
+        height: 18px;
+    }
+
+    .objects__search-input {
+        font-size: 14px;
+        line-height: normal;
+    }
+}
+
+
+/* Figma 1857:30463 — карта объектов */
+.objects-map {
+    position: relative;
+    min-height: 1000px;
+    padding: 24px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #F5F8F7;
+}
+
+.objects-map__frame {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: auto;
+    height: auto;
+    border: 0;
+    border-radius: 10px;
+    background: #E8ECEA;
+}
+
+.objects-map__filters {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 470px;
+    max-width: 100%;
+    padding: 25px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    color: #272629;
+}
+
+.objects-map__filters-heading {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #4D4D4D33;
+}
+
+.objects-map__filters-title {
+    margin: 0;
+    color: #2C2C2CE6;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.objects-map__filter {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+}
+
+.objects-map__filter-label {
+    color: #272629;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.objects-map__filter select {
+    width: 100%;
+    min-width: 0;
+    min-height: 60px;
+    padding: 18px 24px;
+    border: 0;
+    border-radius: 10px;
+    appearance: none;
+    background: #F5F6F8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='m6 9 6 6 6-6' stroke='%23272629' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 20px center;
+    color: #272629;
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+    cursor: pointer;
+}
+
+.objects-map__filter select:focus-visible,
+.objects-map__more:focus-visible,
+.objects-map__submit:focus-visible,
+.objects-map__card-close:focus-visible,
+.objects-map__details-link:focus-visible {
+    outline: 2px solid #324C88;
+    outline-offset: 3px;
+}
+
+.objects-map__more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 65px;
+    padding: 18px 24px;
+    border: 1px solid #27262933;
+    border-radius: 10px;
+    background: #FFFFFF;
+    color: #2C2C2CE6;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.objects-map__more svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    transition: transform 0.2s ease;
+}
+
+.objects-map__more[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+}
+
+.objects-map__extra-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.objects-map__extra-filters[hidden] {
+    display: none;
+}
+
+.objects-map__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 64px;
+    padding: 20px;
+    border: 1px solid #324C884D;
+    border-radius: 10px;
+    background: #324C88;
+    color: #FFFFFF;
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.objects-map__submit:hover {
+    background: #263D70;
+}
+
+.objects-map__card {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 62.4%;
+    display: flex;
+    gap: 2px;
+    width: 484px;
+    max-width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    box-shadow: 0 8px 28px #202A351F;
+    transform: translateY(-50%);
+}
+
+.objects-map__card-image {
+    flex: 0 0 170px;
+    min-height: 232px;
+    border-radius: 10px;
+    background: #DDE3E1 url("../../../static/images/angar.png") center / cover no-repeat;
+}
+
+.objects-map__card-content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+    padding: 4px;
+}
+
+.objects-map__card-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #4D4D4D1A;
+}
+
+.objects-map__card-title {
+    margin: 0;
+    color: #4D4D4D;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.objects-map__card-close {
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #4D4D4D;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.objects-map__details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+    padding: 0 4px;
+    color: #4D4D4D;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.objects-map__details dt {
+    color: #4D4D4DCC;
+    font-family: "Onest-Medium", sans-serif;
+    font-weight: 500;
+}
+
+.objects-map__details dd {
+    margin: 0;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.objects-map__details-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    margin-top: auto;
+    padding: 14px 18px;
+    border-radius: 10px;
+    background: #324C88;
+    color: #FFFFFF;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.26;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* Figma 1857:30649 — desktop layout at 1440 px.
+   Keep the 1920 px composition above; align the card to its measured
+   x-position in the 1440 px frame without vertical centering. */
+@media screen and (min-width: 1101px) and (max-width: 1600px) {
+    .objects-map__card {
+        top: 50%;
+        left: 56.2%;
+        transform: none;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .objects-map {
+        min-height: 760px;
+        padding: 20px;
+    }
+
+    .objects-map__filters {
+        width: 400px;
+        padding: 20px;
+    }
+
+    .objects-map__card {
+        top: auto;
+        right: 20px;
+        bottom: 20px;
+        left: auto;
+        width: 440px;
+        transform: none;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .objects-map {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        min-height: 0;
+        padding: 10px;
+        overflow: visible;
+    }
+
+    .objects-map__frame {
+        position: relative;
+        inset: auto;
+        order: 2;
+        width: 100%;
+        height: 420px;
+        border-radius: 10px;
+    }
+
+    .objects-map__filters {
+        width: 100%;
+        max-width: none;
+        gap: 14px;
+        padding: 16px;
+    }
+
+    .objects-map__filters-title {
+        font-size: 20px;
+    }
+
+    .objects-map__filter {
+        gap: 8px;
+    }
+
+    .objects-map__filter-label,
+    .objects-map__filter select,
+    .objects-map__more,
+    .objects-map__submit {
+        font-size: 14px;
+    }
+
+    .objects-map__filter select {
+        min-height: 48px;
+        padding: 12px 40px 12px 14px;
+    }
+
+    .objects-map__more {
+        min-height: 48px;
+        padding: 12px 14px;
+    }
+
+    .objects-map__submit {
+        min-height: 50px;
+        padding: 14px;
+    }
+
+    .objects-map__card {
+        position: relative;
+        inset: auto;
+        order: 3;
+        width: 100%;
+        max-width: none;
+    }
+
+    .objects-map__card-image {
+        flex-basis: 35%;
+        min-height: 190px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .objects-map__more svg {
+        transition: none;
+    }
+}
+
+
+/* Figma 1857:31483 — tablet map/filter composition at 1024 px.
+   The Yandex map remains the full-bleed background; filters sit in a
+   white panel anchored to the bottom edge of the map section. */
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+    .objects-map {
+        display: flex;
+        align-items: flex-end;
+        min-height: 0;
+        height: 800px;
+        padding: 4px;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .objects-map__frame {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        border-radius: 10px;
+    }
+
+    .objects-map__filters {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        align-items: end;
+        gap: 24px 20px;
+        width: 100%;
+        max-width: none;
+        padding: 25px;
+        border-radius: 10px;
+    }
+
+    .objects-map__filters-heading,
+    .objects-map__more,
+    .objects-map__extra-filters,
+    .objects-map__submit {
+        grid-column: 1 / -1;
+    }
+
+    .objects-map__filters-heading {
+        padding-bottom: 16px;
+    }
+
+    .objects-map__filters-title {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+
+    .objects-map__filter {
+        gap: 20px;
+    }
+
+    .objects-map__filter-label {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .objects-map__filter select {
+        min-height: 48px;
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    .objects-map__more {
+        min-height: 48px;
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+
+    .objects-map__submit {
+        min-height: 48px;
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+
+    .objects-map__extra-filters {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .objects-map__extra-filters[hidden] {
+        display: none;
+    }
+
+    .objects-map__card {
+        top: 20px;
+        right: 20px;
+        bottom: auto;
+        left: auto;
+        width: 440px;
+        max-width: 100%;
+        transform: none;
+    }
+}
+
+/* Ensure the embedded map always fills the entire map section on desktop too. */
+@media screen and (min-width: 1101px) {
+    .objects-map__frame {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+/* Figma 1857:31710 — mobile filter panel at 360 px. */
+.objects-map__mobile-toggle {
+    display: none;
+}
+
+.objects-map__filter-fields {
+    display: contents;
+}
+
+@media screen and (max-width: 680px) {
+    .objects-map {
+        display: block;
+        position: relative;
+        height: 500px;
+        min-height: 500px;
+        padding: 4px;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #F5F8F7;
+    }
+
+    .objects-map__frame {
+        position: absolute;
+        inset: 0;
+        display: block;
+        order: initial;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+
+    .objects-map__filters {
+        position: absolute;
+        z-index: 1;
+        right: 4px;
+        bottom: 4px;
+        left: 4px;
+        display: flex;
+        gap: 18px;
+        width: auto;
+        max-width: none;
+        padding: 14px;
+        border-radius: 10px;
+        background: #FFFFFF;
+        color: #4D4D4D;
+    }
+
+    .objects-map__filters-heading {
+        padding: 0 0 12px;
+        border-bottom: 1px solid #4D4D4D33;
+    }
+
+    .objects-map__filters-title {
+        font-family: "Onest-SemiBold", sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.6;
+    }
+
+    .objects-map__mobile-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        min-height: 48px;
+        padding: 12px 24px;
+        border: 1px solid #27262933;
+        border-radius: 10px;
+        background: #FFFFFF;
+        color: #4D4D4D;
+        font-family: "Onest-SemiBold", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.6;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+    .objects-map__mobile-toggle svg {
+        flex: 0 0 24px;
+        width: 24px;
+        height: 24px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transition: transform 0.2s ease;
+    }
+
+    .objects-map__mobile-toggle[aria-expanded="true"] svg {
+        transform: rotate(180deg);
+    }
+
+    .objects-map__filter-fields {
+        display: none;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .objects-map__filters.is-expanded .objects-map__filter-fields {
+        display: flex;
+    }
+
+    .objects-map__filter {
+        gap: 8px;
+    }
+
+    .objects-map__filter-label,
+    .objects-map__filter select {
+        font-size: 14px;
+    }
+
+    .objects-map__filter select {
+        min-height: 48px;
+        padding: 12px 40px 12px 14px;
+    }
+
+    .objects-map__more {
+        display: none;
+    }
+
+    .objects-map__extra-filters {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .objects-map__submit {
+        min-height: 48px;
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+
+    .objects-map__card {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .objects-map__mobile-toggle svg {
+        transition: none;
+    }
+}
+
+
+/* Figma 1857:30736 — video section at 1440 px.
+   Keep the 1440 composition aligned with the existing 1920 desktop layout. */
+@media screen and (min-width: 1301px) and (max-width: 1600px) {
+    .objects-video {
+        gap: 30px;
+        padding: 60px 62px;
+    }
+
+    .objects-video__heading {
+        gap: 30px;
+    }
+
+    .objects-video__title {
+        font-size: 48px;
+        line-height: 56px;
+    }
+
+    .objects-video__feature {
+        height: 800px;
+    }
+
+    .objects-video__feature-content {
+        max-width: 1347px;
+        gap: 36px;
+    }
+
+    .objects-video__feature-title {
+        font-size: 48px;
+        line-height: 72px;
+    }
+
+    .objects-video__play {
+        width: 283px;
+        height: 283px;
+        flex-basis: 283px;
+    }
+
+    .objects-video__play-diamond {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Figma 1857:30550 — video section. */
+.objects-video { display:flex; flex-direction:column; align-items:stretch; gap:30px; width:100%; min-width:0; padding:60px 62px; background:#FFFFFF; color:#4D4D4D; }
+.objects-video__heading { display:flex; flex-direction:column; align-items:center; gap:30px; width:100%; }
+.objects-video__title { margin:0; color:#4D4D4D; font-family:"Onest-SemiBold",sans-serif; font-size:48px; font-weight:600; line-height:56px; text-align:center; text-transform:uppercase; }
+.objects-video__all { display:inline-flex; align-items:center; justify-content:center; min-height:36px; padding:4px 18px; border-radius:4px; color:#324C88; font-family:"Onest-SemiBold",sans-serif; font-size:18px; font-weight:600; line-height:1.6; text-align:center; text-transform:uppercase; text-decoration:none; }
+.objects-video__all:hover { color:#253B70; }
+.objects-video__all:focus-visible,.objects-video__feature:focus-visible,.objects-video__arrow:focus-visible,.objects-video__dot:focus-visible { outline:2px solid #324C88; outline-offset:4px; }
+.objects-video__divider { width:100%; height:1px; flex:0 0 1px; background:rgba(77,77,77,.2); }
+.objects-video__content { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:30px; width:100%; }
+.objects-video__feature { position:relative; display:flex; align-items:center; justify-content:center; width:100%; height:800px; overflow:hidden; border-radius:10px; color:#FFFFFF; text-decoration:none; isolation:isolate; }
+.objects-video__image,.objects-video__shade { position:absolute; z-index:-1; inset:0; width:100%; height:100%; border-radius:inherit; }
+.objects-video__image { display:block; object-fit:cover; object-position:center; }
+.objects-video__shade { background:rgba(20,20,20,.3); }
+.objects-video__feature-content { display:flex; flex-direction:column; align-items:center; gap:36px; width:100%; max-width:1347px; padding:0 24px; }
+.objects-video__feature-title { display:block; width:100%; color:#FFFFFF; font-family:"Onest-SemiBold",sans-serif; font-size:48px; font-weight:600; line-height:72px; text-align:center; text-transform:uppercase; overflow-wrap:anywhere; }
+.objects-video__play { display:flex; align-items:center; justify-content:center; width:283px; height:283px; flex:0 0 283px; }
+.objects-video__play-diamond { position:relative; display:flex; align-items:center; justify-content:center; width:200px; height:200px; transform:rotate(45deg); overflow:hidden; border-radius:10px; background:rgba(255,255,255,.1); }
+.objects-video__play-button { display:flex; align-items:center; justify-content:center; width:48px; height:48px; border-radius:20px; background:#FFFFFF; transform:rotate(-45deg); }
+.objects-video__play-button svg { display:block; width:24px; height:24px; fill:#324C88; }
+.objects-video__play-label { position:absolute; top:38px; left:50%; width:177px; color:#FFFFFF; font-family:"Onest-SemiBold",sans-serif; font-size:18px; font-weight:600; line-height:26px; text-align:center; text-transform:uppercase; transform:translateX(-50%) rotate(-45deg); }
+.objects-video__navigation { display:flex; align-items:center; justify-content:center; gap:24px; min-height:90.51px; }
+.objects-video__arrow { position:relative; display:flex; align-items:center; justify-content:center; width:90.51px; height:90.51px; flex:0 0 90.51px; padding:0; border:0; background:transparent; cursor:pointer; }
+.objects-video__arrow::before { position:absolute; width:64px; height:64px; border:1px solid rgba(77,77,77,.2); border-radius:20px; content:""; transform:rotate(45deg); }
+.objects-video__arrow svg { position:relative; width:40px; height:40px; fill:none; stroke:#4D4D4D; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+.objects-video__arrow:disabled { cursor:default; opacity:.45; }
+.objects-video__pagination { display:flex; align-items:center; gap:4px; }
+.objects-video__dot { width:10px; height:10px; flex:0 0 10px; padding:0; border:0; border-radius:50%; background:rgba(50,76,136,.2); cursor:pointer; }
+.objects-video__dot.is-active { background:#324C88; }
+/* Figma 1857:31537 — tablet layout at 1024 px. */
+@media screen and (min-width:681px) and (max-width:1100px) {
+    .objects-video {
+        gap: 30px;
+        padding: 40px;
+    }
+
+    .objects-video__heading {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .objects-video__title {
+        font-size: 24px;
+        line-height: 32px;
+        text-align: left;
+    }
+
+    .objects-video__all {
+        flex: 0 0 auto;
+    }
+
+    .objects-video__feature {
+        height: 565px;
+    }
+
+    .objects-video__feature-content {
+        gap: 36px;
+        padding: 0 24px;
+    }
+
+    .objects-video__feature-title {
+        width: 100%;
+        max-width: 823px;
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .objects-video__play {
+        width: 283px;
+        height: 283px;
+        flex-basis: 283px;
+    }
+
+    .objects-video__play-diamond {
+        width: 200px;
+        height: 200px;
+    }
+}
+/* Figma 1857:31747 — mobile layout at 360 px. */
+@media screen and (max-width:680px) {
+    .objects-video {
+        gap: 30px;
+        padding: 20px 10px;
+    }
+
+    .objects-video__heading {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .objects-video__title {
+        flex: 0 0 auto;
+        font-size: 24px;
+        line-height: 32px;
+        text-align: left;
+    }
+
+    .objects-video__all {
+        min-height: 36px;
+        padding: 4px 0;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .objects-video__feature {
+        height: 400px;
+    }
+
+    .objects-video__feature-content {
+        gap: 36px;
+        max-width: 340px;
+        padding: 0;
+    }
+
+    .objects-video__feature-title {
+        width: 316px;
+        max-width: 100%;
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .objects-video__play {
+        width: 197.99px;
+        height: 197.99px;
+        flex-basis: 197.99px;
+    }
+
+    .objects-video__play-diamond {
+        width: 140px;
+        height: 140px;
+    }
+
+    .objects-video__play-button {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+    }
+
+    .objects-video__play-button svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .objects-video__play-label {
+        top: 13px;
+        width: 177px;
+        font-size: 12px;
+        line-height: 26px;
+    }
+
+    .objects-video__navigation {
+        gap: 24px;
+        min-height: 67.882px;
+    }
+
+    .objects-video__arrow {
+        width: 67.882px;
+        height: 67.882px;
+        flex-basis: 67.882px;
+    }
+
+    .objects-video__arrow::before {
+        width: 48px;
+        height: 48px;
+        border-radius: 20px;
+    }
+
+    .objects-video__arrow svg {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+/* Figma 1857:30594 — drawings section at 1920 px. */
+.objects-drawings {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+    width: 100%;
+    min-width: 0;
+    padding: 60px 62px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    color: #4D4D4D;
+}
+.objects-drawings__title {
+    width: 100%;
+    margin: 0;
+    color: #4D4D4D;
+    font-family: "Onest-SemiBold", sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 56px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.objects-drawings__divider {
+    width: 100%;
+    height: 1px;
+    flex: 0 0 1px;
+    background: rgba(77, 77, 77, 0.2);
+}
+.objects-drawings__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
+    min-width: 0;
+}
+.objects-drawings__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    min-width: 0;
+    height: 312px;
+    padding: 25px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #F5F8F7;
+    color: #000000;
+    text-decoration: none;
+}
+.objects-drawings__image {
+    display: block;
+    flex: 0 0 180px;
+    width: 100%;
+    height: 180px;
+    min-width: 0;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.objects-drawings__caption {
+    display: block;
+    max-width: 100%;
+    color: #000000;
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+.objects-drawings__card:focus-visible,
+.objects-drawings__arrow:focus-visible,
+.objects-drawings__dot:focus-visible {
+    outline: 2px solid #324C88;
+    outline-offset: 4px;
+}
+.objects-drawings__card:hover .objects-drawings__image {
+    filter: brightness(0.96);
+}
+.objects-drawings__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    min-height: 90.51px;
+}
+.objects-drawings__arrow {
+    position: relative;
+    display: flex;
+    flex: 0 0 90.51px;
+    align-items: center;
+    justify-content: center;
+    width: 90.51px;
+    height: 90.51px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+.objects-drawings__arrow::before {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border: 1px solid rgba(77, 77, 77, 0.2);
+    border-radius: 20px;
+    content: "";
+    transform: rotate(45deg);
+}
+.objects-drawings__arrow svg {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    fill: none;
+    stroke: #4D4D4D;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.objects-drawings__arrow:disabled { cursor: default; opacity: 0.45; }
+.objects-drawings__pagination { display: flex; align-items: center; gap: 4px; }
+.objects-drawings__dot {
+    display: block;
+    flex: 0 0 10px;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(50, 76, 136, 0.2);
+    cursor: pointer;
+}
+.objects-drawings__dot.is-active { background: #324C88; }
+
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+    .objects-drawings { gap: 30px; padding: 40px; }
+    .objects-drawings__title { font-size: 24px; line-height: 32px; }
+    .objects-drawings__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .objects-drawings__card--third,
+    .objects-drawings__card--fourth { display: none; }
+}
+@media screen and (max-width: 680px) {
+    .objects-drawings { gap: 18px; padding: 20px 14px; overflow: hidden; }
+    .objects-drawings__title { font-size: 24px; line-height: 32px; }
+    .objects-drawings__grid { display: flex; gap: 10px; overflow: hidden; width: 100%; }
+    .objects-drawings__card { flex: 0 0 242px; gap: 24px; width: 242px; height: auto; min-height: 0; padding: 15px; }
+    .objects-drawings__image { flex: 0 0 140px; width: 212px; height: 140px; }
+    .objects-drawings__caption { width: 100%; font-size: 14px; line-height: 1.4; }
+    .objects-drawings__navigation { gap: 24px; min-height: 67.882px; }
+    .objects-drawings__arrow { flex-basis: 67.882px; width: 67.882px; height: 67.882px; }
+    .objects-drawings__arrow::before { width: 48px; height: 48px; border-radius: 20px; }
+    .objects-drawings__arrow svg { width: 30px; height: 30px; }
+}
+
+/* Figma 1857:30780 — drawings section at 1440 px.
+   Keep the existing four-card composition at 1920 px unchanged. */
+@media screen and (min-width: 1301px) and (max-width: 1600px) {
+    .objects-drawings__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .objects-drawings__card--fourth {
+        display: none;
+    }
+}
+
+
+/* Figma 1857:31584 — tablet drawings layout at 1024 px.
+   Show the two cards present in the tablet frame; keep desktop variants intact. */
+@media screen and (min-width: 681px) and (max-width: 1100px) {
+    .objects-drawings__card--third,
+    .objects-drawings__card--fourth {
+        display: none;
+    }
+}
+
+/* Figma 2269:146136 — custom filter options. */
+.objects-map__filter { position: relative; }
+
+.objects-map__native-select {
+    position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden;
+    clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%);
+}
+
+.objects-map__select { position: relative; display: flex; flex-direction: column; width: 100%; min-width: 0; }
+.objects-map__select.is-open { z-index: 5; }
+
+.objects-map__select-trigger {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    width: 100%; min-height: 64px; padding: 18px 24px; border: 0; border-radius: 10px;
+    background: rgba(50, 76, 136, 0.04); color: #272629;
+    font-family: "Onest-Medium", sans-serif; font-size: 18px; font-weight: 500;
+    line-height: 1.6; text-align: left; cursor: pointer;
+}
+
+.objects-map__select-trigger:focus-visible,
+.objects-map__select-option:focus-visible { outline: 2px solid #324C88; outline-offset: 2px; }
+
+.objects-map__select-chevron {
+    display: flex; flex: 0 0 24px; width: 24px; height: 24px;
+    align-items: center; justify-content: center; transition: transform 0.15s ease;
+}
+
+.objects-map__select-chevron svg {
+    display: block; width: 24px; height: 24px; fill: none; stroke: currentColor;
+    stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;
+}
+
+.objects-map__select.is-open .objects-map__select-chevron { transform: rotate(180deg); }
+
+.objects-map__select-options {
+    position: absolute; top: calc(100% + 8px); left: 0; z-index: 5;
+    display: flex; flex-direction: column; gap: 15px; width: 100%; height: 264px;
+    margin-top: 0; padding: 18px 24px; overflow-y: auto; overscroll-behavior: contain;
+    border: 3px solid #F5F8F7; border-radius: 10px; background: #F7F8FA;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    scrollbar-color: #4D4D4D rgba(255, 255, 255, 0.8); scrollbar-width: thin;
+}
+
+.objects-map__select-options[hidden] { display: none; }
+
+.objects-map__select-option {
+    flex: 0 0 auto; align-self: flex-start; max-width: 100%; padding: 0;
+    border: 0; background: transparent; color: rgba(44, 44, 44, 0.5);
+    font-family: "Onest-Medium", sans-serif; font-size: 18px; font-weight: 500;
+    line-height: 26px; text-align: left; overflow-wrap: anywhere; cursor: pointer;
+}
+
+.objects-map__select-option:hover,
+.objects-map__select-option.is-selected { color: #4D4D4D; }
+
+.objects-map__select-option:focus-visible { border-radius: 2px; }
+
+@media screen and (max-width: 680px) {
+    .objects-map__select-trigger { min-height: 54px; padding: 14px 18px; font-size: 14px; }
+    .objects-map__select-options { height: 264px; padding: 18px 24px; }
+    .objects-map__select-option { font-size: 14px; line-height: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .objects-map__select-chevron { transition: none; }
 }
