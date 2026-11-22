@@ -1,18 +1,19 @@
-document.querySelectorAll(".accordion__btn").forEach((btn) => {
-    if (btn.dataset.initialized === "true") return;
-    btn.dataset.initialized = "true";
+document.querySelectorAll(".app-footer .footer-accordion__head").forEach((button) => {
+  if (button.dataset.initialized === "true") return;
 
-    const body = document.getElementById(btn.getAttribute("aria-controls"));
-    if (!body) return;
+  const body = document.getElementById(button.getAttribute("aria-controls"));
+  if (!body) return;
 
-    const sync = (expanded) => {
-      btn.setAttribute("aria-expanded", String(expanded));
-      body.classList.toggle("is-open", expanded);
-    };
+  button.dataset.initialized = "true";
 
-    sync(btn.getAttribute("aria-expanded") === "true");
+  const syncExpandedState = (expanded) => {
+    button.setAttribute("aria-expanded", String(expanded));
+    body.classList.toggle("is-open", expanded);
+  };
 
-    btn.addEventListener("click", () => {
-      sync(btn.getAttribute("aria-expanded") !== "true");
-    });
+  syncExpandedState(button.getAttribute("aria-expanded") === "true");
+
+  button.addEventListener("click", () => {
+    syncExpandedState(button.getAttribute("aria-expanded") !== "true");
   });
+});
