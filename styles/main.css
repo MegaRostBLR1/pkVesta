@@ -4138,11 +4138,11 @@ body.mob-filter-open {
 }
 
 .buildings-advantages__item-trigger {
-  padding: 30px;
   display: flex;
   align-items: center;
   gap: 30px;
   width: 100%;
+  padding: 30px;
 }
 
 .accordion__toggle--yellow.buildings-advantages__toggle {
@@ -4160,11 +4160,22 @@ body.mob-filter-open {
   height: 21px;
 }
 
+.buildings-advantages__item-label {
+  min-width: 0;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: left;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
 .buildings-advantages__item-descr {
-  padding: 0px 30px 30px;
   display: flex;
   flex-direction: column;
   gap: 14px;
+  padding: 0px 30px 30px;
 }
 
 .buildings-advantages__item-descr h5 {
@@ -4179,17 +4190,6 @@ body.mob-filter-open {
   font-size: 18px;
   line-height: 28px;
   color: #ffffffcc;
-}
-
-.buildings-advantages__item-label {
-  min-width: 0;
-  font-family: "Onest-SemiBold", sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.6;
-  text-align: left;
-  text-transform: uppercase;
-  overflow-wrap: anywhere;
 }
 
 .buildings-advantages__content .slider-controls {
@@ -4278,11 +4278,13 @@ body.mob-filter-open {
     font-size: 18px;
     line-height: 29px;
   }
+
   .buildings-advantages__item-descr {
     padding: 10px 20px 20px;
     width: 0;
     min-width: 100%;
   }
+
   .buildings-advantages__content .slider-controls {
     transform: none;
   }
