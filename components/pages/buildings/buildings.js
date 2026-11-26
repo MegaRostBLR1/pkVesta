@@ -455,76 +455,105 @@ function initBuildings() {
   });
 
   const catalog = document.querySelector(".buildings-catalog");
-  const catalogCards = catalog?.querySelector(".buildings-catalog__cards");
+  const catalogViewport = catalog?.querySelector(".buildings-catalog__cards");
+  const catalogTrack = catalog?.querySelector(".buildings-catalog__track");
   const catalogPrev = catalog?.querySelector(".slider-controls__arrow--prev");
   const catalogNext = catalog?.querySelector(".slider-controls__arrow--next");
+  const catalogPagination = catalog?.querySelector(".slider-controls__pagination");
 
-  if (catalogCards && catalogPrev && catalogNext && catalog.dataset.sliderInitialized !== "true") {
+  if (
+    catalogViewport &&
+    catalogTrack &&
+    catalogPrev &&
+    catalogNext &&
+    catalog.dataset.sliderInitialized !== "true"
+  ) {
     catalog.dataset.sliderInitialized = "true";
 
-    // Стрелки активны, только когда часть карточек не влезла
-    const updateArrows = () => {
-      const hasHiddenCards = catalogCards.scrollWidth - catalogCards.clientWidth > 1;
-
-      catalogPrev.disabled = !hasHiddenCards;
-      catalogNext.disabled = !hasHiddenCards;
-    };
-
-    // Листает на одну карточку. С последней переходит на первую, с первой — на последнюю
-    const scrollCards = (direction) => {
-      const maxLeft = catalogCards.scrollWidth - catalogCards.clientWidth;
-      // Шаг — ширина карточки плюс отступ между карточками
-      const step =
-        catalogCards.firstElementChild.getBoundingClientRect().width +
-        parseFloat(getComputedStyle(catalogCards).columnGap);
-      let left = (Math.round(catalogCards.scrollLeft / step) + direction) * step;
-
-      if (direction > 0 && catalogCards.scrollLeft >= maxLeft - 1) {
-        left = 0;
-      } else if (direction < 0 && catalogCards.scrollLeft <= 1) {
-        left = maxLeft;
-      }
-
-      catalogCards.scrollTo({ left, behavior: "smooth" });
-    };
-
-    catalogPrev.addEventListener("click", () => scrollCards(-1));
-    catalogNext.addEventListener("click", () => scrollCards(1));
-
-    // Свайп листает ленту сам, без JS. Здесь только круг:
-    // свайп дальше последней карточки ведёт на первую, дальше первой — на последнюю
+    const catalogCards = Array.from(catalogTrack.children);
+    const paginationDots = Array.from(catalogPagination?.children || []);
+    let currentIndex = 0;
     let touchStartX = 0;
     let touchStartY = 0;
-    let touchStartLeft = 0;
 
-    catalogCards.addEventListener(
+    const getMetrics = () => {
+      const firstCard = catalogCards[0];
+      const trackStyles = getComputedStyle(catalogTrack);
+      const gap = parseFloat(trackStyles.columnGap) || 0;
+      const cardWidth = firstCard?.getBoundingClientRect().width || 0;
+      const step = cardWidth + gap;
+      const visibleCount = step
+        ? Math.max(1, Math.floor((catalogViewport.clientWidth + gap) / step))
+        : 1;
+
+      return {
+        step,
+        maxIndex: Math.max(0, catalogCards.length - visibleCount)
+      };
+    };
+
+    const updateSlider = () => {
+      const { step, maxIndex } = getMetrics();
+      currentIndex = Math.min(currentIndex, maxIndex);
+
+      catalogTrack.style.transform = `translateX(-${currentIndex * step}px)`;
+      catalogPrev.disabled = maxIndex === 0;
+      catalogNext.disabled = maxIndex === 0;
+
+      paginationDots.forEach((dot, index) => {
+        dot.classList.toggle("slider-controls__dot--active", index === currentIndex);
+      });
+
+      if (catalogPagination) {
+        catalogPagination.setAttribute(
+          "aria-label",
+          `Слайд ${currentIndex + 1} из ${maxIndex + 1}`
+        );
+      }
+    };
+
+    const moveSlider = (direction) => {
+      const { maxIndex } = getMetrics();
+
+      if (maxIndex === 0) return;
+
+      if (direction > 0) {
+        currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+      } else {
+        currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+      }
+
+      updateSlider();
+    };
+
+    catalogPrev.addEventListener("click", () => moveSlider(-1));
+    catalogNext.addEventListener("click", () => moveSlider(1));
+
+    catalogViewport.addEventListener(
       "touchstart",
       (event) => {
         touchStartX = event.touches[0].clientX;
         touchStartY = event.touches[0].clientY;
-        touchStartLeft = catalogCards.scrollLeft;
       },
       { passive: true }
     );
 
-    catalogCards.addEventListener("touchend", (event) => {
-      const deltaX = event.changedTouches[0].clientX - touchStartX;
-      const deltaY = event.changedTouches[0].clientY - touchStartY;
-      const maxLeft = catalogCards.scrollWidth - catalogCards.clientWidth;
+    catalogViewport.addEventListener(
+      "touchend",
+      (event) => {
+        const deltaX = event.changedTouches[0].clientX - touchStartX;
+        const deltaY = event.changedTouches[0].clientY - touchStartY;
 
-      // Короткое или вертикальное движение пальца — не свайп по ленте
-      if (Math.abs(deltaX) < 50 || Math.abs(deltaX) < Math.abs(deltaY)) {
-        return;
-      }
+        if (Math.abs(deltaX) < 50 || Math.abs(deltaX) < Math.abs(deltaY)) {
+          return;
+        }
 
-      if (deltaX < 0 && touchStartLeft >= maxLeft - 1) {
-        scrollCards(1);
-      } else if (deltaX > 0 && touchStartLeft <= 1) {
-        scrollCards(-1);
-      }
-    });
+        moveSlider(deltaX < 0 ? 1 : -1);
+      },
+      { passive: true }
+    );
 
-    window.addEventListener("resize", updateArrows);
-    updateArrows();
+    window.addEventListener("resize", updateSlider);
+    updateSlider();
   }
 }
