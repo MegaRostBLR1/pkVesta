@@ -12,57 +12,7 @@
   align-items: stretch;
   gap: 24px;
 }
-.comparison__toggle-wrapper {
-  display: flex;
-  justify-content: center;
-}
-.toggle {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  gap: 24px;
-}
-.toggle__input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-}
-.toggle__input:focus-visible + .toggle__switch {
-  outline: 2px solid #324c88;
-  outline-offset: 2px;
-}
-.toggle__switch {
-  width: 84px;
-  height: 44px;
-  position: relative;
-  background-color: #fff;
-  border-radius: 18px;
-  border: 1px solid #e6e6e6;
-  transition: background-color 0.3s;
-}
-.toggle__switch::after {
-  content: "";
-  position: absolute;
-  top: 3px;
-  right: 4px;
-  width: 36px;
-  height: 36px;
-  background-color: #324c881a;
-  border-radius: 50%;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-.toggle__input:checked + .toggle__switch::after {
-  background-color: #324c88;
-  transform: translateX(-39px);
-}
 
-.toggle__text {
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 36px;
-  color: #4d4d4d;
-}
 
 .comparison__table {
   margin: 0 auto;
@@ -137,12 +87,6 @@
   text-transform: uppercase;
   color: #4d4d4d;
 }
-.system-card__year {
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 24px;
-  color: #4d4d4dcc;
-}
 
 .comparison__row-header {
   display: flex;
@@ -195,16 +139,7 @@
 }
 
 /* Дополнительные строки скрыты, пока не нажата «Показать еще» */
-.comparison__row--extra {
-  display: none;
-}
-.comparison__table.is-expanded .comparison__row--extra {
-  display: block;
-}
 
-.row-content--without-title {
-  justify-content: end;
-}
 
 .row-content__title {
   max-width: 489px;
@@ -225,12 +160,6 @@
   font-size: 18px;
   line-height: 24px;
 }
-.value--big-text {
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 24px;
-  color: #4d4d4dcc;
-}
 
 .dot {
   display: inline-block;
@@ -245,10 +174,6 @@
   background-color: #324c881a;
 }
 
-.comparison__btn-wrapper {
-  display: flex;
-  justify-content: center;
-}
 
 .comparison__slider-controls-mob {
   display: none;
@@ -318,14 +243,6 @@
   .comparison__row-content {
     min-height: 68px;
   }
-  .toggle__text {
-    font-size: 20px;
-    line-height: 28px;
-  }
-  .system-card__year {
-    font-size: 16px;
-    line-height: 24px;
-  }
   .comparison__row-title,
   .row-content__title {
     font-size: 20px;
@@ -333,10 +250,6 @@
   }
   .row-content__value {
     padding: 0;
-  }
-  .value--big-text {
-    font-size: 14px;
-    line-height: 26px;
   }
   .value--text {
     font-size: 16px;
@@ -390,21 +303,6 @@
   .comparison__slider-wrapper {
     width: 100%;
   }
-  .toggle {
-    flex-direction: column-reverse;
-    gap: 14px;
-  }
-  .toggle__switch {
-    width: 60px;
-    height: 32px;
-  }
-  .toggle__switch::after {
-    width: 24px;
-    height: 24px;
-  }
-  .toggle__input:checked + .toggle__switch::after {
-    transform: translate(-27px);
-  }
   .comparison__nav {
     gap: 28px;
     margin-bottom: 9px;
@@ -431,10 +329,6 @@
   .row-content__title {
     font-size: 14px;
     line-height: 22px;
-  }
-  .value--big-text {
-    font-size: 12px;
-    line-height: 20px;
   }
   .value--text {
     font-size: 12px;
