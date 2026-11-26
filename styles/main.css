@@ -3512,21 +3512,6 @@ body.mob-filter-open {
     padding: 14px 20px;
   }
 
-  .buildings-agro__tabs.is-fixed {
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
-    left: 10px;
-    color: #3f3f3f;
-    background: #ededed;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-    animation: buildings-agro-tabs-in 0.2s ease;
-  }
-
-  .buildings-agro__tabs.is-narrow {
-    right: 75px;
-  }
 
   .buildings-agro__tabs.is-open {
     right: 10px;
@@ -3601,12 +3586,6 @@ body.mob-filter-open {
   }
 }
 
-@keyframes buildings-agro-tabs-in {
-  from {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-}
 
 @media (prefers-reduced-motion: reduce) {
   .buildings-agro__tab,
@@ -3614,9 +3593,6 @@ body.mob-filter-open {
     transition: none;
   }
 
-  .buildings-agro__tabs.is-fixed {
-    animation: none;
-  }
 }
 
 /* Кнопка «Наверх» */
