@@ -1,14 +1,38 @@
-/* ТУТ СДУБЛИРОВАННЫЕ СТИЛИ СО СТРАНИЦЫ ОЛНАЙН КАЛЬКУЛЯТОР
-
-ВНИЗУ стили для этой страницы, которые отличаются, но должны идти после 
-стилей онлайн калькулятора
-*/
+/* Базовые стили секции сравнения */
 
 :root {
   --comparison-col-width: 310px;
 }
 
+.buildings-comparison {
+  margin: 0px 5px 5px;
+}
+
+.buildings-comparison__container {
+  padding: 80px 40px;
+  gap: 24px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.buildings-comparison__title {
+  margin-bottom: 12px;
+  font-weight: 600;
+  line-height: 61px;
+  color: #4d4d4d;
+  text-align: center;
+}
+
+.buildings-comparison__descr {
+  margin: 0 auto;
+  max-width: 974px;
+  font-size: 22px;
+  line-height: 140%;
+  text-align: center;
+}
+
 .comparison__content {
+
   align-items: stretch;
   gap: 24px;
 }
@@ -55,6 +79,11 @@
 .comparison__nav-arr:disabled {
   cursor: default;
   opacity: 0.4;
+}
+
+.comparison__nav-arr--buildings.comparison__nav-arr {
+  background: transparent;
+  border: 1px solid #4d4d4d33;
 }
 
 /* Колонки стоят в один ряд, видно три. Остальные листаются стрелками */
@@ -346,38 +375,6 @@
   }
 }
 
-/* стили имеено на странице быстровозводимых агрокомплексов */
-.buildings-comparison {
-  margin: 0px 5px 5px;
-}
-
-.buildings-comparison__container {
-  padding: 80px 40px;
-  gap: 24px;
-  border-radius: 10px;
-  background-color: #ffffff;
-}
-
-.buildings-comparison__title {
-  margin-bottom: 12px;
-  font-weight: 600;
-  line-height: 61px;
-  color: #4d4d4d;
-  text-align: center;
-}
-
-.buildings-comparison__descr {
-  margin: 0 auto;
-  max-width: 974px;
-  font-size: 22px;
-  line-height: 140%;
-  text-align: center;
-}
-
-.comparison__nav-arr--buildings.comparison__nav-arr {
-  background: transparent;
-  border: 1px solid #4d4d4d33;
-}
 @media (max-width: 1100px) {
   .buildings-comparison__container {
     padding: 40px 40px;
