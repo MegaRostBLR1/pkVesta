@@ -259,17 +259,20 @@ function initBuildings() {
 
     const isVertical = () => getComputedStyle(advantagesList).flexDirection === "column";
 
-    // Стрелки активны, только когда часть пунктов не влезла
+    // Стрелки отключаются на соответствующем краю списка.
     const updateAdvantagesArrows = () => {
-      const hasHiddenItems = isVertical()
-        ? advantagesList.scrollHeight - advantagesList.clientHeight > 1
-        : advantagesList.scrollWidth - advantagesList.clientWidth > 1;
+      const side = isVertical() ? "top" : "left";
+      const position = side === "top" ? advantagesList.scrollTop : advantagesList.scrollLeft;
+      const max =
+        side === "top"
+          ? advantagesList.scrollHeight - advantagesList.clientHeight
+          : advantagesList.scrollWidth - advantagesList.clientWidth;
 
-      advantagesPrev.disabled = !hasHiddenItems;
-      advantagesNext.disabled = !hasHiddenItems;
+      advantagesPrev.disabled = position <= 1;
+      advantagesNext.disabled = position >= max - 1;
     };
 
-    // Листает на один пункт. С последнего переходит на первый, с первого — на последний
+    // Листает на один пункт без зацикливания: первый и последний пункты — границы списка.
     const scrollAdvantages = (direction) => {
       const side = isVertical() ? "top" : "left";
       const position = side === "top" ? advantagesList.scrollTop : advantagesList.scrollLeft;
@@ -282,13 +285,10 @@ function initBuildings() {
       const starts = Array.from(advantagesList.children)
         .filter((item) => item.getClientRects().length)
         .map((item) => item.getBoundingClientRect()[side] - listStart + position);
-      let target;
-
-      if (direction > 0) {
-        target = position >= max - 1 ? 0 : starts.find((start) => start > position + 1) ?? max;
-      } else {
-        target = position <= 1 ? max : starts.filter((start) => start < position - 1).pop() ?? 0;
-      }
+      const nextStart = direction > 0
+        ? starts.find((start) => start > position + 1)
+        : starts.filter((start) => start < position - 1).pop();
+      const target = Math.max(0, Math.min(max, nextStart ?? (direction > 0 ? max : 0)));
 
       advantagesList.scrollTo({ [side]: target, behavior: "smooth" });
     };
@@ -374,7 +374,10 @@ function initBuildings() {
       });
     };
 
-    advantagesList.addEventListener("scroll", closeHiddenItems, { passive: true });
+    advantagesList.addEventListener("scroll", () => {
+      updateAdvantagesArrows();
+      closeHiddenItems();
+    }, { passive: true });
     window.addEventListener("resize", () => {
       fitOpenItems();
       updateAdvantagesArrows();
