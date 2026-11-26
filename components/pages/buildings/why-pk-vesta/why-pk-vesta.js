@@ -58,7 +58,136 @@ function initBuildingsWhyPkVesta() {
     updateScrollTop();
   }
 
-  document.querySelectorAll(".accordion__btn").forEach((btn) => {
+  const whyVesta = document.querySelector(".why-vesta");
+  const descriptionAccordion = whyVesta?.querySelector(".buildings-description__accordion");
+  const desktopVisual = descriptionAccordion?.querySelector(".why-vesta__visual");
+  const items = Array.from(descriptionAccordion?.querySelectorAll(".buildings-description__item") || []);
+  const entries = items
+    .map((item) => {
+      const visual = item.querySelector(".buildings-description__accordion-media--tablet");
+      const toggle = item.querySelector(".buildings-description__accordion-trigger");
+
+      if (!visual || !toggle) {
+        return null;
+      }
+
+      return { visual, toggle };
+    })
+    .filter(Boolean);
+
+  if (
+    descriptionAccordion &&
+    desktopVisual &&
+    entries.length &&
+    entries.length === items.length &&
+    descriptionAccordion.dataset.visualInitialized !== "true"
+  ) {
+    entries.forEach((entry) => {
+      entry.placeholder = document.createComment("buildings-description-item-visual");
+      entry.visual.parentNode.insertBefore(entry.placeholder, entry.visual);
+    });
+
+    descriptionAccordion.dataset.visualInitialized = "true";
+
+    let selectedEntry = entries.find(
+      ({ toggle }) => toggle.getAttribute("aria-expanded") === "true"
+    ) || entries[0];
+
+    const desktopMedia = window.matchMedia("(min-width: 1101px)");
+    const restoreItemVisual = ({ visual, placeholder }) => {
+      if (placeholder.parentNode) {
+        placeholder.parentNode.insertBefore(visual, placeholder);
+      }
+    };
+
+    const showSelectedVisual = () => {
+      const currentVisual = desktopVisual.querySelector(".buildings-description__accordion-media--tablet");
+
+      if (currentVisual === selectedEntry.visual) {
+        return;
+      }
+
+      const currentEntry = entries.find(({ visual }) => visual === currentVisual);
+
+      if (currentEntry) {
+        restoreItemVisual(currentEntry);
+      }
+
+      desktopVisual.replaceChildren(selectedEntry.visual);
+    };
+
+    const restoreAllItemVisuals = () => {
+      entries.forEach(restoreItemVisual);
+      desktopVisual.replaceChildren();
+    };
+
+    const syncVisualPlacement = () => {
+      if (desktopMedia.matches) {
+        showSelectedVisual();
+        return;
+      }
+
+      restoreAllItemVisuals();
+    };
+
+    entries.forEach((entry) => {
+      entry.toggle.addEventListener("click", () => {
+        selectedEntry = entry;
+
+        if (desktopMedia.matches) {
+          showSelectedVisual();
+        }
+      });
+    });
+
+    const pageRoot = whyVesta.closest("#app-main");
+    const pageController = new AbortController();
+    const { signal } = pageController;
+
+    if (pageRoot && "MutationObserver" in window) {
+      const pageObserver = new MutationObserver(() => {
+        if (!whyVesta.isConnected) {
+          pageController.abort();
+          pageObserver.disconnect();
+        }
+      });
+
+      pageObserver.observe(pageRoot, { childList: true });
+      signal.addEventListener("abort", () => pageObserver.disconnect(), { once: true });
+    }
+
+    const handleVisualBreakpointChange = () => {
+      if (!whyVesta.isConnected) {
+        if (typeof desktopMedia.removeEventListener === "function") {
+          desktopMedia.removeEventListener("change", handleVisualBreakpointChange);
+        } else {
+          desktopMedia.removeListener(handleVisualBreakpointChange);
+        }
+
+        return;
+      }
+
+      syncVisualPlacement();
+    };
+
+    if (typeof desktopMedia.addEventListener === "function") {
+      desktopMedia.addEventListener("change", handleVisualBreakpointChange);
+      signal.addEventListener("abort", () => {
+        desktopMedia.removeEventListener("change", handleVisualBreakpointChange);
+      }, { once: true });
+    } else {
+      desktopMedia.addListener(handleVisualBreakpointChange);
+      signal.addEventListener("abort", () => {
+        desktopMedia.removeListener(handleVisualBreakpointChange);
+      }, { once: true });
+    }
+
+    syncVisualPlacement();
+  }
+
+  const page = whyVesta?.closest("#app-main") || document;
+
+  page.querySelectorAll(".accordion__btn").forEach((btn) => {
     if (btn.dataset.initialized === "true") return;
     btn.dataset.initialized = "true";
 
@@ -70,26 +199,38 @@ function initBuildingsWhyPkVesta() {
       body.classList.toggle("is-open", expanded);
     };
 
-    sync(btn.getAttribute("aria-expanded") === "true");
+    const exclusiveSection = btn.closest(".buildings-description__accordion");
+    const isInitiallyExpanded = btn.getAttribute("aria-expanded") === "true";
 
-    btn.addEventListener("click", () => {
-      const expanded = btn.getAttribute("aria-expanded") !== "true";
-      const descriptionAccordion = btn.closest(".buildings-description__accordion");
-
-      // В блоке «Почему PK Vesta» одновременно открыт только один пункт.
-      if (expanded && descriptionAccordion) {
-        descriptionAccordion
-          .querySelectorAll(".buildings-description__accordion-trigger[aria-expanded='true']")
-          .forEach((openBtn) => {
-            if (openBtn === btn) return;
-
-            openBtn.setAttribute("aria-expanded", "false");
-            const openBody = document.getElementById(openBtn.getAttribute("aria-controls"));
-            openBody?.classList.remove("is-open");
-          });
+    const closeOtherItems = () => {
+      if (!exclusiveSection) {
+        return;
       }
 
-      sync(expanded);
+      exclusiveSection.querySelectorAll('.accordion__btn[aria-expanded="true"]').forEach((openBtn) => {
+        if (openBtn === btn) {
+          return;
+        }
+
+        openBtn.setAttribute("aria-expanded", "false");
+        document.getElementById(openBtn.getAttribute("aria-controls"))?.classList.remove("is-open");
+      });
+    };
+
+    if (isInitiallyExpanded) {
+      closeOtherItems();
+    }
+
+    sync(isInitiallyExpanded);
+
+    btn.addEventListener("click", () => {
+      const shouldExpand = btn.getAttribute("aria-expanded") !== "true";
+
+      if (shouldExpand) {
+        closeOtherItems();
+      }
+
+      sync(shouldExpand);
     });
   });
 
