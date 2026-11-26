@@ -452,10 +452,12 @@ function initBuildings() {
     btn.addEventListener("click", () => {
       const expanded = btn.getAttribute("aria-expanded") !== "true";
       const descriptionAccordion = btn.closest(".buildings-description__accordion");
+      const advantagesList = btn.closest(".buildings-advantages__list");
 
-      // В описании зданий одновременно может быть открыт только один пункт.
-      if (expanded && descriptionAccordion) {
-        descriptionAccordion.querySelectorAll(".buildings-description__accordion-trigger[aria-expanded='true']").forEach((openBtn) => {
+      // В каждом из этих аккордеонов одновременно может быть открыт только один пункт.
+      if (expanded && (descriptionAccordion || advantagesList)) {
+        const accordionGroup = descriptionAccordion || advantagesList;
+        accordionGroup.querySelectorAll(".accordion__btn[aria-expanded='true']").forEach((openBtn) => {
           if (openBtn === btn) return;
 
           openBtn.setAttribute("aria-expanded", "false");
