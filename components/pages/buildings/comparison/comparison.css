@@ -32,11 +32,9 @@
 }
 
 .comparison__content {
-
   align-items: stretch;
   gap: 24px;
 }
-
 
 .comparison__table {
   margin: 0 auto;
@@ -169,7 +167,6 @@
 
 /* Дополнительные строки скрыты, пока не нажата «Показать еще» */
 
-
 .row-content__title {
   max-width: 489px;
   font-weight: 400;
@@ -202,7 +199,6 @@
 .dot--empty {
   background-color: #324c881a;
 }
-
 
 .comparison__slider-controls-mob {
   display: none;
