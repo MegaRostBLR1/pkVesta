@@ -28,14 +28,6 @@ function initBuildingsPrices() {
       setExpanded(!isExpanded);
     });
 
-    // Первый экран целиком ушёл вверх — меню прилипает к низу экрана
-    const agro = tabs.closest(".buildings-agro");
-
-    if (agro && "IntersectionObserver" in window) {
-      new IntersectionObserver(([entry]) => {
-        tabs.classList.toggle("is-fixed", !entry.isIntersecting && entry.boundingClientRect.top < 0);
-      }).observe(agro);
-    }
   }
 
   // Кнопка «Наверх» появляется, когда пролистали больше экрана
@@ -74,7 +66,6 @@ function initBuildingsPrices() {
     const backButton = overlay?.querySelector(".mob-filter-overlay__back");
     const showMoreButtons = overlay?.querySelectorAll("[data-expand-list]");
     const prefixes = {};
-    const selected = {};
     let previousFocus = null;
 
     /* ===== Общие функции ===== */
@@ -107,7 +98,6 @@ function initBuildingsPrices() {
 
     // выбирает значение сразу везде: десктопные кнопки, выпадающие списки и мобильный фильтр
     const setFilter = (type, value) => {
-      selected[type] = value;
 
       document.querySelectorAll('[data-segmented="' + type + '"] .prices__option').forEach((item) => {
         const active = item.dataset.filterValue === value;
@@ -263,7 +253,7 @@ function initBuildingsPrices() {
     updateFilterSummary();
   }
 
-  document.querySelectorAll(".accordion__btn").forEach((btn) => {
+  document.querySelectorAll("#app-main .accordion__btn").forEach((btn) => {
     if (btn.dataset.initialized === "true") return;
     btn.dataset.initialized = "true";
 
