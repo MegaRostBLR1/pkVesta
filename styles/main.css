@@ -3762,12 +3762,6 @@ body.mob-filter-open {
   object-fit: cover;
 }
 
-.buildings-description__accordion-trigger:focus-visible,
-.buildings-description__more:focus-visible,
-.buildings-description__details-link:focus-visible {
-  outline: 0.1111rem solid #324c88;
-  outline-offset: 0.2222rem;
-}
 
 .buildings-description__item {
   padding: 23px 0;
@@ -3856,6 +3850,13 @@ body.mob-filter-open {
 
 .buildings-description__details-link:hover {
   text-decoration: underline;
+}
+
+.buildings-description__accordion-trigger:focus-visible,
+.buildings-description__more:focus-visible,
+.buildings-description__details-link:focus-visible {
+  outline: 0.1111rem solid #324c88;
+  outline-offset: 0.2222rem;
 }
 
 @media screen and (max-width: 1600px) {

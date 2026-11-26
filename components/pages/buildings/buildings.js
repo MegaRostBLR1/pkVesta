@@ -224,7 +224,7 @@ function initBuildings() {
     description.addEventListener("click", (event) => {
       const trigger = event.target.closest(".buildings-description__accordion-trigger");
       const more = event.target.closest(".buildings-description__more");
-      const zoom = event.target.closest(".zoom_button");
+      const zoom = event.target.closest(".zoom-button");
       const arrow = event.target.closest(".accordion-item__modal-slider .slider-controls__arrow");
 
       // Открыли пункт аккордеона: большое фото слева меняется на фото этого пункта
