@@ -9475,6 +9475,231 @@ body.mob-filter-open {
   }
 }
 
+/* ==========================================================================
+   BUILDINGS CHARACTERISTICS PAGE
+   ========================================================================== */
+
+/* Технические характеристики зданий. */
+.buildings-characteristics__technical {
+  padding: 0 10px 10px;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.buildings-characteristics__technical-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 40px 40px 20px;
+}
+
+.buildings-characteristics__technical-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.buildings-characteristics__technical-title {
+  width: 100%;
+  color: #4d4d4d;
+  font-size: 48px;
+  line-height: 64px;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.buildings-characteristics__tabs {
+  display: flex;
+  gap: 4px;
+  max-width: 100%;
+  padding: 4px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  border-radius: 10px;
+  background: #f5f8f7;
+  scrollbar-width: thin;
+}
+
+.buildings-characteristics__tab {
+  padding: 14px 18px;
+  border-radius: 14px;
+  color: #5d5d5d;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+}
+
+.buildings-characteristics__tab.is-active {
+  background: #fff500;
+}
+
+.buildings-characteristics__tab:focus-visible {
+  outline: 2px solid #324c88;
+  outline-offset: 2px;
+}
+
+/* Карточки размещаются по столбцам: сначала левый, затем правый. */
+.buildings-characteristics__technical-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(var(--rows, 5), auto);
+  grid-auto-flow: column;
+  gap: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  background: #f5f8f7;
+}
+
+.buildings-characteristics__technical-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.buildings-characteristics__technical-label {
+  color: #4d4d4d;
+  font-family: "Onest-SemiBold", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.buildings-characteristics__technical-value {
+  width: 100%;
+  color: #4d4d4d;
+  font-size: 22px;
+  line-height: 32px;
+  overflow-wrap: anywhere;
+}
+
+.buildings-characteristics__show-more {
+  display: none;
+}
+
+.buildings-characteristics__show-more:focus-visible {
+  outline: 2px solid #324c88;
+  outline-offset: 4px;
+}
+
+.buildings-characteristics__show-more-icon {
+  transition: transform 0.15s ease;
+}
+
+.buildings-characteristics__show-more[aria-expanded="true"] .buildings-characteristics__show-more-icon {
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 1100px) {
+  .buildings-characteristics__technical-inner {
+    gap: 24px;
+    padding: 20px 40px;
+  }
+
+  .buildings-characteristics__technical-title {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .buildings-characteristics__tab {
+    font-size: 16px;
+  }
+
+  .buildings-characteristics__technical-card {
+    gap: 8px;
+  }
+
+  .buildings-characteristics__technical-label {
+    font-size: 18px;
+  }
+
+  .buildings-characteristics__technical-value {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .buildings-characteristics__technical {
+    padding: 0;
+  }
+
+  .buildings-characteristics__technical-inner {
+    padding: 15px 10px 30px;
+    gap: 12px;
+  }
+
+  .buildings-characteristics__technical-header {
+    gap: 16px;
+  }
+
+  .buildings-characteristics__technical-title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .buildings-characteristics__tabs {
+    align-self: stretch;
+  }
+
+  .buildings-characteristics__tab {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .buildings-characteristics__technical-panel {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    grid-auto-flow: row;
+  }
+
+  .buildings-characteristics__technical-label {
+    font-size: 16px;
+  }
+
+  .buildings-characteristics__technical-value {
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  .buildings-characteristics__technical-card:nth-child(n + 5) {
+    display: none;
+  }
+
+  .buildings-characteristics__technical-panel.is-expanded .buildings-characteristics__technical-card:nth-child(n + 5) {
+    display: flex;
+  }
+
+  .buildings-characteristics__show-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    align-self: center;
+    color: #324c88;
+    font-family: "Onest-Medium", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buildings-characteristics__show-more-icon {
+    transition: none;
+  }
+
+  .buildings-characteristics__tab {
+    transition: none;
+  }
+}
+
 /* Секция «Преимущества». */
 
 .buildings-advantages {

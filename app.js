@@ -75,7 +75,6 @@ const APP_CONFIG = {
     'buildings-characteristics': {
       title: 'Характеристики быстровозводимых зданий',
       html: './components/pages/buildings/characteristics/characteristics.html',
-      css: './components/pages/buildings/characteristics/characteristics.css',
       js: './components/pages/buildings/characteristics/characteristics.js',
       init: 'initBuildingsCharacteristics'
     },
