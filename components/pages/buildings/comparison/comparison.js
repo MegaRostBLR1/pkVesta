@@ -184,20 +184,6 @@ function initBuildingsComparison() {
     });
   }
 
-  // Сравнение: «Показать еще» показывает скрытые строки, повторное нажатие снова их прячет
-  const comparisonMore = comparison?.querySelector(".comparison__btn");
-
-  if (comparisonTable && comparisonMore && comparisonMore.dataset.initialized !== "true") {
-    comparisonMore.dataset.initialized = "true";
-
-    comparisonMore.addEventListener("click", () => {
-      const isExpanded = comparisonTable.classList.toggle("is-expanded");
-
-      comparisonMore.setAttribute("aria-expanded", String(isExpanded));
-      comparisonMore.textContent = isExpanded ? "Свернуть" : "Показать еще";
-    });
-  }
-
   document.querySelectorAll(".accordion__btn").forEach((btn) => {
     if (btn.dataset.initialized === "true") return;
     btn.dataset.initialized = "true";
