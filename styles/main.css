@@ -8651,8 +8651,10 @@ body.mob-filter-open {
 
 
 /* ==========================================================================
-   FAST BUILDINGS PAGE
+   BUILDINGS PAGE
    ========================================================================== */
+
+/* Первый экран страницы с агрокомплексами. */
 .buildings-agro {
   display: flex;
   justify-content: center;
@@ -9071,10 +9073,6 @@ body.mob-filter-open {
   }
 }
 
-/* ==========================================================================
-   BUILDINGS PAGE
-   ========================================================================== */
-
 /* Секция «Описание» */
 .buildings-description {
   margin: 0 0.5556rem 0.5556rem;
@@ -9477,7 +9475,7 @@ body.mob-filter-open {
   }
 }
 
-/* buildings-advantages */
+/* Секция «Преимущества». */
 
 .buildings-advantages {
   margin: 0 5px 15px;
@@ -9789,7 +9787,7 @@ body.mob-filter-open {
   }
 }
 
-/* Фотогалерея */
+/* Секция «Фотогалерея». */
 .buildings-gallery {
   margin: 0 10px 10px;
   padding: 40px 40px 30px;
@@ -9934,7 +9932,7 @@ body.mob-filter-open {
   }
 }
 
-/* Каталог отраслей */
+/* Секция «Каталог отраслей». */
 .buildings-catalog {
   margin: 0 4px;
 }
@@ -10194,7 +10192,7 @@ body.mob-filter-open {
   }
 }
 
-/* Процесс производства */
+/* Секция «Процесс производства». */
 .buildings-production {
   margin: 0 10px 10px;
 }

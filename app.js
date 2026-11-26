@@ -55,7 +55,6 @@ const APP_CONFIG = {
     'buildings': {
       title: 'Быстровозводимые здания',
       html: './components/pages/buildings/buildings.html',
-      css: './components/pages/buildings/buildings.css',
       js: './components/pages/buildings/buildings.js',
       init: 'initBuildings'
     },
