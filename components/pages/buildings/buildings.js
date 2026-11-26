@@ -450,7 +450,21 @@ function initBuildings() {
     sync(btn.getAttribute("aria-expanded") === "true");
 
     btn.addEventListener("click", () => {
-      sync(btn.getAttribute("aria-expanded") !== "true");
+      const expanded = btn.getAttribute("aria-expanded") !== "true";
+      const descriptionAccordion = btn.closest(".buildings-description__accordion");
+
+      // В описании зданий одновременно может быть открыт только один пункт.
+      if (expanded && descriptionAccordion) {
+        descriptionAccordion.querySelectorAll(".buildings-description__accordion-trigger[aria-expanded='true']").forEach((openBtn) => {
+          if (openBtn === btn) return;
+
+          openBtn.setAttribute("aria-expanded", "false");
+          const openBody = document.getElementById(openBtn.getAttribute("aria-controls"));
+          openBody?.classList.remove("is-open");
+        });
+      }
+
+      sync(expanded);
     });
   });
 
