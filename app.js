@@ -81,7 +81,6 @@ const APP_CONFIG = {
     'buildings-why-pk-vesta': {
       title: 'Почему PK Vesta',
       html: './components/pages/buildings/why-pk-vesta/why-pk-vesta.html',
-      css: './components/pages/buildings/why-pk-vesta/why-pk-vesta.css',
       js: './components/pages/buildings/why-pk-vesta/why-pk-vesta.js',
       init: 'initBuildingsWhyPkVesta'
     },
