@@ -754,82 +754,80 @@
         <button class="buildings-catalog__filter" type="button" aria-pressed="false">Спортивная</button>
       </div>
     </header>
-    <div class="buildings-catalog__cards" id="buildings-catalog-agro">
-      <a class="buildings-catalog__card-link" href="#buildings-agro-description">
-        <figure class="buildings-catalog__card-wrapper">
-          <span class="buildings-catalog__image-wrap">
-            <img
-              class="buildings-catalog__image"
-              src="/static/images/bildings/industry-1.jpg"
-              alt="Агрокомплексы"
-              loading="lazy" />
-          </span>
-          <figcaption class="buildings-catalog__caption">Агрокомплексы</figcaption>
-        </figure>
-      </a>
-      <a class="buildings-catalog__card-link" href="#buildings-catalog-aquafarm">
-        <figure class="buildings-catalog__card-wrapper">
-          <span class="buildings-catalog__image-wrap">
-            <img
-              class="buildings-catalog__image"
-              src="/static/images/bildings/industry-2.jpg"
-              alt="Акваферма"
-              loading="lazy" />
-          </span>
-          <figcaption class="buildings-catalog__caption">Акваферма</figcaption>
-        </figure>
-      </a>
-      <a class="buildings-catalog__card-link" href="#buildings-catalog-winefarm">
-        <figure class="buildings-catalog__card-wrapper">
-          <span class="buildings-catalog__image-wrap">
-            <img
-              class="buildings-catalog__image"
-              src="/static/images/bildings/industry-3.jpg"
-              alt="Вино ферма"
-              loading="lazy" />
-          </span>
-          <figcaption class="buildings-catalog__caption">Вино ферма</figcaption>
-        </figure>
-      </a>
-      <a class="buildings-catalog__card-link" href="#buildings-catalog-mushroomfarm">
-        <figure class="buildings-catalog__card-wrapper">
-          <span class="buildings-catalog__image-wrap">
-            <img
-              class="buildings-catalog__image"
-              src="/static/images/bildings/industry-4.jpg"
-              alt="Грибные фермы"
-              loading="lazy" />
-          </span>
-          <figcaption class="buildings-catalog__caption">Грибные фермы</figcaption>
-        </figure>
-      </a>
-    </div>
-    <nav class="slider-controls slider-controls--dark" aria-label="Навигация по карточкам каталога">
-      <button
-        class="slider-controls__arrow slider-controls__arrow--prev"
-        type="button"
-        aria-label="Предыдущий слайд"
-        disabled>
-        <svg viewBox="0 0 40 40" aria-hidden="true">
-          <path d="M24 8 12 20l12 12"></path>
-        </svg>
-      </button>
-      <div class="slider-controls__pagination" aria-label="Слайд 1 из 4">
-        <span class="slider-controls__dot slider-controls__dot--active" aria-hidden="true"></span>
-        <span class="slider-controls__dot" aria-hidden="true"></span>
-        <span class="slider-controls__dot" aria-hidden="true"></span>
-        <span class="slider-controls__dot" aria-hidden="true"></span>
+
+    <div class="buildings-catalog__cards" aria-label="Карточки каталога отраслей">
+      <div class="buildings-catalog__track">
+        <a class="buildings-catalog__card-link" href="#buildings-agro-description">
+          <figure class="buildings-catalog__card-wrapper">
+            <span class="buildings-catalog__image-wrap">
+              <img class="buildings-catalog__image" src="/static/images/bildings/industry-1.jpg" alt="Агрокомплекс" loading="lazy" />
+            </span>
+            <figcaption class="buildings-catalog__caption">Агрокомплексы</figcaption>
+          </figure>
+        </a>
+        <a class="buildings-catalog__card-link" href="#buildings-agro-description">
+          <figure class="buildings-catalog__card-wrapper">
+            <span class="buildings-catalog__image-wrap">
+              <img class="buildings-catalog__image" src="/static/images/bildings/industry-2.jpg" alt="Акваферма" loading="lazy" />
+            </span>
+            <figcaption class="buildings-catalog__caption">Акваферма</figcaption>
+          </figure>
+        </a>
+        <a class="buildings-catalog__card-link" href="#buildings-agro-description">
+          <figure class="buildings-catalog__card-wrapper">
+            <span class="buildings-catalog__image-wrap">
+              <img class="buildings-catalog__image" src="/static/images/bildings/industry-3.jpg" alt="Винодельческий комплекс" loading="lazy" />
+            </span>
+            <figcaption class="buildings-catalog__caption">Виноферма</figcaption>
+          </figure>
+        </a>
+        <a class="buildings-catalog__card-link" href="#buildings-agro-description">
+          <figure class="buildings-catalog__card-wrapper">
+            <span class="buildings-catalog__image-wrap">
+              <img class="buildings-catalog__image" src="/static/images/bildings/industry-4.jpg" alt="Грибная ферма" loading="lazy" />
+            </span>
+            <figcaption class="buildings-catalog__caption">Грибные фермы</figcaption>
+          </figure>
+        </a>
+        <a class="buildings-catalog__card-link" href="#/buildings-directory">
+          <figure class="buildings-catalog__card-wrapper">
+            <span class="buildings-catalog__image-wrap">
+              <img class="buildings-catalog__image" src="/static/images/bildings/bilding-small.jpg" alt="Быстровозводимое здание" loading="lazy" />
+            </span>
+            <figcaption class="buildings-catalog__caption">Коммерческие здания</figcaption>
+          </figure>
+        </a>
+        <a class="buildings-catalog__card-link" href="#/buildings-directory">
+          <figure class="buildings-catalog__card-wrapper">
+            <span class="buildings-catalog__image-wrap">
+              <img class="buildings-catalog__image" src="/static/images/bildings/gallery.jpg" alt="Промышленное здание" loading="lazy" />
+            </span>
+            <figcaption class="buildings-catalog__caption">Промышленные здания</figcaption>
+          </figure>
+        </a>
       </div>
-      <button
-        class="slider-controls__arrow slider-controls__arrow--next"
-        type="button"
-        aria-label="Следующий слайд"
-        disabled>
-        <svg viewBox="0 0 40 40" aria-hidden="true">
-          <path d="m16 8 12 12-12 12"></path>
-        </svg>
-      </button>
-    </nav>
+
+      <nav class="slider-controls slider-controls--dark" aria-label="Навигация по карточкам каталога">
+        <button class="slider-controls__arrow slider-controls__arrow--prev" type="button" aria-label="Предыдущий слайд" disabled>
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M24 8 12 20l12 12"></path>
+          </svg>
+        </button>
+        <div class="slider-controls__pagination" aria-label="Слайд 1 из 6">
+          <span class="slider-controls__dot slider-controls__dot--active" aria-hidden="true"></span>
+          <span class="slider-controls__dot" aria-hidden="true"></span>
+          <span class="slider-controls__dot" aria-hidden="true"></span>
+          <span class="slider-controls__dot" aria-hidden="true"></span>
+          <span class="slider-controls__dot" aria-hidden="true"></span>
+          <span class="slider-controls__dot" aria-hidden="true"></span>
+        </div>
+        <button class="slider-controls__arrow slider-controls__arrow--next" type="button" aria-label="Следующий слайд" disabled>
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="m16 8 12 12-12 12"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
   </div>
 </section>
 
