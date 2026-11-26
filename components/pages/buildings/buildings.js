@@ -501,6 +501,7 @@ function initBuildings() {
       catalogNext.disabled = maxIndex === 0;
 
       paginationDots.forEach((dot, index) => {
+        dot.hidden = index > maxIndex;
         dot.classList.toggle("slider-controls__dot--active", index === currentIndex);
       });
 
