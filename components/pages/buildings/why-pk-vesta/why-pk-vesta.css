@@ -34,6 +34,24 @@
   aspect-ratio: 676 / 609;
 }
 
+.why-vesta__visual {
+  position: relative;
+  min-width: 0;
+  min-height: 609px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.why-vesta__visual > .buildings-description__accordion-media--tablet {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+}
+
 @media screen and (max-width: 1600px) {
   .why-vesta__panel {
     padding: 64px 40px;
@@ -49,6 +67,10 @@
   }
   .why-vesta .buildings-description__image {
     aspect-ratio: 676 / 515;
+  }
+
+  .why-vesta__visual {
+    min-height: 515px;
   }
 }
 
@@ -68,6 +90,10 @@
   }
   .why-vesta .buildings-description__image {
     aspect-ratio: 916 / 490;
+  }
+
+  .why-vesta__visual {
+    display: none;
   }
 }
 
