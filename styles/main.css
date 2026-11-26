@@ -4125,6 +4125,7 @@ body.mob-filter-open {
   max-height: calc(4 * (48px + 2 * 30px) + 3 * 10px);
   overflow: hidden;
   transition: max-height 0.3s ease;
+  border-radius: 20px;
 }
 
 .buildings-advantages__item {
@@ -4175,7 +4176,9 @@ body.mob-filter-open {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  padding: 0px 30px 30px;
+  margin: 0px 30px 30px;
+  overflow-y: auto;
+  max-height: 320px;
 }
 
 .buildings-advantages__item-descr h5 {
