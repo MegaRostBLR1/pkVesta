@@ -27,14 +27,6 @@ function initBuildings() {
       setExpanded(!isExpanded);
     });
 
-    // Первый экран целиком ушёл вверх — меню прилипает к низу экрана
-    const agro = tabs.closest(".buildings-agro");
-
-    if (agro && "IntersectionObserver" in window) {
-      new IntersectionObserver(([entry]) => {
-        tabs.classList.toggle("is-fixed", !entry.isIntersecting && entry.boundingClientRect.top < 0);
-      }).observe(agro);
-    }
   }
 
   // Кнопка «Наверх» появляется, когда пролистали больше экрана
@@ -47,7 +39,6 @@ function initBuildings() {
       const isScrolled = window.scrollY > window.innerHeight * 2;
 
       scrollTopButton.classList.toggle("is-visible", isScrolled);
-      tabs?.classList.toggle("is-narrow", isScrolled);
     };
 
     scrollTopButton.addEventListener("click", () => {
