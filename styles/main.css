@@ -3742,7 +3742,6 @@ body.mob-filter-open {
 .buildings-description__accordion-media {
   min-width: 0;
   padding: 4px;
-  height: 100%;
   min-height: 593px;
   position: relative;
   overflow: hidden;
