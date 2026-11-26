@@ -185,6 +185,75 @@ function initBuildingsWhyPkVesta() {
     syncVisualPlacement();
   }
 
+  const zoomButtons = whyVesta?.querySelectorAll(".zoom-button");
+  const lightbox = whyVesta?.querySelector(".why-vesta__lightbox");
+  const lightboxImage = lightbox?.querySelector(".why-vesta__lightbox-image");
+  const lightboxCloseButton = lightbox?.querySelector(".why-vesta__lightbox-close");
+
+  if (
+    zoomButtons?.length &&
+    lightbox &&
+    lightboxImage &&
+    lightboxCloseButton &&
+    typeof lightbox.showModal === "function" &&
+    lightbox.dataset.initialized !== "true"
+  ) {
+    lightbox.dataset.initialized = "true";
+
+    let activeZoomButton = null;
+
+    const resetZoomButtons = () => {
+      zoomButtons.forEach((button) => {
+        button.setAttribute("aria-expanded", "false");
+      });
+    };
+
+    const closeLightbox = () => {
+      if (lightbox.open) {
+        lightbox.close();
+      }
+    };
+
+    zoomButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const visual = button.closest(".buildings-description__accordion-media");
+        const image = visual?.querySelector(".buildings-description__image");
+
+        if (!image) {
+          return;
+        }
+
+        activeZoomButton = button;
+        lightboxImage.src = image.currentSrc || image.src;
+        lightboxImage.alt = image.alt;
+        resetZoomButtons();
+        button.setAttribute("aria-expanded", "true");
+
+        if (!lightbox.open) {
+          lightbox.showModal();
+        }
+      });
+    });
+
+    lightboxCloseButton.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    lightbox.addEventListener("close", () => {
+      resetZoomButtons();
+      lightboxImage.removeAttribute("src");
+      lightboxImage.alt = "";
+
+      const trigger = activeZoomButton;
+      activeZoomButton = null;
+      trigger?.focus();
+    });
+  }
+
   const page = whyVesta?.closest("#app-main") || document;
 
   page.querySelectorAll(".accordion__btn").forEach((btn) => {
