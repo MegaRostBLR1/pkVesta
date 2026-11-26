@@ -4611,6 +4611,9 @@ body.mob-filter-open {
 }
 
 .buildings-catalog__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
   width: 100%;
   overflow: hidden;
 }
@@ -4690,6 +4693,10 @@ body.mob-filter-open {
     gap: 14px;
   }
 
+  .buildings-catalog__cards {
+    gap: 14px;
+  }
+
   .buildings-catalog__title {
     font-size: 30px;
     line-height: 38px;
@@ -4735,6 +4742,10 @@ body.mob-filter-open {
   .buildings-catalog__panel {
     gap: 8px;
     padding: 20px 10px;
+  }
+
+  .buildings-catalog__cards {
+    gap: 8px;
   }
 
   .buildings-catalog__header {
