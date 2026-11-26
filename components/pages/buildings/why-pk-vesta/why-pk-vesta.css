@@ -36,12 +36,7 @@
 
 @media screen and (max-width: 1600px) {
   .why-vesta__panel {
-    gap: 36px;
     padding: 64px 40px;
-  }
-
-  .why-vesta__title {
-    font-size: 48px;
   }
 
   .why-vesta .buildings-description__accordion {
