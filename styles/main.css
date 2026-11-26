@@ -4094,6 +4094,7 @@ body.mob-filter-open {
   gap: 26px;
   border-bottom: 1px solid #4d4d4d33;
   text-align: center;
+  padding-bottom: 30px;
 }
 
 .buildings-advantages__title {
