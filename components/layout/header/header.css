@@ -1,16 +1,16 @@
 /* Шапка */
 .app-header-component {
-  background: #324c88;
   position: relative;
+  background: #324c88;
 }
 
+/* Плашка «35 лет вместе»: наполовину заходит на блок под шапкой */
 .header-badge {
-  display: block;
   position: absolute;
-  width: 175px;
-  left: 8px;
   bottom: 0;
+  left: 8px;
   z-index: 1;
+  width: 175px;
   transform: translateY(50%);
 }
 
@@ -49,6 +49,12 @@ html.is-header-menu-open body {
   gap: 12px;
   padding: 1.1111rem 0;
   cursor: pointer;
+}
+
+/* Стрелки у страны, валюты, языка и телефона */
+.arrow-svg {
+  width: 12px;
+  height: 8px;
 }
 
 /* Выпадающие списки: страна, валюта, язык и телефоны */
@@ -99,6 +105,8 @@ html.is-header-menu-open body {
 /* Галочка видна только у выбранного пункта */
 .header__location-choice-item > svg {
   display: none;
+  width: 18px;
+  height: 18px;
 }
 
 .header__location-choice-item--selected > svg {
@@ -135,6 +143,19 @@ html.is-header-menu-open body {
   align-items: center;
   gap: 0.5556rem;
   cursor: pointer;
+}
+
+/* Иконки пунктов меню: только прямые потомки, иначе стили попадают и на иконки в выпадающем списке */
+.nav-list__item > svg {
+  width: 12px;
+  height: 8px;
+  fill: #ffffff;
+}
+
+/* Точки у «Продукции» квадратные */
+.nav-list__item:first-child > svg {
+  width: 12px;
+  height: 12px;
 }
 
 .nav-link {
@@ -212,6 +233,12 @@ html.is-header-menu-open body {
 .header__contacts-choice-icon {
   border-radius: 0.2222rem;
   background: #ffffff;
+}
+
+.nav-list__nested-list-icon svg,
+.header__contacts-choice-icon svg {
+  width: 16px;
+  height: 16px;
 }
 
 .nav-list__nested-list-item--disabled .nav-list__nested-list-icon {
@@ -295,7 +322,6 @@ html.is-header-menu-open body {
   outline-offset: 0.1111rem;
 }
 
-/* Ссылка растянута на всю карточку, поэтому нажимается вся карточка */
 .header__contacts-choice-link::after {
   position: absolute;
   inset: 0;
@@ -319,7 +345,9 @@ html.is-header-menu-open body {
   display: block;
   transition: color 0.3s ease;
 }
-.header__contacts-social-link svg {
+
+/* Иконка в ссылке: svg или картинка (WhatsApp) */
+.header__contacts-social-link > * {
   width: 24px;
   height: 24px;
 }
@@ -384,7 +412,9 @@ html.is-header-menu-open body {
   padding: 0.7778rem 0.8333rem;
 }
 
+/* Картинка внутри ссылки: block убирает отступ под ней */
 .header-bottom__logo-image {
+  display: block;
   width: 126px;
 }
 
@@ -401,6 +431,11 @@ html.is-header-menu-open body {
   font-weight: 600;
   line-height: 23px;
   text-transform: uppercase;
+}
+
+.header-bottom__solutions-button svg {
+  width: 26px;
+  height: 26px;
 }
 
 .header-bottom__solutions-button svg circle {
@@ -420,6 +455,8 @@ html.is-header-menu-open body {
   position: absolute;
   top: 50%;
   left: 1.6667rem;
+  width: 30px;
+  height: 30px;
   transform: translateY(-50%);
 }
 
@@ -481,11 +518,14 @@ html.is-header-menu-open body {
 .header-bottom__action {
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 0.5556rem;
   padding: 0.5555rem 1.1111rem;
   border-radius: 0.8333rem;
   text-align: center;
+}
+
+.header-bottom__action:hover {
+  background-color: #f2f2f2;
 }
 
 .header-bottom__action svg {
@@ -504,6 +544,11 @@ html.is-header-menu-open body {
   font-size: 0.8889rem;
   font-weight: 500;
   line-height: 100%;
+}
+
+/* Только у кнопок «Поиск», «Партнерам», «Websteel», «Войти»: у «Онлайн расчет» текст остаётся синим */
+.header-bottom__actions .header-bottom__action:hover .header-bottom__action-text {
+  color: #272629;
 }
 
 .header-bottom__action-calculation {
@@ -526,9 +571,10 @@ html.is-header-menu-open body {
 
 @media screen and (max-width: 1600px) {
   .header-top {
-    font-size: 0.7778rem;
     padding: 0 18px;
+    font-size: 0.7778rem;
   }
+
   .header-bottom__action-text {
     font-size: 0.7778rem;
     line-height: 18px;
@@ -543,10 +589,6 @@ html.is-header-menu-open body {
   .header-bottom__logo {
     margin-right: 10px;
   }
-
-  .header-bottom__actions {
-    flex: 0 1 262px;
-  }
 }
 
 @media screen and (max-width: 1360px) {
@@ -557,15 +599,18 @@ html.is-header-menu-open body {
     gap: 16px;
   }
 }
+
 @media screen and (max-width: 1250px) {
   .app-header-component {
     display: flex;
     flex-direction: column;
     padding-top: 52px;
   }
+
   .header-burger__title {
     font-size: 14px;
   }
+
   .header-top {
     display: none;
   }
@@ -647,10 +692,6 @@ html.is-header-menu-open body {
     left: 20px;
   }
 
-  .header-bottom__action {
-    min-width: 72px;
-  }
-
   .header-bottom__action svg {
     width: 30px;
     height: 30px;
@@ -658,7 +699,6 @@ html.is-header-menu-open body {
 
   .header-bottom__action-calculation {
     display: flex;
-    min-width: 100px;
   }
 
   /* Бургер-меню: открывается на весь экран и прокручивается внутри */
@@ -676,7 +716,6 @@ html.is-header-menu-open body {
     flex-direction: column;
     align-items: stretch;
     padding: 0;
-    z-index: 5;
   }
 
   .app-header-component.is-menu-open .header-badge {
@@ -710,11 +749,11 @@ html.is-header-menu-open body {
     border-radius: 0 0 20px 20px;
     background: #ffffff;
     color: #2c2c2ce6;
+    overflow: hidden;
   }
 
   .nav-list__item {
     flex-wrap: wrap;
-    justify-content: space-between;
     gap: 12px;
     padding: 30px;
     border-bottom: 2px solid #f5f8f7;
@@ -725,6 +764,14 @@ html.is-header-menu-open body {
     border-bottom: 0;
   }
 
+  .nav-list__item:hover {
+    background-color: #f2f2f2;
+  }
+
+  .nav-list__item.is-open:hover {
+    background-color: transparent;
+  }
+
   .nav-link {
     flex: 1;
     padding: 0;
@@ -732,17 +779,26 @@ html.is-header-menu-open body {
     line-height: 1.25;
   }
 
-  /* Иконки в html белые, в меню на белом фоне они тёмные */
-  .nav-list__item svg {
-    fill: #2c2c2c;
+  /* Ссылка растянута на весь пункт, поэтому нажимается вся строка */
+  .nav-link::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+  }
+
+  /* На белом фоне меню иконки тёмные */
+  .nav-list__item > svg {
     width: 16px;
     height: 10px;
+    fill: #2c2c2c;
   }
-  .nav-list__item:first-child svg {
+
+  .nav-list__item:first-child > svg {
     width: 18px;
     height: 18px;
   }
-  .nav-list__item.is-open svg {
+
+  .nav-list__item.is-open > svg {
     transform: rotate(180deg);
   }
 
@@ -753,14 +809,22 @@ html.is-header-menu-open body {
   }
 
   .nav-list__nested-list-item {
-    padding: 16px 10px;
     width: auto;
+    padding: 16px 10px;
     background: none;
     color: #2c2c2c99;
     white-space: normal;
   }
+
   .nav-list__nested-list-item:last-child {
     padding-bottom: 0;
+  }
+
+  .nav-list__nested-list-item:hover,
+  .nav-list__nested-list-item:focus-within,
+  .nav-list__nested-list-item:active {
+    background: none;
+    color: #4d4d4d;
   }
 
   .nav-list__nested-list-icon {
@@ -786,13 +850,13 @@ html.is-header-menu-open body {
   }
 
   .header__contacts-choice {
-    margin-bottom: 5px;
     position: static;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 58px;
     width: auto;
     max-width: none;
+    margin-bottom: 5px;
     padding: 0;
     border-radius: 0;
     background: none;
@@ -818,10 +882,10 @@ html.is-header-menu-open body {
     line-height: 1.25;
   }
 
-  /* Заголовок соцсетей шириной с колонку «Телефоны», как в макете */
+  /* Заголовок соцсетей шириной с колонку «Телефоны»: половина минус половина отступа между колонками (58px) */
   .header__contacts-social-title {
     display: block;
-    width: calc(50% - 12px);
+    width: calc(50% - 29px);
   }
 
   .header__contacts-choice-list {
@@ -858,6 +922,15 @@ html.is-header-menu-open body {
     overflow-wrap: anywhere;
   }
 
+  .header__contacts-choice-link:hover {
+    color: #ffffffd9;
+  }
+
+  /* Синяя рамка фокуса не видна на синем фоне меню */
+  .header__contacts-choice-link:focus-visible {
+    outline-color: #ffffff;
+  }
+
   .header__contacts-choice-description {
     color: #ffffffb2;
     font-size: 14px;
@@ -870,7 +943,7 @@ html.is-header-menu-open body {
     gap: 24px;
   }
 
-  .header__contacts-social-link svg {
+  .header__contacts-social-link > * {
     width: 30px;
     height: 30px;
   }
@@ -909,6 +982,7 @@ html.is-header-menu-open body {
     display: block;
     flex: 0 0 100%;
     color: #ffffffb2;
+    font-family: "Onest-Medium", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 20px;
@@ -919,18 +993,15 @@ html.is-header-menu-open body {
     transition: transform 0.2s ease;
   }
 
-  .arrow-svg {
-    width: 12px;
-    height: 8px;
-  }
-
   .header__location .is-open > .arrow-svg {
     transform: rotate(180deg);
   }
+
   .header__location-current {
     font-size: 16px;
     line-height: 20px;
   }
+
   .header__location-choice {
     position: static;
     flex: 0 0 100%;
@@ -941,8 +1012,8 @@ html.is-header-menu-open body {
 
   .header__location-choice-list {
     padding: 4px;
-    background: #ffffff0d;
     border-radius: 6px;
+    background: #ffffff0d;
   }
 
   /* Первый заголовок списка в меню стоит подписью над значением, внутри списка он не повторяется */
@@ -991,6 +1062,7 @@ html.is-header-menu-open body {
     flex-basis: 408px;
   }
 }
+
 @media screen and (max-width: 1000px) {
   .header-bottom {
     gap: 8px;
@@ -1001,9 +1073,11 @@ html.is-header-menu-open body {
   .app-header-component {
     padding-top: 0;
   }
+
   .header-badge {
     width: 134px;
   }
+
   .header-bottom {
     gap: 4px;
     border-radius: 0;
@@ -1058,14 +1132,15 @@ html.is-header-menu-open body {
   .header-bottom__actions {
     display: none;
   }
+
   .header-bottom__action-calculation {
     flex-grow: 0;
     gap: 5px;
-    height: auto;
     padding: 12px 20px;
     border-radius: 20px;
   }
 }
+
 @media screen and (max-width: 680px) {
   .header-bottom__action-calculation svg {
     width: 18px;
@@ -1076,29 +1151,36 @@ html.is-header-menu-open body {
     font-size: 13px;
     line-height: 1.2;
   }
+
   .header-bottom {
     padding: 12px 10px;
   }
+
   /* Бургер-меню */
   .nav-list__nested-list {
     padding: 0;
   }
+
   .nav-list__item {
-    padding: 24px 32px;
     gap: 10px;
+    padding: 24px 32px;
   }
+
   .nav-link {
     font-size: 16px;
   }
-  .nav-list__item:first-child svg {
+
+  .nav-list__item:first-child > svg {
     width: 14px;
     height: 14px;
   }
+
   .nav-list__nested-list-item {
     padding: 11px 15px;
     font-size: 14px;
     line-height: 18px;
   }
+
   .header__contacts-choice {
     grid-template-columns: minmax(0, 1fr);
     gap: 23px;
@@ -1134,6 +1216,7 @@ html.is-header-menu-open body {
   .header__contacts-social {
     gap: 20px;
   }
+
   .header__location-label {
     font-size: 14px;
     line-height: 18px;
@@ -1143,10 +1226,12 @@ html.is-header-menu-open body {
     font-size: 14px;
     line-height: 22px;
   }
+
   .header__location-choice-title {
     padding: 10px 0;
   }
-  .header__contacts-social-link svg {
+
+  .header__contacts-social-link > * {
     width: 24px;
     height: 24px;
   }
