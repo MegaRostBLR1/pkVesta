@@ -87,7 +87,6 @@ const APP_CONFIG = {
     'buildings-comparison': {
       title: 'Сравнение',
       html: './components/pages/buildings/comparison/comparison.html',
-      css: './components/pages/buildings/comparison/comparison.css',
       js: './components/pages/buildings/comparison/comparison.js',
       init: 'initBuildingsComparison'
     },
