@@ -3689,9 +3689,6 @@ body.mob-filter-open {
 /* Основная секция сравнения зданий. */
 .buildings-comparison {
   --comparison-col-width: 310px;
-}
-
-.buildings-comparison {
   margin: 0px 5px 5px;
 }
 
@@ -3723,6 +3720,7 @@ body.mob-filter-open {
   gap: 24px;
 }
 
+/* Таблица сравнения и горизонтальная прокрутка колонок. */
 .comparison__table {
   margin: 0 auto;
   max-width: 1690px;
@@ -3730,6 +3728,7 @@ body.mob-filter-open {
   width: 100%;
 }
 
+/* Навигация слайдера и карточки сравниваемых систем. */
 .comparison__nav {
   display: grid;
   align-items: center;
@@ -3802,6 +3801,7 @@ body.mob-filter-open {
   color: #4d4d4d;
 }
 
+/* Строки сравнения и раскрываемые значения. */
 .comparison__row-header {
   display: flex;
   justify-content: space-between;
@@ -3887,6 +3887,7 @@ body.mob-filter-open {
   background-color: #324c881a;
 }
 
+/* Мобильные элементы управления и пагинация слайдера. */
 .comparison__slider-controls-mob {
   display: none;
   align-items: center;
@@ -3912,6 +3913,7 @@ body.mob-filter-open {
   background-color: #324c88;
 }
 
+/* Адаптивные состояния таблицы сравнения. */
 @media (max-width: 1400px) {
   .buildings-comparison {
     --comparison-col-width: 230px;
@@ -4058,6 +4060,7 @@ body.mob-filter-open {
   }
 }
 
+/* Адаптивные состояния заголовка и контейнера секции. */
 @media (max-width: 1100px) {
   .buildings-comparison__container {
     padding: 40px 40px;
