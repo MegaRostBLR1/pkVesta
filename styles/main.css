@@ -10942,13 +10942,12 @@ body.mob-filter-open {
   grid-auto-columns: calc((100% - 3 * 10px) / 4);
   gap: 10px;
   width: 100%;
-  transform: translateX(0);
-  transition: transform 0.45s ease;
-  will-change: transform;
 }
 
 .buildings-catalog__card-link {
   min-width: 0;
+  transform: translateX(0);
+  transition: transform 0.45s ease;
 }
 
 .buildings-catalog__card-wrapper {
@@ -11093,7 +11092,7 @@ body.mob-filter-open {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .buildings-catalog__track {
+  .buildings-catalog__card-link {
     transition: none;
   }
 }

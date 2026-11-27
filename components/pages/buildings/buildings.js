@@ -506,7 +506,9 @@ function initBuildings() {
       const { step, maxIndex } = getMetrics();
       currentIndex = Math.min(currentIndex, maxIndex);
 
-      catalogTrack.style.transform = `translateX(-${currentIndex * step}px)`;
+      catalogCards.forEach((card) => {
+        card.style.transform = `translateX(-${currentIndex * step}px)`;
+      });
       catalogPrev.disabled = maxIndex === 0;
       catalogNext.disabled = maxIndex === 0;
 
