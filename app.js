@@ -99,7 +99,6 @@ const APP_CONFIG = {
     'buildings-faq': {
       title: 'Вопросы',
       html: './components/pages/buildings/buildings-faq/buildings-faq.html',
-      css: './components/pages/buildings/buildings-faq/buildings-faq.css',
       js: './components/pages/buildings/buildings-faq/buildings-faq.js',
       init: 'initBuildingsFaq'
     },
