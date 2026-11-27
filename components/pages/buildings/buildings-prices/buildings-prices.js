@@ -40,7 +40,6 @@ function initBuildingsPrices() {
       const isScrolled = window.scrollY > window.innerHeight * 2;
 
       scrollTopButton.classList.toggle("is-visible", isScrolled);
-      tabs?.classList.toggle("is-narrow", isScrolled);
     };
 
     scrollTopButton.addEventListener("click", () => {

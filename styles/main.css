@@ -9932,6 +9932,53 @@ body.mob-filter-open {
   }
 }
 
+/* ==========================================================================
+   BUILDINGS PRICES PAGE
+   ========================================================================== */
+.buildings-prices {
+  color: #4d4d4d;
+  background: #ffffff;
+  border-radius: 0.5556rem;
+}
+
+.buildings-prices__container {
+  padding: 60px 40px;
+  gap: 36px;
+}
+
+.buildings-prices__title {
+  color: #2C2C2CE5;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.buildings-prices .prices__option.is-active {
+  background: #fff500;
+}
+
+@media (max-width: 1200px) {
+  .buildings-prices__container {
+    padding: 40px;
+    gap: 20px;
+  }
+
+  .buildings-prices__title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+
+@media (max-width: 680px) {
+  .buildings-prices__container {
+    padding: 15px 0.7778rem 20px;
+  }
+
+  .buildings-prices__title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
 /* Секция «Описание» */
 .buildings-description {
   margin: 0 0.5556rem 0.5556rem;

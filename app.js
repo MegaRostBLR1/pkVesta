@@ -93,7 +93,6 @@ const APP_CONFIG = {
     'buildings-prices': {
       title: 'Цены',
       html: './components/pages/buildings/buildings-prices/buildings-prices.html',
-      css: './components/pages/buildings/buildings-prices/buildings-prices.css',
       js: './components/pages/buildings/buildings-prices/buildings-prices.js',
       init: 'initBuildingsPrices'
     },
