@@ -394,7 +394,13 @@ async function renderPage(pageName) {
   main.innerHTML = '<p class="loading">Загрузка страницы…</p>';
 
   try {
-    const html = await loadHtml(page.html);
+    let html = await loadHtml(page.html);
+
+    if (pageName === 'prices' || pageName === 'buildings-prices') {
+      const mobileFilterTemplate = await loadHtml('./components/shared/mobile-price-filter.html');
+      html = html.replace('<div data-mobile-price-filter></div>', mobileFilterTemplate);
+      await loadScript('./components/shared/mobile-price-filter.js');
+    }
 
     if (requestId !== renderRequestId) {
       return;
